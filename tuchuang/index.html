@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="图床" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover"> 
+  <title>简单图床 - 全球CDN加速，支持HTTPS！</title> 
+  <meta name="keywords" content="Cdn图床,百度图床,阿里图床,京东图床,搜狗图床,搜狐图床,QQ图床,XKX图床,58图床,头条图床,网易图床,360图床,葫芦侠图床"> 
+  <link rel="shortcut icon" href="http://inews.gtimg.com/newsapp_ls/0/13944790617/0"> 
+  <link rel="stylesheet" href="css/style.css"> 
+  <script src="js/jquery.min.js"></script> 
+  <script src="js/file.js"></script> 
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?47096df5fe81654d11927a045faab501";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s)})();</script> 
+ </head> 
+ <body> 
+  <input id="file" type="file" multiple style="display: none;"> 
+  <div class="container"> 
+   <div class="upload"> 
+    <div class="title">
+     开始上传
+     <!--input id="xkx" autocomplete="off" maxlength="16" placeholder="请输入上传..."--> 
+     <select id="type" value="ali"> <option value="tt">头条图床</option> <option value="qq">QQ图床</option> <option value="ali">阿里图床</option> <option value="jd">京东图床</option> <option value="sg">搜狗图床</option> <option value="c58">58 图床</option> <option value="wy">网易图床</option> <option value="sh">搜狐图床</option> <option value="hl">葫芦侠图床</option> <option value="kefu">KF 图床</option> <option value="qihoo">360 图床</option> <option value="catbox">猫盒图床</option> <option value="muke">慕课图床</option> <option value="gtimg">极图图床</option> <option value="vxichina">微聊图床</option> </select> 
+    </div> 
+    <div class="content" id="dragbox"> 
+     <svg class="icon" viewbox="0 0 1335 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"> 
+      <path d="M1097.060174 392.125217C1073.730783 172.966957 893.261913 0.378435 666.089739 0.378435c-227.127652 0-415.610435 171.920696-430.948174 391.746782C101.910261 415.454609 0 525.356522 0 666.601739c0 149.147826 125.239652 274.476522 274.476522 274.476522h195.828869v-78.669913H274.476522a193.691826 193.691826 0 0 1-195.940174-195.806609c0-102.021565 70.678261-180.580174 172.588522-195.917913l54.561391-8.013913 8.013913-62.553043c16.005565-180.580174 172.588522-321.157565 352.389565-321.157566 180.580174 0 337.029565 141.356522 352.389565 321.157566v62.553043l62.664348 8.013913c101.910261 16.005565 172.477217 93.896348 172.477218 195.917913 0 109.901913-85.904696 195.806609-195.806609 195.806609h-195.917913v78.580869h196.029217c149.147826 0 274.476522-125.261913 274.476522-274.476521 0-141.133913-101.999304-259.072-235.25287-274.387479" p-id="2345" fill="#909399"></path> 
+      <path d="M612.218435 364.766609l1.335652 2.003478L389.698783 590.58087l55.229217 55.362782 181.938087-181.938087V1018.88h78.558609v-78.58087h156.471652-156.471652V458.039652l183.808 183.919305 55.340521-55.340522-277.147826-277.058783-55.229217 55.229218z m-141.913044 575.666087h156.471652-156.716521 0.222608z" p-id="2346" fill="#909399"></path> 
+     </svg> 
+     <p class="desc">点击上传 / 粘贴上传 / 拖拽上传</p> 
+    </div> 
+   </div> 
+   <div class="filelist"> 
+    <div class="title">
+     上传列表 
+     <div class="copyall" style="display:none"> 
+      <button onclick="sel(this);" name="xkx" id="_url">URL</button> 
+      <button onclick="sel(this);" name="xkx" id="_html">HTML</button> 
+      <button onclick="sel(this);" name="xkx" id="_Ubb">UBB</button> 
+      <button onclick="sel(this);" name="xkx" id="_markdown">MD</button> 
+      <button onclick="copyAll(this);" name="xkx" id="copyAll" style="width:70px;background-color: #d0dbee;">复制全部</button> 
+     </div> 
+    </div> 
+    <div class="list"></div> 
+   </div> 
+  </div> 
+  <div id="footer" style="position:fixed;width: 100%;text-align: center;bottom: 0px;display: block;"> 
+   <div>
+    <i class="io io-dengpao"></i>请勿上传违反法律的图片，违者后果自负.
+   </div> 
+   <span class="add-info">主页 <a href="https://noisework.cn/" target="_blank" rel="noise">访问</a> 
+    <div style="margin-top: 10px;">
+      &nbsp; 
+     <span id="momk"></span>
+     <span id="momk" style="color: #ff0000;"></span> 
+     <script type="text/javascript">
+function NewDate(str) {
+str = str.split('-');
+var date = new Date();
+date.setUTCFullYear(str[0], str[1] - 1, str[2]);
+date.setUTCHours(0, 0, 0, 0);
+return date;
+}
+function momxc() {
+var birthDay =NewDate("2021-3-13");
+var today=new Date();
+var timeold=today.getTime()-birthDay.getTime();
+var sectimeold=timeold/1000
+var secondsold=Math.floor(sectimeold);
+var msPerDay=24*60*60*1000; var e_daysold=timeold/msPerDay;
+var daysold=Math.floor(e_daysold);
+var e_hrsold=(daysold-e_daysold)*-24;
+var hrsold=Math.floor(e_hrsold);
+var e_minsold=(hrsold-e_hrsold)*-60;
+var minsold=Math.floor((hrsold-e_hrsold)*-60); var seconds=Math.floor((minsold-e_minsold)*-60).toString();
+document.getElementById("momk").innerHTML = "本站勉强运行:"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+setTimeout(momxc, 1000);
+}momxc();
+</script> 
+     <div>
+      Copyright © 2021 
+      <a href="https://noisesite.cn"> Noise自留地</a>
+     </div> 
+    </div> </span>
+  </div>   
+ </body>
+</html>

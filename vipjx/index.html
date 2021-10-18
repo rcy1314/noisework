@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>VIP视频解析</title>
+  <link rel="icon" href="./favicon.ico.png">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="card">
+    <div class="card-front">
+      <img src="./cats_42kb.jpg" alt="cat">
+      <div class="desc">
+        <div class="text">VIP视频解析</div>
+        <a href="https://vip.heimaokeji.xyz" class="link" target="_blank">https://noisesite.cn/vipjx</a>
+      </div>
+      <form>
+        <input type="url" id="media-url" placeholder="请输入视频链接" required autocomplete="off">
+        <div class="apis">
+          <input type="radio" id="api1" class="api" name="contact" value="https://jx.jiubojx.com/vip.php?url=" checked>
+          <label for="api1">线路1</label>
+  
+          <input type="radio" id="api2" class="api" name="contact" value="https://api.yueliangjx.com/?url=">
+          <label for="api2">线路2</label>
+        </div>
+        <button type="submit" class="play">播放</button>
+      </form>
+    </div>
+    <div class="card-back">
+      <iframe class="player"
+              src=""
+              frameborder="0"
+              allowfullscreen></iframe>
+      <div class="button-container">
+        <button class="return" title="返回首页">
+          <svg t="1597601040206" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7757" width="20" height="20"><path d="M112.228037 296.934806c0 0 80.84119-125.866662 208.754464-193.404871s285.502429-48.095391 388.856355 17.396205 138.146337 120.750131 138.146337 120.750131l89.027639-51.16531c0 0 18.419512-9.209756 18.419512 12.279674s0 321.318146 0 321.318146 0 28.652574-21.48943 18.419512c-18.078751-8.609075-213.596749-120.784924-275.207969-156.176992-33.830503-15.226796-4.107551-27.595498-4.107551-27.595498l85.910649-49.541323c0 0-49.004087-61.923328-120.724549-94.717222-76.773548-40.359196-148.645458-45.144176-236.690724-11.608386-57.407478 21.86703-124.999922 77.853136-173.680645 160.560836C112.228037 296.934806 112.228037 296.934806 112.228037 296.934806zM910.406872 721.592552c0 0-80.84119 125.866662-208.754464 193.404871s-285.502429 48.095391-388.856355-17.396205-138.146337-120.750131-138.146337-120.750131l-89.027639 51.16531c0 0-18.419512 9.209756-18.419512-12.279674s0-321.318146 0-321.318146 0-28.652574 21.48943-18.419512c18.078751 8.609075 213.596749 120.784924 275.207969 156.176992 33.830503 15.226796 4.107551 27.595498 4.107551 27.595498l-85.910649 49.541323c0 0 49.004087 61.923328 120.724549 94.717222 76.773548 40.359196 148.645458 45.144176 236.690724 11.608386 57.407478-21.86703 124.999922-77.853136 173.680645-160.560836C910.406872 721.592552 910.406872 721.592552 910.406872 721.592552z" p-id="7758" fill="#ffffff"></path></svg>
+        </button>
+        <button class="timer" title="定时关闭">
+          <svg t="1613830889964" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5347" width="20" height="20"><path d="M512 854.016q123.989333 0 210.986667-88.021333t86.997333-212.010667-86.997333-210.986667-210.986667-86.997333-210.986667 86.997333-86.997333 210.986667 86.997333 212.010667 210.986667 88.021333zM811.989333 315.989333q84.010667 105.984 84.010667 237.994667 0 157.994667-112 271.018667t-272 112.981333-272-112.981333-112-271.018667 112-271.018667 272-112.981333q130.005333 0 240 86.016l59.989333-61.994667q32 25.984 59.989333 59.989333zM470.016 598.016l0-256 84.010667 0 0 256-84.010667 0zM640 41.984l0 86.016-256 0 0-86.016 256 0z" p-id="5348" fill="#ffffff"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <footer class="copyright">
+	  <p>
+	    <span class="cprt">Copyright</span>
+	    <span>&NOISE 2021</span>
+	    <a class="author-link" href="https://noisesite.cn/vipjx" target="_blank">返回站点</a>
+	 
+	  </p>
+	</footer>
+  <div class="set-timer">
+    <div class="title">定时关闭</div>
+    <div class="select-minutes">
+      <button class="set-timer-30">30分钟</button>
+      <button class="set-timer-60">60分钟</button>
+      <button class="set-timer-90">90分钟</button>
+      <button class="cancel-btn">取消定时器</button>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+
+</body>
+</html>
