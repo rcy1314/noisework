@@ -43,8 +43,8 @@ color: rgb(30,152,255);
 `
 
 /* 内容代码 */
-var title1 = '無名の主页'
-var title2 = 'imsyy.top'
+var title1 = 'Noiseの主页'
+var title2 = 'work.cn'
 var content = `
 
 
