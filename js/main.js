@@ -258,12 +258,3 @@ $("#more").hover(function () {
     $('#close').css("display", "none");
 })
 
-//屏蔽右键
-document.oncontextmenu = function () {
-    iziToast.info({
-        icon: 'fad fa-do-not-enter',
-        title: '温馨提醒',
-        message: '为了浏览体验，本站禁用右键'
-    });
-    return false;
-}
