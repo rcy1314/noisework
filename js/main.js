@@ -58,8 +58,6 @@ var content = `
 主页:  https://noisework.cn
 
 `
-console.log(`%c${title1} %c${title2}
-%c${content}`, styleTitle1, styleTitle2, styleContent)
 
 //获取一言
 fetch('https://v1.hitokoto.cn')
