@@ -300,7 +300,7 @@ span.time-text {
     top: 0;
     bottom: 0;
     z-index: 1996;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(252, 252, 252, 0.5);
     backdrop-filter: blur(20px);
     animation: fade 0.3s;
 }
