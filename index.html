@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
+<!-- 全屏背景切换 -->
+<meta charset="UTF-8">
+<title>全屏背景切换</title>
+<script src="http://api.asilu.com/cdn/jquery.js,jquery.backstretch.min.js" type="text/javascript"></script>
+</head>
+<body>
+<script type="text/javascript">
+$.backstretch([
+    'https://api.ixiaowai.cn/gqapi/gqapi.php',
+    'https://unsplash.it/1600/900?random',
+    'https://source.unsplash.com/random',
+    'https://api.dujin.org/bing/1920.php',
+    'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302'
+], {
+    fade : 200, // 动画时长
+    duration : 8000 // 切换延时
+});
+</script>
 <head>
     <!-- 基础信息 -->
     <meta charset="utf-8">
@@ -47,24 +64,7 @@
     </script>
    
 
-<!-- 全屏背景切换 -->
-    <meta charset="UTF-8">
-    <title>全屏背景切换</title>
-    <script src="http://api.asilu.com/cdn/jquery.js,jquery.backstretch.min.js" type="text/javascript"></script>
-</head>
-<body>
-<script type="text/javascript">
-    $.backstretch([
-        'https://api.ixiaowai.cn/gqapi/gqapi.php',
-        'https://unsplash.it/1600/900?random',
-        'https://source.unsplash.com/random',
-        'https://api.dujin.org/bing/1920.php',
-        'https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302'
-    ], {
-        fade : 200, // 动画时长
-        duration : 8000 // 切换延时
-    });
-</script>
+
 
     <!--加载动画-->
     <div id="loading-box">
@@ -114,7 +114,7 @@
                                     id="qq" target="_blank">
                                     <i class="iconfont icon-QQ"></i>
                                 </a>
-                                <a href="1129159201@qq.com" class="link" id="email">
+                                <a href="1129159201@qq.com" class="link" id="email" target="_blank">
                                     <i class="iconfont icon-youxiang"></i>
                                 </a>
                                 <a href="https://t.me/noisebelief" class="link" id="telegram" target="_blank">
