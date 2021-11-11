@@ -15,7 +15,7 @@ iziToast.settings({
 
 iziToast.info({
     icon: 'fad fa-vial',
-    title: '欢迎访问我的主页',
+    title: '欢迎访问我的主页，备用地址：https://noisework.pages.dev',
     message: '这里介绍了我的其它站点链接，可点击访问它们'
 });
 
