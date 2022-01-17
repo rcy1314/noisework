@@ -172,16 +172,16 @@ $('#switchmore').on('click', function () {
         $("#change1").html("哎呀，这都被你发现了（ 再点击一次可关闭 ）");
     } else {
         $('#container').attr('class', 'container');
-        $("#change").html("Hello&nbsp;World&nbsp;!");
-        $("#change1").html("一个建立于 21 世纪的小站，存活于互联网的边缘");
+        $("#change").html("你好&nbsp;欢迎访问&nbsp;!");
+        $("#change1").html("比你优秀的人都在努力，你还有什么理由去放弃");
     }
 });
 
 //更多页面关闭按钮
 $('#close').on('click', function () {
     $('#container').attr('class', 'container');
-    $("#change").html("Hello&nbsp;World&nbsp;!");
-    $("#change1").html("一个建立于 21 世纪的小站，存活于互联网的边缘");
+    $("#change").html("你好&nbsp;欢迎访问d&nbsp;!");
+    $("#change1").html("比你优秀的人都在努力，你还有什么理由去放弃");
 });
 
 //菜单栏切换
@@ -223,8 +223,8 @@ window.addEventListener('load', function () {
         if (window.innerWidth <= 990) {
             //移动端隐藏更多页面
             $('#container').attr('class', 'container');
-            $("#change").html("Hello&nbsp;World&nbsp;!");
-            $("#change1").html("一个建立于 21 世纪的小站，存活于互联网的边缘");
+            $("#change").html("你好&nbsp;欢迎访问&nbsp;!");
+            $("#change1").html("比你优秀的人都在努力，你还有什么理由去放弃");
 
             //移动端隐藏弹窗页面
             $('#box').css("display", "none");
