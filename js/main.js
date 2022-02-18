@@ -16,7 +16,7 @@ iziToast.settings({
 iziToast.info({
     icon: 'fad fa-vial',
     title: '欢迎访问我的主页,这里介绍了我的其它站点链接，可点击访问它们',
-    message: '主页：https://noisework.cn，备用地址1:https://noisework.pages.dev，备用地址2:https://noisework.vercel.app'
+    message: '主页：https://noisework.cn，备用地址1:https://noisework.pages.dev，备用地址2：https://noisework-cn.vercel.app，备用地址3:https://noisework.vercel.app'
 });
 
 //控制台输出
