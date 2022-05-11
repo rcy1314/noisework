@@ -15,8 +15,8 @@ iziToast.settings({
 
 iziToast.info({
     icon: 'fad fa-vial',
-    title: '欢迎访问我的主页,这里介绍了我的其它站点链接，可点击访问它们',
-    message: '主页：https://noisework.cn，备用地址1:https://noisework.pages.dev，备用地址2：https://noisework-cn.vercel.app'
+    title: '欢迎访问我的主页,这里介绍了我的相关站点，可点击访问它们',
+    message: '主页：https://noisework.cn，备用地址1:https://noisework.pages.dev'
 });
 
 //控制台输出
@@ -173,7 +173,7 @@ $('#switchmore').on('click', function () {
     } else {
         $('#container').attr('class', 'container');
         $("#change").html("你好&nbsp;欢迎访问&nbsp;!");
-        $("#change1").html("比你优秀的人都在努力，你还有什么理由去放弃");
+        $("#change1").html("比你优秀的人都在努力，你还有什么理由去放弃！");
     }
 });
 
@@ -181,7 +181,7 @@ $('#switchmore').on('click', function () {
 $('#close').on('click', function () {
     $('#container').attr('class', 'container');
     $("#change").html("你好&nbsp;欢迎访问d&nbsp;!");
-    $("#change1").html("比你优秀的人都在努力，你还有什么理由去放弃");
+    $("#change1").html("比你优秀的人都在努力，你还有什么理由去放弃!ßß");
 });
 
 //菜单栏切换
