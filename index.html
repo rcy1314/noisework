@@ -6,6 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/favicon.png" type="image/png" />
+    <!-- 引入JS -->
+<script src="http://instantclick.io/v3.1.0/instantclick.min.js"></script>
+<!-- data-no-instant表示该标签不进行预加载 -->
+<script data-no-instant>
+//选择点击瞬间预加载模式
+InstantClick.init("mousedown");
+</script>
     <style>*{
             margin: 0;
             padding: 0;
@@ -13,7 +20,7 @@
         body{
             background: #1e1d1d;
             color: white;
-            font-size: 18px;
+            font-size: 20px;
             font-family: monospace;
             display: flex;
             height: 100vh;
