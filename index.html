@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="" type="image/png" />
+    <link rel="stylesheet" href="./css/style.css" media="screen and (max-width:768px)">
     <!-- 引入JS -->
 <script src="http://instantclick.io/v3.1.0/instantclick.min.js"></script>
 <!-- data-no-instant表示该标签不进行预加载 -->
@@ -98,6 +99,13 @@ InstantClick.init("mousedown");
         gtag('config', 'G-Z9TZXQQWT7');
     </script>
 </head>
+<!-- 网页的宽度自动适应手机屏幕的宽度 --> 
+    <!-- width=device-width ：表示宽度是设备屏幕的宽度 --> 
+    <!-- initial-scale=1.0：表示初始的缩放比例，1.0就是占网页的100% -->
+    <!-- minimum-scale=1.0：表示最小的缩放比例 -->
+    <!-- maximum-scale=1.0：表示最大的缩放比例 -->
+    <!-- user-scalable=no：表示用户不可以调整缩放比例 --> 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
 <div class="container">
     <p class="title">欢迎访问....<span class="flash">_</span></p>
     

@@ -1,0 +1,30 @@
+/*原始的网页样式*/ 
+.container {
+    width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px
+}
+/*当屏幕宽度小于等于991px时，一般多为手机*/ 
+/*className为container的元素宽度为100%*/
+@media (max-width: 991px) {
+    .container {
+        width: 100% 
+    }
+}
+/*当屏幕宽度大于等于992px且小于等于1099px时，一般多为平板*/
+/*className为container的元素宽度为90%*/
+@media (min-width: 992px) and (max-width: 1099px) {
+    .container {
+        width: 90%
+    }
+} 
+/*当屏幕宽度大于等于1100px时，常规电脑*/
+/*className为container的元素宽度为1100px*/
+/*此处用于举例，实际这个样式是多余了，默认就是>1100px*/
+@media (min-width: 1100px) {
+    .container {
+        width: 1100px
+    }
+}
