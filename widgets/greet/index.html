@@ -1,0 +1,67 @@
+<html> 
+<head>
+    <title>Greeting Message</title> 
+    <style>
+#lbl {
+    font-family: brushscriptmt;
+    font-size: xx-large;
+    color: #fdf7f7;
+    padding: 5px;
+    border: 1px solid #2e4f83;
+    text-align: center;
+    line-height: 1.5;
+    height:85%
+
+
+}
+#date{
+    font-size:large;
+}
+body{
+    background-color: #0a0a0a;
+}
+    </style>
+</head>
+<body>
+    <div id="lbl"></div>
+</body>
+
+<script>
+    var weekday = new Array(7);
+    weekday[0] = "周日";
+    weekday[1] = "周一";
+    weekday[2] = "周二";
+    weekday[3] = "周三";
+    weekday[4] = "周四";
+    weekday[5] = "周五";
+    weekday[6] = "周六";
+
+    
+    var today = new Date();
+    var hrs = today.getHours();
+    var dayOfWeek = weekday[today.getDay()];
+    var date = dayOfWeek+" " + today.getDate() + "/" +(today.getMonth()+1) +'/'+today.getFullYear()  ;
+
+    var greet;
+
+    if (hrs >= 0 && hrs <= 4)
+        greet = "凌晨好  ";
+    if (hrs >= 5 && hrs <= 8) 
+        greet = "早上好  ";
+    if (hrs >= 9 && hrs <= 11) 
+        greet = "上午好  ";
+    if (hrs >= 11 && hrs <= 13) 
+        greet = "中午好  ";
+    if (hrs >= 13 && hrs <= 17) 
+        greet = "下午好  ";
+    if (hrs >= 18 && hrs <= 19) 
+        greet = "傍晚好  ";
+    if (hrs >= 19 && hrs <= 22) 
+       greet = "晚上好  ";
+    if (hrs >= 22 && hrs <= 24) 
+       greet = "夜深了  ";
+
+    document.getElementById('lbl').innerHTML =
+        greet+=`<div id="date"> 今天是： ${date}</div>`;
+</script> 
+</html>

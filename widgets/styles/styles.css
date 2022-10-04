@@ -1,0 +1,109 @@
+:root {
+    --background-color: #fff;
+    --text-color: #121416d8;
+    --link-color: #543fd7;
+}
+html[data-theme="light"] {
+    --background-color: #efefef;
+    --text-color: #121416d8;
+    --text-color-lighter: #95999b;
+    --link-color: #543fd7;
+}
+html[data-theme="dark"] {
+    --background-color: #212a2e;
+    --text-color: #f7f8f8;
+    --text-color-lighter: #95999b;
+    --link-color: #828fff;
+}
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: sans-serif;
+    margin: 0;
+    transition: background 0.5s;
+}
+#container {
+    line-height: 1.5em;
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 1em;
+    width: 90%;
+}
+button {
+    display: block;
+    width: 100%;
+}
+.btn {
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    user-select: none;
+    vertical-align: middle;
+}
+[data-theme="dark"] .icon-show-dark,
+[data-theme="light"] .icon-show-light {
+    color: transparent;
+    display: block !important;
+}
+[data-theme="dark"] .icon-show-dark:hover {
+    color: #fc0;
+    transition: color 0.5s;
+}
+[data-theme="light"] .icon-show-light:hover {
+    color: #333;
+    transition: color 0.5s;
+}
+[data-theme="dark"] .icon-show-dark > img,
+[data-theme="light"] .icon-show-light > img {
+    padding-right: 0.5em;
+}
+[data-theme="dark"] .icon-show-dark > p,
+[data-theme="light"] .icon-show-light > p {
+    margin: 0;
+    padding: 0;
+}
+.icon-hide {
+    display: none !important;
+}
+h1 {
+    padding-bottom: 1em;
+}
+h2 {
+    color: var(--text-color-lighter);
+    font-style: italic;
+}
+p {
+    padding-left: 2em;
+}
+p:first-of-type {
+    padding-top: 2em;
+}
+p:last-of-type {
+    padding-bottom: 2em;
+}
+a {
+    color: var(--link-color);
+}
+a:hover {
+    text-decoration: underline;
+    filter: brightness(80%);
+}
+li {
+    list-style: none;
+}
+li > ul > li {
+    font-size: 0.75em;
+}
+li > img {
+    margin-right: 0.5em;
+}
+code {
+    background: #ccc;
+    color: #555;
+    border-radius: 4px;
+    padding: 3px 5px;
+}

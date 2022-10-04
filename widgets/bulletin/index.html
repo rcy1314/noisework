@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+
+		<style>
+			body {
+				background-color: #222;
+			}
+			.wrap {
+				position: relative;
+			}
+			.heart {
+				display: block;
+				overflow: hidden;
+			}
+			.scroller {
+				display: block;
+				width: 100%;
+				white-space: nowrap;
+				overflow: visible;
+			}
+			p {
+				color: #fff;
+				display: inline-block;
+				font-family: 微軟正黑體;
+				font-size: 32px;
+				line-height: 2;
+				width: auto;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			span {
+				background: url( logo.png );
+				border-radius: 25px;
+				display: inline-block;
+				width: 34px;
+				height: 34px;
+				margin-right: .5em;
+				max-width: 100%; 
+				position: absolute;
+    			top:48px;
+				left:-46px;
+			}
+
+			a {
+				display: block;
+				width: 3em;
+				height: 4.5em;
+				position: absolute;
+				overflow: hidden;
+				text-indent: -999px;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="wrap">
+			<marquee scrollamount="8" scrolldelay="60" truespeed="true" loop="true" class="heart">
+				<div class="scroller">
+					<p><span>&nbsp;</span>🪧：欢迎你的访问，这里是Efficiency研究地，</p>
+					<p><span>&nbsp;</span>本频道包含社区主页等站点，</p>
+					<p><span>&nbsp;</span>  欢迎申请加入</p>
+				</div>
+			</marquee>
+		</div>
+
+		<!-- This script and the script to invoke it should be included in place of Heart.js conditionally, most reliably using condtional comments. -->
+		<script src="marquee-controls.js"></script>
+		<script>
+			if( window.addEventListener ) {
+				document.addEventListener( "DOMContentLoaded", window.marquismarquee );
+			} else {
+				window.attachEvent( "onload", window.marquismarquee );
+			}
+		</script>
+
+	</body>
+</html>

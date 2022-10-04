@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>noise-music</title>
+	<meta charset="utf-8">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+
+</head>
+<body>
+
+
+<div class="swiper-container">
+	 <div class="swiper-button-prev"></div>
+	 <div class="swiper-button-next"></div> 
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide">
+	          <div class="aplayer-wrap">
+	          <h3 style="text-align: center">✨云音乐热歌榜✨</h3>
+	          	<meting-js
+	          	    list-max-height="330px"
+		            server="netease"
+		            type="playlist"
+		            id="3778678">
+	            </meting-js>  
+
+	          </div>
+	       </div>
+	        <div class="swiper-slide">
+	          <div class="aplayer-wrap">
+	          <h3 style="text-align: center">✨云音乐飙升榜✨</h3>
+	          	<meting-js
+	          	    preload="none"
+	          	    list-max-height="330px"
+		            server="netease"
+		            type="playlist"
+		            id="19723756">
+	            </meting-js>    
+	          </div>
+	        </div>
+	        <div class="swiper-slide">
+	          <div class="aplayer-wrap">
+	          <h3 style="text-align: center">✨云音乐新歌榜✨</h3>
+	          	<meting-js
+	          	    preload="none"
+	          	    list-max-height="330px"
+		            server="netease"
+		            type="playlist"
+		            id="3779629">
+	            </meting-js>    
+	          </div>
+	        </div>
+	        <div class="swiper-slide">
+	          <div class="aplayer-wrap">
+	          <h3 style="text-align: center">✨我的网易云歌单✨</h3>
+	          	<meting-js
+	          	    preload="none"
+	          	    list-max-height="330px"
+		            server="netease"
+		            type="playlist"
+		            id="2141128031">
+	            </meting-js>  
+	          </div>
+	       </div> 
+	        <div class="swiper-slide">
+	          <div class="aplayer-wrap">
+	          <h3 style="text-align: center">✨我的QQ音乐歌单✨</h3>
+	          	<meting-js
+	          	    preload="none"
+	          	    list-max-height="330px"
+		            server="tencent"
+		            type="playlist"
+		            id="909394226">
+	            </meting-js>  
+	          </div>
+	        </div> 
+
+        
+</footer>
+<script src="js/swiper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+<script>        
+  var mySwiper = new Swiper ('.swiper-container', {
+    loop: true, 
+    
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  })       
+ </script>
+ 
+</body>
+</html>

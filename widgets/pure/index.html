@@ -1,0 +1,227 @@
+<style>
+div#mascot{
+width: 300px;
+height: 300px;
+position: fixed;
+z-index: 10;
+left: -10%;
+top: 10%;
+}
+div#head{
+position: absolute;
+top: 5px;
+left: 5px;
+width: 200px;
+height: 70px;
+cursor: pointer;
+}
+div#baloon{
+background-color: white;
+color: grey;
+border-width: 2px;
+border-style: solid;
+border-color: #6fe8e4;
+width: 150px;
+height: auto;
+position: fixed;
+top: 10px;
+left: 10px;
+visibility: hidden;
+border-radius: 8px;
+display: inline;
+z-index: 11;
+}
+div#baloon::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 80%;
+  margin-left: -5px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: #6fe8e4 transparent transparent transparent;
+}
+div#baloon_text{
+width: 140px;
+margin: 10px;
+padding-right: -40px;
+font-size:12px;
+overflow: hidden;
+z-index: 11;
+}
+</style>
+<script>
+stroke_counter = 0;
+NORMAL = "./normal.gif";
+SMILE = "./happy.png";
+SAD = "./sad.png";
+ANGRY = "./angry.png";
+PLEAD = "./plead.png";
+COLD = "./cold.png";
+
+face_smile = new Image();
+face_smile.src = SMILE;
+
+randomtalk = [
+"#[happy]今天的任务进行的如何了？",
+"#[happy]偶尔也要放松一下~",
+"#[happy]星光不负赶路人……",
+"#[happy]我相信你一定可以的~",
+"#[happy]你会有如今的成就，全部是因为你的努力！",
+"#[happy]请相信自己！",
+"#[happy]请不要放弃~",
+"#[happy]请继续努力！",
+"#[happy]今天英格瑞特也要元气满满地努力学习~",
+"#[happy]我相信你可以自律，所以请相信自己！",
+"#[happy]你一定可以完成自己所定下的目标的！",
+"#[happy]日程表进度如何了？肯定很顺利吧？",
+"#[happy]我最最喜欢正在学习的英格瑞特了！",
+"#[angry]今天不学习…………明天火葬场！",
+"#[angry]你看看都几点了！",
+"#[angry]你今天学够八个小时了？",
+"#[angry]请不要让明天的自己讨厌今天的自己，好吗？",
+"#[angry]去学习，我没在跟你商量。",
+"#[angry]你会为拖延付出代价的……",
+"#[angry]请去学习！",
+"#[plead]求求你再去学习一会嘛……",
+"#[plead]你不学习的话……我…我就会哭！",
+"#[plead]你看我可爱吗？可爱的话就再陪我学一会嘛~",
+"#[plead]英格瑞特再努力一会好不好？马上就可以休息了！",
+"#[plead]再坚持一会~！",
+"#[plead]再陪可爱的我学习一会嘛~",
+"#[sad]可以更努力一点吗？",
+"#[sad]昨天晚上做了一个好可怕的梦……梦到英格瑞特一整天都没有学习！",
+"#[sad]我哭了，除非你学习。",
+"#[cold]啊啊……你再不学习…杀了你哦。",
+"#[cold]英格瑞特不肯学习的日子十分无趣。",
+"#[cold]看看这个小垃圾，在这里浪费时间。",
+"#[cold]看着懒惰的英格瑞特，我只觉得心累。",
+"#[cold]明天的英格瑞特会想要杀了你。"
+];
+
+cheertalk = [
+"#[normal]别着急，在为你自己未来踏踏实实的努力时，那些你感觉从来不会看到的景色，那些你觉得终身不会遇到的人却一步步向你走来。",
+"#[normal]别慌，月亮也正在大海某处迷茫。",
+"#[normal]没有谁的生活会一直完美，但无论什么时候，都要看着前方，满怀希望就会所向披靡。",
+"#[normal]来路无可眷恋，值得期待的只有前方。",
+"#[normal]要以星星为目标，那样的话，即使掉下来，你还能落到树梢上。",
+"#[normal]生命中的不期而遇，都是你努力中的惊喜。",
+"#[normal]躲起来的星星也在努力发光 你也要加油。",
+"#[normal]宇宙山河浪漫 人间点滴温暖都值得你前进。",
+"#[normal]希望你以后不要再被黑夜困扰。不要再被伤害打倒，勇敢地去接受这个充满感情的宇宙。",
+"#[normal]生活很容易一团漆黑，如果要变成一束光的话还需要走很远很远的路，真怕路途遥远，也怕路途孤苦。",
+"#[normal]正是因为没有看到答案，所以才值得走下去，而我们就是最好的答案。",
+"#[normal]你要有强大的内心。要有任凭时间流逝，不会磨折和屈服的信念。",
+"#[normal]不是因为在象牙塔中，才说出我爱世界这样的话。是知道外面的黑，脏，丑陋之后，还要说出这样的话。",
+"#[normal]我要你相信温暖，美好，信任，尊严，坚强。我不要你颓废，空虚，迷茫，糟践自己，伤害别人。"
+];
+
+stroketalk = [
+"#[normal]有什么事吗？",
+"#[angry]请去学习，不要烦我。",
+"#[angry]这样做有意思吗？",
+"#[sad]快去学习！",
+"#[cold]再烦我，杀了你哦。",
+"#[sad]学习比烦我好玩多啦！"];
+
+function init(){
+ greet();
+}
+function greet(){ 
+var time = new Date().getHours();
+  if (time < 3) {
+    text = "这么晚还不睡觉，明天起的来嘛？";
+  } else if (time < 9) {
+    text = "早安一日之计在于晨，美好的一天就要开始了。";
+  } else if (time < 11) {
+    text = "日安，学习顺利吗？不要久坐，多起来走动走动~";
+  } else if (time < 13) {
+    text = "中午了，学习了一个上午，现在是午餐时间！";
+  } else if (time < 17) {
+    text = "午后很容易犯困呢，今天的学习目标完成了吗？";
+  } else if (time < 19) {
+    text = "窗外夕阳的景色很美丽呢~";
+  } else if (time < 21) {
+    text = "夜安，今天过得怎么样？";
+  } else if (time < 23) {
+    text = "已经这么晚了呀，早点休息吧，晚安～";
+  } else {
+    text = "你好，很高兴见到你~";
+  }
+  show_baloon(text);
+   change_face(NORMAL);
+}
+
+function change_face(face){
+document.getElementById("mascot").style.background = 'url("' + face + '")';
+document.getElementById("mascot").style.backgroundSize = "300px 300px";
+document.getElementById("mascot").style.backgroundRepeat = "no-repeat";
+}
+function stroke(){
+ stroke_counter++;
+ if (stroke_counter > 50){
+ stroke_counter = 0;
+ talk("stroke");
+ }
+}
+function stroke_reset(){
+ stroke_counter = 0;
+}
+function talk(){
+ talk("random");
+}
+function cheer(){
+talk("cheer");
+}
+function talk(option){
+ if (option == "stroke") {
+ check_talk( stroketalk[ Math.floor( Math.random() * stroketalk.length) ] );
+ } else if (option == "cheer"){
+ check_talk( cheertalk[ Math.floor( Math.random() * cheertalk.length) ] );
+ } else {
+ check_talk( randomtalk[ Math.floor( Math.random() * randomtalk.length) ] );
+ }
+}
+function check_talk(str){
+ text = str.replace(/#\[(.+)\]/g, "");
+ if(RegExp.$1 == "happy"){
+ face = SMILE;
+ } else if(RegExp.$1 == "sad"){
+ face = SAD;
+ } else if(RegExp.$1 == "angry"){
+ face = ANGRY;
+ } else if(RegExp.$1 == "plead"){
+ face = PLEAD;
+ } else if(RegExp.$1 == "cold"){
+ face = COLD;
+ } else {
+ face = NORMAL;
+ }
+ change_face(face);
+ show_baloon(text);
+}
+
+var timer_randomtalk, timer_hide_baloon;
+function show_baloon(str){
+ clearTimeout(timer_randomtalk);
+ clearTimeout(timer_hide_baloon);
+ document.getElementById("baloon_text").innerHTML = str;
+ document.getElementById("baloon").style.visibility = "visible";
+ timer_hide_baloon = setTimeout("hide_baloon()", 6*1000);
+}
+function hide_baloon(str){
+ clearTimeout(timer_hide_baloon);
+ document.getElementById("baloon").style.visibility = "hidden";
+ timer_randomtalk = setTimeout("talk()", 20*1000);
+ change_face(NORMAL);
+}
+</script>
+
+<body onload="greet()">
+<div id="mascot" ondblclick="cheer()">
+    <div id="head" onmousemove="stroke()" onmouseout="stroke_reset()"></div>
+</div>
+<div id="baloon" ondblclick="hide_baloon()">
+    <div id="baloon_text"></div>
+</div>
+</body>
