@@ -1,0 +1,135 @@
+body {
+  background-color: #2f3438;
+  font-family: "Menlo", "Menlo", Menlo, Menlo;
+}
+.labels {
+  margin: auto;
+  margin-top: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  color: #2f3438;
+  word-wrap: break-word;
+  margin-bottom: 70px;
+}
+
+.frame {
+  margin: auto;
+  padding: 5px 0px;
+  width: 56px;
+  border: 3px solid #2f3438;
+}
+
+.btn {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  background-color: #2f3438;
+  color: #f0f2ef;
+  padding: 10px 5px;
+  text-transform: uppercase;
+  font-size: 10px;
+  border: 0px;
+  cursor: pointer;
+  border: 1px;
+}
+
+.btn-rounded {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.fa {
+  font-size: 14px;
+}
+
+.flipx {
+  transform: scaleX(-1);
+}
+
+#score {
+  margin-top: 5px;
+}
+
+#outer-board {
+  width: 365px;
+  margin: auto;
+}
+
+#board {
+  float: left;
+  position: relative;
+  background-color: #f0f2ef;
+  width: 280px;
+  height: 448px;
+  margin: 10px auto;
+  border: 2px solid #f0f2ef;
+}
+
+#stats {
+  float: right;
+  position: relative;
+  background-color: #f0f2ef;
+  width: 70px;
+  height: 448px;
+  margin: 10px auto;
+  border: 2px solid #2f3438;
+}
+
+#banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 100px;
+  background-color: #f0f2ef;
+  color: #2f3438;
+  z-index: 2;
+  text-align: center;
+  border: 2px solid #2f3438;
+}
+
+#message {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 23px;
+  margin: 10px;
+  margin-top: 20px;
+}
+
+#new-game {
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.block,
+.empty {
+  position: absolute;
+  background-color: #2f3438;
+  width: 28px;
+  height: 28px;
+}
+
+.empty {
+  opacity: 0.1;
+}
+
+.inner-tile {
+  position: absolute;
+  background-color: #2f3438;
+  border: 3px solid #f0f2ef;
+  width: 16px;
+  height: 16px;
+  margin: 2px;
+}
+
+.inner-inner-tile {
+  position: absolute;
+  background-color: #ffffff;
+  width: 16px;
+  height: 16px;
+  margin: 3px;
+}

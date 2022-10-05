@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>俄罗斯方块</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="outer-board">
+  <div id="board"> 
+    <div id="banner">
+      <div> 
+        <div id="message"></div>
+        <div id="new-game">点击开始!</div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+    <div class="empty">
+      <div class="inner-tile">
+        <div class="inner-inner-tile"></div>
+      </div>
+    </div>
+  </div>
+  <div id="stats">
+    <div class="labels">得分
+      <div class="frame" id="score">0        </div>
+    </div>
+    <button class="btn btn-rounded" id="left"> <i class="fa fas fa-arrow-left"></i></button>
+    <button class="btn btn-rounded" id="right"><i class="fa fas fa-arrow-right"></i></button>
+    <button class="btn btn-rounded" id="rotate"> <i class="fa fas fa-undo flipx"></i></button>
+    <button class="btn btn-rounded" id="down"> <i class="fa fas fa-arrow-down"></i></button>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/animatelo/1.0.3/animatelo.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
