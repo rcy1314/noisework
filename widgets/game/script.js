@@ -465,8 +465,8 @@ class Board {
         this.interval = undefined;
       }
       $("#banner").show();
-      $("#message").text("Game Over!");
-      $("#new-game").text("Tap here to start again!");
+      $("#message").text("游戏结束!");
+      $("#new-game").text("点击重新开始!");
     }
   }
 
