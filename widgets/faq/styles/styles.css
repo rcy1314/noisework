@@ -26,8 +26,8 @@ h1 {
 }
 
 .faq.active {
-    background-color: #fff;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+    background-color: rgb(243, 241, 245);
+    box-shadow: 0 3px 6px rgba(255, 238, 238, 0.1), 0 3px 6px rgba(247, 240, 240, 0.1);
 }
 
 .faq.active::before, 
@@ -102,7 +102,7 @@ h1 {
 }
 :root {
     --background-color: #fff;
-    --text-color: #121416d8;
+    --text-color: #444c53d8;
     --link-color: #543fd7;
 }
 html[data-theme="light"] {
@@ -113,7 +113,7 @@ html[data-theme="light"] {
 }
 html[data-theme="dark"] {
     --background-color: #212a2e;
-    --text-color: #131414;
+    --text-color: rgb(97, 125, 128);
     --text-color-lighter: #95999b;
     --link-color: #828fff;
 }
