@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <script src="js/index.js"></script>
     <!-- 引入JS -->
-<script src="http://instantclick.io/v3.1.0/instantclick.min.js"></script>
+<script src="js/instantclick.min.js"></script>
 <!-- data-no-instant表示该标签不进行预加载 -->
 <script data-no-instant>
 //选择点击瞬间预加载模式
@@ -94,6 +97,12 @@ InstantClick.init("mousedown");
     
     <div class="nav-bar">
 <body>
+    <video src="video/lizi.webm" class="bg-video" autoplay muted loop></video>
+    <audio preload autoplay loop>
+        <source src="audio/The Glitch Mob - We Can Make The World Stop.mp3" type="audio/mp3">
+      </audio>
+    <div class="cc">
+    </div>
     <span class="mobile btn-mobile-menu">
         <i class="social iconfont icon-list btn-mobile-menu__icon"></i>
         <i class="social iconfont icon-angleup btn-mobile-close__icon hidden"></i>
@@ -135,7 +144,7 @@ InstantClick.init("mousedown");
             <a href="https://noiseyp.top" target="_blank">  📁 云盘库</a> </br></br>
             <a href="https://www.noiseblog.cn"target="_blank"> 📅 博客Blog</a>
             <a href="https://noise.efficiencyfollow.repl.co" target="_blank"> 🧭 Typecho站</a>
-            <a href="https://noisemusic.netlify.app" target="_blank"> ⌛ 音乐站</a>
+            <a href="https://www.noisemusic.cn" target="_blank"> ⌛ 音乐站</a>
             <a href="https://acting.efficiencyfollow.repl.co" target="_blank"> 🎉 Acting</a>
             <a href="https://noisevip.cn" target="_blank">  🧱 资源站</a>
             <a href="https://rcy1314.github.io/news/" target="_blank">  🎉 Rss聚合板</a>
@@ -215,7 +224,8 @@ document.getElementById(timeID.id).innerHTML =  y+"-"+m+"-"+d+"   "+h+":"+minute
 //document.write(y+"-"+m+"-"+d+"   "+h+":"+minute+":"+s);  
   }
 </script>
-</div>  
+</div>   
+
             </div>
     </div>
     
