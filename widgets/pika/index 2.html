@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatBot</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="chatbot">
+      <div class="chatbot-box">
+        
+        皮卡皮卡丘!
+      </div>
+
+      <img
+        src="./assets/pikachu-icon.png"
+        alt="Pikachu Image"
+        class="chatbot-image"
+      />
+      <div class="chatbot-input">
+        <form action="#" method="GET">
+          <input
+            type="text"
+            placeholder="你想说什么?"
+            class="chat-input"
+          />
+          <button type="submit" class="chat-button" onclick="confirm()">
+            发送
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
