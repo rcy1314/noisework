@@ -1,100 +1,72 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh-ch">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <title>NOISE&主页</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/favicon.png" type="image/png" />
     <link rel="stylesheet" href="css/index.css">
-    <!-- 引入JS -->
+    <script type="text/javascript">
+        /*  动态网页标题*/
+        var OriginTitile = document.title,
+        titleTime;
+        document.addEventListener("visibilitychange",
+        function() {
+            if (document.hidden) {
+                $('[rel="shortcut icon"]').attr("href", "https:/yejiuqiu.cn/favicon.ico");
+                document.title = "你别走吖 Σ(っ °Д °;)っ";
+                clearTimeout(titleTime)
+            } else {
+                $('[rel="shortcut icon"]').attr("href", "https://yejiuqiu.cn/favicon.ico");
+                document.title = "你可算回来了 (｡•ˇ‸ˇ•｡)" + OriginTitile;
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile
+                },
+                2000)
+            }
+        });
+        </script>
+        
+    <div class="leftarea">
+        <!-- fps id geo-location -->
+        <div id="fps" style="z-index:999;position:fixed;bottom:3px;right:3px;color:#FFF;font-size:10px;"></div> 
+        <script type="text/javascript" src="https://cache.gmit.vip/static/api/js/jquery.min.js"></script>
+        <!--web 弹窗弹层组件 经测试还是cdn好-->
+        <script type="text/javascript" src="https://cache.gmit.vip/static/index/js/layer.js"></script>
+        <!-- fps 函数组件 弹窗信息在fps.js文件里修改-->
+        <script type="text/javascript" src="./js/fps.js"></script>   
+        <!-- end -->
+        <!--PWA渐进式应用配置-->
+		<script async="async" type="module">
+			import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+			const el = document.createElement('pwa-update');
+			document.body.appendChild(el);
+		</script>
+ <!--音乐-->
+ <link rel="stylesheet" href="css/APlayer.min.css">  
+ <div class="aplayer" data-id="5191170949" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"   data-volume="0.6" ></div>
+ <script>
+ </script>
+ <script src="js/APlayer.min.js"></script>
+ <script src="js/Meting.min.js"></script>
+ 
+    <!-- 引入JS -->   
 <script src="js/instantclick.min.js"></script>
 <!-- data-no-instant表示该标签不进行预加载 -->
 <script data-no-instant>
 //选择点击瞬间预加载模式
 InstantClick.init("mousedown");
-</script>
-    <style>*{
-            margin: 0;
-            padding: 0;
-        }
-        body{
-            background: #1e1d1d;
-            color: white;
-            font-size: 20px;
-            font-family: monospace;
-            display: flex;
-            height: 80vh;
-            justify-content: center;
-            align-items: center;
-        }
-        @keyframes typing {
-            0% {
-                width: 0;
-            }
-            /* 99% {
-                width: 72px;
-            }
-            100% {
-                width: 100%;
-            } */
-            100% {
-                width: 90px;
-            }
-        }
-        @keyframes flash {
-            0% {
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-        p.title {
-            animation: typing 1s;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        .flash {
-            opacity: 0;
-            animation: flash 1s infinite;
-            animation-delay: 1s;
-        }
-
-        @keyframes fade-in {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-        .nav-bar {
-            text-align: center;
-            margin-top: 3em;
-            opacity: 0;
-            animation: fade-in 1s forwards;
-            animation-delay: 1s;
-        }
-        .nav-bar a{
-            color: white;
-            text-decoration: none;
-        }
-        .nav-bar a:hover,
-        .nav-bar a:active {
-            color: rgb(195, 0, 255);
-            text-decoration: none;
-        }
-    </style>
+</script>  
 </head>
+<body>
 <div class="container">
     <p class="title">欢迎访问....<span class="flash">_</span></p>
     
     <div class="nav-bar">
-<body>
+
    
     <span class="mobile btn-mobile-menu">
         <i class="social iconfont icon-list btn-mobile-menu__icon"></i>
@@ -105,46 +77,82 @@ InstantClick.init("mousedown");
             <div class="panel-main__inner panel-inverted">
                 <div class="panel-main__content">
                     <div class="ih-item circle effect right_to_left">            
-                        
                                     </p>
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </div></br></br>
                     <div class="img"><img src="./assets/logo.png" alt="img" class="js-avatar iUp profilepic"></div>
-                    
+                
                     <p class="panel-cover__subtitle panel-subtitle iUp">My Homepage</a> </br></br>
-                 
-                    <p id="description" class="panel-cover__description iUp">知行合一，努力才会有收获!
-                        <br/>
-                        <strong>-「NOISE」</strong>
-                    </p>
-                    <div class="navigation-wrapper iUp">
-                        <div>
-                        </a> </br></br>                      
-<body>
-            <a href="./pc/index.html" target="_blank"> 💻 桌面体验</a> 
-            <a href="./lianxi/index.html" target="_blank"> 📳 联系我呀</a>
-            <a href="./qun/index.html" target="_blank">  📝 社群入口</a></br></br>
-            <a href="./fb/index.html" target="_blank">  ⏰ 备用地址页</a>
-            <a href="https://www.noisedh.cn" target="_blank"> ✨ Noise导航站</a>
-            <a href="https://www.noisesite.cn" target="_blank">  🎁 知识效率集</a>
-            <a href="https://efficiencyfollow.notion.site" target="_blank"> 🎈 Efficiency主页</a>  </br></br>
-            <a href="https://t.me/quanshoulu" target="_blank">  📡 Tg频道</a>
-            <a href="https://noiseyp.top" target="_blank">  📁 Noise资源库</a> 
-            <a href="https://www.efficiency.vip" target="_blank"> 🗳 社区网站</a>
-            <a href="https://www.noiseblog.cn"target="_blank"> 📅 博客Blog</a>
-            <a href="https://noise.efficiencyfollow.repl.co" target="_blank"> 🧭 Typecho站</a>
-            <a href="https://www.noisemusic.top" target="_blank"> ⌛ 音乐站</a></br></br>
-            <a href="https://acting.efficiencyfollow.repl.co" target="_blank"> 🎉 Acting</a>
-            <a href="https://noisevip.cn" target="_blank">  🧱 NOISE&宝藏阁</a>
-            <a href="https://rcy1314.github.io/news/" target="_blank">  🎉 我的Rss聚合器</a>
-            <a href="https://rcy1314.github.io/youtube/" target="_blank">   📼 我的Youtube订阅</a>
-            <a href="./widgets/index.html" target="_blank">🎐 Notion小部件</a>
-            <a href="https://www.efficiencynoise.top" target="_blank">📮 频道推送器</a>
+                        
+                        <p id="description" class="panel-cover__description iUp">知行合一，努力才会有收获!
+                            <br/>
+                            <strong>-「NOISE」</strong>
+                        </p>
+                        
+                        <div class="navigation-wrapper iUp">
+                            <div>
+                            </a> </br></br>                          
+
+            <a href="./pc/index.html" target="_blank">💻桌面体验</a> 
+            <a href="./lianxi/index.html" target="_blank">📳联系我呀</a>
+            <a href="./qun/index.html" target="_blank">  📝社群入口</a>
+            <a href="./fb/index.html" target="_blank">  ⏰备用地址页</a></br></br>
+            <a href="https://www.noisedh.cn" target="_blank"> ✨Noise导航站</a>
+            <a href="https://www.noisesite.cn" target="_blank">  🎁知识效率集</a>
+            <a href="https://efficiencyfollow.notion.site" target="_blank"> 🎈Efficiency主页</a>  
+            <a href="https://t.me/quanshoulu" target="_blank">  📡Tg频道</a></br></br>
+            <a href="https://noiseyp.top" target="_blank">  📁Noise资源库</a> 
+            <a href="https://www.efficiency.vip" target="_blank"> 🗳社区网站</a>
+            <a href="https://www.noiseblog.cn"target="_blank"> 📅博客Blog</a>
+            <a href="https://noise.efficiencyfollow.repl.co" target="_blank"> 🧭Typecho站</a>
+            <a href="https://www.noisemusic.top" target="_blank"> ⌛音乐站</a>
+            <a href="https://acting.efficiencyfollow.repl.co" target="_blank"> 🎉Acting</a></br></br>
+            <a href="https://noisevip.cn" target="_blank">  🧱NOISE&宝藏阁</a>
+            <a href="https://rcy1314.github.io/news/" target="_blank">  🎉我的Rss聚合器</a>
+            <a href="https://rcy1314.github.io/youtube/" target="_blank">   📼我的Youtube订阅</a>
+            <a href="./widgets/index.html" target="_blank">🎐Notion小部件</a>
+            <a href="https://www.efficiencynoise.top" target="_blank">📮频道推送器</a>
         </br></br>
-   
-        </div></p>
+</body>
+<footer id="footer"></div></p>
+   <!--网站底部按钮美化 -->
+<div class="github-badge">
+
+    <span class="badge-subject bg-blue">
+       <a style="color:#fff" href="./assets/gongzhonghao.jpg" target="_blank">公众号</a>
+    </span>-
+    <span class="badge-subject bg-brightgreen">
+       <a style="color:#fff" href="https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/20221113/扫码_搜索联合传播样式-白色版.2q9tt7r45vg0.jpg" target="_blank">小程序</a>
+    </span>-
+    <span class="badge-subject bg-green">
+       <a style="color:#fff" href="https://noise.zhubai.love" target="_blank">竹白</a>
+    </span>-
+    <span class="badge-subject bg-orange">
+       <a style="color:#fff" href="https://t.me/noisebelief" target="_blank">Telegram</a>
+    </span>-
+      <span class="badge-value bg-blueviolet">
+       <a style="color:#fff" href="http://wpa.qq.com/msgrd?v=3&uin=1129159201&site=qq&menu=yes" target="_blank"> QQ </a>
+    </span>-
+      <span class="badge-value bg-red">
+       <a style="color:#fff" href="./lianxi/weixin.png" target="_blank">微信 </a>
+    </span>-
+    <span class="badge-subject bg-brightgreen">
+       <a style="color:#fff" href="https://github.com/rcy1314" target="_blank">github</a>
+    </span>-
+    <span class="badge-subject bg-green">
+       <a style="color:#fff" href="https://twitter.com/liangwenhao3" target="_blank">Twitter</a>
+    </span>-
+    <span class="badge-subject bg-orange">
+        <a style="color:#fff" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1129159201@qq.com" target="_blank">Email</a>
+    </span>-
+    <span class="badge-value bg-red">
+     <a style="color:#fff" href="https://weibo.com/u/1688681977" target="_blank"> 微博 </a>
+    </div>
+  <!--网站底部按钮美化结束 -->
+  
+        </div></p> <br>    
         <!-- 时间 -->
 			    <span id="RGB"></span> 
 				<meta charset="utf-8">  
@@ -217,10 +225,5 @@ document.getElementById(timeID.id).innerHTML =  y+"-"+m+"-"+d+"   "+h+":"+minute
 //document.write(y+"-"+m+"-"+d+"   "+h+":"+minute+":"+s);  
   }
 </script>
-</div>   
-
-            </div>
-    </div>
-    
-</body>
+</footer> 
 </html>
