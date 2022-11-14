@@ -53,10 +53,7 @@ body{
     color: white;
     font-size: 18px;
     font-family: monospace;
-    display: flex;
-    height: 80vh;
-    justify-content: center;
-    align-items: center;
+
 }
 @keyframes typing {
     0% {
