@@ -51,7 +51,7 @@ body {cursor:url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/n
 body{
     background: #1e1d1d;
     color: rgb(183, 199, 210);
-    font-size: 18px;
+    font-size: 17px;
     font-family: monospace;
 
 }
@@ -116,3 +116,123 @@ p.title {
     text-decoration: none;
 }
 </style>
+.filter {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #fe5757;
+	animation: colorChange 30s ease-in-out infinite;
+	animation-fill-mode: both;
+	mix-blend-mode: overlay;
+}
+
+@keyframes colorChange {
+	0%, 100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: .9;
+	}
+}
+
+.landscape {
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	width: 100%;
+	height: 100%;	
+	background-image: url('');
+	background-size: 1000px 250px;
+	background-repeat: repeat-x;
+	background-position: center bottom;
+}
+.content{
+	-moz-user-select: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+-khtml-user-select: none;
+user-select: none;
+	text-align: center;
+	color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+	transform: translate(-50%,-50%);
+	z-index:9999
+}
+.content .title{
+	margin: 15px 0;
+    font-size: 2.5em;
+    letter-spacing: 4px;
+    color: #FFF;
+}
+.content .hr{
+	width: 50%;
+	margin: 20px auto;
+	border: none;
+	border-top: 1px solid rgba(255, 255, 255, 1);
+	height: 1px;
+}
+.content .discription{
+    font-size: 20px;
+    margin: 20px;
+}
+.cover-navigation {
+	margin: 30px;
+}
+
+nav {
+    display: inline-block;
+    position: relative;
+}
+.navigation {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    list-style-type: none;
+}
+.navigation__item {
+    display: inline-block;
+    line-height: 1em;
+    padding: 1em 0;
+}
+.navigation__item a {
+    position: relative;
+    color: #FFF;
+    opacity: .8;
+	transition: all .3s;
+	padding: 10px 20px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    font-size: .9em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: none;
+	-webkit-font-smoothing: antialiased;
+	text-decoration: none;
+}
+.navigation__item a:hover {
+    color: #FFF;
+    background: #FF7F00;
+    border-color: #FF7F00;
+    opacity: 1;
+    transition: all .3s;
+}
+ol, ul {
+	list-style: none;
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+.icp{
+	margin: 20px;
+}
+.icpnum{
+	color: #fff;
+	text-decoration: none;
+}
