@@ -181,5 +181,5 @@ function drawIfMouseMoving() {
 }
 //setInterval(drawIfMouseMoving, 17);
 function degToRad(deg) {
-    return deg * (Math.PI / 180);
+    return deg * (Math.PI / 100);
 }

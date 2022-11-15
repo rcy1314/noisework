@@ -57,7 +57,7 @@ user-select: none;
 }
 .content .title{
 	margin: 15px 0;
-    font-size: 2.5em;
+    font-size: 1.5em;
     letter-spacing: 4px;
     color: #FFF;
 }
@@ -69,7 +69,7 @@ user-select: none;
 	height: 1px;
 }
 .content .discription{
-    font-size: 20px;
+    font-size: 10px;
     margin: 20px;
 }
 .cover-navigation {
@@ -118,12 +118,12 @@ ol, ul {
 	margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
+    font-size: 80%;
     font: inherit;
     vertical-align: baseline;
 }
 .icp{
-	margin: 20px;
+	margin: 10px;
 }
 .icpnum{
 	color: #fff;
