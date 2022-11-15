@@ -236,3 +236,16 @@ ol, ul {
 	color: #fff;
 	text-decoration: none;
 }
+.main-info {
+    height: 0.80rem;
+    padding-bottom: 0.24rem;
+}
+.fund-info {
+    position: relative;
+    font-weight: normal;
+    padding: 0.2rem 0;
+    padding-right: 1.7rem;
+    padding-left: 0.23rem;
+    font-size: 0.32rem;
+    line-height: 0;
+}
