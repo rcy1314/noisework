@@ -1,0 +1,81 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+html,
+body {
+	background: black;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.centerBox {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	color: white;
+}
+.center-list{
+	width: 70%;
+	margin: 0 15%;
+	}
+.centerBody{
+	width: 100%;
+	text-align: center;
+	margin-top: 20%;
+}
+.centerBody img{
+	margin: 0 auto;
+}
+.btn-p{
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.btn-p a{
+	font-size: 14px;
+	color: #FFFFFF;
+	padding: 8px 30px;
+	border-radius:30px;
+  	margin: 0 10px;
+	background: rgba(29, 29, 29, 0.5);
+	border:1px solid rgba(89, 129, 183, 0.2);
+}
+.btn-p a:hover{
+	color: #FFFFFF;
+	background: -webkit-linear-gradient(left, #bf4edb, #e26218);
+    background: -o-linear-gradient(left, #19c3ff, #0093ff);
+    background: -moz-linear-gradient(left, #19c3ff, #0093ff);
+    background: linear-gradient(left, #19c3ff, #0093ff);
+}
+.footer{
+	position: fixed;
+	bottom: 10px;
+	width: 100%;
+}
+.center-footer{
+	width: 70%;
+	margin: 0 15%;
+}
+.footer .banquan{
+	text-align: center;
+	font-size: 12px;
+	color: #6a7179;
+}
+@media screen and (max-width: 950px) {
+	
+	.centerBody{
+		margin-top: auto;
+	}
+	.centerBody img{
+		width: auto;
+	}
+	.center-list {
+	    width: auto;
+	    margin: 0 auto;
+	}
+}
