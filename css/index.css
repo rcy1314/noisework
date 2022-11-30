@@ -215,8 +215,10 @@ nav {
 }
 .navigation__item a:hover {
     color: #FFF;
-    background: #FF7F00;
-    border-color: #FF7F00;
+    background: -webkit-linear-gradient(left, #bf4edb, #e26218);
+    background: -o-linear-gradient(left, #19c3ff, #0093ff);
+    background: -moz-linear-gradient(left, #19c3ff, #0093ff);
+    background: linear-gradient(left, #19c3ff, #0093ff);
     opacity: 1;
     transition: all .3s;
 }
