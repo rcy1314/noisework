@@ -37,11 +37,11 @@ body {
 	margin-bottom: 30px;
 }
 .btn-p a{
-	font-size: 14px;
+	font-size: 15px;
 	color: #FFFFFF;
 	padding: 8px 30px;
 	border-radius:30px;
-  	margin: 0 10px;
+  	margin: 0 5px;
 	background: rgba(29, 29, 29, 0.5);
 	border:1px solid rgba(89, 129, 183, 0.2);
 }
@@ -63,10 +63,10 @@ body {
 }
 .footer .banquan{
 	text-align: center;
-	font-size: 12px;
+	font-size: 16px;
 	color: #6a7179;
 }
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 650px) {
 	
 	.centerBody{
 		margin-top: auto;
