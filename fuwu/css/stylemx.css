@@ -27,13 +27,13 @@ body {
 .centerBody{
 	width: 100%;
 	text-align: center;
-	margin-top: 15%;
+	margin-top: 5%;
 }
 .centerBody img{
 	margin: 0 auto;
 }
 .btn-p{
-	margin-top: 20px;
+	margin-top: 30px;
 	margin-bottom: 30px;
 }
 .btn-p a{
