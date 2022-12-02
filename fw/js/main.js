@@ -24,7 +24,7 @@ window.addEventListener('load', function () {
     setTimeout(function () {
         iziToast.show({
             title: hello,
-            message: '欢迎访问NOISE主页'
+            message: '欢迎访问NOISE公共服务'
         });
     }, 800);
 

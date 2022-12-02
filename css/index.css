@@ -5,18 +5,18 @@ a {cursor:url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/ayud
 a:active {cursor:url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/work.cur),alias}
 body {cursor:url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/normal.cur),auto}
 /*CSS 代码网站底部按钮美化 blog.sxchl.cn*/
-:root{--theme-color:#f04494;--focus-shadow-color:rgba(240,68,148,.4);--mian-max-width:1200px;}.github-badge {
+:root{--theme-color:#faf5f8;--focus-shadow-color:rgb(255, 250, 253);--mian-max-width:1200px;}.github-badge {
     display: inline-block;
-    border-radius: 4px;
+    border-radius: 6px;
     text-shadow: none;
     font-size: 13px;
     color: #fff;
-    line-height: 17px;
-    margin-bottom: 5px;
+    line-height: 15px;
+    margin-bottom: 8px;
 }
 .badge-subject {
     display: inline-block;
-    background-color: #4d4d4d;
+    background-color: #272727;
     padding: 4px 4px 4px 6px;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
@@ -136,25 +136,25 @@ p.title {
 .navigation__item a {
     position: relative;
     color: #FFF;
-    opacity: .8;
+    opacity: 1;
 	transition: all .3s;
 	padding: 10px 20px;
-    border: 1px solid #fff;
-    border-radius: 20px;
+    border: 1px solid rgb(110, 107, 107);
+    border-radius: 15px;
     font-size: .9em;
-    font-weight: bold;
+   
     letter-spacing: 1px;
     text-shadow: none;
 	-webkit-font-smoothing: antialiased;
 	text-decoration: none;
 }
 .navigation__item a:hover {
-    color: #FFF;
+    color: rgb(253, 252, 252);
     background: -webkit-linear-gradient(left, #bf4edb, #e26218);
     background: -o-linear-gradient(left, #19c3ff, #0093ff);
     background: -moz-linear-gradient(left, #19c3ff, #0093ff);
     background: linear-gradient(left, #19c3ff, #0093ff);
-    opacity: 1;
+    opacity: ;
     transition: all .3s;
 }
 ol, ul {
@@ -192,8 +192,8 @@ ol, ul {
     -webkit-box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5), 0px 2px 20px 3px rgba(0, 0, 0, 0.25);
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5), 0px 2px 20px 3px rgba(0, 0, 0, 0.25);
     border-radius: 300px;
-    width: 128px;
-    height: 128px;
+    width: 148px;
+    height: 148px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
