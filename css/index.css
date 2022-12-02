@@ -111,82 +111,17 @@ p.title {
     text-decoration: none;
 }
 .nav-bar a:hover,
-.nav-bar a:active {
-    color: rgb(195, 0, 255);
-    text-decoration: none;
-}
+
 </style>
-.filter {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background: #fe5757;
-	animation: colorChange 30s ease-in-out infinite;
-	animation-fill-mode: both;
-	mix-blend-mode: overlay;
-}
 
-@keyframes colorChange {
-	0%, 100% {
-		opacity: 0;
-	}
-	50% {
-		opacity: .9;
-	}
-}
 
-.landscape {
-	position: absolute;
-	bottom: 0px;
-	left: 0;
-	width: 100%;
-	height: 100%;	
-	background-image: url('');
-	background-size: 1000px 250px;
-	background-repeat: repeat-x;
-	background-position: center bottom;
-}
-.content{
-	-moz-user-select: none;
--webkit-user-select: none;
--ms-user-select: none;
--khtml-user-select: none;
-user-select: none;
-	text-align: center;
-	color: #fff;
-    position: absolute;
-    left: 50%;
-    top: 45%;
-	transform: translate(-50%,-50%);
-	z-index:9999
-}
-.content .title{
-	margin: 15px 0;
-    font-size: 2.5em;
-    letter-spacing: 4px;
-    color: #FFF;
-}
-.content .hr{
-	width: 50%;
-	margin: 20px auto;
-	border: none;
-	border-top: 1px solid rgba(255, 255, 255, 1);
-	height: 1px;
-}
-.content .discription{
-    font-size: 20px;
-    margin: 20px;
-}
-.cover-navigation {
-	margin: 30px;
-}
 
-nav {
-    display: inline-block;
-    position: relative;
-}
+
+
+
+
+
+
 .navigation {
     display: inline-block;
     position: relative;
@@ -196,7 +131,7 @@ nav {
 .navigation__item {
     display: inline-block;
     line-height: 1em;
-    padding: 1em 0;
+    padding: 2em 0;
 }
 .navigation__item a {
     position: relative;
@@ -250,4 +185,23 @@ ol, ul {
     padding-left: 0.23rem;
     font-size: 0.32rem;
     line-height: 0;
+}
+.profilepic {
+    text-align: center;
+    display: block;
+    -webkit-box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5), 0px 2px 20px 3px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5), 0px 2px 20px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 300px;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: #0f0f0f;
+    -webkit-transition: all .2s ease-in;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    text-align: center
 }

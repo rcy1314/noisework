@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="js/adaptive.js"></script>
 <script>
-    window['adaptive'].desinWidth = 1920;// 设计图宽度
-    window['adaptive'].baseFont = 18;// 没有缩放时的字体大小
+    window['adaptive'].desinWidth = 720;// 设计图宽度
+    window['adaptive'].baseFont = 16;// 没有缩放时的字体大小
     window['adaptive'].init();// 调用初始化方法
 </script>
     <script type="text/javascript">
@@ -51,22 +51,20 @@
 			const el = document.createElement('pwa-update');
 			document.body.appendChild(el);
 		</script>
-         <!--粒子背景-->
-         <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
-         <style>
-            html, body { background: #000; margin: 0; padding:0;}
-            canvas { width: 100%; height: 97%; position: absolute; }
-            </style>
-        
-       
-            <canvas width="auto" height="auto"></canvas>
-            <script>
-                $(function(){
-                  var canvas = document.querySelector('canvas'),
-                      ctx = canvas.getContext('2d')
+  <!--粒子背景-->
+   <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+   <style>
+     html, body { background: #000; margin: 0; padding:0;}
+    canvas { width: 100%; height: 97%; position: absolute; }
+     </style>
+    <canvas width="auto" height="auto"></canvas>
+    <script>
+     $(function(){
+      var canvas = document.querySelector('canvas'),
+     ctx = canvas.getContext('2d')
                   canvas.width = window.innerWidth;
                   canvas.height = window.innerHeight;
-                  ctx.lineWidth = .3;
+                  ctx.lineWidth = .5;
                   ctx.strokeStyle = (new Color(150)).style;
         
                   var mousePosition = {
@@ -203,10 +201,10 @@
                     mousePosition.y = canvas.height / 2;
                   });
         
-                  createDots();
-                  requestAnimationFrame(animateDots); 
-                });
-                </script>
+     createDots();
+     requestAnimationFrame(animateDots); 
+        });
+    </script>
  <!--音乐-->
  <link rel="stylesheet" href="css/APlayer.min.css">  
  <div class="aplayer" data-id="5191170949" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false"   data-volume="0.6" ></div>
@@ -256,28 +254,27 @@ InstantClick.init("mousedown");
                             <strong>-「NOISE」</strong>
                         </p>
                       </div></br>
-                       
-                                  <ul class="navigation">
                                       <li class="navigation__item"><a href="./pc/index.html" target="_blank" title="模拟PC页面">💻桌面体验</a></li>
                                       <li class="navigation__item"><a href="./qun/index.html" target="_blank" title="">📝社群入口</a></li>
-                                      <li class="navigation__item"><a href="./fb/index.html" target="_blank" title="">⏰备用地址页</a></li></br></br>
+                                      <li class="navigation__item"><a href="./fb/index.html" target="_blank" title="">⏰备用地址页</a></li>
                                       <li class="navigation__item"><a href="https://www.noisedh.cn" target="_blank" title="">✨Noise导航站</a></li>
-                                      <li class="navigation__item"><a href="https://www.noisesite.cn" target="_blank" title="">🎁知识效率集</a></li>
+                                      <li class="navigation__item"><a href="https://www.noisesite.cn" target="_blank" title="">🎁知识效率集</a></li></br></br>
                                       <li class="navigation__item"><a href="https://efficiencyfollow.notion.site" target="_blank" title="">🎈Efficiency主页</a></li>
-                                      <li class="navigation__item"><a href="https://rcy1314.github.io/runtime" target="_blank" title=""> ⏱站点运行状况</a></li></br></br>
+                                      <li class="navigation__item"><a href="https://rcy1314.github.io/runtime" target="_blank" title=""> ⏱站点运行状况</a></li>
                                       <li class="navigation__item"><a href="https://noiseyp.top" target="_blank" title="">📁Noise资源库</a></li>
                                       <li class="navigation__item"><a href="https://www.efficiency.vip" target="_blank" title="">🗳社区网站</a></li>
-                                      <li class="navigation__item"><a href="https://rcy1314.github.io/Idea" target="_blank" title=""> 📅博客Blog</a></li>
+                                      <li class="navigation__item"><a href="https://rcy1314.github.io/Idea" target="_blank" title=""> 📅博客Blog</a></li></br></br>
                                       <li class="navigation__item"><a href="https://noise.efficiencyfollow.repl.co" target="_blank" title="">🧭Typecho站</a></li>
                                       <li class="navigation__item"><a href="https://www.noisemusic.top" target="_blank" title="">⌛NOISE音乐站</a></li>
-                                      <li class="navigation__item"><a href="https://acting.efficiencyfollow.repl.co" target="_blank" title="">🎉Acting</a></li></br></br>
+                                      <li class="navigation__item"><a href="https://acting.efficiencyfollow.repl.co" target="_blank" title="">🎉Acting</a></li>
                                       <li class="navigation__item"><a href="https://noisevip.cn" target="_blank" title="">🧱NOISE&宝藏阁</a></li>
-                                      <li class="navigation__item"><a href="https://rcy1314.github.io/news/" target="_blank" title="">🎉我的Rss聚合器</a></li>
+                                      <li class="navigation__item"><a href="https://rcy1314.github.io/news/" target="_blank" title="">🎉我的Rss聚合器</a></li></br></br>
                                       <li class="navigation__item"><a href="https://rcy1314.github.io/youtube/" target="_blank" title="">📼我的Youtube订阅</a></li>
                                       <li class="navigation__item"><a href="./widgets/index.html" target="_blank" title="">🎐Notion小部件</a></li>
                                       <li class="navigation__item"><a href="https://www.efficiencynoise.top" target="_blank" title="">📮频道推送器</a></li>
+                                      <li class="navigation__item"><a href="./idea/index.html" target="_blank" title=""> 📝IDEA编辑器</a></li>
                                       <li class="navigation__item"><a href="https://t.me/quanshoulu" target="_blank" title="">📡Tg频道</a></li>
-                                  </ul>                  
+                                                
                                 </br></br>                   
 </body>
 <footer id="footer"></div></p>

@@ -27,19 +27,19 @@ body {
 .centerBody{
 	width: 100%;
 	text-align: center;
-	margin-top: 15%;
+	margin-top: 10%;
 }
 .centerBody img{
 	margin: 0 auto;
 }
 .btn-p{
-	margin-top: 20px;
-	margin-bottom: 30px;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 .btn-p a{
 	font-size: 16px;
 	color: #FFFFFF;
-	padding: 8px 30px;
+	padding: 8px 10px;
 	border-radius:30px;
   	margin: auto;
 	background: rgba(29, 29, 29, 0.5);
@@ -64,12 +64,12 @@ body {
 .footer .banquan{
 	text-align: center;
 	font-size: 12px;
-	color: #6a7179;
+	color: #ffffff;
 }
-@media screen and (max-width: 1920px) {
+@media screen and (max-width: 960px) {
 	
 	.centerBody{
-		margin-top: 70px;
+		margin-top: 50px;
 	}
 	.centerBody img{
 		width: auto;
