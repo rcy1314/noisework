@@ -1,14 +1,14 @@
 {
-  "background_color": "#868686",
-  "description": "欢迎添加主页引导，它能更好的帮助你找到关联站点",
+  "background_color": "#0d0c0c",
+  "description": "添加它以快速找到相关站点",
   "dir": "auto",
   "display": "standalone",
   "name": "NOISE主页",
   "orientation": "any",
-  "scope": "/",
-  "short_name": "www.noisework",
-  "start_url": "/",
-  "theme_color": "#232121",
+  "scope": "noisework.cn",
+  "short_name": "noisework",
+  "start_url": "https://www.noisework.cn",
+  "theme_color": "#171616",
   "categories": [],
   "screenshots": [],
   "icons": [
@@ -18,7 +18,18 @@
       "sizes": "648x648"
     }
   ],
-  "shortcuts": [],
+  "shortcuts": [
+    {
+      "name": "NOISE&amp;主页",
+      "url": "https://www.noisework.cn",
+      "icons": [
+        {
+          "src": "https://www.noisework.cn/assets/logo.png"
+        }
+      ],
+      "description": "https://www.noisework.cn/index.html"
+    }
+  ],
   "lang": "zh",
   "iarc_rating_id": "e58c174a-81d2-5c3c-32cc-34b8de4a52e9",
   "prefer_related_applications": false
