@@ -1,0 +1,25 @@
+{
+  "background_color": "#868686",
+  "description": "欢迎添加主页引导，它能更好的帮助你找到关联站点",
+  "dir": "auto",
+  "display": "standalone",
+  "name": "NOISE主页",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "www.noisework",
+  "start_url": "/",
+  "theme_color": "#232121",
+  "categories": [],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "./assets/favicon.png",
+      "type": "image/png",
+      "sizes": "648x648"
+    }
+  ],
+  "shortcuts": [],
+  "lang": "zh",
+  "iarc_rating_id": "e58c174a-81d2-5c3c-32cc-34b8de4a52e9",
+  "prefer_related_applications": false
+}
