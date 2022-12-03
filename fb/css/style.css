@@ -9,17 +9,7 @@ html, body {
 	font-family:'Questrial','Noto Serif SC' ;
 }
 
-.filter {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background: #19242e;
-	animation: colorChange 30s ease-in-out infinite;
-	animation-fill-mode: both;
-	mix-blend-mode: overlay;
-}
+
 
 @keyframes colorChange {
 	0%, 100% {
@@ -37,7 +27,7 @@ html, body {
 	width: 100%;
 	height: 100%;	
 	background-image: url('');
-	background-size: 1000px 250px;
+	background-size: 1080px 1920px;
 	background-repeat: repeat-x;
 	background-position: center bottom;
 }
@@ -48,36 +38,35 @@ html, body {
 -khtml-user-select: none;
 user-select: none;
 	text-align: center;
-	color: #fff;
+	color: rgb(104, 166, 248);
     position: absolute;
     left: 50%;
-    top: 45%;
+    top: 50%;
 	transform: translate(-50%,-50%);
-	z-index:9999
+	z-index:1
 }
 .content .title{
 	margin: 15px 0;
-    font-size: 1.5em;
+    font-size: 1.8em;
     letter-spacing: 4px;
-    color: #FFF;
+    color: rgb(255, 255, 255);
 }
 .content .hr{
 	width: 50%;
 	margin: 20px auto;
 	border: none;
-	border-top: 1px solid rgba(255, 255, 255, 1);
-	height: 1px;
+	
 }
 .content .discription{
     font-size: 10px;
     margin: 20px;
 }
 .cover-navigation {
-	margin: 30px;
+	margin: 20px;
 }
 
 nav {
-    display: inline-block;
+    
     position: relative;
 }
 .navigation {
@@ -94,24 +83,23 @@ nav {
 .navigation__item a {
     position: relative;
     color: #FFF;
-    opacity: .8;
-	transition: all .3s;
+    opacity: 10;
+	transition: all .5s;
 	padding: 10px 20px;
-    border: 1px solid #fff;
+    border: 1px solid rgb(65, 62, 62);
     border-radius: 20px;
-    font-size: .9em;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-shadow: none;
-	-webkit-font-smoothing: antialiased;
+    font-size: 0.8em;
+    
+    letter-spacing: 0.8px;
+ 
 	text-decoration: none;
 }
 .navigation__item a:hover {
-    color: #FFF;
+    color: rgb(255, 255, 255);
     background: #455eaf;
     border-color: #00c3ff;
     opacity: 1;
-    transition: all .3s;
+    transition: all 1s;
 }
 ol, ul {
 	list-style: none;

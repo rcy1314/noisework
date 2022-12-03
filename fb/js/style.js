@@ -7,7 +7,7 @@ function Star(id, x, y) {
     this.color = "rgba(255,255,255," + alpha + ")";
 }
 
-Star.prototype.draw = function() {
+Star.prototype.draw = function () {
     ctx.fillStyle = this.color;
     ctx.shadowBlur = this.r * 2;
     ctx.beginPath();
@@ -16,13 +16,13 @@ Star.prototype.draw = function() {
     ctx.fill();
 }
 
-Star.prototype.move = function() {
+Star.prototype.move = function () {
     this.y -= .15;
     if (this.y <= -10) this.y = HEIGHT + 10;
     this.draw();
 }
 
-Star.prototype.die = function() {
+Star.prototype.die = function () {
     stars[this.id] = null;
     delete stars[this.id];
 }
@@ -42,7 +42,7 @@ function Dot(id, x, y, r) {
     this.dir = Math.floor(Math.random() * 140) + 200;
 }
 
-Dot.prototype.draw = function() {
+Dot.prototype.draw = function () {
     ctx.fillStyle = this.color;
     ctx.shadowBlur = this.r * 2;
     ctx.beginPath();
@@ -51,7 +51,7 @@ Dot.prototype.draw = function() {
     ctx.fill();
 }
 
-Dot.prototype.link = function() {
+Dot.prototype.link = function () {
     if (this.id == 0) return;
     var previousDot1 = getPreviousDot(this.id, 1);
     var previousDot2 = getPreviousDot(this.id, 2);
@@ -73,7 +73,7 @@ function getPreviousDot(id, stepback) {
     else return false; //getPreviousDot(id - stepback);
 }
 
-Dot.prototype.move = function() {
+Dot.prototype.move = function () {
     this.a -= this.aReduction;
     if (this.a <= 0) {
         this.die();
@@ -82,37 +82,37 @@ Dot.prototype.move = function() {
     this.color = "rgba(255,255,255," + this.a + ")";
     this.linkColor = "rgba(255,255,255," + this.a / 4 + ")";
     this.x = this.x + Math.cos(degToRad(this.dir)) * this.speed,
-    this.y = this.y + Math.sin(degToRad(this.dir)) * this.speed;
+        this.y = this.y + Math.sin(degToRad(this.dir)) * this.speed;
 
     this.draw();
     this.link();
 }
 
-Dot.prototype.die = function() {
+Dot.prototype.die = function () {
     dots[this.id] = null;
     delete dots[this.id];
 }
 
 var canvas = document.getElementById('canvas'),
-ctx = canvas.getContext('2d'),
-WIDTH,
-HEIGHT,
-mouseMoving = false,
-mouseMoveChecker,
-mouseX,
-mouseY,
-stars = [],
-initStarsPopulation = 80,
-dots = [],
-dotsMinDist = 2,
-maxDistFromCursor = 50;
+    ctx = canvas.getContext('2d'),
+    WIDTH,
+    HEIGHT,
+    mouseMoving = false,
+    mouseMoveChecker,
+    mouseX,
+    mouseY,
+    stars = [],
+    initStarsPopulation = 80,
+    dots = [],
+    dotsMinDist = 2,
+    maxDistFromCursor = 50;
 
 setCanvasSize();
 init();
 
 function setCanvasSize() {
     WIDTH = document.documentElement.clientWidth,
-    HEIGHT = document.documentElement.clientHeight;
+        HEIGHT = document.documentElement.clientHeight;
 
     canvas.setAttribute("width", WIDTH);
     canvas.setAttribute("height", HEIGHT);
@@ -142,15 +142,15 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-window.onmousemove = function(e) {
+window.onmousemove = function (e) {
     mouseMoving = true;
     mouseX = e.clientX;
     mouseY = e.clientY;
     clearInterval(mouseMoveChecker);
-    mouseMoveChecker = setTimeout(function() {
+    mouseMoveChecker = setTimeout(function () {
         mouseMoving = false;
     },
-    100);
+        100);
 }
 
 function drawIfMouseMoving() {
