@@ -108,8 +108,8 @@ nav {
 }
 .navigation__item a:hover {
     color: #FFF;
-    background: #FF7F00;
-    border-color: #FF7F00;
+    background: #455eaf;
+    border-color: #00c3ff;
     opacity: 1;
     transition: all .3s;
 }
@@ -118,7 +118,7 @@ ol, ul {
 	margin: 0;
     padding: 0;
     border: 0;
-    font-size: 80%;
+    font-size: 50%;
     font: inherit;
     vertical-align: baseline;
 }
