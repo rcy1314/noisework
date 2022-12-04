@@ -1,35 +1,52 @@
-importScripts(
-  'https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js'
-);
+const cacheVersion = 'v1';
+const filesToCache = [
+  'favicon.ico',
+  'index.html',
+  './js/APlayer.min.js',
+  './js/index.js',
+  './js/Meting.min.js',
+  './js/instantclick.min.js',
+  './css/index.css',
+  './assets/favicon.png',
+];
 
-console.log( "workbox 6 | 20220823", workbox )
-const {registerRoute} = workbox.routing;
-const {NetworkFirst} = workbox.strategies;
-//  const {CacheableResponsePlugin} = workbox.cacheable.response;
+self.addEventListener('install', event => {
+  console.log('[ServiceWorker] Install');
+  event.waitUntil(
+    caches.open(cacheVersion)
+    .then(cache => {
+      console.log('[ServiceWorker] Caching app shell');
+      return cache.addAll(filesToCache);
+    })
+  );
+});
 
-workbox.LOG_LEVEL = "debug";
-//console.log("Syhper SW Begin | " + workbox.LOG_LEVEL );
-try {
-  clients.claim();
-console.log(" == == == sw | claimed --", navigator.serviceWorker.controller )
-} catch (error) {
-console.log(" == == == sw | not claiming --")
-}
+self.addEventListener('activate', event => {
+  console.log('[ServiceWorker] Activate');
+});
 
-const cacheName = 'sampleCache';
-//  const matchCallback = ({request}) => request.mode === 'navigate';
-const matchCallback = ({request}) => {
-if(request.url.indexOf(".vue") != -1) console.log("---- sw req | ", request.url)
-  return true;
-};
-
-const networkTimeoutSeconds = 3;
-
-registerRoute(
-  matchCallback,
-  new NetworkFirst({
-    networkTimeoutSeconds,
-    "cacheName": "sampleCache",
-    "matchOptions": {"ingoreSearch": true}
-  })
-);
+self.addEventListener('fetch', event => {
+  console.log('[ServiceWorker] fetch', event.request);
+  event.respondWith(
+    caches.match(event.request)
+    .then(response => response || fetch(event.request))
+  );
+});
+const cacheVersion = 'v2';
+const filesToCache = [
+  ...
+];
+...
+self.addEventListener('activate', event => {
+  console.log('[ServiceWorker] Activate');
+  event.waitUntil(
+    caches.keys()
+    .then(keyList => {
+      return Promise.all(keyList.map(key => {
+        if (key !== cacheVersion) {
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
+});
