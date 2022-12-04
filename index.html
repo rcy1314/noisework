@@ -10,19 +10,6 @@
     <link rel="icon" href="./assets/favicon.png" type="image/png" />
     <link rel="stylesheet" href="css/index.css">
     <script src="js/adaptive.js"></script>
-    <link rel="preconnect" href="https://arcanus55.github.io">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55_v2_3.css"></link>
-    <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55_v2_3.js"></script>
-    <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.css"></link>
-    <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.js"></script>
-
-    <link rel="manifest" href="manifest.json">
 <script>
     window['adaptive'].desinWidth = 720;// 设计图宽度
     window['adaptive'].baseFont = 16;// 没有缩放时的字体大小
@@ -62,26 +49,34 @@
         <link rel="manifest" href="manifest.json">
         <script src="sw.js"></script>
         <script>
-          // This is the GET CORS issue --
-          
-      fetch("https://45nasjo9v6.execute-api.us-west-2.amazonaws.com/dev4/requests",
-      {
-          QQQbody: "formData",
-          method: "get",
-          headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            }
-      })
-      </script>
-      
-              <script>
-                  if ("serviceWorker" in navigator) {
-                      window.addEventListener("load", () => {
-                          navigator.serviceWorker.register("sw.js");
-                      });
-                  }
-              </script>
+          if (typeof navigator.serviceWorker !== 'undefined') {
+            navigator.serviceWorker.register('sw.js')
+          }
+        </script>
+        <script async src="https://unpkg.com/pwacompat" crossorigin="anonymous"></script>
+        <script type="module">
+          // Import the functions you need from the SDKs you need
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+          import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
+          // TODO: Add SDKs for Firebase products that you want to use
+          // https://firebase.google.com/docs/web/setup#available-libraries
+        
+          // Your web app's Firebase configuration
+          // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+          const firebaseConfig = {
+            apiKey: "AIzaSyD-R31FWH82bT9nJ9eiO-4FJwDg_QjNnSM",
+            authDomain: "noise-282116.firebaseapp.com",
+            projectId: "noise-282116",
+            storageBucket: "noise-282116.appspot.com",
+            messagingSenderId: "928013935919",
+            appId: "1:928013935919:web:e6a49f535a6330a0f12dda",
+            measurementId: "G-C8YKSJBB3X"
+          };
+        
+          // Initialize Firebase
+          const app = initializeApp(firebaseConfig);
+          const analytics = getAnalytics(app);
+        </script>
   <!--粒子背景-->
    <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
    <style>
