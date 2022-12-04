@@ -73,3 +73,12 @@
     "standalone"
   ]
 }
+"related_applications": [
+  {
+    "platform": "play",
+    "url": "https://www.noisework.cn/index.html",
+    "id": "com.example.app1"
+  }, {
+    "platform": "itunes",
+    "url": "https://www.noisework.cn/index.html"
+  }]
