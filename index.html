@@ -49,9 +49,16 @@
         <link rel="manifest" href="manifest.json">
         <script src="sw.js"></script>
         <script>
-          if (typeof navigator.serviceWorker !== 'undefined') {
-            navigator.serviceWorker.register('sw.js')
-          }
+          if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("/sw.js")
+    .then(serviceWorker => {
+      console.log("Service Worker registered: ", serviceWorker);
+    })
+    .catch(error => {
+      console.error("Error registering the Service Worker: ", error);
+    });
+}
         </script>
          <script type="text/javascript" src="register_sw.js"></script>
   <!--粒子背景-->
