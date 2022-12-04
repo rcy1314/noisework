@@ -49,11 +49,26 @@
         <link rel="manifest" href="manifest.json">
         <script src="sw.js"></script>
         <script>
-          if (typeof navigator.serviceWorker !== 'undefined') {
-            navigator.serviceWorker.register('sw.js')
-          }
-        </script>
-        <script async src="https://unpkg.com/pwacompat" crossorigin="anonymous"></script>
+          // This is the GET CORS issue --
+          
+      fetch("https://45nasjo9v6.execute-api.us-west-2.amazonaws.com/dev4/requests",
+      {
+          QQQbody: "formData",
+          method: "get",
+          headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            }
+      })
+      </script>
+      
+              <script>
+                  if ("serviceWorker" in navigator) {
+                      window.addEventListener("load", () => {
+                          navigator.serviceWorker.register("sw.js");
+                      });
+                  }
+              </script>
   <!--粒子背景-->
    <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
    <style>
