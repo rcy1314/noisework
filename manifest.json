@@ -35,26 +35,25 @@
     }
   ],
   "icons": [
-  
     {
       "src": "./assets/favicon.png",
       "sizes": "192x192",
       "type": "image/png"
-  },
-  {
+    },
+    {
       "src": "./assets/favicon.png",
       "sizes": "256x256",
       "type": "image/png"
-  },
-  {
+    },
+    {
       "src": "./assets/favicon.png",
       "sizes": "512x512",
       "type": "image/png"
-  }
+    }
   ],
   "shortcuts": [
     {
-      "name": "NOISE&amp;amp;amp;amp;主页",
+      "name": "NOISE&amp;amp;amp;amp;amp;主页",
       "url": "https://www.noisework.cn",
       "icons": [
         {
@@ -68,8 +67,15 @@
   "iarc_rating_id": "e58c174a-81d2-5c3c-32cc-34b8de4a52e9",
   "prefer_related_applications": true,
   "display_override": [
+    "standalone",
     "browser",
-    "fullscreen",
-    "standalone"
+    "fullscreen"
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://www.noisework.cn/",
+      "id": "rcy13141314@gmail.com"
+    }
   ]
 }
