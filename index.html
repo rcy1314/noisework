@@ -315,7 +315,8 @@ InstantClick.init("mousedown");
         </div></p> <br> </br></br>  
         <div>
           本站已运行
-        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>现在时间：<span id="show_time"></span>
+       
         <script>
         var now = new Date();
         function createtime() {
@@ -360,7 +361,7 @@ InstantClick.init("mousedown");
 //setInterval("show_time0.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
 </script>
 </div>
-<div id="show_time">  
+
 <script>  
 //定义
 setInterval("fun(show_time)",1);
