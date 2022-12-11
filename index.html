@@ -46,9 +46,13 @@
         <script type="text/javascript" src="./js/fps.js"></script>   
         <!-- end -->
         <!--PWA渐进式应用配置-->
-        <script src="pwabuilder-sw.js"></script>
         <link rel="manifest" href="manifest.json">
         <script src="sw.js"></script>
+        <script>
+          if (typeof navigator.serviceWorker !== 'undefined') {
+            navigator.serviceWorker.register('sw.js')
+          }
+        </script>        
         <script>
           if ("serviceWorker" in navigator) {
     avigator.serviceWorker
