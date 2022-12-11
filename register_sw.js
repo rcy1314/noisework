@@ -10,6 +10,14 @@ function PWAforwpreadCookie(name) {
     }
     return null;
 }
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function() {
+    navigator.serviceWorker
+      .register("/sw.js")
+      .then(res => console.log("service worker registered"))
+      .catch(err => console.log("service worker not registered", err));
+  });
+}
  if("serviceWorker" in navigator) {
                        window.addEventListener('load', function() {			         		
         navigator.serviceWorker.register(swsource, {scope: 'https://noisework.cn/'}).then(function(reg){                                                                                        
