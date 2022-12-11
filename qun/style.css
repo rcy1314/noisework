@@ -30,7 +30,7 @@ a{
 }
 
 .section-1 p{
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding-bottom: 10px;
     margin:0;
 }
@@ -51,7 +51,7 @@ a{
 }
 
 .section-2 h2{
-    font-size: 1.7rem;
+    font-size: 1.1rem;
     margin-bottom: 10px;
 }
 
@@ -63,15 +63,15 @@ a{
 
 .section-2 a{
     display: block;
-    padding: 5px;
-    font-size: 1.2rem;
+    padding: 3px;
+    font-size: 1.1rem;
     padding-left: 0;
     width: 100px;
 }
 /* animations / utilities */
 .section-2 a:hover{
-    font-size: 1.3rem;
-    color: rgb(169, 29, 146);
+    font-size: 1.1rem;
+    color: rgb(255, 85, 17);
     cursor: pointer;
     transition: 0.2s;
 }
