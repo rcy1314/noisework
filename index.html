@@ -49,11 +49,6 @@
         <link rel="manifest" href="manifest.json">
         <script src="sw.js"></script>
         <script>
-          if (typeof navigator.serviceWorker !== 'undefined') {
-            navigator.serviceWorker.register('sw.js')
-          }
-        </script>        
-        <script>
           if ("serviceWorker" in navigator) {
     avigator.serviceWorker
     .register("/sw.js")
