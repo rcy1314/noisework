@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>故障噪波制作器</title>
+	
+    <meta name="description" content="图像和视频故障的无限创意控制。使用创意效果扭曲图像、视频或网络摄像头。免费且易于使用。将输出保存为图像、gif 或视频。Unlimited creative control for image and video glitching. Distort images, videos or webcam using creative effects. Free and easy to use. Save output as image, gif or video." />
+	  
+    <meta name="author" content="Airtight Interactive" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <link href="./css/css.css#https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+   
+    <meta
+      property="og:description"
+      content="Unlimited creative control for image and video glitching. Distort images, videos or webcam using creative effects. Free and easy to use. Save output as image, gif or video."
+    />
+    <meta property="og:image" content="https://photomosh.luhui.net/res/img/share-web.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <div id="drop-target-holder">
+      <div id="drop-target" class="option dashed v-centered h-centered">将文件拖放到此处</div>
+    </div>
+
+    <div id="viz">
+      <div id="save-options">
+        <div id="opt-jpg" class="save-opt-inner selected">JPG照片</div>
+        <div id="opt-gif" class="save-opt-inner">GIF动画</div>
+        <div id="opt-webm" class="save-opt-inner">WEBM视频</div>
+      </div>
+
+      <div id="fx-btn" class="clickable icon-btn">FX</div>
+
+      <div id="webgl">
+        <div id="progress-bar"></div>
+        <div id="progress-bar-bkgnd"></div>
+      </div>
+
+      <div id="bottom-controls-holder">
+        <div class="main-btn clickable icon-btn" id="btn-mosh">莫什</div>
+        <div class="main-btn clickable icon-btn" id="btn-record">保存</div>
+      </div>
+    </div>
+
+    <div id="intro">
+      <div id="intro-inner">
+        <div id="intro-logo" class="logo h-centered"></div>
+        <div id="sub-head" class="big">图像和视频故障的无限创意控制.</div>
+        <div id="options-holder">
+          <div id="input-options" class="v-centered">
+            <div class="intro-btn clickable icon-btn" id="option-file">加载文件</div>
+            <div class="middle-sep"></div>
+            <div class="intro-btn clickable icon-btn" id="option-cam">使用网络摄像头</div>
+          </div>
+
+          <div id="cam-prompt" class="v-centered big">请允许网络摄像头访问.</div>
+
+          <div id="file-prompt" class="v-centered">
+            <div class="intro-btn clickable" id="option-choose">选择文件...</div>
+            <div class="middle-sep">或者</div>
+            <div class="intro-btn dashed">将文件拖放到此处</div>
+            <input type="file" id="file-input" style="display: none" />
+          </div>
+        </div>
+
+       
+
+        <p class="footer">
+          © 2023 <a href="https://noisework.cn">noisework</a>&nbsp;
+          
+        </p>
+      </div>
+    </div>
+
+    <div id="controls-holder">
+      <div id="controls-header">
+        <div id="fx-close" class="icon-btn"></div>
+      
+      </div>
+
+      <div id="controls">
+        <div id="settings"></div>
+      </div>
+      <div id="help-link"><a href="./help/" target="_blank">帮助 (?)</a></div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

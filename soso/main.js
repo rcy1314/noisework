@@ -69,17 +69,17 @@ function ssGo() {
     //     `正在搜索，请稍等......`;
 
     let website = [
-        "",
-        "www.vfx123.com",
-        "pan.ccof.cc",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
+        "fsylr.com",
+"www.vfx123.com",
+"www.iapps.me",
+"www.macdo.cn",
+"xxxxx520.com",
+"www.flysheep6.com",
+"www.6a6z.com",
+"www.waodown.com",
+"www.kn21.xyz",
+"texhocean.com",
+"www.cgzyw.com",
         "",
        
     ];

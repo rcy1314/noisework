@@ -1,0 +1,112 @@
+@font-face {
+  font-family: CircBold;
+  src: url(/pro/res/fonts/Circular-Air-Bold.ttf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+body {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  margin: 30px auto;
+  max-width: 800px;
+  line-height: 180%;
+  font-size: 1.2em;
+  color: #eee;
+  padding: 30px;
+  background-color: #121212;
+  font-weight: 300;
+}
+
+.large {
+  font-size: 1.4em;
+}
+.normal {
+  font-weight: normal;
+  color: #aaa;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  xoutline: 1px solid rgba(255, 0, 0, 0.4);
+}
+
+h1,
+h2,
+h3,
+h3 {
+  xfont-family: 'Roboto', sans-serif;
+  font-family: 'CircBold';
+  line-height: 1;
+  color: #eee;
+  padding-bottom: 5px;
+}
+
+h2 {
+  border-top: 1px solid #333;
+  padding-top: 30px;
+}
+
+h3 {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: thin solid #aaa;
+}
+
+.help-img {
+  width: 100%;
+  height: auto;
+}
+
+.help-img-mid {
+  width: 75%;
+  height: auto;
+}
+
+.help-img-sml {
+  width: 50%;
+  height: auto;
+}
+
+/*footer*/
+
+#footer {
+  text-align: center;
+  border-top: 1px solid #333;
+  margin-top: 40px;
+}
+
+.hello {
+  width: 182px;
+  height: 40px;
+  margin: 40px auto 0 auto;
+}
+
+.social-icon {
+  height: 40px;
+  width: 40px;
+  float: left;
+  opacity: 0.8;
+  margin-right: 20px;
+}
+
+.social-icon:hover {
+  opacity: 1;
+}
+
+#mail {
+  background-image: url(/res/img/mail-with-circle.svg);
+}
+
+#twitter {
+  background-image: url(/res/img/twitter-with-circle.svg);
+}
+
+#insta {
+  background-image: url(/res/img/instagram-with-circle.svg);
+}
