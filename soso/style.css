@@ -1,0 +1,150 @@
+@font-face {
+    font-family: ruancang;
+    font-weight: 400;
+    src: url(https://dsfs.oppo.com/oppo/shop-pc-v2/main/fonts/OPPOSans-Regular.39ccf2a.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: ruancang;
+    font-weight: 500;
+    src: url(https://dsfs.oppo.com/oppo/shop-pc-v2/main/fonts/OPPOSans-Medium.621326d.ttf) format("truetype")
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body,
+input {
+    font-family: "ruancang", Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+body {
+    margin: 0 auto;
+}
+body a{
+    text-decoration: none;
+}
+.header{
+    margin-top: 30vh;
+}
+
+.header h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.header h2 span{
+    font-weight: 500;
+    font-size: 30px;
+    color: #42505c;
+}
+
+#sousuo {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+#ssInput {
+    width: 40vw;
+    height: 45px;
+    border-radius: 8px 0 0 8px;
+    border: none;
+    background: #ecf1f6;
+    padding-left: 10px;
+    font-size: 15px;
+    color: #555;
+}
+
+#ssInput:focus-visible {
+    border: none;
+    outline: 0px;
+}
+
+#ssBtn {
+    border: none;
+    display: flex;
+    align-items: center;
+    background: #ecf1f6;
+    justify-content: center;
+    padding-right: 15px;
+    border-radius: 0 8px 8px 0;
+}
+
+.iterm-box {
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    border-bottom: 1px solid #e8f1ef;
+    padding: 15px 0;
+}
+
+.iterm-box a {
+    width: 100%;
+    color: #333;
+}
+
+.iterm-box .highlight {
+    background: #d7efea;
+    margin: 0px 1px;
+    border-radius: 4px;
+    padding: 0px 2px;
+    font-size: 16px;
+}
+
+.iterm-box .iterm-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-top: 10px;
+    color: #bfbfbf;
+}
+
+.deleteAll{
+    display: none;
+    justify-content: center;
+    color: #89ceb9;
+    margin-bottom: 8px;
+}
+
+#content{
+    width: 45vw;
+    margin: 0 auto;
+}
+
+.toTop{
+    display: none;
+    position: fixed;
+    right: 2vw;
+    top: 80vh;
+    background-color: #196e5b;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.header.issearch{
+    margin: 2vh 0;
+}
+#ssInput.issearch{
+    width: 48vw;
+}
+
+@media screen and (max-width: 768px) {
+    #ssInput {
+        width: 80vw;
+    }
+    #ssInput.issearch{
+        width: 85vw;
+    }
+    #content {
+        width: 85vw;
+        margin: 0 auto;
+    }
+
+}

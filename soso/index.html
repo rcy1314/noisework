@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="referrer" content="never" />
+    <title>搜搜</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dark-mode.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+
+  <!-- IE 11 polyfill for CSS and Custom Properties -->
+  <script
+    nomodule>window.MSInputMethodContext && document.documentMode && document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-ie11@5/css/bootstrap-ie11.min.css"><script src="https://cdn.jsdelivr.net/npm/ie11-custom-properties@4/ie11CustomProperties.min.js"><\/script>');</script>
+
+            <div class="form-check form-switch">
+              <input type="checkbox" class="form-check-input" id="darkSwitch">
+              <label class="custom-control-label" for="darkSwitch"></label>
+            </div>
+            <script src="dark-mode-switch.min.js"></script>
+  
+          </div>
+        </nav>
+</head>
+
+<body>
+   
+    <div class="header">
+
+        <h2>
+            <a href="https://noisework.cn" target="_blank">
+                <span>JUST SO SO</span>
+               
+            </a>
+        </h2>
+
+        <div id="sousuo">
+            <input id="ssInput" type="text" placeholder="输入并搜索" onkeydown="onkeydownEnter()">
+            <div id="ssBtn" onclick="ssGo()">
+                <?xml version="1.0" encoding="UTF-8"?><svg width="20" height="20" viewBox="0 0 48 48" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M21 38C30.3888 38 38 30.3888 38 21C38 11.6112 30.3888 4 21 4C11.6112 4 4 11.6112 4 21C4 30.3888 11.6112 38 21 38Z"
+                        fill="none" stroke="#06a17e" stroke-width="4" stroke-linejoin="round" />
+                    <path
+                        d="M26.657 14.3431C25.2093 12.8954 23.2093 12 21.0001 12C18.791 12 16.791 12.8954 15.3433 14.3431"
+                        stroke="#06a17e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M33.2216 33.2217L41.7069 41.707" stroke="#06a17e" stroke-width="4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="deleteAll">
+        <svg width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 10V44H39V10H9Z" fill="none" stroke="#89ceb9" stroke-width="4" stroke-linejoin="round" />
+            <path d="M20 20V33" stroke="#89ceb9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M28 20V33" stroke="#89ceb9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M4 10H44" stroke="#89ceb9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M16 10L19.289 4H28.7771L32 10H16Z" fill="none" stroke="#89ceb9" stroke-width="4"
+                stroke-linejoin="round" />
+        </svg>
+        <div onclick="clickDelete()"> 清空搜索结果</div>
+    </div>
+
+    <div id="content"></div>
+
+    <!-- <footer>
+        <span>Github</span>
+    </footer> -->
+
+    <div class="toTop">
+        <svg width="28" height="28" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24.0083 14.1006V42.0001" stroke="#fff" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            <path d="M12 26L24 14L36 26" stroke="#fff" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            <path d="M12 6H36" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </div>
+</body>
+
+<script src="main.js"></script>
+
+</html>
