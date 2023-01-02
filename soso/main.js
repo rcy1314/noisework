@@ -70,16 +70,16 @@ function ssGo() {
 
     let website = [
         "fsylr.com",
-"www.vfx123.com",
-"www.iapps.me",
-"www.macdo.cn",
-"xxxxx520.com",
-"www.flysheep6.com",
-"www.6a6z.com",
-"www.waodown.com",
-"www.kn21.xyz",
-"texhocean.com",
-"www.cgzyw.com",
+        "www.vfx123.com",
+        "www.iapps.me",
+        "www.macdo.cn",
+        "xxxxx520.com",
+        "www.flysheep6.com",
+        "www.6a6z.com",
+        "www.waodown.com",
+        "www.kn21.xyz",
+        "texhocean.com",
+        "www.cgzyw.com",
         "",
        
     ];
