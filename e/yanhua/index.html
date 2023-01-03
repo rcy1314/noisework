@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>一起看烟花吗</title>
+  <title>一起看烟花</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta name="mobile-web-app-capable" content="yes">
@@ -189,13 +189,7 @@
         start()
         fireworks();
       }, 5000) // 这里的5000 是5s指烟花延时时间
-      setTimeout(() => {
-        function audioAutoPlay () {
-          var audio = document.getElementById('audioDom');
-          audio.play();
-        }
-        audioAutoPlay();
-      }, 5000) // 这里的5000 是5s指音乐延时时间
+     
       console.log(updateConfig({ autoLaunch: true }));
     })
     function fireworks () {
@@ -222,26 +216,13 @@
     function jump1 () {
       if (!localStorage.is_fx) {
         localStorage.is_fx = Date.now()
-        //a('http://1022reba.cn/c')
-        //window.location.replace();
-        // location.href="http://1022reba.cn/c";
       } else {
-        // localStorage.is_fx = Date.now()
+       
       }
     }
 
-    function jump2 () {
-      gotoData = {
-        "hb": "http://1.1022reba.top/c/3",
-        "hb1": "http://1.1022reba.top/c/3",
-      }
-      if (gotoData[window.location.pathname] != undefined) {
-        //a(gotoData[window.location.pathname])
-      } else {
-        jump1()
-      }
-
-    }
+    
+    
   </script>
   <script type="text/javascript">
     window.onhashchange = function () {
@@ -256,7 +237,7 @@
     function jp () {
       var a = document.createElement('a');
       a.setAttribute('rel', 'noreferrer');
-      a.setAttribute('href', "http://1.1022reba.top/c/3");
+      a.setAttribute('href', "");
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
