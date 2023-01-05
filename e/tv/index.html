@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>纯css电视动画模型</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        background: radial-gradient(#35495e, black);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .conent {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: 0.5s color infinite;
+      }
+      .box {
+        width: 200px;
+        height: 150px;
+        border: 3px solid #232020;
+      }
+      @keyframes color {
+        0% {
+          box-shadow: 0px 0px 30px #ffffff;
+        }
+        100% {
+          box-shadow: 0px 0px 50px #beebe9;
+        }
+      }
+      .TV {
+        width: 100px;
+        height: 18px;
+        position: absolute;
+        background-color: #232020;
+        border-top: 3px solid #dedef0;
+        top: -18px;
+        left: 50px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+      }
+      .TV::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 60px;
+        background-color: #88e1f2;
+        top: -50px;
+        transform: rotate(-30deg);
+        z-index: -1;
+      }
+      .TV::after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 60px;
+        background-color: #88e1f2;
+        /* border-radius:100%;
+	*/
+        left: 95px;
+        top: -50px;
+        transform: rotate(30deg);
+        z-index: -1;
+      }
+      .TV_1 {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: green;
+        border-radius: 50%;
+        top: -50px;
+        left: -18px;
+        animation: 5s light infinite step-start;
+      }
+      .TV_1::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: green;
+        border-radius: 50%;
+        left: 123px;
+        animation: 5s light infinite step-start;
+      }
+      @keyframes light {
+        0% {
+          background-color: green;
+          box-shadow: 0 0 10px green;
+        }
+        25% {
+          background-color: yellow;
+          box-shadow: 0 0 10px yellow;
+        }
+        50% {
+          background-color: red;
+          box-shadow: 0 0 10px red;
+        }
+        75% {
+          background-color: blue;
+          box-shadow: 0 0 10px blue;
+        }
+        100% {
+          background-color: green;
+          box-shadow: 0 0 10px green;
+        }
+      }
+      p {
+        position: absolute;
+        width: 30px;
+        height: 10px;
+        background-color: #232020;
+        bottom: -25px;
+        left: 20px;
+      }
+      p::before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 10px;
+        background-color: #232020;
+        right: -130px;
+      }
+      p::after {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 4px;
+        border-radius: 50%;
+        top: 5px;
+        left: 40px;
+        background-color: #333333;
+        opacity: 0.8;
+      }
+      span {
+        position: absolute;
+        width: 120px;
+        height: 6px;
+        background-color: black;
+        top: 135px;
+        left: 45px;
+        border: 2px solid white;
+      }
+      span::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: -5px;
+        background-color: #ffffff;
+        border: 1px solid black;
+        border-radius: 50%;
+        animation: 1.5s remove infinite linear;
+      }
+      span::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 10px;
+        left: -15px;
+        top: -5px;
+        border-left: 7px double white;
+      }
+      @keyframes remove {
+        from {
+          transform: translateX(0px);
+        }
+        to {
+          transform: translateX(110px);
+        }
+      }
+      .n {
+        position: absolute;
+        height: 5px;
+        width: 0px;
+        background-color: red;
+        animation: 1.5s name infinite linear;
+      }
+      @keyframes name {
+        from {
+          width: 0px;
+        }
+        to {
+          width: 120px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="conent">
+      <div class="TV">
+        <div class="TV_1"></div>
+      </div>
+      <div class="box"></div>
+      <p></p>
+      <span></span>
+      <span class="n"></span>
+    </div>
+  </body>
+</html>
