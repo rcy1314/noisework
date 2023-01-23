@@ -69,6 +69,7 @@ function ssGo() {
     //     `正在搜索，请稍等......`;
 
     let website = [
+        "noisevip.cn",
         "fsylr.com",
         "www.vfx123.com",
         "www.iapps.me",
