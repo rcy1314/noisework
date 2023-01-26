@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 200px;
+    display: block;
+    margin: 50px auto 0px;
+    user-select: none;
+}
+
+.app {
+    width: 600px;
+    height: 100px;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app input {
+    width: 85%;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: rgb(233, 233, 233);
+    text-indent: 1em;
+    font-size: 16px;
+    border-radius: 8px 0 0 8px;
+}
+
+.app button {
+    width: 15%;
+    height: 50px;
+    border: none;
+    background-color: rgb(123, 176, 255);
+    color: #fff;
+    border-radius: 0 8px 8px 0;
+    font-size: 16px;
+    transition: all .2s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.app button:hover {
+    background-color: rgb(89, 155, 255);
+}
+
+@media screen and (max-width: 560px) {
+    img {
+        width: 120px;
+        margin: 80px auto 0px;
+    }
+
+    .app {
+        width: 90%;
+    }
+
+    .app input {
+        height: 40px;
+    }
+
+    .app button {
+        height: 40px;
+    }
+}

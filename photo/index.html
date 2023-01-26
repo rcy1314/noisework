@@ -1,0 +1,775 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<script src="static/js/jquery.min.js"></script>
+<!--	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script> -->
+<!--如果主题已经引用了jQuery库，可以忽略这条-->
+<link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.2/jquery.fancybox.min.css">
+<script src="https://cdn.staticfile.org/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+
+<head>
+    <meta http-equiv="Content-Type" charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="./style.css">
+    <link type="image/vnd.microsoft.icon" href="" rel="shortcut icon">
+    <link rel="icon" href="static/img/logo.png" type="image/png" />
+    <title>NOISE摄影图库</title>
+
+    <!-- 通过自有函数输出HTML头部信息 -->
+</head>
+
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <a href="https://noisework.cn/photo">
+                    <img src="static/img/logo.png" alt="">
+                    <div class="site-name"><a>NOISE摄影图库</a></div>
+                </a>
+            </div>
+                        <span id="hitokoto">正在获取中...</span>
+                        </div>
+                        <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>   
+                        
+
+                    <!-- <li>
+                            <a href="" target="_blank">
+                                <img class="social-icon" src="static/img/ideallogo.gif">
+                            </a>
+                        </li> -->
+                </ul>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="categories-container">
+                <div class="categories">
+
+                    <ul class="categories-list">
+                        <li><a href="">
+                                <div class="categories-single">首页</div>
+                            </a></li>
+
+                        <li class="slide"></li>
+                        <li>
+                            <a onClick="changetab('ALL')"
+                                title="全部">
+                                <div class="categories-single category-current" id="ALL">
+                                    全部
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a onClick="changetab('LIFE')"
+                                title="生活">
+                                <div class="categories-single" id="LIFE">
+                                    生活
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a onClick="changetab('SCENE')"
+                                title="风景">
+                                <div class="categories-single" id="SCENE">
+                                    风景
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a onClick="changetab('FOOD')"
+                                title="美食">
+                                <div class="categories-single" id="FOOD">
+                                    美食
+                                </div>
+                        <li>
+                            <a onClick="changetab('night')"
+                                title="夜景">
+                                <div class="categories-single" id="night">
+                                    夜景
+                                </div>
+                       <li>
+                            <a onClick="changetab('ME')"
+                                title="自拍">
+                                <div class="categories-single" id="ME">
+                                    自拍
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="banner" style="height:600px;background: url(https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/image.13lod53g3r40.jpg)">
+            <!-- https://s1.ax1x.com/2020/04/14/GzCOT1.png -->
+            <div class="banner-content">
+                <div class="banner-heading">图库展示</div>
+                <div class="banner-description">这里包含之前的所见所闻</div>
+
+                <div class="site-data">
+                    <div class="banner-column banner-column-left">100+<p>图片数量</p>
+                    </div>
+                    <div class="banner-column banner-column-center">6<p>类别</p>
+                    </div>
+                    <div class="banner-column banner-column-right">1090<p>活跃度</p>
+                    </div>
+                </div>
+            </div>
+            <div class="banner-info">
+                <div class="week" style="">知行合一，努力才会有收获</div>
+            </div>
+        </div>
+     <!-- 分割-->
+
+
+        <div class="articles" id="grid">
+            <div class="grid-item LIFE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/DSC00140-6000x4000.7ktb3xiu8a40.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        唾手可得</div>
+                    <!-- <div class="pics-count" style="opacity:0.9"><img src="static/img/address-min.svg"><div></div></div> -->
+                    <!-- <div class="views" style="opacity:0.9"><img src="static/img/camera-min.svg"><div></div></div> -->
+                    <!-- <div class="title"><img style="border-radius:70%;margin-right:10px" src="static/img/ideallogo.gif"><div></div></div> -->
+                </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item LIFE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/IMG_0034.6y2a9d1zeig0.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        遇见彩虹</div>
+                </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item LIFE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/IMG_0738.3s61otzpjb60.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                       走走停停</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item LIFE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/IMG_1537.6y26pr498tc0.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        家有一狗</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item LIFE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/DSC00318.cozkd0uzxk8.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        后知后觉</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item LIFE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/DSC00294-1.5e6yl6j8vcc0.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        脱俗</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item LIFE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/DSC00130-1.7k8fmqyxww00.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        夜灯渐入朦胧</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item LIFE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/IMG_0274.78fns0ke20o0.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        24-70 F4</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item LIFE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/A7D1AF3D-FFE5-4E45-B622-A5F3C2AA4DD5.1eqfb6z9mjb4.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        傍晚时分</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item LIFE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/IMG_1002_看图王.5k0731ro7i00.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        Action 2</div>
+                </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item LIFE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/IMG_0736.18sk7oq7oxds.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        奈斯减光镜</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item LIFE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/IMG_0128.68ak22lkfqg0.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        缺少灵感</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item LIFE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/DSC00336-1.13xvwp8hf074.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        发光面具</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item LIFE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/IMG_0755.4pbx870vmig0.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        雾化电子烟</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <!-- 分割-->
+            <div class="grid-item SCENE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/DSC00322.2s1tvdg9xek0.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        青岛一见</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item SCENE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/DSC00135-1.2j4fyggbw360.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        雾天成都</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item SCENE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="http://imgoss.cnu.cc/2201/02/eayt9vvk0wzl6ix2zm91641099726140.jpg?x-oss-process=style/content">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        北 锣 鼓 巷</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item SCENE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s1.ax1x.com/2020/04/12/GLFfsI.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        海 鸥 沙 滩</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item SCENE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/DSC00246.11xwq9lduupc.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        清晨</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item SCENE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s4.ax1x.com/2022/01/03/TbSLQO.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        湛 泉 如 许</div>
+                </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item SCENE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s4.ax1x.com/2022/01/03/TbSqSK.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        亭 台 楼 榭</div>
+                </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item SCENE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s4.ax1x.com/2022/01/03/TbSxwd.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        易 安 旧 居</div>
+                </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item SCENE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s4.ax1x.com/2022/01/03/THoMAe.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        树 影 婆 娑</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+           <!-- 分割-->
+            
+            <div class="grid-item FOOD">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s3.bmp.ovh/imgs/2022/06/02/e3b792f0a088e22d.jpeg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        麦 旋 风🍦</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item FOOD">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s3.bmp.ovh/imgs/2022/06/02/12b2b9fa14b6bafb.jpeg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        西 冷 牛 排</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item FOOD">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s3.bmp.ovh/imgs/2022/06/02/673d87d19f5ca313.jpeg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                       夏 日 青 果</div>
+                </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item FOOD">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s4.ax1x.com/2022/01/03/THIeoQ.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        I love pizza🍕</div>
+                </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item FOOD">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s3.bmp.ovh/imgs/2022/06/02/b0e70a8ae7f62a3c.jpeg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        Coffee☕️</div>
+                </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item FOOD">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s4.ax1x.com/2022/01/03/TbPk6K.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        煎 饼 果 子</div>
+                </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item FOOD">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s3.bmp.ovh/imgs/2022/06/02/08a77972ab9f960d.jpeg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        吮 指 鸡🍗</div>
+                </div>
+                </img>
+                </a>
+            </div>
+            <!-- 分割-->
+            <div class="grid-item SCENE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s4.ax1x.com/2022/01/03/THon0O.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        芦 苇 荡 漾</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item SCENE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s4.ax1x.com/2022/01/03/THI1yV.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        自 在 生 长</div>
+                    </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item SCENE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s4.ax1x.com/2022/01/03/THIKWn.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        对 长 亭 晚</div>
+                </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item SCENE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s4.ax1x.com/2022/01/03/THIZdg.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        冬 日 暖 阳</div>
+                </div>
+                </img>
+                </a>
+            </div> 
+            <div class="grid-item SCENE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s4.ax1x.com/2022/01/03/THIuJs.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        清 冷 孤 寂</div>
+                </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item SCENE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s4.ax1x.com/2022/01/03/TbPiSx.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        山 雨 欲 来</div>
+                </div>
+                </img>
+                </a>
+            </div>
+            <div class="grid-item SCENE">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s3.bmp.ovh/imgs/2022/07/03/3e93449da3b4b79e.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        橘 色 云 朵</div>
+                </div>
+                </img>
+                </a>
+            </div>
+            <!-- 分割-->
+            <div class="grid-item MUSEUM">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://s4.ax1x.com/2022/01/03/TbSveH.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        书 房 的 猫</div>
+                </div>
+                </img>
+                </a>
+            </div>
+             <!-- 分割-->
+            <div class="grid-item night">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/NV/DSC00091.6aowrgz2zxs0.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        杭州凤起路</div>
+                     </div>
+                     </img>
+                     </a>
+                    </div>
+            <div class="grid-item night">
+                <a href="" data-fancybox="gallery" title="" />
+                <img
+                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/xxx.6xcaghsmeq80.jpg">
+                <div class="item-info" onClick="return false;">
+                    <div class="title"
+                         style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                        杭州凤起路</div>
+                    </div>
+                   </img>
+                    </a>
+                    </div>
+                    <div class="grid-item night">
+                        <a href="" data-fancybox="gallery" title="" />
+                        <img
+                            src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/DSC00243-1.wbyjho0v2uo.jpg">
+                        <div class="item-info" onClick="return false;">
+                            <div class="title"
+                                 style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                                入夜青岛</div>
+                            </div>
+                            </img>
+                            </a>
+                            </div>
+                            <div class="grid-item night">
+                                <a href="" data-fancybox="gallery" title="" />
+                                <img
+                                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/DSC00079.4umjrw8oukc0.jpg">
+                                <div class="item-info" onClick="return false;">
+                                    <div class="title"
+                                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                                        西湖夜景</div>
+                                     </div>
+                                     </img>
+                                     </a>
+                                    </div>
+                     <div class="grid-item night">
+                                <a href="" data-fancybox="gallery" title="" />
+                                <img
+                                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/DSC00096.18p7oyvs72jk.jpg">
+                                <div class="item-info" onClick="return false;">
+                                    <div class="title"
+                                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                                        杭州庆春路</div>
+                                     </div>
+                                     </img>
+                                     </a>
+                                    </div> 
+                     <div class="grid-item night">
+                                <a href="" data-fancybox="gallery" title="" />
+                                <img
+                                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/DSC00120-2.3vzejvipvc40.jpg">
+                                <div class="item-info" onClick="return false;">
+                                    <div class="title"
+                                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                                        入夜成都</div>
+                                     </div>
+                                     </img>
+                                     </a>
+                                    </div>  
+                    <div class="grid-item night">
+                                <a href="" data-fancybox="gallery" title="" />
+                                <img
+                                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/DSC00330.4dw8ti6kp7o0.jpg">
+                                <div class="item-info" onClick="return false;">
+                                    <div class="title"
+                                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                                        青岛火车站夜景</div>
+                                     </div>
+                                     </img>
+                                     </a>
+                                    </div>  
+                     <div class="grid-item night">
+                                <a href="" data-fancybox="gallery" title="" />
+                                <img
+                                    src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/IMG_0559.667tmkqgit40.jpg">
+                                <div class="item-info" onClick="return false;">
+                                    <div class="title"
+                                        style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                                        深夜指示牌</div>
+                                     </div>
+                                     </img>
+                                     </a>
+                                    </div> 
+                 <!-- 分割-->
+                 <div class="grid-item ME">
+                    <a href="" data-fancybox="gallery" title="" />
+                    <img
+                        src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/1FD38CAE-2B1E-4E4D-962C-A1EA2329A16F(20210506-061.6kiziox6a280.jpg">
+                    <div class="item-info" onClick="return false;">
+                        <div class="title"
+                            style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                            2018</div>
+                         </div>
+                         </img>
+                         </a>
+                        </div>
+                 <div class="grid-item ME">
+                    <a href="" data-fancybox="gallery" title="" />
+                    <img
+                        src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/IMG_0424(20220913-051806).5zw2q5fawf00.jpg">
+                    <div class="item-info" onClick="return false;">
+                        <div class="title"
+                            style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                            2019</div>
+                         </div>
+                         </img>
+                         </a>
+                        </div>
+                <div class="grid-item ME">
+                    <a href="" data-fancybox="gallery" title="" />
+                    <img
+                        src="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230126/IMG_0560(20220913-051806).7ipory8fqn00.jpg">
+                    <div class="item-info" onClick="return false;">
+                        <div class="title"
+                            style="color: #fff;position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center">
+                            加班途中</div>
+                         </div>
+                         </img>
+                         </a>
+                        </div>
+
+        </div>
+        <script src="static/js/grids.js"></script>
+
+        <script>
+            var macy = Macy({
+                container: '#grid',
+                trueOrder: false,
+                waitForImages: false,
+                margin: 20,
+                columns: 3,
+                breakAt: {
+                    920: 2,
+                    620: 1
+                }
+            });
+            var changetab = function(type) {
+                var tabs = document.getElementsByClassName('category-current'); 
+                tabs[0].className='categories-single';
+                var nowtab = document.getElementById(type);
+                nowtab.className="categories-single category-current" ;
+                if(type=='ALL'){
+                    var divs = document.getElementsByClassName('grid-item');for(var j=0; j<divs.length; j++){divs[j].style.display='block'}
+                }else{
+                var divs = document.getElementsByClassName('grid-item');for(var j=0; j<divs.length; j++){divs[j].style.display='none'}
+                var nowdivs = document.getElementsByClassName(type);
+                for(var i=0; i<nowdivs.length; i++){
+                    nowdivs[i].style.display="block";
+                }}
+                var myEvent = new Event('resize');
+                window.dispatchEvent(myEvent)
+            }
+        </script>
+    </div>
+    <footer>
+        <div class="copyright" style="text-align:center">
+            Copyright ©2023 <a href="https://noisework.cn" target="_blank">摄影图库</a> All Rights Reserved |
+            Inspired by <a href="https://noisework.cn" target="_blank">NOISE</a></div>
+    </footer>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".fancybox").fancybox();
+            
+        });
+    </script>
+    <style>
+         a:hover{ cursor:pointer }
+    </style>
+</body>
+
+</html>
