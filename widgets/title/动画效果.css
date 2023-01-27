@@ -1,0 +1,24 @@
+body{
+    background : linear-gradient(-45deg,coral ,crimson,cyan,cornflowerblue,fuchsia);
+    background-size: 1000% 1000%;
+    animation: gradient 5s ease infinite;
+    padding: 300px 500px;
+}
+h1,h4{
+   color: white;
+}
+a{
+    text-decoration: none;
+    color: rgb(85,80,80);
+}
+@keyframes gradient {
+    0%{
+     background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}

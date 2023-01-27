@@ -1,100 +1,311 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>noise-music</title>
-	<meta charset="utf-8">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>音乐播放器</title>
+  </head>
+  <script src="http://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-</head>
-<body>
+    li {
+      list-style: none;
+    }
+    body{
+        background-color: rgb(130, 45, 45);
+    }
 
-
-<div class="swiper-container">
-	 <div class="swiper-button-prev"></div>
-	 <div class="swiper-button-next"></div> 
-	    <div class="swiper-wrapper">
-	        <div class="swiper-slide">
-	          <div class="aplayer-wrap">
-	          <h3 style="text-align: center">✨云音乐热歌榜✨</h3>
-	          	<meting-js
-	          	    list-max-height="330px"
-		            server="netease"
-		            type="playlist"
-		            id="3778678">
-	            </meting-js>  
-
-	          </div>
-	       </div>
-	        <div class="swiper-slide">
-	          <div class="aplayer-wrap">
-	          <h3 style="text-align: center">✨云音乐飙升榜✨</h3>
-	          	<meting-js
-	          	    preload="none"
-	          	    list-max-height="330px"
-		            server="netease"
-		            type="playlist"
-		            id="19723756">
-	            </meting-js>    
-	          </div>
-	        </div>
-	        <div class="swiper-slide">
-	          <div class="aplayer-wrap">
-	          <h3 style="text-align: center">✨云音乐新歌榜✨</h3>
-	          	<meting-js
-	          	    preload="none"
-	          	    list-max-height="330px"
-		            server="netease"
-		            type="playlist"
-		            id="3779629">
-	            </meting-js>    
-	          </div>
-	        </div>
-	        <div class="swiper-slide">
-	          <div class="aplayer-wrap">
-	          <h3 style="text-align: center">✨我的网易云歌单✨</h3>
-	          	<meting-js
-	          	    preload="none"
-	          	    list-max-height="330px"
-		            server="netease"
-		            type="playlist"
-		            id="2141128031">
-	            </meting-js>  
-	          </div>
-	       </div> 
-	        <div class="swiper-slide">
-	          <div class="aplayer-wrap">
-	          <h3 style="text-align: center">✨我的QQ音乐歌单✨</h3>
-	          	<meting-js
-	          	    preload="none"
-	          	    list-max-height="330px"
-		            server="tencent"
-		            type="playlist"
-		            id="909394226">
-	            </meting-js>  
-	          </div>
-	        </div> 
-
-        
-</footer>
-<script src="js/swiper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
-<script>        
-  var mySwiper = new Swiper ('.swiper-container', {
-    loop: true, 
+    .waibu {
+      margin-top: 100px;
+      width: 100%;
+      
     
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  })       
- </script>
- 
-</body>
+      /* background-color: antiquewhite; */
+    }
+
+    .quanjujuz{
+        width: 1000px;
+        height: 500px;
+        margin: 0 auto;
+        border-radius: 30px;
+      background-color: azure;
+      box-shadow:  0 0 15px black;
+    }
+    /* 导航栏 */
+    nav {
+      display: flex;
+      margin: 0px auto;
+      width: 1000px;
+      height: 60px;
+      background-color: rgb(210, 48, 48);
+      justify-content: space-between;
+      border-radius: 20px;
+    }
+
+    .nav-logo {
+        text-indent: 20px;
+      font-size: 25px;
+      line-height: 60px;
+      color: aliceblue;
+    }
+
+    .nav-sousuo input {
+      height: 62px;
+      width: 500px;
+      border: 0;
+      border-radius: 20px;
+    }
+
+    .nav-sousuo button {
+      height: 60px;
+      width: 70px;
+      color: aliceblue;
+      border-radius: 20px;
+      background-color: rgb(255, 63, 63);
+      border: 0;
+    }
+
+    /* 居中区域 */
+    .juzhon {
+      width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* 左边区域 */
+    .lbox {
+      width: 300px;
+      /* overflow: hidden; */
+      height: 400px;
+      overflow: auto;
+      /* height: 200px; */
+    }
+
+    .lbox li {
+      border-bottom: 1px solid black;
+      margin-top: 10px;
+    }
+    .lbox li:hover{
+        transition: all .5s;
+        background-color: brown;
+    }
+
+    .zbox {
+      width: 400px;
+      border-right: 1px solid black;
+      border-left: 1px solid black;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    
+    }
+    .zbox img{
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+        /* infinite linear重复执行动画 */
+        animation: don 10s infinite linear;
+    }
+    .zbox-don {
+      width: 350px;
+      height: 350px;
+      border-radius: 50px;
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   
+    }
+  
+    .zbox-don2 {
+      width: 300px;
+      height: 300px;
+      border-radius: 50px;
+      background-color: rgb(50, 48, 48);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     
+    }
+    /* .zbox-don2 img:hover{
+        transition: all 1s;
+        transform: rotate(360deg);
+    } */
+
+    @keyframes don{
+       0%{
+        transform: rotate(deg);
+       }
+       100%{
+        transform: rotate(360deg);
+       }
+
+    }
+
+    .rbox {
+      width: 300px;
+      height: 400px;
+      overflow: auto;
+    }
+    .rbox li{
+        margin: 5px 0;
+        border-bottom:1px solid black ;
+        
+    }
+    .yhname{
+        margin: 5px 5px;
+    }
+    .yhcontent{
+        margin: 5px 5px;
+    }
+    .ys{
+        background-color: aqua;
+    }
+
+    audio {
+        margin-top: -15px;
+      width: 1000px;
+     
+    }
+  </style>
+
+  <body>
+    <div class="waibu" id="app">
+      <!-- 导航栏 -->
+      <div class="quanjujuz">
+
+      
+      <nav>
+        <p class="nav-logo">音乐搜索播放盒</p>
+        <p class="nav-sousuo">
+          <!-- 搜索 -->
+          <input type="text" id="nav-sousuo" v-model="shuru" placeholder="搜索" /><button
+            v-on:click="chaxun"
+          >
+            搜索
+          </button>
+        </p>
+      </nav>
+
+      <!-- 显示区域 -->
+      <div class="juzhon">
+        <!-- 左边歌单列表 -->
+        <div class="lbox">
+          <ul>
+            <!-- 把音乐id和名字都获取          musicid对应的就是这个li.id -->
+            <li  v-for="(li,num) in musiclis" v-on:click="playmusic(li.id)">
+              {{num}}: {{li.name}}
+            </li>
+          </ul>
+        </div>
+
+        <!-- 中间图片区域 -->
+        <div class="zbox">
+          <div class="zbox-don">
+            <div class="zbox-don2">
+              <img :src="imgurl" alt="图片" />
+            </div>
+          </div>
+        </div>
+
+        <!-- 右边留言板 -->
+        <div class="rbox">
+          <p>热门留言</p>
+
+          <ul>
+              <li v-for="yh in yhlis">
+                  <!-- 网友名字 -->
+                  <span class="yhname">{{yh.user.nickname}}:</span>
+                  <!-- 网友留言 -->
+                  <span class="yhcontent">{{yh.content}}</span>
+              </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 底部播放条 -->
+
+      <!-- 音乐播放器按钮默认设置  controls autoplay loop -->
+      <audio :src="musicUrl" controls autoplay loop></audio></div>
+    </div>
+    <script>
+     
+        var zboxdon = document.querySelector(".zbox-don ") 
+
+      
+
+      new Vue({
+        el: "#app",
+        data() {
+          return {
+            // 获取用户输入的内容
+            shuru: "",
+            // 把歌曲出入数组
+            musiclis: [],
+            musicUrl: "",
+            // 歌曲图片
+            imgurl: "https://img2.baidu.com/it/u=215160853,2940904732&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500",
+            // 用户区域
+            yhlis:[]
+          };
+        },
+        methods: {
+           
+         
+
+
+          chaxun: function () {
+            var thar = this;
+            axios
+              .get("https://autumnfish.cn/search?keywords=" + this.shuru)
+              .then(function (res) {
+                console.log(res);
+                // 当前的歌曲数组等于这个歌曲数据
+                thar.musiclis = res.data.result.songs;
+                console.log(res.data.result.songs);
+              });
+          },
+          // 这个musicid对应这上面的li.id
+          playmusic: function (musicid) {
+            //   回调函数内没有this，所以用一个变量接收头
+            var thar = this;
+
+            axios
+              .get("https://autumnfish.cn/song/url?id=" + musicid)
+              //这里不要加分号
+              // 把音乐路径赋值给musicUrl
+              .then(function (res) {
+                thar.musicUrl = res.data.data[0].url;
+                // 这个方法是写出ID的
+                // console.log(musicid);
+              });
+
+            //   歌曲图片
+            axios
+              .get("https://autumnfish.cn/song/detail?ids=" + musicid)
+              .then(function (res) {
+                thar.imgurl = res.data.songs[0].al.picUrl;
+              });
+
+
+            //   歌曲评论
+            axios
+            .get("https://autumnfish.cn/comment/hot?type=0&id=" + musicid)
+            .then(function (res) {
+                thar.yhlis = res.data.hotComments;
+              });            
+          },
+        },
+      });
+    </script>
+  </body>
 </html>
