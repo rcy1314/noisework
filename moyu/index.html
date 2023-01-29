@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/favicon.png" type="image/png" />
+    <title>打工人日历</title>
+</head>
+<body>
+</br></br>
+<div class="mume markdown-preview  ">
+    <h1 align="center">打工人日历</h1>
+    <center><a href="https://noisework.cn" target="_"><img src="moyu.gif"></a></center>
+    <div style="margin: 20px auto; max-width: 900px;">
+        <h2>【摸鱼办】提醒您：</h2></br>
+        <p><span id="timeshow"></span>，摸鱼人！工作再累，一定不要忘记摸鱼哦！有事没事起身去茶水间，去厕所，去廊道走走别老在工位上坐着，钱是老板的,但命是自己的。</p>
+        <ul id="favs"></ul></br>
+        <p>
+            上班是帮老板赚钱，摸鱼是赚老板的钱！最后，祝愿天下所有摸鱼人，都能愉快的渡过每一天…
+        </p>
+    </div></br></br>
+
+<script>
+const FAVS = ['元旦', '劳动节', '国庆节', '春节', '清明', '端午', '中秋']
+const arr = [0, 0, 46, 3, 94, 4, 120, 1, 168, 5, 266, 6, 273, 2, 365, 0, 400, 3, 459, 4, 485, 1, 522, 5, 620, 6, 638, 2, 730, 0, 754, 3, 824, 4, 851, 1, 906, 5, 1004, 2, 1004, 6, 1096, 0, 1138, 3, 1189, 4, 1216, 1, 1260, 5, 1359, 6, 1369, 2, 1461, 0, 1492, 3, 1555, 4, 1581, 1, 1614, 5, 1713, 6, 1734, 2, 1826, 0, 1847, 3, 1920, 4, 1946, 1, 1998, 5, 2097, 6, 2099, 2, 2191, 0, 2231, 3, 2285, 4, 2312, 1, 2352, 5, 2451, 6, 2465, 2, 2557, 0, 2585, 3, 2650, 4, 2677, 1, 2707, 5, 2830, 2, 2835, 6, 2922, 0, 2969, 3, 3016, 4, 3042, 1, 3091, 5, 3189, 6, 3195, 2, 3287, 0, 3323, 3, 3381, 4, 3407, 1, 3446, 5, 3544, 6, 3560, 2, 3652, 0, 3677, 3, 3746, 4, 3773, 1, 3800, 5, 3926, 2, 3928, 6, 4018, 0, 4061, 3, 4111, 4, 4138, 1, 4184, 5, 4282, 6, 4291, 2, 4383, 0, 4416, 3, 4477, 4, 4503, 1, 4637, 6, 4656, 2];
+const getResult = (_n) => {
+    const n = Math.floor((_n - 1514736000000) / 86400000)
+    for (let i = 0; i < arr.length; i += 2) {
+        if (arr[i] >= n) {
+            const result = new Array()
+            for (let j = 0; j < 14; j += 2) {
+                const m = arr[i + j]
+                result.push([m - n, arr[i + j + 1]])
+            }
+            return result
+        }
+    }
+    return []
+}
+
+const now = new Date()
+timeshow.innerText = `${now.getMonth() + 1}月${now.getDate()}日 ${now.getHours() > 11 ? '下午' : '上午'}好`
+const day = 6 - now.getDay()
+favs.innerHTML = `<li>距离周末还有:${day}天</li>`
+if (day < 1) {
+    favs.innerHTML = `<li><span style="text-decoration: line-through;">距离周末还有: </span> 周末快乐！(#^.^#) </li>`
+}
+
+favs.innerHTML += getResult(now).map(([a, b]) => `<li>距离${FAVS[b]}还有:${a}天</li>`).join('\n')
+
+</script>
+</body>
+</html>
