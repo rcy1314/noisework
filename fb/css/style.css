@@ -3,7 +3,7 @@ html, body {
 	margin: 0;
 	overflow: hidden;
 	width: 100%;
-	height: 80%;
+	height: 100%;
 	background: black;
 	background: linear-gradient(to bottom, #000000 0%, #000000 100%);
 	font-family:'Questrial','Noto Serif SC' ;
