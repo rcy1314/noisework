@@ -40,8 +40,8 @@ const getResult = (_n) => {
 }
 
 const now = new Date()
-timeshow.innerText = `${now.getMonth() + 1}月${now.getDate()}日 ${now.getHours() > 11 ? '下午' : '上午'}好`
-const day = 6 - now.getDay()
+timeshow.innerText = `${now.getMonth() + 1}月${now.getDate()}日 ${now.getHours() > 12 ? '下午' : '上午'}好`
+const day = 7 - now.getDay()
 favs.innerHTML = `<li>距离周末还有:${day}天</li>`
 if (day < 1) {
     favs.innerHTML = `<li><span style="text-decoration: line-through;">距离周末还有: </span> 周末快乐！(#^.^#) </li>`
