@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jam minsec</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="initClock()">
+    
+    <div style="height: 160px; width: 100%; display: flex; align-items: center; justify-content: center;">
+        <div id="non" class="">
+            <h1></h1>
+        </div>
+    </div>
+    
+    <div class="datetime"  id="btn">
+        <div class="date">
+            <span class="border" id="hari">Hari</span>,
+            <span id="tanggal">00</span>
+            <span id="bulan">Bulan</span>,
+            <span id="tahun">Tahun</span>
+        </div>
+        <div class="waktu">
+            <span id="jam">00 </span>:
+            <span id="menit">00 </span>:
+            <span id="detik">00 </span>
+            <span id="petunjukwaktu">AM</span>
+        </div>
+    </div>
+
+    <div class="animation-container">
+        <div class="burst">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
