@@ -16,9 +16,8 @@
     <div style="margin: 20px auto; max-width: 900px;">
         <h2>【摸鱼办】提醒您：</h2></br>
         <h4>当前时间：<font color="#33FFFF"><span id="nowDateTimeSpan"></span></font> </h4>
-        <p><span id="timeshow"></span>摸鱼人！工作再累，一定不要忘记摸鱼哦！有事没事起身去茶水间，去厕所，去廊道走走别老在工位上坐着，钱是老板的,但命是自己的。</p>
+       摸鱼人！工作再累，一定不要忘记摸鱼哦！有事没事起身去茶水间，去厕所，去廊道走走别老在工位上坐着，钱是老板的,但命是自己的。</p>
         <ul id="favs"></ul>
-        <p><span id="hello"></span>
         <p>
             上班是帮老板赚钱，摸鱼是赚老板的钱！最后，祝愿天下所有摸鱼人，都能愉快的渡过每一天…
         </p>
@@ -43,7 +42,7 @@ const getResult = (_n) => {
 }
 
 const now = new Date()
-
+//timeshow.innerText = `${now.getHours()> 12  ? '下午' : '上午'  }好`
 const day = 6 - now.getDay()
 favs.innerHTML = `<li>距离周六还有:${day}天</li>`
 if (day < 1) {
