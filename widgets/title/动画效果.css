@@ -2,21 +2,21 @@ body{
     background : linear-gradient(-45deg,coral ,crimson,cyan,cornflowerblue,fuchsia);
     background-size: 1000% 1000%;
     animation: gradient 5s ease infinite;
-    padding: 300px 500px;
+    padding: 100px 500px;
 }
 h1,h4{
-   color: white;
+   color: rgb(70, 66, 66);
 }
 a{
     text-decoration: none;
-    color: rgb(85,80,80);
+    color: rgb(70, 66, 66);
 }
 @keyframes gradient {
     0%{
      background-position: 0 50%;
     }
     50%{
-        background-position: 100% 50%;
+        background-position: 30% 50%;
     }
     100%{
         background-position: 0 50%;
