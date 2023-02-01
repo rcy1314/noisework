@@ -1,8 +1,0 @@
-{
-  "devDependencies": {
-    "@types/node": "^16.11.7"
-  },
-  "dependencies": {
-    "assemblyscript": "^0.19.20"
-  }
-}
