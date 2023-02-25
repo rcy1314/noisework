@@ -24,7 +24,7 @@ window.addEventListener('load', function () {
     setTimeout(function () {
         iziToast.show({
             title: hello,
-            message: '❤ 欢迎您访问 ❤ 点击或等待3秒后进入'
+            message: '❤ 欢迎您访问 ❤ 点击或等待5秒后进入'
         });
     }, 800);
 
