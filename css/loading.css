@@ -1,0 +1,70 @@
+.loader{
+    position:fixed;
+    left:50%;
+    top:50%;
+    margin:-0.2em 0 0 -0.2em;
+    text-indent:-9999em;
+    border-top:.3em solid rgba(0,0,0,0.1);
+    border-right:.3em solid rgba(0,0,0,0.1);
+    border-bottom:.3em solid rgba(0,0,0,0.1);
+    border-left:.3em solid #9cc;
+    /* 篇幅原因省略了一些兼容性CSS配置 */
+    transform:translateZ(0);
+    /* 关键CSS：关联对应的动画配置loader ，篇幅原因省略了一些兼容性CSS配置 */
+    animation:loader .5s infinite linear;
+    z-index:999;
+}
+.loader,.loader:after{
+    border-radius:50%;width:2em;height:2em
+}
+.curtain{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background-color:white;
+    filter:alpha(opacity=0);
+    opacity:0;
+    z-index:0
+}
+.sending .curtain{
+    top:0px;
+}
+/* 动画配置loader，篇幅原因省略了一些兼容性CSS配置 */
+@keyframes loader{
+    0%{
+        -webkit-transform:rotate(0deg);
+        transform:rotate(0deg);
+    }
+    100%{
+        -webkit-transform:rotate(360deg);
+        transform:rotate(360deg);
+    }
+}
+.is-loading .loader,.is-loading .curtain
+{
+    filter:progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity:1
+}
+.is-loading .curtain{
+    z-index:999
+}
+/* 自定义滚动条样式，可有可无 */
+::-webkit-scrollbar
+{
+    width:12px;
+    height:12px;
+}
+::-webkit-scrollbar-thumb
+{
+    border-radius:2px;
+    background-color:#99cccc;
+    background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.2) 50%,rgba(255,255,255,.2) 75%,transparent 75%,transparent);
+}
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow:inset 0 0 6px #ddd;
+    background-color:#fbfbfb;
+    border-radius:2px;
+}

@@ -1,0 +1,58 @@
+.terminal{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    background-color: #222222;
+}
+.input{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 14px !important;
+    width: 100%;
+    position: relative;
+}
+.input:focus{outline: none;}
+.terminal::-webkit-scrollbar {
+    width: 7.5px;
+    height: 0;
+}
+.terminal::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.terminal::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0);
+    border-radius: 10px;
+}
+.terminal,.terminal input{
+    font-family:'Fira Code', monospace !important;
+    font-weight: 600 !important;
+}
+.context p{
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+.italic{
+    color: #999999;
+    font-style: italic;
+}
+.message{
+    color: #999999;
+}
+.error{color: rgb(255, 155, 155);}
+.warning{color: #ffea83;}
+.d{color: #81b181;}
+.g{color: #96d9e1;}
+.b{color: #ebaeff;}
+.paint{
+    font-family: "MS PGothic", "ＭＳ Ｐゴシック", "Trebuchet MS", Verdana, Futura, Arial, Helvetica, sans-serif;
+    line-height: 1;
+    font-size: 12pt;
+    color: #81b181;
+    font-weight: 400;
+    font-style: normal !important;
+    white-space: pre;
+}
