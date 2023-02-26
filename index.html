@@ -394,7 +394,13 @@
 <script defer src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/kaygb/kaygb@master/layer/layer.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/kaygb/kaygb@master/js/v3.js"></script>-->
-
+   <!-- 引入JS -->   
+<script src="js/instantclick.min.js"></script>
+<!-- data-no-instant表示该标签不进行预加载 -->
+<script data-no-instant>
+//选择点击瞬间预加载模式
+InstantClick.init("mousedown");
+</script>  
 <script>
 	window['CboxReady'] = function (Cbox) {
 		Cbox('button', '3-3523748-9k93aT');
