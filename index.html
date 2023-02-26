@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="css/terminal.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="./css/loading.css">
+	
 	<script src="js/adaptive.js"></script>
 	<script type="text/javascript">
         /*  动态网页标题*/
@@ -35,28 +35,16 @@
         });
         </script>
         
-    
-<!-- loading加载 -->
-		<div class="is-loading" id="load"> 
-			<div class="curtain">
-				<div class="loader">
-				</div>
-			</div>
-		</div>
-	<script type="text/javascript">
-	//确保Jquey已加载后执行进入 
-	(function($){
-		//$(window).load 和 $(document).ready 都可以使用，虽然有差别，整体感知不明显
-		$(window).on("load", function() { 
-			window.setTimeout(function() {
-				//隐藏或者移除Class均可以使用
-				//推荐用CSS特性实现 
-				//$("#load").removeClass("is-loading");
-				$("#load").hide(500);
-			}, 100);
-		});
-	})(jQuery);
-	</script>
+    <div class="leftarea">
+        <!-- fps id geo-location -->
+        <div id="fps" style="z-index:999;position:fixed;bottom:3px;right:3px;color:#FFF;font-size:10px;"></div> 
+        <script type="text/javascript" src="https://cache.gmit.vip/static/api/js/jquery.min.js"></script>
+        <!--web 弹窗弹层组件 经测试还是cdn好-->
+        <script type="text/javascript" src="https://cache.gmit.vip/static/index/js/layer.js"></script>
+        <!-- fps 函数组件 弹窗信息在fps.js文件里修改-->
+        <script type="text/javascript" src="./js/fps.js"></script>   
+        <!-- end -->
+
   <!-- 星空粒子 -->
   <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
   <style>
