@@ -35,15 +35,7 @@
         });
         </script>
         
-    <div class="leftarea">
-        <!-- fps id geo-location -->
-        <div id="fps" style="z-index:999;position:fixed;bottom:3px;right:3px;color:#FFF;font-size:10px;"></div> 
-        <script type="text/javascript" src="https://cache.gmit.vip/static/api/js/jquery.min.js"></script>
-        <!--web 弹窗弹层组件 经测试还是cdn好-->
-        <script type="text/javascript" src="https://cache.gmit.vip/static/index/js/layer.js"></script>
-        <!-- fps 函数组件 弹窗信息在fps.js文件里修改-->
-        <script type="text/javascript" src="./js/fps.js"></script>   
-        <!-- end -->
+    
 <!-- loading加载 -->
 		<div class="is-loading" id="load"> 
 			<div class="curtain">
@@ -394,7 +386,18 @@
 <script defer src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/kaygb/kaygb@master/layer/layer.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/kaygb/kaygb@master/js/v3.js"></script>-->
-  
+   <!-- 引入JS -->   
+<script src="js/instantclick.min.js"></script>
+<!-- data-no-instant表示该标签不进行预加载 -->
+<script data-no-instant>
+//选择点击瞬间预加载模式
+InstantClick.init("mousedown");
+</script>  
+<script>
+	window['CboxReady'] = function (Cbox) {
+		Cbox('button', '3-3523748-9k93aT');
+	}
+	</script>
 	<script src="./js/emb.js" async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/hmongouachon/NodeCursor/src/nodecursor-jquery.js"></script>
