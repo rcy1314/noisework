@@ -10,10 +10,9 @@
 	<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/c/font_3165812_pvad0am2nmp.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/terminal.css">
-	<link rel="stylesheet" href="./css/fira_code.css">
-	<script src="./js/parallax.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="./css/loading.css">
-	<script src="js/adaptive.js"></script>
 	<script type="text/javascript">
         /*  动态网页标题*/
         var OriginTitile = document.title,
@@ -65,160 +64,6 @@
 		});
 	})(jQuery);
 	</script>
-  <!-- 星空粒子 -->
-  <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
-  <style>
-	html, body { background: #00000011; margin: 0; padding:0;}
-   canvas { width: 100%; height: 100%; position: absolute; }
-	</style>
-   <canvas width="auto" height="auto"></canvas>
-   <script>
-	$(function(){
-	 var canvas = document.querySelector('canvas'),
-	ctx = canvas.getContext('2d')
-				 canvas.width = window.innerWidth;
-				 canvas.height = window.innerHeight;
-				 ctx.lineWidth = .5;
-				 ctx.strokeStyle = (new Color(150)).style;
-	   
-				 var mousePosition = {
-				   x: 30 * canvas.width / 100,
-				   y: 30 * canvas.height / 100
-				 };
-	   
-				 var dots = {
-				   nb: 150,
-				   distance: 50,
-				   d_radius: 100,
-				   array: []
-				 };
-	   
-				 function colorValue(min) {
-				   return Math.floor(Math.random() * 255 + min);
-				 }
-				 
-				 function createColorStyle(r,g,b) {
-				   return 'rgba(' + r + ',' + g + ',' + b + ', 0.8)';
-				 }
-				 
-				 function mixComponents(comp1, weight1, comp2, weight2) {
-				   return (comp1 * weight1 + comp2 * weight2) / (weight1 + weight2);
-				 }
-				 
-				 function averageColorStyles(dot1, dot2) {
-				   var color1 = dot1.color,
-					   color2 = dot2.color;
-				   
-				   var r = mixComponents(color1.r, dot1.radius, color2.r, dot2.radius),
-					   g = mixComponents(color1.g, dot1.radius, color2.g, dot2.radius),
-					   b = mixComponents(color1.b, dot1.radius, color2.b, dot2.radius);
-				   return createColorStyle(Math.floor(r), Math.floor(g), Math.floor(b));
-				 }
-				 
-				 function Color(min) {
-				   min = min || 0;
-				   this.r = colorValue(min);
-				   this.g = colorValue(min);
-				   this.b = colorValue(min);
-				   this.style = createColorStyle(this.r, this.g, this.b);
-				 }
-	   
-				 function Dot(){
-				   this.x = Math.random() * canvas.width;
-				   this.y = Math.random() * canvas.height;
-	   
-				   this.vx = -.5 + Math.random();
-				   this.vy = -.5 + Math.random();
-	   
-				   this.radius = Math.random() * 2;
-	   
-				   this.color = new Color();
-				   console.log(this);
-				 }
-	   
-				 Dot.prototype = {
-				   draw: function(){
-					 ctx.beginPath();
-					 ctx.fillStyle = this.color.style;
-					 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-					 ctx.fill();
-				   }
-				 };
-	   
-				 function createDots(){
-				   for(i = 0; i < dots.nb; i++){
-					 dots.array.push(new Dot());
-				   }
-				 }
-	   
-				 function moveDots() {
-				   for(i = 0; i < dots.nb; i++){
-	   
-					 var dot = dots.array[i];
-	   
-					 if(dot.y < 0 || dot.y > canvas.height){
-					   dot.vx = dot.vx;
-					   dot.vy = - dot.vy;
-					 }
-					 else if(dot.x < 0 || dot.x > canvas.width){
-					   dot.vx = - dot.vx;
-					   dot.vy = dot.vy;
-					 }
-					 dot.x += dot.vx;
-					 dot.y += dot.vy;
-				   }
-				 }
-	   
-				 function connectDots() {
-				   for(i = 0; i < dots.nb; i++){
-					 for(j = 0; j < dots.nb; j++){
-					   i_dot = dots.array[i];
-					   j_dot = dots.array[j];
-	   
-					   if((i_dot.x - j_dot.x) < dots.distance && (i_dot.y - j_dot.y) < dots.distance && (i_dot.x - j_dot.x) > - dots.distance && (i_dot.y - j_dot.y) > - dots.distance){
-						 if((i_dot.x - mousePosition.x) < dots.d_radius && (i_dot.y - mousePosition.y) < dots.d_radius && (i_dot.x - mousePosition.x) > - dots.d_radius && (i_dot.y - mousePosition.y) > - dots.d_radius){
-						   ctx.beginPath();
-						   ctx.strokeStyle = averageColorStyles(i_dot, j_dot);
-						   ctx.moveTo(i_dot.x, i_dot.y);
-						   ctx.lineTo(j_dot.x, j_dot.y);
-						   ctx.stroke();
-						   ctx.closePath();
-						 }
-					   }
-					 }
-				   }
-				 }
-	   
-				 function drawDots() {
-				   for(i = 0; i < dots.nb; i++){
-					 var dot = dots.array[i];
-					 dot.draw();
-				   }
-				 }
-	   
-				 function animateDots() {
-				   ctx.clearRect(0, 0, canvas.width, canvas.height);
-				   moveDots();
-				   connectDots();
-				   drawDots();
-	   
-				   requestAnimationFrame(animateDots); 
-				 }
-	   
-				 $('canvas').on('mousemove', function(e){
-				   mousePosition.x = e.pageX;
-				   mousePosition.y = e.pageY;
-				 });
-	   
-				 $('canvas').on('mouseleave', function(e){
-				   mousePosition.x = canvas.width / 2;
-				   mousePosition.y = canvas.height / 2;
-				 });
-	   
-	createDots();
-	requestAnimationFrame(animateDots); 
-	   });
-   </script> 
      <!-- 引入JS -->   
 <script src="js/instantclick.min.js"></script>
 <!-- data-no-instant表示该标签不进行预加载 -->
@@ -296,98 +141,99 @@ InstantClick.init("mousedown");
 		<div class="workbox">
 			<a href="" target="_blank"><div id="first"></i><i class="fa-solid fa-arrow-right"></i><span>向右查看</span></div></a>
 			<div class="project">
-				<i class="fa-light fa-steering-wheel"></i>
+				<i class="iconfont zac-github"></i>
 				<a href="./fw/index.html" target="_blank"><h3>🌈公共服务页</h3></a>
 				<p>基于服务器等的个人公共化服务</p>
 				<div class="language"><div style="--color:#3572A5">有你支持才有动力</div></div>
 			</div>
 			<div class="project">
-				<i class="fa-light fa-steering-wheel"></i>
+				<i class="iconfont zac-github"></i>
 				<a href="https://www.noisedh.cn" target="_blank"><h3>✨Noise导航站</h3></a>
 				<p>静态化综合导航站</p>
 				<div class="language"><div style="--color:#f1e05a">综合且全面</div></div>
 			</div>
 			<div class="project">
-				<i class="fa-light fa-steering-wheel"></i>
+				<i class="iconfont zac-github"></i>
 				<a href="https://noisevip.cn" target="_blank"><h3>💻NOISE&宝藏阁</h3></a>
 				<p>Wordpress站点</p>
 				<div class="language"><div style="--color:#e34c26">强大的资源分类支持</div></div>
 			</div>
 			<div class="project">
-				<i class="fa-light fa-steering-wheel"></i>
+				<i class="iconfont zac-github"></i>
 				<a href="https://www.noisesite.cn" target="_blank"><h3>🎁知识效率集</h3></a>
 				<p>Notion渲染的next网站</p>
 				<div class="language"><div style="--color:#e34c26">Notion网站</div></div>
 			</div>
 			<div class="project">
-				<i class="fa-light fa-steering-wheel"></i>
+				<i class="iconfont zac-github"></i>
 				<a href="https://efficiencyfollow.notion.site" target="_blank"><h3>🎈Efficiency主页</h3></a>
 				<p>始于Notion，忠于Notion</p>
 				<div class="language"><div style="--color:#e34c26">自动化、RSS指南</div></div>
 			</div>
 			<div class="project">
-				<i class="fa-light fa-steering-wheel"></i>
+				<i class="iconfont zac-github"></i>
 				<a href="./photo/index.html" target="_blank"><h3>😀NOISE摄影图库</h3></a>
 				<p>相册分享</p>
 				<div class="language"><div style="--color:#e34c26">爱生活，爱摄影</div></div>
 			</div>
 			<div class="project">
-				<i class="fa-light fa-steering-wheel"></i>
+				<i class="iconfont zac-github"></i>
 				<a href="https://rcy1314.github.io/some-stars/" target="_blank"><h3>⭐我的start列表</h3></a>
 				<p>我的start列表，每日更新</p>
 				<div class="language"><div style="--color:#e34c26">Github-starts</div></div>
 			</div>
 			<div class="project">
-				<i class="fa-light fa-steering-wheel"></i>
+				<i class="iconfont zac-github"></i>
 				<a href="https://noiseyp.top" target="_blank"><h3>📁Noise资源库</h3></a>
 				<p>云盘资源的挂载站</p>
 				<div class="language"><div style="--color:#e34c26">强大的云盘资源库</div></div>
 			</div>
 			<div class="project">
-				<i class="fa-light fa-steering-wheel"></i>
+				<i class="iconfont zac-github"></i>
 				<a href="https://www.noisemusic.top" target="_blank"><h3>⌛NOISE音乐站</h3></a>
 				<p>在线听歌服务</p>
 				<div class="language"><div style="--color:#e34c26">爱音乐，爱自己</div></div>
 			</div>
 			<div class="project">
-				<i class="fa-light fa-steering-wheel"></i>
+				<i class="iconfont zac-github"></i>
 				<a href="https://rcy1314.github.io/news/" target="_blank"><h3>🎉聚合Rss阅读页</h3></a>
 				<p>个人部署单页RSS阅读器</p>
 				<div class="language"><div style="--color:#e34c26">RSS聚合，每2小时更新</div></div>
 			</div>
 			<div class="project">
-				<i class="fa-light fa-steering-wheel"></i>
+				<i class="iconfont zac-github"></i>
 				<a href="https://rcy1314.github.io/news/" target="_blank"><h3>🔭RSS翻译转换</h3></a>
 				<p>外网订阅源翻译转换订阅</p>
 				<div class="language"><div style="--color:#e34c26">转换翻译，每2小时更新</div></div>
 			</div>
 			<div class="project">
-				<i class="fa-light fa-steering-wheel"></i>
+				<i class="iconfont zac-github"></i>
 				<a href="https://rcy1314.github.io/youtube/" target="_blank"><h3>📼我的Youtube订阅</h3></a>
 				<p>个人Youtube订阅RSS阅读器</p>
 				<div class="language"><div style="--color:#e34c26">RSS聚合，每2小时更新</div></div>
 			</div>
 			<div class="project">
-				<i class="fa-light fa-steering-wheel"></i>
+				<i class="iconfont zac-github"></i>
 				<a href="https://www.noisework.cn/moyu/"target="_blank"><h3>🔭打工人日历</h3></a>
 				<p>全体打工人提醒您适当摸鱼</p>
 				<div class="language"><div style="--color:#e34c26">没钱可以赚，但命只有一条</div></div>
 			</div>
 			<div class="project">
-				<i class="fa-light fa-steering-wheel"></i>
+				<i class="iconfont zac-github"></i>
 				<a href="./soso/index.html"target="_blank"><h3>📟JUST SOSO</h3></a>
 				<p>个人自定义搜索</p>
 				<div class="language"><div style="--color:#e34c26">搜软件，搜插件</div></div>
 			</div>
 			<div class="project">
-				<i class="fa-light fa-steering-wheel"></i>
+				<i class="iconfont zac-github"></i>
 				<a href="./fb/index.html"target="_blank"><h3>⏰备用地址页</h3></a>
 				<p>一些站点的备用地址</p>
 				<div class="language"><div style="--color:#e34c26">多域名，多备用</div></div>
 			</div>
 			<a href="./home.html" target="_blank"><div id="last"><i class="fa-sharp fa-solid fa-magnifying-glass"></i><span>更换风格查看</span></div></a>
 		</div>
-	</div>	
+	</div>
+	
 </body>
 <!--音乐-->
 <link rel="stylesheet" href="css/APlayer.min.css">  
@@ -406,7 +252,8 @@ InstantClick.init("mousedown");
 	}
 	</script>
 	<script src="./js/emb.js" async></script>
-<script src="./js/nodecursor-jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/hmongouachon/NodeCursor/src/nodecursor-jquery.js"></script>
 <script src="js/main.js"></script>
 <script src="js/terminal.js"></script>
 </html>
