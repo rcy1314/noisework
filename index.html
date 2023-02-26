@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="css/terminal.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-	
+	<link rel="stylesheet" type="text/css" href="./css/loading.css">
 	<script src="js/adaptive.js"></script>
 	<script type="text/javascript">
         /*  动态网页标题*/
@@ -44,7 +44,27 @@
         <!-- fps 函数组件 弹窗信息在fps.js文件里修改-->
         <script type="text/javascript" src="./js/fps.js"></script>   
         <!-- end -->
-
+<!-- loading加载 -->
+		<div class="is-loading" id="load"> 
+			<div class="curtain">
+				<div class="loader">
+				</div>
+			</div>
+		</div>
+	<script type="text/javascript">
+	//确保Jquey已加载后执行进入 
+	(function($){
+		//$(window).load 和 $(document).ready 都可以使用，虽然有差别，整体感知不明显
+		$(window).on("load", function() { 
+			window.setTimeout(function() {
+				//隐藏或者移除Class均可以使用
+				//推荐用CSS特性实现 
+				//$("#load").removeClass("is-loading");
+				$("#load").hide(500);
+			}, 100);
+		});
+	})(jQuery);
+	</script>
   <!-- 星空粒子 -->
   <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
   <style>
@@ -374,13 +394,7 @@
 <script defer src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/kaygb/kaygb@master/layer/layer.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/kaygb/kaygb@master/js/v3.js"></script>-->
-   <!-- 引入JS -->   
-<script src="js/instantclick.min.js"></script>
-<!-- data-no-instant表示该标签不进行预加载 -->
-<script data-no-instant>
-//选择点击瞬间预加载模式
-InstantClick.init("mousedown");
-</script>  
+
 <script>
 	window['CboxReady'] = function (Cbox) {
 		Cbox('button', '3-3523748-9k93aT');
