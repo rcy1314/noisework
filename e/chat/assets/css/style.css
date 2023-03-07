@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
 
 :root {
-    --color-background: #272727;
+    --color-background: #ffffff;
     --color-background-key: #eee;
-    --color-text-key: #f7f0f0;
-    --color-text-small: #faf2f2;
+    --color-text-key: #000;
+    --color-text-small: #555;
     --border-key: 1px solid #999;
     --box-shadow-key: 1px 1px 3px rgba(0, 0, 0, 0.1);
     --color-background-tooltip: #fff;
