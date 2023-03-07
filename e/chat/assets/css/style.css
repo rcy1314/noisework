@@ -45,7 +45,7 @@ body {
     --slider-offset: 0.3em;
 
     position: absolute;
-    top: 8px;
+    top: 20px;
     right: 20px;
     width: var(--width-of-switch);
     height: var(--height-of-switch);
