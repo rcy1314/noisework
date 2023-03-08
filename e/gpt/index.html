@@ -620,7 +620,7 @@
           result = json.choices[0].message.content;
 
         } else {
-          let json = await fetch("https://api.openai.com/v1/completions", {
+          let json = await fetch("https://openai.1rmb.tk/v1/chat/completions", {
             method: "POST",
             headers: { "Authorization": `Bearer ${OPENAI_API_KEY}`, "Content-Type": "application/json" },
             body: JSON.stringify({
