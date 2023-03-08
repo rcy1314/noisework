@@ -189,7 +189,7 @@
       </div>
 
       <div id="middleColumn" style="flex-grow:1; display:flex; flex-direction:column; position:relative;">
-        <button id="leftColumnToggleButton" data-state="open" style="position:absolute; top:0.25rem; left:0.25rem; z-index:500; border:1px solid black; padding:0.25rem; display:none;">菜单</button>
+        <button id="leftColumnToggleButton" data-state="open" style="position:absolute; top:0.25rem; left:0.25rem; z-index:500; border:1px solid black; padding:0.25rem; display:none;">menu</button>
         <div id="characterSelection" class="middleColumnScreen" style="flex-grow:1; display:none;">
           <div><h2 style="text-align:center;">ChatGpt智能助理</h2></div>
           <div id="characterList" style=""></div>
@@ -297,7 +297,7 @@
           btn.addEventListener("click", async function(e) {
             e.stopPropagation();
             // edit the thread name and re-render thread list.
-            let newName = prompt("Enter new name for this thread.");
+            let newName = prompt("输入此对话的新名称.");
             if(newName) {
               const threadId = parseInt(btn.closest(".thread").dataset.threadId);
               await db.threads.update(threadId, { name: newName });
@@ -462,7 +462,7 @@
       }
 
       async function createNewThreadWithCharacterId(characterId) {
-        const thread = await addThread("New Thread", characterId);
+        const thread = await addThread("新对话", characterId);
 
         // add initial messages
         const character = await db.characters.get(characterId);
@@ -614,7 +614,7 @@
 
           let json = await fetch(endpoint, requestOptions).then(r => r.json()).catch(e => alert(e.toString()));
           if(!json || json.error) {
-            alert("For some reason that didn't work. You can try verifying your API key by clicking the 'settings' button. " + (json?.error ? JSON.stringify(json.error, null, 2) : ""));
+            alert("由于某些原因，这并没有奏效。您可以尝试通过单击‘设置’按钮来验证您的API密钥. " + (json?.error ? JSON.stringify(json.error, null, 2) : ""));
           }
 
           result = json.choices[0].message.content;
@@ -632,7 +632,7 @@
             }),
           }).then(r => r.json()).catch(e => alert(e.toString()));
           if(!json || json.error) {
-            alert("For some reason that didn't work. You can try verifying your API key by clicking the 'settings' button. " + (json?.error ? JSON.stringify(json.error, null, 2) : ""));
+            alert("由于某些原因，这并没有奏效。您可以尝试通过单击‘设置’按钮来验证您的API密钥 " + (json?.error ? JSON.stringify(json.error, null, 2) : ""));
           }
           result = json?.choices[0].text.trim();
         }
@@ -870,11 +870,11 @@
       }
 
   
-      $.sendButton.addEventListener("点击", sendButtonClickHandler);
+      $.sendButton.addEventListener("click", sendButtonClickHandler);
 
       let alreadyAutoReplying = false;
       let stopAutoReplying = false;
-      $.replyWithButton.addEventListener("点击", async function() {
+      $.replyWithButton.addEventListener("click", async function() {
         if(alreadyAutoReplying) { // user clicked "stop"
           $.replyWithButton.innerHTML = "停止...";
           $.replyWithButton.disabled = true;
@@ -882,7 +882,7 @@
           return;
         }
         alreadyAutoReplying = true;
-        $.replyWithButton.innerHTML = "🛑 停止";
+        $.replyWithButton.innerHTML = "🛑 stop";
         $.sendButton.disabled = true;
 
         let availableVoiceNames = speechSynthesis.getVoices().map(v => v.name).sort((a,b) => a.toLowerCase().includes("english") ? -1 : 1);
@@ -890,11 +890,11 @@
         // get list of characters, sorting by lastMessageTime
         const characters = await db.characters.orderBy("lastMessageTime").reverse().toArray();
         const result = await prompt2({
-          characterId: {label: "Choose a character to reply with:", type: "select", options:characters.map(c => ({content:`${c.name} #${c.id}`, value:c.id}))},
-          repeat: {label: "How many replies?", type: "textLine", defaultValue: "10"},
-          textToSpeechVoicesEnabled: {label: "Text-to-Speech Voices?", type: "select", options: [{content: "Disabled", value: "disabled"}, {content: "Enabled", value: "enabled"}]},
-          threadCharVoiceName: {label: "Existing chatacter voice:", type: "select", options:availableVoiceNames.map(v => ({content: v, value: v})) },
-          otherCharVoiceName: {label: "Reply-with character voice:", type: "select", options:availableVoiceNames.map(v => ({content: v, value: v})) },
+          characterId: {label: "选择一个要回复的角色:", type: "select", options:characters.map(c => ({content:`${c.name} #${c.id}`, value:c.id}))},
+          repeat: {label: "回复多少?", type: "textLine", defaultValue: "10"},
+          textToSpeechVoicesEnabled: {label: "文字转语音?", type: "select", options: [{content: "Disabled", value: "disabled"}, {content: "Enabled", value: "enabled"}]},
+          threadCharVoiceName: {label: "现有的聊天声音:", type: "select", options:availableVoiceNames.map(v => ({content: v, value: v})) },
+          otherCharVoiceName: {label: "回复的聊天声音:", type: "select", options:availableVoiceNames.map(v => ({content: v, value: v})) },
         });
 
         if(result) {
@@ -950,7 +950,7 @@
               for(let sentence of sentences) {
                 let result = await textToSpeech({text: sentence, voiceName: otherCharVoiceName}).catch(e => {
                   console.error(e);
-                  alert("There was an error with speech synthesis. You may need to close this tab and re-open it (not just refresh) if you're using Chrome due to a weird bug that sometimes causes this.\n\n"+e.toString());
+                  alert("语音合成出现错误。如果你正在使用Chrome，由于一个奇怪的错误，有时会导致这种情况，你可能需要关闭这个标签，然后重新打开它(而不仅仅是刷新)。\n\n"+e.toString());
                   return false;
                 });
                 if(result === false) break;
@@ -975,7 +975,7 @@
                   for(let sentence of sentences) {
                     let result = await textToSpeech({text: sentence, voiceName: threadCharVoiceName}).catch(e => {
                       console.error(e);
-                      alert("There was an error with speech synthesis. You may need to close this tab and re-open it (not just refresh) if you're using Chrome due to a weird bug that sometimes causes this.\n\n"+e.toString());
+                      alert("语音合成出现错误。如果您正在使用Chrome，则可能需要关闭此选项卡并重新打开它(而不仅仅是刷新)，因为一个奇怪的错误有时会导致这种情况.\n\n"+e.toString());
                       return false;
                     });
                     if(result === false) break;
@@ -990,7 +990,7 @@
         }
         stopAutoReplying = false;
         alreadyAutoReplying = false;
-        $.replyWithButton.innerHTML = "reply with...";
+        $.replyWithButton.innerHTML = "回复...";
         $.replyWithButton.disabled = false;
         $.sendButton.disabled = false;
       });
@@ -1016,7 +1016,7 @@
               await db.messages.where("threadId").equals(threadId).delete();
               await db.messages.bulkAdd(originalMessageObjs);
               console.error(e);
-              alert("There was an error during custom code handling. The original messages have been restored.\n\n"+e.toString());
+              alert("自定义代码处理过程中出错。原始消息已恢复.\n\n"+e.toString());
             }
             await renderMessageFeed(threadId);
           }
