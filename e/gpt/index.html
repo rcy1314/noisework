@@ -593,7 +593,7 @@
         let OPENAI_API_KEY = (await db.misc.get("openAiApiKey"))?.value;
         if(!OPENAI_API_KEY) {
           let result = await prompt2({
-            openAiApiKey: { label: "Please create a new OpenAI API key and paste it here. Go to <a href='https://platform.openai.com/account/api-keys' target='_blank'>this page</a> to do that. You can change or delete this later by clicking the 'settings' button.", type:"textLine" },
+            openAiApiKey: { label: "请新建一个OpenAI API KEY并粘贴到此处，可以到<a href='https://platform.openai.com/account/api-keys' target='_blank'>官方地址</a> 创建获取. 您可以通过单击“设置”按钮来更改或删除", type:"textLine" },
           });
           if(!result) return;
           await db.misc.put({ key: "openAiApiKey", value: result.openAiApiKey });
