@@ -615,7 +615,7 @@
 
           let json = await fetch(endpoint, requestOptions).then(r => r.json()).catch(e => alert(e.toString()));
           if(!json || json.error) {
-            alert("由于某些原因，这并没有奏效。您可以尝试通过单击‘设置’按钮来验证您的API密钥. " + (json?.error ? JSON.stringify(json.error, null, 2) : ""));
+            alert("For some reason that didn't work. You can try verifying your API key by clicking the 'settings' button. " + (json?.error ? JSON.stringify(json.error, null, 2) : ""));
           }
 
           result = json.choices[0].message.content;
@@ -633,7 +633,7 @@
             }),
           }).then(r => r.json()).catch(e => alert(e.toString()));
           if(!json || json.error) {
-            alert("由于某些原因，这并没有奏效。您可以尝试通过单击‘设置’按钮来验证您的API密钥 " + (json?.error ? JSON.stringify(json.error, null, 2) : ""));
+            alert("For some reason that didn't work. You can try verifying your API key by clicking the 'settings' button. " + (json?.error ? JSON.stringify(json.error, null, 2) : ""));
           }
           result = json?.choices[0].text.trim();
         }
