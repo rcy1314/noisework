@@ -1078,7 +1078,7 @@
         const result = await prompt2({
           userName: {label: "昵称:", type: "textLine", defaultValue: userNameOriginal},
           userAvatarUrl: {label: "头像链接:", type: "textLine", placeholder: "(可选)", defaultValue: userAvatarUrlOriginal},
-          openAiApiKey: {label: "OpenAI API key:", type: "textLine", placeholder: "(可选)", defaultValue: openAiApiKeyOriginal},
+          openAiApiKey: {label: "OpenAI API key:", type: "textLine", placeholder: "(必选)", defaultValue: openAiApiKeyOriginal},
         });
         if(!result) return;
         const { userName, userAvatarUrl, openAiApiKey } = result;
