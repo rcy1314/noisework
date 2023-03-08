@@ -308,7 +308,7 @@
         $.chatThreads.querySelectorAll(".deleteButton").forEach(btn => {
           btn.addEventListener("click", async function(e) {
             e.stopPropagation();
-            if(confirm("Are you sure you want to delete this thread?")) {
+            if(confirm("您确定要删除此对话吗？")) {
               const threadId = parseInt(btn.closest(".thread").dataset.threadId);
               await db.threads.delete(threadId);
               await renderThreadList();
@@ -399,7 +399,7 @@
               let urlHashData = encodeURIComponent(JSON.stringify({addCharacter:character}));
               const url = `${window.location.origin+window.location.pathname}#${urlHashData}`;
               await navigator.clipboard.writeText(url);
-              $.topNotificationContent.innerHTML = `Copied character link to clipboard!`;
+              $.topNotificationContent.innerHTML = `已复制的字符链接到剪贴板！`;
               showEl($.topNotification);
               setTimeout(() => hideEl($.topNotification), 3000);
             });
@@ -430,7 +430,7 @@
               e.stopPropagation();
               const characterId = parseInt(characterEl.dataset.characterId);
               const character = (await db.characters.where("id").equals(characterId).toArray())[0];
-              if(confirm(`Are you sure you want to delete this character? This will delete ALL THREADS associated with this character.`)) {
+              if(confirm(`是否确实要删除此角色？这将删除与此关联的所有对话`)) {
                 await db.characters.delete(characterId);
                 // delete all threads and messages associated with this character
                 const threads = await db.threads.where("characterId").equals(characterId).toArray();
