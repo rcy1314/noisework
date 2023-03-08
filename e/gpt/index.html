@@ -606,7 +606,7 @@
         let result;
 
         if(modelType === "chat") {
-          const endpoint = 'https://openai.1rmb.tk/v1/chat/completions';
+          const endpoint = 'https://openai.ahao-study.top';
           const requestOptions = {
             method: 'POST',
             headers: { 'Authorization': `Bearer ${OPENAI_API_KEY}`, 'Content-Type': 'application/json' },
@@ -621,7 +621,7 @@
           result = json.choices[0].message.content;
 
         } else {
-          let json = await fetch("https://openai.1rmb.tk/v1/chat/completions", {
+          let json = await fetch("https://openai.ahao-study.top", {
             method: "POST",
             headers: { "Authorization": `Bearer ${OPENAI_API_KEY}`, "Content-Type": "application/json" },
             body: JSON.stringify({
