@@ -33,32 +33,11 @@
             }
         });
         </script>
-		<!-- loading加载1--> 
+		<!-- loading加载--> 
 		<div id="spinner-container">
 			<div class="spinner"></div>
 		  </div>
-		  <script type="text/javascript">
-<!-- loading加载2  
-		<div class="is-loading" id="load"> 
-			<div class="curtain">
-				<div class="loader">
-				</div>
-			</div>
-		</div>
-	<script type="text/javascript">
-	//确保Jquey已加载后执行进入 
-	(function($){
-		//$(window).load 和 $(document).ready 都可以使用，虽然有差别，整体感知不明显
-		$(window).on("load", function() { 
-			window.setTimeout(function() {
-				//隐藏或者移除Class均可以使用
-				//推荐用CSS特性实现 
-				//$("#load").removeClass("is-loading");
-				$("#load").hide(500);
-			}, 100);
-		});
-	})(jQuery);
-	</script> -->  
+		  <script type="text/javascript"> 
     <!--  引入JS -->   
 <script src="js/instantclick.min.js"></script>
 <!-- data-no-instant表示该标签不进行预加载 -->
@@ -93,7 +72,11 @@ InstantClick.init("mousedown");
 		<!-- 流动代码-->
    
 		<marquee scrollamount="3" direction="right" behavior="alternate">
-			<a style="color:#fff" target="_blank">📢：添加了新的站点，联动小程序改版了😃</a>  
+			<!-- <a style="color:#fff" target="_blank">📢：添加了新的站点，联动小程序改版了😃</a> --> 
+			<div class="container">
+				📢：<span id="hitokoto">正在获取中...</span>
+                        </div>
+                        <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>  
 			</marquee>	
   <!-- 流动代码结束-->
 	<div class="find">
