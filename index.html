@@ -7,12 +7,12 @@
 	<link rel="icon" href="./assets/favicon.png" type="image/png" />
 	<title>Noise&主页</title>
 	<script src="https://kit.fontawesome.com/25cfefa7b1.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/c/font_3165812_pvad0am2nmp.css">
+	<link rel="stylesheet" type="text/css" href="css/font_3165812_pvad0am2nmp.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/terminal.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="./css/loading.css">
+	<!-- <link rel="stylesheet" type="text/css" href="./css/loading.css">  -->
 	<script type="text/javascript">
         /*  动态网页标题*/
         var OriginTitile = document.title,
@@ -20,11 +20,11 @@
         document.addEventListener("visibilitychange",
         function() {
             if (document.hidden) {
-                $('[rel="shortcut icon"]').attr("href", "https:/www.noisework.cn/assets/favicon.ico");
+                $('[rel="shortcut icon"]').attr("href", "/assets/favicon.ico");
                 document.title = "你别走吖 Σ(っ °Д °;)っ";
                 clearTimeout(titleTime)
             } else {
-                $('[rel="shortcut icon"]').attr("href", "https://www.noisework.cn/assets/favicon.ico");
+                $('[rel="shortcut icon"]').attr("href", "/assets/favicon.ico");
                 document.title = "你可算回来了 (｡•ˇ‸ˇ•｡)" + OriginTitile;
                 titleTime = setTimeout(function() {
                     document.title = OriginTitile
@@ -37,13 +37,13 @@
     <div class="leftarea">
         <!-- fps id geo-location -->
         <div id="fps" style="z-index:999;position:fixed;bottom:3px;right:3px;color:#FFF;font-size:10px;"></div> 
-        <script type="text/javascript" src="https://cache.gmit.vip/static/api/js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
         <!--web 弹窗弹层组件 经测试还是cdn好-->
-        <script type="text/javascript" src="https://cache.gmit.vip/static/index/js/layer.js"></script>
+        <script type="text/javascript" src="js/layer.js"></script>
         <!-- fps 函数组件 弹窗信息在fps.js文件里修改-->
         <script type="text/javascript" src="./js/fps.js"></script>   
         <!-- end -->
-<!-- loading加载 -->
+<!-- loading加载
 		<div class="is-loading" id="load"> 
 			<div class="curtain">
 				<div class="loader">
@@ -64,7 +64,7 @@
 		});
 	})(jQuery);
 	</script>
-     <!-- 引入JS -->   
+      引入JS -->   
 <script src="js/instantclick.min.js"></script>
 <!-- data-no-instant表示该标签不进行预加载 -->
 <script data-no-instant>
