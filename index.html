@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="css/terminal.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-	<!-- <link rel="stylesheet" type="text/css" href="./css/loading.css">  -->
+	<link rel="stylesheet" type="text/css" href="./css/loading.css"> 
 	<script type="text/javascript">
         /*  动态网页标题*/
         var OriginTitile = document.title,
@@ -20,11 +20,11 @@
         document.addEventListener("visibilitychange",
         function() {
             if (document.hidden) {
-                $('[rel="shortcut icon"]').attr("href", "/assets/favicon.ico");
+                $('[rel="shortcut icon"]').attr("href", "./assets/favicon.png");
                 document.title = "你别走吖 Σ(っ °Д °;)っ";
                 clearTimeout(titleTime)
             } else {
-                $('[rel="shortcut icon"]').attr("href", "/assets/favicon.ico");
+                $('[rel="shortcut icon"]').attr("href", "./assets/favicon.png");
                 document.title = "你可算回来了 (｡•ˇ‸ˇ•｡)" + OriginTitile;
                 titleTime = setTimeout(function() {
                     document.title = OriginTitile
@@ -33,7 +33,7 @@
             }
         });
         </script>
-        
+       <!-- 弹窗加载  -->   
     <div class="leftarea">
         <!-- fps id geo-location -->
         <div id="fps" style="z-index:999;position:fixed;bottom:3px;right:3px;color:#FFF;font-size:10px;"></div> 
@@ -41,9 +41,9 @@
         <!--web 弹窗弹层组件 经测试还是cdn好-->
         <script type="text/javascript" src="js/layer.js"></script>
         <!-- fps 函数组件 弹窗信息在fps.js文件里修改-->
-        <script type="text/javascript" src="./js/fps.js"></script>   
+        <script type="text/javascript" src="js/fps.js"></script>   
         <!-- end -->
-<!-- loading加载
+<!-- loading加载  -->  
 		<div class="is-loading" id="load"> 
 			<div class="curtain">
 				<div class="loader">
@@ -64,7 +64,7 @@
 		});
 	})(jQuery);
 	</script>
-      引入JS -->   
+    <!--  引入JS -->   
 <script src="js/instantclick.min.js"></script>
 <!-- data-no-instant表示该标签不进行预加载 -->
 <script data-no-instant>
@@ -289,7 +289,7 @@ InstantClick.init("mousedown");
 	</script>
 	<script src="./js/emb.js" async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/hmongouachon/NodeCursor/src/nodecursor-jquery.js"></script>
+<script src="js/nodecursor-jquery.js"></script>
 <script src="js/main.js"></script>
 <script src="js/terminal.js"></script>
 </html>

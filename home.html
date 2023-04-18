@@ -22,11 +22,11 @@
         document.addEventListener("visibilitychange",
         function() {
             if (document.hidden) {
-                $('[rel="shortcut icon"]').attr("href", "https:/yejiuqiu.cn/favicon.ico");
+                $('[rel="shortcut icon"]').attr("href", "./assets/favicon.png");
                 document.title = "你别走吖 Σ(っ °Д °;)っ";
                 clearTimeout(titleTime)
             } else {
-                $('[rel="shortcut icon"]').attr("href", "https://yejiuqiu.cn/favicon.ico");
+                $('[rel="shortcut icon"]').attr("href", "./assets/favicon.png");
                 document.title = "你可算回来了 (｡•ˇ‸ˇ•｡)" + OriginTitile;
                 titleTime = setTimeout(function() {
                     document.title = OriginTitile
