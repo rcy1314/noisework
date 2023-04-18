@@ -38,20 +38,6 @@
 			<div class="spinner"></div>
 		  </div>
 		  <script type="text/javascript">
-			//确保Jquey已加载后执行进入 
-			(function($){
-				//$(window).load 和 $(document).ready 都可以使用，虽然有差别，整体感知不明显
-				$(window).on("load", function() { 
-					window.setTimeout(function() {
-						//隐藏或者移除Class均可以使用
-						//推荐用CSS特性实现 
-						//$("#load").removeClass("is-loading");
-						$("#load").hide(500);
-					}, 100);
-				});
-			})(jQuery);
-			</script>  
-
 <!-- loading加载2  
 		<div class="is-loading" id="load"> 
 			<div class="curtain">
