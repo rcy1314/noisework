@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="css/terminal.css">
 	<link rel="stylesheet" href="css/fira_code.css">
 	<script src="js/parallax.min.js"></script>
-	<!-- <link rel="stylesheet" type="text/css" href="./css/loading.css"> -->
+	 <link rel="stylesheet" type="text/css" href="./css/loading.css"> 
 	<script type="text/javascript">
         /*  动态网页标题*/
         var OriginTitile = document.title,
@@ -33,7 +33,26 @@
             }
         });
         </script>
-<!-- loading加载  
+		<!-- loading加载1--> 
+		<div id="spinner-container">
+			<div class="spinner"></div>
+		  </div>
+		  <script type="text/javascript">
+			//确保Jquey已加载后执行进入 
+			(function($){
+				//$(window).load 和 $(document).ready 都可以使用，虽然有差别，整体感知不明显
+				$(window).on("load", function() { 
+					window.setTimeout(function() {
+						//隐藏或者移除Class均可以使用
+						//推荐用CSS特性实现 
+						//$("#load").removeClass("is-loading");
+						$("#load").hide(500);
+					}, 100);
+				});
+			})(jQuery);
+			</script>  
+
+<!-- loading加载2  
 		<div class="is-loading" id="load"> 
 			<div class="curtain">
 				<div class="loader">
@@ -282,4 +301,5 @@ InstantClick.init("mousedown");
 <script src="js/nodecursor-jquery.js"></script>
 <script src="js/main.js"></script>
 <script src="js/terminal.js"></script>
+<script src="js/loading.js"></script>
 </html>
