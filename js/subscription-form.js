@@ -20,7 +20,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
             const { dataset } = script;
             const { feedId } = dataset;
             if (!feedId) {
-                console.error('RES init error: data-feed-id is missing');
+                console.error('RES初始化错误：缺少data-feed-id');
                 return;
             }
             const { fieldLabelText, fieldLabelClassName, fieldPlaceholder, fieldTextboxClassName, buttonClassName, buttonLabel, } = dataset;
@@ -193,14 +193,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
                     }
                     catch (error) {
                         console.error(error);
-                        displayMessage('Error: invalid response from the server! Please try again.', 'failure');
+                        displayMessage('错误：来自服务器的响应无效！请重试.', 'failure');
                     }
                 });
             }
             function handleError(error) {
                 let { message } = error;
                 if (message === 'Failed to fetch') {
-                    message = 'Failed to connect to the server. Please try again in a few moments.';
+                    message = '无法连接到服务器。请稍后再试一次.';
                 }
                 displayMessage(`Error: ${message} 😢`, 'failure');
             }
