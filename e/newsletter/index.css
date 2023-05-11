@@ -1,0 +1,75 @@
+.head {
+    display: flex;
+    justify-content: center;
+    color: #121212;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 14px;
+
+}
+
+.img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 380px;
+    height: 253px;
+    
+
+}
+
+
+.text {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 380px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    
+}
+#inputmail {
+    border: 3px solid #121212;
+    width: 240px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+} 
+
+#buttonel {
+
+    border: none;
+    color: white;
+    background-color: #121212;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border: 3px solid #121212;
+    width: 250px;
+    height: 38px;
+
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+}
+
+#link {
+    color: #121212;
+}
