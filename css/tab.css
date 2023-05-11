@@ -8,7 +8,7 @@
     /* 固定定位 右下角 */
     position: fixed;
     z-index: 9999;
-    bottom: 550px;
+    bottom: 500px;
     right: 5px;
 }
 /* 菜单按钮 */
@@ -73,7 +73,7 @@
     padding: 6px;
     box-shadow: 0 0 4px 4px rgba(17, 17, 17, 0.15);
     position: absolute;
-    right: 15px;
+    right: 10px;
     bottom: 15px;
     /* 默认隐藏 */
     opacity: 0;
