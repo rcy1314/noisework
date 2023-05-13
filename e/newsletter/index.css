@@ -1,11 +1,52 @@
+*{
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* 切换按钮 */
+.switch{
+    border: 1px solid #c4c7ce;
+    width: 60px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6px;
+    border-radius: 15px;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+}
+/* 滑块 */
+.switch::before{
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #4e6ef2;
+    position: absolute;
+    left: 3px;
+    transition: 0.2s ease-out;
+}
+.switch.dark::before{
+    left: 31px;
+}
+/* 图标 */
+.switch .fa{
+    font-size: 18px;
+    color: #aaa;
+}
 .head {
     display: flex;
     justify-content: center;
     color: #121212;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
-    font-size: 14px;
-
+    font-size: 14px;   
 }
 
 .img {
