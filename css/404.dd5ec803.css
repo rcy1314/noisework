@@ -1,0 +1,486 @@
+#header:where(.astro-GA25EYQW) {
+    width: 100%;
+    height: 6em;
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+#header:where(.astro-GA25EYQW) .site-icon:where(.astro-GA25EYQW) {
+    height: 3em;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(var(--text-color-meta), 1);
+    background: var(--card-bg);
+    display: flex;
+    align-items: center;
+    padding: 0 1em;
+    border-radius: 2em;
+    border: 3px solid var(--border-color)
+}
+
+#header:where(.astro-GA25EYQW) .site-icon:where(.astro-GA25EYQW):hover {
+    background: var(--card-hover-bg)
+}
+
+#header:where(.astro-GA25EYQW) .site-icon-img:where(.astro-GA25EYQW) {
+    width: 100%;
+    height: 100%
+}
+
+#header:where(.astro-GA25EYQW) .site-buttons:where(.astro-GA25EYQW) {
+    display: flex;
+    align-items: center;
+    gap: .5em
+}
+
+#header:where(.astro-GA25EYQW) .site-button:where(.astro-GA25EYQW) {
+    display: inline-block;
+    width: 3em;
+    height: 3em;
+    font-size: 12px;
+    border: none;
+    outline: none;
+    padding: .75em;
+    border: 3px solid var(--border-color);
+    border-radius: 50%;
+    background: var(--card-bg);
+    color: rgba(var(--text-color-meta), 1)
+}
+
+#header:where(.astro-GA25EYQW) .site-button:where(.astro-GA25EYQW):hover {
+    background: var(--card-hover-bg)
+}
+
+#nav .item .icon {
+    width: 1em;
+    height: 1em
+}
+
+#nav:where(.astro-LFCKEST2) {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding: 0 0 4em;
+    background: var(--texture);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    z-index: 1001
+}
+
+#nav:where(.astro-LFCKEST2).hide {
+    opacity: 0;
+    pointer-events: none;
+    user-select: none
+}
+
+.nav-container:where(.astro-LFCKEST2) {
+    width: 50vw;
+    max-height: 60vh;
+    background: var(--bg);
+    border-radius: var(--base-radius);
+    padding: 1em;
+    overflow-y: scroll
+}
+
+.nav-container:where(.astro-LFCKEST2)::-webkit-scrollbar {
+    width: 1px
+}
+
+.group-title:where(.astro-LFCKEST2) {
+    color: rgba(var(--text-color-meta), 1);
+    font-weight: 700;
+    font-size: .8em;
+    margin: .5em
+}
+
+.group:where(.astro-LFCKEST2) {
+    display: grid;
+    gap: .2em
+}
+
+.item:where(.astro-LFCKEST2) {
+    padding: 1em;
+    border-radius: var(--base-radius);
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    color: rgba(var(--text-color-meta), 1)
+}
+
+.item:where(.astro-LFCKEST2):hover {
+    background: rgb(23, 22, 27);
+    color: #fff
+}
+
+#footer:where(.astro-OY55P3EK) {
+    padding: 1em;
+    text-align: center
+}
+
+html,
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+p,
+blockquote,
+pre,
+hr,
+figure,
+table,
+caption,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+menu {
+    margin: 0;
+    padding: 0
+}
+
+header,
+footer,
+section,
+article,
+aside,
+nav,
+hgroup,
+address,
+figure,
+figcaption,
+menu,
+details {
+    display: block
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+caption,
+th {
+    text-align: left;
+    font-weight: 400
+}
+
+html,
+body,
+fieldset,
+img,
+iframe,
+abbr {
+    border: 0
+}
+
+i,
+cite,
+em,
+var,
+address,
+dfn {
+    font-style: normal
+}
+
+[hidefocus],
+summary {
+    outline: 0
+}
+
+li {
+    list-style: none
+}
+
+sup,
+sub {
+    font-size: 83%
+}
+
+pre,
+code,
+kbd,
+samp {
+    font-family: inherit
+}
+
+q:before,
+q:after {
+    content: none
+}
+
+textarea {
+    overflow: auto;
+    resize: none
+}
+
+label,
+summary {
+    cursor: default
+}
+
+a,
+button {
+    cursor: pointer
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em,
+strong,
+b {
+    font-weight: 700
+}
+
+del,
+ins,
+u,
+s,
+a,
+a:hover {
+    text-decoration: none
+}
+
+body,
+textarea,
+input,
+button,
+select,
+keygen,
+legend {
+    font: 12px/1.14 arial, \5b8b\4f53;
+    color: #333;
+    outline: 0
+}
+
+a,
+a:hover {
+    color: rgba(var(--text-color-meta), 1)
+}
+
+* {
+    box-sizing: border-box;
+    transition: background .3s
+}
+
+:root {
+    --side-space: 18vw;
+    --base-radius: .5em;
+    --texture: rgb(226, 231, 240);
+    --text-color-meta: 81, 87, 90;
+    --text-color: rgba(var(--text-color-meta), 1);
+    --border-color: rgba(255, 255, 255, .2);
+    --bg: rgb(235, 244, 256, .72);
+    --card-bg-meta: 255, 255, 255;
+    --card-bg: rgba(255, 255, 255, .4);
+    --card-hover-bg: rgba(255, 255, 255, .7);
+    --card-active-bg: rgba(255, 255, 255, .9)
+}
+
+@media (max-width: 900px) {
+    :root {
+        --side-space: 5vw
+    }
+}
+
+html.dark {
+    --text-color-meta: 126, 133, 151;
+    --border-color: rgba(115, 115, 115, .2);
+    --border-color: rgba(0, 0, 0, .2);
+    --texture: rgba(249, 243, 243, 0.02);
+    --bg: rgba(25, 26, 28, 0.621);
+    --card-bg-meta: 8, 12, 15;
+    --card-bg: rgba(var(--card-bg-meta), .4);
+    --card-hover-bg: rgba(var(--card-bg-meta), .7);
+    --card-active-bg: rgba(var(--card-bg-meta), .9)
+}
+
+html::-webkit-scrollbar {
+    width: 0;
+    height: 0
+}
+
+html {
+    background-image: url(../assets/3.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg);
+    padding: 0 var(--side-space);
+    font-size: 16px;
+    color: rgba(var(--text-color-meta), 1)
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: rgba(var(--text-color-meta), 1)
+}
+
+h2.title {
+    text-align: center
+}
+
+svg.icon,
+img.icon {
+    fill: currentColor;
+    width: 100%;
+    height: 100%
+}
+
+.about-me:where(.astro-O47QWQL5) {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin: 1em 0
+}
+
+.about-me:where(.astro-O47QWQL5) .avatar-img:where(.astro-O47QWQL5) {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    border: 5px solid var(--card-active-bg);
+    transition: .3s
+}
+
+.about-me:where(.astro-O47QWQL5) .avatar:where(.astro-O47QWQL5) {
+    position: relative
+}
+
+.about-me:where(.astro-O47QWQL5) .avatar:where(.astro-O47QWQL5):before {
+    content: "";
+    transition: .3s;
+    width: 25px;
+    height: 25px;
+    background: #57bd6a;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px var(--card-active-bg);
+    bottom: 14px;
+    right: 14px;
+    z-index: 2
+}
+
+.info-left:where(.astro-O47QWQL5),
+.info-right:where(.astro-O47QWQL5) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around
+}
+
+.tag:where(.astro-O47QWQL5) {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    color: rgba(var(--text-color-meta), 1);
+    padding: .5em;
+    border-radius: 2em;
+    font-size: 14px;
+    animation: wave 4s ease-in-out 0s infinite normal none running
+}
+
+.info-left:where(.astro-O47QWQL5) .tag:where(.astro-O47QWQL5):nth-child(2) {
+    margin: 0 1em 0 -1em
+}
+
+.info-right:where(.astro-O47QWQL5) .tag:where(.astro-O47QWQL5):nth-child(2) {
+    margin: 0 -1em 0 1em
+}
+
+.tag:where(.astro-O47QWQL5):nth-child(2) {
+    animation-delay: .6s
+}
+
+.tag:where(.astro-O47QWQL5):nth-child(3) {
+    animation-delay: 1.2s
+}
+
+@keyframes wave {
+    0% {
+        transform: translateY(-4px)
+    }
+
+    50% {
+        transform: translateY(4px)
+    }
+
+    to {
+        transform: translateY(-4px)
+    }
+}
+
+.about-me-2:where(.astro-O47QWQL5) {
+    width: fit-content;
+    margin: 0 auto;
+    height: 3em;
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    user-select: none
+}
+
+.trigger:where(.astro-O47QWQL5) {
+    width: max-content;
+    height: 3em;
+    padding: .5em 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border-radius: 2em;
+    background: rgb(var(--card-bg-meta));
+    border: none;
+    box-shadow: 0 0 0 3px inset var(--border-color);
+    color: rgba(var(--text-color-meta), 1);
+    transition: .3s;
+    overflow: hidden;
+    position: absolute
+}
+
+.trigger:where(.astro-O47QWQL5),
+.trigger:where(.astro-O47QWQL5):focus {
+    opacity: 0;
+    z-index: -1
+}
+
+.trigger:where(.astro-O47QWQL5):nth-child(1),
+.trigger:where(.astro-O47QWQL5):focus+.trigger:where(.astro-O47QWQL5) {
+    opacity: 1;
+    z-index: 0
+}
+
+@media (max-width: 900px) {
+
+    .info-left:where(.astro-O47QWQL5),
+    .info-right:where(.astro-O47QWQL5) {
+        display: none
+    }
+
+    .about-me-2:where(.astro-O47QWQL5) {
+        display: flex
+    }
+}
