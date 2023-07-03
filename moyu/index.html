@@ -16,7 +16,7 @@
     <div style="margin: 20px auto; max-width: 900px;">
         <h2>【摸鱼办】提醒您：</h2>
         <h4>当前时间：<font color="#33FFFF"><span id="nowDateTimeSpan"></span></font> </h4>
-       摸鱼人！工作再累，一定不要忘记摸鱼哦！有事没事起身去茶水间，去厕所，去廊道走走别老在工位上坐着，钱是老板的,但命是自己的。</p>
+       <a id="greeting"></a>摸鱼人！工作再累，一定不要忘记摸鱼哦！有事没事起身去茶水间，去厕所，去廊道走走别老在工位上坐着，钱是老板的,但命是自己的。</p>
         <ul id="favs"></ul>
         <p>
             上班是帮老板赚钱，摸鱼是赚老板的钱！最后，祝愿天下所有摸鱼人，都能愉快的渡过每一天…
@@ -42,7 +42,25 @@ const getResult = (_n) => {
 }
 
 const now = new Date()
-//timeshow.innerText = `${now.getHours()> 12  ? '下午' : '上午'  }好`
+const hour = now.getHours()
+let greeting = ''
+if (hour >= 5 && hour < 8) {
+    greeting = '早上好!'
+} else if (hour >= 8 && hour < 11) {
+    greeting = '上午好！'
+} else if (hour >= 11 && hour < 12.5) {
+    greeting = '中午好！'
+} else if (hour >= 12.5 && hour < 17) {
+    greeting = '下午好！'
+} else if (hour >= 17 && hour < 18.5) {
+    greeting = '傍晚好！'
+} else if (hour >= 18.5 && hour < 24) {
+    greeting = '晚上好！'
+} else if (hour >= 0 && hour < 5) {
+    greeting = '凌晨好！'
+}
+document.getElementById('greeting').innerText = greeting
+
 const day = 6 - now.getDay()
 favs.innerHTML = `<li>距离周六还有:${day}天</li>`
 if (day < 1) {
@@ -86,9 +104,6 @@ favs.innerHTML += getResult(now).map(([a, b]) => `<li>距离${FAVS[b]}还有:${a
         }   
           return i;
     }  
-</script>
-
-
-    
+</script>   
 </body>
 </html>
