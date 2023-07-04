@@ -14,6 +14,14 @@
 	<script src="js/parallax.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="./css/loading.css"> 
 	<link rel="stylesheet" href="css/tab.css">
+	<link rel="manifest" href="/manifest.json">
+	<!--  引入JS -->   
+    <script src="js/instantclick.min.js"></script>
+    <!-- data-no-instant表示该标签不进行预加载 -->
+    <script data-no-instant>
+    //选择点击瞬间预加载模式
+    InstantClick.init("mousedown");
+    </script>
 	<script type="text/javascript">
         /*  动态网页标题*/
         var OriginTitile = document.title,
@@ -33,21 +41,28 @@
                 2000)
             }
         });
-        </script>
-		<!-- loading加载--> 
-		<div id="spinner-container">
-			<div class="spinner"></div>
-		  </div>
-		  <script type="text/javascript"> 
-    <!--  引入JS -->   
-<script src="js/instantclick.min.js"></script>
-<!-- data-no-instant表示该标签不进行预加载 -->
-<script data-no-instant>
-//选择点击瞬间预加载模式
-InstantClick.init("mousedown");
-</script>  
-   </head> 
-   <body>  
+	</script>
+	<!-- loading加载--> 
+	<div id="spinner-container">
+		<div class="spinner"></div>
+	  </div>
+	  <script type="text/javascript"> 
+	  </script>
+</head>
+<body>
+	<!-- 添加Service Worker -->
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', function() {
+				navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+					console.log('ServiceWorker registration successful with scope: ', registration.scope);
+				}).catch(function(error) {
+					console.log('ServiceWorker registration failed: ', error);
+				});
+			});
+		}
+	</script>
+
 	<div class="node" id="node"></div>
 	<div class="cursor" id="cursor"></div>
 	<div id="sence">
@@ -58,242 +73,246 @@ InstantClick.init("mousedown");
 		<div class="about">
 			<h2 class="chtitle">欢迎访问<span>Noise</span>主页</h2>
 			<div id="clear">
-				<div id="avatar"><a href="https://stats.uptimerobot.com/GoqwLuBl3o"title="站点运行状况" target="_blank" id='morelink' class="bt"><i class="iconfont zac-link"></i></a></div>
+				<div id="avatar"><a href="https://stats.uptimerobot.com/GoqwLuBl3o" title="站点运行状况" target="_blank" id='morelink' class="bt"><i class="iconfont zac-link"></i></a></div>
 				<div id="persontag">
 					<div class="line">🌟&nbsp;幻想主义<div class="tag">【现实】</div>&nbsp;追随者</div>
 					<div class="line">📷&nbsp;爱<div class="tag">'音乐'</div>'摄影'<div class="tag">'舞蹈'</div>【自由派】</div>
 					<div class="line">🕹️&nbsp;SWITCH&nbsp;【塞尔达传说】</div>
 					<div class="line">🎁&nbsp;知行合一，努力才有收获</div>
-					
 				</div>
-				<div id="terminal">
-				</div>
+				<div id="terminal"></div>
 			</div>
-	
+		</div>
+
 		<!-- 流动代码-->
-   
 		<marquee scrollamount="3" direction="right" behavior="alternate">
 			<!-- <a style="color:#fff" target="_blank">📢：添加了新的站点，联动小程序改版了😃</a> --> 
 			<div class="container">
 				📢：<span id="hitokoto">正在获取中...</span>
-                        </div>
-                        <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>  
-			</marquee>	
-  <!-- 流动代码结束-->
-	<div class="find">
-		<h2 class="chtitle"><span>社交</span>媒体</h2>
-		<div id="linkbox">
-						<a href="https://twitter.com/liangwenhao3" target="_blank">
-							<div class="item" style="--color: rgba(40, 169, 224,0.3)">
-								<div class="bg" style="background-color:rgb(40, 169, 224)"></div>
-								<div class="inner"> <i class="fa-brands fa-twitter"></i><span>Twitter</span></div>
-							</div>
-						</a>
-						<a href="https://github.com/rcy1314" target="_blank">
-							<div class="item" style="--color:rgba(53, 53, 53,0.3)">
-								<div class="bg" style="background-color:rgb(53, 53, 53)"></div>
-								<div class="inner"> <i class="fa-brands fa-github"></i><span>Github</span></div>
-							</div>
-						</a>
-						<a href="./assets/gongzhonghao.jpg" target="_blank">
-							<div class="item" style="--color:rgba(0, 102, 255,0.3)">
-								<div class="bg" style="background-color:rgb(0, 102, 255)"></div>
-								<div class="inner"> <i class="fa-brands fa-weixin"></i><span>公众号</span></div>
-							</div>
-						</a>
-						<a href="https://noise.zhubai.love"target="_blank">
-							<div class="item" style="--color:rgba(251, 114, 153,0.3)">
-								<div class="bg" style="background-color:rgb(251, 114, 153)"></div>
-								<div class="inner"><i class="fa-solid fa-square-envelope"></i><span>竹白</span></div>
-							</div>
-						</a>
-						<a href="https://t.me/quanshoulu" target="_blank">
-							<div class="item" style="--color:rgba(35, 45, 55,0.3)">
-								<div class="bg" style="background-color:rgb(35, 45, 55)"></div>
-								<div class="inner"> <i class="fa-brands fa-telegram"></i><span>TG频道</span></div>
-							</div>
-						</a>
-						<a href="https://www.noiseblog.top" target="_blank">
-							<div class="item" style="--color:rgba(1, 193, 157,0.3)">
-								<div class="bg" style="background-color: rgb(1, 193, 157);"></div>
-								<div class="inner"> <i class="fa-solid fa-blog"></i><span>Blog</span></div>
-							</div>
-						</a>
-						<a href="https://www.pinterest.com/rcy13141314/"target="_blank">
-							<div class="item" style="--color:rgba(109, 136, 255)">
-								<div class="bg" style="background-color:rgb(109, 136, 255)"></div>
-								<div class="inner"> <i class="fa-brands fa-pinterest"></i><span>Pinterest</span></div>
-							</div>
-						</a>
-						<a href="./lianxi/weixin.png" target="_blank">
-							<div class="item" style="--color:rgba(53, 57, 59)">
-								<div class="bg" style="background-color: rgb(53, 57, 59);"></div>
-								<div class="inner"> <i class="fa-brands fa-weixin"></i><span>微信号</span></div>
-							</div>
-						</a>
-						<a href="https://sspai.com/u/noise/updates" target="_blank">
-							<div class="item" style="--color:rgba(28, 64, 100)">
-								<div class="bg" style="background-color:rgb(55, 127, 199)"></div>
-								<div class="inner"><i class="fa-solid fa-user-astronaut"></i><span>少数派</span></div>
-							</div>
-						</a>	
+			</div>
+			<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>  
+		</marquee>	
+		<!-- 流动代码结束-->
+
+		<div class="find">
+			<h2 class="chtitle"><span>社交</span>媒体</h2>
+			<div id="linkbox">
+				<a href="https://twitter.com/liangwenhao3" target="_blank">
+					<div class="item" style="--color: rgba(40, 169, 224,0.3)">
+						<div class="bg" style="background-color:rgb(40, 169, 224)"></div>
+						<div class="inner"> <i class="fa-brands fa-twitter"></i><span>Twitter</span></div>
+					</div>
+				</a>
+				<a href="https://github.com/rcy1314" target="_blank">
+					<div class="item" style="--color:rgba(53, 53, 53,0.3)">
+						<div class="bg" style="background-color:rgb(53, 53, 53)"></div>
+						<div class="inner"> <i class="fa-brands fa-github"></i><span>Github</span></div>
+					</div>
+				</a>
+				<a href="./assets/gongzhonghao.jpg" target="_blank">
+					<div class="item" style="--color:rgba(0, 102, 255,0.3)">
+						<div class="bg" style="background-color:rgb(0, 102, 255)"></div>
+						<div class="inner"> <i class="fa-brands fa-weixin"></i><span>公众号</span></div>
+					</div>
+				</a>
+				<a href="https://noise.zhubai.love"target="_blank">
+					<div class="item" style="--color:rgba(251, 114, 153,0.3)">
+						<div class="bg" style="background-color:rgb(251, 114, 153)"></div>
+						<div class="inner"><i class="fa-solid fa-square-envelope"></i><span>竹白</span></div>
+					</div>
+				</a>
+				<a href="https://t.me/quanshoulu" target="_blank">
+					<div class="item" style="--color:rgba(35, 45, 55,0.3)">
+						<div class="bg" style="background-color:rgb(35, 45, 55)"></div>
+						<div class="inner"> <i class="fa-brands fa-telegram"></i><span>TG频道</span></div>
+					</div>
+				</a>
+				<a href="https://www.noiseblog.top" target="_blank">
+					<div class="item" style="--color:rgba(1, 193, 157,0.3)">
+						<div class="bg" style="background-color: rgb(1, 193, 157);"></div>
+						<div class="inner"> <i class="fa-solid fa-blog"></i><span>Blog</span></div>
+					</div>
+				</a>
+				<a href="https://www.pinterest.com/rcy13141314/"target="_blank">
+					<div class="item" style="--color:rgba(109, 136, 255)">
+						<div class="bg" style="background-color:rgb(109, 136, 255)"></div>
+						<div class="inner"> <i class="fa-brands fa-pinterest"></i><span>Pinterest</span></div>
+					</div>
+				</a>
+				<a href="./lianxi/weixin.png" target="_blank">
+					<div class="item" style="--color:rgba(53, 57, 59)">
+						<div class="bg" style="background-color: rgb(53, 57, 59);"></div>
+						<div class="inner"> <i class="fa-brands fa-weixin"></i><span>微信号</span></div>
+					</div>
+				</a>
+				<a href="https://sspai.com/u/noise/updates" target="_blank">
+					<div class="item" style="--color:rgba(28, 64, 100)">
+						<div class="bg" style="background-color:rgb(55, 127, 199)"></div>
+						<div class="inner"><i class="fa-solid fa-user-astronaut"></i><span>少数派</span></div>
+					</div>
+				</a>	
+			</div>
+		</div>
+
+		<div class="work">
+			<h2 class="chtitle"><span>网站</span>合集</span>【滑动或左右键可切换】</h2>
+			<div class="workbox">
+				<a href="./home.html" title="右滑动查看,mac用户请用键盘左右键或触控板上下滑动查看，PC用户鼠标滚轮向右查看" target="_blank"><div id="first"></i><i class="fa-solid fa-wand-magic-sparkles"></i><span>更换风格查看</span></div></a>
+				<div class="project">
+					<i class="fa-solid fa-star"></i>
+					<a href="https://www.noisedh.cn" target="_blank"><h3>✨Noise导航站</h3></a>
+					<p>静态化综合导航站</p>
+					<div class="language"><div style="--color:#f1e05a">综合且全面</div></div>
+				</div>
+				<div class="project">
+					<i class="fa-solid fa-star"></i>
+					<a href="https://noisevip.cn" target="_blank"><h3>💻NOISE&宝藏阁</h3></a>
+					<p>Wordpress站点</p>
+					<div class="language"><div style="--color:#e34c26">强大的资源分类支持</div></div>
+				</div>
+				<div class="project">
+					<i class="fa-solid fa-star"></i>
+					<a href="./fw/index.html" target="_blank"><h3>🌈公共服务页</h3></a>
+					<p>基于服务器等的个人公共化服务</p>
+					<div class="language"><div style="--color:#3572A5">有你支持才有动力</div></div>
+				</div>
+				<div class="project">
+					<i class="fa-solid fa-star"></i>
+					<a href="https://www.noisesite.cn" target="_blank"><h3>🎁知识效率集</h3></a>
+					<p>Notion渲染的next网站</p>
+					<div class="language"><div style="--color:#e34c26">Notion网站</div></div>
+				</div>
+				<div class="project">
+					<i class="fa-solid fa-star"></i>
+					<a href="https://efficiencyfollow.notion.site" target="_blank"><h3>🎈Efficiency主页</h3></a>
+					<p>始于Notion，忠于Notion</p>
+					<div class="language"><div style="--color:#e34c26">自动化、RSS指南</div></div>
+				</div>
+				<div class="project">
+					<i class="fa-solid fa-star"></i>
+					<a href="./photo/index.html" target="_blank"><h3>😀NOISE摄影图库</h3></a>
+					<p>相册分享</p>
+					<div class="language"><div style="--color:#e34c26">爱生活，爱摄影</div></div>
+				</div>
+				<div class="project">
+					<i class="fa-solid fa-star"></i>
+					<a href="https://rcy1314.github.io/some-stars/" target="_blank"><h3>⭐我的start列表</h3></a>
+					<p>我的start列表，每日更新</p>
+					<div class="language"><div style="--color:#e34c26">Github-starts</div></div>
+				</div>
+				<div class="project">
+					<i class="fa-solid fa-star"></i>
+					<a href="https://noiseyp.top" target="_blank"><h3>📁Noise资源库</h3></a>
+					<p>云盘资源的挂载站</p>
+					<div class="language"><div style="--color:#e34c26">强大的云盘资源库</div></div>
+				</div>
+				<div class="project">
+					<i class="fa-solid fa-star"></i>
+					<a href="https://www.noisemusic.top" target="_blank"><h3>⌛NOISE音乐站</h3></a>
+					<p>在线听歌服务</p>
+					<div class="language"><div style="--color:#e34c26">爱音乐，爱自己</div></div>
+				</div>
+				<div class="project">
+					<i class="fa-solid fa-star"></i>
+					<a href="https://flowus.cn/share/8decd1b3-1b9d-4356-9300-19a9f4b90c0c" target="_blank"><h3>📕Flowus空间</h3></a>
+					<p>Flowus息流提高效率</p>
+					<div class="language"><div style="--color:#e34c26">知识其实可以更多</div></div>
+				</div>
+				<div class="project">
+					<i class="fa-solid fa-star"></i>
+					<a href="https://rcy1314.github.io/news/" target="_blank"><h3>🎉聚合Rss阅读页</h3></a>
+					<p>个人部署单页RSS阅读器</p>
+					<div class="language"><div style="--color:#e34c26">RSS聚合，每2小时更新</div></div>
+				</div>
+				<div class="project">
+					<i class="fa-solid fa-star"></i>
+					<a href="https://rcy1314.github.io/Rss-Translation/" target="_blank"><h3>🔭RSS翻译转换</h3></a>
+					<p>外网订阅源翻译转换订阅</p>
+					<div class="language"><div style="--color:#e34c26">转换翻译，每2小时更新</div></div>
+				</div>
+				<div class="project">
+					<i class="fa-solid fa-star"></i>
+					<a href="https://rcy1314.github.io/youtube/" target="_blank"><h3>📼我的Youtube订阅</h3></a>
+					<p>个人Youtube订阅RSS阅读器</p>
+					<div class="language"><div style="--color:#e34c26">Youtube订阅</div></div>
+				</div>
+				<div class="project">
+					<i class="fa-solid fa-star"></i>
+					<a href="https://www.noisework.cn/moyu/"target="_blank"><h3>🔭打工人日历</h3></a>
+					<p>全体打工人提醒您适当摸鱼</p>
+					<div class="language"><div style="--color:#e34c26">没钱可以赚，但命只有一条</div></div>
+				</div>
+				<div class="project">
+					<i class="fa-solid fa-star"></i>
+					<a href="./soso/index.html"target="_blank"><h3>📟JUST SOSO</h3></a>
+					<p>个人自定义搜索</p>
+					<div class="language"><div style="--color:#e34c26">搜软件，搜插件</div></div>
+				</div>
+				<div class="project">
+					<i class="fa-solid fa-star"></i>
+					<a href="https://www.chronologies.io/timelines/09b94d92-1860-4349-868d-f6e18de78155"target="_blank"><h3>🌏备忘贴</h3></a>
+					<p>不定时资讯、工具</p>
+					<div class="language"><div style="--color:#e34c26">基于chronologies</div></div>
+				</div>
+				<div class="project">
+					<i class="fa-solid fa-star"></i>
+					<a href="./fb/index.html"target="_blank"><h3>⏰备用地址页</h3></a>
+					<p>一些站点的备用地址</p>
+					<div class="language"><div style="--color:#e34c26">多域名，多备用</div></div>
+				</div>
+				<div class="project">
+					<i class="fa-solid fa-star"></i>
+					<a href="./e/key/index.html"target="_blank"><h3>💰OpenAI 余额查询</h3></a>
+					<p>如果查询失败，请更换IP</p>
+					<div class="language"><div style="--color:#e34c26">OpenAI 余额查询</div></div>
+				</div>
+				<a href="./home.html" target="_blank"><div id="last"><i class="fa-sharp fa-solid fa-magnifying-glass"></i><span>更换风格查看</span></div></a>
+			</div>
+		</div>
+
+		<div class="menu-box">
+			<!-- 图标按钮 -->
+			<div class="menu-button">
+				<div class="line-box">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</div>
+			</div>
+			<!-- 菜单列表 -->
+			<div>
+				<ul class="menu-list">
+					<li><a style="color:rgb(243, 237, 236);" href="https://efficiency.discut.io" target="_blank"></i><span> 🎁近期动态</span></a></li>
+					<li><a style="color:rgb(247, 245, 245);" href="https://www.noiseblog.top/link/" target="_blank"></i><span>🎲常用收藏</span></a></li>
+					<li><a style="color:rgb(252, 246, 246);" href="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230508/赞赏.1wsad0fm5ri8.jpg" target="_blank"></i><span> 🧧赞助支持</span></a></li>
+					<li><a style="color:rgb(248, 244, 244);" href="./e/newsletter/index.html" target="_blank"></i><span>📧欢迎订阅</span></a></li>
+					<li><a style="color:rgb(248, 244, 244);" href="./lianxi/index.html" target="_blank"></i><span>📠欢迎联系</span></a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
-	<div class="work">
-		<h2 class="chtitle"><span>网站</span>合集</span>【滑动或左右键可切换】</h2>
-		<div class="workbox">
-			<a href="./home.html" title="右滑动查看,mac用户请用键盘左右键或触控板上下滑动查看，PC用户鼠标滚轮向右查看" target="_blank"><div id="first"></i><i class="fa-solid fa-wand-magic-sparkles"></i><span>更换风格查看</span></div></a>
-			<div class="project">
-				<i class="fa-solid fa-star"></i>
-				<a href="https://www.noisedh.cn" target="_blank"><h3>✨Noise导航站</h3></a>
-				<p>静态化综合导航站</p>
-				<div class="language"><div style="--color:#f1e05a">综合且全面</div></div>
-			</div>
-			<div class="project">
-				<i class="fa-solid fa-star"></i>
-				<a href="https://noisevip.cn" target="_blank"><h3>💻NOISE&宝藏阁</h3></a>
-				<p>Wordpress站点</p>
-				<div class="language"><div style="--color:#e34c26">强大的资源分类支持</div></div>
-			</div>
-			<div class="project">
-				<i class="fa-solid fa-star"></i>
-				<a href="./fw/index.html" target="_blank"><h3>🌈公共服务页</h3></a>
-				<p>基于服务器等的个人公共化服务</p>
-				<div class="language"><div style="--color:#3572A5">有你支持才有动力</div></div>
-			</div>
-			<div class="project">
-				<i class="fa-solid fa-star"></i>
-				<a href="https://www.noisesite.cn" target="_blank"><h3>🎁知识效率集</h3></a>
-				<p>Notion渲染的next网站</p>
-				<div class="language"><div style="--color:#e34c26">Notion网站</div></div>
-			</div>
-			<div class="project">
-				<i class="fa-solid fa-star"></i>
-				<a href="https://efficiencyfollow.notion.site" target="_blank"><h3>🎈Efficiency主页</h3></a>
-				<p>始于Notion，忠于Notion</p>
-				<div class="language"><div style="--color:#e34c26">自动化、RSS指南</div></div>
-			</div>
-			<div class="project">
-				<i class="fa-solid fa-star"></i>
-				<a href="./photo/index.html" target="_blank"><h3>😀NOISE摄影图库</h3></a>
-				<p>相册分享</p>
-				<div class="language"><div style="--color:#e34c26">爱生活，爱摄影</div></div>
-			</div>
-			<div class="project">
-				<i class="fa-solid fa-star"></i>
-				<a href="https://rcy1314.github.io/some-stars/" target="_blank"><h3>⭐我的start列表</h3></a>
-				<p>我的start列表，每日更新</p>
-				<div class="language"><div style="--color:#e34c26">Github-starts</div></div>
-			</div>
-			<div class="project">
-				<i class="fa-solid fa-star"></i>
-				<a href="https://noiseyp.top" target="_blank"><h3>📁Noise资源库</h3></a>
-				<p>云盘资源的挂载站</p>
-				<div class="language"><div style="--color:#e34c26">强大的云盘资源库</div></div>
-			</div>
-			<div class="project">
-				<i class="fa-solid fa-star"></i>
-				<a href="https://www.noisemusic.top" target="_blank"><h3>⌛NOISE音乐站</h3></a>
-				<p>在线听歌服务</p>
-				<div class="language"><div style="--color:#e34c26">爱音乐，爱自己</div></div>
-			</div>
-			<div class="project">
-				<i class="fa-solid fa-star"></i>
-				<a href="https://flowus.cn/share/8decd1b3-1b9d-4356-9300-19a9f4b90c0c" target="_blank"><h3>📕Flowus空间</h3></a>
-				<p>Flowus息流提高效率</p>
-				<div class="language"><div style="--color:#e34c26">知识其实可以更多</div></div>
-			</div>
-			<div class="project">
-				<i class="fa-solid fa-star"></i>
-				<a href="https://rcy1314.github.io/news/" target="_blank"><h3>🎉聚合Rss阅读页</h3></a>
-				<p>个人部署单页RSS阅读器</p>
-				<div class="language"><div style="--color:#e34c26">RSS聚合，每2小时更新</div></div>
-			</div>
-			<div class="project">
-				<i class="fa-solid fa-star"></i>
-				<a href="https://rcy1314.github.io/Rss-Translation/" target="_blank"><h3>🔭RSS翻译转换</h3></a>
-				<p>外网订阅源翻译转换订阅</p>
-				<div class="language"><div style="--color:#e34c26">转换翻译，每2小时更新</div></div>
-			</div>
-			<div class="project">
-				<i class="fa-solid fa-star"></i>
-				<a href="https://rcy1314.github.io/youtube/" target="_blank"><h3>📼我的Youtube订阅</h3></a>
-				<p>个人Youtube订阅RSS阅读器</p>
-				<div class="language"><div style="--color:#e34c26">Youtube订阅</div></div>
-			</div>
-			<div class="project">
-				<i class="fa-solid fa-star"></i>
-				<a href="https://www.noisework.cn/moyu/"target="_blank"><h3>🔭打工人日历</h3></a>
-				<p>全体打工人提醒您适当摸鱼</p>
-				<div class="language"><div style="--color:#e34c26">没钱可以赚，但命只有一条</div></div>
-			</div>
-			<div class="project">
-				<i class="fa-solid fa-star"></i>
-				<a href="./soso/index.html"target="_blank"><h3>📟JUST SOSO</h3></a>
-				<p>个人自定义搜索</p>
-				<div class="language"><div style="--color:#e34c26">搜软件，搜插件</div></div>
-			</div>
-			<div class="project">
-				<i class="fa-solid fa-star"></i>
-				<a href="https://www.chronologies.io/timelines/09b94d92-1860-4349-868d-f6e18de78155"target="_blank"><h3>🌏备忘贴</h3></a>
-				<p>不定时资讯、工具</p>
-				<div class="language"><div style="--color:#e34c26">基于chronologies</div></div>
-			</div>
-			<div class="project">
-				<i class="fa-solid fa-star"></i>
-				<a href="./fb/index.html"target="_blank"><h3>⏰备用地址页</h3></a>
-				<p>一些站点的备用地址</p>
-				<div class="language"><div style="--color:#e34c26">多域名，多备用</div></div>
-			</div>
-			<div class="project">
-				<i class="fa-solid fa-star"></i>
-				<a href="./e/key/index.html"target="_blank"><h3>💰OpenAI 余额查询</h3></a>
-				<p>如果查询失败，请更换IP</p>
-				<div class="language"><div style="--color:#e34c26">OpenAI 余额查询</div></div>
-			</div>
-			<a href="./home.html" target="_blank"><div id="last"><i class="fa-sharp fa-solid fa-magnifying-glass"></i><span>更换风格查看</span></div></a>
-		</div>
-	</div>
-	<div class="menu-box">
-        <!-- 图标按钮 -->
-        <div class="menu-button">
-            <div class="line-box">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-        </div>
-        <!-- 菜单列表 -->
-	    <div>
-        <ul class="menu-list">
-            <li><a style="color:rgb(243, 237, 236);" href="https://efficiency.discut.io" target="_blank"></i><span> 🎁近期动态</span></a></li>
-			<li><a style="color:rgb(247, 245, 245);" href="https://www.noiseblog.top/link/" target="_blank"></i><span>🎲常用收藏</span></a></li>
-			<li><a style="color:rgb(252, 246, 246);" href="https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230508/赞赏.1wsad0fm5ri8.jpg" target="_blank"></i><span> 🧧赞助支持</span></a></li>
-            <li><a style="color:rgb(248, 244, 244);" href="./e/newsletter/index.html" target="_blank"></i><span>📧欢迎订阅</span></a></li>
-			<li><a style="color:rgb(248, 244, 244);" href="./lianxi/index.html" target="_blank"></i><span>📠欢迎联系</span></a></li>
-        </ul>
-    </div>
-</body>
-<!--音乐-->
-<link rel="stylesheet" href="css/APlayer.min.css">  
-<div id="aplayer" class="aplayer" data-order="random" data-id="5191170949" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-volume="0.8"></div>
-<script src="js/jquery.min.js"></script>
-<script src="js/APlayer.min.js"></script>
-<script src="js/Meting.min.js"></script>
-<script>
-	window['CboxReady'] = function (Cbox) {
-		Cbox('button', '3-3523748-9k93aT');
-	}
+
+	<!--音乐-->
+	<link rel="stylesheet" href="css/APlayer.min.css">  
+	<div id="aplayer" class="aplayer" data-order="random" data-id="5191170949" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-volume="0.8"></div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/APlayer.min.js"></script>
+	<script src="js/Meting.min.js"></script>
+	<script>
+		window['CboxReady'] = function (Cbox) {
+			Cbox('button', '3-3523748-9k93aT');
+		}
 	</script>
 	<script src="./js/emb.js" async></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="js/nodecursor-jquery.js"></script>
-<script src="js/main.js"></script>
-<script src="js/terminal.js"></script>
-<script src="js/loading.js"></script>
-<script src="js/tab.js"></script>
-<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-<script defer src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/kaygb/kaygb@master/layer/layer.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/kaygb/kaygb@master/js/v3.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/nodecursor-jquery.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/terminal.js"></script>
+	<script src="js/loading.js"></script>
+	<script src="js/tab.js"></script>
+	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+	<script defer src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/kaygb/kaygb@master/layer/layer.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/kaygb/kaygb@master/js/v3.js"></script>
+</body>
 </html>
