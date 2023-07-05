@@ -23,7 +23,7 @@ body,html {
 #background{
 	width: 140%;
 	filter: brightness(0.6);
-	background-image: url(https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230418/09.45yi39hb3xo0.jpg);
+	background-image: url(https://cdn.staticaly.com/gh/rcy1314/my-photo@master/20230418/09.45yi39hb3xo0.jpg); /* 默认背景图片URL */
     background-size: 100%;
 	height: 140%;
 	position: absolute;
@@ -33,7 +33,7 @@ body,html {
 #bg{
 	width: 120%;
 	filter: brightness(0.7);
-	background-image: url(https://noise-images.efficiencyfollow.repl.co);
+	background-image: url(https://noise-images.efficiencyfollow.repl.co); /* 默认前景图片URL */
     background-size: cover;
 	height: 120%;
 	position: absolute;
