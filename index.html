@@ -105,42 +105,16 @@
 	        msg = "已经这么晚了呀，早点休息吧，晚安~";
 	      }
 	      axios.get("https://api.gmit.vip/Api/UserInfo/")
-	        .then(function (response) {
-	          window.info = response.data;
-	          layer.msg("Hi~ 来自" + response.data.data.location + '~<br/>通过 ' + msgTitle + ' 进来的朋友！<br/>使用 ' + response.data.data.os + "<br/>" + response.data.data.browser + ' 访问本站！' + '<br/>' + msg);
-	          var showFPS = (function () {
-	            var requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
-	              window.setTimeout(callback, 1000 / 60);
-	            };
-	            var e, pe, pid, fps, last, offset, step, appendFps;
-	            fps = 0;
-	            last = Date.now();
-	            step = function () {
-	              offset = Date.now() - last;
-	              fps += 1;
-	              if (offset >= 1000) {
-	                last += offset;
-	                appendFps(fps);
-	                fps = 0;
-	              }
-	              requestAnimationFrame(step);
-	            };
-	            appendFps = function (fps) {
-	              var settings = {
-	                timeout: 5000,
-	                logError: true
-	              };
-	              $('#fps').html('<a style="float:left;">' + fps + 'FPS</a><br/><a style="float:left">' + window.info.data.os + '</a><br/><a style="float:left;margin-top:1px;">' + window.info.data.browser + '</a><br/><a style="float:left;margin-top:1px;">' + window.info.data.location + '</a><br/><a style="float:left;margin-top:1px;"></a>');
-	            };
-	            step();
-	          })();
-	        })
-	        .catch(function (error) {
-	          console.log(error);
-	        });
-	      document.cookie = "msg=1; expires=Thu, 01 Jan 2038 00:00:00 UTC; path=/;";
-	    };
-	  });
+            .then(function (response) {
+             window.info = response.data;
+             layer.msg("Hi~ 来自" + response.data.data.location + '~<br/>通过 ' + msgTitle + ' 进来的朋友！<br/>使用 ' + response.data.data.os + "<br/>" + response.data.data.browser + ' 访问本站！' + '<br/>' + msg);
+          })
+            .catch(function (error) {
+             console.log(error);
+          });
+		     document.cookie = "msg=1; expires=Thu, 01 Jan 2038 00:00:00 UTC; path=/;";
+	      };
+	    });
 	</script>
 	<!-- 弹窗信息提醒代码结束 -->
 
