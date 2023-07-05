@@ -11,6 +11,9 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/terminal.css">
 	<link rel="stylesheet" href="css/fira_code.css">
+	<script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/layer/3.1.1/layer.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	<script src="js/parallax.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="./css/loading.css"> 
 	<link rel="stylesheet" href="css/tab.css">
@@ -42,108 +45,109 @@
             }
         });
 	</script>
+	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+	<script defer src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
 	<!-- loading加载--> 
 	<div id="spinner-container">
 		<div class="spinner"></div>
-	  </div>
-	  <script type="text/javascript"> 
-	  </script>
-</head>
-<body>
+	</div>
+
 	<!-- 客户端信息 -->
-<div id="fps" style="z-index: 5; position: fixed; bottom: 3px; left: 3px; color: #2196F3; font-size: 10px; -webkit-pointer-events: none; -moz-pointer-events: none; -ms-pointer-events: none; -o-pointer-events: none;"></div>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kaliisra/myblogstatic/kehuduan-js/fetch.min.js"></script>
-<script src="https://cdn.gmit.vip/layer/3.1.1/layer.js" type="text/javascript" charset="utf-8"></script>
-<script>
-  /*网站打开提醒代码开始*/
-  $(function () {
-    if (/*getCookie('msg') !=*/ 1) {
-      var t = document.createElement("a");
-      t.href = document.referrer;
-      var msgTitle = t.hostname;
-      var name = t.hostname.split(".")[1];
-      if ("" !== document.referrer) {
-        switch (name) {
-          case 'bing':
-            msgTitle = '必应搜索';
-            break;
-          case 'baidu':
-            msgTitle = '百度搜索';
-            break;
-          case 'so':
-            msgTitle = '360搜索';
-            break;
-          case 'google':
-            msgTitle = '谷歌搜索';
-            break;
-          case 'sm':
-            msgTitle = '神马搜索';
-            break;
-          case 'sogou':
-            msgTitle = '搜狗搜索';
-            break;
-          default:
-            msgTitle = t.hostname;
-        };
-      };
-      var time = (new Date).getHours();
-      var msg = '';
-      if (23 < time || time <= 5) {
-        msg = "你是夜猫子呀？这么晚还不睡觉，明天起的来嘛？";
-      } else if (5 < time && time <= 7) {
-        msg = "早上好！一日之计在于晨，美好的一天就要开始了！";
-      } else if (7 < time && time <= 11) {
-        msg = "上午好！工作顺利嘛，不要久坐，多起来走动走动哦！";
-      } else if (11 < time && time <= 14) {
-        msg = "中午了，工作了一个上午，现在是午餐时间！";
-      } else if (14 < time && time <= 17) {
-        msg = "午后很容易犯困呢，今天的运动目标完成了吗？";
-      } else if (17 < time && time <= 19) {
-        msg = "傍晚了！窗外夕阳的景色很美丽呢，最美不过夕阳红~";
-      } else if (19 < time && time <= 21) {
-        msg = "晚上好，今天过得怎么样？";
-      } else if (21 < time && time <= 23) {
-        msg = "已经这么晚了呀，早点休息吧，晚安~";
-      }
-      $.ajax({
-        type: "get",
-        url: "https://api.gmit.vip/Api/UserInfo/",
-        async: true,
-        success: function (data) {
-          window.info = data;
-          layer.msg("Hi~ 来自" + data.data.location + '~<br/>通过 ' + msgTitle + ' 进来的朋友！<br/>使用 ' + data.data.os + "<br/>" + data.data.browser + ' 访问本站！' + '<br/>' + msg);
-          var showFPS = (function () {
-            var requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
-              window.setTimeout(callback, 1000 / 60);
-            };
-            var e, pe, pid, fps, last, offset, step, appendFps;
-            fps = 0;
-            last = Date.now();
-            step = function () {
-              offset = Date.now() - last;
-              fps += 1;
-              if (offset >= 1000) {
-                last += offset;
-                appendFps(fps);
-                fps = 0;
-              }
-              requestAnimationFrame(step);
-            };
-            appendFps = function (fps) {
-              var settings = {
-                timeout: 5000,
-                logError: true
-              };
-              $('#fps').html('<a style="float:left;">' + fps + 'FPS</a><br/><a style="float:left">' + window.info.data.os + '</a><br/><a style="float:left;margin-top:1px;">' + window.info.data.browser + '</a><br/><a style="float:left;margin-top:1px;">' + window.info.data.location + '</a><br/><a style="float:left;margin-top:1px;"></a>');
-            };
-            step();
-          })();
-        }
-      });
-    };
-  });
-</script>
-<!-- 客户端信息 -->
+	<div id="fps" style="z-index: 5; position: fixed; bottom: 3px; left: 3px; color: #2196F3; font-size: 10px; -webkit-pointer-events: none; -moz-pointer-events: none; -ms-pointer-events: none; -o-pointer-events: none;"></div>
+
+	<!-- 弹窗信息提醒代码开始 -->
+	<script>
+	  $(function () {
+	    if (document.cookie.indexOf('msg=1') === -1) {
+	      var t = document.createElement("a");
+	      t.href = document.referrer;
+	      var msgTitle = t.hostname;
+	      var name = t.hostname.split(".")[1];
+	      if ("" !== document.referrer) {
+	        switch (name) {
+	          case 'bing':
+	            msgTitle = '必应搜索';
+	            break;
+	          case 'baidu':
+	            msgTitle = '百度搜索';
+	            break;
+	          case 'so':
+	            msgTitle = '360搜索';
+	            break;
+	          case 'google':
+	            msgTitle = '谷歌搜索';
+	            break;
+	          case 'sm':
+	            msgTitle = '神马搜索';
+	            break;
+	          case 'sogou':
+	            msgTitle = '搜狗搜索';
+	            break;
+	          default:
+	            msgTitle = t.hostname;
+	        };
+	      };
+	      var time = (new Date).getHours();
+	      var msg = '';
+	      if (23 < time || time <= 5) {
+	        msg = "你是夜猫子呀？这么晚还不睡觉，明天起的来嘛？";
+	      } else if (5 < time && time <= 7) {
+	        msg = "早上好！一日之计在于晨，美好的一天就要开始了！";
+	      } else if (7 < time && time <= 11) {
+	        msg = "上午好！工作顺利嘛，不要久坐，多起来走动走动哦！";
+	      } else if (11 < time && time <= 14) {
+	        msg = "中午了，工作了一个上午，现在是午餐时间！";
+	      } else if (14 < time && time <= 17) {
+	        msg = "午后很容易犯困呢，今天的运动目标完成了吗？";
+	      } else if (17 < time && time <= 19) {
+	        msg = "傍晚了！窗外夕阳的景色很美丽呢，最美不过夕阳红~";
+	      } else if (19 < time && time <= 21) {
+	        msg = "晚上好，今天过得怎么样？";
+	      } else if (21 < time && time <= 23) {
+	        msg = "已经这么晚了呀，早点休息吧，晚安~";
+	      }
+	      axios.get("https://api.gmit.vip/Api/UserInfo/")
+	        .then(function (response) {
+	          window.info = response.data;
+	          layer.msg("Hi~ 来自" + response.data.data.location + '~<br/>通过 ' + msgTitle + ' 进来的朋友！<br/>使用 ' + response.data.data.os + "<br/>" + response.data.data.browser + ' 访问本站！' + '<br/>' + msg);
+	          var showFPS = (function () {
+	            var requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
+	              window.setTimeout(callback, 1000 / 60);
+	            };
+	            var e, pe, pid, fps, last, offset, step, appendFps;
+	            fps = 0;
+	            last = Date.now();
+	            step = function () {
+	              offset = Date.now() - last;
+	              fps += 1;
+	              if (offset >= 1000) {
+	                last += offset;
+	                appendFps(fps);
+	                fps = 0;
+	              }
+	              requestAnimationFrame(step);
+	            };
+	            appendFps = function (fps) {
+	              var settings = {
+	                timeout: 5000,
+	                logError: true
+	              };
+	              $('#fps').html('<a style="float:left;">' + fps + 'FPS</a><br/><a style="float:left">' + window.info.data.os + '</a><br/><a style="float:left;margin-top:1px;">' + window.info.data.browser + '</a><br/><a style="float:left;margin-top:1px;">' + window.info.data.location + '</a><br/><a style="float:left;margin-top:1px;"></a>');
+	            };
+	            step();
+	          })();
+	        })
+	        .catch(function (error) {
+	          console.log(error);
+	        });
+	      document.cookie = "msg=1; expires=Thu, 01 Jan 2038 00:00:00 UTC; path=/;";
+	    };
+	  });
+	</script>
+	<!-- 弹窗信息提醒代码结束 -->
+
 	<!-- 添加Service Worker -->
 	<script>
 		if ('serviceWorker' in navigator) {
@@ -272,7 +276,7 @@
 				</div>
 				<div class="project">
 					<i class="fa-solid fa-star"></i>
-					<a href="https://www.noisesite.cn" target="_blank"><h3>🎁知识效率集</h3></a>
+					<a href="https://www.noiseblog.top" target="_blank"><h3>🎁知识效率集</h3></a>
 					<p>Notion渲染的next网站</p>
 					<div class="language"><div style="--color:#e34c26">Notion网站</div></div>
 				</div>
@@ -293,12 +297,6 @@
 					<a href="https://rcy1314.github.io/some-stars/" target="_blank"><h3>⭐我的start列表</h3></a>
 					<p>我的start列表，每日更新</p>
 					<div class="language"><div style="--color:#e34c26">Github-starts</div></div>
-				</div>
-				<div class="project">
-					<i class="fa-solid fa-star"></i>
-					<a href="https://noiseyp.top" target="_blank"><h3>📁Noise资源库</h3></a>
-					<p>云盘资源的挂载站</p>
-					<div class="language"><div style="--color:#e34c26">强大的云盘资源库</div></div>
 				</div>
 				<div class="project">
 					<i class="fa-solid fa-star"></i>
@@ -389,7 +387,6 @@
 	<!--音乐-->
 	<link rel="stylesheet" href="css/APlayer.min.css">  
 	<div id="aplayer" class="aplayer" data-order="random" data-id="5191170949" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-volume="0.8"></div>
-	<script src="js/jquery.min.js"></script>
 	<script src="js/APlayer.min.js"></script>
 	<script src="js/Meting.min.js"></script>
 	<script>
@@ -398,15 +395,10 @@
 		}
 	</script>
 	<script src="./js/emb.js" async></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="js/nodecursor-jquery.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/terminal.js"></script>
 	<script src="js/loading.js"></script>
 	<script src="js/tab.js"></script>
-	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-	<script defer src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/gh/kaygb/kaygb@master/layer/layer.js"></script>
-	<script src="https://cdn.jsdelivr.net/gh/kaygb/kaygb@master/js/v3.js"></script>
 </body>
 </html>
