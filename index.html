@@ -110,9 +110,6 @@
              window.info = response.data;
              layer.msg("Hi~ 来自" + response.data.data.location + '~<br/>通过 ' + msgTitle + ' 进来的朋友！<br/>使用 ' + response.data.data.os + "<br/>" + response.data.data.browser + ' 访问本站！' + '<br/>' + msg);
           })
-            .catch(function (error) {
-             console.log(error);
-          });
 		     document.cookie = "msg=1; expires=Thu, 01 Jan 2038 00:00:00 UTC; path=/;";
 	      };
 	    });
