@@ -327,6 +327,5 @@
   container.appendChild(terminal)
   update()
   print("欢迎来到模拟终端！（彩蛋版本 :1.0）",'warning')
-  print('输入 <span style="color: #ffbc00">help</span> 查看可用命令列表。','warning')
-  print('增加输入 <span style="color: #ffbc00">visit</span>  网址可前往该地址。','warning')
+  print('输入 <span style="color: #ffbc00">help</span> 查看可用命令列表。增加输入 <span style="color: #ffbc00">visit</span>  网址可前往该地址。','warning')
 })()
