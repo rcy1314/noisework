@@ -41,7 +41,7 @@ var imageUrls = [
     'https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/008.76wtds5zqdw0.png',
     'https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/007.4ra12856l3q0.png',
     'https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/006.5fr6malj99o0.png',
-    'https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/005.2gds62a0ahq8.png',
+    'https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/20230706/0052.4nzyymaa8za0.png',
     'https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/003.70upv2n3s9w0.png',
     'https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/001.3jr66nchfja0.png',
     'https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/20230704/025.4kt2ai85mx60.png',
