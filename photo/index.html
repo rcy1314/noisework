@@ -26,7 +26,18 @@
     <style>
         a:hover { cursor: pointer; }
     </style>
-    <!-- 通过自有函数输出HTML头部信息 -->
+    <!-- 添加Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }).catch(function(error) {
+                    console.log('ServiceWorker registration failed: ', error);
+                });
+            });
+        }
+    </script>
 </head>
 
 <body>
@@ -77,18 +88,6 @@
     });
     </script>
     <!-- 弹窗信息提醒代码结束 -->
-       <!-- 添加Service Worker -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }).catch(function(error) {
-                    console.log('ServiceWorker registration failed: ', error);
-                });
-            });
-        }
-    </script>
         <div class="header-bottom">
             <div class="categories-container">
                 <div class="categories">
