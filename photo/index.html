@@ -22,7 +22,7 @@
     <script src="https://cdn.staticfile.org/layer/3.1.1/layer.js"></script>
     <script src="static/js/jquery.min.js"></script>
     <script src="static/js/grids.js"></script>
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="manifest.json">
     <style>
         a:hover { cursor: pointer; }
     </style>
@@ -81,7 +81,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                navigator.serviceWorker.register('./service-worker.js').then(function(registration) {
                     console.log('ServiceWorker registration successful with scope: ', registration.scope);
                 }).catch(function(error) {
                     console.log('ServiceWorker registration failed: ', error);
