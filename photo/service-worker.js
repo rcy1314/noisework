@@ -3,10 +3,9 @@ self.addEventListener('install', function(event) {
       caches.open('your-app-name').then(function(cache) {
         return cache.addAll([
           '/',
-          '/assets/',
-          'js/suiji-picture.js',
-          '/css/main.css',
-          '/js/main.js',
+          '/static/',
+          '/style.css',
+          './photo/index.html',
           // 添加您需要缓存的其他静态资源
         ]);
       })
