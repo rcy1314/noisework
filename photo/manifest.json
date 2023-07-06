@@ -1,7 +1,7 @@
 {
     "name": "Noise&摄影图库",
     "short_name": "Noise图库",
-    "start_url": "/",
+    "start_url": "index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#ffffff",

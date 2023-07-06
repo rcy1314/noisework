@@ -5,7 +5,7 @@ self.addEventListener('install', function(event) {
           '/',
           '/static/',
           '/style.css',
-          './photo/index.html',
+          '/index.html',
           // 添加您需要缓存的其他静态资源
         ]);
       })
