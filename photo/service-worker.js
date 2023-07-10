@@ -4,8 +4,8 @@ self.addEventListener('install', function(event) {
         return cache.addAll([
           '/',
           '/static/',
-          '/style.css',
-          '/index.html',
+          'style.css',
+          'index.html',
           // 添加您需要缓存的其他静态资源
         ]);
       })
