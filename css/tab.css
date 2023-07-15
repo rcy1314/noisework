@@ -8,7 +8,7 @@
     /* 固定定位 右下角 */
     position: fixed;
     z-index: 9999;
-    bottom: 480px;
+    bottom: 450px;
     right: 5px;
 }
 /* 菜单按钮 */
