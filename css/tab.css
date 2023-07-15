@@ -8,7 +8,7 @@
     /* 固定定位 右下角 */
     position: fixed;
     z-index: 9999;
-    bottom: 500px;
+    bottom: 400px;
     right: 5px;
 }
 /* 菜单按钮 */
@@ -66,7 +66,7 @@
 /* 菜单列表 */
 .menu-list{
     width: 130px;
-    height: 210px;
+    height: auto;
     background-color: #1817176b;
     border-radius: 8px;
     list-style: none;
@@ -93,14 +93,10 @@
     color: #e4e4eb;
     cursor: pointer;
     position: relative;
-    /* 默认隐藏 */
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: 0.2s ease-in;
+
 }
-.menu-list li:hover{
-    color: #6d6d6d;
-}
+
+
 /* 菜单项下边框 */
 .menu-list li::before{
     content: "";
