@@ -27,7 +27,7 @@ body {
 .centerBody{
 	width: 100%;
 	text-align: center;
-	margin-top: 10%;
+	margin-top: 8%;
 }
 .centerBody img{
 	margin: 0 auto;
@@ -37,7 +37,7 @@ body {
 	margin-bottom: auto;
 }
 .btn-p a{
-	font-size: 15px;
+	font-size: 14px;
 	color: #FFFFFF;
 	padding: 8px 15px;
 	border-radius:30px;
