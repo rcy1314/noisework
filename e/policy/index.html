@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私政策</title>
+    <style>
+        body {
+            color: #333;
+            background-color: #fff;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .dark-mode {
+            color: #fff;
+            background-color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .toggle-dark-mode {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .toggle-dark-mode input[type="checkbox"] {
+            display: none;
+        }
+
+        .toggle-dark-mode label {
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            position: relative;
+            cursor: pointer;
+            background-color: #ccc;
+            border-radius: 34px;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-dark-mode label:after {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-dark-mode input[type="checkbox"]:checked+label {
+            background-color: #4caf50;
+        }
+
+        .toggle-dark-mode input[type="checkbox"]:checked+label:after {
+            transform: translateX(26px);
+        }
+    </style>
+    <script>
+        function toggleDarkMode() {
+            var body = document.getElementsByTagName("body")[0];
+            body.classList.toggle("dark-mode");
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="toggle-dark-mode">
+            <input type="checkbox" id="dark-mode-toggle" onchange="toggleDarkMode()">
+            <label for="dark-mode-toggle"></label>
+        </div>
+        <h1>隐私政策</h1>
+        <p>欢迎阅读我们的隐私政策。本隐私政策解释了我们如何收集、使用、存储和保护您的个人信息。请在使用我们的网站之前仔细阅读本隐私政策。</p>
+        <h2>1. 信息收集</h2>
+        <p>我们可能会收集您提供给我们的个人信息，例如您的姓名、电子邮件地址、联系方式等。</p>
+        <p>我们还可能通过使用Cookie和类似技术收集有关您的访问和使用我们网站的信息。这些信息可能包括您的IP地址、浏览器类型、操作系统、访问日期和时间等。</p>
+        <h2>2. 信息使用</h2>
+        <p>我们会使用您提供的个人信息来回应您的查询、提供您所请求的服务，并向您发送相关信息。</p>
+        <p>我们可能会使用收集的信息来改进我们的网站和服务，并进行内部统计和分析。</p>
+        <p>我们不会将您的个人信息出售、出租或交换给第三方，除非获得您的明确许可或法律要求。</p>
+        <h2>3. 信息存储</h2>
+        <p>我们会采取合理的安全措施来保护您的个人信息，防止未经授权的访问、使用或泄露。</p>
+        <p>我们会在不再需要您的个人信息时采取合理的措施将其安全地销毁或匿名化处理。</p>
+        <h2>4. 链接到其他网站</h2>
+        <p>我们的网站可能包含指向其他网站的链接。请注意，一旦您离开我们的网站，我们将无法控制其他网站对您个人信息的收集和使用。因此，我们强烈建议您在访问其他网站之前查看其隐私政策。</p>
+        <h2>5. 法律要求</h2>
+        <p>我们将遵守适用的法律法规，并可能根据法律要求披露您的个人信息。</p>
+        <h2>6. 隐私政策的修改</h2>
+        <p>我们保留随时修改本隐私政策的权利。我们将在网站上发布更新后的隐私政策，并在适用的情况下通过电子邮件通知您。</p>
+        <h2>7. 联系我们</h2>
+        <p>如果您对本隐私政策有任何疑问或意见，请通过我们的联系方式与我们联系。</p>
+        <p>请注意，本隐私政策仅适用于本网站，在您使用我们的网站时，即表示您同意本隐私政策的条款和条件。</p>
+    </div>
+</body>
+
+</html>
