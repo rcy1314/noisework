@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>MV音乐盒</title>
+  <meta name="description" content="一个单页播放音乐mv的站点">
+	<meta name="keywords" content="NOISE,NOISE主页,MV音乐盒,NOISE云盘,NOISE宝藏阁,NOISE导航,宝藏站点,宝藏博主,诺伊斯的主页,">
+  <link rel="stylesheet" href="main.css">
+  <link rel="icon" href="https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/20230809/tv.299hayux7da8.jpg" type="image/png" />
+  <style>
+    body {
+      background: radial-gradient(#35495e, black);
+      color: #f8f4f2;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .video-player {
+      width: 800px;
+      height: auto;
+      margin: 20px auto;
+      background-color: #000;
+      border: 10px solid #333;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-list {
+      display: grid;
+      place-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-height: 150px;
+      overflow-y: scroll;
+      margin-bottom: 5px;
+      background: radial-gradient(#354d7b, black);
+    }
+
+    .video-list li {
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    .video-list li:hover {
+      background-color: #cf4b09;
+    }
+
+    .video-title {
+      font-weight: bold;
+      margin-top: 5px;
+      text-align: center;
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+    }
+    
+    .video-title:hover {
+      background: linear-gradient(to right, #f00, #00f); /* 这里可以修改为您想要的渐变色 */
+    }
+    .controls {
+      text-align: center;
+    }
+
+    .controls button {
+      margin: 5px;
+    }
+
+    .footer {
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .fullscreen-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      z-index: 9999;
+    }
+
+    .fullscreen-video video {
+      width: 100%;
+      height: 100%;
+    }
+
+    .danmu-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .danmu-item {
+      position: absolute;
+      white-space: nowrap;
+      pointer-events: auto;
+    }
+
+    /* 新增样式 */
+    .tv-style {
+      max-width: 100%;
+      height: auto;
+      margin: 20px auto;
+      background-color: #161616;
+      border: 3px solid #fdfafa;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .tv-style #video {
+      width: 100%;
+      max-height: 400px;
+    }
+
+    .tv-style .video-title {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .tv-style .controls {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .tv-style .controls button {
+      margin: 0 10px;
+    }
+
+    .tv-style .footer {
+      position: static;
+      margin-top: 20px;
+      background-color: transparent; /* 去除底部页脚背景颜色 */
+    }
+
+    /* 媒体查询 */
+    @media (max-width: 768px) {
+      .tv-style {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  </br></br></br>
+  <h2 style="text-align: center;">MV音乐盒</h2>
+  <div style="text-align: center;">
+    <span id="hitokoto">正在获取中...</span>
+  </div>
+  <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+  <br/>
+  <div class="card-container astro-ZFGTZ4X4" id="projects">
+  </div>
+  <div class="tv-style video-player">
+    <video id="video" width="100%" controls></video>
+    <ul class="video-list">
+      <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg9qiM5gUo-tns8Qc.mp4')">AlanWalker-feat</li>
+      <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgwv_h7QUolM7fswM.mp4')">艾娃·麦克斯-我也是</li>
+      <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg_fih7QUovpfokgI.mp4')">Russ-Civil War</li>
+      <li onclick="playVideo('https://vdse.bdstatic.com//4fc4e9a0941e4c05d9b9bc005e73750c.mp4?authorization=bce-auth-v1%2F40f207e648424f47b2e3dfbb1014b1a5%2F2022-04-16T14%3A18%3A36Z%2F-1%2Fhost%2F399d272c0be11afa7863a946a9e7a9c11258b1ddf71a22572198d722008e0d16')">美依礼芽-极乐净土</li>
+      <li onclick="playVideo('https://vdse.bdstatic.com//432792ba00998e73655101c9e706e1e2.mp4')">邓丽君歌曲精选</li>
+      <li onclick="playVideo('http://antiserver.kuwo.cn/anti.s?rid=MUSIC_24042013&response=res&format=mp4&type=convert_url')">凤凰传奇-策马奔腾</li>
+      <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg197E4gUozOqwrwU.mp4')">魏新雨-恋人心</li>
+      <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgk9aq4gUogIDbxwQ.mp4')">大话西游</li>
+      <li onclick="playVideo('http://mobi.kuwo.cn/tmevideo/tme7020227.mp4')">阿衣莫-阿吉太组合</li>
+      <li onclick="playVideo('https://vd2.bdstatic.com/mda-ndnh2aqcc3hkxxjj/sc/cae_h264_delogo/1650716855894671015/mda-ndnh2aqcc3hkxxjj.mp4')">经典老歌(5首)</li>
+      <li onclick="playVideo('https://vd2.bdstatic.com/mda-ncd2yz4tkhsx9x7n/sc/cae_h264_delogo/1647224948607209677/mda-ncd2yz4tkhsx9x7n.mp4')">经典老歌(6首)</li>
+      <li onclick="playVideo('https://vdse.bdstatic.com//bfbb0871ed01eb3328497faae6a8531b.mp4')">刀郎经典老歌(6首)</li>
+      <li onclick="playVideo('https://vd3.bdstatic.com/mda-ncw56qz9i48y8pi8/sc/cae_h264_delogo/1648721358570368798/mda-ncw56qz9i48y8pi8.mp4')">经典老歌(8首)</li>
+      <li onclick="playVideo('https://vd4.bdstatic.com/mda-mm2a18n5jdh6d8bs/sc/cae_h264/1638516147610932793/mda-mm2a18n5jdh6d8bs.mp4')">爱江山更爱美人金典</li>
+      <li onclick="playVideo('https://vd4.bdstatic.com/mda-keck5jhdaagebxkm/v1-cae/mda-keck5jhdaagebxkm.mp4?auth_key=1602762530-0-0-3e02c62e492e00c28c5557d41188d769&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=8797_2&sle=1&sl=288&split=391503')">上海滩</li>
+      <li onclick="playVideo('https://vd3.bdstatic.com/mda-kgqdbz488r0jww59/v1-cae/1080p/mda-kgqdbz488r0jww59.mp4?auth_key=1602766840-0-0-fce26343fe7f587e40079307b9b92946&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=8797_2&sle=1&sl=2587&split=2260701')">郑少秋-楚留香</li>
+      <li onclick="playVideo('https://vd3.bdstatic.com/mda-mf3d8yhkzjkwmh2f/1080p/cae_h264/1622801709185387951/mda-mf3d8yhkzjkwmh2f.mp4?v_from_s=hkapp-haokan-suzhou&auth_key=1632627169-0-0-3633ff380c10e59f8705afd60d3927b1&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=')">别亦难</li>
+      <li onclick="playVideo('https://vd2.bdstatic.com/mda-kefm7v9yxkkiq3bv/mda-kefm7v9yxkkiq3bv.mp4?auth_key=1602765175-0-0-3ef79bb8e7b6eac3b59f90939dc3036b&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=8797_2&sle=1&sl=600&split=620750')">天竺少女</li>
+<li onclick="playVideo('https://vd3.bdstatic.com/mda-khjnfj0ka5nrny59/v1-cae/1080p/mda-khjnfj0ka5nrny59.mp4?auth_key=1602762666-0-0-eff8f1206a48a0b6167fa00fd4bb8076&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=8797_2&sle=1&sl=1918&split=1700160')">铁血丹心</li>
+<li onclick="playVideo('https://vd2.bdstatic.com/mda-kj2ge5qdivh9jhz3/v1-cae/1080p/mda-kj2ge5qdivh9jhz3.mp4?auth_key=1602763415-0-0-48bdf1633df2cd03d16a184c1f5a61fb&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=8797_2&sle=1&sl=2792&split=2419689')">枉凝眉</li>
+<li onclick="playVideo('https://vd2.bdstatic.com/mda-kirqb8wp0wx6nm8b/v1-cae/1080p/mda-kirqb8wp0wx6nm8b.mp4?auth_key=1602762598-0-0-7b8d213378f4f9825a4e3d01ca6846bc&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=8797_2&sle=1&sl=1378&split=1332772')">问情</li>
+<li onclick="playVideo('http://antiserver.kuwo.cn/anti.s?rid=MUSIC_1565837&response=res&format=mp4&type=convert_url')">凤凰传奇-荷塘月色</li>
+<li onclick="playVideo('http://antiserver.kuwo.cn/anti.s?rid=MUSIC_1565837&response=res&format=mp4&type=convert_url')">凤凰传奇-荷塘月色</li>
+<li onclick="playVideo('http://antiserver.kuwo.cn/anti.s?rid=MUSIC_40828850&response=res&format=mp4&type=convert_url')">凤凰传奇-华夏传说</li>
+<li onclick="playVideo('http://antiserver.kuwo.cn/anti.s?rid=MUSIC_646024&response=res&format=mp4&type=convert_url')">凤凰传奇-今生的缘</li>
+<li onclick="playVideo('http://antiserver.kuwo.cn/anti.s?rid=MUSIC_954805&response=res&format=mp4&type=convert_url')">凤凰传奇-奇迹世界</li>
+<li onclick="playVideo('http://antiserver.kuwo.cn/anti.s?rid=MUSIC_51674527&response=res&format=mp4&type=convert_url')">凤凰传奇-奢香夫人</li>
+<li onclick="playVideo('http://antiserver.kuwo.cn/anti.s?rid=MUSIC_6401404&response=res&format=mp4&type=convert_url')">凤凰传奇-温柔姑娘</li>
+<li onclick="playVideo('http://antiserver.kuwo.cn/anti.s?rid=MUSIC_1164118&response=res&format=mp4&type=convert_url')">凤凰传奇-御龙归字谣</li>
+<li onclick="playVideo('http://antiserver.kuwo.cn/anti.s?rid=MUSIC_7084968&response=res&format=mp4&type=convert_url')">凤凰传奇-月亮之上</li>
+<li onclick="playVideo('http://antiserver.kuwo.cn/anti.s?rid=MUSIC_24042021&response=res&format=mp4&type=convert_url')">凤凰传奇-中国味道</li>
+<li onclick="playVideo('http://antiserver.kuwo.cn/anti.s?rid=MUSIC_18747906&response=res&format=mp4&type=convert_url')">凤凰传奇-自由飞翔</li>
+<li onclick="playVideo('http://antiserver.kuwo.cn/anti.s?rid=MUSIC_24042025&response=res&format=mp4&type=convert_url')">凤凰传奇-自由自在</li>
+      <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg2abB4gUohpLdxAQ.mp4')">EXID-L.I.E</li>
+<li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg1J_-4gUouJjNQw.mp4')">EXID-啊_是的</li>
+<li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg4K_04wUo5-iTyAU.mp4')">FIESTAR-Mirror</li>
+<li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgsu_c4gUohrr0igU.mp4')">Gavy-20NJ-Dont-Call</li>
+<li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg5avW4gUo47zhvwU.mp4')">GeoDaSilvaJ</li>
+<li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAggq-W4gUouLym-QQ.mp4')">Kantik-Orfelogy</li>
+<li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgxfG98AUogN6hqgU.mp4')">LUNA-即便如此</li>
+<li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg1-S-4gUo7Pn1Fw.mp4')">Саша Санта｜ Я побегу</li>
+<li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgotW-4gUo5InbrAM.mp4')">Maroon 5｜ Sugar</li>
+<li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg8qDB4gUogPTw7wU.mp4')">Avril Lavigne艾薇儿｜ Here&#39;s To Never Growing Up</li>
+      <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgprXV4gUo8KbK2gc.mp4')">kieda budini｜ flirt</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgurTV4gUowIKVsQY.mp4')">Justin Bieber｜ What Do You Mean</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg8bPV4gUoqt673AY.mp4')">Jessi Malay｜ Do It</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgpbPV4gUo6JvA8wQ.mp4')">Inna、Yandel｜ In Your Eyes</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAggLPV4gUogKTq9wE.mp4')">inna、eric turner｜ bop bop</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgyLLV4gUopMv79AQ.mp4')">INNA｜ Say It With Your Body</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg1bHV4gUooIqQ4Qc.mp4')">Hilary Duff｜ Sparks</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgsrHV4gUogLKa4QU.mp4')">hilary duff｜ all about you</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg7LDV4gUozLieQA.mp4')">giorgio moroder、kylie minogue｜ right here right now</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgobDV4gUourCyjwE.mp4')">fifth harmony、kid ink｜ worth it right now</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg4K-V4gUo4IWzzQE.mp4')">fifth harmony｜ sledgehammer</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgp6-V4gUozY65ngE.mp4')">Dimitri Vegas &amp; Like Mike、 Ne-Yo｜ Higher Place</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg_K7V4gUo7NGmOA.mp4')">desi slava、nana｜ cotton candy</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg_63V4gUog9eZoQI.mp4')">Corina Smith｜ La Difícil</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg6azV4gUoqPPz5AU.mp4')">consuelo costin｜ body needs</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgw6zV4gUoloDJ5AI.mp4')">ciara｜ i bet</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg76vV4gUo8sGnOw.mp4')">ciara｜ dance like we're making love</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgravV4gUokMeSqQU.mp4')">Britney Spears、Tinashe｜ Slumber Party</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg-KrV4gUo-6nFbw.mp4')">Beast｜ Freaking Cute</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgzKrV4gUoisbKkQM.mp4')">Ariana Grande｜ Side To Side</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgoqrV4gUo8IG_SA.mp4')">Ariana Grande｜ Dangerous Woman</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg86nV4gUo5pDvzAI.mp4')">alyxx dione、jason derulo｜ chingalinga</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAglajE4gUosOD54wY.mp4')">ANDREA｜ NIKOI DRUG (RAKI TRAKI)｜ OFFICIAL VIDEO</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg8abE4gUogtq22gI.mp4')">Shakira｜ Try Everything (疯狂动物城)电影主题曲</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg2qXE4gUo9obCtQU.mp4')">Eni Koci｜ Motivi Im</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg5KTE4gUo-bWn4AY.mp4')">Anton Ewald｜ This Could Be Something ft. Medina</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgqqTE4gUo07PVsgc.mp4')">Mihai Chitu feat DOMG｜ In al noualea cer</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg8qPE4gUo09KPywI.mp4')">Leighton Meester｜ Heartstrings</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgx6LE4gUo4uvwwgI.mp4')">Jung Dong Ha｜ Oh! Love</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgk6LE4gUo29aNpwM.mp4')">Janieck｜ Feel The Love (Sam Feldt Edit)</li>
+    <li class="separator"></li>
+    <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgv6HE4gUo972u2wE.mp4')">Fifth Harmony｜ Work from Home</li>
+    </ul>
+    <div class="video-title">
+      <marquee behavior="scroll" direction="left">欢迎访问！这里有不间断的上百个经典MV放送，列表上下滑动选择，点击播放，本站由noise制作，主页：www.noisework.cn</marquee>
+    </div>
+    <div class="controls">
+      <button onclick="playPreviousVideo()">上一个视频</button> <!-- 添加上一个视频按钮 -->
+      <button onclick="playNextVideo()">下一个视频</button> <!-- 添加下一个视频按钮 -->
+      <button onclick="togglePlayPause()">播放/暂停</button> <!-- 添加播放/暂停按钮 -->
+      <button onclick="toggleFullscreen()">页面全屏</button>
+      <button onclick="toggleAutoRandomPlay()">自动随机播放</button>
+    </div>
+  </div>
+  <div class="footer">
+    ⭐Made by <a href="https://www.noisework.cn">Noise</a>
+  </div>
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
