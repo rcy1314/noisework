@@ -11,14 +11,25 @@ danmuContainer.classList.add('danmu-container');
 document.body.appendChild(danmuContainer);
 
 function playVideo(src) {
-  video.src = src;
-  video.play();
-  currentIndex = Array.from(videoList).findIndex(function(li) {
-    return li.getAttribute('onclick').match(/'(.*?)'/)[1] === src;
-  });
-  video.addEventListener('ended', function() {
+  if (video.canPlayType) {
+    var canPlay = video.canPlayType('video/mp4');
+    if (canPlay === 'maybe' || canPlay === 'probably') {
+      video.src = src;
+      video.play();
+      currentIndex = Array.from(videoList).findIndex(function(li) {
+        return li.getAttribute('onclick').match(/'(.*?)'/)[1] === src;
+      });
+      video.addEventListener('ended', function() {
+        playNextVideo();
+      });
+    } else {
+      console.log('该浏览器不支持播放该视频格式');
+      playNextVideo();
+    }
+  } else {
+    console.log('该浏览器不支持HTML5视频播放');
     playNextVideo();
-  });
+  }
 }
 
 function togglePlayPause() {
