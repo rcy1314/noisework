@@ -10,6 +10,18 @@ var danmuContainer = document.createElement('div');
 danmuContainer.classList.add('danmu-container');
 document.body.appendChild(danmuContainer);
 
+function selectVideo(index) {
+  currentIndex = index;
+  updateVideoListScroll();
+}
+
+videoList.forEach(function(videoItem, index) {
+  videoItem.addEventListener('click', function() {
+    selectVideo(index);
+    playVideo(videoItem.getAttribute('onclick').match(/'(.*?)'/)[1]);
+  });
+});
+
 function playVideo(src) {
   if (video.canPlayType) {
     var canPlay = video.canPlayType('video/mp4');
@@ -64,6 +76,7 @@ function playPreviousVideo() {
     currentIndex = videoList.length - 1;
   }
   playVideo(videoList[currentIndex].getAttribute('onclick').match(/'(.*?)'/)[1]);
+  updateVideoListScroll();
 }
 
 function playNextVideo() {
@@ -72,11 +85,17 @@ function playNextVideo() {
     currentIndex = 0;
   }
   playVideo(videoList[currentIndex].getAttribute('onclick').match(/'(.*?)'/)[1]);
+  updateVideoListScroll();
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  playVideo(videoList[currentIndex].getAttribute('onclick').match(/'(.*?)'/)[1]);
-});
+function updateVideoListScroll() {
+  var selectedVideo = document.querySelector('.video-list li.selected');
+  if (selectedVideo) {
+    selectedVideo.classList.remove('selected');
+  }
+  videoList[currentIndex].classList.add('selected');
+  videoList[currentIndex].scrollIntoView();
+}
 
 function toggleFullscreen() {
   if (document.fullscreenElement) {
@@ -104,53 +123,3 @@ function createDanmu(text, duration) {
     danmuItem.remove();
   }, duration);
 }
-
-// 添加滚动视频列表的代码
-var videoListContainer = document.querySelector('.video-list');
-var videoListHeight = videoListContainer.offsetHeight;
-var videoItemHeight = videoList[0].offsetHeight;
-var selectedIndex = currentIndex;
-
-function updateVideoListScroll() {
-  var scrollOffset = selectedIndex * videoItemHeight;
-  var centerOffset = Math.floor(videoListContainer.offsetHeight / 2) - Math.floor(videoItemHeight / 2);
-  var targetOffset = scrollOffset - centerOffset;
-  videoListContainer.scrollTo({ top: targetOffset, behavior: 'smooth' });
-}
-
-function selectVideo(index) {
-  selectedIndex = index;
-  updateVideoListScroll();
-}
-
-videoList.forEach(function(videoItem, index) {
-  videoItem.addEventListener('click', function() {
-    selectVideo(index);
-    playVideo(videoItem.getAttribute('onclick').match(/'(.*?)'/)[1]);
-  });
-});
-
-// 监听视频播放事件，自动滑动到正在播放的视频
-video.addEventListener('play', function() {
-  var currentVideoSrc = video.src;
-  var currentVideoIndex = Array.from(videoList).findIndex(function(li) {
-    return li.getAttribute('onclick').match(/'(.*?)'/)[1] === currentVideoSrc;
-  });
-  selectVideo(currentVideoIndex);
-});
-// 自动播放下一首视频
-video.addEventListener('ended', function() {
-  playNextVideo();
-});
-
-// 添加上一首和下一首按钮
-var previousButton = document.getElementById('previous-button');
-var nextButton = document.getElementById('next-button');
-
-previousButton.addEventListener('click', function() {
-  playPreviousVideo();
-});
-
-nextButton.addEventListener('click', function() {
-  playNextVideo();
-});
