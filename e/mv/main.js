@@ -123,3 +123,24 @@ function createDanmu(text, duration) {
     danmuItem.remove();
   }, duration);
 }
+
+// 添加键盘按键监听
+document.addEventListener('keydown', function(event) {
+  switch (event.keyCode) {
+    case 32: // 空格键
+      togglePlayPause();
+      break;
+    case 37: // 左箭头键
+      playPreviousVideo();
+      break;
+    case 39: // 右箭头键
+      playNextVideo();
+      break;
+    case 38: // 上箭头键
+      video.volume += 0.1;
+      break;
+    case 40: // 下箭头键
+      video.volume -= 0.1;
+      break;
+  }
+});
