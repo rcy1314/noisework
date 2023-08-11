@@ -27,6 +27,7 @@ function playVideo(src) {
       });
       var currentVideoName = videoList[currentIndex].textContent;
       createDanmu('正在播放视频：' + currentVideoName, 2000);
+      updateVideoListScroll();
     } else {
       console.log('该浏览器不支持播放该视频格式');
       playNextVideo();
@@ -77,11 +78,6 @@ document.addEventListener('DOMContentLoaded', function() {
   playVideo(videoList[currentIndex].getAttribute('onclick').match(/'(.*?)'/)[1]);
 });
 
-function toggleDarkMode() {
-  var body = document.body;
-  body.classList.toggle('dark-mode');
-}
-
 function toggleFullscreen() {
   if (document.fullscreenElement) {
     document.exitFullscreen();
@@ -92,9 +88,9 @@ function toggleFullscreen() {
 
 document.addEventListener('fullscreenchange', function() {
   if (document.fullscreenElement) {
-    createDanmu('全屏模式已开启', 2000);
+    createDanmu('全屏模式已开启', 1000);
   } else {
-    createDanmu('全屏模式已关闭', 2000);
+    createDanmu('全屏模式已关闭', 1000);
   }
 });
 
@@ -110,18 +106,16 @@ function createDanmu(text, duration) {
 }
 
 // 添加滚动视频列表的代码
-var videoListContainer = document.querySelector('.video-list-container');
+var videoListContainer = document.querySelector('.video-list');
 var videoListHeight = videoListContainer.offsetHeight;
 var videoItemHeight = videoList[0].offsetHeight;
 var selectedIndex = currentIndex;
 
 function updateVideoListScroll() {
   var scrollOffset = selectedIndex * videoItemHeight;
-  if (scrollOffset + videoItemHeight > videoListHeight) {
-    videoListContainer.scrollTop = scrollOffset - (videoListHeight - videoItemHeight);
-  } else {
-    videoListContainer.scrollTop = scrollOffset;
-  }
+  var centerOffset = Math.floor(videoListContainer.offsetHeight / 2) - Math.floor(videoItemHeight / 2);
+  var targetOffset = scrollOffset - centerOffset;
+  videoListContainer.scrollTo({ top: targetOffset, behavior: 'smooth' });
 }
 
 function selectVideo(index) {
@@ -134,4 +128,29 @@ videoList.forEach(function(videoItem, index) {
     selectVideo(index);
     playVideo(videoItem.getAttribute('onclick').match(/'(.*?)'/)[1]);
   });
+});
+
+// 监听视频播放事件，自动滑动到正在播放的视频
+video.addEventListener('play', function() {
+  var currentVideoSrc = video.src;
+  var currentVideoIndex = Array.from(videoList).findIndex(function(li) {
+    return li.getAttribute('onclick').match(/'(.*?)'/)[1] === currentVideoSrc;
+  });
+  selectVideo(currentVideoIndex);
+});
+// 自动播放下一首视频
+video.addEventListener('ended', function() {
+  playNextVideo();
+});
+
+// 添加上一首和下一首按钮
+var previousButton = document.getElementById('previous-button');
+var nextButton = document.getElementById('next-button');
+
+previousButton.addEventListener('click', function() {
+  playPreviousVideo();
+});
+
+nextButton.addEventListener('click', function() {
+  playNextVideo();
 });
