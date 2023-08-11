@@ -22,6 +22,11 @@ function playVideo(src) {
       video.addEventListener('ended', function() {
         playNextVideo();
       });
+      video.addEventListener('error', function() {
+        playNextVideo();
+      });
+      var currentVideoName = videoList[currentIndex].textContent;
+      createDanmu('正在播放视频：' + currentVideoName, 2000);
     } else {
       console.log('该浏览器不支持播放该视频格式');
       playNextVideo();
@@ -87,13 +92,13 @@ function toggleFullscreen() {
 
 document.addEventListener('fullscreenchange', function() {
   if (document.fullscreenElement) {
-    createDanmu('全屏模式已开启');
+    createDanmu('全屏模式已开启', 2000);
   } else {
-    createDanmu('全屏模式已关闭');
+    createDanmu('全屏模式已关闭', 2000);
   }
 });
 
-function createDanmu(text) {
+function createDanmu(text, duration) {
   var danmuItem = document.createElement('div');
   danmuItem.classList.add('danmu-item');
   danmuItem.textContent = text;
@@ -101,5 +106,32 @@ function createDanmu(text) {
 
   setTimeout(function() {
     danmuItem.remove();
-  }, 5000);
+  }, duration);
 }
+
+// 添加滚动视频列表的代码
+var videoListContainer = document.querySelector('.video-list-container');
+var videoListHeight = videoListContainer.offsetHeight;
+var videoItemHeight = videoList[0].offsetHeight;
+var selectedIndex = currentIndex;
+
+function updateVideoListScroll() {
+  var scrollOffset = selectedIndex * videoItemHeight;
+  if (scrollOffset + videoItemHeight > videoListHeight) {
+    videoListContainer.scrollTop = scrollOffset - (videoListHeight - videoItemHeight);
+  } else {
+    videoListContainer.scrollTop = scrollOffset;
+  }
+}
+
+function selectVideo(index) {
+  selectedIndex = index;
+  updateVideoListScroll();
+}
+
+videoList.forEach(function(videoItem, index) {
+  videoItem.addEventListener('click', function() {
+    selectVideo(index);
+    playVideo(videoItem.getAttribute('onclick').match(/'(.*?)'/)[1]);
+  });
+});
