@@ -150,7 +150,7 @@
       margin: 0 10px;
     }
 
-    .tv-style .footer {
+    .tv-style .footer1 {
       position: static;
       margin-top: 20px;
       background-color: transparent; /* 去除底部页脚背景颜色 */
@@ -160,23 +160,58 @@
     @media (max-width: 768px) {
       .tv-style {
         width: 90%;
+        height: 90%;
       }
     }
+    .container {
+      text-align: center;
+    }
+
+    .category {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    .category:hover {
+      background: linear-gradient(to right, #f00, #00f); 
+    }
+    /* 列表修改 */
+    .video-list,
+    .video-list1,
+    .video-list2,
+    .video-list3 {
+    display: none;
+    margin-top: 10px;
+    }
+
   </style>
 </head>
 <body>
-  </br></br></br>
+  </br>
   <h2 style="text-align: center;">MV音乐盒</h2>
   <div style="text-align: center;">
     <span id="hitokoto">正在获取中...</span>
   </div>
   <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
-  <br/>
+
   <div class="card-container astro-ZFGTZ4X4" id="projects">
   </div>
   <div class="tv-style video-player">
-    <video id="video" width="100%" controls></video>
-    <ul class="video-list">
+    <video id="video" width="100%" controls>
+      <source src="video.mp4" type="video/mp4">
+      <source src="video.mkv" type="video/x-matroska">
+      <source src="video.m3u" type="application/x-mpegURL">
+      <source src="video.m3u8" type="application/vnd.apple.mpegURL">
+    </video>
+    <div class="container">
+      <div class="category" onclick="showList('video-list1')">默认</div>
+      <div class="category" onclick="showList('video-list2')">歌单1</div>
+      <div class="category" onclick="showList('video-list3')">歌单2</div>
+    <ul class="video-list" id="video-list1" style="display: none;">
       <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg9qiM5gUo-tns8Qc.mp4')">AlanWalker-feat</li>
       <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgwv_h7QUolM7fswM.mp4')">艾娃·麦克斯-我也是</li>
       <li onclick="playVideo('https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg_fih7QUovpfokgI.mp4')">Russ-Civil War</li>
@@ -261,11 +296,33 @@
       <button onclick="toggleFullscreen()">页面全屏</button>
       <button onclick="toggleAutoRandomPlay()">自动随机播放</button>
     </div>
-  </div>
+    <script>
+      function showList(listId) {
+        // 隐藏所有视频列表
+        var lists = document.getElementsByClassName('video-list');
+        for (var i = 0; i < lists.length; i++) {
+          lists[i].style.display = 'none';
+        }
+        
+        // 显示指定的视频列表
+        var list = document.getElementById(listId);
+        list.style.display = 'block';
+      }
+      function showList(listId) {
+      var list = document.getElementById(listId);
+      if (list.style.display === "none") {
+      list.style.display = "block";
+      } else {
+      list.style.display = "none";
+      }
+      }
+    </script>
   <div class="footer">
     ⭐Made by <a href="https://www.noisework.cn">Noise</a>
   </div>
-  </script>
+  <div class="footer1">
+
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
   <script src="main.js"></script>
 </body>
