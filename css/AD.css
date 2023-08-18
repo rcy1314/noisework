@@ -14,7 +14,11 @@
     overflow: hidden; /* 隐藏超出容器的内容 */
     z-index: 100; /* 广告显示图层 */
   }
-  
+  @media (max-width: 600px) {
+    .ad-container {
+      display: none;
+    }
+  }
   .ad-container.show {
     right: 10px; /* 弹出显示位置 */
   }
