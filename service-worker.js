@@ -1,9 +1,8 @@
 self.addEventListener('install', function(event) {
     event.waitUntil(
-      caches.open('your-app-name').then(function(cache) {
+      caches.open('Noise主页').then(function(cache) {
         return cache.addAll([
           '/',
-          '/index.html',
           '/assets/',
           '/css/main.css',
           '/js/main.js',
