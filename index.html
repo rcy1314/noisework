@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="./css/loading.css"> 
     <link rel="stylesheet" href="css/tab.css">
     <link rel="stylesheet" href="css/AD.css">
+    <link rel="stylesheet" href="css/Text.css">
     <link rel="manifest" href="manifest.json">
     <!--  引入JS -->   
     <script src="js/instantclick.min.js"></script>
@@ -58,7 +59,7 @@
     <!-- 添加版本号-每次更新要改版本号才会刷新缓存 -->
     <link rel="stylesheet" type="text/css" href="css/main.css?v=1.0.3">
 	<script src="service-worker.js?v=1.1"></script>
-    <script src="index.html?v=1.1.0"></script>
+    <script src="index.html?v=1.1.1"></script>
 	<script src="js/suiji-picture.js?v=1.1.2"></script>
 </head>
 <body>
@@ -126,10 +127,12 @@
                 <div id="terminal"></div>
             </div>
         </div>
-
+         <!-- 弹出文字代码-->
+         <div class="popup">
+            <p id="popupText"></p>
+          </div>
         <!-- 流动代码-->
         <marquee scrollamount="3" direction="right" behavior="alternate">
-            <!-- <a style="color:#fff" target="_blank">📢：添加了新的站点，联动小程序改版了😃</a> --> 
             <div class="container">
                 📢：<span id="hitokoto">正在获取中...</span>
             </div>
@@ -347,5 +350,6 @@
     <script src="js/loading.js"></script>
     <script src="js/tab.js"></script>
     <script src="js/AD.js"></script>
+    <script src="js/Text.js"></script>
 </body>
 </html>

@@ -1,0 +1,15 @@
+.popup {
+  position: fixed;
+  top: -100px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.533);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  transition: top 0.5s ease-in-out;
+}
+
+.popup p {
+  margin: 0;
+}
