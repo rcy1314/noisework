@@ -1,0 +1,50 @@
+.ad-container {
+    position: fixed;
+    top: 25%;
+    right: -500px; /* 初始位置在最右侧外部 */
+    transform: translateY(-50%);
+    width: 200px;
+    height: 200px;
+    background-color: #100f0f4a;
+    padding: 1px;
+    box-sizing: border-box;
+    transition: right 0.3s; /* 动画过渡效果 */
+    z-index: 100; /* 调整广告显示图层 */
+    border-radius: 10px; /* 圆弧形状 */
+    overflow: hidden; /* 隐藏超出容器的内容 */
+    z-index: 100; /* 广告显示图层 */
+  }
+  
+  .ad-container.show {
+    right: 10px; /* 弹出显示位置 */
+  }
+  
+  .ad-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0; /* 顶部圆弧形状 */
+  }
+  
+  .ad-link {
+    display: block;
+    margin-top: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #d56d0c;
+    text-decoration: none;
+  }
+  
+  .ad-description {
+    text-align: center;
+    color: #fbfbfbcc;
+    font-size: 13px;
+    margin-top: 1px;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }

@@ -434,9 +434,10 @@ a {
 	height: 24px;
 
   }
-  
+  /* 鼠标样式 */
   .node.moving {
 	opacity: 1;
+	z-index: 9999; /* 使广告显示在所有图层最上层 */
   }
   
   .node::before {
