@@ -8,6 +8,7 @@
   border-radius: 5px;
   text-align: center;
   transition: top 0.5s ease-in-out;
+  z-index: 9999; /* 显示图层 */
 }
 
 .popup p {
