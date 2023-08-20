@@ -87,8 +87,8 @@ function closeAd() {
   document.body.removeChild(adContainer); // 从DOM中移除广告容器
 }
 
-// 延迟3.5秒后立即弹出广告
-setTimeout(changeAd, 3500);
+// 延迟2.5秒后立即弹出广告
+setTimeout(changeAd, 2500);
 
 // 定时器，每隔8秒更换图片、链接和文字说明
 setInterval(changeAd, 8000);

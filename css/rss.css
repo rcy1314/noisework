@@ -9,7 +9,7 @@
         top: 70%;
         right: -500px;
         transform: translateY(-50%);
-        width: 150px;
+        width: 180px;
         background-color: rgba(0, 0, 0, 0.643);
         padding: 13px;
         border-radius: 10px 0 0 10px;
@@ -25,7 +25,7 @@
       }
     
       .rss-title {
-        font-size: 12px;
+        font-size: 13px;
         font-weight: bold;
         margin-bottom: 10px;
       }
@@ -36,7 +36,7 @@
     
       /* 修改选择器为 .rss-link a */
       .rss-link a {
-        font-size: 12px;
+        font-size: 13px;
         margin-bottom: 2px;
         color: white;
       }

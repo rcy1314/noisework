@@ -36,10 +36,10 @@
       fetchRssItems(source);
     });
     
-    // 页面载入后延迟2.5秒后弹出效果
+    // 页面载入后延迟2秒后弹出效果
     setTimeout(function() {
       rssContainer.classList.add('open');
-    }, 2500);
+    }, 2000);
     
     // 点击关闭按钮后隐藏容器
     var closeButton = document.getElementById('close-button');

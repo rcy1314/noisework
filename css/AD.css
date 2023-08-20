@@ -5,7 +5,7 @@
     transform: translateY(-50%);
     width: 200px;
     height: 200px;
-    background-color: #100f0f4a;
+    background-color: #100f0f66;
     padding: 1px;
     box-sizing: border-box;
     transition: right 0.3s; /* 动画过渡效果 */
