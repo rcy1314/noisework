@@ -42,8 +42,8 @@ body,html {
 /* 画布尺寸 */
 .main{
 	width: 990px;
-    padding: 15px 330px 10px 20px;
-    background: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8) 600px,rgba(34, 34, 34, 0));
+    padding: 30px 330px 5px 20px;
+    background: linear-gradient(to right, rgba(34, 34, 34, 0.849), rgba(34, 34, 34, 0) 600px,rgba(34, 34, 34, 0));
 }
 body::-webkit-scrollbar {display: none;}
 .chtitle {
