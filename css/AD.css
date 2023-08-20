@@ -21,7 +21,7 @@
     }
   }
   .ad-container.show {
-    right: 10px; /* 弹出显示位置 */
+    right: 3px; /* 弹出显示位置 */
   }
   
   .ad-image {

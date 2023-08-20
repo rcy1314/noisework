@@ -1,0 +1,53 @@
+     /* noise主页rss-CSS样式 */
+     .rss-container {
+      display: none;
+    }
+    
+    @media only screen and (min-width: 600px) {
+      .rss-container {
+        position: fixed;
+        top: 70%;
+        right: -500px;
+        transform: translateY(-50%);
+        width: 150px;
+        background-color: rgba(0, 0, 0, 0.643);
+        padding: 13px;
+        border-radius: 10px 0 0 10px;
+        transition: right 0.3s ease-in-out;
+        z-index: 300;
+        color: white;
+        text-align: center;
+        display: block;
+      }
+    
+      .rss-container.open {
+        right: 0;
+      }
+    
+      .rss-title {
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    
+      .rss-item {
+        margin-bottom: 10px;
+      }
+    
+      /* 修改选择器为 .rss-link a */
+      .rss-link a {
+        font-size: 12px;
+        margin-bottom: 2px;
+        color: white;
+      }
+    
+      /* 添加关闭按钮样式 */
+      .close-button {
+        position: absolute;
+        top: 5px;
+        right: 2px;
+        cursor: pointer;
+        color: white;
+        font-size: 12px;
+      }
+    }
