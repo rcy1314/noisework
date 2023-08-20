@@ -67,7 +67,7 @@
 .menu-list{
     width: 130px;
     height: auto;
-    background-color: #1817176b;
+    background-color: rgba(24, 23, 23, 0.644);
     border-radius: 8px;
     list-style: none;
     padding: 6px;
