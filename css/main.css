@@ -37,11 +37,12 @@ body,html {
     background-size: cover;
 	height: 120%;
 	position: absolute;
-	left:10vw !important;
+	left:6.5vw !important;
 }
+/* 画布尺寸 */
 .main{
-	width: 980px;
-    padding: 40px 300px 40px 40px;
+	width: 990px;
+    padding: 15px 330px 10px 20px;
     background: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8) 600px,rgba(34, 34, 34, 0));
 }
 body::-webkit-scrollbar {display: none;}
@@ -437,7 +438,7 @@ a {
   /* 鼠标样式 */
   .node.moving {
 	opacity: 1;
-	z-index: 9999; /* 使广告显示在所有图层最上层 */
+	z-index: 9999; /* 显示在所有图层最上层 */
   }
   
   .node::before {
@@ -461,4 +462,34 @@ a {
 	background-color: #ffffff;
 	opacity: 0.2;
   }
-  
+  /* 向下滑动提示 */
+  .scroll-down {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 9999;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	opacity: 0.7;
+}
+
+.scroll-down span {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.scroll-down svg {
+	width: 24px;
+	height: 24px;
+	fill: #fff;
+}
+
+@media (max-width: 768px) {
+	.scroll-down {
+		display: block;
+	}
+}
+

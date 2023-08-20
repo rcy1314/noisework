@@ -140,7 +140,15 @@
             <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>  
         </marquee>    
         <!-- 流动代码结束-->
-
+         <!--向下滑动提示-->
+        <div class="scroll-down">
+            <span>向下滑动查看</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 16l-6-6h12z"/>
+            </svg>
+        </div>
+       <!--向下滑动提示结束-->
         <div class="find">
             <h2 class="chtitle"><span>社交</span>媒体</h2>
             <div id="linkbox">
@@ -200,7 +208,6 @@
                 </a>    
             </div>
         </div>
-
         <div class="work">
             <h2 class="chtitle"><span>网站</span>合集</span>【滑动或左右键可切换】</h2>
             <div class="workbox">
@@ -310,7 +317,6 @@
                 <a href="./home.html" target="_blank"><div id="last"><i class="fa-sharp fa-solid fa-magnifying-glass"></i><span>更换风格查看</span></div></a>
             </div>
         </div>
-
         <div class="menu-box">
             <!-- 图标按钮 -->
             <div class="menu-button">
@@ -339,6 +345,39 @@
     <div id="aplayer" class="aplayer" data-order="random" data-id="5191170949" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-volume="0.8"></div>
     <script src="js/APlayer.min.js"></script>
     <script src="js/Meting.min.js"></script>
+    <!--向下滑动监听-->
+    <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        var scrollDown = document.querySelector('.scroll-down');
+        
+        function handleScroll() {
+            var scrollPos = window.pageYOffset;
+            var windowHeight = window.innerHeight;
+            var documentHeight = document.documentElement.scrollHeight;
+            
+            if (window.innerWidth <= 768) {
+                if (scrollPos + windowHeight >= documentHeight) {
+                    scrollDown.style.display = 'none';
+                } else {
+                    scrollDown.style.display = 'block';
+                }
+            } else {
+                scrollDown.style.display = 'none';
+            }
+        }
+    
+        function handleButtonClick() {
+            window.scrollBy({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        }
+    
+        scrollDown.addEventListener('click', handleButtonClick);
+        window.addEventListener('scroll', handleScroll);
+    });
+    </script>
+    <!--向下滑动监听结束-->    
     <script>
         window['CboxReady'] = function (Cbox) {
             Cbox('button', '3-3523748-9k93aT');
