@@ -1,19 +1,45 @@
 // 广告位
-// 图片和链接数组
-var images = [
-  "https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/20230818/guang.6xvhojj7j8w0.jpg",
-  "https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/20230818/11宝.5gadu623kd00.jpg",
-  "https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/20230818/2321312.1o5qd8jb6elc.jpg",
-  "https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/20230818/guang2.3c7b9a9xpvi0.png"
+// 广告数组
+var ads = [
+  {
+    image: "https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/20230818/11宝.5gadu623kd00.jpg",
+    link: "https://noisevip.cn",
+    description: "包罗万象-Noise宝藏阁"
+  },
+  {
+    image: "https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/20230818/guang2.3c7b9a9xpvi0.png",
+    link: "https://www.noisework.cn",
+    description: "广告位+"
+  },
+  {
+    image: "https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/20230818/2321312.1o5qd8jb6elc.jpg",
+    link: "https://www.noisedh.cn",
+    description: "超量收录-Noise导航"
+  },
+  {
+    image: "https://cdn.staticaly.com/gh/rcy1314/tuchuang@main/20230818/guang.6xvhojj7j8w0.jpg",
+    link: "https://www.noisework.cn",
+    description: "广告位+"
+  }
 ];
-var links = [
-  "https://www.noisework.cn",
-  "https://noisevip.cn",
-  "https://www.noisedh.cn",
-  "https://www.noisework.cn"
-];
-var descriptions = ["广告位+", "包罗万象-Noise宝藏阁", "超量收录-Noise导航", "广告位+"];
-var currentIndex = 0;
+
+// 随机打乱广告数组
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+ads = shuffle(ads);
 
 // 创建广告容器
 var adContainer = document.createElement("div");
@@ -57,16 +83,17 @@ function hideAd() {
 // 添加一个变量来跟踪广告是否已经显示过
 var adDisplayed = false;
 
+// 当前广告索引
+var currentIndex = 0;
+
 // 更换图片、链接和文字说明的函数
 function changeAd() {
   // 更新图片、链接和文字说明
-  var nextIndex = (currentIndex + 1) % images.length;
-  var nextImage = images[nextIndex];
-  var nextLink = links[nextIndex];
-  var nextDescription = descriptions[nextIndex];
-  adImage.src = nextImage;
-  adLink.href = nextLink;
-  adDescription.textContent = nextDescription;
+  var nextIndex = (currentIndex + 1) % ads.length;
+  var nextAd = ads[nextIndex];
+  adImage.src = nextAd.image;
+  adLink.href = nextAd.link;
+  adDescription.textContent = nextAd.description;
 
   // 更新当前索引
   currentIndex = nextIndex;
