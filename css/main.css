@@ -440,6 +440,19 @@ a {
 	opacity: 1;
 	z-index: 9999; /* 显示在所有图层最上层 */
   }
+  @media screen and (max-width: 768px), (display-mode: standalone) {
+	* {
+	  cursor: pointer;
+	}
+	
+	a {
+	  cursor: crosshair;
+	}
+	
+	.button {
+	  cursor: pointer;
+	}
+  }
   
   .node::before {
 	content: ' ';
