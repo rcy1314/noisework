@@ -5,7 +5,7 @@
   background-color: rgba(0, 0, 0, 0.388);
   color: #fff;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: center;
   transition: top 0.5s ease-in-out;
   z-index: 200; /* 显示图层 */
