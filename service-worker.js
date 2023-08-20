@@ -1,4 +1,4 @@
-var cacheName = 'Noise主页-v1.0.0';
+var cacheName = 'Noise主页-v1.0.1';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
