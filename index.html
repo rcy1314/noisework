@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/AD.css">
     <link rel="stylesheet" href="css/Text.css">
     <link rel="stylesheet" href="css/rss.css">
+    <link rel="stylesheet" href="css/clock.css">
     <link rel="manifest" href="manifest.json">
     <!--  引入JS -->   
     <script src="js/instantclick.min.js"></script>
@@ -60,7 +61,7 @@
     <!-- 添加版本号-每次更新要改版本号才会刷新缓存 -->
     <link rel="stylesheet" type="text/css" href="css/main.css?v=1.0.3">
     <script src="service-worker.js?v=1.3"></script>
-    <script src="index.html?v=1.1.3"></script>
+    <script src="index.html?v=1.2.3"></script>
     <script src="js/suiji-picture.js?v=1.1.2"></script>
 
 </head>
@@ -94,7 +95,6 @@
     });
     </script>
     <!-- 弹窗信息提醒代码结束 -->
-
     <!-- 添加Service Worker -->
     <script>
         if ('serviceWorker' in navigator) {
@@ -107,7 +107,6 @@
             });
         }
     </script>
-
     <div class="node" id="node"></div>
     <div class="cursor" id="cursor"></div>
     <div id="sence">
@@ -138,6 +137,8 @@
          <div class="popup">
             <p id="popupText"></p>
           </div>
+          <!-- 隐藏式数字时钟-->
+          <div class="clock" id="clock">00:00:00</div>
         <!-- 流动代码-->
         <marquee scrollamount="3" direction="right" behavior="alternate">
             <div class="container">
@@ -345,7 +346,11 @@
             </div>
         </div>
     </div>
-
+    <!--隐藏式页脚-->
+    <div id="footer">
+        <p>本站已运行: <span id="days"></span></p>
+        <p> ღゝ◡╹ノ♡ <a href="https://www.noisework.cn">Noise主页</a></p>
+      </div>
     <!--音乐-->
     <link rel="stylesheet" href="css/APlayer.min.css">  
     <div id="aplayer" class="aplayer" data-order="random" data-id="5191170949" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-volume="0.8"></div>
@@ -398,5 +403,6 @@
     <script src="js/AD.js"></script>
     <script src="js/Text.js"></script>
     <script src="js/rss.js"></script>
+    <script src="js/clock.js"></script>
 </body>
 </html>

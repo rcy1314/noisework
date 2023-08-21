@@ -83,4 +83,54 @@ else {
     console.log("DeviceOrientationEvent is not supported");
   }
 }
+ //*数字时钟*//
+window.addEventListener('DOMContentLoaded', () => {
+  const clock = document.getElementById('clock');
+  let isMouseOver = false;
 
+  clock.addEventListener('mouseover', () => {
+    isMouseOver = true;
+    clock.classList.add('show');
+  });
+
+  clock.addEventListener('mouseout', () => {
+    isMouseOver = false;
+    setTimeout(() => {
+      if (!isMouseOver) {
+        clock.classList.remove('show');
+      }
+    }, 2000);
+  });
+
+  setInterval(() => {
+    if (isMouseOver) {
+      const date = new Date();
+      const hours = String(date.getHours()).padStart(2, '0');
+      const minutes = String(date.getMinutes()).padStart(2, '0');
+      const seconds = String(date.getSeconds()).padStart(2, '0');
+      const time = `${hours}:${minutes}:${seconds}`;
+      clock.textContent = time;
+    }
+  }, 1000);
+});
+ //*footer*//
+ // 计算站点运行天数
+ var startDate = new Date('2020/12/09');
+ var currentDate = new Date();
+ var daysElement = document.getElementById('days');
+ var days = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24));
+ daysElement.textContent = days + '天';
+
+ // 监听鼠标移动事件
+ document.addEventListener('mousemove', function(event) {
+   var footer = document.getElementById('footer');
+   var windowHeight = window.innerHeight;
+   var y = event.clientY;
+
+   // 判断鼠标位置是否在页面底部
+   if (y >= windowHeight - 50) {
+     footer.style.display = 'block'; // 显示footer
+   } else {
+     footer.style.display = 'none'; // 隐藏footer
+   }
+ });
