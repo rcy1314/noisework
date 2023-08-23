@@ -87,23 +87,53 @@ else {
 window.addEventListener('DOMContentLoaded', () => {
   const clock = document.getElementById('clock');
   let isMouseOver = false;
+  let isMobile = false;
+  let isClicked = false;
+
+  // 检测是否为手机端尺寸
+  const checkMobile = () => {
+    if (window.innerWidth <= 600) {
+      isMobile = true;
+      clock.classList.remove('show');
+    } else {
+      isMobile = false;
+      if (isClicked) {
+        clock.classList.add('show');
+      }
+    }
+  };
+
+  // 监听窗口大小变化
+  window.addEventListener('resize', checkMobile);
+  
+  // 初始检测一次窗口大小
+  checkMobile();
 
   clock.addEventListener('mouseover', () => {
     isMouseOver = true;
-    clock.classList.add('show');
+    if (!isMobile) {
+      clock.classList.add('show');
+    }
   });
 
   clock.addEventListener('mouseout', () => {
     isMouseOver = false;
-    setTimeout(() => {
-      if (!isMouseOver) {
-        clock.classList.remove('show');
-      }
-    }, 2000);
+    if (!isMobile && !isClicked) {
+      setTimeout(() => {
+        if (!isMouseOver) {
+          clock.classList.remove('show');
+        }
+      }, 2000);
+    }
+  });
+
+  clock.addEventListener('click', () => {
+    isClicked = true;
+    clock.classList.add('show');
   });
 
   setInterval(() => {
-    if (isMouseOver) {
+    if ((isMouseOver || isClicked) && !isMobile) {
       const date = new Date();
       const hours = String(date.getHours()).padStart(2, '0');
       const minutes = String(date.getMinutes()).padStart(2, '0');
@@ -113,6 +143,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }, 1000);
 });
+
  //*footer*//
  // 计算站点运行天数
  var startDate = new Date('2020/12/09');
