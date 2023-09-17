@@ -2,22 +2,22 @@
 // 广告数组
 var ads = [
   {
-    image: "https://jsd.cdn.zzko.cn/gh/rcy1314/tuchuang@main/20230818/11宝.5gadu623kd00.jpg",
+    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/20230818/11宝.5gadu623kd00.jpg",
     link: "https://noisevip.cn",
     description: "包罗万象-Noise宝藏阁"
   },
   {
-    image: "https://jsd.cdn.zzko.cn/gh/rcy1314/tuchuang@main/20230818/guang2.3c7b9a9xpvi0.png",
+    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/20230818/guang2.3c7b9a9xpvi0.png",
     link: "https://www.noisework.cn",
     description: "广告位+"
   },
   {
-    image: "https://jsd.cdn.zzko.cn/gh/rcy1314/tuchuang@main/20230818/2321312.1o5qd8jb6elc.jpg",
+    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/20230818/2321312.1o5qd8jb6elc.jpg",
     link: "https://www.noisedh.cn",
     description: "超量收录-Noise导航"
   },
   {
-    image: "https://jsd.cdn.zzko.cn/gh/rcy1314/tuchuang@main/20230818/guang.6xvhojj7j8w0.jpg",
+    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/20230818/guang.6xvhojj7j8w0.jpg",
     link: "https://www.noisework.cn",
     description: "广告位+"
   }
