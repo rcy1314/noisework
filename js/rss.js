@@ -1,10 +1,10 @@
 // 目前已修改为私有的rss2json的api key进行监测更新，除本站外这个key无法加入到其它域名，请修改为自己的key，默认每1小时更新限制
-// 要使用完全免费的rss2json的api调用获取代码请查看https://www.noiseblog.top/posts/fcbd92b4或访问https://noisevip.cn/17001.html
+// 要使用完全免费的rss2json的api调用获取代码请查看https://www.noiseblogs.top/posts/fcbd92b4或访问https://noisevip.cn/17001.html
 // JavaScript代码-rss
 var rssContainer = document.querySelector('.rss-container');
 var rssItem = document.getElementById('rss-item');
 var rssSources = [
-  'https://www.noiseblog.top/atom.xml',
+  'https://www.noiseblogs.top/atom.xml',
   'https://noisevip.cn/feed',
   // 添加更多的RSS信息源
 ];
