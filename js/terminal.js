@@ -239,30 +239,40 @@
             }
         }
     }
-    function cmdouyin(text){
-        var res1 = analysis(text,'douyin')
-        if (res1[0] == -3){
-            print('没有提供参数','error');
-        }
-        else if (res1 != 'error'){
-            if (res1[0][0] == 1){
-                print(command['douyin']['help'],'message')
-            }
-            else{
-            var url = 'https://api.cooluc.com/?url=' + res1[1][0]
-            print('正在获取抖音视频: '+ url)
-            fetch(url)
-              .then(response => response.json())
-              .then(data => {
-                print('获取到的视频地址: ' + data.video)
-                window.open(data.video, '_blank');
-              })
-              .catch(error => {
-                print('获取视频失败: ' + error, 'error')
-              });
+    function cmdouyin(text) {
+        var res1 = analysis(text, 'douyin');
+        if (res1[0] == -3) {
+            print('没有提供参数', 'error');
+        } else if (res1 != 'error') {
+            if (res1[0][0] == 1) {
+                print(command['douyin']['help'], 'message');
+            } else {
+                var url = 'https://api.mu-jie.cc/douyin?url=' + res1[1][0];
+                var fetchUrl = url; // 保存url
+                print('正在获取抖音视频: ' + url);
+                fetch(fetchUrl, {
+                    method: 'GET', // 使用GET请求方式
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.code === 200) {
+                            var videoUrl = data.data.url;
+                            print('获取到的视频地址: ' + videoUrl);
+                            window.open(videoUrl, '_blank');
+                        } else {
+                            print('获取视频失败: ' + data.msg, 'error');
+                        }
+                    })
+                    .catch(error => {
+                        print('获取视频失败: ' + error, 'error');
+                    });
             }
         }
     }
+    
     /*初始化 */
     let headb = '[<span class="g">guest</span>@浏览器 <span class="b">'
     let heada = '</span>]<span class="d">$</span> '
