@@ -199,7 +199,7 @@
       <button id="show-all-button" class="show-all-btn">显示全部</button>
     </div>
     <div class="search-results-container">
-      <div class="announcement" id="announcement">🪧：欢迎访问！注意！数据源结构不同，如有无法用关键词检索的信息时请点击显示全部查看！</div>
+      <div class="announcement" id="announcement">🪧：欢迎访问！注意！搜索数据需要缓存才能快速加载，如有无法用关键词检索的信息时请点击显示全部！</div>
       <div class="search-results" id="search-results"></div>
       <button class="return-button" id="return-button" title="返回顶部">👆</button>
     </div>
@@ -245,7 +245,7 @@
         announcement.style.display = 'none';
 
         // 定义多个数据源
-        const dataSources = ['Notionmark.json', 'AI.json', 'Opensource.json', 'Notiongo.json', 'Daohang.json', 'Marks.json', 'Rssbook.json'];
+        const dataSources = ['https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/Notionmark.json', 'https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/AI.json', 'https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/Opensource.json', 'https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/Notiongo.json', 'https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/Daohang.json', 'https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/Marks.json', 'https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/Rssbook.json'];
 
         // 存储所有的搜索结果
         let allSearchResults = [];
@@ -400,7 +400,7 @@
     showAllButton.addEventListener('click', async () => {
       searchResultsContainer.innerHTML = '';
 
-      const dataSources = ['Notionmark.json', 'AI.json', 'Opensource.json', 'Notiongo.json', 'Daohang.json', 'Marks.json', 'Rssbook.json'];
+      const dataSources = ['https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/Notionmark.json', 'https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/AI.json', 'https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/Opensource.json', 'https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/Notiongo.json', 'https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/Daohang.json', 'https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/Marks.json', 'https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/Rssbook.json'];
 
       for (const dataSource of dataSources) {
         try {
