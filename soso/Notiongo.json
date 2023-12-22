@@ -1,0 +1,832 @@
+[
+ {
+  "name": "胡自自的主页",
+  "URL": "https:\/\/www.notion.so\/hugohwu\/f01261bad9e14bd99d76afa411bdf3c6",
+  "description": "博客化文章"
+ },
+ {
+  "name": "NOISE知识效率集",
+  "URL": "https:\/\/www.noisesite.cn\/",
+  "description": "强大的知识库"
+ },
+ {
+  "name": "Ruter",
+  "URL": "https:\/\/www.notion.so\/ruter\/Ruter-82f2a01d9b4447e4974e3f1bb71fee52",
+  "description": "博客形式，加了画布"
+ },
+ {
+  "name": "数字生活",
+  "URL": "https:\/\/www.notion.so\/b194e46214f043999a1f783761a46b2c",
+  "description": "深入研究快速学习领域"
+ },
+ {
+  "name": "Sean Patrick O'Reilly的主页",
+  "URL": "https:\/\/github.com\/seano424\/seans-react-portfolio",
+  "description": "由NextJS，TailwindCSS，Notion的API制作，由Vercel托管"
+ },
+ {
+  "name": "Jim Sun's BLOG",
+  "URL": "https:\/\/www.notion.so\/jimsyun\/4374cc1974d749129faf91438039df08?v=dca6a4dd10bf48f4a94c9ad74176f27b",
+  "description": "优质文章，记录Notion各种玩法"
+ },
+ {
+  "name": "tangly1024",
+  "URL": "https:\/\/tangly1024.ml",
+  "description": "使用Nextjs-Notion-Starter-Kit搭建的博客，介绍了许多有关Notion及第三方使用，很有帮助"
+ },
+ {
+  "name": "Xiaowen.Z Deployed",
+  "URL": "https:\/\/notion.xiaowenz.com\/",
+  "description": "来自于杭州的博主，主力生产在NOTION"
+ },
+ {
+  "name": "西狂部落阁",
+  "URL": "https:\/\/xikuang.ren",
+  "description": "梳理化文章"
+ },
+ {
+  "name": "STICKY｜钻の彼面",
+  "URL": "https:\/\/www.notion.so\/stihub\/STICKY-a0a4d6c018904d7e8d8680dbc3d2333a",
+  "description": "STICKY的博客站"
+ },
+ {
+  "name": "产品沉思录（精选）",
+  "URL": "https:\/\/www.notion.so\/pmthinking\/ProductThinking-a601a12335044f349a22caf57f274c27",
+  "description": "主理人：Plidezus Leo"
+ },
+ {
+  "name": "Gueisen的閉樂園",
+  "URL": "https:\/\/www.notion.so\/cnotion\/Gueisen-bec30dc6093d4c9d9f834c38a6e3c6a1",
+  "description": "Gueisen的閉樂園"
+ },
+ {
+  "name": "iFREE Design",
+  "URL": "https:\/\/ifreegroup.design",
+  "description": "设计工具"
+ },
+ {
+  "name": "Harumonia\t\t",
+  "URL": "https:\/\/harumonia.notion.site\/harumonia\/Harumonia-e1d77980f1b942beb0ac80c3f3448a8d",
+  "description": "Harumonia的博客，优质博主"
+ },
+ {
+  "name": "Fisher-Notion",
+  "URL": "https:\/\/notion.fishyer.com",
+  "description": "一个Notion主页"
+ },
+ {
+  "name": "装修经验教训",
+  "URL": "https:\/\/www.notion.so\/66226e9a906740d9bb16914dd28577bb",
+  "description": "装修一手被坑经验"
+ },
+ {
+  "name": "芝麻地",
+  "URL": "https:\/\/www.notion.so\/63b2e83003f240339ae065011afc88a0",
+  "description": "一个有关编程与设计的邮报，每当准备好了就更新。"
+ },
+ {
+  "name": "https:\/\/www.anzifan.com\/",
+  "URL": "https:\/\/www.anzifan.com",
+  "description": "样式里最好看的notion站"
+ },
+ {
+  "name": "maylie",
+  "URL": "https:\/\/www.notion.so\/404not\/Maylie-9eb974bd1566458d8cba0e6ffc2273a5",
+  "description": "设计博主"
+ },
+ {
+  "name": "诺亚方舟",
+  "URL": "https:\/\/www.notion.so\/nos\/7afb8141a5b9494e8f279c1deebe37e7",
+  "description": "数字资源收藏爱好者"
+ },
+ {
+  "name": "Ludwigの生活觀察",
+  "URL": "https:\/\/www.notion.so\/wangyurui\/Ludwig-faeaabbf01394a33bfa5638a9a37f74a",
+  "description": "值得收藏的博主"
+ },
+ {
+  "name": "全网漫游指南",
+  "URL": "https:\/\/tagly.notion.site\/",
+  "description": "一个丰富的知识库"
+ },
+ {
+  "name": "春殿的手账本",
+  "URL": "https:\/\/www.notion.so\/tonoko\/5a23e43b26e64651be75a22693564ce3",
+  "description": "栏目很多，主页精美"
+ },
+ {
+  "name": "陆止于此、海始于斯",
+  "URL": "https:\/\/qianlei.notion.site\/",
+  "description": "用Github的Issue写博客"
+ },
+ {
+  "name": "Hank's Wiki",
+  "URL": "https:\/\/www.notion.so\/kehanlu2\/Hank-s-Wiki-7810d2eeee4744b18b91c7860b687291",
+  "description": "电脑科学"
+ },
+ {
+  "name": "黑鲸智能系统知识库",
+  "URL": "https:\/\/wikiwhale.notion.site\/3633a659e2a1478eaf6c8904c86de401",
+  "description": "知识库系统梳理"
+ },
+ {
+  "name": "肆意�科学上网",
+  "URL": "https:\/\/www.notion.so\/35f343bec8b2466d971f4a7dfded93a2",
+  "description": "�科学上网 指南汇总"
+ },
+ {
+  "name": "i365投资组合管理",
+  "URL": "https:\/\/www.notion.so\/i365-e0ed086e701a4d0aaa4839d2c7aa62ea",
+  "description": "投资组合"
+ },
+ {
+  "name": "Notion综合社群",
+  "URL": "https:\/\/www.notion.so\/linkwork\/Notion-Work-6d8058e5e6b346a58130015755c4d1f0",
+  "description": "Notion社群"
+ },
+ {
+  "name": "杂志总览 Magazine",
+  "URL": "https:\/\/biubiuz.notion.site\/bf65d66527b34d3c807be462528e1a6d?v=050d206484a14daeb6e2bb8d277c70a9",
+  "description": "作者博客：https:\/\/biu.live\/"
+ },
+ {
+  "name": "NotionEverything",
+  "URL": "https:\/\/xiaohuge.icu\/",
+  "description": "博客"
+ },
+ {
+  "name": 177,
+  "URL": "https:\/\/www.notion.so\/177\/177-466f3df46024432fabc894c57bb83bb0",
+  "description": "优质Notion教程汇总"
+ },
+ {
+  "name": "古剑Wiki-博物学会特刊",
+  "URL": "https:\/\/www.notion.so\/Wiki-16b548d0cbf041be8beaecb46e43e8d6",
+  "description": "古剑奇谭爱好者"
+ },
+ {
+  "name": "kieker in notion",
+  "URL": "https:\/\/www.notion.so\/kieker\/kieker-in-notion-3c2008d0dd1e4c659d48c630df71302d",
+  "description": "kieker的主页，优秀产品设计"
+ },
+ {
+  "name": "瞎玩菌 | XA 技术不宅",
+  "URL": "https:\/\/blindgamer.notion.site\/XA-6ac808a035634bfa89110ab8ba44f163",
+  "description": "周刊栏目"
+ },
+ {
+  "name": "AFuture 的世界",
+  "URL": "https:\/\/www.notion.so\/afuture\/AFuture-d4c327c3511546aa89c42dd6ee7301d4",
+  "description": "编程为主，分享为辅"
+ },
+ {
+  "name": "yafee's world",
+  "URL": "https:\/\/www.notion.so\/yafee-s-world-bc40e047806d4414ade5d241243fe117",
+  "description": "互联网搬砖的业余�️摄影爱好者"
+ },
+ {
+  "name": "荐文汇总",
+  "URL": "https:\/\/www.notion.so\/ff02c246a4e347a69b75abd396ffcdbf?v=a31c56bad0eb4a8aa7d8ad33208a5916",
+  "description": "荐文汇总"
+ },
+ {
+  "name": "雷蒙的數字小島",
+  "URL": "https:\/\/www.notion.so\/raymondhouch\/352b57df383543b9bfa8301c71c35cba",
+  "description": "很优秀"
+ },
+ {
+  "name": "柳十七的小宇宙.Notion",
+  "URL": "https:\/\/www.notion.so\/liushiqi\/Notion-1c21d874a4824774a310a3d8d125e0be",
+  "description": "书单博主"
+ },
+ {
+  "name": "Niin 的个人主页",
+  "URL": "https:\/\/niin.notion.site",
+  "description": "分享 Notion 的使用技巧和进阶用法"
+ },
+ {
+  "name": "Inbox",
+  "URL": "https:\/\/www.notion.so\/mdw\/Inbox-1fb2a7e9d72747a4ba7aea5cb4541f3f",
+  "description": "收藏网站和书单"
+ },
+ {
+  "name": "中文Newsletter导航",
+  "URL": "https:\/\/www.notion.so\/kfang\/Newsletter-68ee46c0a4574f659fb8a873ead438c6",
+  "description": "收集中文领域的Newsletter"
+ },
+ {
+  "name": "Notion Assignment Import",
+  "URL": "https:\/\/github.com\/JamesNZL\/notion-assignment-import"
+ },
+ {
+  "name": "Wordpress插件，用于显示来自notion的内容",
+  "URL": "https:\/\/github.com\/pchang78\/notion-content"
+ },
+ {
+  "name": "Blog powered by Notion",
+  "URL": "https:\/\/github.com\/Harry-Yep\/Notion-Blog-React"
+ },
+ {
+  "name": "draw.io 嵌入",
+  "URL": "https:\/\/github.com\/YanniGottlieb\/drawio-notion-embed"
+ },
+ {
+  "name": "netlify创造的notion博客",
+  "URL": "https:\/\/github.com\/edapm\/notion-blog"
+ },
+ {
+  "name": "在iPhone 和 iPad 添加notion任务和日历事件的快捷方式",
+  "URL": "https:\/\/github.com\/hkob\/shortcut-to-add-notion-task-and-calendar-event"
+ },
+ {
+  "name": "Notion webhooks托管示例",
+  "URL": "https:\/\/github.com\/jonnyowenpowell\/notion_webhooks"
+ },
+ {
+  "name": "Bilibili To Notion",
+  "URL": "https:\/\/github.com\/sunset69\/Bilibili-To-Notion"
+ },
+ {
+  "name": "将新的 GitHub 问题同步到概念数据库的 GitHub 操作",
+  "URL": "https:\/\/github.com\/instantish\/notion-github-action"
+ },
+ {
+  "name": "视频游戏追踪页面",
+  "URL": "https:\/\/github.com\/adriansteffan\/notion-videogame-gallery"
+ },
+ {
+  "name": "共享 obsidian MD文档到Notion并生成notion共享链接",
+  "URL": "https:\/\/github.com\/EasyChris\/obsidian-to-notion"
+ },
+ {
+  "name": "Notion和iOS快捷指令实现的快言快语功能",
+  "URL": "https:\/\/github.com\/gefangshuai\/notion-text-snippets"
+ },
+ {
+  "name": "可自定义的概念小部件",
+  "URL": "https:\/\/github.com\/jonathanjameswatson\/block-widgets"
+ },
+ {
+  "name": "一个电报机器人，它使用notion api 从页面中读取和列出待办事项",
+  "URL": "https:\/\/github.com\/InfiniteVerma\/todo-notion-telegram"
+ },
+ {
+  "name": "chrome 扩展程序—复制到 Notion 中上传的剪贴板图标网址",
+  "URL": "https:\/\/github.com\/YuyaAbo\/notion-icon-copy"
+ },
+ {
+  "name": "notion的汉化",
+  "URL": "https:\/\/github.com\/Reamd7\/notion-zh_CN"
+ },
+ {
+  "name": "自动将媒体信息添加到概念数据库【中间件】",
+  "URL": "https:\/\/github.com\/KalleChen\/media-to-notion"
+ },
+ {
+  "name": "无代码生成Notion博客站",
+  "URL": "https:\/\/mdx.one\/?utm_source=watermark"
+ },
+ {
+  "name": "Paperpile同步到概念",
+  "URL": "https:\/\/github.com\/jmuchovej\/paperpile-notion-starter"
+ },
+ {
+  "name": "一个 Chrome 扩展程序，用于自动将 Canvas 分配加载到notion数据库中",
+  "URL": "https:\/\/github.com\/JamesNZL\/notion-assignment-import"
+ },
+ {
+  "name": "设置页面密码",
+  "URL": "https:\/\/sotion.so"
+ },
+ {
+  "name": "Hugo Blog using Notion as CMS",
+  "URL": "https:\/\/github.com\/xzebra\/xzebra.github.io"
+ },
+ {
+  "name": "为Notion创建留言小部件",
+  "URL": "https:\/\/joey.team"
+ },
+ {
+  "name": "notion做个人博客的渲染程序",
+  "URL": "https:\/\/github.com\/NotionX\/react-notion-x"
+ },
+ {
+  "name": "用于将 Notion 博客部署到 Netlify 的 Nuxt 样板",
+  "URL": "https:\/\/nuxt-notion-boilerplate.netlify.app"
+ },
+ {
+  "name": "增压NOTION使用自定义块",
+  "URL": "https:\/\/customblocks.io\/#\/"
+ },
+ {
+  "name": "按钮块生成器",
+  "URL": "https:\/\/butn.one"
+ },
+ {
+  "name": "python批量生成带序号的子页面并可以帮助您快速生成Notion的页面",
+  "URL": "https:\/\/github.com\/Yoak3n\/SerialPagesGenerator4notion"
+ },
+ {
+  "name": "saiso-开源Notion页面反馈建议小部件",
+  "URL": "https:\/\/saiso.vercel.app\/"
+ },
+ {
+  "name": "MLSync同步Notion",
+  "URL": "https:\/\/github.com\/paletteml\/mlsync"
+ },
+ {
+  "name": "按计划将NOTION页面和子页面导出到GitHub存储库",
+  "URL": "https:\/\/github.com\/upleveled\/notion-backup"
+ },
+ {
+  "name": "notion转换为Anki抽认卡",
+  "URL": "https:\/\/github.com\/alemayhu\/2anki.net"
+ },
+ {
+  "name": "notion-jam",
+  "URL": "https:\/\/github.com\/marketplace\/actions\/notion-jam"
+ },
+ {
+  "name": "alfred工作流 for  notion",
+  "URL": "https:\/\/github.com\/pon0204\/notion-sandbox\/tree\/main\/notion-alfred"
+ },
+ {
+  "name": "用notion制作Astro网站，支持静态托管",
+  "URL": "https:\/\/github.com\/ekafyi\/astronotion-starter-ssg"
+ },
+ {
+  "name": "gas-slack2notion",
+  "URL": "https:\/\/github.com\/Kazuki-tam\/gas-slack2notion"
+ },
+ {
+  "name": "从notion创建交互式演示幻灯片",
+  "URL": "https:\/\/wunderpresentation.com\/"
+ },
+ {
+  "name": "Notion Feeder",
+  "URL": "https:\/\/github.com\/ravgeetdhillon\/notion-feeder"
+ },
+ {
+  "name": "电报机器人将内容保存到notion数据库",
+  "URL": "https:\/\/github.com\/LuigiMasini\/telegram-notion-saver"
+ },
+ {
+  "name": "在Cloudflare上部署的电报机器人，可将推文保存到概念页面",
+  "URL": "https:\/\/github.com\/sokyran\/tweets-notion-saver"
+ },
+ {
+  "name": "https:\/\/github.com\/lpsouza\/jekyll-notion-sync"
+ },
+ {
+  "name": "国外模板合集",
+  "URL": "https:\/\/fruitionsite.com"
+ },
+ {
+  "name": "TG和notion的数据互通",
+  "URL": "https:\/\/github.com\/JoysKang\/CloudPiece"
+ },
+ {
+  "name": "Notion的自动化工具箱",
+  "URL": "https:\/\/notion-tools.io"
+ },
+ {
+  "name": "将内容从 Notion 发布到您的博客、作品集和文档网站",
+  "URL": "https:\/\/motionlink.lytowl.com\/"
+ },
+ {
+  "name": "Notion API 静态博客系统",
+  "URL": "https:\/\/github.com\/tangly1024\/NotionNext"
+ },
+ {
+  "name": "blog with Next.js and Notion API",
+  "URL": "https:\/\/github.com\/jaywhen\/blog"
+ },
+ {
+  "name": "从notion中获取页面，并每天将其发布在LinkedIn和Twitter上",
+  "URL": "https:\/\/github.com\/univalence\/crier"
+ },
+ {
+  "name": "https:\/\/github.com\/vzhd1701\/csv2notionnotion数据库",
+  "URL": "https:\/\/github.com\/vzhd1701\/csv2notion"
+ },
+ {
+  "name": "Notion2Sheets",
+  "URL": "https:\/\/notion2sheets.com"
+ },
+ {
+  "name": "笔记自动化系统",
+  "URL": "https:\/\/github.com\/mitchellciupak\/nlog#authors"
+ },
+ {
+  "name": "无代码构建和托管notion网站",
+  "URL": "https:\/\/notelet.so"
+ },
+ {
+  "name": "Vizion-共享notion数据库",
+  "URL": "https:\/\/vizion.so"
+ },
+ {
+  "name": "Telegram与Concept集成",
+  "URL": "https:\/\/github.com\/ivandakhin\/notion-tbot"
+ },
+ {
+  "name": "将notion链接和notion导出转换为静态、可自定义且美观的网站",
+  "URL": "https:\/\/github.com\/VanDerLars\/Notion2Web"
+ },
+ {
+  "name": "制作简历卡装饰Github，notion，博客等",
+  "URL": "https:\/\/gitofolio.com"
+ },
+ {
+  "name": "展示notion页面点击量的小部件",
+  "URL": "https:\/\/hits.seeyoufarm.com"
+ },
+ {
+  "name": "一组使用概念 API 的概念自动化工具",
+  "URL": "https:\/\/github.com\/zhuochun\/notion-toolset"
+ },
+ {
+  "name": "使用电报机器人快速轻松地将笔记发送到 Notion 收件箱",
+  "URL": "https:\/\/github.com\/mkeksz\/inbox-notion-tg-bot"
+ },
+ {
+  "name": "简单快捷的表格生成器",
+  "URL": "https:\/\/notionforms.io"
+ },
+ {
+  "name": "构建协同表格及邮件回复",
+  "URL": "https:\/\/commotion.page"
+ },
+ {
+  "name": "Put A C2 In Your Notetaking App: OffensiveNotion",
+  "URL": "https:\/\/github.com\/mttaggart\/OffensiveNotion"
+ },
+ {
+  "name": "一个快速轻量级的 Notion 应用程序,从您的 Notion 添加页面会将页面的内容映射到列表",
+  "URL": "https:\/\/github.com\/0xZhangKe\/NotionLight"
+ },
+ {
+  "name": "获取 http:\/\/notion.so\/ 中的 RSS 源",
+  "URL": "https:\/\/github.com\/Jeadie\/notion-rss"
+ },
+ {
+  "name": "notion托管从天气到概念页面番茄计时器的小部件",
+  "URL": "https:\/\/github.com\/anthonytedja\/notion"
+ },
+ {
+  "name": "模拟白板 + notion Web 应用程序",
+  "URL": "https:\/\/github.com\/Criomby\/StarBoard"
+ },
+ {
+  "name": "notion小部件整合",
+  "URL": "https:\/\/indify.co"
+ },
+ {
+  "name": "一个与 notion-lm-api 配合使用的 chrome 扩展，可在 Notion 工作区中实现自动化",
+  "URL": "https:\/\/github.com\/sunnydsouza\/notion-lm-crx"
+ },
+ {
+  "name": "Qotion",
+  "URL": "https:\/\/github.com\/XianYu-Hil\/Qotion"
+ },
+ {
+  "name": "记录从TickTick到Concept的任务",
+  "URL": "https:\/\/github.com\/keigoh4315\/ticktick-to-notion"
+ },
+ {
+  "name": "Notion头像制作库",
+  "URL": "https:\/\/github.com\/zonemeen\/react-notion-avatar"
+ },
+ {
+  "name": "NOTION转换为简单的HTML",
+  "URL": "https:\/\/github.com\/mchlkucera\/notion-to-html"
+ },
+ {
+  "name": "Notion=twitter",
+  "URL": "https:\/\/www.queue.so"
+ },
+ {
+  "name": "由 Notion 提供支持的 Twitch 聊天机器人",
+  "URL": "https:\/\/github.com\/pawap90\/acho-bot"
+ },
+ {
+  "name": "notion博客搭建系统",
+  "URL": "https:\/\/nobelium.js.org"
+ },
+ {
+  "name": "GitHub Issues与notion同步",
+  "URL": "https:\/\/github.com\/integrateme-co\/github-notion-sync"
+ },
+ {
+  "name": "Concept-创建notion博客站",
+  "URL": "https:\/\/github.com\/taehoio\/notionproxy"
+ },
+ {
+  "name": "高级且付费的notion模板集合",
+  "URL": "https:\/\/notionutopia.com\/collections\/notion-business-templates"
+ },
+ {
+  "name": "Notion-kindle",
+  "URL": "https:\/\/github.com\/cindyhalim\/notion-kindle"
+ },
+ {
+  "name": "a blog powered by Notion",
+  "URL": "https:\/\/github.com\/aymaneMx\/nuxt-portfolio-dev"
+ },
+ {
+  "name": "Blogkit",
+  "URL": "https:\/\/github.com\/2nthony\/blogkit"
+ },
+ {
+  "name": "使用 Nuxt 3 制作Notion网站-可静态托管",
+  "URL": "https:\/\/github.com\/egrzeszczak\/nuxt-3-notion"
+ },
+ {
+  "name": "notion工作区自动备份",
+  "URL": "https:\/\/github.com\/notionblog\/notion-backups"
+ },
+ {
+  "name": "轻松备份工作区",
+  "URL": "https:\/\/notionbackups.com"
+ },
+ {
+  "name": "Mircosoft ToDo 同步notion",
+  "URL": "https:\/\/github.com\/CoolLiuzw\/notionSync"
+ },
+ {
+  "name": "帮助在notion中合并数据库的工具",
+  "URL": "https:\/\/github.com\/w0rldart\/notion-merge-dbs"
+ },
+ {
+  "name": "将从概念页面生成一个JSON书签文档",
+  "URL": "https:\/\/github.com\/BoD\/notion-to-bookmarks"
+ },
+ {
+  "name": "Notion发送邮件",
+  "URL": "https:\/\/www.nocodeletters.com\/#\/pricing"
+ },
+ {
+  "name": "用Telegram bot将内容从 Telegram 发送到 Notion",
+  "URL": "https:\/\/telegramtonotion.com"
+ },
+ {
+  "name": "无代码生成Notion网站",
+  "URL": "https:\/\/noto.so"
+ },
+ {
+  "name": "Notion-DiscordBot",
+  "URL": "https:\/\/github.com\/Servatom\/Notion-DiscordBot  "
+ },
+ {
+  "name": "在Notion中构建应用程序",
+  "URL": "https:\/\/developers.nbundle.com\/"
+ },
+ {
+  "name": "时间追踪器",
+  "URL": "https:\/\/getkairo.com\/"
+ },
+ {
+  "name": "Add to Notion-支持win\/mac 调用快捷键或打开应用可轻松将您的日常发现添加到您的Notion空间中",
+  "URL": "https:\/\/addtonotion.com"
+ },
+ {
+  "name": "https:\/\/github.com\/opakholis\/bookshelf",
+  "URL": "https:\/\/github.com\/opakholis\/bookshelf"
+ },
+ {
+  "name": "Youtube & Notion",
+  "URL": "https:\/\/github.com\/ChristianGustavo\/youtube-notion-integration"
+ },
+ {
+  "name": "notion-db-notification",
+  "URL": "https:\/\/github.com\/MeilCli\/notion-db-notification"
+ },
+ {
+  "name": "在notion嵌入绘图",
+  "URL": "https:\/\/github.com\/nickzuber\/notion-draw"
+ },
+ {
+  "name": "notion垂直时间轴页面",
+  "URL": "https:\/\/github.com\/richardkrikler\/MyTime"
+ },
+ {
+  "name": "无代码快速构建notion网站",
+  "URL": "https:\/\/www.simple.ink\/create\/create-a-blog-notion"
+ },
+ {
+  "name": "阿汪同学自制版 Notion | Wolai | FlowUs 组件库",
+  "URL": "https:\/\/github.com\/httIsHere\/notion-widget"
+ },
+ {
+  "name": "一个 powershell 脚本，用于将磁盘上的目录转换为 http:\/\/notion.so\/ 数据库页",
+  "URL": "https:\/\/github.com\/StruffelProductions\/Directories-to-Notion"
+ },
+ {
+  "name": "notion公式化学习教程及模板",
+  "URL": "https:\/\/www.redgregory.com"
+ },
+ {
+  "name": "Notion 的 python 自动化脚本",
+  "URL": "https:\/\/github.com\/Sasha-hk\/notion-automatization"
+ },
+ {
+  "name": "风格独特的notion cms站点框架",
+  "URL": "https:\/\/github.com\/JeromeFitz\/websites"
+ },
+ {
+  "name": "运行一个 cron 作业，该作业从 Notion 中提取博客并将其另存为 markdown 文件",
+  "URL": "https:\/\/github.com\/ShubhamVerma1811\/Blogs"
+ },
+ {
+  "name": "自托管的Notion个人资料页",
+  "URL": "https:\/\/github.com\/hajihyeon\/profile"
+ },
+ {
+  "name": "�RSS -用 Go 编写-在notion",
+  "URL": "https:\/\/github.com\/kaneshin\/rss-in-notion"
+ },
+ {
+  "name": "一个轻微但快速的同步工具，供Notes用户使用Cubox",
+  "URL": "https:\/\/github.com\/reycn\/cubox-to-notion"
+ },
+ {
+  "name": "ChatGPT to Notion 将 ChatGPT 的聪明才智带入您的 Notion 工作区",
+  "URL": "https:\/\/github.com\/L-a-r-t\/chatgpt-to-notion"
+ },
+ {
+  "name": "博客样式源码，集成了一键部署railway",
+  "URL": "https:\/\/github.com\/FarazPatankar\/farazpatankar.com"
+ },
+ {
+  "name": "收集发送到微信公众号的内容到Notion",
+  "URL": "https:\/\/github.com\/Dearest\/wechat-collector"
+ },
+ {
+  "name": "用谷歌应用程式脚本结合notion制作rss阅读器",
+  "URL": "https:\/\/github.com\/hankei6km\/gas-feed2notion"
+ },
+ {
+  "name": "自动化notion工作流程",
+  "URL": "https:\/\/www.thegist.so\/#Pricing"
+ },
+ {
+  "name": "豆瓣电影\/书籍\/音乐标记数据同步插件",
+  "URL": "https:\/\/github.com\/lizheming\/drone-doumark"
+ },
+ {
+  "name": "无代码将Notion转换为高级文档网站",
+  "URL": "https:\/\/notaku.website"
+ },
+ {
+  "name": "notion照片库",
+  "URL": "https:\/\/github.com\/Harry-Yep\/Notion-Photo-React"
+ },
+ {
+  "name": "用Next.js & Notion构建的博客",
+  "URL": "https:\/\/github.com\/iwfan\/iwfan.site"
+ },
+ {
+  "name": "将notion页面发布到电报频道",
+  "URL": "https:\/\/github.com\/varzy\/no2tg"
+ },
+ {
+  "name": "一个浏览器扩展—自动将 Canvas 分配加载到 Notion 数据库中",
+  "URL": "https:\/\/github.com\/JamesNZL\/notion-assignment-import"
+ },
+ {
+  "name": "用于notion页面的快速 Vue 渲染器",
+  "URL": "https:\/\/github.com\/janniks\/vue-notion"
+ },
+ {
+  "name": "Notion （CMS）",
+  "URL": "https:\/\/github.com\/JeromeFitz\/websites"
+ },
+ {
+  "name": "使用概念 API 显示notion中内容的Wordpress插件",
+  "URL": "https:\/\/github.com\/mattblackb\/notion_wordpress"
+ },
+ {
+  "name": "为 https:\/\/notion.so\/页面创建漂亮的图表",
+  "URL": "https:\/\/github.com\/RickyLam11\/notion-chart"
+ },
+ {
+  "name": "notion风格头像生成器",
+  "URL": "https:\/\/notion-avatar.vercel.app\/zh"
+ },
+ {
+  "name": "无代码生成Notion网站",
+  "URL": "https:\/\/popsy.co\/"
+ },
+ {
+  "name": "Notion数据自动化",
+  "URL": "https:\/\/github.com\/aLin-96\/notion_automation"
+ },
+ {
+  "name": "每日必应图像到概念封面的页面",
+  "URL": "https:\/\/github.com\/Mikaleb\/Bing-Daily-Notion-cover"
+ },
+ {
+  "name": "将github存储库中的 MD 文件与指定的notion页面同步",
+  "URL": "https:\/\/github.com\/Elioby\/notion-sync-md-page"
+ },
+ {
+  "name": "Notion+Google日历",
+  "URL": "https:\/\/notion-automations.com"
+ },
+ {
+  "name": "使用 GitHub PR 更新notion任务",
+  "URL": "https:\/\/github.com\/kadaradam\/notion-pr-link"
+ },
+ {
+  "name": "tail-无代码构建notion网站",
+  "URL": "https:\/\/tail.so\/"
+ },
+ {
+  "name": "Notion 中文社区风格贴纸制作工具",
+  "URL": "https:\/\/github.com\/SilentDepth\/notion-sticker-creator"
+ },
+ {
+  "name": "Notionpet[小组件库]",
+  "URL": "http:\/\/notion.pet\/home.html"
+ },
+ {
+  "name": "电报机器人将内容保存到notion数据库",
+  "URL": "https:\/\/github.com\/LuigiMasini\/telegram-notion-saver"
+ },
+ {
+  "name": "Notion Release Github Pages",
+  "URL": "https:\/\/github.com\/timovv\/notion-website-template"
+ },
+ {
+  "name": "https:\/\/github.com\/yuliyu123\/notion_tg_bot示例",
+  "URL": "https:\/\/github.com\/yuliyu123\/notion_tg_bot"
+ },
+ {
+  "name": "从您的 Notion 任务页面自动创建每日报告",
+  "URL": "https:\/\/github.com\/ErlantzCalvo\/DailyReportCreator"
+ },
+ {
+  "name": "Notion Paper—生成Notion静态站点",
+  "URL": "https:\/\/github.com\/imyangmo\/notionpaper"
+ },
+ {
+  "name": "https:\/\/github.com\/qumuchegi\/notion-docsify",
+  "URL": "https:\/\/github.com\/qumuchegi\/notion-docsify"
+ },
+ {
+  "name": "一个将SCRUM带入Notion的现代工具！",
+  "URL": "https:\/\/xeo.sh\/"
+ },
+ {
+  "name": "自托管短链接",
+  "URL": "https:\/\/github.com\/theodorusclarence\/notiolink"
+ },
+ {
+  "name": "ios快捷指令打开打开最近的数据库列表",
+  "URL": "https:\/\/joecrabtree.notion.site\/Open-Latest-Item-Shortcut-b4bca2fcc6c34ae9a5ed3b2ab27c1003"
+ },
+ {
+  "name": "第三方notion增强版客户端",
+  "URL": "https:\/\/notion-enhancer.github.io\/getting-started\/installation"
+ },
+ {
+  "name": "将NOTION页面转换为幻灯片",
+  "URL": "https:\/\/github.com\/decima\/notion-slider"
+ },
+ {
+  "name": "使用notion数据库作为个人 URL 缩短器",
+  "URL": "https:\/\/github.com\/younho9\/notion-url-shortener"
+ },
+ {
+  "name": "Blog build with Next.js",
+  "URL": "https:\/\/github.com\/minime89-maker\/next.js-notion-blog"
+ },
+ {
+  "name": "notion-rss",
+  "URL": "https:\/\/github.com\/cn-kali-team\/notion-rss"
+ },
+ {
+  "name": "Notion的应用程序，块和插件",
+  "URL": "https:\/\/notionapp.store"
+ },
+ {
+  "name": "Notion RSS Reader �",
+  "URL": "https:\/\/github.com\/watsuyo\/notion-rss-reader"
+ },
+ {
+  "name": "Notion模版聚合",
+  "URL": "https:\/\/www.notion.so\/Notion-Template-Gallery-181e961aeb5c4ee6915307c0dfd5156d"
+ },
+ {
+  "name": "基于 notion-api 和 Next.js的静态博客程序",
+  "URL": "https:\/\/github.com\/ranguiquan\/ranguiquan.com"
+ },
+ {
+  "name": "数据库转化为可视化",
+  "URL": "https:\/\/nochart.co\/pricing"
+ },
+ {
+  "name": "将消息发送到此机器人，并将其映射到选定的 Notion 数据库",
+  "URL": "https:\/\/github.com\/FranP-code\/Open-Telegram-to-Notion-Bot"
+ }
+]

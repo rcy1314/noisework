@@ -1,103 +1,520 @@
+<!DOCTYPE html>
 <html>
-
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-    <meta name="referrer" content="never" />
-    <title>搜搜</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="dark-mode.css">
-    <link rel="icon" href="../assets/favicon.png" type="image/png" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <title>NOISE书签索引</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo.png" type="image/png" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-  <!-- IE 11 polyfill for CSS and Custom Properties -->
-  <script
-    nomodule>window.MSInputMethodContext && document.documentMode && document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-ie11@5/css/bootstrap-ie11.min.css"><script src="https://cdn.jsdelivr.net/npm/ie11-custom-properties@4/ie11CustomProperties.min.js"><\/script>');</script>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111; /* 设置背景为暗黑色 */
+      color: #fff; /* 设置文字为白色 */
+    }
 
-            <div class="form-check form-switch">
-              <input type="checkbox" class="form-check-input" id="darkSwitch">
-              <label class="custom-control-label" for="darkSwitch">亮/暗</label>
-            </div>
-            <script src="dark-mode-switch.min.js"></script>
-  
-          </div>
-        </nav>
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 10px;
+    }
+
+    .search-category {
+      margin-right: 10px;
+      padding: 10px;
+      font-size: 15px;
+      background-color:#333; /* 设置分类搜索框背景颜色为白色 */
+      color: #fff; /* 设置分类搜索框文字颜色为暗黑色 */
+      border: none;
+      flex: 1; /* 设置为自动扩展剩余宽度 */
+      max-width: 200px; /* 设置最大宽度为200px */
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #333; /* 设置输入框背景颜色 */
+      color: #fff; /* 设置输入框文字颜色 */
+      border: none;
+      width: 100%; /* 设置输入框宽度为100% */
+    }
+
+    .search-button {
+      margin-left: 10px;
+      padding: 10px 20px;
+      background-color: #007bff; /* 修改为蓝色 */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .clear-btn {
+      margin-left: 10px;
+      padding: 10px 20px;
+      background-color: #dc3545; /* 修改为红色 */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .show-all-btn {
+      margin-left: 10px;
+      padding: 10px 20px;
+      background-color: #007bff; /* 修改为蓝色 */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .search-results-container {
+      width: 100%;
+      max-width: 800px;
+      margin-top: 10px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.1); /* 设置搜索结果容器的背景颜色为半透明白色 */
+      border-radius: 5px;
+      overflow: auto; /* 添加滚动条 */
+      color: #fff; /* 设置搜索结果文字为白色 */
+      position: relative; /* 添加相对定位 */
+    }
+
+    .search-results ul {
+      padding: 0;
+      list-style-type: none;
+    }
+
+    .search-results li {
+      margin-bottom: 10px;
+    }
+
+    .search-results a {
+      text-decoration: none;
+      color: #fff; /* 修改为白色 */
+      transition: color 0.3s; /* 添加过渡效果 */
+    }
+
+    .search-results a:hover {
+      color: orange; /* 设置鼠标悬停时的文本颜色为橙色 */
+    }
+
+    .title {
+      text-align: center;
+      font-size: 50px;
+      margin-bottom: 10px;
+      margin-top: 50px; /* 往上移动标题 */
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 10px;
+      margin-top: 20px; /* 往上移动子标题 */
+    }
+
+    footer {
+      text-align: center;
+      width: 100%;
+      color: #fff;
+    }
+
+    /* 隐藏分类搜索框的样式 */
+    @media only screen and (max-width: 600px) {
+      .search-category {
+        display: none;
+      }
+    }
+
+    .announcement {
+      font-size: 15px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .return-button {
+      position: fixed;
+      bottom: 10px;
+      right: 25px;
+      padding: 8px;
+      background-color: #0e0e0e52;
+      color: #090909;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+      display: none;
+      font-size: 24px; /* 增大按钮的字体大小 */
+    }
+
+    .return-button:hover {
+      opacity: 1;
+    }
+  </style>
 </head>
-<!-- 更换背景图片 -->
-<body background=""
-style=" background-repeat:no-repeat ;
-background-size:100% 100%;
-background-attachment: fixed;"
->
-<!--音乐-->
-<link rel="stylesheet" href="../css/APlayer.min.css">  
-<div id="aplayer" class="aplayer" data-order="random" data-id="5191170949" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-volume="0.8"></div>
-<script src="../js/jquery.min.js"></script>
-<script src="../js/APlayer.min.js"></script>
-<script src="../js/Meting.min.js"></script>
-
 <body>
-    <div class="header">
-<center>
-    <a class="blog-button">
-        <div class="img"><img src="./images/logo.png" alt="img" </center>
-        </div>
-    <script src="https://files.cnblogs.com/files/quaint/sakuraPlus.js"></script>
-   
-
-        <h2>
-            <a href="https://noisework.cn" target="_blank">
-                <span>JUST SO SO</span>
-               
-            </a>
-        </h2>
-
-        <div id="sousuo">
-            <input id="ssInput" type="text" placeholder="输入并搜索" onkeydown="onkeydownEnter()">
-            <div id="ssBtn" onclick="ssGo()">
-                <?xml version="1.0" encoding="UTF-8"?><svg width="20" height="20" viewBox="0 0 48 48" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M21 38C30.3888 38 38 30.3888 38 21C38 11.6112 30.3888 4 21 4C11.6112 4 4 11.6112 4 21C4 30.3888 11.6112 38 21 38Z"
-                        fill="none" stroke="#06a17e" stroke-width="4" stroke-linejoin="round" />
-                    <path
-                        d="M26.657 14.3431C25.2093 12.8954 23.2093 12 21.0001 12C18.791 12 16.791 12.8954 15.3433 14.3431"
-                        stroke="#06a17e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M33.2216 33.2217L41.7069 41.707" stroke="#06a17e" stroke-width="4" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </div>
-        </div>
+  <div class="container">
+    <h1 style="color:rgb(248, 249, 251);" class="title">Book Mark 索引</h1>
+    <p class="subtitle">从已收录的上万个书签中搜索</p><br>
+    <div class="search-container">
+      <select id="search-category" class="search-category">
+        <option value="本站搜索">本站搜索</option>
+        <option value="谷歌搜索">谷歌搜索</option>
+        <option value="必应搜索">必应搜索</option>
+        <option value="DuckDuck搜索">DuckDuck搜索</option>
+        <option value="百度搜索">百度搜索</option>
+        <option value="yandex搜索">Yandex搜索</option>
+        <option value="哔哩哔哩搜索">哔哩哔哩搜索</option>
+        <option value="youtube搜索">Youtube搜索</option>
+        <option value="github搜索">Github搜索</option>
+      </select>
+      <input type="text" id="search-input" class="search-input" placeholder="输入关键字">
+      <button id="search-button" class="search-button">搜索</button>
+      <button id="clear-button" class="clear-btn">清除</button>
+      <button id="show-all-button" class="show-all-btn">显示全部</button>
     </div>
-
-    <div class="deleteAll">
-        <svg width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 10V44H39V10H9Z" fill="none" stroke="#89ceb9" stroke-width="4" stroke-linejoin="round" />
-            <path d="M20 20V33" stroke="#89ceb9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M28 20V33" stroke="#89ceb9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M4 10H44" stroke="#89ceb9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M16 10L19.289 4H28.7771L32 10H16Z" fill="none" stroke="#89ceb9" stroke-width="4"
-                stroke-linejoin="round" />
-        </svg>
-        <div onclick="clickDelete()"> 清空搜索结果</div>
+    <div class="search-results-container">
+      <div class="announcement" id="announcement">🪧：欢迎访问！注意！数据源结构不同，如有无法用关键词检索的信息时请点击显示全部查看！</div>
+      <div class="search-results" id="search-results"></div>
+      <button class="return-button" id="return-button" title="返回顶部">👆</button>
     </div>
+  </div>
 
-    <div id="content"></div>
+  <footer>
+    <p><a href="https://noisework.cn" style="color: white;">数据来自Noise导航站、notion收录页及浏览器书签收藏等</a></p>
+  </footer>
 
-    <!-- <footer>
-        <span>Github</span>
-    </footer> -->
+  <script>
+    // 获取搜索关键字和分类
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    const searchCategory = document.getElementById('search-category');
+    const clearButton = document.getElementById('clear-button');
+    const showAllButton = document.getElementById('show-all-button');
+    const announcement = document.getElementById('announcement');
+    const returnButton = document.getElementById('return-button');
+    const searchResultsContainer = document.getElementById('search-results');
 
-    <div class="toTop">
-        <svg width="28" height="28" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24.0083 14.1006V42.0001" stroke="#fff" stroke-width="4" stroke-linecap="round"
-                stroke-linejoin="round" />
-            <path d="M12 26L24 14L36 26" stroke="#fff" stroke-width="4" stroke-linecap="round"
-                stroke-linejoin="round" />
-            <path d="M12 6H36" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-    </div>
+    // 按下回车键触发搜索按钮点击事件
+    searchInput.addEventListener('keydown', event => {
+      if (event.key === 'Enter') {
+        searchButton.click();
+      }
+    });
+
+    searchButton.addEventListener('click', async () => {
+      const keyword = searchInput.value.toLowerCase();
+      const category = searchCategory.value;
+
+      // 清空搜索结果
+      searchResultsContainer.innerHTML = '';
+
+      // 如果用户未输入关键词，则提示用户输入关键词
+      if (keyword.trim() === '') {
+        alert('请输入您的关键词');
+        return;
+      }
+
+      if (category === '本站搜索') {
+        // 隐藏公告
+        announcement.style.display = 'none';
+
+        // 定义多个数据源
+        const dataSources = ['Notionmark.json', 'AI.json', 'Opensource.json', 'Notiongo.json', 'Daohang.json', 'Marks.json', 'Rssbook.json'];
+
+        // 存储所有的搜索结果
+        let allSearchResults = [];
+
+        // 定义搜索函数
+        const searchDataSources = async () => {
+          for (const dataSource of dataSources) {
+            try {
+              const response = await fetch(dataSource);
+              const data = await response.json();
+
+              if (Array.isArray(data)) {
+                // 遍历数据项进行匹配
+                data.forEach(item => {
+                  if (item.name && item.URL) {
+                    const itemName = item.name.toLowerCase();
+                    const itemURL = item.URL.toLowerCase();
+                    const itemDescription = item.description ? item.description.toLowerCase() : '';
+                    const itemTitle = item.title ? item.title.toLowerCase() : '';
+                    const itemText = item.text ? item.text.toLowerCase() : '';
+                    const itemTags = item.tags ? item.tags.toLowerCase() : '';
+
+                    // 使用正则表达式进行多个字符的模糊匹配
+                    const regex = new RegExp(keyword.split('').join('.*'), 'i'); // 不区分大小写
+
+                    if (itemName.match(regex) || itemURL.match(regex) || itemDescription.match(regex) || itemTitle.match(regex) || itemText.match(regex) || itemTags.match(regex)) {
+                      allSearchResults.push({ name: item.name, URL: item.URL, description: item.description });
+                    }
+                  } else if (item.links) {
+                    // 处理Daohang.json的数据结构
+                    item.links.forEach(link => {
+                      const itemTitle = link.title.toLowerCase();
+                      const itemURL = link.url.toLowerCase();
+                      const itemDescription = link.description ? link.description.toLowerCase() : '';
+
+                      // 使用正则表达式进行多个字符的模糊匹配
+                      const regex = new RegExp(keyword.split('').join('.*'), 'i'); // 不区分大小写
+
+                      if (itemTitle.match(regex) || itemURL.match(regex) || itemDescription.match(regex)) {
+                        allSearchResults.push({ name: link.title, URL: link.url, description: link.description });
+                      }
+                    });
+                  } else {
+                    // 处理Marks.json的数据结构
+                    const itemURL = item.url.toLowerCase();
+                    const itemTitle = item.title ? item.title.toLowerCase() : '';
+                    const itemNotes = item.notes ? item.notes.toLowerCase() : '';
+                    const itemText = item.text ? item.text.toLowerCase() : '';
+                    const itemTaxonomy = item.taxonomy ? item.taxonomy.toLowerCase() : '';
+                    const itemDescription = item.description ? item.description.toLowerCase() : '';
+                    const itemDescription2 = item.Description ? item.Description.toLowerCase() : '';
+                    const itemTags = item.tags ? item.tags.toLowerCase() : '';
+                    const itemTitle2 = item.title ? item.title.toLowerCase() : '';
+
+                    // 使用正则表达式进行多个字符的模糊匹配
+                    const regex = new RegExp(keyword.split('').join('.*'), 'i'); // 不区分大小写
+
+                    if (itemURL.match(regex) || itemTitle.match(regex) || itemNotes.match(regex) || itemText.match(regex) || itemTaxonomy.match(regex) || itemDescription.match(regex) || itemDescription2.match(regex) || itemTags.match(regex) || itemTitle2.match(regex)) {
+                      allSearchResults.push({ name: item.title, URL: item.url, description: item.description, Description: item.Description });
+                    }
+                  }
+                });
+              }
+            } catch (error) {
+              console.log('加载数据失败:', error);
+            }
+          }
+
+          // 显示搜索结果
+          if (allSearchResults.length > 0) {
+            allSearchResults.forEach(item => {
+              const resultItem = document.createElement('div');
+              const link = document.createElement('a');
+              link.href = item.URL;
+              link.target = "_blank"; // 在新标签页中打开链接
+              link.innerHTML = item.name.replace(new RegExp(`(${keyword})`, 'ig'), '<span style="color: lightblue;">\$1</span>');
+              resultItem.appendChild(link);
+
+              if (item.description) {
+                const description = document.createElement('p');
+                description.textContent = item.description;
+                resultItem.appendChild(description);
+              }
+
+              if (item.Description) {
+                const description2 = document.createElement('p');
+                description2.textContent = item.Description;
+                resultItem.appendChild(description2);
+              }
+
+              resultItem.innerHTML += '<hr style="border-color: #fff; margin: 10px 0;">'; // 添加分隔符
+              searchResultsContainer.appendChild(resultItem);
+            });
+          } else {
+            alert('无匹配结果');
+          }
+        };
+
+        // 执行搜索
+        await searchDataSources();
+
+        // 隐藏公告
+        announcement.style.display = 'none';
+
+        // 检查搜索结果是否超出页面高度，显示或隐藏返回按钮
+        checkSearchResultsHeight();
+      } else {
+        // 根据选择的分类调用不同的搜索引擎
+        let searchUrl = '';
+        switch (category) {
+          case '谷歌搜索':
+            searchUrl = `https://www.google.com/search?q=${encodeURIComponent(keyword)}`;
+            break;
+          case '必应搜索':
+            searchUrl = `https://www.bing.com/search?q=${encodeURIComponent(keyword)}`;
+            break;
+          case 'DuckDuck搜索':
+            searchUrl = `https://duckduckgo.com/?q=${encodeURIComponent(keyword)}`;
+            break;
+          case '百度搜索':
+            searchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent(keyword)}`;
+            break;
+          case 'yandex搜索':
+            searchUrl = `https://yandex.com/search/?text=${encodeURIComponent(keyword)}`;
+            break;
+          case '哔哩哔哩搜索':
+            searchUrl = `https://search.bilibili.com/all?keyword=${encodeURIComponent(keyword)}`;
+            break;
+          case 'youtube搜索':
+            searchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(keyword)}`;
+            break;
+          case 'github搜索':
+            searchUrl = `https://github.com/search?q=${encodeURIComponent(keyword)}`;
+            break;
+          default:
+            break;
+        }
+
+        if (searchUrl !== '') {
+          window.open(searchUrl, '_blank');
+        }
+      }
+    });
+
+    clearButton.addEventListener('click', () => {
+      searchInput.value = '';
+      searchResultsContainer.innerHTML = '';
+      announcement.style.display = 'block';
+      returnButton.style.display = 'none';
+    });
+
+    showAllButton.addEventListener('click', async () => {
+      searchResultsContainer.innerHTML = '';
+
+      const dataSources = ['Notionmark.json', 'AI.json', 'Opensource.json', 'Notiongo.json', 'Daohang.json', 'Marks.json', 'Rssbook.json'];
+
+      for (const dataSource of dataSources) {
+        try {
+          const response = await fetch(dataSource);
+          const data = await response.json();
+
+          if (Array.isArray(data)) {
+            data.forEach(item => {
+              if (item.name && item.URL) {
+                const resultItem = document.createElement('div');
+                const link = document.createElement('a');
+                link.href = item.URL;
+                link.target = "_blank"; // 在新标签页中打开链接
+                link.innerHTML = item.name;
+                resultItem.appendChild(link);
+
+                if (item.description) {
+                  const description = document.createElement('p');
+                  description.textContent = item.description;
+                  resultItem.appendChild(description);
+                }
+
+                if (item.Description) {
+                  const description2 = document.createElement('p');
+                  description2.textContent = item.Description;
+                  resultItem.appendChild(description2);
+                }
+
+                resultItem.innerHTML += '<hr style="border-color: #fff; margin: 10px 0;">'; // 添加分隔符
+                searchResultsContainer.appendChild(resultItem);
+              } else if (item.links) {
+                item.links.forEach(link => {
+                  const resultItem = document.createElement('div');
+                  const linkElement = document.createElement('a');
+                  linkElement.href = link.url;
+                  linkElement.target = "_blank"; // 在新标签页中打开链接
+                  linkElement.innerHTML = link.title;
+                  resultItem.appendChild(linkElement);
+
+                  if (link.description) {
+                    const description = document.createElement('p');
+                    description.textContent = link.description;
+                    resultItem.appendChild(description);
+                  }
+
+                  resultItem.innerHTML += '<hr style="border-color: #fff; margin: 10px 0;">'; // 添加分隔符
+                  searchResultsContainer.appendChild(resultItem);
+                });
+              } else {
+                const resultItem = document.createElement('div');
+                const link = document.createElement('a');
+                link.href = item.url;
+                link.target = "_blank"; // 在新标签页中打开链接
+                link.innerHTML = item.title;
+                resultItem.appendChild(link);
+
+                if (item.description) {
+                  const description = document.createElement('p');
+                  description.textContent = item.description;
+                  resultItem.appendChild(description);
+                }
+
+                if (item.Description) {
+                  const description2 = document.createElement('p');
+                  description2.textContent = item.Description;
+                  resultItem.appendChild(description2);
+                }
+
+                resultItem.innerHTML += '<hr style="border-color: #fff; margin: 10px 0;">'; // 添加分隔符
+                searchResultsContainer.appendChild(resultItem);
+              }
+            });
+          }
+        } catch (error) {
+          console.log('加载数据失败:', error);
+        }
+      }
+
+      // 检查搜索结果是否超出页面高度，显示或隐藏返回按钮
+      checkSearchResultsHeight();
+    });
+
+    returnButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 检查搜索框是否为空
+    const checkSearchInput = () => {
+      const keyword = searchInput.value.trim();
+      if (keyword === '') {
+        announcement.style.display = 'block';
+      }
+    };
+
+    searchInput.addEventListener('input', checkSearchInput);
+
+    // 页面加载时显示公告
+    window.addEventListener('load', () => {
+      announcement.style.display = 'block';
+    });
+
+    // 检查搜索结果是否超出页面高度，显示或隐藏返回按钮
+    const checkSearchResultsHeight = () => {
+      const searchResultsHeight = searchResultsContainer.offsetHeight;
+
+      if (searchResultsHeight > 6 * 40) {
+        returnButton.style.display = 'block';
+      } else {
+        returnButton.style.display = 'none';
+      }
+    };
+
+    window.addEventListener('resize', checkSearchResultsHeight);
+    window.addEventListener('load', checkSearchResultsHeight);
+  </script>
 </body>
-
-<script src="main.js"></script>
-
 </html>

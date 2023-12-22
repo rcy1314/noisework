@@ -1,0 +1,518 @@
+[
+ {
+  "name": "feed43-输入指定URL定制规则",
+  "URL": "https:\/\/feed43.com"
+ },
+ {
+  "name": "bridge检索创造包含rss规则的URL",
+  "URL": "http:\/\/bridge.thefeedreaderbot.com\/"
+ },
+ {
+  "name": "免费的公众号 RSS",
+  "URL": "https:\/\/github.com\/feeddd\/feeds"
+ },
+ {
+  "name": "微信公众号生成RSS",
+  "URL": "https:\/\/wechat.privacyhide.com\/?ref=appinn"
+ },
+ {
+  "name": "RSSHub",
+  "URL": "https:\/\/docs.rsshub.app\/"
+ },
+ {
+  "name": "Weibo to RSS",
+  "URL": "https:\/\/rssfeed.today\/weibo\/#\/"
+ },
+ {
+  "name": "使用 Github 操作的 Rss 自动抓取",
+  "URL": "https:\/\/github.com\/minhhungit\/github-action-rss-crawler#\/"
+ },
+ {
+  "name": "RSS生成B站UP主订阅",
+  "URL": "https:\/\/github.com\/TheresaQWQ\/RSSWorker"
+ },
+ {
+  "name": "一个更新和推送 rss\/feed 工具",
+  "URL": "https:\/\/github.com\/n0raml\/rsschan"
+ },
+ {
+  "name": "RSS的Gen epub和mobi Books，并通过github操作直接发送到kindle或boox",
+  "URL": "https:\/\/github.com\/carey036\/GenBooks"
+ },
+ {
+  "name": "从 S3 存储桶制作播客 RSS 播客 feed。",
+  "URL": "https:\/\/github.com\/LucaTNT\/worker-feed-from-bucket"
+ },
+ {
+  "name": "Microsoft Power Automate 流的 RSS 自定义触发器",
+  "URL": "https:\/\/github.com\/groundcat\/power-automate-rss-triggers"
+ },
+ {
+  "name": "基于Github Action的高度可定制化Telegram通知推送服务",
+  "URL": "https:\/\/github.com\/Apocalypsor\/Formatted-RSS-to-Telegram"
+ },
+ {
+  "name": "使用 GitHub Actions 静态地将 RSS 源组合成一个",
+  "URL": "https:\/\/github.com\/chand1012\/static-rss-generator"
+ },
+ {
+  "name": "TikTok 和 Twitch 的 RSS generator",
+  "URL": "https:\/\/ttrss.mybluemix.net\/"
+ },
+ {
+  "name": "国外的RSS源搜索服务",
+  "URL": "https:\/\/datorss.com\/"
+ },
+ {
+  "name": "通过电子邮件发送新的 RSS 条目",
+  "URL": "https:\/\/github.com\/jbzdarkid\/RssToEmail#\/"
+ },
+ {
+  "name": "由 GitHub Actions 提供支持的 Dingtalk RSS Bot",
+  "URL": "https:\/\/github.com\/Dk0n9\/DingRSS"
+ },
+ {
+  "name": "[php] 将多个 RSS 地址合并成一个 – fivestone",
+  "URL": "https:\/\/blog.fivest.one\/archives\/6033"
+ },
+ {
+  "name": "RSSUnify - 将多个 RSS 地址合并成一个",
+  "URL": "https:\/\/feederss.com\/index.html"
+ },
+ {
+  "name": "Telegram机器人--RSS，Atom和JSON Feed Reader",
+  "URL": "https:\/\/elmonitorro.badykov.com\/"
+ },
+ {
+  "name": "一种 API 服务，用于在网站上搜索 RSS、Atom 和 JSON 源",
+  "URL": "https:\/\/feedsearch.dev\/"
+ },
+ {
+  "name": " Nginx + TTRSS \/ FreshRSS + RSSHub 整合 docker 容器化一键部署方案.",
+  "URL": "https:\/\/github.com\/stilleshan\/rssforever"
+ },
+ {
+  "name": "Notify when rss feeds are updated | RSS 更新通知",
+  "URL": "https:\/\/github.com\/pureink\/inkrss"
+ },
+ {
+  "name": "可docker部署的极简主义和rss阅读器",
+  "URL": "https:\/\/github.com\/miniflux\/v2"
+ },
+ {
+  "name": "以新颖的方式获取rss源、筛选源，订阅源",
+  "URL": "https:\/\/follow.it"
+ },
+ {
+  "name": "用Notion高效订阅RSS",
+  "URL": "https:\/\/notion-feed.com\/"
+ },
+ {
+  "name": "一站式容器化TTRSS",
+  "URL": "http:\/\/ttrss.henry.wang\/zh\/"
+ },
+ {
+  "name": "合并到一个 RSS 中",
+  "URL": "https:\/\/github.com\/fuyufjh\/mior"
+ },
+ {
+  "name": "让RSS可以全文输出",
+  "URL": "https:\/\/github.com\/whtsky\/fulltextrssplz"
+ },
+ {
+  "name": "Obsidian on Mobile + Flomo + Rss Reader",
+  "URL": "https:\/\/github.com\/chenyukang\/obweb"
+ },
+ {
+  "name": "morss.it – Get more out of RSS feeds, for free",
+  "URL": "https:\/\/morss.it\/"
+ },
+ {
+  "name": "RSS Box",
+  "URL": "https:\/\/rssbox.herokuapp.com\/"
+ },
+ {
+  "name": "信息通知-日期、鸡汤、点餐、feed文章推荐",
+  "URL": "https:\/\/github.com\/wongoo\/informer"
+ },
+ {
+  "name": "推送rss到telegram和web",
+  "URL": "https:\/\/github.com\/9bie\/rsspusher"
+ },
+ {
+  "name": "：一个获取 rss feed 的 json 数据的 Cloudflare worker。",
+  "URL": "https:\/\/github.com\/davmixcool\/rss-to-json-worker"
+ },
+ {
+  "name": "Push RSS Feed through Telegram",
+  "URL": "https:\/\/github.com\/TerraceCN\/TGRSS"
+ },
+ {
+  "name": "从电报频道播客列表生成一个RSS文件",
+  "URL": "https:\/\/github.com\/bityob\/podcasts-list-to-rss"
+ },
+ {
+  "name": "RSS文档 - 子统计信息",
+  "URL": "https:\/\/substats.swo.moe\/"
+ },
+ {
+  "name": "RSS中继",
+  "URL": "https:\/\/github.com\/twfb\/RSS-Relay"
+ },
+ {
+  "name": "将 RSS\/Atom 源发送到您的收件箱 - Feedsub.com",
+  "URL": "https:\/\/feedsub.com\/"
+ },
+ {
+  "name": "免费实时RSS和Atom馈送到电子邮件服务",
+  "URL": "https:\/\/blogtrottr.com\/"
+ },
+ {
+  "name": "完全免费的设置自己的电报 RSS",
+  "URL": "https:\/\/github.com\/TerraceCN\/TGRSS"
+ },
+ {
+  "name": "使用PHP收集RSS Feeds，并将它们存储在MySql数据库中",
+  "URL": "https:\/\/github.com\/At1llaG\/PHP-RSS"
+ },
+ {
+  "name": "Telegram电报RSS \/ JSON生成器",
+  "URL": "https:\/\/tg.i-c-a.su\/"
+ },
+ {
+  "name": "RSS-proxy允许您创建几乎任何网站的RSS或ATOM提要\n",
+  "URL": "https:\/\/github.com\/damoeb\/rss-proxy"
+ },
+ {
+  "name": "将网页转换为 RSS 源，或从截断的源制作完整的源",
+  "URL": "https:\/\/github.com\/majetzx\/feedeliser"
+ },
+ {
+  "name": "第三方RSSHub订阅服务 | 胜之不易",
+  "URL": "https:\/\/uneasy.win\/rsshubserver\/"
+ },
+ {
+  "name": "由珂泽 提供的rsshub支持",
+  "URL": "https:\/\/rsshub.170601.xyz\/"
+ },
+ {
+  "name": "RSSForever 免费 RSS 及 RSSHub 服务",
+  "URL": "https:\/\/rssforever.com\/"
+ },
+ {
+  "name": "RSSerpent-帮助你使用 RSS 订阅那些不支持 RSS 订阅的网站",
+  "URL": "https:\/\/docs.rsserpent.com\/latest\/zh\/"
+ },
+ {
+  "name": "一个基于FastAPI的RSS生成器.",
+  "URL": "https:\/\/github.com\/chinobing\/RSSinn"
+ },
+ {
+  "name": "使用github创建单网页版的极简阅读器\n",
+  "URL": "https:\/\/github.com\/jamesroutley\/news.routley.io"
+ },
+ {
+  "name": " Rss 转为 Webhook",
+  "URL": "https:\/\/github.com\/Mystery00\/GoRss2Webhook"
+ },
+ {
+  "name": "获取 notion.so 中的 RSS 源",
+  "URL": "https:\/\/github.com\/Jeadie\/notion-rss"
+ },
+ {
+  "name": "将电子邮件转换为RSS Atom 源",
+  "URL": "https:\/\/kill-the-newsletter.com\/"
+ },
+ {
+  "name": "snipRSS |将网络上的视频，播客，博客文章，网页，社交帖子和文档截图到您自己的可共享RSS中",
+  "URL": "https:\/\/sniprss.com\/"
+ },
+ {
+  "name": "Thirdplace Discovery提供网址RSS发现服务",
+  "URL": "https:\/\/discovery.thirdplace.no\/?q=https:\/\/drewdevault.com"
+ },
+ {
+  "name": "Readybot: 面向 Discord 的 RSS 订阅机器人",
+  "URL": "https:\/\/readybot.io\/"
+ },
+ {
+  "name": "RSSPush-监测RSS变动，并发送最新内容到微信",
+  "URL": "https:\/\/github.com\/easychen\/rsspush"
+ },
+ {
+  "name": "Docker部署安装，集成rss后端及解析服务，支持对接tg bot",
+  "URL": "https:\/\/github.com\/kbondar17\/pocket-rss"
+ },
+ {
+  "name": "RSS转换为JSON的在线服务",
+  "URL": "https:\/\/rss2json.com"
+ },
+ {
+  "name": "同步rss订阅资讯到钉钉群机器人的脚本，环境条件：python3.X",
+  "URL": "https:\/\/github.com\/x7peeps\/Rss2Dingtalk-LTS"
+ },
+ {
+  "name": "rss-bridge镜像实例",
+  "URL": "https:\/\/rss-bridge.github.io\/rss-bridge\/General\/Public_Hosts.html"
+ },
+ {
+  "name": "Github action外文RSS翻译转换订阅，我的演示：https:\/\/rcy1314.github.io\/Rss-Translation\/",
+  "URL": "https:\/\/github.com\/talengu\/rss-translate"
+ },
+ {
+  "name": "indiehackers黑客新闻 RSS",
+  "URL": "https:\/\/hnrss.github.io\/#firehose-feeds"
+ },
+ {
+  "name": "将哔哩哔哩观看列表转换为RSS",
+  "URL": "https:\/\/github.com\/PerfectDay20\/bilibili-online-filtered-rss"
+ },
+ {
+  "name": "简单的脚本 + github 操作，用于生成 RSS 文件以聚合多个",
+  "URL": "https:\/\/github.com\/aalu1418\/rss"
+ },
+ {
+  "name": "使用 GitHub 平面为 TikTok 帐户生成 RSS",
+  "URL": "https:\/\/github.com\/conoro\/tiktok-rss-flat"
+ },
+ {
+  "name": "适用于安卓端的阅读器，订阅您最喜爱的 RSS 和 Atom 源，可与您的个人 Miniflux 或 Nextcloud 服务器同步",
+  "URL": "https:\/\/github.com\/bubelov\/news"
+ },
+ {
+  "name": "用Cloudflare Workers实现的HackerNews RSS阅读器",
+  "URL": "https:\/\/github.com\/ntns\/hackernews-reader-cloudflare-workers\/tree\/main"
+ },
+ {
+  "name": "支持按关键字搜索和导出 Excel的JAR版RSS阅读器",
+  "URL": "https:\/\/github.com\/mrprogre\/news_lite"
+ },
+ {
+  "name": "可部署在Vercel重的web RSS阅读器",
+  "URL": "https:\/\/github.com\/Uvacoder\/productnews#how-to-add-a-feed"
+ },
+ {
+  "name": "一个简单的桌面应用程序，基于RSS源的Youtube",
+  "URL": "https:\/\/github.com\/seird\/rsstube"
+ },
+ {
+  "name": "一款简洁的RSS（Really Simple Syndication）阅读器",
+  "URL": "https:\/\/github.com\/jiangxiaoqiang\/cruise-open"
+ },
+ {
+  "name": "移动端Obsidian + Flomo + Rss 阅读器",
+  "URL": "https:\/\/github.com\/chenyukang\/obweb"
+ },
+ {
+  "name": "基于 Kirigami 的安卓端RSS阅读器",
+  "URL": "https:\/\/github.com\/KDE\/alligator"
+ },
+ {
+  "name": "好用轻便方便部署的本地网页RSS阅读器",
+  "URL": "https:\/\/github.com\/nkanaev\/yarr"
+ },
+ {
+  "name": "期待app的网页版RSS阅读器",
+  "URL": "https:\/\/v2rss.com\/#\/setting?redirect=%2F"
+ },
+ {
+  "name": "部署在vercel的rss阅读器",
+  "URL": "https:\/\/github.com\/Uvacoder\/productnews#how-to-add-a-feed"
+ },
+ {
+  "name": "irreader: 阅读力+999 ",
+  "URL": "http:\/\/fatecore.com\/p\/irreader\/"
+ },
+ {
+  "name": "App Store 上的“Ego Reader - RSS阅读器”",
+  "URL": "https:\/\/apps.apple.com\/cn\/app\/ego-reader-rss%E9%98%85%E8%AF%BB%E5%99%A8\/id1509189573"
+ },
+ {
+  "name": "Slack -【可添加RSS集成】",
+  "URL": "https:\/\/slack.com\/intl\/zh-cn\/"
+ },
+ {
+  "name": "App Store 上的“摸鱼kik——每刻都值得摸鱼”",
+  "URL": "https:\/\/apps.apple.com\/cn\/app\/%E6%91%B8%E9%B1%BCkik-%E6%AF%8F%E5%88%BB%E9%83%BD%E5%80%BC%E5%BE%97%E6%91%B8%E9%B1%BC\/id1549613729"
+ },
+ {
+  "name": "VSCode-RSS插件",
+  "URL": "https:\/\/marketplace.visualstudio.com\/items?itemname=luyuhuang.rss"
+ },
+ {
+  "name": "Dinosaur Rss",
+  "URL": "https:\/\/dinorss.org\/"
+ },
+ {
+  "name": "Inoreader ",
+  "URL": "https:\/\/www.inoreader.com\/"
+ },
+ {
+  "name": "App Store 上的“眼艺 订阅-我的世界”",
+  "URL": "https:\/\/apps.apple.com\/cn\/app\/%E7%9C%BC%E8%89%BA-%E5%B9%B4%E8%BD%BB%E4%BA%BA%E9%83%BD%E5%9C%A8%E7%94%A8%E7%9A%84%E8%AE%A2%E9%98%85%E7%A5%9E%E5%99%A8\/id1390476202"
+ },
+ {
+  "name": "App Store 上的“ReadMark Reader”",
+  "URL": "https:\/\/apps.apple.com\/us\/app\/readmark-reader\/id1569582156?l=zh"
+ },
+ {
+  "name": "多用途 rss 读取器、实时流、混搭、聚合 Web 应用程序",
+  "URL": "https:\/\/selfoss.aditu.de\/"
+ },
+ {
+  "name": "一个简单的桌面应用程序，基于RSS源的Youtube",
+  "URL": "https:\/\/github.com\/seird\/rsstube"
+ },
+ {
+  "name": "今日热榜官网",
+  "URL": "https:\/\/tophub.today\/"
+ },
+ {
+  "name": "Reeder 5",
+  "URL": "https:\/\/reederapp.com\/"
+ },
+ {
+  "name": "Utools插件商店搜索RSS",
+  "URL": "https:\/\/u.tools\/"
+ },
+ {
+  "name": "现代桌面RSS阅读器，内置Electron，React和Fluent UI",
+  "URL": "https:\/\/github.com\/yang991178\/fluent-reader"
+ },
+ {
+  "name": "App Store 上的“Watch Highlights”在Watch上随时随地看热搜刷RSS",
+  "URL": "https:\/\/apps.apple.com\/us\/app\/watch-highlights\/id1514917662?l=zh"
+ },
+ {
+  "name": "App Store 上的“Top Tags”",
+  "URL": "https:\/\/apps.apple.com\/us\/app\/top-tags\/id1589642043?l=zh"
+ },
+ {
+  "name": "App Store 上的“RSS News Ticker”",
+  "URL": "https:\/\/apps.apple.com\/us\/app\/rss-news-ticker\/id1548190121?l=zh"
+ },
+ {
+  "name": "基于Web的RSS提要阅读器。具有统计信息，类别，重复条目检查等功能。",
+  "URL": "https:\/\/github.com\/Kaishiyoku\/crystal-rss-revolved"
+ },
+ {
+  "name": "Pluma RSS 阅读器 ",
+  "URL": "https:\/\/forum.mobilism.org\/viewtopic.php?f=1333&t=4781902&sid=29a2a134b54e22546446ae44ed9e0083"
+ },
+ {
+  "name": "蚁阅",
+  "URL": "https:\/\/rss.anyant.com\/register"
+ },
+ {
+  "name": "Zr-个性化安卓RSS阅读器(",
+  "URL": "https:\/\/www.coolapk.com\/apk\/176794"
+ },
+ {
+  "name": "文本终端的RSS\/Atom源阅读器",
+  "URL": "https:\/\/github.com\/newsboat\/newsboat"
+ },
+ {
+  "name": "一个Python feed阅读器",
+  "URL": "https:\/\/github.com\/lemon24\/reader"
+ },
+ {
+  "name": "readflow!开源的互联网文章流",
+  "URL": "https:\/\/about.readflow.app\/"
+ },
+ {
+  "name": "FreshRSS：一个免费的、可自我托管的聚合器...",
+  "URL": "https:\/\/github.com\/FreshRSS\/FreshRSS"
+ },
+ {
+  "name": "Tiny Tiny RSS是一个免费的开源基于Web的新闻提要（RSS \/ Atom）阅读器和聚合器",
+  "URL": "https:\/\/tt-rss.org\/"
+ },
+ {
+  "name": "miniflux.app-极简主义订阅源阅读器",
+  "URL": "https:\/\/github.com\/miniflux\/v2"
+ },
+ {
+  "name": "现代桌面RSS阅读器，内置Electron，React和Fluent UI",
+  "URL": "https:\/\/github.com\/yang991178\/fluent-reader"
+ },
+ {
+  "name": "Aleph 是一个跨平台的 RSS Reader & Podcast 客户端",
+  "URL": "https:\/\/github.com\/chezhe\/aleph"
+ },
+ {
+  "name": "RSS News Ticker【支持按关键词分类的iosapp】",
+  "URL": "https:\/\/apps.apple.com\/app\/rss-news-ticker\/id1548190121?src=AppAgg.com"
+ },
+ {
+  "name": "一个简单的twitter-feed风格的RSS聚合器，用PHP，Laravel，Inertia，.js，Tailwind和Vue编写.js",
+  "URL": "https:\/\/github.com\/ssddanbrown\/rss"
+ },
+ {
+  "name": " 一个极简的RSS在线浏览工具",
+  "URL": "https:\/\/github.com\/asksowhat\/ownrss"
+ },
+ {
+  "name": "RSS 订阅发送至 Cubox",
+  "URL": "https:\/\/github.com\/GVenusLeo\/rss2cubox"
+ },
+ {
+  "name": "命令行微博客，可订阅RSS，可自定义模板发布静态网站",
+  "URL": "https:\/\/github.com\/ahui2016\/pypelago"
+ },
+ {
+  "name": "Read List-github阅读订阅源",
+  "URL": "https:\/\/github.com\/eryajf\/read-list#%E6%8E%98%E9%87%91-%E5%85%A8%E7%AB%99%E7%83%AD%E7%82%B9"
+ },
+ {
+  "name": "根据关键词订阅平台-yinrss",
+  "URL": "https:\/\/yinrss.com\/"
+ },
+ {
+  "name": "想看APP安卓阅读器",
+  "URL": "http:\/\/myapp.chentiansaber.top\/xiangkanapp"
+ },
+ {
+  "name": "readdig-网页rss阅读器，可订阅rsshub免翻源",
+  "URL": "https:\/\/www.readdig.com"
+ },
+ {
+  "name": "有更新rss阅读，动态追踪订阅",
+  "URL": "https:\/\/yougeng.xin"
+ },
+ {
+  "name": "一个免费开源的RSS阅读器，适用于macOS",
+  "URL": "https:\/\/github.com\/zhanglun\/lettura"
+ },
+ {
+  "name": "JAVA版运行RSS软件-可按关键字搜索和分析新闻，可自行添加源",
+  "URL": "https:\/\/github.com\/mrprogre\/avandy-news"
+ },
+ {
+  "name": "将 GitHub 变成一个 RSS 阅读器",
+  "URL": "https:\/\/github.com\/osmoscraft\/osmosfeed"
+ },
+ {
+  "name": "一个自带rss及丰富组件的浏览器扩展启始页-tabhub",
+  "URL": "https:\/\/www.tabhub.app"
+ },
+ {
+  "name": "Qi Reader-优雅的在线 RSS 阅读器",
+  "URL": "https:\/\/www.qireader.com"
+ },
+ {
+  "name": "Python环境RSS阅读器【莉沫酱RSS阅读器】",
+  "URL": "https:\/\/github.com\/RimoChan\/rimo-rss-reader"
+ },
+ {
+  "name": "Obsidian插件RSS阅读器",
+  "URL": "https:\/\/github.com\/fjdu\/obsidian-feed"
+ },
+ {
+  "name": "适用于macOS的RSS\n阅读器，位于菜单栏中",
+  "URL": "https:\/\/github.com\/Mnpn\/Taberu"
+ },
+ {
+  "name": "桌面端阅读器，支持播客及应用内播放",
+  "URL": "https:\/\/github.com\/torum\/BlogWrite"
+ }
+]

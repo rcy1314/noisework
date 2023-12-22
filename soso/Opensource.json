@@ -1,0 +1,3729 @@
+[
+ {
+  "name": " 一个增强小宇宙播客网页端使用体验的浏览器插件\n",
+  "URL": "https:\/\/github.com\/LGiki\/cosmos-enhanced"
+ },
+ {
+  "name": "#RSS\n一位在上初中的博主编写的WRSS - MD风格的RSS订阅器，订阅源可在设置中添加",
+  "URL": "https:\/\/github.com\/wmz1024\/WRSS-OJS"
+ },
+ {
+  "name": " 微信读书下载器",
+  "URL": "https:\/\/github.com\/HuanMeng233\/weread_downloader"
+ },
+ {
+  "name": "一款监控哔哩哔哩直播间并通过 Telegram 机器人发送通知的工具。",
+  "URL": "https:\/\/github.com\/hydrotho\/BiliBili_Livestream_Reminder"
+ },
+ {
+  "name": "（跨平台的无版权音乐平台）. 支持 windows \/ macos \/ linux \/ web\n",
+  "URL": "https:\/\/github.com\/radishes-music\/radishes"
+ },
+ {
+  "name": "自动抓取更新iptv源 Autoupdate iptv sources",
+  "URL": "https:\/\/github.com\/HerbertHe\/iptv-sources"
+ },
+ {
+  "name": "小说、漫画阅读器，支持android、ios、window、macos、linux多平台运行，支持自定义书源导入，支持多语言",
+  "URL": "https:\/\/github.com\/gstory0404\/fun_reader"
+ },
+ {
+  "name": "跨平台的 HTTP 客户端桌面应用程序\n",
+  "URL": "https:\/\/sunny-chung.github.io\/hello-http\/"
+ },
+ {
+  "name": "#自动化\n自动化上传视频到社交媒体：抖音、小红书、视频号、tiktok、youtube、bilibili\n",
+  "URL": "https:\/\/github.com\/dreammis\/social-auto-upload"
+ },
+ {
+  "name": "自动化视频下载、剪辑和上传\n",
+  "URL": "https:\/\/github.com\/FlamingJay\/homework"
+ },
+ {
+  "name": "#微信\n借助企业微信，让个人微信和服务器交互信息",
+  "URL": "https:\/\/github.com\/schaepher\/noty"
+ },
+ {
+  "name": "#微信\n 一个可以转发消息的微信机器人，可以自定义转发的群，也可以二开做关键字校验，node.js服务\n",
+  "URL": "https:\/\/github.com\/Batman0506\/wx-wchaty-robot"
+ },
+ {
+  "name": " ✉️ 基于QT的跨平台局域网聊天室 |\n",
+  "URL": "https:\/\/github.com\/NekoSilverFox\/PolyChat"
+ },
+ {
+  "name": "使用 Cloudflare Worker 处理图片, 依赖 Photon、 Squash WebAssembly，支持缩放、剪裁、水印、滤镜等功能。\n",
+  "URL": "https:\/\/github.com\/ccbikai\/cloudflare-worker-image"
+ },
+ {
+  "name": "#微信\n23行python代码实现微信轰炸\n",
+  "URL": "https:\/\/github.com\/HugoXOX3\/WeChat-GUI-Bomb"
+ },
+ {
+  "name": "✨ 下一代AI Sass ERP系统\n",
+  "URL": "https:\/\/github.com\/wansenai\/eairp"
+ },
+ {
+  "name": "使用python检测你的QQ，微博，手机号的隐私泄露状况\n",
+  "URL": "https:\/\/github.com\/MrBZBZ\/Personal-privacy-leakage-inquiry-software"
+ },
+ {
+  "name": "#微信\n获取微信账号信息(昵称\/账号\/手机\/邮箱\/数据库密钥\/wxid)；PC微信数据库读取、解密脚本；聊天记录查看工具；聊天记录导出为html(包含语音图片)。支持多账户信息获取，支持所有微信版本。\n",
+  "URL": "https:\/\/github.com\/xaoyaoo\/PyWxDump"
+ },
+ {
+  "name": "一个好用的哔哩哔哩漫画下载器，拥有图形界面，支持关键词搜索漫画和二维码登入，黑科技下载未解锁章节，多线程下载，多种保存格式，本地漫画管理，一键检查更新！\n",
+  "URL": "https:\/\/github.com\/Zeal-L\/BiliBili-Manga-Downloader"
+ },
+ {
+  "name": "bookget 数字古籍图书下载工具",
+  "URL": "https:\/\/github.com\/deweizhu\/bookget"
+ },
+ {
+  "name": "stable_diffusion_webui的colab部署版本(including English version)，下载了所流行插件依赖和并进行初始化配置。拥有mod管理、手机自适应、图片信息本地读取等脚本。",
+  "URL": "https:\/\/github.com\/s4afa451dgf415f\/colab_stable_diffusion"
+ },
+ {
+  "name": "使用 GitHub Actions 下载 YouTube 视频\n",
+  "URL": "https:\/\/github.com\/justjavac\/github-actions-youtube-dl"
+ },
+ {
+  "name": "�可一键部署vercel的多接口\/自定义接口的文件\/图片上传系统\n",
+  "URL": "https:\/\/github.com\/xhofe\/imgbed"
+ },
+ {
+  "name": "将 Qzone 说说转发到 Telegram，支持 docker 部署\n",
+  "URL": "https:\/\/github.com\/aioqzone\/Qzone2TG"
+ },
+ {
+  "name": "#微信\n提取微信聊天记录，将其导出成word文档永久保存，对聊天记录进行分析生成年度聊天报告\n",
+  "URL": "https:\/\/github.com\/LC044\/WeChatMsg"
+ },
+ {
+  "name": "#AI\n一个统一的 API，支持THUDM GLM、Stable Diffusion、IFLYTEK Spark,集成科大讯飞星火、文心一言等\n",
+  "URL": "https:\/\/github.com\/uni-openai\/UniAI"
+ },
+ {
+  "name": "基于节点的图像处理 GUI，旨在使链接图像处理任务变得简单且可定制。chaiNNer 诞生于一个 AI 升级应用程序，现已发展成为一个极其灵活和强大的程序化图像处理应用程序\n",
+  "URL": "https:\/\/github.com\/chaiNNer-org\/chaiNNer"
+ },
+ {
+  "name": "IPTV直播源抓取 自动整合好趣网直播源+月光宝盒Box直播源+其他网上直播源\n",
+  "URL": "https:\/\/github.com\/joevess\/IPTV"
+ },
+ {
+  "name": "将视频网站转换成播客订阅\n",
+  "URL": "https:\/\/github.com\/yajuhua\/podcast2_1"
+ },
+ {
+  "name": "� 一个专属于开发者的超级无敌浏览器扩展插件。�\n",
+  "URL": "https:\/\/github.com\/fedtop\/dev-go"
+ },
+ {
+  "name": "一些让我们在使用B站时更加方便的浏览器扩展\/脚本\/程序\n",
+  "URL": "https:\/\/github.com\/HCLonely\/awesome-bilibili-extra"
+ },
+ {
+  "name": "stable-video-diffusion-webui, img to videos，它是 stable-video-diffusion的 colab 版本",
+  "URL": "https:\/\/github.com\/xx025\/stable-video-diffusion-webui"
+ },
+ {
+  "name": "#自动化\nOctoMation是一款免费的，具有可视化拖拽功能的编排与自动化产品。通过精心编排的Playbook，OctoMation能够联动数百款安全、网络、IT和SaaS等产品的基础能力。其主要特点包括低代码剧本编排、自动化事件响应、标准化流程操作以及可视化过程监控。  借助OctoMation，运营团队能够开展7x24小时自动化事件响应，不仅可以大幅减少对人员的过度依赖，还能确保团队工作质量始终维持在较高的水准上，最终实现“极速降本增效”。",
+  "URL": "https:\/\/github.com\/flagify-com\/OctoMation"
+ },
+ {
+  "name": "#GPT\n针对于One-API使用Pandora的可视化网页，可以实现网页批量更改刷新token并每五天自动通过账号密码刷新Tokens,从而自动装填fakeAPI，同时自动更新FakeOpenAI地址，已打包好docker,开箱即用，后续扩展更多功能",
+  "URL": "https:\/\/github.com\/Yanyutin753\/fakeApiTool-One-API"
+ },
+ {
+  "name": "一款将 Hugging Face AI 模型与 OpenAI 和 LangChain 结合使用的应用程序，从图像生成文本，然后从文本生成音频",
+  "URL": "https:\/\/github.com\/semaj87\/image-to-text-to-speech"
+ },
+ {
+  "name": "无服务器去中心化虚拟专用网络（Hamachi 的开源替代品）\n",
+  "URL": "https:\/\/gitlab.com\/Monsterovich\/lanemu"
+ },
+ {
+  "name": "使用语音与chatgpt对话，调用tts-1,whisper-1,gpt-3.5-turbo。Converse with ChatGPT using voice, calling upon TTS-1, Whisper-1, and GPT-3.5-turbo..",
+  "URL": "https:\/\/github.com\/xy3xy3\/VoiceChatgpt"
+ },
+ {
+  "name": "#微信\n微信消息转发到telegram\n",
+  "URL": "https:\/\/github.com\/finalpi\/wechat2tg"
+ },
+ {
+  "name": "Gopeed 百度网盘下载扩展。",
+  "URL": "https:\/\/github.com\/monkeyWie\/gopeed-extension-baiduwp"
+ },
+ {
+  "name": "基于docker和pywxdll hook注入的微信机器人�️",
+  "URL": "https:\/\/github.com\/HenryXiaoYang\/XYBot"
+ },
+ {
+  "name": "Senparc.Weixin SDK 的 AI 扩展，赋能微信应用基于 OpenAI API、ChatGPT 等 AIGC 能力。\n",
+  "URL": "https:\/\/github.com\/Senparc\/Senparc.Weixin.AI"
+ },
+ {
+  "name": "小红书作品采集工具浏览器插件",
+  "URL": "https:\/\/github.com\/kongzhu2\/XHS_Downloader_Chrome_Extension"
+ },
+ {
+  "name": "基于Stable Diffusion的360全景图像生成存储库\n",
+  "URL": "https:\/\/github.com\/ArcherFMY\/SD-T2I-360PanoImage"
+ },
+ {
+  "name": "博文推荐：Stable Diffusion 硬核生存指南：WebUI 中的 GFPGAN\n",
+  "URL": "https:\/\/soulteary.com\/2023\/08\/04\/stable-diffusion-hardcore-survival-guide-gfpgan-in-webui.html"
+ },
+ {
+  "name": "一个自动将来自粘贴板的bilibili视频链接解析成图片加文字的程序\n",
+  "URL": "https:\/\/github.com\/LemonTreeLT\/BParser"
+ },
+ {
+  "name": "通过RSS订阅聚合器自动\/批量下载Bilibili视频\n",
+  "URL": "https:\/\/github.com\/gnattu\/BBFever"
+ },
+ {
+  "name": "哔哩哔哩（B站bilibili）视频字幕采集&&分析工具\n",
+  "URL": "https:\/\/github.com\/Shonminh\/bilibee"
+ },
+ {
+  "name": "适用于所有视频创作者的个人提词器软件。在构建时考虑了易用性、生产力、控制精度和流畅性能\n",
+  "URL": "https:\/\/github.com\/Cuperino\/QPrompt"
+ },
+ {
+  "name": "VideoReTalking\n基于音频的唇形同步，用于野外的Talking Head视频编辑\n",
+  "URL": "https:\/\/github.com\/OpenTalker\/video-retalking"
+ },
+ {
+  "name": "Drone持续集成Docker插件，支持如下功能：1、自动标签；2、默认镜像；3、镜像推送\n",
+  "URL": "https:\/\/github.com\/dronestock\/docker"
+ },
+ {
+  "name": "微信读书辅助工具，可用于书籍下载及自动阅读、自动兑换体验卡等\n",
+  "URL": "https:\/\/github.com\/champkeh\/wereadx"
+ },
+ {
+  "name": "适用于 Mac 的 GUI 图像优化器\n",
+  "URL": "https:\/\/github.com\/ImageOptim\/ImageOptim"
+ },
+ {
+  "name": "使用爬虫抓取小红书信息，并通过企业微信发送给自己\n",
+  "URL": "https:\/\/github.com\/cwjcw\/xhs_spider"
+ },
+ {
+  "name": " � 一个漂亮得不像实力派的在线视频播放器\n",
+  "URL": "https:\/\/github.com\/idootop\/feiyu-player"
+ },
+ {
+  "name": "【抖音】视频动态、直播间开播检测与推送\n",
+  "URL": "https:\/\/github.com\/nfe-w\/douyin_dynamic_push"
+ },
+ {
+  "name": "将视频从一种语言翻译为另一种语言，并添加配音  \n",
+  "URL": "https:\/\/github.com\/jianchang512\/pyvideotrans"
+ },
+ {
+  "name": "视频AI硬字幕去除、水印去除，无损分辨率生成去字幕、去水印后的视频文件。无需申请第三方API，本地实\n",
+  "URL": "https:\/\/github.com\/YaoFANGUK\/video-subtitle-remover"
+ },
+ {
+  "name": "视频硬字幕提取，生成srt文件\n",
+  "URL": "https:\/\/github.com\/YaoFANGUK\/video-subtitle-extractor"
+ },
+ {
+  "name": "微软azure文本转语音 音频下载\n",
+  "URL": "https:\/\/github.com\/x-dr\/tts"
+ },
+ {
+  "name": "VITS2 for Chinese speech | 最新VITS2中文语音合成,只需上传一段语音素材，程序自动将语音切片、标注、预处理，一键训练\n",
+  "URL": "https:\/\/github.com\/KevinWang676\/VITS2-Chinese"
+ },
+ {
+  "name": "网易云外放链接转换器\n",
+  "URL": "https:\/\/github.com\/InDarkWings\/CloudMusicURLToMP3"
+ },
+ {
+  "name": " PyTorch implementation of the paper \"Controlling Vision-Language Models for Universal Image Restoration\". Currently aiming for *academic researches* �\n",
+  "URL": "https:\/\/github.com\/Algolzw\/daclip-uir"
+ },
+ {
+  "name": "该项目旨在创建一个轻量级且简单的平台，与您的朋友分享视频。上传后，将生成一个新页面，并使视频可供观看 48 小时，之后页面和视频文件将被删除\n",
+  "URL": "https:\/\/github.com\/Shanksum\/bruh-clips"
+ },
+ {
+  "name": " ⚡️开源AIGC矢量和知识数据库，具有Web UI，类似于LangChain⚡️，支持OpenAI，HuggingFace，OpenRouter，Local Models\n",
+  "URL": "https:\/\/github.com\/casbin\/casibase"
+ },
+ {
+  "name": "一个自动监测和录制抖音直播的工具，支持录制弹幕，以GUI或命令行形式运行，支持linux，无需设置cookie，不使用selenium，开箱即用。\n",
+  "URL": "https:\/\/github.com\/LyzenX\/DouyinLiveRecorder"
+ },
+ {
+  "name": "#ai \n一个完全私有的、本地操作的、可定制的人工智能助手\/多智能体框架\/连接工具套件，使用带有 Oobabooga API（免费层 Colab 可用）、GPT 2.3 Turbo 5k 或 GPT 16 的 Llama 4 和思维形成。Qdrant 用于数据库\n",
+  "URL": "https:\/\/github.com\/libraryofcelsus\/Aetherius_AI_Assistant"
+ },
+ {
+  "name": "#youtube #下载\nAYC是一个高度响应，没有废话，易于使用，基于文本时代的快速视频下载器。\n",
+  "URL": "https:\/\/github.com\/adithya-s-sekhar\/advanced-youtube-client-ayc"
+ },
+ {
+  "name": "完全开源，基于 Requests 模块实现：小红书图文\/视频作品采集工具\n",
+  "URL": "https:\/\/github.com\/JoeanAmier\/XHS_Downloader"
+ },
+ {
+  "name": "QX，Loon，Surge，Stash和ShadowRocket的高级订阅管理器。\n",
+  "URL": "https:\/\/github.com\/sub-store-org\/Sub-Store"
+ },
+ {
+  "name": "微信公号文章下载工具\n",
+  "URL": "https:\/\/github.com\/xiaoguyu\/wechatDownload"
+ },
+ {
+  "name": "PotPlayer 哔哩哔哩插件：可以直接在 PotPlayer 中播放哔哩哔哩中的视频、直播和音乐\n",
+  "URL": "https:\/\/github.com\/chen310\/BilibiliPotPlayer"
+ },
+ {
+  "name": "一个简单的工具，用于从iOS备份存档中提取文件\n",
+  "URL": "https:\/\/github.com\/unixzii\/ibackupextractor"
+ },
+ {
+  "name": "微信群聊总结助手 JS 版\n",
+  "URL": "https:\/\/github.com\/aoao-eth\/wechat-ai-summarize-bot"
+ },
+ {
+  "name": "#blog\n新一代现代化极客风多功能横版静态博客主题框架    -    高性能\/自动化\/响应式\/SEO友好\/全站搜索\/自动订阅更新\/SPA\/音乐播放器\/原生实现\/代码高亮\/标签&分类自索引\/语言&设置自定义\/内置高级下载器\/自动目录索引\n",
+  "URL": "https:\/\/github.com\/RavelloH\/RTheme"
+ },
+ {
+  "name": "视频床方案，视频切片上传到免费图床  二开于 https:\/\/github.com\/sxyazi\/free-hls\n",
+  "URL": "https:\/\/github.com\/SakuraVincent\/MyHLS"
+ },
+ {
+  "name": "视频床方案，视频切片上传到免费图床  二开于 https:\/\/github.com\/sxyazi\/free-hls\n",
+  "URL": "https:\/\/github.com\/SakuraVincent\/MyHLS"
+ },
+ {
+  "name": "每日定时更新 midjourney stable diffusion 的热门prompt\n",
+  "URL": "https:\/\/github.com\/a1667834841\/promot_pub"
+ },
+ {
+  "name": "#开源 #媒体\n获取 TMDb 电影\/剧集信息，并对 Alist 媒体文件重命名\n",
+  "URL": "https:\/\/github.com\/jkoor\/Alist-Media-Rename"
+ },
+ {
+  "name": "#笔记 #软件 #跨平台\n适用于所有桌面平台的开源个人知识管理软件\n",
+  "URL": "https:\/\/github.com\/mindolph\/Mindolph"
+ },
+ {
+  "name": "#主题 #Typecho\nTypecho开源视频主题，生态方面支持 https:\/\/github.com\/jrotty\/CatClaw 采集插件可对接大部分资源站json接口\n",
+  "URL": "https:\/\/github.com\/jrotty\/Zevideo"
+ },
+ {
+  "name": "#RSS\n一个很棒的工具，可以自动将文章从RSS Feed保存到Pocket",
+  "URL": "https:\/\/github.com\/hankhjliao\/RSS2Pocket"
+ },
+ {
+  "name": "#软件 #开源 #安卓\n功能强大的图像工具箱，具有宽度\/高度选择，应用过滤器，SVG到图像转换，裁剪，EXIF编辑，�️质量和输出图像类型选择和批处理功能。\n",
+  "URL": "https:\/\/github.com\/T8RIN\/ImageToolbox"
+ },
+ {
+  "name": "#工具\nJamTools是一个跨平台的小工具集类软件，支持Windows7\/8\/10\/11、Macos、ubuntu系统(其他系统可以直接从源码编译打包)。包含了(滚动\/区域)截屏、录屏、文字识别、多种语言互译、多媒体格式转换、鼠标键盘动作录制播放、局域网文件传输、聊天机器人等功能，完全开源!\n",
+  "URL": "https:\/\/github.com\/fandesfyf\/JamTools"
+ },
+ {
+  "name": "#blog #hexo\nhexo文章转换器，通过上传文件的方式，将原始的markdown文件格式化成为hexo可以识别的带有front-matter格式的文档。\n",
+  "URL": "https:\/\/github.com\/yamonc\/hexoHelper"
+ },
+ {
+  "name": "#rss\n多平台（Android & iOS）RSS 阅读器应用程序\n",
+  "URL": "https:\/\/github.com\/msasikanth\/reader"
+ },
+ {
+  "name": "#主板\n一些主板bios合集\n",
+  "URL": "https:\/\/github.com\/zhenruyan\/e3v5bios"
+ },
+ {
+  "name": "#AI #sdwebui #插件\n免梯子下载 civitai 上的模型，一键下载，自动识别模型类型、自动选择下载路径\n",
+  "URL": "https:\/\/github.com\/tzwm\/sd-webui-model-downloader-cn"
+ },
+ {
+  "name": "#GPT\n文档聊天机器人 — 支持多个文件。由 GPT \/ 嵌入提供支持\n",
+  "URL": "https:\/\/github.com\/guangzhengli\/ChatFiles"
+ },
+ {
+  "name": "#notion\n基于 Notion 的导航网站，支持自建，自定义主题\n",
+  "URL": "https:\/\/github.com\/liudding\/notion-portal"
+ },
+ {
+  "name": "#AI\nAI相关主题Github仓库排名，每日自动更新。\n",
+  "URL": "https:\/\/github.com\/yuxiaopeng\/Github-Ranking-AI"
+ },
+ {
+  "name": "#Ai\nAI游戏开发工具合集库，包括编程，动画，效果，建模，音频，音乐等\n",
+  "URL": "https:\/\/github.com\/Yuan-ManX\/ai-game-development-tools"
+ },
+ {
+  "name": "#GPT #ai\nChatGPT 网站导航。搜集国内可用的 ChatGPT 在线体验免费网站列表。定时任务每日更新\n",
+  "URL": "https:\/\/github.com\/lzwme\/chatgpt-sites"
+ },
+ {
+  "name": "#开源 #代码\n无需离开终端即可共享代码片段\n",
+  "URL": "https:\/\/github.com\/Gigaxel\/codesnap.sh"
+ },
+ {
+  "name": "#RSS\nRSS 邮件订阅，基于 GitHub Action。\n",
+  "URL": "https:\/\/github.com\/rogeryoungh\/github-action-rss"
+ },
+ {
+  "name": "#软件 #工具#自动化\nPinterest自动化工具，可以自动关注用户并喜欢，转发和评论帖子\n",
+  "URL": "https:\/\/github.com\/somiibo\/pinterest-bot"
+ },
+ {
+  "name": "#rss\nLinkyRSS是一个开源项目，通过结合RSS + AI来解决书签问题\n",
+  "URL": "https:\/\/github.com\/nicokruger\/linkyrss"
+ },
+ {
+  "name": "#GPT\n聚合ChatGPT官方版、ChatGPT免费版、文心一言、Poe、chatchat等多平台，支持自定义导入平台\n",
+  "URL": "https:\/\/github.com\/1595901624\/gpt-aggregated-edition"
+ },
+ {
+  "name": "#工具 #采集\n小红书数据采集、网站图片、视频资源批量下载工具，颜值超高的数据采集工具（批量下载，视频提取，图片，去水印等）\n",
+  "URL": "https:\/\/github.com\/xisuo67\/XHS-Spider"
+ },
+ {
+  "name": "#开源 #终端\nfterm是一款基于Flutter开发的跨平台终端工具\n",
+  "URL": "https:\/\/github.com\/springeye\/fterm"
+ },
+ {
+  "name": "#android #工具\nAndroid 调试桥 (adb) 是一种功能多样的命令行工具，可让开发者与设备之间进行通信。adb 命令可用于执行各种设备操作（例如安装和调试应用），并提供对 Unix shell（可用来在设备上运行各种命令）的访问权限\n",
+  "URL": "https:\/\/github.com\/LapplandSP\/QtAdb"
+ },
+ {
+  "name": "#自动化\nAction抓取midjourney频道生产的图片\n",
+  "URL": "https:\/\/github.com\/itxve\/midjourney-channel-on-github"
+ },
+ {
+  "name": "#Docker\n开箱即用的面向生产和开发环境的 Docker 镜像\n",
+  "URL": "https:\/\/github.com\/sohaha\/zls-docker"
+ },
+ {
+  "name": "#AI #GPT\n一个AI项目，包含文案创作、画图制作、答题解惑、写情书、编程等功能\n",
+  "URL": "https:\/\/github.com\/274056675\/springboot-openai-chatgpt"
+ },
+ {
+  "name": "#语音合成\nSummerTTS 是一个基于C++的独立编译的中文语音合成项目，可以本地运行不需要网络，而且没有额外的依赖，一键编译完成即可用于中文语音合成\n",
+  "URL": "https:\/\/github.com\/huakunyang\/SummerTTS"
+ },
+ {
+  "name": "#低代码 #可视化\ntooljet低代码平台的汉化中文版，对tooljet进行深度汉化并添加了一些有用的组件，增强了一些功能，使其更符合国内使用习惯。\n",
+  "URL": "https:\/\/github.com\/mousheng\/tooljet_cn"
+ },
+ {
+  "name": "#开源\n � 一个开源的 Chrome 插件，可以将网页转成阅读模式，并且内置了 AI 总结、翻译、Markdown 转换等功能。\n",
+  "URL": "https:\/\/github.com\/ReadSomething\/ReadSomething"
+ },
+ {
+  "name": "#ai\n该项目使用 AI 为您抓取 SaaS 产品的定价页面，可以自己部署\n",
+  "URL": "https:\/\/github.com\/bharathvaj-ganesan\/pricing-page-scraper"
+ },
+ {
+  "name": "#开源\n任何设备通过网页访问本地素材。\n",
+  "URL": "https:\/\/github.com\/rao-pics\/core"
+ },
+ {
+  "name": "#开源 #托管\n使用 PHP 进行开源视频托管\n",
+  "URL": "https:\/\/github.com\/MacWarrior\/clipbucket-v5"
+ },
+ {
+  "name": "#字幕 #翻译 #工具\n字幕文件(srt)翻译工具，Windows专用，有的配置自带，比较方便\n",
+  "URL": "https:\/\/github.com\/speauty\/anto"
+ },
+ {
+  "name": "#游戏 #工具\n基于 SteamOS 定制的网络工具，自动配置 TUN 模式加速游戏，网络代理。\n",
+  "URL": "https:\/\/github.com\/YukiCoco\/ToMoon"
+ },
+ {
+  "name": "#开源 #AI\n一款基于【mtool】或【Translator++】，chatgpt自动批量翻译工具，主要是用来翻译各种RPG游戏。\n",
+  "URL": "https:\/\/github.com\/NEKOparapa\/AiNiee-chatgpt"
+ },
+ {
+  "name": "#AI\nQuickAI是一款基于OpenAI开发的电脑版ChatGPT PC跨平台应用程序，它可以提供划词提问、快捷搜索、对话模式和快捷指令等多种功能。旨在为用户提供更便捷、更智能的PC桌面版AI使用体验。在使用时无需下载额外软件，适用于各种场景，如代码自动编辑、文件自动输入、提问、聊天软件自动回复等。\n",
+  "URL": "https:\/\/github.com\/FISHers6\/QuickAI"
+ },
+ {
+  "name": "#云盘\n一款好看的在线文件列表程序，由 Spring Boot 3 和 Vue 驱动。\n",
+  "URL": "https:\/\/github.com\/besscroft\/diyfile"
+ },
+ {
+  "name": "#AI\nLaozy 是一个自托管的 Web 应用程序，可帮助您构建和部署基于 LLM 的对话机器人。您构建的机器人可以连接到微信，电报等即时通讯平台。您还可以通过 REST API 将其集成到您的应用程序中\n",
+  "URL": "https:\/\/github.com\/shellc\/laozy"
+ },
+ {
+  "name": "#GPT\n用于Embarcadero RAD Studio IDE 10.1及更高版本的ChatGPT + WriteSonic + YouChat插件\n",
+  "URL": "https:\/\/github.com\/AliDehbansiahkarbon\/ChatGPTWizard"
+ },
+ {
+  "name": "#开源\n一款全自动的主播切片机器人,支持模块热度分析, 主播热度分析,智能爬取,弹幕视频爬取,弹幕分析, 自动切片,切片分类,自动标题,自动封面,账号打造,账号管理, 多平台上传等功能\n",
+  "URL": "https:\/\/github.com\/969025903\/ChopperBot"
+ },
+ {
+  "name": "#工具\n一种全新的连接管理器和远程文件浏览器\n",
+  "URL": "https:\/\/github.com\/xpipe-io\/xpipe"
+ },
+ {
+  "name": "#notiona\n一个简易的页面 NotionAI api接口 + 简易的token校验。\n",
+  "URL": "https:\/\/github.com\/Samge0\/notionai-api-py"
+ },
+ {
+  "name": "#DBGPT\nDB-GPT 是一个开源的以数据库为基础的GPT实验项目，使用本地化的GPT大模型与您的数据和环境进行交互，包含\n知识库能力：支持私域知识库问答能力\n大模型管理能力、统一的数据向量化存储与索引、连接模块：用于连接不同的模块和数据源，实现数据的流转和交互。Prompt自动生成与优化。多端产品界面\n",
+  "URL": "https:\/\/github.com\/csunny\/DB-GPT"
+ },
+ {
+  "name": "#AI #开发\nPezzo 是一个开源 AI 开发工具包，旨在简化提示设计、版本管理、发布、协作、故障排除、可观测性等，在一个位置管理所有 AI 提示，以实现最大的可见性和效率\n",
+  "URL": "https:\/\/github.com\/pezzolabs\/pezzo"
+ },
+ {
+  "name": "#博客 开源 #Notion #Flowus\n一个开放式跨平台博客解决方案，随意组合写作平台(语雀\/Notion\/FlowUs)和部署平台(Hexo\/Vitepress等) PS：看到Elog1加入了Flowus方案，而Flowus在不久前也推出了AI，我是说如果有开发者做出在Flowus的AI或API自动化，将会有一个人人都可以从微信剪藏开始及公众号一键解析的新的工作流\n",
+  "URL": "https:\/\/github.com\/LetTTGACO\/elog"
+ },
+ {
+  "name": "#IPA #苹果\n用于在mac系统将 ipa 用个人免费证书重签名并安装到手机上\n",
+  "URL": "https:\/\/github.com\/yujon\/ipa-mac-builder"
+ },
+ {
+  "name": "#自动化\n自动将 BiliBili (B站) 收藏夹内的视频备份到 OneDrive 或其他云存储\n",
+  "URL": "https:\/\/github.com\/Privilege-privacy\/BiliBackup"
+ },
+ {
+  "name": "#Shadowsocks\n基于 WebSocket 的 Shadowsocks，可以部署在 Heroku 和 Railway。\n",
+  "URL": "https:\/\/github.com\/totravel\/shadowsocks-ws"
+ },
+ {
+  "name": "#开源 #监控 \nOneUptime-开源的完整可观测性平台，监控您的网站、仪表板、API 等，并在停机发生时提醒您的团队\n",
+  "URL": "https:\/\/github.com\/oneuptime\/oneuptime"
+ },
+ {
+  "name": "#AI\n� AI绘画标签生成器：将标签进行分类整理，支持中文显示、加权、降权、成人模式等功能\n",
+  "URL": "https:\/\/github.com\/tinygeeker\/ai-prompt-generator"
+ },
+ {
+  "name": "#笔记\nRocketnotes是一个Web的Markdown编辑器。 保存、构建和共享，如果您喜欢从任何设备在浏览器中的日常笔记和学习。 您可以免费注册，使用 Docker 在本地计算机上运行它，或者在您的个人 AWS 账户和所需区域中轻松部署它\n",
+  "URL": "https:\/\/github.com\/fynnfluegge\/rocketnotes"
+ },
+ {
+  "name": "#AI \n北大附中 AI 助手，这个项目从 pages 目录中获取所有的 .mdx 文件，并使用 OpenAI Embeddings 计算文本矢量\n",
+  "URL": "https:\/\/github.com\/xyspg\/bdfz.app"
+ },
+ {
+  "name": "#MAC #软件\nMacBook 软件破解（macOS Intel）\n",
+  "URL": "https:\/\/github.com\/QiuChenly\/MyMacsAppCrack"
+ },
+ {
+  "name": "#ChatGPT-\n带有用户管理和后台管理系统的 ChatGPT WebUI\n",
+  "URL": "https:\/\/github.com\/AprilNEA\/ChatGPT-Admin-Web"
+ },
+ {
+  "name": "#clash\n跨平台基于 Clash 核心的测速工具\n",
+  "URL": "https:\/\/github.com\/faceair\/clash-speedtest"
+ },
+ {
+  "name": "#ChatGPT #飞书\n � 允许第三方服务插件增强的ChatGPT飞书机器人：计算器、天气查询、联网能力等等\n",
+  "URL": "https:\/\/github.com\/ConnectAI-E\/Feishu-EX-ChatGPT"
+ },
+ {
+  "name": "123云盘解析，123云盘直链解析\n",
+  "URL": "https:\/\/github.com\/HurryBy\/123pan"
+ },
+ {
+  "name": "#软件\n一个简约的音乐下载工具\n",
+  "URL": "https:\/\/github.com\/ZYKsslm\/BlackStone_Music_GUI"
+ },
+ {
+  "name": "#开源\nGuardLlama 是一个尖端的开源平台，通过集成 VPN、防火墙、广告拦截器以及验证、递归和缓存 DNS 解析器来重新定义在线保护\n",
+  "URL": "https:\/\/github.com\/guardllamanet\/guardllama"
+ },
+ {
+  "name": "#AI #Telegram\nAI 驱动的文本摘要电报机器人，可生成文本、YouTube 视频和 URL 的简明摘要\n",
+  "URL": "https:\/\/github.com\/tpai\/summary-gpt-bot"
+ },
+ {
+  "name": "iOS平台上的Quantumultx、Loon、Stash、Shadowrocket等软件规则、重写及插件等。规则每日更新。\n",
+  "URL": "https:\/\/github.com\/elnfnoosm\/iOS_network"
+ },
+ {
+  "name": "汇总BIT各种网站的通知。（以及钉钉、RSS插件等）\n",
+  "URL": "https:\/\/github.com\/YDX-2147483647\/bulletin-issues-transferred"
+ },
+ {
+  "name": "#开源 #字幕\n� PWA 版字幕转换为文本工具，支持 ass 及 srt 格式，可批量导出为 word 及 text 文件\n",
+  "URL": "https:\/\/github.com\/F-loat\/caption2text"
+ },
+ {
+  "name": "#开源\n基于PySimpleGUI的桌面应用程序，可为任何视频或音频文件自动生成字幕文件和翻译字幕文件（使用非官方在线谷歌翻译API）\n",
+  "URL": "https:\/\/github.com\/botbahlul\/PyAutoSRT"
+ },
+ {
+  "name": "#AI #翻译\n使用 AI 将 SRT 文件翻译成任何语言\n",
+  "URL": "https:\/\/github.com\/yazinsai\/srt-ai"
+ },
+ {
+  "name": "#RSS #newsletter #blog\nBlog的newsletter\n这个服务更像是Mailchimp，不过它不是集成服务，意在使用cron发送RSS到邮件，它提供一个可嵌入的代码，从Github看是可以自托管的，不过因为这个项目是新的，稳定性有待考证\n",
+  "URL": "https:\/\/github.com\/gurdiga\/rss-email-subscription"
+ },
+ {
+  "name": "#Hexo\n一个好看的hexo主题-梦岛书hexo主题，魔改的，很精品\n",
+  "URL": "https:\/\/github.com\/ROYIANS\/hexo-theme-dreamlandbook"
+ },
+ {
+  "name": "#Youtube\n全自动视频制作器，使用动态图形和文本到语音合成，将新闻通讯转换为每日YouTube视频。\n",
+  "URL": "https:\/\/github.com\/FelippeChemello\/podcast-maker"
+ },
+ {
+  "name": "#软件 \n跨平台png2icons 的 GUI 包装器，支持非二次源 PNG 创建图标文件\n",
+  "URL": "https:\/\/github.com\/sprout2000\/elephicon"
+ },
+ {
+  "name": "#开源\nTo-Do List网络应用\n",
+  "URL": "https:\/\/github.com\/bartbzd\/todo-list"
+ },
+ {
+  "name": "#openai\n批量查询OpenAI账号已用余额，判断apikey的状态\n",
+  "URL": "https:\/\/github.com\/vastsa\/openai-apikey-query"
+ },
+ {
+  "name": "#ChatGpt #企业微信\n一键部署chatgpt到企业微信，向导式填入参数就可以完成， 基于国外知名render弹性云函数安全、速度快\n",
+  "URL": "https:\/\/github.com\/sytpb\/chatgpt-wework-robot"
+ },
+ {
+  "name": "#Notion\n将微信读书划线同步到Notion\n",
+  "URL": "https:\/\/github.com\/malinkang\/weread_to_notion"
+ },
+ {
+  "name": "#chatgpt\n一款第三方ChatGPT原生客户端，支持自定义sk码，支持输入代理IP和端口。\n",
+  "URL": "https:\/\/github.com\/pangao1990\/myChat"
+ },
+ {
+  "name": "#telegram\n可以与Anthropic Claude和Google Bard互动的Telegram机器人\n",
+  "URL": "https:\/\/github.com\/ciuzaak\/Claude-Telegram-Bot"
+ },
+ {
+  "name": "#vscode\nCool! VSCode 插件大集合\n",
+  "URL": "https:\/\/github.com\/Lin-jun-xiang\/vscode-extensions-best"
+ },
+ {
+  "name": "#GPT #Api\nzmide ChatGPT 应用服务，用于管理应用程序对接和集成 ChatGPT API 的服务应用\n",
+  "URL": "https:\/\/github.com\/PBK-B\/gpt-zmide-server"
+ },
+ {
+  "name": "#GPT\n半自主 GPT-4 代理的平台，支持Docker\n",
+  "URL": "https:\/\/github.com\/kreneskyp\/ix"
+ },
+ {
+  "name": "#软件 #开源\nPet-GPT 是一个使用 PyQt 编写的桌面宠物程序，支持调用 OpenAI 的 GPT 进行上下文对话，然后主动找你聊天！\n",
+  "URL": "https:\/\/github.com\/Hanzoe\/Pet-GPT"
+ },
+ {
+  "name": "#开源\n从MySQL \/ PostgreSQL \/ SSH等备份您的数据。到任何其他存储\n",
+  "URL": "https:\/\/github.com\/long2ice\/databack"
+ },
+ {
+  "name": "#AI\n开源的AI模型的协作，Giskard 适用于任何模型、任何环境，并与您喜欢的工具无缝集成\n",
+  "URL": "https:\/\/github.com\/Giskard-AI\/giskard"
+ },
+ {
+  "name": "#Webex #Chatgpt\n在webex中接入GPT\n",
+  "URL": "https:\/\/github.com\/mattwheeler\/gpt-webex-bot"
+ },
+ {
+  "name": "#GPT\nSingularGPT - 让GPT的眼睛和手使用基于AI的视觉来自动化您的设备。\n",
+  "URL": "https:\/\/github.com\/abhiprojectz\/SingularGPT"
+ },
+ {
+  "name": "#开源\n小嘿作文生成器：根据主题谓语、主题宾语，生成中学考试风格的作文。\n",
+  "URL": "https:\/\/github.com\/jackjyq\/xiaohei-zuowen"
+ },
+ {
+  "name": "#ChatGPT\nGPT-TodoList是一款结合了TodoList和每日日程安排的Web应用程序，并集成了ChatGPT-3.5\n",
+  "URL": "https:\/\/github.com\/Chen-Jieteng\/GPT-TodoList"
+ },
+ {
+  "name": "#AI\nNew Bing桌面应用程序\n",
+  "URL": "https:\/\/github.com\/le0zh\/NewBingClient"
+ },
+ {
+  "name": "#开源\nApple ID 自动化管理\n基于密保问题，自动解锁Apple ID，自动关闭双重认证，提供前端账号展示，支持多账号\n",
+  "URL": "https:\/\/github.com\/pplulee\/appleid_auto"
+ },
+ {
+  "name": "#ChatGpt\n基於 Open AI Chat API 的簡易聊天客戶端\n",
+  "URL": "https:\/\/github.com\/SlimeNull\/OpenGptChat"
+ },
+ {
+  "name": "#AI\nAI简历生成求职信\n",
+  "URL": "https:\/\/github.com\/vincanger\/coverlettergpt"
+ },
+ {
+  "name": "#AI\n逆向工程 API，微软的高质量图像生成。\n",
+  "URL": "https:\/\/github.com\/acheong08\/BingImageCreator"
+ },
+ {
+  "name": "#CLI\n这是用于与 Chill&chat API 通信的官方 CLI。制作机器人！增强聊天体验！并自动执行任务。\n\n",
+  "URL": "https:\/\/github.com\/Chillandchat\/cli"
+ },
+ {
+  "name": "测试自动化工具\n",
+  "URL": "https:\/\/github.com\/vividus-framework\/vividus"
+ },
+ {
+  "name": "#软件\n简简单单的看直播，获取各个平台的直播信息及弹幕,基于AllLive项目实现\n",
+  "URL": "https:\/\/github.com\/xiaoyaocz\/dart_simple_live"
+ },
+ {
+  "name": "#PHP #WIKI\nYesWiki是一个用PHP编写的wiki系统，包括使协作更简单的扩展\n",
+  "URL": "https:\/\/github.com\/YesWiki\/yeswiki"
+ },
+ {
+  "name": "#博客 #Obsidian\nObsidian写hugo博客，快捷键Crtl + U快速发布并自动部署，专注文字本身\n",
+  "URL": "https:\/\/github.com\/SivanLaai\/blog"
+ },
+ {
+  "name": "#软件 #工具\n桌面图像实时转文字工具\nOcrHelper 是一款基于PaddleOCR实现的从图片中识别出汉字，英文，数字的开源小工具。可以在复杂动态背景下识别出各种字体的文字和符号。轻松实现无侵入式获取各种软件，APP界面显示内容，准确率高达95%\n",
+  "URL": "https:\/\/github.com\/xksoft\/OcrHelper"
+ },
+ {
+  "name": "#chatgpt\n本项目是一个 AWS Lambda 函数，用于将 HTTP 请求转发到 OpenAI 的 ChatGPT API。亦可部署到任意 VPS 上。\n",
+  "URL": "https:\/\/github.com\/nangcr\/chatgpt-aws-proxy"
+ },
+ {
+  "name": "#主页模板\n 一个简洁的个人主页\n",
+  "URL": "https:\/\/github.com\/DORAKIKA\/portfolio"
+ },
+ {
+  "name": "#AI #gpt\n在Google Colab中运行GPT聊天\n",
+  "URL": "https:\/\/github.com\/jarrellmark\/chatgpt-j"
+ },
+ {
+  "name": "#开源 #email\n免费的批量电子邮件验证器\n",
+  "URL": "https:\/\/github.com\/RudyBekker\/mailverifier"
+ },
+ {
+  "name": "#chatgpt\n封装 OpenAI 网页版最新 ChatGPT 接口, 不需要使用 API Key, 完全免费\n",
+  "URL": "https:\/\/github.com\/zhuweiyou\/chatgpt-api"
+ },
+ {
+  "name": "#chatgpt \n由OpenAI的ChatGPT提供支持的Twitter机器人。\n",
+  "URL": "https:\/\/github.com\/transitive-bullshit\/chatgpt-twitter-bot"
+ },
+ {
+  "name": "#PHP\n聚合热搜热榜PHP源码\n",
+  "URL": "https:\/\/github.com\/zhiyun66\/hotlist"
+ },
+ {
+  "name": "#自动化 #Notion\n为 notion-db<->slack-bot 建立连接（通过使用 python-bolt）\n",
+  "URL": "https:\/\/github.com\/IT-HONGREAT\/slack_bot"
+ },
+ {
+  "name": "#notion #自动化\nSlack-Notion-Github自动化工具\n",
+  "URL": "https:\/\/github.com\/ani-hovhannisyan\/sela"
+ },
+ {
+  "name": "#chatgpt\n在 Github Actions 中使用 ChatGPT 与您的 github 存储库聊天\n",
+  "URL": "https:\/\/github.com\/eunomia-bpf\/chatrepo"
+ },
+ {
+  "name": "#软件 #工具\n跨平台ChatGPT的翻译桌面应用程序\n",
+  "URL": "https:\/\/github.com\/simpleapples\/chatgpt-translator"
+ },
+ {
+  "name": "#开源\n自托管音乐流媒体平台\n",
+  "URL": "https:\/\/github.com\/kaangiray26\/forte"
+ },
+ {
+  "name": "#软件 #工具\n音乐可视化软件\n",
+  "URL": "https:\/\/github.com\/s-a\/sonic-sound-picture"
+ },
+ {
+  "name": "#插件 #脚本\nPotPlayer 哔哩哔哩插件：可以直接在 PotPlayer 中播放哔哩哔哩中的视频、直播和音乐\n",
+  "URL": "https:\/\/github.com\/chen310\/BilibiliPotPlayer"
+ },
+ {
+  "name": "#软件 #Bing \nNewBing 桌面应用程序（Mac， Windows and Linux）\n",
+  "URL": "https:\/\/github.com\/everest-architecture\/NewBing"
+ },
+ {
+  "name": "#clash #工具\nClash透明代理工具\n",
+  "URL": "https:\/\/github.com\/mritd\/tpclash"
+ },
+ {
+  "name": "#chatgpt\nFlask 反向代理 ChatGPT 网站 chat.openai.com\n",
+  "URL": "https:\/\/github.com\/cooolr\/chatgpt_proxy_website"
+ },
+ {
+  "name": "#chatgpt\nChatGPT前后端分离nuxt3版本\n",
+  "URL": "https:\/\/github.com\/carefreezi\/openai-nuxt3"
+ },
+ {
+  "name": "#开源 #自动化 #SSL\n无后端每日检查网站的 SSL 证书状况\n",
+  "URL": "https:\/\/github.com\/yfun-lab\/ssl"
+ },
+ {
+  "name": "#扩展 #脚本\nChrome 扩展程序，可在 V2EX 帖子旁边显示 ChatGPT 响应\n",
+  "URL": "https:\/\/github.com\/ahu\/chatGPT-v2ex-chrome-extension"
+ },
+ {
+  "name": "#软件\n 一个极简版微信读书桌面客户端\n",
+  "URL": "https:\/\/github.com\/estepona\/wx-read-desktop"
+ },
+ {
+  "name": "#软件 #工具\n一个用于解密下载的音乐文件工具的桌面客户端\n",
+  "URL": "https:\/\/github.com\/parakeet-rs\/parakeet-wx"
+ },
+ {
+  "name": "#脚本\n适用于Loon, Surge, Stash, Shadowrocket, Quantumult X 流媒体平台字幕增强及双语模块\n",
+  "URL": "https:\/\/github.com\/DualSubs\/DualSubs"
+ },
+ {
+  "name": "#github #Cloudflare在Cloudflare Workers上运行的另一个GitHub代理\n",
+  "URL": "https:\/\/github.com\/mchaNetwork\/github-proxy"
+ },
+ {
+  "name": "#RSS\n将哔哩哔哩观看列表的过滤内容转换为rss",
+  "URL": "\nhttps:\/\/github.com\/PerfectDay20\/bilibili-online-filtered-rss"
+ },
+ {
+  "name": "#工具 #微信\n免ROOT微信聊天数据备份\/导出工具\n",
+  "URL": "https:\/\/github.com\/MiDuoKi\/WechatBackupNoRoot"
+ },
+ {
+  "name": "#AI #ChatGPT\n基于ChatGPT构建的高级AI语音助手，支持打开网页，执行命令，甚至通过语音运行python脚本！目前仅适用于Window\n",
+  "URL": "https:\/\/github.com\/bulutthecat\/TalkGPT"
+ },
+ {
+  "name": "#开源 #去中心化 #web3\nFediverse是一个开源社交媒体平台，用于wiki，微博，协作，发布，安全消息传递，文件共享和视频\/音频共享。基于浏览器，用Java和TypeScript编写，支持Docker部署\n",
+  "URL": "https:\/\/github.com\/Clay-Ferguson\/quantizr"
+ },
+ {
+  "name": "#工具\nPython静态下载网站生成工具\n",
+  "URL": "https:\/\/github.com\/PanDaoxi\/enjoy-static-website-generator"
+ },
+ {
+  "name": "#AI #工具\nAI图片放大工具, 支持自动遍历文件夹, 支持批量处理.\n",
+  "URL": "https:\/\/github.com\/Tptr-lateworker\/RealESR_Tools"
+ },
+ {
+  "name": "#开源 #web3 #AI\n音乐爱好者的 NFT 市场程序，由 create-next-app 引导\n",
+  "URL": "https:\/\/github.com\/Avinier\/E-minor"
+ },
+ {
+  "name": "#开源\nCadence是一个多合一的网络广播套件，可让您在几分钟内快速轻松地启动互联网广播网站。\n\n该项目附带了内置的 Icecast 和 Liquidsoap，开箱即用，并辅以 UI、音乐搜索、歌曲请求、插图和实时流信息功能。该项目交付的所有组件大多预先配置为相互配合，因此几乎没有任何配置可做\n",
+  "URL": "https:\/\/github.com\/kenellorando\/cadence"
+ },
+ {
+  "name": "#RSS\nGithub action外文RSS翻译转换订阅，我的演示：https:\/\/rcy1314.github.io\/Rss-Translation\/\n",
+  "URL": "https:\/\/github.com\/talengu\/rss-translate"
+ },
+ {
+  "name": "#主题 #RSS \nTiny Tiny RSS主题Feedly样式",
+  "URL": "https:\/\/github.com\/levito\/tt-rss-feedly-theme"
+ },
+ {
+  "name": "#RSS\n跨平台Python环境RSS阅读器-莉沫酱RSS阅读器！\n",
+  "URL": "https:\/\/github.com\/RimoChan\/rimo-rss-reader"
+ },
+ {
+  "name": "#Notion #ChatGPT\nChatGPT to Notion 将 ChatGPT 的聪明才智带入您的 Notion 工作区！",
+  "URL": "https:\/\/github.com\/L-a-r-t\/chatgpt-to-notion"
+ },
+ {
+  "name": "#Notion \npython批量生成带序号的子页面并可以帮助您快速生成Notion的页面。\n",
+  "URL": "https:\/\/github.com\/Yoak3n\/SerialPagesGenerator4notion"
+ },
+ {
+  "name": "#软件\n �️ 一个桌面壁纸客户端，可以设置静态 \/ 动态壁纸，集成了 RunCat 的功能\n",
+  "URL": "https:\/\/github.com\/wangrongding\/wallpaper-box"
+ },
+ {
+  "name": "#AI \nAI 写小说，生成玄幻和言情网文等等。中文预训练生成模型。\n",
+  "URL": "https:\/\/github.com\/BlinkDL\/AI-Writer"
+ },
+ {
+  "name": "#工具\n繪圖留言板PHPscript POTI-board EVO 繁體中文版本 PHP7.2-PHP8.2\n",
+  "URL": "https:\/\/github.com\/satopian\/poti-kaini-zh-TW"
+ },
+ {
+  "name": "#工具 #自动化\nXQF办公自动化小工具\n",
+  "URL": "https:\/\/github.com\/evan-gyy\/XQFTools"
+ },
+ {
+  "name": "#开源 #工具\n一个利用Shodan搜索引擎查询Jetbrains系列产品激活服务器的网页端工具\n",
+  "URL": "https:\/\/github.com\/DeEpinGh0st\/JetbrainsServerFinder"
+ },
+ {
+  "name": "#工具 #开源\nccproxy卡密管理系统 生成卡密 激活 用户在线管理 socket 通讯\n",
+  "URL": "https:\/\/github.com\/yeuxuan\/ccproxy_kami"
+ },
+ {
+  "name": "#surge \n适用于 Surge 的 Rule Snippet\n",
+  "URL": "https:\/\/github.com\/SukkaW\/Surge"
+ },
+ {
+  "name": "#开源\nbili直播弹幕机go1.18+[弹幕(礼物...)信息保存,语音提醒,录播,直播流服务,obs调用,生成ass,gtk弹幕窗,发送弹幕...]\n",
+  "URL": "https:\/\/github.com\/qydysky\/bili_danmu"
+ },
+ {
+  "name": "#笔记\n比较全面的MAC系统使用笔记\n",
+  "URL": "https:\/\/github.com\/solo1d\/MAC_OS_System"
+ },
+ {
+  "name": "#API\n电影JSON数据，用于存放电影数据，可当做API使用 \nhttps:\/\/moviefront.8610000.xyz\/\n",
+  "URL": "https:\/\/github.com\/Rocket-Factory\/MovieJSON"
+ },
+ {
+  "name": "#下载 #工具\n 普通m3u8、阿里云私有m3u8加密视频下载工具\n",
+  "URL": "https:\/\/github.com\/lbbniu\/aliyun-m3u8-downloader"
+ },
+ {
+  "name": "#推送\n修改版24h监控抖音主页情况变化并进行推送\n",
+  "URL": "https:\/\/github.com\/Liner03\/tiktok_monitor"
+ },
+ {
+  "name": "#开源 #书签\n一个自托管的书签管理工具。\n",
+  "URL": "https:\/\/github.com\/beromir\/Servas"
+ },
+ {
+  "name": "#摸鱼\nGithub 摸鱼大全！嗯，是一个收录合集\n",
+  "URL": "https:\/\/github.com\/akira-cn\/moyu"
+ },
+ {
+  "name": "#开源 #摸鱼 #屏保\nNET 开发一款屏幕保护程序，Hacker Screen Saver 是一款 .NET 设计的屏幕保护程序，可以显示 HTML 页面，你可以将黑客模拟器的网页，摸鱼时需要的windows更新，或者爱心代码网页设置为你的 Windows 电脑屏保。\n",
+  "URL": "https:\/\/github.com\/sangyuxiaowu\/HackerScreenSaver"
+ },
+ {
+  "name": "可|开源无代码数据库和空气表替代品",
+  "URL": "https:\/\/apitable.com\/"
+ },
+ {
+  "name": "#开源 #自动化 #推送 #python\nEpic Games 免费游戏脚本，当新的免费游戏可用时发送 Webhook\n",
+  "URL": "https:\/\/github.com\/Elxss\/Epic-Free-Games-Alert"
+ },
+ {
+  "name": "#开源 #API\n 一个基于spring-boot开发的RESTful风格的应用统一在线管理平台api端，提供统一管理单机应用的版本、通知、通用文本等服务\n",
+  "URL": "https:\/\/github.com\/SmileZXLee\/z-notify-api"
+ },
+ {
+  "name": "#工具 #开源\n �傲星工具箱，一个在线工具箱\n",
+  "URL": "https:\/\/github.com\/aoaostar\/toolbox"
+ },
+ {
+  "name": "#网盘 #bpt\n一个基于百度网盘开放接口的转存机器人\n",
+  "URL": "https:\/\/github.com\/Cnicehs\/SharpBot"
+ },
+ {
+  "name": "#网盘\n把github仓库当私人网盘\n",
+  "URL": "https:\/\/github.com\/zzy-ac\/My-Selves-Cloud"
+ },
+ {
+  "name": "#开源\n利用第三方webdav网盘，实现在potplayer播放百度、迅雷、阿里云盘视频。\n",
+  "URL": "https:\/\/github.com\/Bleu404\/PotplayerPanVideo"
+ },
+ {
+  "name": "#DIY\n一个小恐龙游戏挂件，可充电，预留温湿度传感器接口\n",
+  "URL": "https:\/\/github.com\/DOCTOROLIVE\/Dino"
+ },
+ {
+  "name": "#思源笔记\n思源笔记挂件块，同步 markdown 笔记文件为 到 github，支持迁移笔记到图床\n",
+  "URL": "https:\/\/github.com\/mohuishou\/siyuan-sync-github"
+ },
+ {
+  "name": "#obsidian\n将hacker-news中的内容直接剪藏到obsidian中的扩展\n",
+  "URL": "https:\/\/github.com\/kaveet\/hacker-news-obsidian-clipper"
+ },
+ {
+  "name": "#开源 #小程序\n这个还挺有意思的，咸鱼日记、uniapp项目、支持微信小程序和github Pages，也可以本地下载\n",
+  "URL": "https:\/\/github.com\/s-xianyu\/xy-diary"
+ },
+ {
+  "name": "#eagle\n 让你的eagle拥有reset-api能力,基于json-server\n",
+  "URL": "https:\/\/github.com\/meetqy\/eagle-api"
+ },
+ {
+  "name": "#开源 #扩展 \n将图像自动发送到Eagle，其中包含生成信息，标签。\n",
+  "URL": "https:\/\/github.com\/bbc-mc\/sdweb-eagle-pnginfo\/tree\/master"
+ },
+ {
+  "name": "#宝塔\n宝塔面板洛天依主题\n",
+  "URL": "https:\/\/github.com\/LazyCreeper\/LuoTianyi"
+ },
+ {
+  "name": "#typora\ndyzj 主题修改版，简洁而不简单，优雅且细节饱满的typora主题。\n",
+  "URL": "https:\/\/github.com\/liano3\/Atheme"
+ },
+ {
+  "name": "#开源 #工具\n将 markdown 中的所有本地图片通过 picgo 上传到图床\n",
+  "URL": "https:\/\/github.com\/dengjiawen8955\/du"
+ },
+ {
+  "name": "#主题 #思源笔记\nSofill-主题：内部代号 [ winsay ]（风颂），轻量化简洁风绛亽特色思源笔记主题\n",
+  "URL": "https:\/\/github.com\/Hi-Windom\/winsay"
+ },
+ {
+  "name": "#开源 #视频制作 #python\n一键生成鬼畜音 mad 视频\n",
+  "URL": "https:\/\/github.com\/btc-99\/autotune_remix"
+ },
+ {
+  "name": "#开源 #数据库 #工具\nSmartSQL 是一款方便、快捷的数据库文档查询、导出工具\n",
+  "URL": "https:\/\/github.com\/TeslaFly01\/SmartSqlT"
+ },
+ {
+  "name": "#开源 #数据库\n� MySQL数据库markdown文档生成工具\n",
+  "URL": "https:\/\/github.com\/hackycy\/db2md-cli"
+ },
+ {
+  "name": "#开源 #转换 #qq\n转换QQ导出的MHT文件到HTML和图片文件, 支持按日期、行数自动分页, 支持多线程, 支持150G+文件\n",
+  "URL": "https:\/\/github.com\/gyakkun\/qq-mht2html"
+ },
+ {
+  "name": "#rss\n一个自部署（未打包）的桌面rss简单应用，可用于二次开发\n",
+  "URL": "https:\/\/github.com\/nogira\/tinyfeed"
+ },
+ {
+  "name": "#自动化 #notion  \nGithub Actions从微信频道“易即今日”抓取内容输出图像，可用作自动更新的每日新闻，也可以放在notion上作小部件，进一步扩展action的使用还可以通过webhook发送到tg或微信等\n",
+  "URL": "https:\/\/github.com\/BugWriter2\/Keji"
+ },
+ {
+  "name": "#微信 #软件 #win\n微信助手（非web微信版）：定时发送信息；群发信息；自动回复等\n",
+  "URL": "https:\/\/github.com\/LTEnjoy\/easyChat"
+ },
+ {
+  "name": "#推送 #游戏 #steam\nSteam限免游戏推送\n",
+  "URL": "https:\/\/github.com\/Curtion\/Steam-free-upcoming"
+ },
+ {
+  "name": "#Python #下载\n输入视频BV号列表，批量下载B站视频中的音频到本地。\n",
+  "URL": "https:\/\/github.com\/nuster1128\/bilibiliAudioDownloader"
+ },
+ {
+  "name": "#工具 \nOfficeTools： 一键自动化 下载、安装、激活 Office 的利器。\n",
+  "URL": "https:\/\/github.com\/OdysseusYuan\/LKY_OfficeTools"
+ },
+ {
+  "name": "#下载 #飞书\n 一键命令下载飞书文档为 Markdown\n",
+  "URL": "https:\/\/github.com\/Wsine\/feishu2md"
+ },
+ {
+  "name": "#简历 #vue\n一个基于 Vue 的个人主页，包含个人经历展示、资质证书展示\n",
+  "URL": "https:\/\/github.com\/jxtxzzw\/resume"
+ },
+ {
+  "name": "#开源 #代码\n� � ESLint + Stylelint + Prettier 的代码风格配置集合，用于多项目共享配置，让你远离枯燥的配置工作。\n",
+  "URL": "https:\/\/github.com\/Codennnn\/prefer-code-style"
+ },
+ {
+  "name": "#开源 #语音合成 #telegram #bot\n具有语音消息识别和生成的电报机器人。语音到文本和文本到语音\n",
+  "URL": "https:\/\/github.com\/tochilkinva\/tg_bot_stt_tts"
+ },
+ {
+  "name": "#开源 #语音合成 #安卓 #win\n 微软TTS服务转发，以便在阅读APP中通过网络导入方式收听微软TTS \/ Edge大声朗读",
+  "URL": "https:\/\/github.com\/jing332\/tts-server-go"
+ },
+ {
+  "name": "tts转录到麦克风",
+  "URL": "https:\/\/github.com\/cancundeyingzi\/tts-zhuanlumaikefeng"
+ },
+ {
+  "name": "#微信 #bot #安卓\n【企业微信】企业微信机器人 聊天、智能问答、推送通知、自动加好友、自动拉群、自动群发等功能\n",
+  "URL": "https:\/\/github.com\/gallonyin\/worktool"
+ },
+ {
+  "name": "#开源 #工具 #笔记\n思维速写板(scappleX) 是一个快速建立大脑概念映像并理顺其关系的工具\n",
+  "URL": "https:\/\/github.com\/hkwmg\/scappleX"
+ },
+ {
+  "name": "#开源 #下载 #工具\n解决下载软件与媒体服务内诸多问题，可docker部署\n",
+  "URL": "https:\/\/github.com\/Suwmlee\/ikaros"
+ },
+ {
+  "name": "#unity\nUnity 接入安卓和 iOS 的下载，支持断点续传\n",
+  "URL": "https:\/\/github.com\/LBCross\/Unity-iOS-Android-Download"
+ },
+ {
+  "name": "#开源 #下载\n快速下载中文数据集，处理数据集，数据分析、可视化分析，一站式解决数据问题\n",
+  "URL": "https:\/\/github.com\/CYang828\/datasetstation"
+ },
+ {
+  "name": "#脚本 #mac\n一个简单的脚本，可以在全新安装macOS后使用，以配置和安装所需的所有应用程序。它使用点文件和外壳脚本来加快 macOS 的配置速度\n",
+  "URL": "https:\/\/github.com\/MarioCatuogno\/Clean-macOS"
+ },
+ {
+  "name": "#开源\n适用于 Windows 的预构建 Mesa3D 驱动程序\n",
+  "URL": "https:\/\/github.com\/pal1000\/mesa-dist-win"
+ },
+ {
+  "name": "#文件 #传输\nWinden是一个免费的Web应用程序，用于在设备之间实时安全，快速，轻松地传输文件\n",
+  "URL": "https:\/\/github.com\/LeastAuthority\/winden"
+ },
+ {
+  "name": "#脚本 #win\n此脚本是用于微调和自动化日常任务的最大 PowerShell 模块\n",
+  "URL": "https:\/\/github.com\/farag2\/Sophia-Script-for-Windows"
+ },
+ {
+  "name": "#软件 #mac\n一个用于整理照片的工具，可自定义文件名格式，批量对照片、视频进行重命名。\n",
+  "URL": "https:\/\/github.com\/gafish\/photo-box-update"
+ },
+ {
+  "name": "#开源 #语音交互\n唇记-基于云的语音交互式文字编辑系统 \n",
+  "URL": "https:\/\/github.com\/ZhichuCen\/ChunJi"
+ },
+ {
+  "name": "#开源 #直播\n语音互动，直播自动带货 虚拟数字人\n",
+  "URL": "https:\/\/github.com\/TheRamU\/Fay"
+ },
+ {
+  "name": "#开源 #直播\n哔哩哔哩直播录制\n",
+  "URL": "https:\/\/github.com\/acgnhiki\/blrec"
+ },
+ {
+  "name": "#开源 #工具\nBilibili 直播间弹幕监听库，支持类型输出。\n",
+  "URL": "https:\/\/github.com\/ddiu8081\/blive-message-listener"
+ },
+ {
+  "name": "#开源 #工具\nB站直播活动领奖小工具\n",
+  "URL": "https:\/\/github.com\/yueecui\/MyBilibiliJson"
+ },
+ {
+  "name": "#开源 #mac\nApp代码助手, json一键转model，属性转链式，批量属性懒加载，类文件批量生成\n",
+  "URL": "https:\/\/github.com\/shang1219178163\/MacTemplet"
+ },
+ {
+  "name": "#开源 #脚本\n兼容哔哩哔哩录播姬的自动转封装、自动上传、弹幕转码脚本\n",
+  "URL": "https:\/\/github.com\/Morax-xyc\/Bililiveauto"
+ },
+ {
+  "name": "#社区\n一个简洁清爽的微社区，基于nodejs，typescript，prisma，ant-design，nextjs开发\n",
+  "URL": "https:\/\/github.com\/bs32g1038\/node-bbs"
+ },
+ {
+  "name": "#开源 #Flomo \n可以自托管的想法记录及回顾服务，开源、免费、简单、专注于核心功能\n",
+  "URL": "https:\/\/github.com\/jerryshell\/my-flomo-web"
+ },
+ {
+  "name": "#开源 #签到\n这是一个自动化的托管系统，目前支持网易云，bilibili，米游社原神签到\n",
+  "URL": "https:\/\/github.com\/wyt1215819315\/autoplan"
+ },
+ {
+  "name": "#开源 #开发\nDefold是一个完全免费使用的游戏引擎，用于开发桌面，移动和网页游戏\n",
+  "URL": "https:\/\/github.com\/defold\/defold"
+ },
+ {
+  "name": "#微信\n凌波微步,一款在线刷步神器（目前支持微信，支付宝，QQ，阿里体育，钉钉...）\n",
+  "URL": "https:\/\/github.com\/tao-xiaoxin\/limbo-step"
+ },
+ {
+  "name": "#微信 #推送 #公众号 #开源\n基于springboot实现微信公众号推送\n",
+  "URL": "https:\/\/github.com\/chenshuaikang\/wechat-push"
+ },
+ {
+  "name": "#开源 #微信 #文件\n微信纸条-使用微信跨端传输-分享文件\n",
+  "URL": "https:\/\/github.com\/halfong\/half-wxt"
+ },
+ {
+  "name": "#开源 #壁纸\n基于Action抓取必应每日超清壁纸展示&保存到分支\n",
+  "URL": "https:\/\/github.com\/lustime\/bing-dailyphoto"
+ },
+ {
+  "name": "#导航 #开源\n前后端完整的网址导航服务\n",
+  "URL": "https:\/\/github.com\/tuituidan\/team-nav"
+ },
+ {
+  "name": "#图标\ncss icon 样式画简易图标\n",
+  "URL": "https:\/\/github.com\/mirrortom\/webicons"
+ },
+ {
+  "name": "#下载\n网易云音乐 - 歌单\/专辑\/电台 - 下载器\n",
+  "URL": "https:\/\/github.com\/magicdawn\/yun-playlist-downloader"
+ },
+ {
+  "name": "#API \napi接口: Bing每日高清壁纸、获取网站信息，图标，标题等\n",
+  "URL": "https:\/\/github.com\/Lete114\/API-Interface"
+ },
+ {
+  "name": "#IPTV #直播\n北京联通、北京移动IPTV频道列表。\n",
+  "URL": "https:\/\/github.com\/qwerttvv\/Beijing-IPTV"
+ },
+ {
+  "name": "#开源 #追番 #GitHub\n自動更新 README 追番列表的 GitHub Action 套件\n",
+  "URL": "https:\/\/github.com\/ycs77\/readme-anime-list"
+ },
+ {
+  "name": "#开源 #追番\n一个基于 Vercel Severless Function 的 Bangumi.tv 追番进度展示页面\n",
+  "URL": "https:\/\/github.com\/GeeKaven\/BangumiTV"
+ },
+ {
+  "name": "#开源 #追番\nGolang开发的自动追番与下载工具\n",
+  "URL": "https:\/\/github.com\/wetor\/AnimeGo"
+ },
+ {
+  "name": "#开源 #telegram #bot\n文件转换器机器人：可以转换文件的文件转换器电报机器人，可以转换图像，视频，音频，字体，文档和电子书的电报机器人。\n",
+  "URL": "https:\/\/github.com\/bipinkrish\/File-Converter-Bot"
+ },
+ {
+  "name": "#开源 #软件 #工具\n字幕组机翻小助手 - 支持 Windows + macOS\n",
+  "URL": "https:\/\/github.com\/1c7\/Translate-Subtitle-File"
+ },
+ {
+  "name": "#开源 #插件\nb站弹幕自动下载插件，会匹配b站番剧\/电影视频，自动下载对应弹幕，并定时更新。\n",
+  "URL": "https:\/\/github.com\/cxfksword\/jellyfin-plugin-danmu"
+ },
+ {
+  "name": "#开源 #微信 #python\npython微信助手，支持群发文件以及群发多条信息，支持定时微信发送\n",
+  "URL": "https:\/\/github.com\/ershui2500\/wechat-assistant"
+ },
+ {
+  "name": "#开源 #插件\n跨平台Office文档、图片在线预览、视频播放原生插件Seal-OfficeOnline、Seal-ImageVideo实例\n",
+  "URL": "https:\/\/github.com\/silianpan\/Seal-UniPlugin-Demo"
+ },
+ {
+  "name": "#开源 #工具\n填写表单生成你专属的 readme文件\n",
+  "URL": "https:\/\/github.com\/imyuanli\/produce-readme"
+ },
+ {
+  "name": "#开源 #工具\n一个简易的文件管理工具。\n",
+  "URL": "https:\/\/github.com\/Tarocch1\/file-admin"
+ },
+ {
+  "name": "#笔记\n一个代码片段的集合\n",
+  "URL": "https:\/\/github.com\/eveningwater\/code-segment"
+ },
+ {
+  "name": "#开源 \n一个基于 UWP 平台的第三方酷安客户端精简版\n",
+  "URL": "https:\/\/github.com\/Coolapk-UWP\/Coolapk-Lite"
+ },
+ {
+  "name": "#开源 #生产力 #可视化\n绘图应用程序，用于表达，掌握和组织您的想法和想法。\n",
+  "URL": "https:\/\/github.com\/trekhleb\/okso-app"
+ },
+ {
+  "name": "#插件\nVSCode 摸鱼阅读器\n",
+  "URL": "https:\/\/github.com\/sunzhangchang\/vscrebook"
+ },
+ {
+  "name": "#开源 #低代码\n摸鱼低代码前端\n",
+  "URL": "https:\/\/github.com\/qiufeng9862\/mfish-nocode-view"
+ },
+ {
+  "name": "#开源 #工具\n从大量视频中截取特定帧数、特定画面的工具\n",
+  "URL": "https:\/\/github.com\/xietao02\/Mini-Video-Processor"
+ },
+ {
+  "name": "#开源 #播放器\n 一款基于vuepress1.x插件的音乐播放器，打破以往博客音乐播放方式，让用户有更佳的沉浸式体验！\n",
+  "URL": "https:\/\/github.com\/daodaolee\/vuepress-plugin-awesome-musicplayer"
+ },
+ {
+  "name": "#笔记 #指南\n软件实践文集\n",
+  "URL": "https:\/\/github.com\/oldratlee\/software-practice-thoughts"
+ },
+ {
+  "name": "#开源 #笔记\n又一款团队化和个人的知识管理工具。\n",
+  "URL": "https:\/\/github.com\/ordo-pink\/ordo-electron"
+ },
+ {
+  "name": "#开源 #翻译\nGalgame翻译工具，支持OCR、HOOK，支持20+种翻译工具，支持TTS\n",
+  "URL": "https:\/\/github.com\/HIllya51\/LunaTranslator"
+ },
+ {
+  "name": "#开源 #bot\n跨平台的聊天机器人框架，一次编写，多处运行。\n",
+  "URL": "https:\/\/github.com\/FlandreDevs\/Flandre"
+ },
+ {
+  "name": "#开源 #云盘\n一款挂载多个云盘的QNAP系统工具\n",
+  "URL": "https:\/\/github.com\/iranee\/qnap-alist-webdav"
+ },
+ {
+  "name": "#RSS\n同步rss订阅资讯到钉钉群机器人的脚本，环境条件：python3.X\n",
+  "URL": "https:\/\/github.com\/x7peeps\/Rss2Dingtalk-LTS"
+ },
+ {
+  "name": "#RSS\nJAVA版运行RSS软件-可按关键字搜索和分析新闻，可自行添加源\n\n",
+  "URL": "https:\/\/github.com\/mrprogre\/avandy-news"
+ },
+ {
+  "name": "#开源 #工具\n为CSDN博客分类生成目录导航列表。\n",
+  "URL": "https:\/\/github.com\/yansheng836\/GCCL"
+ },
+ {
+  "name": "#开源 #播放器 #软件\n 一款跨平台支持 mp4, m3u8,flv,mpeg-dash等多种视频格式或直播流的在线播放客户端 。\n",
+  "URL": "https:\/\/github.com\/singcl\/XmVideoPlayer"
+ },
+ {
+  "name": "#播客 #开源\n一个开源播客平台，支持Docker环境安装安装\n",
+  "URL": "https:\/\/github.com\/opensource-f2f\/open-podcasts"
+ },
+ {
+  "name": "#软件 #win\n一个windows软件下载的页面\n",
+  "URL": "https:\/\/github.com\/kelpnet\/DownLoad"
+ },
+ {
+  "name": "#开源 #下载\n �花瓣网、堆糖网下载油猴脚本的远程下载服务\n",
+  "URL": "https:\/\/github.com\/staugur\/tdi-go"
+ },
+ {
+  "name": "#开源 #工具\n一个能够方便地下载歌词的小软件。\n",
+  "URL": "https:\/\/github.com\/real-zony\/ZonyLrcToolsX"
+ },
+ {
+  "name": "#RSS  \n一个免费的RSS阅读器，适用于macOS\n",
+  "URL": "https:\/\/github.com\/zhanglun\/lettura"
+ },
+ {
+  "name": "#Notion\n为Notion页面创建漂亮的统计图表\n",
+  "URL": "https:\/\/github.com\/RickyLam11\/notion-chart"
+ },
+ {
+  "name": "#软件 #app #macos\n一个重新包装的类notion应用程序，适用于macOS\n",
+  "URL": "https:\/\/github.com\/SHEN-Muchuan\/Nativelike-Notion"
+ },
+ {
+  "name": "#Notion:\nUtools的一款插件，将b站视频转为可以嵌入式链接，可直接嵌入Notion\n",
+  "URL": "https:\/\/github.com\/sunset69\/Bilibili-To-Notion"
+ },
+ {
+  "name": "#Notion \n一个用于将概念页面转换为幻灯片的自部署工具，带有前端及后端\n",
+  "URL": "https:\/\/github.com\/decima\/notion-slider"
+ },
+ {
+  "name": "#Telegram #Bot\n使用Telegram Bot查询Apple Store 大杂烩，新产品、新店、零售店信息\n",
+  "URL": "https:\/\/github.com\/junyilou\/asaduplex"
+ },
+ {
+  "name": "#开源 #小组件\n跨平台用于展示各种信息的桌面小组件\n",
+  "URL": "https:\/\/github.com\/fzf404\/Monit"
+ },
+ {
+  "name": "#开源 #文档 #共享\n“全文档”(All Docs)，Word, Excel, PPT, PDF, Pic等文档在线预览、存储、共享的工具，并且支持全文搜索的所有的文档信息。\n",
+  "URL": "https:\/\/github.com\/Jarrettluo\/document-sharing-site"
+ },
+ {
+  "name": "#开源 #便签\n一款windows操作系统下的便签软件，可替代系统自带的便笺，每个便签可单独设置提醒，可设置半透明。\n",
+  "URL": "https:\/\/github.com\/sysdzw\/WeNote"
+ },
+ {
+  "name": "#开源 #共享\n通过Wifi在手机、电脑、平板等智能设备上共享文件，无需USB线\n",
+  "URL": "https:\/\/github.com\/grandiloquent\/wifi_file_server"
+ },
+ {
+  "name": "#开源 #剪切板\n共享剪切板客户端程序(Win和mac)\n",
+  "URL": "https:\/\/github.com\/sxz799\/PublicClipboard-Client"
+ },
+ {
+  "name": "#开源 #局域网\n一个用于局域网内共享文件的FTP程序\n",
+  "URL": "https:\/\/github.com\/TCP404\/OneTiny"
+ },
+ {
+  "name": "#开源 #文件\n大文件同步工具，包括服务端与客户端工具\n",
+  "URL": "https:\/\/github.com\/wwqdrh\/fssync"
+ },
+ {
+  "name": "#开源 #播放器\n基于Vue的响应式音乐播放器\n",
+  "URL": "https:\/\/github.com\/ixcj\/caiji-music"
+ },
+ {
+  "name": "#app #影视 #安卓\n开源视频在线播放应用\n",
+  "URL": "https:\/\/github.com\/hellowmonkey-site\/movie-front"
+ },
+ {
+  "name": "#Microsoft #开源\n离线下载 Microsoft Store 商店应用\n",
+  "URL": "https:\/\/github.com\/Gaoyifei1011\/GetStoreApp"
+ },
+ {
+  "name": "#开源\n 美观且实用的动漫花园的多平台应用程序，使用 Compose Multiplatform 构建。\n",
+  "URL": "https:\/\/github.com\/Him188\/animation-garden-desktop"
+ },
+ {
+  "name": "#开源\nflomo网页版\n",
+  "URL": "https:\/\/github.com\/Kffhi\/flomo-react"
+ },
+ {
+  "name": "#开源 \n Windows 12 网页版，很酷\n",
+  "URL": "https:\/\/github.com\/tjy-gitnub\/win12"
+ },
+ {
+  "name": "#开源 #低代码 #工具\n低代码工具-快速网页制作工具\n",
+  "URL": "https:\/\/github.com\/nullno\/cook-web"
+ },
+ {
+  "name": "#live2d #开源 \n基于Electron制作的桌面看板娘，支持日程提醒、小窗模式、文字对话、网页搜索、本地moc模型加载与独立设置界面等\n",
+  "URL": "https:\/\/github.com\/JimHans\/live2d-kanban-desktop"
+ },
+ {
+  "name": "#bilibili #直播\n 一个开源的 bilibili 直播弹幕姬，支持 win 和 mac\n",
+  "URL": "https:\/\/github.com\/Beats0\/bilive-danmaku"
+ },
+ {
+  "name": "#开源 #监控\n� 使用 Vue2 基于腾讯云webify � 托管的疫情监控系统, 适配手机端 �\n",
+  "URL": "https:\/\/github.com\/jesonlam8848\/my-vue-app2"
+ },
+ {
+  "name": "#开源 #推送 #github\n基于 github action 的定时推送 memo 服务\n",
+  "URL": "https:\/\/github.com\/raoooool\/flomo-reminder"
+ },
+ {
+  "name": "#推送 #epic \nepic周免领取提醒\n",
+  "URL": "https:\/\/github.com\/arasakaProgrammer\/epicFreeGamesTips"
+ },
+ {
+  "name": "#开源 #效率 #win\n 改进windows任务窗口操作，鼠标移动到屏幕右下角，即可启动选择任务。\n",
+  "URL": "https:\/\/github.com\/shizengsong\/taskSwitcher"
+ },
+ {
+  "name": "#开源 #工具 #转换\nm3u8.sqlite_ts: m3u8.sqlite文件转视频工具.net wpf版本。操作便捷，功能简单。\n",
+  "URL": "https:\/\/github.com\/liulei901112\/txkt_m3u8.sqlite_ts"
+ },
+ {
+  "name": "#rss\npocket-rss-Docker部署安装，集成rss后端及解析服务，支持对接tg bot\n",
+  "URL": "https:\/\/github.com\/kbondar17\/pocket-rss"
+ },
+ {
+  "name": "#开源 \n一个基于 Electron 的 Live2D 桌面展示器，同时支持 moc、moc3 模型\n",
+  "URL": "https:\/\/github.com\/TSKI433\/hime-display"
+ },
+ {
+  "name": "⚡ 快速生成你的Steam资料卡片\n",
+  "URL": "https:\/\/github.com\/yuyinws\/steam-card"
+ },
+ {
+  "name": "微信公众号推送早安卡片\n",
+  "URL": "https:\/\/github.com\/fromann\/DailyWechat"
+ },
+ {
+  "name": "荔枝记账: 一个基于React\/TypeScript的移动端网页记账应用\n",
+  "URL": "https:\/\/github.com\/tengchunlei\/lichi"
+ },
+ {
+  "name": " bilibili网页优化插件\n",
+  "URL": "https:\/\/github.com\/tuntun0609\/bilibil-tool-mv3"
+ },
+ {
+  "name": "#开源 #自动化\n周刊哔哩哔哩排行榜自动化操作脚本\n",
+  "URL": "https:\/\/github.com\/Neutralization\/BiliBiliRankingScripts"
+ },
+ {
+  "name": "#开源 #脚本\nYoutube视频自动发布JS脚本\n",
+  "URL": "https:\/\/github.com\/sbmboy\/youtube-auto-public"
+ },
+ {
+  "name": "#开源\nMaterial Design 风格的 Todolist , 支持微信推送\n",
+  "URL": "https:\/\/github.com\/Crillerium\/Todo"
+ },
+ {
+  "name": "#开源\n自如\/链家新房源实时提醒机器人\n",
+  "URL": "https:\/\/github.com\/uzdz\/rooms-inspect-robot"
+ },
+ {
+  "name": "#开源 #wordpress\n将本地markdown推送到wordpress\n",
+  "URL": "https:\/\/github.com\/szx741\/push-markdown"
+ },
+ {
+  "name": "#Notion #开源\n一个应用程序，用于从YouTube检索播放列表，并在Concept上为每个视频创建一个TODO列表。\n",
+  "URL": "https:\/\/github.com\/ChristianGustavo\/youtube-notion-integration"
+ },
+ {
+  "name": "#Notion\n 用于Notion数据库的工作流运行程序系统Concept Database Operator\n\n",
+  "URL": "https:\/\/github.com\/harryzcy\/nodop"
+ },
+ {
+  "name": "#开源\nreact+tailwindcss实现的今日热榜\n",
+  "URL": "https:\/\/github.com\/panghujiajia\/todayhub-web"
+ },
+ {
+  "name": "#开源 #APP #安卓\n一个获取哔哩哔哩 视频&up主&热门排行榜等信息的APP\n",
+  "URL": "https:\/\/github.com\/TANGhz17\/BiliData"
+ },
+ {
+  "name": "#开源\nKindle拯救计划——一个Kindle实用工具网站，让你吃灰的Kindle成为时钟、天气看板、电子相册、微博热搜榜单...\n",
+  "URL": "https:\/\/github.com\/1pone\/1pone.github.io"
+ },
+ {
+  "name": "#开源\n一个简单的快捷方式管理工具，目前只适用于Windows系统\n",
+  "URL": "https:\/\/github.com\/Wyatex\/smart-tool"
+ },
+ {
+  "name": "老头环、黑魂、只狼存档快捷备份工具\n",
+  "URL": "https:\/\/github.com\/BugLordI\/EldenRingAutoArchive"
+ },
+ {
+  "name": "#开源\n基于 USD 工作流程导出、导入和管理 CG 资产的工具\n",
+  "URL": "https:\/\/github.com\/RVitalicS\/DonorKit"
+ },
+ {
+  "name": "#RSS\nRSSPush-监测RSS变动，并发送最新内容到微信\n",
+  "URL": "https:\/\/github.com\/easychen\/rsspush"
+ },
+ {
+  "name": "BUI 是一个跨平台UI开发框架，基于路径式的组件化开发和单页路由SPA，数据驱动，开箱零配置，简单上手，适合独立开发各种 Webapp，App，小程序……\n",
+  "URL": "https:\/\/github.com\/imouou\/BUI-Guide"
+ },
+ {
+  "name": "#开源\n一个简易的用于跨设备、跨平台传输文件或文本的程序。\n",
+  "URL": "https:\/\/github.com\/IvanHanloth\/Easy-Send"
+ },
+ {
+  "name": "#开源\n专为手柄控制设计的第三方跨平台B站客户端，目前可以运行在PC全平台和Nintendo Switch上 \n\n",
+  "URL": "https:\/\/github.com\/xfangfang\/wiliwili"
+ },
+ {
+  "name": "#开源\n 一款上手简单、系统集成度高、功能强大的 Windows 文件管理器\n",
+  "URL": "https:\/\/github.com\/Chaoses-Ib\/DirectoryOpus"
+ },
+ {
+  "name": "类似于picx的github图床神器，Vue 3 + Typescript + Vite\n",
+  "URL": "https:\/\/github.com\/czkm\/orangeImg"
+ },
+ {
+  "name": "#开源\n开源自部署移动应用和 macOS 应用分发平台，提供 iOS、Android SDK、fastlane 等丰富组件库 \n",
+  "URL": "https:\/\/github.com\/tryzealot\/zealot"
+ },
+ {
+  "name": "#开源 #webex\n基于 Webex 的机器人，用于帮助 GitHub 执行工作流\n",
+  "URL": "https:\/\/github.com\/ciscops\/cidrbot"
+ },
+ {
+  "name": "#开源 #自动化\nGithub action自动化每天早上自动推送新闻简报 配合快捷指令使用\nhttps:\/\/www.icloud.com\/shortcuts\/1a05b4fcde9743fab4ef8aa7a8908f80\n",
+  "URL": "https:\/\/github.com\/WangGuibin\/weather-action"
+ },
+ {
+  "name": "#开源 #笔记\n⛷ 轻灵的 Markdown 笔记本伴你写出妙言\n",
+  "URL": "https:\/\/github.com\/tw93\/MiaoYan"
+ },
+ {
+  "name": "#开源 #MAC\n网易云音乐MAC云盘上传工具\n",
+  "URL": "https:\/\/github.com\/lulu-ls\/cloud-uploader"
+ },
+ {
+  "name": "自动化中文字幕下载。字幕网站支持 zimuku、subhd、shooter、xunlei 。支持 Emby、Jellyfin、Plex、Sonarr、Radarr、TMM\n",
+  "URL": "https:\/\/github.com\/allanpk716\/ChineseSubFinder"
+ },
+ {
+  "name": "Python + Selenium + Chrome 模拟登陆QQ邮箱，批量下载附件，本地重命名\n",
+  "URL": "https:\/\/github.com\/XHXIAIEIN\/Auto-Download-QQMail-Attach"
+ },
+ {
+  "name": "note是一款优美，轻便的文档共享工具，支持一键分享，多人协作在线编辑，好用到上天，网页打代码不是梦！\n",
+  "URL": "https:\/\/github.com\/Sunbalcony\/note"
+ },
+ {
+  "name": "可编程粘贴板动作触发器\n",
+  "URL": "https:\/\/github.com\/Lakr233\/ActionBee"
+ },
+ {
+  "name": " python m3u8下载，支持windows,linux,mac；支持aes-128、widevine等\n",
+  "URL": "https:\/\/github.com\/hecoter\/hm3u8dl_cli"
+ },
+ {
+  "name": "BK4 《矩阵力量》 | 从加减乘除到机器学习\n",
+  "URL": "https:\/\/github.com\/Visualize-ML\/Book4_Power-of-Matrix"
+ },
+ {
+  "name": "生产力资源的精选列表\n",
+  "URL": "https:\/\/github.com\/jyguyomarch\/awesome-productivity"
+ },
+ {
+  "name": "#Notion\n阿汪同学自制版 Notion | Wolai | FlowUs 组件库\n",
+  "URL": "https:\/\/github.com\/httIsHere\/notion-widget"
+ },
+ {
+  "name": "#Notion\n记录从TickTick到Concept的任务\n",
+  "URL": "https:\/\/github.com\/keigoh4315\/ticktick-to-notion"
+ },
+ {
+  "name": "#Notion #RSS\n� RSS 遇到用 Go 编写的 Notion\n",
+  "URL": "https:\/\/github.com\/kaneshin\/rss-in-notion"
+ },
+ {
+  "name": "#Notion\n每日必应图像到notion封面的页面\n",
+  "URL": "https:\/\/github.com\/Mikaleb\/Bing-Daily-Notion-cover"
+ },
+ {
+  "name": "【神奇弹幕】哔哩哔哩直播万能机器人，弹幕姬+答谢姬+回复姬+点歌姬+各种小骚操作\n",
+  "URL": "https:\/\/github.com\/iwxyi\/Bilibili-MagicalDanmaku"
+ },
+ {
+  "name": "B站直播歌词\/同传弹幕发送工具\n",
+  "URL": "https:\/\/github.com\/FHChen0420\/LyricDanmu"
+ },
+ {
+  "name": "抖音微信公众号推送天气通知\n",
+  "URL": "https:\/\/github.com\/Ruomoe\/DouYinWechatWeather"
+ },
+ {
+  "name": "Python【抖音】视频动态、直播间开播检测与推送\n",
+  "URL": "https:\/\/github.com\/nfe-w\/douyin_dynamic_push"
+ },
+ {
+  "name": "命令行微博客，可订阅RSS，可自定义模板发布静态网站\n",
+  "URL": "https:\/\/github.com\/ahui2016\/pypelago"
+ },
+ {
+  "name": "简易玩客云PC客户端，支持批量任务添加和订阅下载\n",
+  "URL": "https:\/\/github.com\/aiqinxuancai\/WkyFast"
+ },
+ {
+  "name": "#RSS\nRSS 订阅发送至 Cubox\n",
+  "URL": "https:\/\/github.com\/GVenusLeo\/rss2cubox"
+ },
+ {
+  "name": "python 多线程tx课堂下载器\n",
+  "URL": "https:\/\/github.com\/Prince-cool\/tx_course_download"
+ },
+ {
+  "name": " 一个生成kms激活脚本的小工具\n",
+  "URL": "https:\/\/github.com\/ikxin\/kms-tools"
+ },
+ {
+  "name": "直播小工具，包括但不限于以下功能：直播流获取、直播间封面获取、直播流回放\n",
+  "URL": "https:\/\/github.com\/isma123HH\/bilibili_live-assistant"
+ },
+ {
+  "name": "使用mdbook生成并使用Github Action自动部署的静态网站\n",
+  "URL": "https:\/\/github.com\/ericliuhusky\/Knowledge"
+ },
+ {
+  "name": " 一款开源简历设计生成器，多种免费模板选择，还可以自定义模板、主题等等，支持导出PDF、JSON数据。\n",
+  "URL": "https:\/\/github.com\/huajian-pro\/resume-design"
+ },
+ {
+  "name": "通用设计器⚡打印设计、可视化、标签打印、编辑器、设计器、数据分析、报表设计、组件化、表单设计、h5页面、调查问卷、pdf生成、流程图、试卷、SVG、图形元素、物联网\n",
+  "URL": "https:\/\/github.com\/xinglie\/report-designer"
+ },
+ {
+  "name": "多功能多引擎OCR文字识别、翻译、朗读、语音合成、日漫游戏机翻汉化、验证码识别、图床上传、以图搜图、扫码工具\n",
+  "URL": "https:\/\/github.com\/miaomiaosoft\/PandaOCR.Pro"
+ },
+ {
+  "name": " ☕ 一个简洁轻巧的公共起始页服务\n",
+  "URL": "https:\/\/github.com\/Dreamer-Paul\/KStart"
+ },
+ {
+  "name": "一个能让Linux用户更加方便运行Windows应用的程序，内置了对wine图形话的支持和各种Wine工具和自制Wine程序打包器、运行库安装工具等等。同时也内置了基于VirtualBox制作的小白Windows虚拟机安装工具，可以做到只需要用户下载系统镜像并点击安装即可，无需顾及虚拟机安装、创建、虚拟机的分区等等\n",
+  "URL": "https:\/\/github.com\/gfdgd-xi\/deep-wine-runner"
+ },
+ {
+  "name": "�开箱即用的矢量图标管理系统（字体图标、公共 CDN 加速、浏览器迁移插件、自定义存储桶、私有化部署、Docker Image 支撑）\n",
+  "URL": "https:\/\/github.com\/guocaoyi\/IconPub"
+ },
+ {
+  "name": "三维四子棋web服务器部署，包括选择本地，AI，熄灯,联机\n",
+  "URL": "https:\/\/github.com\/MrOwenovo\/KarGoBangWebServer"
+ },
+ {
+  "name": "客制化机械键盘——从0开始全套资料\n",
+  "URL": "https:\/\/github.com\/volatile-static\/Keyboard"
+ },
+ {
+  "name": "适合中小型社区网站使用的短链接服务系统，支持短链接生产、查询及302转向，并自带点击量统计、独立IP数统计、访问日志\n",
+  "URL": "https:\/\/github.com\/barats\/ohUrlShortener"
+ },
+ {
+  "name": "一个致力于用Python提高部门工作自动化水平的程序库！（包括数据采集、办公自动化、辅助研究、图网络、复杂系统、3D可视化等）\n",
+  "URL": "https:\/\/github.com\/52ai\/Crawler4Caida"
+ },
+ {
+  "name": "全网新闻热点自动聚合\n",
+  "URL": "https:\/\/github.com\/echosoar\/news"
+ },
+ {
+  "name": "一套基于Vue3开发的实用、高端、炫酷的响应式前端网页！\n",
+  "URL": "https:\/\/github.com\/Aubuary\/magic-poetry"
+ },
+ {
+  "name": "✨✨微信小程序原生开发个人博客，不依赖任何后端服务，无需自己的网站、服务器、域名等资源，简洁高颜值，点赞、收藏、评论、海报、签到、积分等功能��\n",
+  "URL": "https:\/\/github.com\/XiaokangLei\/MiniBlog"
+ },
+ {
+  "name": "一款标签化管理网页收藏的工具\n",
+  "URL": "https:\/\/github.com\/oyps\/mypages"
+ },
+ {
+  "name": "包含了JS、Vue.js、CSS、Node.js、React.js等个人成长收集和手写的知识笔记\n",
+  "URL": "https:\/\/github.com\/vannvan\/archives"
+ },
+ {
+  "name": " 自动下载B站收藏视频，支持自动下载封面图，自动转换xml至ass，下载完成自动上传 OneDrive，邮件通知，telegram 通知（实时下载进度查看）\n",
+  "URL": "https:\/\/github.com\/hechuan4\/BiliFavoritesDownloader"
+ },
+ {
+  "name": "哔哩哔哩收藏夹提取音频自动填写元数据推送到TG频道且支持自动搜索筛选推送！\n",
+  "URL": "https:\/\/github.com\/sudoskys\/Tool-Asoul-Music"
+ },
+ {
+  "name": "Notion的替代品。可以有比Concept和Miro更多。Affine是下一代知识库，它将规划，排序和创建结合在一起。隐私第一，开源，可定制且随时可用。\n",
+  "URL": "https:\/\/github.com\/toeverything\/AFFiNE"
+ },
+ {
+  "name": "全能媒体容器，插件化网罗天下媒体，畅快浏览视频、漫画和任何你想要的媒体数据。\n",
+  "URL": "https:\/\/github.com\/RyensX\/MediaBox"
+ },
+ {
+  "name": "#Notion\n一个CloudFlare Worker \/ script \/ bot，用于将Concept页面公开同步为GitHub讨论。\n",
+  "URL": "https:\/\/github.com\/the-guild-org\/notion-github-sync"
+ },
+ {
+  "name": "【Som音乐播放器】由HTML+CSS+Javascript+Vue3写的电脑桌面版的音乐播放器，支持音乐、自定义主题（背景、文字、歌词样式）、歌词、MV视频、托盘菜单，可以直接编译成二进制文件。\n",
+  "URL": "https:\/\/github.com\/Cashew-wood\/som_music"
+ },
+ {
+  "name": "优秀的中文区个人主页搜集\n",
+  "URL": "https:\/\/github.com\/eryajf\/awesome-github-profile-readme-chinese"
+ },
+ {
+  "name": "PC版网易云客户端插件管理器\n",
+  "URL": "https:\/\/github.com\/MicroCBer\/BetterNCM"
+ },
+ {
+  "name": "又一款效率神器-rubick，类似于utools\\qucker，支持WIN\\MAC，不过新版MAC M1\\2芯片兼容性还有问题\n\n",
+  "URL": "https:\/\/github.com\/rubickCenter\/rubick"
+ },
+ {
+  "name": " Mac微信功能拓展\/微信插件\/微信小助手(A plugin for Mac WeChat)独立加载版。微信双开助手。\n",
+  "URL": "https:\/\/github.com\/levie-vans\/WeChatAssistant-ForMac"
+ },
+ {
+  "name": "#rss #番剧\n项目从当季的番剧官网上收集新闻并打包为RSS源发布。\n",
+  "URL": "https:\/\/github.com\/XeroAlpha\/BangumiNewsRss"
+ },
+ {
+  "name": "纯纯看番，追番和看番的安卓软件，多番剧源 -樱花动漫 -Bimibimi - AGE 动漫\n",
+  "URL": "https:\/\/github.com\/heyanLE\/EasyBangumi"
+ },
+ {
+  "name": "b站视频自动点赞\n",
+  "URL": "https:\/\/github.com\/howxcheng\/BiliBili_Auto_Like"
+ },
+ {
+  "name": "番剧邮件订阅服务，可以将每日番剧放送列表发送到邮件中\n",
+  "URL": "https:\/\/github.com\/HammerCloth\/bangumi-email"
+ },
+ {
+  "name": "一个开源，功能齐全，生产就绪的对话平台。使用Airy，您可以处理来自各种来源的对话数据\n",
+  "URL": "https:\/\/github.com\/airyhq\/airy"
+ },
+ {
+  "name": "一款基于VUE的在线绘制流程图工具\n",
+  "URL": "https:\/\/github.com\/ZFSNYJ\/VFD"
+ },
+ {
+  "name": "IT 技术相关播客列表\n",
+  "URL": "https:\/\/github.com\/stevending1st\/it-technology-podcast"
+ },
+ {
+  "name": "#rss #播客 #博客\n独立博客&播客rss订阅计划！\n",
+  "URL": "https:\/\/github.com\/saveweb\/rss-list"
+ },
+ {
+  "name": "功能齐全的Pixiv第三方客户端 免代理 支持查看动图查看直播\n",
+  "URL": "https:\/\/github.com\/git-xiaocao\/pixiv_func_mobile"
+ },
+ {
+  "name": "网页端跨平台斗鱼弹幕助手\n",
+  "URL": "https:\/\/github.com\/qianjiachun\/douyu-monitor"
+ },
+ {
+  "name": "鼠鼠下载器——跨平台哔哩哔哩视频下载工具。\n",
+  "URL": "https:\/\/github.com\/MoyuScript\/double-mouse-downloader"
+ },
+ {
+  "name": "「Watt Toolkit」是一个开源跨平台的多功能 Steam 工具箱。\n",
+  "URL": "https:\/\/github.com\/BeyondDimension\/SteamTools"
+ },
+ {
+  "name": "GitHub中文排行榜，各语言分设「软件 | 资料」榜单，精准定位中文好项目。各取所需，高效学习。\n",
+  "URL": "https:\/\/github.com\/GrowingGit\/GitHub-Chinese-Top-Charts"
+ },
+ {
+  "name": "安卓平台上的代理饭圈软件\n",
+  "URL": "https:\/\/github.com\/getsurfboard\/surfboard"
+ },
+ {
+  "name": "Mac软件下载网站，Mac效率工具，Chrome插件，Webstorm插件推荐\n",
+  "URL": "https:\/\/github.com\/BoWangBlog\/MacSoftware-recommend"
+ },
+ {
+  "name": "mac os摸鱼软件\n",
+  "URL": "https:\/\/github.com\/yejunjie10311031\/loaf-mac"
+ },
+ {
+  "name": "适用于Android，Windows，Mac和Linux的PSP模拟器\n",
+  "URL": "https:\/\/github.com\/hrydgard\/ppsspp"
+ },
+ {
+  "name": "很酷！模仿macos系统的云桌面博客\n",
+  "URL": "https:\/\/github.com\/huanggungfa\/blogs-macos"
+ },
+ {
+  "name": "微软tts,下载语音合成音频文件\n",
+  "URL": "https:\/\/github.com\/asters1\/tts"
+ },
+ {
+  "name": "微软语音合成工具，使用 Electron + Vue + ElementPlus + Vite 构建.\n",
+  "URL": "https:\/\/github.com\/LokerL\/tts-vue"
+ },
+ {
+  "name": "中文博客网站列表导航v2\n",
+  "URL": "https:\/\/github.com\/zh-blogs\/blog-daohang"
+ },
+ {
+  "name": "类似按键精灵的鼠标键盘录制和自动化操作 模拟点击和键入 \n",
+  "URL": "https:\/\/github.com\/taojy123\/KeymouseGo"
+ },
+ {
+  "name": "#RSS\n� El Monitorro是一款高性能的提要阅读器，是一个电报机器人。它支持RSS，Atom和JSON提要\n",
+  "URL": "https:\/\/github.com\/ayrat555\/el_monitorro"
+ },
+ {
+  "name": " 30+ 款 Markdown 预览主题，Typo.css、Vue、Bear、飞书云文档等风格，适用于 MWeb、Typora。\n",
+  "URL": "https:\/\/github.com\/imageslr\/mweb-themes"
+ },
+ {
+  "name": "优雅的像素画工具",
+  "URL": "https:\/\/github.com\/fzf404\/Pixxel"
+ },
+ {
+  "name": " �图片转换成像素画",
+  "URL": "https:\/\/github.com\/GustinLau\/pixel-art"
+ },
+ {
+  "name": "为 GitHub 用户的所有已加星标的存储库生成 Markdown 表\n",
+  "URL": "https:\/\/github.com\/yks0000\/starred-repo-toc"
+ },
+ {
+  "name": "用于自定义域名跳转，无需服务器，一键搭建。\n",
+  "URL": "https:\/\/github.com\/hal-wang\/navigation"
+ },
+ {
+  "name": "通过斗鱼、虎牙及Bilibili房间号直接访问直播源的代理服务器。\n",
+  "URL": "https:\/\/github.com\/rain-dl\/real-url-proxy-server"
+ },
+ {
+  "name": "amTools是一个跨平台的小工具集,包含了截屏、录屏、文字识别、各种格式转换、鼠标键盘动作录制播放、文件传输、聊天机器人等功能\n",
+  "URL": "https:\/\/github.com\/fandesfyf\/JamTools"
+ },
+ {
+  "name": "VS Code 博客文章管理插件\n",
+  "URL": "https:\/\/github.com\/QiYuOr2\/vscode-blog-manager"
+ },
+ {
+  "name": "#Notion\n运行一个 cron 作业，从 Notion 中提取页面并将其另存为 markdown 文件，从而制作博客CMS\n",
+  "URL": "https:\/\/github.com\/ShubhamVerma1811\/Blogs"
+ },
+ {
+  "name": "bookget 数字图书馆（古籍）下载工具\n",
+  "URL": "https:\/\/github.com\/deweizhu\/bookget"
+ },
+ {
+  "name": "一款可以在1000+视频网站下载视频的应用，同时支持android和ios\n",
+  "URL": "https:\/\/github.com\/shipinbaoku\/videosdownloader"
+ },
+ {
+  "name": "一款轻量级且强大的图片编辑器,支持一键生成模版,下载图片,在线图片编辑,导入\/导出json等功能\n",
+  "URL": "https:\/\/github.com\/kai-tu-cn\/kaitu-image-editor"
+ },
+ {
+  "name": "Bilibili视频下载收藏夹视频推送，抓取 ，推送到Onedrive\n",
+  "URL": "https:\/\/github.com\/sudoskys\/BiliBiliVideoToMusic"
+ },
+ {
+  "name": "将网易云音乐播放列表同步到磁盘，支持主辅双帐号和云盘歌曲\n",
+  "URL": "https:\/\/github.com\/chenjunyu19\/dl-ncm-playlist"
+ },
+ {
+  "name": "一款专为 Podcaster 打造的 Hexo 主题\n",
+  "URL": "https:\/\/github.com\/guiqiqi\/chromate"
+ },
+ {
+  "name": "极简电视直播App，支持Android、iOS、web\n",
+  "URL": "https:\/\/github.com\/aiyakuaile\/easy_tv_live"
+ },
+ {
+  "name": "用于绕过不让粘贴的限制，从而强行粘贴入文字的工具\n",
+  "URL": "https:\/\/github.com\/xivna\/Crack-pasting-restrictions"
+ },
+ {
+  "name": "新时代极简服务器面板\n",
+  "URL": "https:\/\/github.com\/Zaitonn\/Serein"
+ },
+ {
+  "name": "#RSS\n一个极简的RSS在线网页浏览工具\n",
+  "URL": "https:\/\/github.com\/asksowhat\/ownrss"
+ },
+ {
+  "name": "开源视频分析网络平台\n",
+  "URL": "https:\/\/github.com\/cvisionai\/tator"
+ },
+ {
+  "name": " 一起看视频，兼容所有平台\n",
+  "URL": "https:\/\/github.com\/VideoTogether\/VideoTogether"
+ },
+ {
+  "name": "自建哔哩漫游解析服务器(PHP)\n",
+  "URL": "https:\/\/github.com\/david082321\/BiliRoaming-PHP-Server"
+ },
+ {
+  "name": "#RSS\nThirdplace Discovery提供网址RSS发现服务",
+  "URL": "https:\/\/discovery.thirdplace.no\/?q=https:\/\/drewdevault.com"
+ },
+ {
+  "name": "#RSS\nsnipRSS |将网络上的视频，播客，博客文章，网页，社交帖子和文档截图到您自己的可共享RSS中",
+  "URL": "https:\/\/sniprss.com\/"
+ },
+ {
+  "name": "#RSS\n将电子邮件转换为RSS Atom 源\n",
+  "URL": "https:\/\/kill-the-newsletter.com\/"
+ },
+ {
+  "name": "#RSS #Notion\n获取 notion.so 中的 RSS 源",
+  "URL": "https:\/\/github.com\/Jeadie\/notion-rss"
+ },
+ {
+  "name": "小说排版助手（在线版）\n",
+  "URL": "https:\/\/github.com\/vvsolo\/vvsolo.github.io"
+ },
+ {
+  "name": "AnyLink是一个企业级远程办公 ssl vpn 软件，可以支持多人同时在线使用。\n",
+  "URL": "https:\/\/github.com\/bjdgyc\/anylink"
+ },
+ {
+  "name": "把字幕转换成 Anki 卡片\n",
+  "URL": "https:\/\/github.com\/flaribbit\/anime-anki"
+ },
+ {
+  "name": "一个自定义样式极多、简约、充满细节的 Typora 明亮主题\n",
+  "URL": "https:\/\/github.com\/jinghu-moon\/typora-see-yue-theme"
+ },
+ {
+  "name": "飞书机器人消息卡片服务\n",
+  "URL": "https:\/\/github.com\/PokeyBoa\/lark-robot-message"
+ },
+ {
+  "name": "一个还在开发的CMS网站框架-GitScratch 社区前端。样式不错\n",
+  "URL": "https:\/\/github.com\/UniScratch\/gitscratch-frontend"
+ },
+ {
+  "name": " 一个无数据库、基于文件和目录的Markdown文档、网址导航、图书、图片、视频网站PHP开源系统。\n",
+  "URL": "https:\/\/github.com\/filesite-io\/machete"
+ },
+ {
+  "name": "可自托管的类Notion模块构建器\n",
+  "URL": "https:\/\/github.com\/Dashibase\/dashibase-insert"
+ },
+ {
+  "name": "一个简单的twitter-feed风格的RSS聚合器，用PHP，Laravel，Inertia.js，Tailwind和Vue编写.js\n",
+  "URL": "https:\/\/github.com\/ssddanbrown\/rss"
+ },
+ {
+  "name": "全自动录播、投稿工具，也支持twitch、ytb频道搬运。提供分p上传b站接口，腾讯云内网免流+大幅提速\n",
+  "URL": "https:\/\/github.com\/biliup\/biliup"
+ },
+ {
+  "name": "通过b站私信消息点歌 \n",
+  "URL": "https:\/\/github.com\/LeoWang2007\/bilibili-pick-songs-kugou"
+ },
+ {
+  "name": "B站录播姬的管理网页\n",
+  "URL": "https:\/\/github.com\/BililiveRecorder\/BililiveRecorder-WebUI"
+ },
+ {
+  "name": "开始页： b站仿搜索引擎样式首页风格\n",
+  "URL": "https:\/\/github.com\/hakadao\/bilibili-simple-home"
+ },
+ {
+  "name": "IPTV电视源\n",
+  "URL": "https:\/\/codeberg.org\/iptv\/tv"
+ },
+ {
+  "name": "“Typora”主题 - Notion.so\n",
+  "URL": "https:\/\/github.com\/IORoot\/typora__notion-theme"
+ },
+ {
+  "name": "实时漏洞利用工具监听器，支持微信\/TG推送\n",
+  "URL": "https:\/\/github.com\/Kira-Pgr\/Github-CVE-Listener"
+ },
+ {
+  "name": "单页面应用容器\n",
+  "URL": "https:\/\/github.com\/yuzd\/Spa"
+ },
+ {
+  "name": "输出当日时间、天气、新闻信息，可用于快捷指令设置闹钟，它还有一个用法是嵌入markdown文件中",
+  "URL": "https:\/\/github.com\/wolyshaw\/shortcut-daily-information"
+ },
+ {
+  "name": "开源书籍——FreeBSD 从入门到跑路。\n",
+  "URL": "https:\/\/github.com\/FreeBSD-Ask\/FreeBSD-Ask"
+ },
+ {
+  "name": " 一个网页时钟(可嵌入Notion)\n",
+  "URL": "https:\/\/github.com\/neverp\/notion.clock"
+ },
+ {
+  "name": "跨浏览器和设备私下同步书签\n",
+  "URL": "https:\/\/github.com\/floccusaddon\/floccus"
+ },
+ {
+  "name": "Aurora Files是一个开源文件存储平台，旨在让您能够按照规则在硬件上创建自己的云存储。文件存储可以从Web浏览器或使用Windows，iOS和Android操作系统的本机客户端访问。或者，您可以使用第三方 WebDAV 客户端\n",
+  "URL": "https:\/\/github.com\/afterlogic\/aurora-files"
+ },
+ {
+  "name": "支持静态服务、上传、搜索、访问控制、网络保存的文件服务器\n.",
+  "URL": "https:\/\/github.com\/sigoden\/dufs"
+ },
+ {
+  "name": "利用第三方webdav网盘，实现在potplayer播放百度、迅雷、阿里云盘视频。\n",
+  "URL": "https:\/\/github.com\/Bleu404\/PotplayerPanVideo"
+ },
+ {
+  "name": "使用 GitHub从 Markdown 创建 PDF 和 HTML 文件\n",
+  "URL": "https:\/\/github.com\/BaileyJM02\/markdown-to-pdf"
+ },
+ {
+  "name": "将pdf中的文本转换为mp3文件\n",
+  "URL": "https:\/\/github.com\/Atropa-Solanaceae\/PDFtoMP3"
+ },
+ {
+  "name": " 网易云课堂课程下载（技术向）\n",
+  "URL": "https:\/\/github.com\/juilletVent\/wangyiyunketang-downloader"
+ },
+ {
+  "name": "使用Cloudflare Workers代理加速Github\n",
+  "URL": "https:\/\/github.com\/nICEnnnnnnnLee\/GithubSoEasy"
+ },
+ {
+  "name": "仿迅雷p2p下载工具\n",
+  "URL": "https:\/\/github.com\/LinneRELLa\/fakeThunder"
+ },
+ {
+  "name": "绘制多端海报工具，支持uni多端与微信环境执行\n",
+  "URL": "https:\/\/github.com\/TuiMao233\/u-draw-poster"
+ },
+ {
+  "name": "python生成豆瓣电影海报墙\/音乐专辑封面墙\/图书封面墙。\n",
+  "URL": "https:\/\/github.com\/icue\/DoubanImageWall"
+ },
+ {
+  "name": "�一个持续迭代的开源接口测试平台\n",
+  "URL": "https:\/\/github.com\/wuranxu\/pity"
+ },
+ {
+  "name": "使用 GitHub Actions 通知 GitHub 讨论事件到Slack频道\n",
+  "URL": "https:\/\/github.com\/suzuki-shunsuke\/discussion-slack-notifier"
+ },
+ {
+  "name": "一个以GitHub，Asana和Slack等数字可视化您的生产力和贡献的程序\n",
+  "URL": "https:\/\/github.com\/Suchica\/workstats"
+ },
+ {
+  "name": "备份飞书文档，可以将飞书文档转成markdown下载。\n",
+  "URL": "https:\/\/github.com\/dicarne\/feishu-backup"
+ },
+ {
+  "name": "m3u8视频下载工具, 提供windows图形界面, 下载后自动将ts文件合并、转换格式为mp4\n",
+  "URL": "https:\/\/github.com\/orestonce\/m3u8d"
+ },
+ {
+  "name": "鼠鼠下载器——跨平台哔哩哔哩视频下载工具\n",
+  "URL": "https:\/\/github.com\/MoyuScript\/double-mouse-downloader"
+ },
+ {
+  "name": "局域网传输文件\n",
+  "URL": "https:\/\/github.com\/matt-repository\/lan-file-transfer"
+ },
+ {
+  "name": " c++中文周刊\n",
+  "URL": "https:\/\/github.com\/wanghenshui\/cppweeklynews"
+ },
+ {
+  "name": "对聊天中的文本和图片消息进行处理的在线工具\n",
+  "URL": "https:\/\/github.com\/TransparentLC\/msg-tools"
+ },
+ {
+  "name": "mac上的PHP和web开发环境管理工具,包含php,nginx,apache,msyql,memcached,redis以及host管理,\n",
+  "URL": "https:\/\/github.com\/xpf0000\/PhpWebStudy"
+ },
+ {
+  "name": "Windows 下的硬件信息工具，支持 XP 及以上系统\n",
+  "URL": "https:\/\/github.com\/a1ive\/nwinfo"
+ },
+ {
+  "name": "哔哩哔哩常用API调用。支持视频、番剧、用户、频道、音频等功能\n",
+  "URL": "https:\/\/github.com\/Nemo2011\/bilibili_api"
+ },
+ {
+  "name": " 一个用于 解析 excel 配置文件 生成 数据代码 的工具，一键傻瓜式自动生成\n",
+  "URL": "https:\/\/github.com\/Lilien-Gamer\/LLExcelHelper"
+ },
+ {
+  "name": "安卓哔哩哔哩追番管理工具\n",
+  "URL": "https:\/\/github.com\/lxfly2000\/AnimeSchedule"
+ },
+ {
+  "name": "自动追番工具，下载视频\n",
+  "URL": "https:\/\/github.com\/Tippye\/FollowAnime"
+ },
+ {
+  "name": "基于Vue3.0的 � 云音乐PC端，极简玻璃风格\n",
+  "URL": "https:\/\/github.com\/eevanlong\/cookie-music"
+ },
+ {
+  "name": "jar版短链接生成器-一个集合了多种生成策略，加密安全配置，缓存配置等可选可自定义的短链接生成工具包\n",
+  "URL": "https:\/\/github.com\/HK-hub\/Short-URL"
+ },
+ {
+  "name": "#RSS\n使用PHP收集RSS Feeds，并将它们存储在MySql数据库中\n",
+  "URL": "https:\/\/github.com\/At1llaG\/PHP-RSS"
+ },
+ {
+  "name": "简单的TikTok后端\n",
+  "URL": "https:\/\/github.com\/HammerCloth\/tiktok"
+ },
+ {
+  "name": "clash for linux 下载即用",
+  "URL": "https:\/\/github.com\/herobrine19\/clash"
+ },
+ {
+  "name": "摸鱼小助手",
+  "URL": "https:\/\/github.com\/zixing131\/FishWork"
+ },
+ {
+  "name": "Flomo替代产物，可自托管的笔记知识库，增加了SQLite数据库的结合\n",
+  "URL": "https:\/\/github.com\/usememos\/memos"
+ },
+ {
+  "name": "GitHub Actions 工作流，每天在配置文件存储库的 README.md 文件中自动更新 last.fm 每周图表中的封面。\n",
+  "URL": "https:\/\/github.com\/melipass\/lastfm-to-markdown"
+ },
+ {
+  "name": "面部表情捕捉。输入2D人脸，输出3D几何动画。\n",
+  "URL": "https:\/\/github.com\/LeeeLiu\/SpeedUpVideoCap"
+ },
+ {
+  "name": "用Rust重写的Bilibili漫画下载器！无环境依赖，超高下载性能，支持pdf epub zip格式\n",
+  "URL": "https:\/\/github.com\/lihe07\/bilibili_comics_downloader"
+ },
+ {
+  "name": "安卓免费录屏软件，生成mp4文件，本地目录查看视频和分享到微信QQ，转gif动画等。\n",
+  "URL": "https:\/\/github.com\/honglei92\/ScreenRecord"
+ },
+ {
+  "name": "在网页上渲染以撒的anm2动画\n",
+  "URL": "https:\/\/github.com\/frto027\/IsaacAnm2Player"
+ },
+ {
+  "name": "轻量级边缘物联网网关开发框架\n",
+  "URL": "https:\/\/github.com\/i4de\/rulex"
+ },
+ {
+  "name": "基于事件驱动的流式低代码编程应用程序，您可以在编辑器中采用拖拽的形式来实现业务编程工作，一键运行和停止，让开发工作变得更简单高效。\n",
+  "URL": "https:\/\/github.com\/Linxfeng\/flow-eda"
+ },
+ {
+  "name": "#Notion\n共享 obsidianMD文档到Notion并生成notion共享链接\n",
+  "URL": "https:\/\/github.com\/EasyChris\/obsidian-to-notion"
+ },
+ {
+  "name": "#Notion\n一个快速轻量级的 Notion 应用程序,从您的 Notion 添加页面会将页面的内容映射到列表，支持添加\/删除和修改操作,打包的是安卓端\n",
+  "URL": "https:\/\/github.com\/0xZhangKe\/NotionLight"
+ },
+ {
+  "name": "效率工具：让PC电脑向iOS发送剪贴板信息达到同步剪贴板的目的，无需再复制粘贴到QQ\n",
+  "URL": "https:\/\/github.com\/dbgba\/PCtoiOSClipboardSync"
+ },
+ {
+  "name": "为每个人提供开源虚拟\/远程桌面基础架构！开源的 TeamViewer 替代方案。显示和控制您的 PC 和安卓设备。\n",
+  "URL": "https:\/\/github.com\/rustdesk\/rustdesk"
+ },
+ {
+  "name": "一个粉丝制造的战斗猫模拟器。\n",
+  "URL": "https:\/\/github.com\/battlecatsultimate\/BCU-java-PC"
+ },
+ {
+  "name": "体感工具箱: 通过摄像头对动作的识别输出按键，进而达到体感游戏的效果\n",
+  "URL": "https:\/\/github.com\/Mr-xiaobing\/CMSGS"
+ },
+ {
+  "name": "飞书的油猴脚本，可以在显示文档时显示文件列表\n",
+  "URL": "https:\/\/github.com\/pattazl\/ShowLeftListFeishu"
+ },
+ {
+  "name": " Windows 自动安装应答文件 Unattend.xml 生成工具\n",
+  "URL": "https:\/\/github.com\/dsx42\/UnattendTool"
+ },
+ {
+  "name": "空洞骑士LiveSplit计时器文件生成器（中文版）\n",
+  "URL": "https:\/\/github.com\/CuteReimu\/hksplitmaker"
+ },
+ {
+  "name": "Python处理excel脚本， 提取大量特定形式的excel文件到一个excel中\n",
+  "URL": "https:\/\/github.com\/loyurs\/xls_handler"
+ },
+ {
+  "name": "TagsTree是一个用树状结构标签管理文件的软件，能在不干涉文件本身的前提下，为文件添加标签\n",
+  "URL": "https:\/\/github.com\/Poker-sang\/TagsTree"
+ },
+ {
+  "name": " 静态文件生成器命令行工具\n",
+  "URL": "https:\/\/github.com\/Lete114\/AWStats-cli"
+ },
+ {
+  "name": "通过使用HTML，CSS JavaScript，构建动画网页，其中人脸将跟随光标。脸部的眼球将向鼠标指针移动\n\n",
+  "URL": "https:\/\/github.com\/Shruti-Katiyar\/Smiley-Mouse-Follow-Animation"
+ },
+ {
+  "name": "解决部分网址存在DNS污染加速网站访问\n\n默认配置了：github、dribbble\n",
+  "URL": "https:\/\/github.com\/ifui\/GoodHosts"
+ },
+ {
+  "name": "基于utools的局域网文件传输工具\n",
+  "URL": "https:\/\/github.com\/cky-thinker\/file-share"
+ },
+ {
+  "name": "一个可拓展的开源 API 工具。\n",
+  "URL": "https:\/\/github.com\/eolinker\/eoapi"
+ },
+ {
+  "name": "Vue2\/Vue3 ⚡打印、打印设计、可视化设计器、报表设计、元素编辑、可视化打印编辑\n",
+  "URL": "https:\/\/github.com\/CcSimple\/vue-plugin-hiprint"
+ },
+ {
+  "name": "一个无广告、不以盈利为目的的 bgm.tv 第三方客户端\n",
+  "URL": "https:\/\/github.com\/czy0729\/Bangumi"
+ },
+ {
+  "name": "#RSS\n基于 Kirigami 的安卓端RSS阅读器\n",
+  "URL": "https:\/\/github.com\/KDE\/alligator"
+ },
+ {
+  "name": "#RSS\n移动端Obsidian + Flomo + Rss 阅读器\n",
+  "URL": "https:\/\/github.com\/chenyukang\/obweb"
+ },
+ {
+  "name": "�️适用于WordPress的番剧追番页面，快来试试吧q(≧▽≦q)\n",
+  "URL": "https:\/\/github.com\/icecliffs\/bilibili_anime"
+ },
+ {
+  "name": "追番和看番的安卓软件，多番剧源 -樱花动漫 -Bimibimi - AGE 动漫\n",
+  "URL": "https:\/\/github.com\/heyanLE\/EasyBangumi"
+ },
+ {
+  "name": "自动PikPak离线下载+aria2下载+释放网盘空间的TG机器人\n",
+  "URL": "https:\/\/github.com\/chengjieyong002\/PikPakAutoOfflineDownloadBot"
+ },
+ {
+  "name": "B站UWP视频下载修复工具\n",
+  "URL": "https:\/\/github.com\/gaoyia\/bilibili-uwp-download-fixtool"
+ },
+ {
+  "name": "这里储存了Linux常用的软件，你可以从这么仓库内找到你要下载软件的链接\n",
+  "URL": "https:\/\/github.com\/LinWin-Cloud\/Linux_software"
+ },
+ {
+  "name": "一个便捷的创意工坊下载器\n",
+  "URL": "https:\/\/github.com\/user1121114685\/Wallpaper_Engine"
+ },
+ {
+  "name": "一行代码即可接入 音乐播放控制组件\n",
+  "URL": "https:\/\/github.com\/KunMinX\/Jetpack-MusicPlayer"
+ },
+ {
+  "name": "跨手机、手表、云台的多设备图像控制 采集 融合方案【直播领域】\n",
+  "URL": "https:\/\/github.com\/GY-code\/Vision"
+ },
+ {
+  "name": "基于Python编写，使用OpenCV，从视频中提取带有运动的场景的工具\n",
+  "URL": "https:\/\/github.com\/Breakthrough\/DVR-Scan"
+ },
+ {
+  "name": "App代码助手, json一键转model\n",
+  "URL": "https:\/\/github.com\/shang1219178163\/MacTemplet"
+ },
+ {
+  "name": "100个摸鱼小游戏、小工具源码集合及在线演示\n",
+  "URL": "https:\/\/github.com\/wanghao221\/moyu"
+ },
+ {
+  "name": "一个基于Gatsby的极简风格博客,样式比较极客\n",
+  "URL": "https:\/\/github.com\/kqhasaki\/kqhasaki.github.io"
+ },
+ {
+  "name": "#Notion\n将notion转换为hugo博客的示例，并自动保持同步\n",
+  "URL": "https:\/\/github.com\/xzebra\/xzebra.github.io"
+ },
+ {
+  "name": "使用python编译exe\/bash来下载copymanga(拷贝漫画)中的漫画，支持批量+选话下载和获取您收藏的漫画并下载\n",
+  "URL": "https:\/\/github.com\/misaka10843\/copymanga-downloader"
+ },
+ {
+  "name": "ASS字幕字体子集化 MKV批量提取\/生成\n",
+  "URL": "https:\/\/github.com\/MkvAutoSubset\/MkvAutoSubset"
+ },
+ {
+  "name": "一款将markdown文件批量转换成vue、html、jsx、tsx文件的工具\n",
+  "URL": "https:\/\/github.com\/const-love-365-10000\/markdown-to"
+ },
+ {
+  "name": " 超星(sslibrary)PDF下载器，并自动添加书签目录\n",
+  "URL": "https:\/\/github.com\/DertahSama\/Download_SS_PDF"
+ },
+ {
+  "name": "一个简单的无服务器URL缩短器，由Mongo DB和Vercel制成。\n",
+  "URL": "https:\/\/github.com\/uiuxarghya\/8bits"
+ },
+ {
+  "name": "是一个免费的开源游戏服务器管理面板，由PHP，React和Go构建\n",
+  "URL": "https:\/\/github.com\/pterodactyl\/panel"
+ },
+ {
+  "name": "一个宝塔第三方云端的php站点程序\n",
+  "URL": "https:\/\/github.com\/flucont\/btcloud"
+ },
+ {
+  "name": "款开源可视化数据制作工具。可将各种业务数据转换为视频动画\n",
+  "URL": "https:\/\/github.com\/ayuanlmo\/lmo-data-visualization"
+ },
+ {
+  "name": "以java语言开发的基于Microsoft Graph Restful API的多全局管理系统，理论上支持任何Office全局的管理(A1,A3,A1P,E3,E5等)\n",
+  "URL": "https:\/\/github.com\/vanyouseea\/o365"
+ },
+ {
+  "name": " 将任意 媒体文件 以最好音质 转为微信语音文件(支持分段) 推到手机 \n",
+  "URL": "https:\/\/github.com\/foyoux\/weixin-wxposed-silk-voice"
+ },
+ {
+  "name": "基于 ThinkPHP5 和 Bootstrap 的极速后台开发框架\n",
+  "URL": "https:\/\/github.com\/karsonzhang\/fastadmin"
+ },
+ {
+  "name": "自主开发项目：无线智能控制的加湿器设计“聪明的加湿器”\n",
+  "URL": "https:\/\/github.com\/EternalStarCHN\/SmartHumidifier"
+ },
+ {
+  "name": " 一款线下狼人杀网页, 除了没有语音功能, 其余功能均具备\n",
+  "URL": "https:\/\/github.com\/xiong35\/werewolf"
+ },
+ {
+  "name": "Gridea 静态博客主题 Rocky 的定制化版本\n",
+  "URL": "https:\/\/github.com\/Waoap\/gridea-theme-rocky-custom"
+ },
+ {
+  "name": " Obsidian上支持跨平台高度适配的第三方主题\n",
+  "URL": "https:\/\/github.com\/kepano\/obsidian-minimal"
+ },
+ {
+  "name": "在FreshRSS实例中使用Nord配色\n",
+  "URL": "https:\/\/github.com\/joelchrono12\/freshrss-nord-theme"
+ },
+ {
+  "name": " UTools插件客服助手 - 快捷短语管理工具\n",
+  "URL": "https:\/\/github.com\/Quart233\/kfzs"
+ },
+ {
+  "name": "一个还不错的图床工具，支持Mac\/Win\/Linux服务器、支持压缩后上传、添加图片或文字水印、多文件同时上传、同时上传到多个云\n",
+  "URL": "https:\/\/github.com\/xiebruce\/PicUploader"
+ },
+ {
+  "name": "PWA Studio 使 VSCode 成为构建 PWA 的最佳开发人员平台！\n",
+  "URL": "https:\/\/github.com\/pwa-builder\/pwa-studio"
+ },
+ {
+  "name": "计算机基础自学笔记\/心得\/实验\/资源汇总\n"
+ },
+ {
+  "name": "obsidian软件使用的心得汇总\n",
+  "URL": "https:\/\/github.com\/cyddgh\/obsidian-chinese-help"
+ },
+ {
+  "name": "通过 esp32 单片机连接小爱同学（天猫精灵、小度未测试） 通过魔术包唤醒电脑开启，配合软件监听 UDP 广播进行关机操作 无需拆机，支持可以网络唤醒的笔记本\n",
+  "URL": "https:\/\/github.com\/tty228\/udp_turn_off"
+ },
+ {
+  "name": "「低代码可视化报表」类似excel操作风格，在线拖拽完成设计！（一款免费Web报表工具）\n",
+  "URL": "https:\/\/github.com\/jeecgboot\/JimuReport"
+ },
+ {
+  "name": "#notion\n使用自定义命令对notion进行增压，以记录，绘制等 ✍️\n",
+  "URL": "https:\/\/github.com\/alyssaxuu\/slashy"
+ },
+ {
+  "name": "物联网开源平台\n",
+  "URL": "https:\/\/github.com\/dgiot\/dgiot"
+ },
+ {
+  "name": "支持多协议多用户的 xray 面板\n",
+  "URL": "https:\/\/github.com\/vaxilu\/x-ui"
+ },
+ {
+  "name": " web 端直播流播放器，支持 H.264 和 H.265 编码格式的视频播放\n",
+  "URL": "https:\/\/github.com\/chandq\/video-player-web"
+ },
+ {
+  "name": "企业级免费开源商城系统\n",
+  "URL": "https:\/\/github.com\/gongfuxiang\/shopxo"
+ },
+ {
+  "name": "自动化中文字幕下载\n",
+  "URL": "https:\/\/github.com\/allanpk716\/ChineseSubFinder"
+ },
+ {
+  "name": "mpv自动下载字幕脚本 \n",
+  "URL": "https:\/\/github.com\/AssrtOSS\/mpv-assrt"
+ },
+ {
+  "name": "网易云单曲VIP、QQ音乐、歌单、我喜欢的通过ID批量下载\n",
+  "URL": "https:\/\/github.com\/Beadd\/MusicDownloader"
+ },
+ {
+  "name": "html5版的OpenCore引导工具config.plist的在线编辑器\n",
+  "URL": "https:\/\/github.com\/xieguozhong\/opencoreConfiguratorOnline"
+ },
+ {
+  "name": "很有意思，在线mac OS web",
+  "URL": "https:\/\/github.com\/PuruVJ\/macos-web"
+ },
+ {
+  "name": "一款在开发支持多端还未打包的简洁的RSS阅读器，简单无广告\n",
+  "URL": "https:\/\/github.com\/jiangxiaoqiang\/cruise-open"
+ },
+ {
+  "name": "#rss\n通过github操作RSS将Gen epub和mobi Books发送到kindle或boox\n",
+  "URL": "https:\/\/github.com\/carey036\/GenBooks"
+ },
+ {
+  "name": "快速的极客时间课程下载器，支持下载专栏 (PDF) 和视频课 (TS)\n",
+  "URL": "https:\/\/github.com\/nicoxiang\/geektime-downloader"
+ },
+ {
+  "name": "专为树莓派(Raspberry Pi)设计的多媒体播放器且支持(Windows、Linux、Android)系统\n..",
+  "URL": "https:\/\/github.com\/nulijiabei\/winxplay"
+ },
+ {
+  "name": "Bilibili 自动打轴助手\n",
+  "URL": "https:\/\/github.com\/AS042971\/bili-auto-note"
+ },
+ {
+  "name": "基于Python的城通网盘自动下载器\n",
+  "URL": "https:\/\/github.com\/haarlemmer\/CTFile-Auto-Download"
+ },
+ {
+  "name": "思源笔记时间线挂件",
+  "URL": "https:\/\/github.com\/choyy\/Timeline-SY"
+ },
+ {
+  "name": "Nintendo Switch游戏封面自动爬虫\n",
+  "URL": "https:\/\/github.com\/RavelloH\/NSGameSpider"
+ },
+ {
+  "name": "自动爬取所有PlayStationStore中的所有游戏封面，自动生成网页并索引\n",
+  "URL": "https:\/\/github.com\/RavelloH\/PSGameSpider"
+ },
+ {
+  "name": "steam 特惠游戏榜单（自动刷新）\n",
+  "URL": "https:\/\/github.com\/lyy289065406\/steam-discount"
+ },
+ {
+  "name": "全自动追番整理下载工具\n",
+  "URL": "https:\/\/github.com\/EstrellaXD\/Auto_Bangumi"
+ },
+ {
+  "name": "� mooc.icve.com.cn 自动刷课答题考试100分程序\n",
+  "URL": "https:\/\/github.com\/11273\/mooc-work-answer"
+ },
+ {
+  "name": " � 在 Github Profile 上显示你这周在网易云音乐上最喜欢听的歌曲 �\n",
+  "URL": "https:\/\/github.com\/Nthily\/netease-cloud-music-card"
+ },
+ {
+  "name": "基于vue3+Vite+TypeScript构建的精致的网易云音乐webApp!\n",
+  "URL": "https:\/\/github.com\/path-yu\/cloud-music"
+ },
+ {
+  "name": "在 Docker 中运行管理 Windows\n",
+  "URL": "https:\/\/github.com\/ms-jpq\/windows-in-docker"
+ },
+ {
+  "name": "teambition网盘的webdav协议开源实现\n",
+  "URL": "https:\/\/github.com\/Wpenga\/webdav-teambition"
+ },
+ {
+  "name": "基于数传电台的无人机编队通信软件\n",
+  "URL": "https:\/\/github.com\/Vinson-sheep\/radio_proxy"
+ },
+ {
+  "name": "一站式自动化运维及自动化部署平台\n",
+  "URL": "https:\/\/github.com\/lijiahangmax\/orion-ops"
+ },
+ {
+  "name": "一款使用Ant Design构建，由React.js驱动的静态网站生成器\n",
+  "URL": "https:\/\/github.com\/DeepSea1989\/FreePress"
+ },
+ {
+  "name": "云策文档是一款开源知识管理工具\n",
+  "URL": "https:\/\/github.com\/fantasticit\/think"
+ },
+ {
+  "name": "vitepress 二次元主题\n",
+  "URL": "https:\/\/github.com\/flaribbit\/vitepress-theme-sakura"
+ },
+ {
+  "name": "使用flutter构建的音乐播放器\n",
+  "URL": "https:\/\/github.com\/itning\/yunshu_music"
+ },
+ {
+  "name": "自建NAS系统，实现本地视频音频点播，文件存储等功能。自动视频转码，在线观看下载视频！\n",
+  "URL": "https:\/\/github.com\/itning\/yunshu-nas"
+ },
+ {
+  "name": "百度网盘批量上传文件工具\n",
+  "URL": "https:\/\/github.com\/masx200\/baidupcs-batch-upload"
+ },
+ {
+  "name": "仿照阿里云盘的网盘系统\n",
+  "URL": "https:\/\/github.com\/xiezy1\/drive"
+ },
+ {
+  "name": "基于flutter开发的混合电影app\n",
+  "URL": "https:\/\/github.com\/wuyuanwuhui99\/flutter-movie-app-ui"
+ },
+ {
+  "name": "WordPress主题SPA（单页应用）版本\n",
+  "URL": "https:\/\/github.com\/cbhh\/wordpress-theme-spa"
+ },
+ {
+  "name": "#RSS\n一个简单的桌面应用程序，基于RSS源的Youtube\n",
+  "URL": "https:\/\/github.com\/seird\/rsstube"
+ },
+ {
+  "name": "#RSS\n可部署在Vercel重的web RSS阅读器\n",
+  "URL": "https:\/\/github.com\/Uvacoder\/productnews#how-to-add-a-feed"
+ },
+ {
+  "name": "#RSS\n支持按关键字搜索和导出 Excel的JAR版RSS阅读器\n",
+  "URL": "https:\/\/github.com\/mrprogre\/news_lite"
+ },
+ {
+  "name": "�一组使用 Notion API 的 Notion 自动化工具\n",
+  "URL": "https:\/\/github.com\/zhuochun\/notion-toolset"
+ },
+ {
+  "name": "将notion作为基于markdown的静态站点生成器的工具\n",
+  "URL": "https:\/\/github.com\/sillsdev\/notion-pull"
+ },
+ {
+  "name": "以提效为主题的VSCode插件，目前包含报错快速搜索与代码时长统计功能\n",
+  "URL": "https:\/\/github.com\/WendaoLee\/vscode-asoul_codehelper"
+ },
+ {
+  "name": "基于AnimeGAN2+serverless+NAS存储的漫画风图片生成工具\n",
+  "URL": "https:\/\/github.com\/xinwuyun\/serverless-ai-demo"
+ },
+ {
+  "name": "一个只有2M+大小的强大效率工具\n",
+  "URL": "https:\/\/github.com\/no5ix\/sux"
+ },
+ {
+  "name": "一个简易的文件管理工具。\n",
+  "URL": "https:\/\/github.com\/Tarocch1\/file-admin"
+ },
+ {
+  "name": "Excel表转换工具\n",
+  "URL": "https:\/\/github.com\/qingfeng346\/ScorpioConversion"
+ },
+ {
+  "name": "上传图片到 Google Drive 工具。\n",
+  "URL": "https:\/\/github.com\/dev-coco\/Image-Upload-Tool"
+ },
+ {
+  "name": " 一款自带工作流引擎的Node.js全栈框架，一款面向开发者的低代码平台，更是一款兼具低代码的开箱即用和专业代码的灵活定制的PAAS平台。\n",
+  "URL": "https:\/\/github.com\/zhennann\/cabloy"
+ },
+ {
+  "name": "采用 Material 设计的向 bilibili 直播间发送 Vtuber 翻译、歌词的弹幕同传工具\n",
+  "URL": "https:\/\/github.com\/OToNaShiAKi\/material-douden-tool"
+ },
+ {
+  "name": "一个无数据库无服务器快捷部署的刷题工具。\n",
+  "URL": "https:\/\/github.com\/serfend\/problem-killer"
+ },
+ {
+  "name": "青轻阅读 Deep Reading —— 轻松阅读英语，秒查词，秒翻译，移动端优先的网页划词点读翻译工具\n",
+  "URL": "https:\/\/github.com\/baotlake\/deep-reading"
+ },
+ {
+  "name": " �「Watt Toolkit」是一个开源跨平台的多功能 Steam 工具箱。",
+  "URL": "https:\/\/github.com\/BeyondDimension\/SteamTools"
+ },
+ {
+  "name": "优雅的像素画工具\n",
+  "URL": "https:\/\/github.com\/fzf404\/Pixxel"
+ },
+ {
+  "name": "ABox是一款免费的免越狱IPA签名的工具，适用于iOS12+系统，具有IPA导入下载安装、修复白图标、移除系统版本限制、应用多开等功能。\n",
+  "URL": "https:\/\/github.com\/SWING1993\/ABox_iOS"
+ },
+ {
+  "name": "家里的长辈神器：糖豆广场舞视频下载器\n",
+  "URL": "https:\/\/github.com\/CCBP\/TangdouDownloader"
+ },
+ {
+  "name": "小游戏收集器，一键下载、本地运行小游戏，并与你的同伴分享游戏文件\n\n特性\n一键解析下载 Flash 和 Unity3D Web 小游戏\n在本地运行 Flash 和 Unity3D Web 小游戏\n一键解析并保存 HTML5 小游戏真实页面\n自动添加 Referer 绕过 HTML5 小游戏真实页面请求限制\n登录站点自动获取cookie、Referer \/ UA请求模拟，避免触发站点反爬策略\n自动检测并安装必要的运行库\n原生支持 4399 和 7k7k 两大站点\n模块化设计，可拓展小游戏站点支持\n",
+  "URL": "https:\/\/github.com\/Cnotech\/flash-collector"
+ },
+ {
+  "name": "跨平台，基于Python开发的可视化B站视频专用下载器（支持交互视频下载）\n",
+  "URL": "https:\/\/github.com\/JimmyLiang-lzm\/biliDownloader_GUI"
+ },
+ {
+  "name": "基于 Python的bilibili下载工具\n",
+  "URL": "https:\/\/github.com\/HFrost0\/bilix"
+ },
+ {
+  "name": "慕课网视频解析下载 chrome拓展程序【仅支持下载免费视频】\n",
+  "URL": "https:\/\/github.com\/dfvips\/downloadMooc"
+ },
+ {
+  "name": "Android Bilibili视频下载器\n",
+  "URL": "https:\/\/github.com\/KafuuNeko\/BiliDownload"
+ },
+ {
+  "name": "icue\/SteamWishlistCalendar：自动跟踪 Steam 愿望清单发布日期和发布。可以订阅的 ICS 文件。",
+  "URL": "https:\/\/github.com\/icue\/SteamWishlistCalendar"
+ },
+ {
+  "name": "将 Evernote 文件导入Notion\n",
+  "URL": "https:\/\/github.com\/vzhd1701\/enex2notion"
+ },
+ {
+  "name": "YouTube 频道 新视频自动播放器\n",
+  "URL": "https:\/\/github.com\/jiehengwork\/youtubeLatestVideos_frontEnd"
+ },
+ {
+  "name": "具有自动HTTPS的快速多平台Web服务器\n",
+  "URL": "https:\/\/github.com\/caddyserver\/caddy"
+ },
+ {
+  "name": "一个将Azure Speech Cognitive Services集成到虚幻引擎的插件。\n",
+  "URL": "https:\/\/github.com\/lucoiso\/UEAzSpeech"
+ },
+ {
+  "name": "解密音乐文件，桌面客户端\n",
+  "URL": "https:\/\/github.com\/jixunmoe\/parakeet"
+ },
+ {
+  "name": "一个文件\/目录打包解包小程序，兼顾打包并伪装成JPEG文件功能。\n",
+  "URL": "https:\/\/github.com\/hrpzcf\/fpack"
+ },
+ {
+  "name": "将 CSV 文件导入\/合并到notion数据库中\n",
+  "URL": "https:\/\/github.com\/vzhd1701\/csv2notion"
+ },
+ {
+  "name": "超级签名 免签封装 安卓打包 企业签名 自助分发多合一系统\n",
+  "URL": "https:\/\/github.com\/xujimu\/ios_super_sign"
+ },
+ {
+  "name": "专门为devops服务的一款应用，基于 kubernetes 之上，可以在短短几秒内部署一个和生产环境一模一样的应用。",
+  "URL": "https:\/\/github.com\/duc-cnzj\/mars"
+ },
+ {
+  "name": " 内网穿透工具将局域网个人电脑、服务器映射到公网。支持任何TCP上层协议。",
+  "URL": "https:\/\/github.com\/iamlinhui\/rpt"
+ },
+ {
+  "name": "�Vue2.x、Vue3.x相关知识的总结",
+  "URL": "https:\/\/github.com\/zhoubichuan\/web-vue"
+ },
+ {
+  "name": "开源的接口自动化平台",
+  "URL": "https:\/\/github.com\/wuranxu\/pity"
+ },
+ {
+  "name": " � 一个简单的主页，很喜欢这种清爽的",
+  "URL": "https:\/\/github.com\/suemor233\/search-start-page"
+ },
+ {
+  "name": "Google-BlockList 搜索引擎过滤黑名单",
+  "URL": "https:\/\/github.com\/Paxxs\/Google-Blocklist"
+ },
+ {
+  "name": "lVertex 是一款集 监控, 刷流, 站点, 搜索, 追剧 于一身的 PT 管理软件",
+  "URL": "https:\/\/github.com\/l-s-w-l\/Vertex"
+ },
+ {
+  "name": " 学小易的pc搜题工具。使用airtest+python他会实时监听您的剪贴板，并将剪贴板中的文字或图片自动送给学小易进行搜索~",
+  "URL": "https:\/\/github.com\/KirigiriSuzumiya\/XueXiaoYi"
+ },
+ {
+  "name": "高仿微信聊天消息列表自由复制文字，双击查看文本内容",
+  "URL": "https:\/\/github.com\/ITxiaoguang\/SelectTextHelper"
+ },
+ {
+  "name": "自动化硬链接工具，在最大可能情况下节约空间，并保持做种",
+  "URL": "https:\/\/github.com\/appotry\/PTtool"
+ },
+ {
+  "name": "国科大（UCAS, ucas）校园网登录、课程资源下载、自动评教和分数查询助手",
+  "URL": "https:\/\/github.com\/GentleCP\/UCAS-Helper"
+ },
+ {
+  "name": "推荐：持续更新✨ 计算机基础自学笔记\/心得\/实验\/资源汇总；C语言为主，课程：数据结构、操作系统（MIT6.S081）",
+  "URL": "https:\/\/github.com\/PiperLiu\/CS-courses-notes"
+ },
+ {
+  "name": "超简单B站视频下载工具。安装即可使用，无需任何环境配置，无需登录，默认画质 1080P，mp4 格式。",
+  "URL": "https:\/\/github.com\/lecepin\/bilibili-download"
+ },
+ {
+  "name": "B站视频极速批量下载器|The fastest Bilibili video downloader\n",
+  "URL": "https:\/\/github.com\/sodaling\/FastestBilibiliDownloader"
+ },
+ {
+  "name": "csdn批量转换MD格式并下载至本地",
+  "URL": "https:\/\/github.com\/Ghostwritten\/csdn_to_md"
+ },
+ {
+  "name": "Obsidian用于将笔记推送到hexo\n",
+  "URL": "https:\/\/github.com\/piz-ewing\/push-2-hexo"
+ },
+ {
+  "name": "把视频文件转成 GIF 文件\n",
+  "URL": "https:\/\/github.com\/liuxy0551\/video-to-gif"
+ },
+ {
+  "name": "开源文件标签化管理工具。很实用的效率工具！\n",
+  "URL": "https:\/\/github.com\/HorseSword\/tagdox"
+ },
+ {
+  "name": "爱了，一个实现导入pixiv和booru图站图片为Eagle编写的油猴脚本\n",
+  "URL": "https:\/\/github.com\/miracleXL\/scripts-for-Eagle"
+ },
+ {
+  "name": "一个自定义搜索引擎，自动识别选择内容的扩展脚本\n",
+  "URL": "https:\/\/github.com\/Bleu404\/BarrierSearch"
+ },
+ {
+  "name": "又一个终端bilibili下载工具\n",
+  "URL": "https:\/\/github.com\/HFrost0\/Lighting-bilibili-download"
+ },
+ {
+  "name": "Loon脚本收集\n",
+  "URL": "https:\/\/github.com\/Tartarus2014\/Loon-Script"
+ },
+ {
+  "name": " 空洞骑士LiveSplit计时器文件生成器（中文版）\n",
+  "URL": "https:\/\/github.com\/CuteReimu\/hksplitmaker"
+ },
+ {
+  "name": "解析Shadowsocks\/ShadowsocksR\/V2Ray订阅链接(http\/ss\/ssr\/vmess)并生成json配置文件的百行shell小脚本\n",
+  "URL": "https:\/\/github.com\/OliverLew\/ssr-decode"
+ },
+ {
+  "name": "前端模块化 JavaScript 工具库\n",
+  "URL": "https:\/\/github.com\/qq575792372\/lime-util"
+ },
+ {
+  "name": " 一款优雅的UWP文件管理器，轻松管理文件系统\n",
+  "URL": "https:\/\/github.com\/zhuxb711\/RX-Explorer"
+ },
+ {
+  "name": "开源推荐：基于SpringBoot、ffmpeg、Redis、MySQL、vue.js的一个视频分享订阅网站，实现了一个视频网站的上传视频、播放视频、个人主页、订阅、评论、通知等基本功能。\n",
+  "URL": "https:\/\/github.com\/ljx1845780976\/videoSite"
+ },
+ {
+  "name": "�Headless全自动B站直播录播、切片、上传一体工具\n",
+  "URL": "https:\/\/github.com\/AsaChiri\/DDRecorder"
+ },
+ {
+  "name": "将QQ邮箱作为网盘 邮箱\/QQ邮箱\/备份\/上传\/网盘\/附件\/发邮件\n",
+  "URL": "https:\/\/github.com\/Nzzz964\/QMailStorage"
+ },
+ {
+  "name": "30+ 款 Markdown 预览主题，Typo.css、Vue、Bear、飞书云文档等风格，适用于 MWeb、Typora。\n",
+  "URL": "https:\/\/github.com\/imageslr\/mweb-themes"
+ },
+ {
+  "name": "全能容器，导航页+WebUI+Filebrowser网盘+联动Rclone自动上传功能以及更多\n",
+  "URL": "https:\/\/github.com\/wy580477\/Aria2-AIO-Container"
+ },
+ {
+  "name": "用Cloudflare Workers实现的HackerNews RSS阅读器\n",
+  "URL": "https:\/\/github.com\/ntns\/hackernews-reader-cloudflare-workers\/tree\/main"
+ },
+ {
+  "name": "跨平台数据库客户端，支持MySQL， PostgreSQL， SQL Server， MongoDB， SQLite 等。在Windows，Linux，Mac或Web应用程序下运行\n",
+  "URL": "https:\/\/github.com\/dbgate\/dbgate"
+ },
+ {
+  "name": "跨端程序，Linux和Windows的Mac风格快捷键。与所有应用程序和终端无缝复制和粘贴，简单来说就是通过它在你的工作程序里映射你习惯的键盘输入方式，嗯，很高级。\n",
+  "URL": "https:\/\/github.com\/rbreaves\/kinto"
+ },
+ {
+  "name": "让你的Onedrive变成对象存储，简单来说，就是直链+静态存储\n",
+  "URL": "https:\/\/github.com\/Tualin14\/OneSS"
+ },
+ {
+  "name": "Cloudflare Worker ：从 S3 存储桶制作播客 RSS 播客源。\n",
+  "URL": "https:\/\/github.com\/LucaTNT\/worker-feed-from-bucket"
+ },
+ {
+  "name": "MySQL的简单HTTP代理，专为Cloudflare Workers等无服务器环境而设计。\n",
+  "URL": "https:\/\/github.com\/ntaheij\/mysql-http-proxy"
+ },
+ {
+  "name": " 使用 Cloudflare Workers 为 Google Drive 提供 WebDAV 服务 \n",
+  "URL": "https:\/\/github.com\/SunYufei\/workers-dav"
+ },
+ {
+  "name": "可配置钉钉或飞书机器人的信息通知程序-发送日期、鸡汤、点餐、feed文章推荐\n",
+  "URL": "https:\/\/github.com\/wongoo\/informer"
+ },
+ {
+  "name": "#RSS\n适用于安卓端的阅读器，订阅您最喜爱的 RSS 和 Atom 源，可与您的个人 Miniflux 或 Nextcloud 服务器同步，即使在较旧且便宜的设备上也能获得流畅而敏捷的用户体验\n内置播客获取器，可与外部播放器一起使用\n使用高分辨率预览图片增强新闻源，享受现代简约的材料设计，支持浅色和深色主题，这是一个开源应用程序\n",
+  "URL": "https:\/\/github.com\/bubelov\/news"
+ },
+ {
+  "name": "一年前分享过一款海报制作程序，不过...太久了没翻到，又找到一款可部署的替代品--fastposter海报生成器，电商海报编辑器，电商海报设计器，快速生成海报程序，很棒！\n",
+  "URL": "https:\/\/github.com\/psoho\/fast-poster"
+ },
+ {
+  "name": "宝塔纯净版-安装命令，附文中没有的7.9.0企业版破解版命令：curl https:\/\/www.pgcms.net\/bt\/update6.sh|bash 破解版需要先装官方原版\n",
+  "URL": "https:\/\/github.com\/yuos-bit\/BT-Pure-Edition"
+ },
+ {
+  "name": "#notion 这是一个可部署的静态化notion书库模板源码，轻松展示你的收藏书单及书签展示，css样式可查看开发者演示站\n",
+  "URL": "https:\/\/github.com\/opakholis\/bookshelf"
+ },
+ {
+  "name": "Cyberduck是一个文件传输【挂载】客户端。适用于 Linux、macOS 和 Windows，支持FTP，SFTP，WebDAV，Amazon S3，Backblaze B2，Microsoft Azure和OneDrive以及OpenStack Swift文件传输\n",
+  "URL": "https:\/\/github.com\/iterate-ch\/cyberduck"
+ },
+ {
+  "name": "QOwnNotes是开源记事本，具有针对GNU\/Linux，macOS和Windows的markdown支持和待办事项列表管理器，可与Nextcloud Notes和ownCloud Notes一起使用\n",
+  "URL": "https:\/\/github.com\/pbek\/QOwnNotes"
+ },
+ {
+  "name": "WordPres插件：使用Google云端硬盘作为文件存储的WordPress图库\n",
+  "URL": "https:\/\/github.com\/skaut\/skaut-google-drive-gallery"
+ },
+ {
+  "name": "优质计算机书籍\n",
+  "URL": "https:\/\/github.com\/cunyu1943\/ebooks"
+ },
+ {
+  "name": "一个全自动直播录制直播上传工具\n",
+  "URL": "https:\/\/github.com\/go-olive\/olive"
+ },
+ {
+  "name": "本地自动追番，下载视频，airang配置\n",
+  "URL": "https:\/\/github.com\/Tippye\/FollowAnime"
+ },
+ {
+  "name": "油猴知网PDF+RIS下载助手\n",
+  "URL": "https:\/\/github.com\/Doradx\/CNKI-PDF-RIS-Helper"
+ },
+ {
+  "name": " FinClip 桌面版运行环境，让小程序在桌面平台上无缝运行 ，嗯...有的版本官方还在开发中\n",
+  "URL": "https:\/\/github.com\/finogeeks\/finclip-desktop-demo"
+ },
+ {
+  "name": " Brook ：一个跨平台的强加密无特征的代理软件. 零配置.\n",
+  "URL": "https:\/\/github.com\/txthinking\/brook"
+ },
+ {
+  "name": "图片转像素画的工具\n",
+  "URL": "https:\/\/github.com\/asurance\/pixel"
+ },
+ {
+  "name": "#notion Nexon是一个Notion的博客模板，使用Next.js和Vercel构建。这是 nextjs - notion - starter - kit 的修改版本,但目前它并不完美，css改动也不觉得多好，但它带来了RSS，也使得StartKit更像一个博客\n",
+  "URL": "https:\/\/github.com\/fky2015\/nexon"
+ },
+ {
+  "name": "基于Electron的桌面看板娘，支持日程提醒、小窗模式、文字对话、网页搜索与独立设置界面\n",
+  "URL": "https:\/\/github.com\/JimHans\/live2d-kanban-desktop"
+ },
+ {
+  "name": "又一个微信排版编辑器，使用MDX，支持自动转换微信外链为span，支持导出\n",
+  "URL": "https:\/\/github.com\/maqi1520\/mdx-editor"
+ },
+ {
+  "name": "自动化notion工具，用于通过Google Sheets从Slack到Notion发布消息。\n",
+  "URL": "https:\/\/github.com\/Kazuki-tam\/gas-slack2notion"
+ },
+ {
+  "name": "拯救云盘神器：将压缩包伪装成其他文件,绕过无法上传\/分享的限制\n",
+  "URL": "https:\/\/github.com\/cancundeyingzi\/Compressed-packet-camouflage"
+ },
+ {
+  "name": "一个简易的用于跨设备、跨平台传输文件或文本的程序。\n",
+  "URL": "https:\/\/github.com\/IvanHanloth\/Easy-Send"
+ },
+ {
+  "name": "电视剧\/番剧自动化重命名工具\n",
+  "URL": "https:\/\/github.com\/Nriver\/Episode-ReName"
+ },
+ {
+  "name": "在线文件收集系统，支持各种文件的收集，一站式存储，提交者无需注册\n",
+  "URL": "https:\/\/github.com\/ATQQ\/easypicker2-client"
+ },
+ {
+  "name": "数据库工具，根据表结构文档生成创建表sql，根据数据库表信息导出Model和表结构文档，根据文档生成数据库表，根据已有Model文件生成创建数据库表sql\n",
+  "URL": "https:\/\/github.com\/WeihanLi\/DbTool"
+ },
+ {
+  "name": " 集合多个API的大文件传输工具.支持·win\n",
+  "URL": "https:\/\/github.com\/Mikubill\/transfer"
+ },
+ {
+  "name": "轻量级php文件管理程序\n",
+  "URL": "https:\/\/github.com\/YanJi314\/FileAdmin"
+ },
+ {
+  "name": " b站全平台投稿客户端，支持多p投稿\n",
+  "URL": "https:\/\/github.com\/ForgQi\/biliup-app"
+ },
+ {
+  "name": "高颜值网易云音乐，全功能播放器，支持电台、MV、歌单、专辑、单曲播放，仿YouTuBe Music、Spotify界面\n",
+  "URL": "https:\/\/github.com\/imzusheng\/Netease-Cloud-Player"
+ },
+ {
+  "name": "一个文档构建器，导入.md和.puml，它会导出一个网站，pdf，或者一个带有导航的标记。\n",
+  "URL": "https:\/\/github.com\/adrianvlupu\/C4-Builder"
+ },
+ {
+  "name": "�蓝鲸直播源-长期维护的电视直播源接口、猫影视TV、IPTV、BIUBIU TV、等影视及m3u8播放器通用接口支持\n",
+  "URL": "https:\/\/github.com\/Cyril0563\/lanjing_live"
+ },
+ {
+  "name": "又一个Clash的桌面客户端，支持 windows、linux、macos\n",
+  "URL": "https:\/\/github.com\/mapleafgo\/clash-for-flutter"
+ },
+ {
+  "name": "一个增强网易云音乐云盘的项目，可以将链接网页中的音乐上传至云盘中\n",
+  "URL": "https:\/\/github.com\/maorinn\/music-cloud-disk-helper"
+ },
+ {
+  "name": "美观易用且无广告的二次元客户端，同时支持MacOS，Windows，Android，iOS。\n",
+  "URL": "https:\/\/github.com\/niuhuan\/pikapika"
+ },
+ {
+  "name": "PC版网易云客户端插件管理器\n",
+  "URL": "https:\/\/github.com\/MicroCBer\/BetterNCM"
+ },
+ {
+  "name": "手表端的哔哩哔哩客户端\n",
+  "URL": "https:\/\/github.com\/Lightning-Lion\/bilibili-for-AppleWatch"
+ },
+ {
+  "name": "一个电报机器人，可帮助您收集ACG插图。\n",
+  "URL": "https:\/\/github.com\/y-young\/nazurin"
+ },
+ {
+  "name": "软件收藏单页\n",
+  "URL": "https:\/\/zerobiubiu.github.io\/Software\/#"
+ },
+ {
+  "name": " 一个 V2EX风格 的个人后台管理系统，提供了权限管理,CURD文件生成,常用网站工具导航，本地文件上传等功能\n",
+  "URL": "https:\/\/github.com\/1211ciel\/ciel-admin"
+ },
+ {
+  "name": "MyBox：强大的跨平台的简易工具集，包含文档工具、图像工具、文件工具、媒体数据工具等等\n",
+  "URL": "https:\/\/github.com\/Mararsh\/MyBox"
+ },
+ {
+  "name": "NETworkManager：用于管理网络和解决网络问题的强大工具！\n",
+  "URL": "https:\/\/github.com\/BornToBeRoot\/NETworkManager"
+ },
+ {
+  "name": "Dendron是一个开源的，本地优先的，基于markdown的笔记工具。它是一个专为开发人员构建的个人知识管理解决方案（PKM），并与VS Code和VSCodium等IDE进行本机集成\n",
+  "URL": "https:\/\/github.com\/dendronhq\/dendron"
+ },
+ {
+  "name": "用于生成用于更新WordPress数据库表的sql查询的工具，有在线版本\n",
+  "URL": "https:\/\/github.com\/kebbet\/kebbet-wordpress-db-tool"
+ },
+ {
+  "name": "可docker部署的极简主义和rss阅读器\n",
+  "URL": "https:\/\/github.com\/miniflux\/v2"
+ },
+ {
+  "name": " m3u8 视频在线提取工具 支持 windows mac\n",
+  "URL": "https:\/\/github.com\/caorushizi\/m3u8-downloader"
+ },
+ {
+  "name": " 迅雷云盘直链获取脚本，可下载，可在线观看。\n",
+  "URL": "https:\/\/github.com\/Bleu404\/ThunderPanLink"
+ },
+ {
+  "name": "仿网易云音乐（跨平台的解锁灰色及可下载音乐平台）. 支持 windows \/ macos \/ linux \/ web\n",
+  "URL": "https:\/\/github.com\/Linkontoask\/radishes"
+ },
+ {
+  "name": "在 Notion 中嵌入涂鸦的简单绘图应用程序\n",
+  "URL": "https:\/\/github.com\/nickzuber\/notion-draw"
+ },
+ {
+  "name": "DarkTime前端知识库\n",
+  "URL": "https:\/\/book.rizon.top\/"
+ },
+ {
+  "name": "一个 Chrome插件：提取网页正在播放的视频中的文字\n",
+  "URL": "https:\/\/github.com\/lianliankanm\/ChromeVideoOcrTool"
+ },
+ {
+  "name": "JAVA语言编写SpringBoot框架开发的开源图像托管程序Hellohao图床程序\n",
+  "URL": "https:\/\/github.com\/Hello-hao\/Tbed"
+ },
+ {
+  "name": "一款上手简单、系统集成度高和功能强大的 Windows 文件管理器\n",
+  "URL": "https:\/\/github.com\/Chaoses-Ib\/DirectoryOpus"
+ },
+ {
+  "name": "一款类似Eagle的，基于electron-vue及C++开发的本地图片素材管理软件，支持多平台(Windows\/Mac\/Ubuntu)支持3D模型\n",
+  "URL": "https:\/\/github.com\/webbery\/civet"
+ },
+ {
+  "name": "movie_robot: 可以自动从豆瓣用户的想看、在看、看过列表中自动获取电影，并通过mteam查找种子，提交到qbittorrent中下载（依赖Emby管理影视原数据）\n",
+  "URL": "https:\/\/github.com\/pofey\/movie_robot"
+ },
+ {
+  "name": "基于GO语言逐一导出语雀知识库的文档\n",
+  "URL": "https:\/\/github.com\/DesistDaydream\/yuque-export"
+ },
+ {
+  "name": "从必剪导出srt格式字幕\n",
+  "URL": "https:\/\/github.com\/ericwang2006\/bcut2srt"
+ },
+ {
+  "name": "用Chrome或者iPad轻松阅读整理漫画，播放音乐，以及观看视频.\n",
+  "URL": "https:\/\/github.com\/hjyssg\/ShiguReader"
+ },
+ {
+  "name": "Macro Deck--将手机、平板电脑或任何其他具有最新互联网浏览器的设备转换为功能强大远程控制器\n",
+  "URL": "https:\/\/github.com\/SuchByte\/Macro-Deck"
+ },
+ {
+  "name": "可用于 PowerPoint 的宏，可直接导入到 Anki 中\n",
+  "URL": "https:\/\/github.com\/benjiofficial\/PowerPoint_Anki_Macro-Addon"
+ },
+ {
+  "name": "Cinema4D的自动化\/助手脚本\n",
+  "URL": "https:\/\/github.com\/FlickyTuts\/C4D-Tools"
+ },
+ {
+  "name": "基于NodeJs环境下的B 站个人动态视频下载助手，部署后可自动运行\n",
+  "URL": "https:\/\/github.com\/ZhelinCheng\/bilibili-downloader"
+ },
+ {
+  "name": "使用github操作自动发布到facebook，twitter，telegram和instagram的示例\n",
+  "URL": "https:\/\/github.com\/lakuapik\/quotes-indonesia"
+ },
+ {
+  "name": "推荐：GitHub中文排行榜，各语言分设「软件 | 资料」榜单，精准定位中文好项目\n",
+  "URL": "https:\/\/github.com\/GrowingGit\/GitHub-Chinese-Top-Charts"
+ },
+ {
+  "name": "DooTask一轻量级的开源在线项目任务管理工具\n",
+  "URL": "https:\/\/github.com\/kuaifan\/dootask"
+ },
+ {
+  "name": " ts文件合并工具，同时支持其他视频格式转换为mkv\/ts\/mp4\n",
+  "URL": "https:\/\/github.com\/lecepin\/tss-merge-to-mkv"
+ },
+ {
+  "name": "使用 Github Actions 模拟剪映转换字幕\n",
+  "URL": "https:\/\/github.com\/P-PPPP\/JianYingActionsSrt"
+ },
+ {
+  "name": "hellodk34\/jpg2gif: 把telegram导出的jpg\/jpeg\/png静态表情图片转换成微信能够导入的.gif文件",
+  "URL": "https:\/\/github.com\/hellodk34\/jpg2gif"
+ },
+ {
+  "name": "一个Chrome扩展程序，用于自动将Canvas分配加载到Notion数据库中\n",
+  "URL": "https:\/\/github.com\/JamesNZL\/notion-assignment-import"
+ },
+ {
+  "name": "一些Adobe、C4D 和 Maya 的脚本\n",
+  "URL": "https:\/\/github.com\/JourneyAtBuck\/Code-Stubs"
+ },
+ {
+  "name": "vue3 环境的 Markdown 编辑器，支持暗黑模式\n",
+  "URL": "https:\/\/github.com\/imzbf\/md-editor-v3"
+ },
+ {
+  "name": "一个弹幕机器人\n",
+  "URL": "https:\/\/github.com\/Dark-Sword-22\/danmuG"
+ },
+ {
+  "name": "一个基于React-Native的 Bangumi【番组计划】 第三方客户端，支持iOS \/ Android\n",
+  "URL": "https:\/\/github.com\/czy0729\/Bangumi"
+ },
+ {
+  "name": "电脑端智能语音小助手\n",
+  "URL": "https:\/\/github.com\/caozx1110\/Carbon"
+ },
+ {
+  "name": "一个可以录制 Microsoft Edge 浏览器的语音合成（TTS）语音工具。\n",
+  "URL": "https:\/\/github.com\/LuckyHookin\/edge-TTS-record"
+ },
+ {
+  "name": "�AI拟声: 5秒内克隆您的声音并生成任意语音内容\n",
+  "URL": "https:\/\/github.com\/babysor\/MockingBird"
+ },
+ {
+  "name": "bili直播弹幕机go1.17+[弹幕(礼物...)信息保存,语音提醒,直播流保存,直播流服务,obs调用\n",
+  "URL": "https:\/\/github.com\/qydysky\/bili_danmu"
+ },
+ {
+  "name": "为UE4构建WebSocket服务器\/客户端\n可用于构建ue4下自动化工作流\n",
+  "URL": "https:\/\/github.com\/scially\/WebSocketServer"
+ },
+ {
+  "name": "UE4资源合集（插件、效果、文档、工具等）",
+  "URL": "https:\/\/github.com\/aiekick\/Awesome_Unreal_Engine_4"
+ },
+ {
+  "name": "用于UE4游戏的纹理模组工具，可以将 dds 文件注入到 UE4 资源中\n",
+  "URL": "https:\/\/github.com\/matyalatte\/UE4-DDS-Tools"
+ },
+ {
+  "name": "轻量好用的视频处理软件。可以压缩视频、转码视频、倒放视频、合并片段、自动配字幕、自动剪辑\n",
+  "URL": "https:\/\/github.com\/icodebase\/ivideo"
+ },
+ {
+  "name": "【合集】收集一些让我们在浏览B站时更加方便的浏览器扩展\/脚本\/程序\n",
+  "URL": "https:\/\/github.com\/HCLonely\/awesome-bilibili-extra"
+ },
+ {
+  "name": "支持在线协同编辑的富文本编辑器\n",
+  "URL": "https:\/\/github.com\/textbus\/textbus"
+ },
+ {
+  "name": "Chassis--用于构建WordPress的开源虚拟服务器\n",
+  "URL": "https:\/\/docs.chassis.io\/en\/latest\/"
+ },
+ {
+  "name": "PPT 模板合集\n",
+  "URL": "https:\/\/github.com\/hornhuang\/ppt_themes"
+ },
+ {
+  "name": "浏览器扩展 自动检测失效书签链接，一键清理 �\n",
+  "URL": "https:\/\/github.com\/justorez\/bookmark-cleaner"
+ },
+ {
+  "name": "适用于 Microsoft Power Automate 的 RSS 自定义触发器",
+  "URL": "https:\/\/github.com\/groundcat\/power-automate-rss-triggers"
+ },
+ {
+  "name": "集体博客和社交媒体平台、论坛、网站目录（程序）基于 PHP HLEB 微框架\n",
+  "URL": "https:\/\/github.com\/LibArea\/libarea"
+ },
+ {
+  "name": "已翻译的语音合成 - 克隆语音并以另一种语言输出语音\n",
+  "URL": "https:\/\/github.com\/andrew-fennell\/CogNative"
+ },
+ {
+  "name": "一款高度简洁的微信 Markdown 编辑器：支持 Markdown 语法、色盘取色、多图上传、一键下载文档\n",
+  "URL": "https:\/\/github.com\/doocs\/md"
+ },
+ {
+  "name": "自动replay视频制作工具",
+  "URL": "https:\/\/github.com\/DanDDXuanX\/TRPG-Replay-Generator"
+ },
+ {
+  "name": "语雀自动化\n",
+  "URL": "https:\/\/github.com\/SenLief\/yuque-publish"
+ },
+ {
+  "name": " 视频硬字幕提取，生成srt文件。无需申请第三方API，本地实现文本识别。基于深度学习的视频字幕提取框架，包含字幕区域检测、字幕内容提取\n",
+  "URL": "https:\/\/github.com\/YaoFANGUK\/video-subtitle-extractor"
+ },
+ {
+  "name": "可自动生成一些能够用于 Clash for Windows、Clash for Android 等应用的配置文件的 Python 脚本。",
+  "URL": "https:\/\/github.com\/Shuery-Shuai\/Profiles_for_Clash"
+ },
+ {
+  "name": "开源推荐：由 Github Pages 部署的基于百度翻译 API 的网站，以提供翻译降重、文本对比等功能。【已收录发送到notion开源推荐页面】",
+  "URL": "https:\/\/github.com\/freysu\/MyTranslator"
+ },
+ {
+  "name": "基于 Cloudflare Workers 部署 API，支持基于 GitHub Webhook 将操作消息推送给企业微信机器人。\n",
+  "URL": "https:\/\/github.com\/huhuhang\/github-wechat-bot"
+ },
+ {
+  "name": "微信聊天记录导出备份程序\n",
+  "URL": "https:\/\/github.com\/BlueMatthew\/WechatExporter"
+ },
+ {
+  "name": "慕课下载器（慕课平台付费课程下载）",
+  "URL": "https:\/\/github.com\/Esword618\/MoocDownload"
+ },
+ {
+  "name": "NAS媒体库资源自动搜刮整理工具",
+  "URL": "https:\/\/github.com\/jxxghp\/nas-tools"
+ },
+ {
+  "name": " 在线文件收集系统，支持各种文件的收集，一站式存储，提交者无需注册\n",
+  "URL": "https:\/\/github.com\/ATQQ\/easypicker2-client"
+ },
+ {
+  "name": " 百度网盘对比工具，可为别人分享的百度网盘链接建立快照，当日后分享者更新内容后，用本工具对比两次分享文件或文件夹的差别，也可与本地磁盘对比\n",
+  "URL": "https:\/\/github.com\/zhangqi-ulua\/BaiduPanCompareTools"
+ },
+ {
+  "name": "将任意文件夹中的 markdown 生成 html 文档站点，根据文件树生成菜单\n",
+  "URL": "https:\/\/github.com\/qxtang\/doc-builder"
+ },
+ {
+  "name": "基于tauri的Clash GUI。支持Windows，macOS和Linux。",
+  "URL": "https:\/\/github.com\/zzzgydi\/clash-verge"
+ },
+ {
+  "name": "Windows 的安装后批处理脚本",
+  "URL": "https:\/\/github.com\/ArtanisInc\/Post-Tweaks"
+ },
+ {
+  "name": "GitHub - 关注和取消关注工具\n",
+  "URL": "https:\/\/github.com\/rohit-chouhan\/github-automation"
+ },
+ {
+  "name": "autobrr\/autobr自动化下载\n",
+  "URL": "https:\/\/github.com\/autobrr\/autobrr"
+ },
+ {
+  "name": "一款基于 Vue 和 Electron 的接口文档管理工具",
+  "URL": "https:\/\/github.com\/trueleaf\/moyu"
+ },
+ {
+  "name": "Mac系统、Mac软件的操作和使用技巧整理\n",
+  "URL": "https:\/\/github.com\/qianguyihao\/Mac"
+ },
+ {
+  "name": "截壳Jiecke\n一款iPhone、Mac、iPad、Watch截图加壳工具�\n",
+  "URL": "https:\/\/github.com\/Jiecke\/jiecke-api"
+ },
+ {
+  "name": "PHP应用程序快速解析Markdown",
+  "URL": "https:\/\/github.com\/ryangjchandler\/downmark"
+ },
+ {
+  "name": "FCPX效率工作流神器",
+  "URL": "https:\/\/github.com\/CommandPost\/CommandPost"
+ },
+ {
+  "name": "一个更新和推送rss\/feed工具",
+  "URL": "https:\/\/github.com\/n0raml\/rsschan"
+ },
+ {
+  "name": "一个支持跨平台同步文本\/图片的开源便签程序",
+  "URL": "https:\/\/github.com\/chancelyg\/syncmemo"
+ },
+ {
+  "name": "极客时间 专栏+视频 二进制下载工具，macos\/windows",
+  "URL": "https:\/\/github.com\/DuC-cnZj\/geekbang2md"
+ },
+ {
+  "name": "GIF 录屏工具, 可以方便地预览、并复制到剪贴板。\n执行文件 仅 720 KB ",
+  "URL": "https:\/\/github.com\/aardio\/Gif123"
+ },
+ {
+  "name": "将视频引用自动转换为 Maya 的脚本。",
+  "URL": "https:\/\/github.com\/JaimeFlorian27\/ReferenceImporter"
+ },
+ {
+  "name": "读取 pose3d 数据输入，生成骨架，然后在 maya 中创建关键帧",
+  "URL": "https:\/\/github.com\/brettlu1986\/VideoPoseToMayaGenerator"
+ },
+ {
+  "name": "将QQ音乐、网易云音乐和酷我音乐上的歌添加到一个列表来播放",
+  "URL": "https:\/\/github.com\/enzeberg\/tonzhon-lite"
+ },
+ {
+  "name": "跨平台基于云平台(阿里云、讯飞等)语音合成 API 的文字转语音助手。支持单文本快速合成和批量合成。支持windows、macOS、Linux。",
+  "URL": "https:\/\/github.com\/funnyzak\/tts-now"
+ },
+ {
+  "name": "开源推荐：AppFlowy是Notion的开源替代品。您负责您的数据和自定义项。用Flutter和Rust制造。",
+  "URL": "https:\/\/github.com\/AppFlowy-IO\/AppFlowy"
+ },
+ {
+  "name": "discord.bot",
+  "URL": "https:\/\/github.com\/Zseni051\/AutoSend"
+ },
+ {
+  "name": "用 replit 构建mkdocs 网站",
+  "URL": "https:\/\/github.com\/Cherol08\/mkdocs-tutorial"
+ },
+ {
+  "name": "IPTV 频道 电视 直播 源",
+  "URL": "https:\/\/github.com\/zbefine\/iptv"
+ },
+ {
+  "name": "GitHub表白代码收藏馆~谁说程序猿不懂浪漫❤️",
+  "URL": "https:\/\/github.com\/sun0225SUN\/Awesome-Love-Code"
+ },
+ {
+  "name": "MikuMikuRig是一款集生成控制器，自动导入动画，自动布料为一体的blender插件",
+  "URL": "https:\/\/github.com\/958261649\/Miku_Miku_Rig"
+ },
+ {
+  "name": "开源推荐：PerfreeBlog是一款基于java开发的博客\/CMS建站平台,丰富的主题支持及扩展插件功能,给您带来全新的创作体验~",
+  "URL": "https:\/\/github.com\/perfree\/PerfreeBlog"
+ },
+ {
+  "name": "简单强大无数据库的图床",
+  "URL": "https:\/\/github.com\/icret\/EasyImages2.0"
+ },
+ {
+  "name": "一个免费的、开源的、完全加密的笔记应用程序，https:\/\/standardnotes.com",
+  "URL": "https:\/\/github.com\/standardnotes\/web"
+ },
+ {
+  "name": "开源推荐： Blender追番插件，让你更好地摸鱼(～￣▽￣)～",
+  "URL": "https:\/\/github.com\/zk-wz\/blender-bangumi"
+ },
+ {
+  "name": " 115网盘助手Go版本，模拟内置的雷达功能，完整导入、导入文件和目录",
+  "URL": "https:\/\/github.com\/gawwo\/fake115-go"
+ },
+ {
+  "name": "内网穿透一键部署工具。",
+  "URL": "https:\/\/github.com\/rmshadows\/P_NAT_Setup"
+ },
+ {
+  "name": " 绿豆瓣·豆瓣电影 资源\/字幕 搜索下载",
+  "URL": "https:\/\/github.com\/94leon\/movie.plus"
+ },
+ {
+  "name": " B站壁纸娘和开屏图自动下载，每天使用Actions自动同步",
+  "URL": "https:\/\/github.com\/zjkwdy\/bili_app_splash"
+ },
+ {
+  "name": "使用 PUT\/POST 向手机或桌面发送推送通知",
+  "URL": "https:\/\/github.com\/binwiederhier\/ntfy#\/"
+ },
+ {
+  "name": "转换词 文档为 wiki 格式，包括 文字、图形和表格",
+  "URL": "https:\/\/github.com\/zlp-coder\/docx2wiki"
+ },
+ {
+  "name": " 文章爬虫，会每天都爬取一些有价值的官方文档的博客文章，以便于能得到第一手的更新，教程等信息",
+  "URL": "https:\/\/github.com\/liu75675231\/article-crawler"
+ },
+ {
+  "name": " Office 文件（Word、Excel、PPT）批量转为 PDF 文件，文档完善，自用满意",
+  "URL": "https:\/\/github.com\/evgo2017\/Office2PDF"
+ },
+ {
+  "name": "独立博客聚合， 提供最新的博客内容服务",
+  "URL": "https:\/\/github.com\/caibingcheng\/rssblog"
+ },
+ {
+  "name": "信息聚合自动推送机器人（debug中）",
+  "URL": "https:\/\/github.com\/0Chencc\/SakurajimaMai"
+ },
+ {
+  "name": "Notify when rss feeds are updated | RSS 更新通知",
+  "URL": "https:\/\/github.com\/pureink\/inkrss"
+ },
+ {
+  "name": "将 RSS 源与 GitHub Actions 静态地组合成一个",
+  "URL": "https:\/\/github.com\/chand1012\/static-rss-generator"
+ },
+ {
+  "name": "定时监控网页访问状态，并上报到telegram通知项目维护人",
+  "URL": "https:\/\/github.com\/Marquis-H\/WebPageMonitor"
+ },
+ {
+  "name": " 基于Github Action的高度可定制化Telegram通知推送服务",
+  "URL": "https:\/\/github.com\/Apocalypsor\/Formatted-RSS-to-Telegram"
+ },
+ {
+  "name": "短信转发器——监控Android手机短信、来电、APP通知，并根据指定规则转发到其他手机：钉钉机器人、企业微信群机器人、飞书机器人、企业微信应用消息、邮箱、bark、webhook、Telegram机器人、Server酱、PushPlus、手机短信等。PS.这个APK主要是学习与自用，如有BUG请提ISSUE，同时欢迎大家提PR指正",
+  "URL": "https:\/\/github.com\/pppscn\/SmsForwarder"
+ },
+ {
+  "name": "提供exe与py文件，用于将lofter个人主页设置中导出的xml文件中的非图片、有标题文章，导出为按照标题拆分的txt文件。使用时与xml放在同一目录下，导出该目录下全部的xml文件里的内容。解压密码为lofterexc。",
+  "URL": "https:\/\/github.com\/lins1993\/lofterexc"
+ },
+ {
+  "name": "linqian02\/mdvideo: Markdown To Video, 一个将markdown文档转为视频的便捷工具",
+  "URL": "https:\/\/github.com\/linqian02\/mdvideo"
+ },
+ {
+  "name": "一个简单项目，只有一个页面。循环播放十首电影原声精选，背景乐为下雨声。",
+  "URL": "https:\/\/github.com\/hijiangtao\/rainmood"
+ },
+ {
+  "name": " 一个卡片类拟态风格的Hexo主题",
+  "URL": "https:\/\/github.com\/miiiku\/hexo-theme-flexblock"
+ },
+ {
+  "name": " 论坛网站页面美化、广告移除、功能增强。美轮美奂的视觉享受，安然恬静的论坛时光......",
+  "URL": "https:\/\/github.com\/master-of-forums\/master-of-forums"
+ },
+ {
+  "name": "PlayStation®Plus 免費遊戲列表",
+  "URL": "https:\/\/github.com\/kennyfong19931\/svelte-instant-game-collection"
+ },
+ {
+  "name": " 批量上传任意格式的文件，并上传实现了进度展示，断点续传，暂停，取消，极速秒传的功能",
+  "URL": "https:\/\/github.com\/yp94\/file-upload"
+ },
+ {
+  "name": " � � 安心安装 Windows 软件，好用又常用的软件清单 —— 源于\"音速装机\"。",
+  "URL": "https:\/\/github.com\/volfclub\/Awesome-Program-Files"
+ },
+ {
+  "name": "用React写的一款个人博客系统，有博客展示页面和后台管理页面，可以管理文章、分类、标签、相册、说说、时间轴、留言、友链等信息。",
+  "URL": "https:\/\/github.com\/lzxjack\/react-blog"
+ },
+ {
+  "name": "展示新番的清單",
+  "URL": "https:\/\/github.com\/ACGNTaiwan\/Anime-List"
+ },
+ {
+  "name": "xiuno新帖推送插件",
+  "URL": "https:\/\/github.com\/wuxiaocong\/ass_push"
+ },
+ {
+  "name": "获得 OneDrive 文件下载直链的 TamperMonkey 插件",
+  "URL": "https:\/\/github.com\/kaaass\/sharepoint-list-plugin"
+ },
+ {
+  "name": "手动上传官网的VMwareWorkstation安装包",
+  "URL": "https:\/\/github.com\/201853910\/VMwareWorkstation"
+ },
+ {
+  "name": "可进行B站(bilibili)直播开播提醒、自动录制、在线播放、合并、转码的跨平台部署工具",
+  "URL": "https:\/\/github.com\/CHKZL\/DDTV"
+ },
+ {
+  "name": "方便从樱花动漫网站中下载视频",
+  "URL": "https:\/\/github.com\/DevilSpiderX\/SakuraAnimationDownloader"
+ },
+ {
+  "name": "使用Go构建的快速、简单的极客时间下载器，支持专栏下载为PDF文档。",
+  "URL": "https:\/\/github.com\/mmzou\/geektime-dl"
+ },
+ {
+  "name": " 超星和书香中国的电子书PDF下载器（pdf downloader for sslibrary and chineseall）",
+  "URL": "https:\/\/github.com\/padeoe\/nju-lib-downloader"
+ },
+ {
+  "name": "m3u8 视频在线提取工具 流媒体下载 m3u8下载 桌面客户端 windows mac",
+  "URL": "https:\/\/github.com\/caorushizi\/m3u8-downloader"
+ },
+ {
+  "name": " 七牛云文件仿百度网盘文件夹管理，上传下载，删除。七牛云存储，七牛云图床。桌面应用程序 windows mac",
+  "URL": "https:\/\/github.com\/caorushizi\/oss-client"
+ },
+ {
+  "name": "utools 插件，utools api, chrome历史记录搜索、vscode历史项目搜索、otp两步验证，iconfont图标搜索下载、语雀搜索等",
+  "URL": "https:\/\/github.com\/mohuishou\/utools"
+ },
+ {
+  "name": "一款蓝奏云网盘批量下载工具",
+  "URL": "https:\/\/github.com\/Stars-One\/LanzouDownloader"
+ },
+ {
+  "name": "拉勾网\/拉钩教育 课程视频下载器",
+  "URL": "https:\/\/github.com\/SweetInk\/lagou-course-downloader"
+ },
+ {
+  "name": "哔哩哔哩视频下载器 |Bilibili的另一个视频下载器",
+  "URL": "https:\/\/github.com\/stevenjoezhang\/bilibili-downloader"
+ },
+ {
+  "name": "下载链接读取器 |下载链接阅读器",
+  "URL": "https:\/\/github.com\/Neurotoxin0\/Download_Link_Reader"
+ },
+ {
+  "name": "1000万豆瓣电影\/评论\/名人\/评分数据采集源码分享（内含千万电影数据集，可下载）",
+  "URL": "https:\/\/github.com\/csuldw\/AntSpider"
+ },
+ {
+  "name": "在cf-worker上的bilibili视频下载器",
+  "URL": "https:\/\/github.com\/feilongproject\/bili-downloader"
+ },
+ {
+  "name": "音乐搜索（包括VIP）+播放;支持网易云、QQ音乐、酷狗音乐、虾米音乐、咪咕音乐、全名K歌（仅下载）;可导入网易云、QQ音乐歌单，可自定义歌单;持桌面歌词;提高单曲循环、列表循环、随机播放三种播放模式;可自定义背景图片",
+  "URL": "https:\/\/github.com\/ky-sfms\/Yuye"
+ },
+ {
+  "name": "文件目录列表程序，可做下载站，个人网盘等",
+  "URL": "https:\/\/github.com\/hvjg2578\/CFDL-Drive"
+ },
+ {
+  "name": " 一款高度简洁的微信 Markdown 编辑器：支持 Markdown 语法、色盘取色、多图上传、一键下载文档、自定义 CSS 样式、一键重置等特性",
+  "URL": "https:\/\/github.com\/doocs\/md"
+ },
+ {
+  "name": " 配置webpack，node.js， 实现批量生成二维码，打印日志，上传下载Excel等",
+  "URL": "https:\/\/github.com\/crystalcatdika\/webpackDemo"
+ },
+ {
+  "name": "直播电视系统，这里有折腾好了的，直接下载用吧",
+  "URL": "https:\/\/github.com\/vbskycn\/iptv"
+ },
+ {
+  "name": " bilibili直播流获取（可以说就是下载up的直播流视频qwq）",
+  "URL": "https:\/\/github.com\/misaka10843\/bilibili-live-urlget"
+ },
+ {
+  "name": "Xbox下载助手，支持Xbox、微软商店、PSN、NS、EA Desktop & Origin、战网国际服、Epic 下载加速。",
+  "URL": "https:\/\/github.com\/skydevil88\/XboxDownload"
+ },
+ {
+  "name": "批量下载喜马拉雅中指定专辑音频文件",
+  "URL": "https:\/\/github.com\/zhangyongcun\/ximalaya_download"
+ },
+ {
+  "name": "抖音去水印视频批量下载 编译版本下载 https:\/\/github.com\/Johnserf-Seed\/TikTokDownload\/tags",
+  "URL": "https:\/\/github.com\/Johnserf-Seed\/TikTokDownload"
+ },
+ {
+  "name": "IYUU自动辅种工具，目前能对国内大部分的PT站点自动辅种，支持下载器集群，支持多盘位，支持多下载目录，支持远程连接等。",
+  "URL": "https:\/\/github.com\/ledccn\/IYUUAutoReseed"
+ },
+ {
+  "name": "在线图片下载工具，解析站酷，UI中国等高清原图，并打包下载",
+  "URL": "https:\/\/github.com\/leochen-g\/imgSpider"
+ },
+ {
+  "name": " 中国大学MOOC全课件（视频、文档、附件）下载器",
+  "URL": "https:\/\/github.com\/SigureMo\/mooc-dl"
+ },
+ {
+  "name": "油猴脚本 - 一个免费开源的网盘下载助手",
+  "URL": "https:\/\/github.com\/syhyz1990\/baiduyun"
+ },
+ {
+  "name": "花瓣下载工具 Windows 客户端",
+  "URL": "https:\/\/github.com\/LasyIsLazy\/huaban-win"
+ },
+ {
+  "name": "程序员常读书单整理，附下载地址，希望对你有帮助。书单包括设计模式、计算机网络、操作系统、数据库、数据结构与算法、架构、中间件等等。本仓库持续更新中，可以star一下，下次找书直接在上面搜索",
+  "URL": "https:\/\/github.com\/Tyson0314\/java-books"
+ },
+ {
+  "name": " 一键下载B站收藏夹所有视频。",
+  "URL": "https:\/\/github.com\/Jeekate\/BilibiliFavorateDownloader"
+ },
+ {
+  "name": "蓝奏云网盘、客户端，支持 macos 和 windows，支持登录、大文件批量断点上传 \/ 下载、URL 解析，使用电子 构建。",
+  "URL": "https:\/\/github.com\/chenhb23\/lanzouyun-disk"
+ },
+ {
+  "name": "批量获取个人主页上的抖音作品mp4视频文件下载地址",
+  "URL": "https:\/\/github.com\/cih1996\/getDouyinVideoUrl"
+ },
+ {
+  "name": "腾讯课堂，模拟登陆，获取课程信息，视频下载，视频解密。",
+  "URL": "https:\/\/github.com\/aiguoli\/qcourse_scripts"
+ },
+ {
+  "name": " 图片\/视频选择器 - 支持LivePhoto、GIF图片选择、3DTouch预览、在线下载iCloud上的资源、编辑图片\/视频、浏览网络图片 功能 Imitation wx photo\/image picker - support for LivePhoto, GIF image selection, 3DTouch preview, Download the resources on iCloud online, browse the web image function",
+  "URL": "https:\/\/github.com\/SilenceLove\/HXPhotoPicker"
+ },
+ {
+  "name": "快速跳转GitHub镜像网站、镜像克隆下载的猴油脚本",
+  "URL": "https:\/\/github.com\/RC1844\/FastGithub"
+ },
+ {
+  "name": "翻墙代理上网工具下载大全",
+  "URL": "https:\/\/github.com\/githubvpn007\/ProxyTool"
+ },
+ {
+  "name": "知网(CNKI)文献下载及文献速览爬虫",
+  "URL": "https:\/\/github.com\/CyrusRenty\/CNKI-download"
+ },
+ {
+  "name": "rty813\/doc_downloader： 下载豆丁、淘豆、道客巴巴、原创力、金锄头文档，并自动转换为PDF",
+  "URL": "https:\/\/github.com\/rty813\/doc_downloader"
+ },
+ {
+  "name": "acgist\/snail： 基于Java、JavaFX开发的下载工具，支持下载协议：BT（BitTorrent、磁力链接、种子文件）、HLS（M3U8）、FTP、HTTP。",
+  "URL": "https:\/\/github.com\/acgist\/snail"
+ },
+ {
+  "name": "witchx \/ ：看书软件可全网搜索并下载",
+  "URL": "https:\/\/github.com\/witchx\/gook"
+ },
+ {
+  "name": " PT 助手 Plus，为 Google Chrome 和 Firefox 浏览器插件（Web Extensions），主要用于辅助下载 PT 站的种子。",
+  "URL": "https:\/\/github.com\/ronggang\/PT-Plugin-Plus"
+ },
+ {
+  "name": "PasteMe Docs",
+  "URL": "https:\/\/docs.pasteme.cn\/#\/"
+ },
+ {
+  "name": " 图书馆，书店小程序，前后端完整代码包括本馆动态，新书来了，书籍榜单，服务指南，进馆预约，活动讲座预约等功能，采用腾讯提供的小程序云开发解决方案，无须服务器和域名",
+  "URL": "https:\/\/github.com\/jituichibupang\/MinBook"
+ },
+ {
+  "name": "springboot2.0开发的个人网站，集成了：个人首页，个人博客，个人作品",
+  "URL": "https:\/\/github.com\/WinterChenS\/my-site"
+ },
+ {
+  "name": "集成 psd.js 和 konva 将 psd 转化为 图片",
+  "URL": "https:\/\/github.com\/Charles-ShiZ\/psd-to-image"
+ },
+ {
+  "name": "面包博客，一个微服务架构的前后端分离博客系统。它是作者大三不成熟的练习产物，你会看到很多开源项目的影子，前后端使用Vue+SpringCloud，鉴权登录使用JWT，使用ElasticSearch作为博客检索引擎，使用ELK进行日志收集，GithubActions完成持续集成和交付",
+  "URL": "https:\/\/github.com\/thciwei\/loafblog"
+ },
+ {
+  "name": " 使用vite创建uni-app开发环境，集成eslint+stylelint+typescript。适用全端。",
+  "URL": "https:\/\/github.com\/CalmHarbin\/uniApp-template"
+ },
+ {
+  "name": "短链生成 , 访客信息收集 项目链接： https:\/\/zlz.pw\/iR52A",
+  "URL": "https:\/\/github.com\/akazwz\/url-shorter"
+ },
+ {
+  "name": "抖音第三方浏览器插件，集成多种实用小功能",
+  "URL": "https:\/\/github.com\/douyin-helper\/douyin-helper"
+ },
+ {
+  "name": "通过 Webhook 发布 Twitter到Discord 【必须要twitter开发者账户】",
+  "URL": "https:\/\/github.com\/NNTin\/discord-twitter-bot#\/"
+ },
+ {
+  "name": "使用 Trilium Notes 构建您的个人知识库",
+  "URL": "https:\/\/github.com\/zadam\/trilium#\/"
+ },
+ {
+  "name": "ACG下载站源码",
+  "URL": "https:\/\/github.com\/1665169869\/ACG-download-Web#\/"
+ },
+ {
+  "name": "PC版微信\/QQ\/TIM防撤回补丁",
+  "URL": "https:\/\/github.com\/huiyadanli\/RevokeMsgPatcher#\/"
+ },
+ {
+  "name": "一个开源的中文字体，像素风，可用于各类游戏及美术作品，支持商用。",
+  "URL": "http:\/\/GitHub%EF%BC%9Agithub.com\/ACh-K\/Cubic-11"
+ },
+ {
+  "name": "可一键部署的Vercel Telegram消息推送机器人",
+  "URL": "https:\/\/github.com\/indes\/telepush"
+ },
+ {
+  "name": "静态网站收藏夹",
+  "URL": "https:\/\/github.com\/Okarin1\/web-project#\/"
+ },
+ {
+  "name": "支持以Docker的方式部署在vps上。支持Aria2、本子下载、网易云音乐下载、Pixiv榜单下载、Youtue-dl支持、搜图等的基于Python3的Bot",
+  "URL": "https:\/\/github.com\/666wcy\/ARPT-Bot"
+ },
+ {
+  "name": "轻快的开源的毛玻璃风格个人主页主题",
+  "URL": "https:\/\/github.com\/ye-tutu\/TuHome"
+ },
+ {
+  "name": "获得城通网盘一次性直连地址",
+  "URL": "https:\/\/github.com\/qinlili23333\/ctfileGet"
+ },
+ {
+  "name": "微信读书桌面版",
+  "URL": "https:\/\/github.com\/estepona\/wx-read-desktop"
+ },
+ {
+  "name": "花瓣网 爬虫 命令行+图形界面下载器",
+  "URL": "https:\/\/github.com\/Koril33\/HuabanScraper"
+ },
+ {
+  "name": "北邮人 BT 全自动下载刷流脚本",
+  "URL": "https:\/\/github.com\/WhymustIhaveaname\/ByrBtAutoDownloader"
+ },
+ {
+  "name": "基于 GitHub API & jsDelivr 开发的具有 CDN 加速功能的图床管理工具",
+  "URL": "https:\/\/github.com\/XPoet\/picx"
+ },
+ {
+  "name": "B 站个人动态视频下载助手，支持下载B站个人动态更新的4k视频",
+  "URL": "https:\/\/github.com\/ZhelinCheng\/bilibili-downloader"
+ },
+ {
+  "name": "清华大学新版网络学堂课程自动下载脚本",
+  "URL": "https:\/\/github.com\/Trinkle23897\/learn2018-autodown"
+ },
+ {
+  "name": "UCAS课程网站上课件的批量爬取下载",
+  "URL": "https:\/\/github.com\/Northfourta\/UCAS_PythonCrawel"
+ },
+ {
+  "name": "跨平台下载bilibili视频桌面端软件，支持windows、macOS、Linux",
+  "URL": "https:\/\/github.com\/blogwy\/BilibiliVideoDownload"
+ },
+ {
+  "name": "个每天按时提醒你摸鱼的微信机器人",
+  "URL": "https:\/\/github.com\/zoudingyi\/fish-touching-bot"
+ },
+ {
+  "name": "摸鱼派聊天室桌面版",
+  "URL": "https:\/\/github.com\/imlinhanchao\/pwl-chat"
+ },
+ {
+  "name": "一款能够帮助你在工作时摸鱼的欢乐软件",
+  "URL": "https:\/\/github.com\/SundayRX\/MoYu"
+ },
+ {
+  "name": "搭建专属于你的微信消息推送服务，支持 Markdown，支持发送邮件消息，可以选择部署在 Heroku ",
+  "URL": "https:\/\/github.com\/songquanpeng\/message-pusher"
+ },
+ {
+  "name": "hexo docker 一键部署环境",
+  "URL": "https:\/\/github.com\/appotry\/docker-hexo"
+ },
+ {
+  "name": "在 Heroku 上部署 V2Ray WebSocket",
+  "URL": "https:\/\/github.com\/bclswl0827\/v2ray-heroku"
+ },
+ {
+  "name": "Nginx + TTRSS \/ FreshRSS + RSSHub 整合 docker 容器化快速一键部署方案.",
+  "URL": "https:\/\/github.com\/stilleshan\/rssforever"
+ },
+ {
+  "name": "在Heroku上部署v2ray",
+  "URL": "https:\/\/github.com\/DaoChen6\/Heroku-v2ray"
+ },
+ {
+  "name": "部署在cloudflare的workers中的OneManager",
+  "URL": "https:\/\/github.com\/qkqpttgf\/OneManager-cfworkerskv"
+ },
+ {
+  "name": "在vercel上部署订阅转换",
+  "URL": "https:\/\/github.com\/Nomamuk\/subconverter-vercel"
+ },
+ {
+  "name": "在 Heroku 上部署 WordPress 博客",
+  "URL": "https:\/\/github.com\/mcxiaolan\/WordPress-For-Heroku"
+ },
+ {
+  "name": "蓝奏云网盘、客户端，支持 macos 和 windows",
+  "URL": "https:\/\/github.com\/chenhb23\/lanzouyun-disk"
+ },
+ {
+  "name": "将您的任意Github存储库作为您的专属音乐云盘",
+  "URL": "https:\/\/github.com\/YanShuHao314\/GithubMusicPlayer"
+ },
+ {
+  "name": "ESU 短网址",
+  "URL": "https:\/\/github.com\/chenlongqiang\/easy-short-url"
+ },
+ {
+  "name": "跨平台下载bilibili视频桌面端软件，支持windows、macOS、Linux",
+  "URL": "https:\/\/github.com\/blogwy\/BilibiliVideoDownload"
+ },
+ {
+  "name": "https:\/\/github.com\/MisaLiu\/afdian-sponsor-page",
+  "URL": "https:\/\/github.com\/MisaLiu\/afdian-sponsor-page"
+ }
+]
