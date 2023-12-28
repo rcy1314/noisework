@@ -1,56 +1,73 @@
 .ad-container {
-    position: fixed;
-    top: 25%;
-    right: -500px; /* 初始位置在最右侧外部 */
-    transform: translateY(-50%);
-    width: 200px;
-    height: 200px;
-    background-color: #100f0f66;
-    padding: 1px;
-    box-sizing: border-box;
-    transition: right 0.3s; /* 动画过渡效果 */
-    z-index: 100; /* 调整广告显示图层 */
-    border-radius: 10px; /* 圆弧形状 */
-    overflow: hidden; /* 隐藏超出容器的内容 */
-    z-index: 100; /* 广告显示图层 */
+  position: fixed;
+  top: 22%;
+  right: -500px;
+  transform: translateY(-50%);
+  width: 180px;
+  height: 160px;
+  background-color: transparent;
+  padding: 1px;
+  box-sizing: border-box;
+  transition: right 0.3s, border-radius 0.3s; /* 添加圆弧过渡效果 */
+  z-index: 100;
+  overflow: hidden;
+  border-radius: 10px; /* 添加圆弧效果 */
+}
+
+/* 手机端不显示广告位 */
+@media (max-width: 600px) {
+  .ad-container {
+    display: none;
   }
-  /* 手机端不显示广告位 */
-  @media (max-width: 600px) {
-    .ad-container {
-      display: none;
-    }
-  }
-  .ad-container.show {
-    right: 3px; /* 弹出显示位置 */
-  }
+}
+
+.ad-container.show {
+  right: 3px;
+}
+
+.ad-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(0px); /* 初始状态下图片不模糊 */
+  transition: filter 0.3s; /* 添加过渡效果 */
+}
+
+.ad-container:hover .ad-image {
+  filter: blur(5px); /* 鼠标悬停时图片模糊 */
+}
+
+.ad-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ad-description {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #fbfbfb;
+  font-size: 13px;
+  transform: translateY(-50%);
+  text-shadow: 0 0 5px rgba(12, 12, 12, 0.8); /* 文字发光效果 */
   
-  .ad-image {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0; /* 顶部圆弧形状 */
-  }
-  
-  .ad-link {
-    display: block;
-    margin-top: 3px;
-    font-size: 12px;
-    text-align: center;
-    color: #d56d0c;
-    text-decoration: none;
-  }
-  
-  .ad-description {
-    text-align: center;
-    color: #fbfbfbcc;
-    font-size: 13px;
-    margin-top: 1px;
-  }
-  
-  .close-button {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    cursor: pointer;
-    color: #fbfbfbfe;
-  }
+  transition: filter 0.3s; /* 添加过渡效果 */
+}
+
+.ad-container:hover .ad-description {
+  filter: blur(0px); /* 鼠标悬停时文字清晰 */
+}
+
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  color: #fbfbfbfe;
+}

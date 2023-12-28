@@ -7,9 +7,14 @@ var ads = [
     description: "包罗万象-Noise宝藏阁"
   },
   {
-    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/20230818/guang2.3c7b9a9xpvi0.png",
+    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/919.png",
+    link: "https://www.noisework.cn/soso",
+    description: "书签检索-bookmark"
+  },
+  {
+    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/6%20Exercises%20to%20Overcome%20Skill%20Plateaus%20as%20a%20Designer.jpeg",
     link: "https://www.noisework.cn",
-    description: "广告位+"
+    description: "广告位+点击可查看"
   },
   {
     image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/20230818/2321312.1o5qd8jb6elc.jpg",
@@ -17,15 +22,22 @@ var ads = [
     description: "超量收录-Noise导航"
   },
   {
-    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/20230818/guang.6xvhojj7j8w0.jpg",
+    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/%E6%A0%AA%E3%82%AD%E3%82%99%E3%83%A3%E3%83%AB%20on%20X.jpeg",
     link: "https://www.noisework.cn",
-    description: "广告位+"
+    description: "广告位+点击可查看"
+  },
+  {
+    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/%F0%9D%95%9E%F0%9D%95%A0%F0%9D%95%A6%F0%9D%95%A6%F0%9D%95%9F.jpeg",
+    link: "https://www.noisework.cn",
+    description: "广告位+点击可查看"
   }
 ];
 
 // 随机打乱广告数组
 function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
+  var currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
 
   while (0 !== currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex);
@@ -100,7 +112,6 @@ function changeAd() {
 
   // 如果广告尚未显示过，则添加"点击查看广告"的文本节点
   if (!adDisplayed) {
-    adLink.appendChild(document.createTextNode("🔗点击查看"));
     adDisplayed = true;
   }
 
