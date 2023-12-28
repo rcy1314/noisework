@@ -1,3 +1,8 @@
+/*
+此源码是基于 XgpNwb 的二次修改
+Github：https://github.com/NianBroken/Firework_Simulator
+Gitee：https://gitee.com/nianbroken/Firework_Simulator
+*/
 * {
   position: relative;
   box-sizing: border-box;
@@ -30,17 +35,13 @@ body {
 }
 
 .blur {
-  -webkit-filter: blur(12px);
   filter: blur(12px);
 }
 
 .container {
   height: 100%;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
   align-items: center;
 }
 
@@ -50,11 +51,9 @@ body {
   text-align: center;
   text-transform: uppercase;
 }
-
 .loading-init__header {
   font-size: 2.2em;
 }
-
 .loading-init__status {
   margin-top: 1em;
   font-size: 0.8em;
@@ -67,7 +66,6 @@ body {
   border: 1px solid #222;
   margin: -1px;
 }
-
 @media (max-width: 840px) {
   .stage-container {
     border: none;
@@ -78,38 +76,27 @@ body {
 .canvas-container {
   width: 100%;
   height: 100%;
-  -webkit-transition: -webkit-filter 0.3s;
-  transition: -webkit-filter 0.3s;
   transition: filter 0.3s;
-  transition: filter 0.3s, -webkit-filter 0.3s;
 }
-
 .canvas-container canvas {
   position: absolute;
   mix-blend-mode: lighten;
-  -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
 
 .controls {
-  /* display: none !important; */
   position: absolute;
   top: 0;
   width: 100%;
   padding-bottom: 50px;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: justify;
   justify-content: space-between;
-  -webkit-transition: opacity 0.3s, visibility 0.3s;
   transition: opacity 0.3s, visibility 0.3s;
 }
-
 @media (min-width: 840px) {
   .controls {
     visibility: visible;
   }
-
   .controls.hide:hover {
     opacity: 1;
   }
@@ -122,29 +109,20 @@ body {
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.42);
-  -webkit-transition: opacity 0.3s, visibility 0.3s;
   transition: opacity 0.3s, visibility 0.3s;
 }
-
 .menu__inner-wrap {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   flex-direction: column;
-  -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
   align-items: center;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-
 .menu__header {
   margin-top: auto;
   margin-bottom: 8px;
@@ -152,14 +130,12 @@ body {
   font-size: 2em;
   text-transform: uppercase;
 }
-
 .menu__subheader {
   margin-bottom: auto;
   padding-bottom: 12px;
   font-size: 0.86em;
   opacity: 0.8;
 }
-
 .menu form {
   width: 100%;
   max-width: 400px;
@@ -167,17 +143,12 @@ body {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
-
 .menu .form-option {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
   margin: 16px 0;
-  -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-
 .menu .form-option label {
   display: block;
   width: 50%;
@@ -185,11 +156,10 @@ body {
   text-align: right;
   text-transform: uppercase;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
-
 .menu .form-option--select select {
   display: block;
   width: 50%;
@@ -201,11 +171,9 @@ body {
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
-
 .menu .form-option--select select option {
   background-color: black;
 }
-
 .menu .form-option--checkbox input {
   display: block;
   width: 26px;
@@ -213,11 +181,8 @@ body {
   margin: 0;
   opacity: 0.5;
 }
-
 @media (max-width: 840px) {
-
-  .menu .form-option select,
-  .menu .form-option input {
+  .menu .form-option select, .menu .form-option input {
     outline: none;
   }
 }
@@ -227,36 +192,30 @@ body {
   top: 0;
   right: 0;
 }
-
+/*Language translation of this project into Chinese by Nianbroken*/
 .btn {
   opacity: 0.16;
   width: 50px;
   height: 50px;
-  display: -webkit-box;
   display: flex;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: default;
-  -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-
 .btn--bright {
   opacity: 0.5;
 }
-
 @media (min-width: 840px) {
   .btn:hover {
     opacity: 0.32;
   }
-
   .btn--bright:hover {
     opacity: 0.75;
   }
 }
-
 .btn svg {
   display: block;
   margin: auto;
@@ -268,25 +227,20 @@ body {
   padding-top: 6px;
   font-size: 0.8em;
   opacity: 0.75;
+  text-align: center;
 }
-
 .credits a {
   color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
 }
-
-.credits a:hover,
-.credits a:active {
+.credits a:hover, .credits a:active {
   color: rgba(255, 255, 255, 0.75);
   text-decoration: underline;
 }
 
 .help-modal {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
   align-items: center;
   position: fixed;
   top: 0;
@@ -294,12 +248,9 @@ body {
   left: 0;
   right: 0;
   visibility: hidden;
-  -webkit-transition-property: visibility;
   transition-property: visibility;
-  -webkit-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-
 .help-modal__overlay {
   position: absolute;
   top: 0;
@@ -307,21 +258,14 @@ body {
   left: 0;
   right: 0;
   opacity: 0;
-  -webkit-transition-property: opacity;
   transition-property: opacity;
-  -webkit-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
-  -webkit-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-
+/*Language translation of this project into Chinese by Nianbroken*/
 .help-modal__dialog {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   flex-direction: column;
-  -webkit-box-align: center;
   align-items: center;
   max-width: 400px;
   max-height: calc(100vh - 100px);
@@ -330,31 +274,22 @@ body {
   border-radius: 0.3em;
   background-color: rgba(0, 0, 0, 0.4);
   opacity: 0;
-  -webkit-transform: scale(0.9, 0.9);
   transform: scale(0.9, 0.9);
-  -webkit-transition-property: opacity, -webkit-transform;
-  transition-property: opacity, -webkit-transform;
   transition-property: opacity, transform;
-  transition-property: opacity, transform, -webkit-transform;
-  -webkit-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
-  -webkit-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-
 @media (min-width: 840px) {
   .help-modal__dialog {
     font-size: 1.25rem;
     max-width: 500px;
   }
 }
-
 .help-modal__header {
   font-size: 1.75em;
   text-transform: uppercase;
   text-align: center;
 }
-
 .help-modal__body {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -365,7 +300,6 @@ body {
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.75);
 }
-
 .help-modal__close-btn {
   flex-shrink: 0;
   outline: none;
@@ -379,51 +313,24 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   background-color: rgba(255, 255, 255, 0.25);
-  -webkit-transition: color 0.3s, background-color 0.3s;
   transition: color 0.3s, background-color 0.3s;
 }
-
-.help-modal__close-btn:hover,
-.help-modal__close-btn:active,
-.help-modal__close-btn:focus {
+.help-modal__close-btn:hover, .help-modal__close-btn:active, .help-modal__close-btn:focus {
   color: #FFF;
   background-color: #09F;
 }
-
 .help-modal.active {
   visibility: visible;
-  -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
-
 .help-modal.active .help-modal__overlay {
   opacity: 1;
-  -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
-  -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
-
 .help-modal.active .help-modal__dialog {
   opacity: 1;
-  -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
-  -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
-  -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
-}
-
-.hide {
-  display: none !important;
-}
-
-.type_words {
-  padding: 60px 80px 20px 0px;
-  position: absolute;
-  top: 0px;
-  left: 10px;
-  z-index: 500;
-  color: #ffffff;
-  font-size: 14px;
 }

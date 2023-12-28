@@ -1,6 +1,6 @@
 ## 说明
 
-js及css已本地化，根据功能分类，请勿合并
+js及css已本地化，根据功能分类，请勿合并，觉得加载过慢再合并或套用CDN
 
 ## 更新
 
@@ -26,5 +26,13 @@ js及css已本地化，根据功能分类，请勿合并
 添加了两个缓存方案
 
 1. service-worker.js文件内更换cacheName版本号会自动清除上个版本设置的缓存文件
+
 2. 主页index.html文件内，找到注释<!-- 添加版本号-每次更新要改版本号才会刷新缓存 -->更新下面自己设置缓存的文件的版本号
+
 3. 清除本地浏览器缓存
+
+4. ## 预览
+
+5. <img src="https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/1703748274513.png" alt="1703748274513" style="zoom:50%;" />
+
+<img src="https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/1703748638036.png" alt="1703748638036" style="zoom: 50%;" />
