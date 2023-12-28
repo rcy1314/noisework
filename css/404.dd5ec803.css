@@ -283,13 +283,13 @@ a:hover {
 :root {
     --side-space: 18vw;
     --base-radius: .5em;
-    --texture: rgb(226, 231, 240);
+    --texture: rgba(18, 18, 19, 0.217);
     --text-color-meta: 81, 87, 90;
     --text-color: rgba(var(--text-color-meta), 1);
     --border-color: rgba(255, 255, 255, .2);
     --bg: rgb(235, 244, 256, .72);
     --card-bg-meta: 255, 255, 255;
-    --card-bg: rgba(255, 255, 255, .4);
+    --card-bg: rgba(255, 255, 255, 0.37);
     --card-hover-bg: rgba(255, 255, 255, .7);
     --card-active-bg: rgba(255, 255, 255, .9)
 }
