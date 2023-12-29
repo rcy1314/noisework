@@ -85,7 +85,7 @@ let isFullScreen = false;
         };
 
         var image = document.createElement("img");
-        image.src = "./lianxi/weixin.png";
+        image.src = "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/weixin.png";
         image.style.position = "absolute";
         image.style.top = "50%";
         image.style.left = "50%";
