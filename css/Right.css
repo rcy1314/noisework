@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+.menu {
+    position: absolute;
+    width: 88px;
+    padding: 4px;
+    box-shadow: 0 1px 4px rgba(33, 33, 33, 0.846), 0 8px 24px rgba(5, 5, 5, 0.859);
+    border-radius: 10px;
+    background: rgba(19, 19, 19, 0.802);
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: opacity .2s ease, height .3s ease, visibility .3s ease;
+    z-index: 999999; /* 添加这一行 */
+}
+
+.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-list01 {
+    list-style: none;
+}
+
+.menu-item {
+    line-height: 22px;
+    color: #f0f1f7;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: background .3s ease;
+}
+
+.menu-item:hover {
+    background: #127de7f7;
+}
+
+.menu-item svg {
+    margin-right: 8px;
+}
+
+.menu-item-divider {
+    height: 1px;
+    margin: 4px 8px;
+    background: #f5f5f6;
+}
+
+.menu-item-danger {
+    color: #f94a05f7;
+}
+
+.menu-item-danger svg path {
+    fill: #ee7f7f;
+}
+
+.menu-item svg path {
+    fill: #f3f5f8;
+}
+
+.menu-item-danger:hover {
+    background: #b32c2c95;
+}

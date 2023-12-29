@@ -123,46 +123,7 @@
     text-align: center
 }
 
-html,
-body,
-div,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-p,
-blockquote,
-pre,
-hr,
-figure,
-table,
-caption,
-th,
-td,
-form,
-fieldset,
-legend,
-input,
-button,
-textarea,
-menu {
-    margin: 0;
-    padding: 0
-}
 
-header,
-footer,
-section,
-article,
-aside,
-nav,
-hgroup,
-address,
-figure,
-figcaption,
-menu,
 details {
     display: block
 }
@@ -178,11 +139,6 @@ th {
     font-weight: 400
 }
 
-html,
-body,
-fieldset,
-img,
-iframe,
 abbr {
     border: 0
 }
@@ -210,9 +166,6 @@ sub {
     font-size: 83%
 }
 
-pre,
-code,
-kbd,
 samp {
     font-family: inherit
 }
