@@ -2,6 +2,8 @@
 
 js及css已本地化，根据功能分类，请勿合并，觉得加载过慢再合并或套用CDN
 
+需要主题模版请[下载](https://github.com/rcy1314/noisework/releases)
+
 ## 更新
 
 - 12.29-添加右键菜单【Right.js，Right.css】
