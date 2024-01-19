@@ -27,6 +27,11 @@ var ads = [
     description: "广告位+点击可查看"
   },
   {
+    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/1705612162062.png",
+    link: "https://www.noisework.cn",
+    description: "特权+"
+  },
+  {
     image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/%F0%9D%95%9E%F0%9D%95%A0%F0%9D%95%A6%F0%9D%95%A6%F0%9D%95%9F.jpeg",
     link: "https://www.noisework.cn",
     description: "广告位+点击可查看"
