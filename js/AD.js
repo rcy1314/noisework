@@ -7,9 +7,29 @@ var ads = [
     description: "包罗万象-Noise宝藏阁"
   },
   {
+    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/1704116804-98dd36fd8711e66.png",
+    link: "https://www.aipaperpass.com?pic=mLnw",
+    description: "AI一键论文-AIPaperPass"
+  },
+  {
+    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/1689175720-6446d860dbbfe54.png",
+    link: "https://www.duomexing.com",
+    description: "多么行-AI数字化模型扩展"
+  },
+  {
+    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/1695139067-c4ca4238a0b9238.png",
+    link: "https://aigc.yizhentv.com/?_f=nobaibao",
+    description: "AI视频创作神器一帧秒创"
+  },
+  {
     image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/919.png",
     link: "https://www.noisework.cn/soso",
     description: "书签检索-bookmark"
+  },
+  {
+    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/1707542539504.png",
+    link: "https://xinghuo.xfyun.cn",
+    description: "讯飞星火大模型"
   },
   {
     image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/6%20Exercises%20to%20Overcome%20Skill%20Plateaus%20as%20a%20Designer.jpeg",
@@ -25,11 +45,6 @@ var ads = [
     image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/%E6%A0%AA%E3%82%AD%E3%82%99%E3%83%A3%E3%83%AB%20on%20X.jpeg",
     link: "https://www.noisework.cn",
     description: "广告位+点击可查看"
-  },
-  {
-    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/1705612162062.png",
-    link: "https://www.noisework.cn",
-    description: "特权+"
   },
   {
     image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/%F0%9D%95%9E%F0%9D%95%A0%F0%9D%95%A6%F0%9D%95%A6%F0%9D%95%9F.jpeg",
