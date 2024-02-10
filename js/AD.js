@@ -17,11 +17,6 @@ var ads = [
     description: "多么行-AI数字化模型扩展"
   },
   {
-    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/1695139067-c4ca4238a0b9238.png",
-    link: "https://aigc.yizhentv.com/?_f=nobaibao",
-    description: "AI视频创作神器一帧秒创"
-  },
-  {
     image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/919.png",
     link: "https://www.noisework.cn/soso",
     description: "书签检索-bookmark"
@@ -45,6 +40,11 @@ var ads = [
     image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/%E6%A0%AA%E3%82%AD%E3%82%99%E3%83%A3%E3%83%AB%20on%20X.jpeg",
     link: "https://www.noisework.cn",
     description: "广告位+点击可查看"
+  },
+  {
+    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/1695139067-c4ca4238a0b9238.png",
+    link: "https://aigc.yizhentv.com/?_f=nobaibao",
+    description: "AI视频创作神器一帧秒创"
   },
   {
     image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/%F0%9D%95%9E%F0%9D%95%A0%F0%9D%95%A6%F0%9D%95%A6%F0%9D%95%9F.jpeg",
