@@ -1,0 +1,58 @@
+下面是修改后的样式，根据您的要求修改了颜色并确保居中：
+
+```css
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: #333; /* 统一的背景颜色 */
+    color: #fff; /* 统一的文字颜色 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display {
+    background-color: #333; /* 统一的背景颜色 */
+    color: #fff; /* 统一的文字颜色 */
+    width: 1200px;
+    margin: 5px auto; /* 居中 */
+    height: 550px;
+    overflow-y: auto;
+}
+
+#display {
+    font-size: medium;
+    font-family: sans-serif;
+}
+
+.query-class {
+    margin: 20px auto 10px auto; /* 居中 */
+    background-color: #333; /* 统一的背景颜色 */
+    padding: 20px; /* 添加 padding */
+    border-radius: 10px; /* 添加边框圆角 */
+    width: 1100px;
+}
+
+/* Input tag of upload image */
+#upload-image {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+#display ol {
+    margin-left: 21px;
+}
+
+#display ul {
+    margin-left: 21px;
+}
+
+pre code .hljs {
+    border-radius: 21px;
+}
