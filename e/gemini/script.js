@@ -14,7 +14,7 @@ async function run_text() {
 
   const prompt = document.getElementById("query").value;  // To get the value from the input tag
 
-  document.getElementById('display').append('Q. ' + prompt + '\n\n');  // To display the question
+  document.getElementById('display').append('Q. ' + prompt + '\n');  // To display the question
 
   const result = await model.generateContentStream(prompt);  // Using Streaming for faster access
 
@@ -104,3 +104,15 @@ input.addEventListener("keypress", (event) => {
     send_button.click();  // Send the control to the send-button
   }
 })
+// 获取上传图片的input元素
+const uploadImageInput = document.getElementById("upload-image");
+// 获取文本输入框元素
+const queryInput = document.getElementById("query");
+
+// 监听上传图片input元素的change事件
+uploadImageInput.addEventListener("change", function() {
+  // 获取用户选择的文件
+  const file = this.files[0];
+  // 将文件名显示在文本输入框中
+  queryInput.value = file.name;
+});

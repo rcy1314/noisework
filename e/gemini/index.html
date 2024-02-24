@@ -54,6 +54,17 @@
     .query-class button:hover {
       background-color: #ddd;
     }
+
+    /* Footer styles */
+    footer {
+      text-align: center;
+      background-color: #333;
+      color: #ddd;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
   </style>
 </head>
 
@@ -78,6 +89,12 @@
     <button type="submit" id="send-button">发送</button>
 
   </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="currentYear"></span> Gemini AI. All rights reserved. | <a href="https://www.noisework.cn">回到主页</a></p>
+  </footer>
+
 </body>
 
 <script type="importmap">
@@ -92,5 +109,10 @@
 
 <!-- For the syntax highlighting  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<!-- Script to update current year -->
+<script>
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
 
 </html>
