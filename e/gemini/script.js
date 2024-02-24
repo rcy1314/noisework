@@ -116,19 +116,3 @@ uploadImageInput.addEventListener("change", function() {
   // 将文件名显示在文本输入框中
   queryInput.value = file.name;
 });
-// Added EventListener to the button
-const send_button = document.getElementById('send-button');
-send_button.addEventListener("click", () => {
-  const file = document.getElementById('upload-image');  // Selecting the value of input of type file
-
-  if (file.value){
-    run_image();  // Run the function which handle image
-    file.value = '';  // To reset the file selected
-    console.log("Image function run");
-  }
-  else{
-    run_text();  // Run the text-only function
-    console.log("Text function run");
-  }
-  document.getElementById('query').value = '';  // To clear the input
-});
