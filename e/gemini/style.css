@@ -1,15 +1,16 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* 添加这一行以确保元素的宽度和高度包括边框和填充 */
 }
 
 h1 {
-    color: #fff; /* 标题文字颜色为白色 */
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px; /* 设置标题高度 */
-    margin-bottom: 20px; /* 设置标题与显示框的间距 */
+    height: 100px;
+    margin-bottom: 20px;
 }
 
 .display-container {
@@ -18,27 +19,26 @@ h1 {
 }
 
 .display {
-    background-color: #333; /* 统一的背景颜色 */
-    color: #fff; /* 统一的文字颜色 */
-    width: 80%; /* 调窄宽度 */
-    height: 500px; /* 调整显示框高度 */
+    background-color: #333;
+    color: #fff;
+    width: 80%;
     overflow-y: auto;
-    padding: 10px; /* 添加 padding */
-    line-height: 1.5; /* 调整行高 */
-    text-align: left; /* 调整文本对齐方式为左对齐 */
-    margin: 0 auto 10px auto; /* 水平居中，上下间距为10px */
-    font-size: 16px; /* 调整文字大小 */
+    padding: 10px;
+    line-height: 1.5;
+    text-align: left;
+    margin: 0 auto 10px auto;
+    font-size: 16px;
 }
 
 .query-class {
-    background-color: #333; /* 统一的背景颜色 */
-    color: #fff; /* 统一的文字颜色 */
-    padding: 20px; /* 添加 padding */
-    border-radius: 10px; /* 添加边框圆角 */
-    width: 80%; /* 调窄宽度 */
-    text-align: center; /* 文本居中对齐 */
-    margin: 0 auto 10px auto; /* 水平居中，上下间距为10px */
-    font-size: 16px; /* 调整文字大小 */
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    font-size: 16px;
 }
 
 /* Input tag of upload image */
@@ -60,4 +60,15 @@ button {
 
 pre code .hljs {
     border-radius: 21px;
+}
+
+/* 媒体查询 */
+@media only screen and (max-width: 600px) {
+    .display {
+        width: 90%; /* 小屏幕下显示框宽度调整为90% */
+    }
+
+    .query-class {
+        width: 90%; /* 小屏幕下查询框宽度调整为90% */
+    }
 }
