@@ -26,7 +26,8 @@ h1 {
     padding: 10px; /* 添加 padding */
     line-height: 1.5; /* 调整行高 */
     text-align: left; /* 调整文本对齐方式为左对齐 */
-    margin: 0 auto; /* 水平居中 */
+    margin: 0 auto 10px auto; /* 水平居中，上下间距为10px */
+    font-size: 16px; /* 调整文字大小 */
 }
 
 .query-class {
@@ -36,7 +37,8 @@ h1 {
     border-radius: 10px; /* 添加边框圆角 */
     width: 80%; /* 调窄宽度 */
     text-align: center; /* 文本居中对齐 */
-    margin: 0 auto 20px auto; /* 水平居中 */
+    margin: 0 auto 10px auto; /* 水平居中，上下间距为10px */
+    font-size: 16px; /* 调整文字大小 */
 }
 
 /* Input tag of upload image */

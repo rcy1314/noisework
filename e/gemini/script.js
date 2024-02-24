@@ -14,7 +14,7 @@ async function run_text() {
 
   const prompt = document.getElementById("query").value;  // To get the value from the input tag
 
-  document.getElementById('display').append('Q. ' + prompt + '\n');  // To display the question
+  document.getElementById('display').append('Q. ' + prompt + '\n\n');  // To display the question
 
   const result = await model.generateContentStream(prompt);  // Using Streaming for faster access
 
