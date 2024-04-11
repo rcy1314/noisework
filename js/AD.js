@@ -7,9 +7,19 @@ var ads = [
     description: "包罗万象-Noise宝藏阁"
   },
   {
+    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/%E8%B6%85%E5%A4%A7%E6%B5%81%E9%87%8F%E5%8D%A1.png",
+    link: "https://simhaoka.com/pc/index?id=A7BA17EFD6DC47F6826F0C67B898725A",
+    description: "超大流量卡优惠办理PC入口"
+  },
+  {
     image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/1704116804-98dd36fd8711e66.png",
     link: "https://www.aipaperpass.com?pic=mLnw",
     description: "AI一键论文-AIPaperPass"
+  },
+  {
+    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/%E8%B6%85%E5%A4%A7%E6%B5%81%E9%87%8F%E5%8D%A1.png",
+    link: "https://simhaoka.com/phone/index?id=A7BA17EFD6DC47F6826F0C67B898725A",
+    description: "超大流量卡优惠办理手机入口"
   },
   {
     image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/1689175720-6446d860dbbfe54.png",
@@ -25,6 +35,11 @@ var ads = [
     image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/1707542539504.png",
     link: "https://xinghuo.xfyun.cn",
     description: "讯飞星火大模型"
+  },
+  {
+    image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/%E8%B6%85%E5%A4%A7%E6%B5%81%E9%87%8F%E5%8D%A1.png",
+    link: "https://simhaoka.com/pc/index?id=A7BA17EFD6DC47F6826F0C67B898725A",
+    description: "超大流量卡优惠办理PC入口"
   },
   {
     image: "https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/6%20Exercises%20to%20Overcome%20Skill%20Plateaus%20as%20a%20Designer.jpeg",
