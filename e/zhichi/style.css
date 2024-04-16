@@ -272,7 +272,7 @@ a{
 }
 .donorDetails {
     position: absolute;
-    top: 74%;
+    top: 72%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
