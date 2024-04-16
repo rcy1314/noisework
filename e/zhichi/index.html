@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>支持</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/favicon.ico">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+    <style>
+        .gonggao {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .gonggao a {
+            text-decoration: none;
+        }
+        .gonggao span {
+            font-family: 'Tahoma';
+            font-weight: 900;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .gonggao a:nth-child(1) span {
+            color: #33a4e5;
+        }
+        .gonggao a:nth-child(2) span {
+            color: #e56e33;
+        }
+        .gonggao a:nth-child(3) span {
+            color: #b333e5ce;
+        }
+        .gonggao a:nth-child(4) span {
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <a id="github" href="https://noisework.cn/" target="_blank" class="pos-f tr3" title="我的主页"></a>
+    <div id="DonateText" class="tr3">Sponsor</div>
+    <ul id="donateBox" class="list pos-f tr3">
+        <li id="PayPal"><a href="https://paypal.me/noisepay" target="_blank">PayPal</a></li>
+        <li id="BTC" data-footnote="qq"><button id="BTCBn"  data-clipboard-target="#btc-key" alt="Copy to clipboard">QQ</button></li>
+        <li id="AliPay">AliPay</li>
+        <li id="WeChat">WeChat</li>
+    </ul>
+    <div class="gonggao">
+        <a href="https://www.noisework.cn" target="_blank">
+            <span>👋  欢迎访问，这里是NOISE的赞赏渠道，如果你赞赏支持过，请在赞赏后和我取得联系，点击可访问主页</span>
+        </a>
+        <a  target="_blank">
+            <span>📢 ：公众号及博客网站的赞助名单已更新</span>
+        </a>
+    </div>
+    <div id="donorDetails" class="donorDetails">
+        <div class="donorRow"><span class="ticker__item" id="donorName1">赞助者：RUN</span><span class="ticker__item" id="donationAmount1">金额：5¥---来自公众号---2023-05-19</span></div>
+        <div class="donorRow"><span class="ticker__item" id="donorName2">赞助者：真</span><span class="ticker__item" id="donationAmount2">金额：88¥---来自公众号---2023-12-07</span></div>
+        <div class="donorRow"><span class="ticker__item" id="donorName3">赞助者：°渡哒啦<span class="ticker__item" id="donationAmount3">金额：5¥---来自公众号---2024-04-01</span></div>
+        <div class="donorRow"><span class="ticker__item" id="donorName4">赞助者：蛋壳</span><span class="ticker__item" id="donationAmount4">金额：88¥---来自微信---2024-04-16</span></div>
+        <div class="donorRow"><span class="ticker__item" id="donorName4">赞助者：蓝天真</span><span class="ticker__item" id="donationAmount4">金额：100¥---来自公众号---2024-04-16</span></div>
+    </div>
+    <div id="QRBox" class="pos-f left-100">
+      <div id="MainBox"></div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
