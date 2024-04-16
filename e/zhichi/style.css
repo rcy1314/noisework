@@ -294,11 +294,11 @@ a{
 	flex-wrap: wrap;
 	margin-bottom: 10px;
  }
- @media (max-width: 800px) {
+ @media (max-width: 600px) {
 	.donorRow {
 	   flex-direction: column;
 	}
 	.donorDetails {
-	   max-height: 300px; /* 调整这个值以适应你的需求 */
+	   max-height: 200px; /* 调整这个值以适应你的需求 */
 	}
  }
