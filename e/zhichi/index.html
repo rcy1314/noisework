@@ -37,6 +37,16 @@
         .gonggao a:nth-child(4) span {
             color: #FFFFFF;
         }
+		.center-line {
+            display: block;
+            width: 50%;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: inset;
+            border-width: 1px;
+        }
     </style>
 </head>
 <body>
@@ -56,16 +66,30 @@
             <span>📢 ：公众号及博客网站的赞助名单已更新</span>
         </a>
     </div>
-    <div id="donorDetails" class="donorDetails">
-        <div class="donorRow"><span class="ticker__item" id="donorName1">赞助者：RUN</span><span class="ticker__item" id="donationAmount1">金额：5¥---来自公众号---2023-05-19</span></div>
-        <div class="donorRow"><span class="ticker__item" id="donorName2">赞助者：真</span><span class="ticker__item" id="donationAmount2">金额：88¥---来自公众号---2023-12-07</span></div>
-        <div class="donorRow"><span class="ticker__item" id="donorName3">赞助者：°渡哒啦<span class="ticker__item" id="donationAmount3">金额：5¥---来自公众号---2024-04-01</span></div>
-        <div class="donorRow"><span class="ticker__item" id="donorName4">赞助者：蛋壳</span><span class="ticker__item" id="donationAmount4">金额：88¥---来自微信---2024-04-16</span></div>
-        <div class="donorRow"><span class="ticker__item" id="donorName4">赞助者：蓝天真</span><span class="ticker__item" id="donationAmount4">金额：100¥---来自公众号---2024-04-16</span></div>
-    </div>
+	<div id="donorDetails" class="donorDetails">
+		<hr class="center-line">
+	</p>
+		<div id="donorPage">
+			<div class="donorRow"><span class="ticker__item" id="donorName4">赞助者：蓝天真</span><span class="ticker__item" id="donationAmount4">金额：100¥---来自公众号---2024-04-16</span></div>
+	        <div class="donorRow"><span class="ticker__item" id="donorName4">赞助者：蛋壳</span><span class="ticker__item" id="donationAmount4">金额：88¥---来自微信---2024-04-16</span></div>
+			<div class="donorRow"><span class="ticker__item" id="donorName3">赞助者：°渡哒啦</span><span class="ticker__item" id="donationAmount3">金额：5¥---来自公众号---2024-04-01</span></div>
+	        <div class="donorRow"><span class="ticker__item" id="donorName1">赞助者：RUN</span><span class="ticker__item" id="donationAmount1">金额：5¥---来自公众号---2023-05-19</span></div>
+	        <div class="donorRow"><span class="ticker__item" id="donorName2">赞助者：真</span><span class="ticker__item" id="donationAmount2">金额：88¥---来自公众号---2023-12-07</span></div>
+		</div>
+	</p>
+	    <button id="prevPage">上一页</button>
+	    <button id="nextPage">下一页</button>
+	</div>
     <div id="QRBox" class="pos-f left-100">
       <div id="MainBox"></div>
     </div>
 </body>
 <script src="script.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#toggleDonorDetails').click(function() {
+			$('#donorDetails').slideToggle('slow');
+		});
+	});
+	</script>
 </html>

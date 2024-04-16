@@ -277,7 +277,9 @@ a{
     transform: translate(-50%, -50%);
     text-align: center;
 }
-
+.donorDetails{
+	overflow-y: auto;
+  }
 .ticker__item {
     display: inline-block;
     margin: 0 10px;
@@ -286,4 +288,17 @@ a{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
+.donorRow {
+	display: flex;
+	justify-content: space-between; 
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+ }
+ @media (max-width: 800px) {
+	.donorRow {
+	   flex-direction: column;
+	}
+	.donorDetails {
+	   max-height: 300px; /* 调整这个值以适应你的需求 */
+	}
+ }

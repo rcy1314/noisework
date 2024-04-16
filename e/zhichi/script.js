@@ -40,3 +40,36 @@ jQuery(document).ready(function() {
 
 	});
 });
+let currentPage = 0;
+let itemsPerPage = 4; // 每页显示的赞助者数
+let donors = document.querySelectorAll('.donorRow');
+
+function showPage(number) {
+    // 首先隐藏所有的赞助者
+    for (let i = 0; i < donors.length; i++) {
+        donors[i].style.display = 'none';
+    }
+    // 显示指定页的赞助者
+    for (let i = number * itemsPerPage; i < (number + 1) * itemsPerPage; i++) {
+        if (donors[i]) {
+            donors[i].style.display = '';
+        }
+    }
+}
+
+document.getElementById('prevPage').addEventListener('click', function() {
+    if (currentPage > 0) {
+        currentPage--;
+        showPage(currentPage);
+    }
+});
+
+document.getElementById('nextPage').addEventListener('click', function() {
+    if ((currentPage + 1) * itemsPerPage < donors.length) {
+        currentPage++;
+        showPage(currentPage);
+    }
+});
+
+// 默认显示第一页
+showPage(0);
