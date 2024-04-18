@@ -22,9 +22,12 @@
   height: 100px;
   border-radius: 50%; /* 使头像圆形 */
   object-fit: cover; /* 裁剪图片以适应圆形遮罩 */
+  transition: transform 0.5s; /* 添加旋转动画 */
   margin-bottom: 10px;
 }
-
+.avatar:hover {
+  transform: rotate(360deg); /* 鼠标悬停时旋转360度 */
+}
 .subtitle {
   font-size: 14px;
   color: #ccc; /* 副标题颜色较浅 */
@@ -42,11 +45,13 @@
     <div class="container">
         <div class="title">
           <img src="https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/321312.jpeg" alt="Avatar" class="avatar">
+          <audio id="musicPlayer" src="https://www.noiseyp.top/d/%E5%A4%B8%E5%85%8B%E4%BA%91%E7%9B%98%E3%80%90%E4%B8%BB%E7%9B%98%E3%80%91/%E9%9F%B3%E4%B9%90/%F0%9F%8E%B5%E2%80%9C%E6%9F%8F%E6%9E%97%E4%B9%8B%E5%A3%B0%E2%80%9D2023%E8%BD%A6%E8%BD%BDU%E7%9B%98%EF%BC%8C%E6%97%A0%E6%8D%9F%E9%AB%98%E9%9F%B3%E8%B4%A8Mp3%E6%A0%BC%E5%BC%8F%E3%80%9041GB%E3%80%91/Void-Orginal%20Mix.mp3?sign=v0Xu9Waa-59MQheET9MuH0a71ezyTqMvd5OM3figu-g=:0" controls style="display: none;"></audio>
           <h1>BOT中文转译</h1>
           <div class="subtitle">你可以理解我说的每句话</div>
         </div>
   <textarea class="input-box" id="inputText" placeholder="输入二进制或中文" onkeyup="if(event.keyCode === 13){convert();}"></textarea>
   <button onclick="convert()">转换</button>
+  <button onclick="clearInput()">清空</button>
   <div class="output-container">
     <div id="output" class="output"></div>
     <button class="copy-button" onclick="copyToClipboard()">复制结果</button>
@@ -59,6 +64,7 @@
 function convert() {
   const input = document.getElementById('inputText').value;
   let output;
+  let errorMessage = "转换失败：字符似乎不是标准编码";
 
   // 判断输入是二进制还是中文
   if (isBinary(input)) {
@@ -73,6 +79,7 @@ function convert() {
     // 尝试转换为二进制
     try {
       output = chineseToBinary(input);
+      errorMessage = "";
     } catch (e) {
       // 转换失败，显示错误提示
       output = "转换失败：无效的中文输入";
@@ -83,7 +90,17 @@ function convert() {
   document.querySelector('.output-container').style.display = 'block';
   document.getElementById('output').innerText = output;
 }
-
+function clearInput() {
+  document.getElementById('inputText').value = '';
+  document.getElementById('output').innerText = '';
+  document.querySelector('.output-container').style.display = 'none';
+}
+// 播放音乐的函数
+function playMusic() {
+  const musicPlayer = document.getElementById('musicPlayer');
+  musicPlayer.style.display = 'block'; // 显示音频控件
+  musicPlayer.play(); // 开始播放音乐
+}
 function isBinary(str) {
   return /^[01]+$/.test(str);
 }
