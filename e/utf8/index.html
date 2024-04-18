@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>二进制中文互译</title>
+<link rel="icon" href="https://www.noisework.cn/assets/favicon.png" type="image/png" />
+<style>
+  body { background-color: black; color: white; font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+  .container { max-width: 600px; text-align: center; }
+  .title { margin-bottom: 10px; }
+  .input-box { margin: 5px; padding: 8px; font-size: 14px; width: calc(100% - 20px); height: 100px; resize: vertical; }
+  button { margin: 10px 5px; padding: 8px 20px; font-size: 14px; }
+  .output-container { display: none; margin-top: 10px; }
+  .output { padding: 10px; background-color: #333; border-radius: 5px; word-break: break-all; }
+  .copy-button { padding: 5px 10px; font-size: 12px; }
+  @media (max-width: 600px) {
+    .input-box, button, .copy-button { width: 90%; }
+  }
+  .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* 使头像圆形 */
+  object-fit: cover; /* 裁剪图片以适应圆形遮罩 */
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #ccc; /* 副标题颜色较浅 */
+  margin-top: 5px;
+}
+.error-message {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="title">
+          <img src="https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/321312.jpeg" alt="Avatar" class="avatar">
+          <h1>BOT中文转译</h1>
+          <div class="subtitle">你可以理解我说的每句话</div>
+        </div>
+  <textarea class="input-box" id="inputText" placeholder="输入二进制或中文" onkeyup="if(event.keyCode === 13){convert();}"></textarea>
+  <button onclick="convert()">转换</button>
+  <div class="output-container">
+    <div id="output" class="output"></div>
+    <button class="copy-button" onclick="copyToClipboard()">复制结果</button>
+    <div class="error-message" style="display: none; color: red;">转换失败：无效的输入</div>
+  </div>
+  
+</div>
+
+<script>
+function convert() {
+  const input = document.getElementById('inputText').value;
+  let output;
+
+  // 判断输入是二进制还是中文
+  if (isBinary(input)) {
+    // 尝试转换为中文
+    try {
+      output = binaryToChinese(input);
+    } catch (e) {
+      // 转换失败，显示错误提示
+      output = "转换失败：无效的二进制输入";
+    }
+  } else {
+    // 尝试转换为二进制
+    try {
+      output = chineseToBinary(input);
+    } catch (e) {
+      // 转换失败，显示错误提示
+      output = "转换失败：无效的中文输入";
+    }
+  }
+
+  // 显示输出容器
+  document.querySelector('.output-container').style.display = 'block';
+  document.getElementById('output').innerText = output;
+}
+
+function isBinary(str) {
+  return /^[01]+$/.test(str);
+}
+
+function binaryToChinese(binaryString) {
+  let index = 0;
+  let bytes = [];
+  let binaryChars = [];
+  let outputChars = [];
+
+  while (index < binaryString.length) {
+    let byteCount = 0;
+    let mask = 0;
+    let byte = 0;
+
+    // Determine the number of bytes for the character
+    if ((binaryString[index] === '0')) {
+      byteCount = 1;
+      mask = 0x7F; // 0b01111111
+    } else if ((binaryString[index] === '1') && (binaryString[index + 1] === '0')) {
+      byteCount = 2;
+      mask = 0x1F; // 0b00011111
+    } else if ((binaryString[index] === '1') && (binaryString[index + 1] === '1') && (binaryString[index + 2] === '0')) {
+      byteCount = 3;
+      mask = 0x0F; // 0b00001111
+    } else if ((binaryString[index] === '1') && (binaryString[index + 1] === '1') && (binaryString[index + 2] === '1') && (binaryString[index + 3] === '0')) {
+      byteCount = 4;
+      mask = 0x07; // 0b00000111
+    } else {
+      // Invalid UTF-8 leading byte, but try to continue
+      byteCount = 1;
+      mask = 0xFF; // Treat as single byte
+    }
+
+    // Collect bytes for the character
+    for (let i = 0; i < byteCount; i++) {
+      byte = parseInt(binaryString.substr(index + i * 8, 8), 2);
+      binaryChars.push(byte);
+    }
+
+    // Decode the character, ignoring any errors
+    bytes.push.apply(bytes, binaryChars);
+    binaryChars = [];
+    index += byteCount * 8;
+  }
+
+  try {
+    const decodedString = new TextDecoder("utf-8", { fatal: false }).decode(new Uint8Array(bytes));
+    if (decodedString.length === 0) {
+      // No valid characters found
+      outputChars = ["转换失败：字符似乎不是标准编码"];
+    } else {
+      outputChars = decodedString.split('');
+    }
+  } catch (e) {
+    // Return a best effort string, even if it's not valid UTF-8
+    outputChars = ["转换失败：字符似乎不是标准编码"];
+  }
+
+  return outputChars.join('');
+}
+function chineseToBinary(chineseString) {
+  const uint8array = new TextEncoder().encode(chineseString);
+  return Array.from(uint8array, byte => byte.toString(2).padStart(8, '0')).join('');
+}
+
+function copyToClipboard() {
+  const outputText = document.getElementById('output').innerText;
+  navigator.clipboard.writeText(outputText)
+    .then(() => {
+      alert('结果已复制到剪贴板');
+    })
+    .catch(err => {
+      alert('无法复制到剪贴板: ', err);
+    });
+}
+
+</script>
+
+</body>
+</html>
