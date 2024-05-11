@@ -32,7 +32,7 @@ function addDynamicContent() {
 
   var html = `
       <div class="wp zzbuluoled" style="margin-top:0px;">   
-          <div style="background:url('https://jsd.onmicrosoft.cn/gh/rcy1314/tuchuang@main/uPic/222.png'); text-align: center; height:80px; border: 0px solid #E8EFF5;">
+          <div style="background:url('https://jsd.cdn.zzko.cn/gh/rcy1314/tuchuang@main/uPic/222.png'); text-align: center; height:80px; border: 0px solid #E8EFF5;">
               <div id="zzbuluoled_sx" style="width:auto;overflow:hidden;height:80px;line-height:80px;text-align:left;">
                   <div id="zzbuluoled_sx1">
                       <p style="padding:0px 10px 0px 16px;vertical-align:middle;height:80px;overflow:hidden;">

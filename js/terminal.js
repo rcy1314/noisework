@@ -247,7 +247,7 @@
             if (res1[0][0] == 1) {
                 print(command['douyin']['help'], 'message');
             } else {
-                var url = 'https://api.mu-jie.cc/douyin?url=' + res1[1][0];
+                var url = 'https://douyin.wtf/api/hybrid/video_data?url=' + res1[1][0];
                 var fetchUrl = url; // 保存url
                 print('正在获取抖音视频: ' + url);
                 fetch(fetchUrl, {
