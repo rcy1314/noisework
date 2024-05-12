@@ -9,14 +9,14 @@
 @font-face {
     font-family: "b";
 
-    src: url(../fonts/Ubuntu-Regular.ttf);
+    src: url(../assets/fonts/Ubuntu-Regular.ttf);
     font-display: swap;
 }
 
 @font-face {
     font-family: "title";
     /*英文字体*/
-    src: url(../fonts/Pacifico-Regular.ttf);
+    src: url(../assets/fonts/Pacifico-Regular.ttf);
     font-display: swap;
 }
 
