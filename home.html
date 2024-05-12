@@ -1,436 +1,670 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="dark">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" type="image/png" href="./assets/logo.png">
-<link rel="stylesheet" href="css/Right.css">
-<script src="js/Right.js"></script>
-<meta name="generator" content="Astro v2.1.2">
-<!-- Canonical URL -->
-<link rel="canonical" href="index.html">
-<!-- Primary Meta Tags -->
-<title>NOISE | 热爱漫无边际，生活自有分寸</title>
-<meta name="title" content="NOISE | 热爱漫无边际，生活自有分寸">
-<meta name="description" content="">
-<meta name="keywords" content="">
-<script charset="UTF-8" id="LA_COLLECT" src="https://sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"JfDeLdTDm4pOVeoL",ck:"JfDeLdTDm4pOVeoL"})</script>
-<title>BOISE | 热爱漫无边际，生活自有分寸</title>
-<link rel="stylesheet" href="css/index.973fa2a2.css" />
-<link rel="stylesheet" href="css/home.css" /><script type="module" src="js/hoisted.d48e0c42.js"></script></head>
-<header id="header" class="astro-GA25EYQW">
-    <h1 class="astro-GA25EYQW">
-        <a href="https://www.noisework.cn" class="site-icon astro-GA25EYQW">风格切换</a>
-    </h1>
-    <div class="site-buttons astro-GA25EYQW">
-        <button class="site-button astro-GA25EYQW" onclick="toggleNav()">
-            <svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10911"><path d="M416 64H128c-35.2 0-64 28.8-64 64v288c0 35.2 28.8 64 64 64h288c35.2 0 64-28.8 64-64V128c0-35.2-28.8-64-64-64zM896 64h-288c-35.2 0-64 28.8-64 64v288c0 35.2 28.8 64 64 64h288c35.2 0 64-28.8 64-64V128c0-35.2-28.8-64-64-64zM416 544H128c-35.2 0-64 28.8-64 64v288c0 35.2 28.8 64 64 64h288c35.2 0 64-28.8 64-64v-288c0-35.2-28.8-64-64-64zM896 544h-288c-35.2 0-64 28.8-64 64v288c0 35.2 28.8 64 64 64h288c35.2 0 64-28.8 64-64v-288c0-35.2-28.8-64-64-64z" p-id="10912"></path></svg>
-        </button>
-        <button class="site-button astro-GA25EYQW" onclick="toggleDarkMode()">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-        </button>
-        
-    </div>
-</header>
+<html class="noise.net">
+
+<head class="noise.net">
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>
+		NOISE主页 </title>
+	<link rel="icon" href="./assets/favicon.ico">
+	<meta name="description" content="这是来自Noise的个人主页，通过本页可获取所有关联的站点服务.">
+	<meta name="keywords" content="noise主页,个人主页,homepage,noise引导页">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="./css/home-style.css">
+	<link rel="stylesheet" href="./css/home-root.css">
+	<script src="https://kit.fontawesome.com/25cfefa7b1.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="./css/Right.css">
+	<script src="./js/Right.js"></script>
+</head>
+
 <body>
- <!-- 右键菜单 -->
- <body oncontextmenu="openMenu(event)">
-    <div class="menu">
-        <ul class="menu-list01">
-            <li class="menu-item">
-                <a href="./e/zhichi/" target="_blank" style="color: white; text-decoration: none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
-                        <path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/>
-                    </svg>
-                    <span style="margin-left: -4px;">赞赏</span>
-                </a>
-            </li>
-            <li class="menu-item" onclick="toggleFullScreen()">
-                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
-                    <path d="M200 32H56C42.7 32 32 42.7 32 56V200c0 9.7 5.8 18.5 14.8 22.2s19.3 1.7 26.2-5.2l40-40 79 79-79 79L73 295c-6.9-6.9-17.2-8.9-26.2-5.2S32 302.3 32 312V456c0 13.3 10.7 24 24 24H200c9.7 0 18.5-5.8 22.2-14.8s1.7-19.3-5.2-26.2l-40-40 79-79 79 79-40 40c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H456c13.3 0 24-10.7 24-24V312c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2l-40 40-79-79 79-79 40 40c6.9 6.9 17.2 8.9 26.2 5.2s14.8-12.5 14.8-22.2V56c0-13.3-10.7-24-24-24H312c-9.7 0-18.5 5.8-22.2 14.8s-1.7 19.3 5.2 26.2l40 40-79 79-79-79 40-40c6.9-6.9 8.9-17.2 5.2-26.2S209.7 32 200 32z"/>
-                </svg>
-                <span style="margin-left: 2px;">全屏</span>
-            </li>
-            <li class="menu-item" onclick="refreshPage()">
-                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M142.9 142.9c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H463.5c0 0 0 0 0 0H472c13.3 0 24-10.7 24-24V72c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1C73.2 122 55.6 150.7 44.8 181.4c-5.9 16.7 2.9 34.9 19.5 40.8s34.9-2.9 40.8-19.5c7.7-21.8 20.2-42.3 37.8-59.8zM16 312v7.6 .7V440c0 9.7 5.8 18.5 14.8 22.2s19.3 1.7 26.2-5.2l41.6-41.6c87.6 86.5 228.7 86.2 315.8-1c24.4-24.4 42.1-53.1 52.9-83.7c5.9-16.7-2.9-34.9-19.5-40.8s-34.9 2.9-40.8 19.5c-7.7 21.8-20.2 42.3-37.8 59.8c-62.2 62.2-162.7 62.5-225.3 1L185 329c6.9-6.9 8.9-17.2 5.2-26.2s-12.5-14.8-22.2-14.8H48.4h-.7H40c-13.3 0-24 10.7-24 24z"/></svg>
-                <span style="margin-left: 2.3px;">刷新</span>
-            </li>
-            <li class="menu-item" onclick="goBack()">
-                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32C28.7 32 0 60.7 0 96L0 416zM128 256c0-6.7 2.8-13 7.7-17.6l112-104c7-6.5 17.2-8.2 25.9-4.4s14.4 12.5 14.4 22l0 208c0 9.5-5.7 18.2-14.4 22s-18.9 2.1-25.9-4.4l-112-104c-4.9-4.5-7.7-10.9-7.7-17.6z"/></svg>
-                <span style="margin-left: 2.7px;">返回</span>
-            </li>
-            <li class="menu-item" onclick="changeMode()">
-                <a href="./index.html" style="color: white; text-decoration: none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M258.6 0c-1.7 0-3.4 .1-5.1 .5C168 17 115.6 102.3 130.5 189.3c2.9 17 8.4 32.9 15.9 47.4L32 224H29.4C13.2 224 0 237.2 0 253.4c0 1.7 .1 3.4 .5 5.1C17 344 102.3 396.4 189.3 381.5c17-2.9 32.9-8.4 47.4-15.9L224 480v2.6c0 16.2 13.2 29.4 29.4 29.4c1.7 0 3.4-.1 5.1-.5C344 495 396.4 409.7 381.5 322.7c-2.9-17-8.4-32.9-15.9-47.4L480 288h2.6c16.2 0 29.4-13.2 29.4-29.4c0-1.7-.1-3.4-.5-5.1C495 168 409.7 115.6 322.7 130.5c-17 2.9-32.9 8.4-47.4 15.9L288 32V29.4C288 13.2 274.8 0 258.6 0zM256 224a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
-                    <span style="margin-left: -4.5px;">模式</span>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="#" style="color: white; text-decoration: none;" onclick="showImage()">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512">
-                        <path d="M385.2 167.6c6.4 0 12.6 .3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2 .1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3 .1 10-9.9 19.6-24.4 19.6z"/>
-                    </svg>
-                    <span style="margin-left: -4.5px;">联系</span>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a href="https://github.com/rcy1314/noisework" target="_blank" style="color: white; text-decoration: none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M256 464a208 208 0 1 1 0-416 208 208 0 1 1 0 416zM256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM376.9 294.6c4.5-4.2 7.1-10.1 7.1-16.3c0-12.3-10-22.3-22.3-22.3H304V160c0-17.7-14.3-32-32-32l-32 0c-17.7 0-32 14.3-32 32v96H150.3C138 256 128 266 128 278.3c0 6.2 2.6 12.1 7.1 16.3l107.1 99.9c3.8 3.5 8.7 5.5 13.8 5.5s10.1-2 13.8-5.5l107.1-99.9z"/></svg>
-                    <span style="margin-left: -4.5px;">主题</span>
-                </a>
-            </li>
-            <li class="menu-item-divider"></li>
-            <li class="menu-item menu-item-danger">
-                <a href="#" style="color: white; text-decoration: none;"></a>
-                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm175 79c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>
-                <span style="margin-left: 2px;">关闭</span>
-            </li>
-        </ul>
-    </div>
-<nav id="nav" class="hide astro-LFCKEST2">
-    <div class="nav-container astro-LFCKEST2">
-        <div class="group-title astro-LFCKEST2">Quick link</div><div class="group astro-LFCKEST2">
-                    <a class="item astro-LFCKEST2" href="https://www.noisedh.cn" target="_blank">
-                                <img class="icon" src="assets/blog.dorakika.cn.png" alt="导航站" /> 
-                                <span>导航站</span>
-                                </a><a class="item astro-LFCKEST2" href="https://github.com/rcy1314" target="_blank">
-                                <svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11887" width="128" height="128"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9 23.5 23.2 38.1 55.4 38.1 91v112.5c0.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z" p-id="11888"></path></svg> 
-                                <span>Github</span>
-                                </a>
-                </div>
-    </div>
-</nav>
-<style type="text/css">
-    .studytextgzbox {
-  background:   #F9F9F9; 
-  border: 1px solid #999999;
-  margin: 1px;
-  text-align:center;  
-  float: left;
-  line-height: 18px;
-  height: 18px;
-  overflow: hidden;
-  width: 206px;
-  }
-</style>
-<script type="text/javascript">
-    study_textgz_jQuery(function() {
-    var container = study_textgz_jQuery('#masonry');
-    container.imagesLoaded(function() {
-        container.masonry({
-                itemSelector: '.studytextgzbox',
-                gutter: 0,
-                isAnimated: true,
-            });
-     });
-});
+	 <!-- 右键菜单 -->
+	 <body oncontextmenu="openMenu(event)">
+		<div class="menu">
+			<ul class="menu-list01">
+				<li class="menu-item">
+					<a href="https://www.noisework.cn/e/zhichi/" target="_blank" style="color: white; text-decoration: none;">
+						<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
+							<path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/>
+						</svg>
+						<span style="margin-left: -4px;">赞赏</span>
+					</a>
+				</li>
+				<li class="menu-item" onclick="toggleFullScreen()">
+					<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
+						<path d="M200 32H56C42.7 32 32 42.7 32 56V200c0 9.7 5.8 18.5 14.8 22.2s19.3 1.7 26.2-5.2l40-40 79 79-79 79L73 295c-6.9-6.9-17.2-8.9-26.2-5.2S32 302.3 32 312V456c0 13.3 10.7 24 24 24H200c9.7 0 18.5-5.8 22.2-14.8s1.7-19.3-5.2-26.2l-40-40 79-79 79 79-40 40c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H456c13.3 0 24-10.7 24-24V312c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2l-40 40-79-79 79-79 40 40c6.9 6.9 17.2 8.9 26.2 5.2s14.8-12.5 14.8-22.2V56c0-13.3-10.7-24-24-24H312c-9.7 0-18.5 5.8-22.2 14.8s-1.7 19.3 5.2 26.2l40 40-79 79-79-79 40-40c6.9-6.9 8.9-17.2 5.2-26.2S209.7 32 200 32z"/>
+					</svg>
+					<span style="margin-left: 2px;">全屏</span>
+				</li>
+				<li class="menu-item" onclick="refreshPage()">
+					<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M142.9 142.9c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H463.5c0 0 0 0 0 0H472c13.3 0 24-10.7 24-24V72c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1C73.2 122 55.6 150.7 44.8 181.4c-5.9 16.7 2.9 34.9 19.5 40.8s34.9-2.9 40.8-19.5c7.7-21.8 20.2-42.3 37.8-59.8zM16 312v7.6 .7V440c0 9.7 5.8 18.5 14.8 22.2s19.3 1.7 26.2-5.2l41.6-41.6c87.6 86.5 228.7 86.2 315.8-1c24.4-24.4 42.1-53.1 52.9-83.7c5.9-16.7-2.9-34.9-19.5-40.8s-34.9 2.9-40.8 19.5c-7.7 21.8-20.2 42.3-37.8 59.8c-62.2 62.2-162.7 62.5-225.3 1L185 329c6.9-6.9 8.9-17.2 5.2-26.2s-12.5-14.8-22.2-14.8H48.4h-.7H40c-13.3 0-24 10.7-24 24z"/></svg>
+					<span style="margin-left: 2.3px;">刷新</span>
+				</li>
+				<li class="menu-item" onclick="goBack()">
+					<svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32C28.7 32 0 60.7 0 96L0 416zM128 256c0-6.7 2.8-13 7.7-17.6l112-104c7-6.5 17.2-8.2 25.9-4.4s14.4 12.5 14.4 22l0 208c0 9.5-5.7 18.2-14.4 22s-18.9 2.1-25.9-4.4l-112-104c-4.9-4.5-7.7-10.9-7.7-17.6z"/></svg>
+					<span style="margin-left: 2.7px;">返回</span>
+				</li>
+				<li class="menu-item" onclick="changeMode()">
+					<a href="./index.html" style="color: white; text-decoration: none;">
+						<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M258.6 0c-1.7 0-3.4 .1-5.1 .5C168 17 115.6 102.3 130.5 189.3c2.9 17 8.4 32.9 15.9 47.4L32 224H29.4C13.2 224 0 237.2 0 253.4c0 1.7 .1 3.4 .5 5.1C17 344 102.3 396.4 189.3 381.5c17-2.9 32.9-8.4 47.4-15.9L224 480v2.6c0 16.2 13.2 29.4 29.4 29.4c1.7 0 3.4-.1 5.1-.5C344 495 396.4 409.7 381.5 322.7c-2.9-17-8.4-32.9-15.9-47.4L480 288h2.6c16.2 0 29.4-13.2 29.4-29.4c0-1.7-.1-3.4-.5-5.1C495 168 409.7 115.6 322.7 130.5c-17 2.9-32.9 8.4-47.4 15.9L288 32V29.4C288 13.2 274.8 0 258.6 0zM256 224a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
+						<span style="margin-left: -4.5px;">模式</span>
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="./lianxi/index.html" target="_blank" style="color: white; text-decoration: none;">
+						<svg xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512">
+							<path d="M385.2 167.6c6.4 0 12.6 .3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2 .1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3 .1 10-9.9 19.6-24.4 19.6z"/>
+						</svg>
+						<span style="margin-left: -4.5px;">联系</span>
+					</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://github.com/rcy1314/noisework" target="_blank" style="color: white; text-decoration: none;">
+						<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M256 464a208 208 0 1 1 0-416 208 208 0 1 1 0 416zM256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM376.9 294.6c4.5-4.2 7.1-10.1 7.1-16.3c0-12.3-10-22.3-22.3-22.3H304V160c0-17.7-14.3-32-32-32l-32 0c-17.7 0-32 14.3-32 32v96H150.3C138 256 128 266 128 278.3c0 6.2 2.6 12.1 7.1 16.3l107.1 99.9c3.8 3.5 8.7 5.5 13.8 5.5s10.1-2 13.8-5.5l107.1-99.9z"/></svg>
+						<span style="margin-left: -4.5px;">主题</span>
+					</a>
+				</li>
+				<li class="menu-item-divider"></li>
+				<li class="menu-item menu-item-danger">
+					<a href="#" style="color: white; text-decoration: none;"></a>
+					<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm175 79c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>
+					<span style="margin-left: 2px;">关闭</span>
+				</li>
+			</ul>
+		</div>
+	 <!--音乐-->
+	 <link rel="stylesheet" href="./css/APlayer.min.css">  
+	 <div id="aplayer" class="aplayer" data-order="random" data-id="2141128031" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-volume="0.8"></div>
+	 <script src="./js/jquery.min.js"></script>
+	 <script src="./js/APlayer.min.js"></script>
+	 <script src="./js/Meting.min.js"></script>
+	  <!--侧边-->
+	<div class="noise-filter"></div>
+	<div class="noise-main">
+		<div class="noise-left">
+			<div class="logo" style="background-image: url(./assets/logo3.png);">
+				
+			</div>
+			<div class="left-div left-des">
+				<div class="left-des-item"><svg t="1705773709627" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1478"><path d="M512 249.976471c-99.388235 0-180.705882 81.317647-180.705882 180.705882s81.317647 180.705882 180.705882 180.705882 180.705882-81.317647 180.705882-180.705882-81.317647-180.705882-180.705882-180.705882z m0 301.17647c-66.258824 0-120.470588-54.211765-120.470588-120.470588s54.211765-120.470588 120.470588-120.470588 120.470588 54.211765 120.470588 120.470588-54.211765 120.470588-120.470588 120.470588z" p-id="1479"></path><path d="M512 39.152941c-216.847059 0-391.529412 174.682353-391.529412 391.529412 0 349.364706 391.529412 572.235294 391.529412 572.235294s391.529412-222.870588 391.529412-572.235294c0-216.847059-174.682353-391.529412-391.529412-391.529412z m0 891.482353C424.658824 873.411765 180.705882 686.682353 180.705882 430.682353c0-183.717647 147.576471-331.294118 331.294118-331.294118s331.294118 147.576471 331.294118 331.294118c0 256-243.952941 442.729412-331.294118 499.952941z" p-id="1480"></path></svg>芝士星球
+				</div>
+				<div class="left-des-item"><i class="fa-solid fa-user-astronaut"></i><span>芝士探索者</span></div>
+			</div>
+			<div class="left-div left-tag">
+				<div class="left-tag-item">💻数码科技爱好者
+				</div>
+				<div class="left-tag-item">🗞️RSS
+				</div>
+				<div class="left-tag-item">🎉Efficiency
+				</div>
+				<div class="left-tag-item">🤖️AI
+				</div>
+				<div class="left-tag-item">🖥️linux
+				</div>
+				<div class="left-tag-item">🎥剪辑
+				</div>
+				<div class="left-tag-item">⌨️前端
+				</div>
+				<div class="left-tag-item">📸摄影</div>
+			</div>
+			<!-- 随机一言代码-->
+			<div class="left-div left-time">
+			<ul id="line1">
+				<marquee scrollamount="3" direction="right" behavior="alternate">
+					<div class="container">
+						<span id="hitokoto">正在获取中...</span>
+					</div>
+					<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>  
+				</marquee>    
+			</ul>
+		</div>
+		<!-- 随机一言结束-->
+	    <!-- 60秒读懂世界-->
+			<div class="left-div left-time">
+				<ul id="line">
+					<div class="container">
+						<class="title">《每天60秒读懂世界》
+                            <div>-------------------</div>
+						<div class="content"></div>	
+				</ul>
+			</div>
+			<!-- 60秒读懂世界结束-->
+			<div class="left-div left-time">
+				<ul id="line">
+					<li>
+						<div class="focus"></div>
+						<div>更换切换风格页
+						</div>
+						<div>2024.5</div>
+					</li>
+					<li>
+						<div class="focus"></div>
+						<div>更新公共服务
+						</div>
+						<div>2023.12</div>
+					</li>
+					<li>
+						<div class="focus"></div>
+						<div>修改主界面css布局
+						</div>
+						<div>2023.10</div>
+					</li>
+					<li>
+						<div class="focus"></div>
+						<div>添加右键菜单
+						</div>
+						<div>2023.9</div>
+					</li>
+				    <li>
+						<div class="focus"></div>
+						<div>添加聊天室组件
+						</div>
+						<div>2023.9</div>
+					</li>
+					<li>
+						<div class="focus"></div>
+						<div>...
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	
+		<div class="noise-right">
+			<header>
+				<div class="index-logo" style="background-image: url(./assets/logo.png);">
+					<img style="position: absolute;top:-15%;left:-10%;width: 120%; aspect-ratio: 1/1;"
+						src="./assets/logokuang.png">
+				</div>
+				<div class="welcome">
+					NOISE' <span class="gradientText">
+						<a href="https://www.noisework.cn" target="_blank">主页</a></span>
+				</div>
+				<div class="description">👏<span class="purpleText">欢迎访问本站！ </span> 这是来自NOISE的个人主页。</span>查看 <span class="purpleText textBackground"><a href="https://stats.uptimerobot.com/GoqwLuBl3o" target="_blank" style="color: red;">运行状况</a></span>
+				</div>
+				<div class="description">📝可以点击  <span class="purpleText textBackground"><a href="./index.html" target="_blank" style="color: red;">切换模式</a> </span>查看不同风格</span> ，右键
+					唤醒 <span class="purpleText textBackground">弹出</span> 菜单栏 </div>								
 
-</script>
+				<div class="iconContainer">
+					<a class="iconItem" onclick="" target="_blank" href="https://github.com/rcy1314">
+						<svg t="1704870335945" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2487">
+                            <path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9 23.5 23.2 38.1 55.4 38.1 91v112.5c0.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"  p-id="2488"></path>
+                        </svg>
+						<div class="iconTip">Github</div>
+					
+						<a class="iconItem" onclick="" target="_blank" href="./e/zhichi/">
+						<svg t="1705247464964" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4987" >
+                            <path d="M995.575172 725.451034c-12.358621-26.835862-38.488276-64.794483-92.689655-94.27862-62.146207-33.721379-136.297931-40.96-208.860689-20.303448l-99.928276 28.424827-279.304828-126.057931H22.775172v489.401379h509.704828l432.375172-195.266207c15.006897-6.708966 26.835862-19.42069 32.662069-34.957241 5.649655-15.36 4.943448-31.955862-1.942069-46.962759z m-482.162758 188.910345H111.051034V601.688276h184.673104l166.664828 75.387586-3.354483 0.882759h-170.372414v88.275862H471.393103l246.819311-70.267586c49.434483-14.124138 101.517241-9.357241 142.653793 12.888275 18.184828 9.886897 30.72 20.833103 39.371034 30.896552l-386.824827 174.609655z"  p-id="4988"></path>
+                            <path d="M695.437241 163.486897l58.615173-142.30069h-397.24138l66.736552 143.36c-121.82069 53.142069-207.095172 174.433103-207.095172 315.674483 0 28.601379 3.531034 57.202759 10.593103 84.744827l85.627586-21.715862c-5.12-20.48-7.768276-41.666207-7.768275-63.028965 0-141.241379 114.758621-256 256-256s256 114.758621 256 256c0 51.023448-14.830345 100.104828-43.078621 142.300689l73.268965 49.08138c37.958621-56.673103 58.085517-122.88 58.085518-191.382069-0.176552-141.947586-86.686897-264.121379-209.743449-316.733793zM467.508966 91.983448h180.965517l-21.009655 50.846897a348.16 348.16 0 0 0-66.913104-6.708966c-23.834483 0-46.962759 2.471724-69.384827 7.062069l-23.657931-51.2z"  p-id="4989"></path>
+                            <path d="M683.431724 427.431724v-70.62069h-38.311724l30.190345-30.190344-49.964138-49.964138-62.49931 62.49931h-6.002759L494.344828 276.656552l-49.787587 49.964138 30.013793 30.190344h-38.311724v70.62069h88.275862v35.310345h-88.275862v70.62069h88.275862v52.965517h70.62069v-52.965517h88.275862v-70.62069h-88.275862v-35.310345z"  p-id="4990"></path>
+                        </svg>
+						<div class="iconTip">赞助</div>
+						<a class="iconItem" onclick="" target="_blank" href="https://twitter.com/liangwenhao3">
+						<i class="fa-brands fa-square-x-twitter"></i>
+						<div class="iconTip">Twitter</div>
+						<a class="iconItem" onclick="" target="_blank" href="https://www.noiseblogs.top">
+						<i class="fa-solid fa-blog"></i>
+						<div class="iconTip">Blog</div>
+					</a><a class="iconItem" onclick="pop('https://noisework.cn/lianxi/weixin.png')" href="javascript:void(0)">
+						<svg t="1712319361023" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1861" ><path d="M824.8 613.2c-16-51.4-34.4-94.6-62.7-165.3C766.5 262.2 689.3 112 511.5 112 331.7 112 256.2 265.2 261 447.9c-28.4 70.8-46.7 113.7-62.7 165.3-34 109.5-23 154.8-14.6 155.8 18 2.2 70.1-82.4 70.1-82.4 0 49 25.2 112.9 79.8 159-26.4 8.1-85.7 29.9-71.6 53.8 11.4 19.3 196.2 12.3 249.5 6.3 53.3 6 238.1 13 249.5-6.3 14.1-23.8-45.3-45.7-71.6-53.8 54.6-46.2 79.8-110.1 79.8-159 0 0 52.1 84.6 70.1 82.4 8.5-1.1 19.5-46.4-14.5-155.8z" p-id="1862"></path></svg>
+						<div class="iconTip">微信</div>
+					</a><a class="iconItem" onclick="pop('https://noisework.cn/assets/gongzhonghao.jpg')" href="javascript:void(0)">
+						<i class="fa-brands fa-weixin"></i>
+						<div class="iconTip">公众号</div>
+						<a class="iconItem" onclick="" target="_blank" href="https://t.me/quanshoulu">
+						<i class="fa-brands fa-telegram"></i>
+						<div class="iconTip">TG频道</div>
+					
+					</a>  <a class="switch" href="javascript:void(0)">
+						<div class="onoffswitch">
+							<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"
+								checked>
+							<label class="onoffswitch-label" for="myonoffswitch">
+								<span class="onoffswitch-inner"></span>
+								<span class="onoffswitch-switch"></span>
+							</label>
+						</div>
+					</a>
+				</div>
+				 <!--公告-->
+				<style type="text/css">
+					.zzbuluoled:after {
+						content: ".";
+						display: block;
+						height: 0;
+						clear: both;
+						visibility: hidden;
+					}
+					@media (max-width: 568px){.zzbuluoled{display: none;}}
+					</style>  
+					<div class="wp zzbuluoled"  style="margin-top:0px;">   
+					<div style="background:url('https://jsd.cdn.zzko.cn/gh/rcy1314/tuchuang@main/uPic/222.png'); text-align: center; height:80px; border: 0px solid #E8EFF5;" >          
+					<div id="zzbuluoled_sx" style="width:auto;overflow:hidden;height:80px;line-height:80px;text-align:left;">
+					<div id="zzbuluoled_sx1" > 
+					<p style="padding:0px 10px 0px 16px;vertical-align:middle;height:80px;overflow:hidden;">
+					  <marquee direction="lelf" scrollamount="5"><strong>
+					  <a href="https://www.noisework.cn" target="_black" >
+					<span style="font-family: 'Tahoma';font-weight:900; color: #FF0000; font-size: 30px;line-height:80px;">👏欢迎访问本站，站点域名www.noisework.cn👉
+					</span>
+					</a>   
+						<a href="https://simhaoka.com/phone/index?id=A7BA17EFD6DC47F6826F0C67B898725A" target="_black" >
+					<span style="font-family: 'Tahoma';font-weight:900; color: #33a4e5; font-size: 30px;line-height:80px;">📢①：全国正规流量手机卡优惠渠道一
+					</span>
+					</a>
+						<a href="https://hk.yunhaoka.cn/#/pages/micro_store/index?agent_id=422648" target="_black" >
+							<span style="font-family: 'Tahoma';font-weight:900; color: #e56e33; font-size: 30px;line-height:80px;">📢②：全国正规流量手机卡优惠渠道二
+							</span>
+							</a>
+							<a href="https://sourl.cn/teYqxt" target="_black" >
+								<span style="font-family: 'Tahoma';font-weight:900; color: #b333e5ce; font-size: 30px;line-height:80px;">📢③：站点已加载...
+								</span>
+								</a>
+						<a href="https://www.noisework.cn" target="_black" >
+					<span style="font-family: 'Tahoma';font-weight:900; color: #FFFFFF; font-size: 30px;line-height:80px;">  公告已更新，欢迎随时回来👏
+					</span>
+					</a>
+						 </strong></marquee>
+					</p>
+					
+				<div class="tanChiShe">
+					<img id="tanChiShe" src="./assets/svg/snake-Light.svg" alt="">
+				</div>
+			</header>
+			
+			<content>
+				<div class="title"><i class="fa-solid fa-star"></i>
+				</svg>关联站点 </div>
+				<div class="projectList"><a class="projectItem a" target="_blank" href="https://www.noisedh.cn">
+						<div class="projectItemLeft">
+							<h1>Noise导航站</h1>
+							<p>强大的综合导航站</p>
+						</div>
+						<div class="projectItemRight">
+							<img src="./assets/i15.png" alt="">
+						</div>
 
-<style type="text/css">
-.zzbuluoled:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-}
-@media (max-width: 568px){.zzbuluoled{display: none;}}
-</style>  
-<div class="wp zzbuluoled"  style="margin-top:0px;">   
-<div style="background:url('https://jsd.cdn.zzko.cn/gh/rcy1314/tuchuang@main/uPic/222.png'); text-align: center; height:80px; border: 0px solid #E8EFF5;" >          
-<div id="zzbuluoled_sx" style="width:auto;overflow:hidden;height:80px;line-height:80px;text-align:left;">
-<div id="zzbuluoled_sx1" > 
-<p style="padding:0px 10px 0px 16px;vertical-align:middle;height:80px;overflow:hidden;">
-  <marquee direction="lelf" scrollamount="5"><strong>
-  <a href="https://hk.yunhaoka.cn/#/pages/micro_store/index?agent_id=422648" target="_black" >
-<span style="font-family: 'Tahoma';font-weight:900; color: #FF0000; font-size: 30px;line-height:80px;">👏欢迎访问本站，点击可查看👉
-</span>
-</a>   
-    <a href="https://simhaoka.com/phone/index?id=A7BA17EFD6DC47F6826F0C67B898725A" target="_black" >
-<span style="font-family: 'Tahoma';font-weight:900; color: #33a4e5; font-size: 30px;line-height:80px;">📢①：全国正规流量手机卡优惠渠道一
-</span>
-</a>
-    <a href="https://hk.yunhaoka.cn/#/pages/micro_store/index?agent_id=422648" target="_black" >
-        <span style="font-family: 'Tahoma';font-weight:900; color: #e56e33; font-size: 30px;line-height:80px;">📢②：全国正规流量手机卡优惠渠道二
-        </span>
-        </a>
-        <a href="https://sourl.cn/teYqxt" target="_black" >
-            <span style="font-family: 'Tahoma';font-weight:900; color: #b333e5ce; font-size: 30px;line-height:80px;">📢③：夸克云盘内部合作联系方式
-            </span>
-            </a>
-    <a href="https://simhaoka.com/pc/index?id=A7BA17EFD6DC47F6826F0C67B898725A" target="_black" >
-<span style="font-family: 'Tahoma';font-weight:900; color: #FFFFFF; font-size: 30px;line-height:80px;">  公告已更新，欢迎随时回来👏
-</span>
-</a>
-     </strong></marquee>
-</p>
+					</a><a class="projectItem a" target="_blank" href="https://noisevip.cn">
+						<div class="projectItemLeft">
+							<h1>NOISE&宝藏阁</h1>
+							<p>强大的资源分类支持</p>
+						</div>
+						<div class="projectItemRight">
+							<img src="./assets/i8.png" alt="">
+						</div>
 
+					</a><a class="projectItem a" target="_blank" href="https://noiseyp.top">
+						<div class="projectItemLeft">
+							<h1>Noise资源库</h1>
+							<p>云盘资源的挂载站</p>
+						</div>
+						<div class="projectItemRight">
+							<img src="./assets/i23.png" alt="">
+						</div>
 
+					</a><a class="projectItem a" target="_blank" href="https://www.efficiency.vip">
+						<div class="projectItemLeft">
+							<h1>EffiHub</h1>
+							<p>NOISE秘密基地</p>
+						</div>
+						<div class="projectItemRight">
+							<img src="./assets/7y.png" alt="">
+						</div>
 
-</div>
+					</a></div>
+					<content>
+						<div class="title"><i class="fa-solid fa-star"></i>
+						</svg>关联站点 </div>
+						<div class="projectList"><a class="projectItem a" target="_blank" href="./photo/index.html">
+								<div class="projectItemLeft">
+									<h1>摄影图库</h1>
+									<p>静态化相册</p>
+								</div>
+								<div class="projectItemRight">
+									<img src="./assets/i16.png" alt="">
+								</div>
+		
+							</a><a class="projectItem a" target="_blank" href="https://efficiencyfollow.notion.site">
+								<div class="projectItemLeft">
+									<h1>Efficiency主页</h1>
+									<p>始于Notion，忠于Notion</p>
+								</div>
+								<div class="projectItemRight">
+									<img src="./assets/i17.png" alt="">
+								</div>
+		
+							</a><a class="projectItem a" target="_blank" href="./qun/index.html">
+								<div class="projectItemLeft">
+									<h1>社群入口</h1>
+									<p>欢迎参与</p>
+								</div>
+								<div class="projectItemRight">
+									<img src="./assets/i31.png" alt="">
+								</div>
+		
+							</a><a class="projectItem a" target="_blank" href="https://rcy1314.github.io/some-stars/">
+								<div class="projectItemLeft">
+									<h1>我的start列表</h1>
+									<p>我的start列表，每日更新</p>
+								</div>
+								<div class="projectItemRight">
+									<img src="./assets/i21.png" alt="">
+								</div>
+		
+							</a></div>
 
-</div>
+				<content>
+					<div class="title"><i class="fa-solid fa-star"></i>
+					</svg>关联站点</div>
+				<div class="projectList"><a class="projectItem a" target="_blank" href="./soso/index.html">
+						<div class="projectItemLeft">
+							<h1>Book Mark 索引</h1>
+							<p>从上万个书签中搜索</p>
+						</div>
+						<div class="projectItemRight">
+							<img src="./assets/i32.png" alt="">
+						</div>
 
-   
-</div>
-</div>
-<script>
-document.getElementById('nav').addEventListener('click', function(e) {
-    if(e.target === this)toggleNav(false);
-})
-function toggleNav(flag){
-    const nav = document.getElementById('nav')  
-    if(flag !== undefined){
-        if(flag){
-            nav.classList.remove('hide');
-        }else{
-            nav.classList.add('hide')
-        }
-    }else{
-        nav.classList.toggle('hide')
-    }
-}
-</script>
-        <main id="main">
-            <section class="astro-O47QWQL5">
-    <div class="about-me astro-O47QWQL5">
-        <div class="info-left astro-O47QWQL5">
-            <span class="tag astro-O47QWQL5">🤖️ 数码科技爱好者</span><span class="tag astro-O47QWQL5">🔍 分享与热心帮助</span><span class="tag astro-O47QWQL5">💻 自由摄影爱好者</span>
-        </div>
-        <div class="avatar astro-O47QWQL5">
-            <img class="avatar-img astro-O47QWQL5" src="https://jsd.cdn.zzko.cn/gh/rcy1314/my-photo@master/20230226/image.2mctsqprodu0.jpg" alt="DORAKIKA">
-        </div>
-        <div class="info-right astro-O47QWQL5">
-            <span class="tag astro-O47QWQL5">哆啦A梦一份子  🥳</span><span class="tag astro-O47QWQL5">吃饭睡觉打游戏 🎮</span><span class="tag astro-O47QWQL5">热爱漫无边际 ✨</span>
-        </div>
-    </div>
-    <div class="about-me-2 astro-O47QWQL5">
-        <button class="trigger astro-O47QWQL5">Find Me 😶‍🌫️</button>
-        <button class="trigger astro-O47QWQL5">🤖️ 数码科技爱好者</button><button class="trigger astro-O47QWQL5">🔍 分享与热心帮助</button><button class="trigger astro-O47QWQL5">💻 自由摄影爱好者</button><button class="trigger astro-O47QWQL5">哆啦A梦一份子  🥳</button><button class="trigger astro-O47QWQL5">吃饭睡觉打游戏 🎮</button><button class="trigger astro-O47QWQL5">热爱漫无边际 ✨</button>
-    </div>
-</section><div class="padding" style=" height: 2em;"></div><section id="media-link" class="astro-GWDFHJKY">
-    <a class="link-item astro-GWDFHJKY" href="https://github.com/rcy1314" title="Github">
-                <div class="icon astro-GWDFHJKY" style="background-image: url(assets/github.svg)"></div>
-            </a><a class="link-item astro-GWDFHJKY" href="https://www.noiseblogs.top" title="博客">
-                <div class="icon astro-GWDFHJKY" style="background-image: url(assets/blog.dorakika.cn.png)"></div>
-            </a><a class="link-item astro-GWDFHJKY" href="mailto:1129159201@qq.com" title="mail">
-                <div class="icon astro-GWDFHJKY" style="background-image: url(assets/mail.svg)"></div>
-            </a>
-</section>
-<div class="padding"style=" height: 2em;"></div><section id="project" class="astro-ZFGTZ4X4">
-    <h2 class="title astro-ZFGTZ4X4">网站一览</h2>
-    <div style="text-align: center;">
-        <br><br>
-        <span id="hitokoto">正在获取中...</span>
-        </div>
-        <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>   
-            <br/>
-    <div class="card-container astro-ZFGTZ4X4" id="projects">
-    </div>
-    <h3 class="astro-P5WQZPYW">NOISE</h3>
-    <br>
-<div class="card-container astro-P5WQZPYW">
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true">
-        <div style="--icon-bg: rgba(0, 122, 204, 0.1);"></div>
-        <a href="https://www.noisedh.cn" target="_blank" title="部署在github静态化综合导航站">✨ Noise导航站</a>
-    </div>
+					</a><a class="projectItem a" target="_blank" href="./e/soso/index.html">
+						<div class="projectItemLeft">
+							<h1>JUST SOSO</h1>
+							<p>软件插件搜索</p>
+						</div>
+						<div class="projectItemRight">
+							<img src="./assets/i20.png" alt="">
+						</div>
 
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true">
-        <div style="--icon-bg: rgba(0, 122, 204, 0.1);"></div>
-        <a href="https://noiseyp.top" target="_blank" title="云盘资源的挂载站">📁 Noise资源库</a>
-    </div>
+					</a><a class="projectItem a" target="_blank" href="https://efficiency.super.site/">
+						<div class="projectItemLeft">
+							<h1>知识效率集</h1>
+							<p>知识效率集</p>
+						</div>
+						<div class="projectItemRight">
+							<img src="./assets/i7.png" alt="">
+						</div>
 
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true">
-        <div style="--icon-bg: rgba(0, 122, 204, 0.1);"></div>
-        <a href="https://noisevip.cn" target="_blank" title="Wordpress站点，强大的资源分类支持">💻 NOISE&宝藏阁</a>
-    </div>
+					</a><a class="projectItem a" target="_blank" href="https://www.noisework.cn/moyu/">
+						<div class="projectItemLeft">
+							<h1>打工人日历</h1>
+							<p>全体打工人提醒您摸鱼</p>
+						</div>
+						<div class="projectItemRight">
+							<img src="./assets/i13.png" alt="">
+						</div>
 
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true">
-        <div style="--icon-bg: rgba(0, 122, 204, 0.1);"></div>
-        <a href="https://www.efficiency.vip" target="_blank" title="集自动化推送于一体的网站">🗳 NOISE秘密基地</a>
-    </div>
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true"><div style="--icon-bg: rgba(0, 122, 204, 0.1);">
-    </div><a href="https://noiseblogs.top" target="_blank" title="Hexo博客"> ⏱  我的博客 Blog</a></span></div>
-   
-    </div>
-</div>
-<br>
-<h3 class="astro-P5WQZPYW">NOISE</h3>
-<br>
-<div class="card-container astro-P5WQZPYW">
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true">
-        <div style="--icon-bg: rgba(0, 122, 204, 0.1);"></div>
-        <a href="https://stats.uptimerobot.com/GoqwLuBl3o" target="_blank" title="监控一些站点的运行状况">📠 站点运行状况</a>
-    </div>
+					</a></div>
+						
+					<content>
+						<div class="title"><i class="fa-solid fa-star"></i>
+							</svg>关联站点</div>
+						<div class="projectList"><a class="projectItem a" target="_blank" href="https://t.me/NoiseMessagesbot">
+								<div class="projectItemLeft">
+									<h1>TG-RSS</h1>
+									<p>一个RSS_Bot的托管实例</p>
+								</div>
+								<div class="projectItemRight">
+									<img src="./assets/i1.png" alt="">
+								</div>
+		
+							</a><a class="projectItem a" target="_blank" href="https://t.me/Efficiencysearchbot">
+								<div class="projectItemLeft">
+									<h1>TG搜索Bot</h1>
+									<p>TG频道搜索</p>
+								</div>
+								<div class="projectItemRight">
+									<img src="./assets/i2.png" alt="">
+								</div>
+		
+							</a><a class="projectItem a" target="_blank" href="../e/utf8/index.html">
+								<div class="projectItemLeft">
+									<h1>二进制中文互译</h1>
+									<p>收集有趣html作品</p>
+								</div>
+								<div class="projectItemRight">
+									<img src="./assets/i3.png" alt="">
+								</div>
+		
+							</a><a class="projectItem a" target="_blank" href="../e/unlock-music/index.html">
+								<div class="projectItemLeft">
+									<h1>音乐解锁</h1>
+									<p>音乐解锁</p>
+								</div>
+								<div class="projectItemRight">
+									<img src="./assets/i4.png" alt="">
+								</div>
+		
+							</a></div>
+							<content>
+								<div class="title"><i class="fa-solid fa-star"></i>
+								</svg>关联站点 </div>
+								<div class="projectList"><a class="projectItem a" target="_blank" href="https://rcy1314.github.io/news/">
+										<div class="projectItemLeft">
+											<h1>聚合Rss阅读页</h1>
+											<p>聚合Rss阅读页</p>
+										</div>
+										<div class="projectItemRight">
+											<img src="./assets/i38.png" alt="">
+										</div>
+				
+									</a><a class="projectItem a" target="_blank" href="https://rssnoise.fly.dev">
+										<div class="projectItemLeft">
+											<h1>RSShub实例</h1>
+											<p>fly.io运行RSShub实例</p>
+										</div>
+										<div class="projectItemRight">
+											<img src="./assets/i39.png" alt="">
+										</div>
+				
+									</a><a class="projectItem a" target="_blank" href="https://rcy1314.github.io/Rss-Translation">
+										<div class="projectItemLeft">
+											<h1>RSS翻译转换</h1>
+											<p>RSS翻译转换实例</p>
+										</div>
+										<div class="projectItemRight">
+											<img src="./assets/i37.png" alt="">
+										</div>
+				
+									</a><a class="projectItem a" target="_blank" href="https://www.noisewechat.online">
+										<div class="projectItemLeft">
+											<h1>公众号RSS</h1>
+											<p>公众号RSS</p>
+										</div>
+										<div class="projectItemRight">
+											<img src="./assets/i14.png" alt="">
+										</div>
+				
+									</a></div>
 
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true">
-        <div style="--icon-bg: rgba(0, 122, 204, 0.1);"></div>
-        <a href="https://rcy1314.github.io/news/" target="_blank" title="个人部署在github上的单页RSS阅读器">🎉 聚合Rss阅读页</a>
-    </div>
+									<content>
+										<div class="title"><i class="fa-solid fa-star"></i>
+										</svg>关联站点</div>
+										<div class="projectList"><a class="projectItem a" target="_blank" href="https://www.noisechat.top">
+												<div class="projectItemLeft">
+													<h1>Gpt-Next</h1>
+													<p>Gpt-Next实例</p>
+												</div>
+												<div class="projectItemRight">
+													<img src="./assets/i33.png" alt="">
+												</div>
+						
+											</a><a class="projectItem a" target="_blank" href="https://www.noiseapi.top">
+												<div class="projectItemLeft">
+													<h1>Noise-Api</h1>
+													<p>one-api</p>
+												</div>
+												<div class="projectItemRight">
+													<img src="./assets/i14.png" alt="">
+												</div>
+						
+											</a><a class="projectItem a" target="_blank" href="https://jsd.cdn.noisework.cn">
+												<div class="projectItemLeft">
+													<h1>jsDelivr镜像站</h1>
+													<p>我的jsDelivr镜像站</p>
+												</div>
+												<div class="projectItemRight">
+													<img src="./assets/i30.png" alt="">
+												</div>
+						
+											</a><a class="projectItem a" target="_blank" href="./fb/">
+												<div class="projectItemLeft">
+													<h1>备用地址页</h1>
+													<p>一些备用站点域名</p>
+												</div>
+												<div class="projectItemRight">
+													<img src="./assets/i18.png" alt="">
+												</div>
+						
+											</a></div>
 
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true">
-        <div style="--icon-bg: rgba(0, 122, 204, 0.1);"></div>
-        <a href="https://rcy1314.github.io/Rss-Translation" target="_blank" title="外网订阅源翻译转换订阅，自动更新">🔭 RSS翻译转换</a>
-    </div>
+					<div class="title"><i class="fa-solid fa-star"></i>
+							</svg>关联站点</div>
+					<div class="projectList"><a class="projectItem b" target="_blank"
+							href="../e/photomosh/index.html">
+							<div class="projectItemLeft">
+								<h1>故障视觉</h1>
+								<p>图像和视频故障效果制作</p>
+							</div>
+							<div class="projectItemRight">
+								<img src="./assets/i12.png" alt="">
+							</div>
+	
+						</a><a class="projectItem b" target="_blank" href="../e/idea/index.html">
+							<div class="projectItemLeft">
+								<h1>IDEA编辑器</h1>
+								<p>在线文本编辑器</p>
+							</div>
+							<div class="projectItemRight">
+								<img src="./assets/i36.png" alt="">
+							</div>
+	
+						</a><a class="projectItem b" target="_blank" href="../e/ts/index.html">
+							<div class="projectItemLeft">
+								<h1>调色板</h1>
+								<p>颜色选择器</p>
+							</div>
+							<div class="projectItemRight">
+								<img src="./assets/i22.png" alt="">
+							</div>
+	
+						</a><a class="projectItem b" target="_blank" href="../e/mv/index.html">
+							<div class="projectItemLeft">
+								<h1>N+放映室</h1>
+								<p>在线网页直链播放</p>
+							</div>
+							<div class="projectItemRight">
+								<img src="./assets/i35.png" alt="">
+							</div>
 
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true">
-        <div style="--icon-bg: rgba(0, 122, 204, 0.1);"></div>
-        <a href="https://rcy1314.github.io/youtube/" target="_blank" title="个人在github上的Youtube订阅RSS阅读器">📼 我的Youtube订阅</a>
-    </div>
-
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true">
-        <div style="--icon-bg: rgba(0, 122, 204, 0.1);"></div>
-        <a href="https://www.noisework.cn/moyu/" target="_blank" title="全体打工人提醒您适当摸鱼">🔭 打工人日历</a>
-    </div>
-</div>
-<br>
-    <h3 class="astro-P5WQZPYW">NOISE</h3>
-    <br>
-    <div class="card-container astro-P5WQZPYW">
-        <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true"><div style="--icon-bg: rgba(0, 122, 204, 0.1);">
-       </div><a href="./pc/index.html" target="_blank" title="模拟PC页面">💻 桌面体验</a></span></div>
-
-       <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true"><div style="--icon-bg: rgba(0, 122, 204, 0.1);">
-    </div><a href="./fw/index.html" target="_blank" title="基于服务器等的个人公共化服务">🌈 公共服务</a></span></div>
-
-
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true"><div style="--icon-bg: rgba(0, 122, 204, 0.1);">
-    </div><a href="./qun/index.html" target="_blank" title="欢迎参与加入">📝 社群入口</a></span></div>
-
-
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true"><div style="--icon-bg: rgba(0, 122, 204, 0.1);">
-    </div><a href="./fb/index.html" target="_blank" title="一些站点的备用地址">⏰ 备用地址页</a></span></div>
-
-
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true"><div style="--icon-bg: rgba(0, 122, 204, 0.1);">
-    </div><a href="https://rcy1314.github.io/some-stars/" target="_blank" title="我的start列表，每日更新">⭐ 我的start列表</a></span></div>
-    </div>
-    <br>
-    <h3 class="astro-P5WQZPYW">NOISE</h3>
-    <br>
-    <div class="card-container astro-P5WQZPYW">
-        <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true"><div style="--icon-bg: rgba(0, 122, 204, 0.1);">
-       </div><a href="./soso/index.html" target="_blank" title="从已收录的上万个书签中搜索">📚Book Mark 索引</a></span></div>
-
-      
-        <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true"><div style="--icon-bg: rgba(0, 122, 204, 0.1);">
-       </div><a href="./soso/e/index.html" target="_blank" title="JUST SOSO">📟 JUST SOSO</a></span></div>
-
-
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true"><div style="--icon-bg: rgba(0, 122, 204, 0.1);">
-    </div><a href="https://efficiencyfollow.notion.site" target="_blank" title="始于Notion，忠于Notion">🎈 Efficiency主页</a></span></div>
-
-
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true"><div style="--icon-bg: rgba(0, 122, 204, 0.1);">
-    </div><a href="./photo/index.html" target="_blank" title="相册分享">  😀 NOISE摄影图库</a></span></div>
-
-
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true"><div style="--icon-bg: rgba(0, 122, 204, 0.1);">
-    </div><a href="https://efficiency.super.site/" target="_blank" title="Notion网站">🎁 知识效率集</a></span></div>
-
-    
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true"><div style="--icon-bg: rgba(0, 122, 204, 0.1);">
-    </div><a href="https://noise.mataroa.blog" target="_blank" title="mataroa博客"> 🛸Noise科学虫洞</a></span></div>
-
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true"><div style="--icon-bg: rgba(0, 122, 204, 0.1);">
-    </div><a href="https://noise.efficiencyfollow.repl.co" target="_blank" title="免费部署的Typecho站点">🧭 Typecho站</a></span></div>
-
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true"><div style="--icon-bg: rgba(0, 122, 204, 0.1);">
-    </div><a href="https://www.noisechat.top" target="_blank" title="部署的中文GPT">   🚀 我的ChatGPT</a></span></div> 
-    <div class="icon-link astro-GTWRZMC2" style="--icon-bg: rgba(0, 122, 204, 0.1)" target="_blank" draggable="true">
-        <div style="--icon-bg: rgba(0, 122, 204, 0.1);"></div>
-        <a href="https://www.noisework.cn/e/music/" target="_blank" title="在线听歌服务">⌛ NOISE音乐站</a>
-    </div>
+					</a></div>
+				
+	<footer>		
+		  <span class="astro-OY55P3EK"><span class="astro-OY55P3EK">本站已运行 <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>现在时间：<span id="show_time"></span>   
+		  <script>
+		  var now = new Date();
+		  function createtime() {
+			var grt= new Date("12/09/2020 00:00:00");
+			now.setTime(now.getTime()+250);
+			days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+			hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+			if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+			mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+			seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+			snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+			document.getElementById("timeDate").innerHTML = dnum+" 天 ";
+			document.getElementById("times").innerHTML = hnum + " 时 " ;
+		  }
+		  setInterval("createtime()",250);
+		  </script>
+	  </div> 
+		  <!-- 时间 -->
+			<span id="RGB"></span> 
+		  <meta charset="utf-8">   
+	  <div id="main">  
+	  <div id="show_time0" style="">
+	  <script>
+	  //显示时间
+	  //setInterval("show_time0.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+	  </script>
+	  </div>
+	  <script>  
+	  //定义
+	  setInterval("fun(show_time)",1);
+	  function fun(timeID){ 
+	  var date = new Date();  //创建对象  
+	  var y = date.getFullYear();     //获取年份  
+	  var m =date.getMonth()+1;   //获取月份  返回0-11  
+	  var d = date.getDate(); // 获取日  
+	  var w = date.getDay();   //获取星期几  返回0-6   (0=星期天) 
+	  var ww = ' 星期'+'日一二三四五六'.charAt(new Date().getDay()) ;//星期几
+	  var h = date.getHours();  //时
+	  var minute = date.getMinutes()  //分
+	  var s = date.getSeconds(); //秒
+	  var sss = date.getMilliseconds() ; //毫秒
+	  if(m<10){
+	  m = "0"+m;
+	  }
+	  if(d<10){
+	  d = "0"+d;
+	  }
+	  if(h<10){
+	  h = "0"+h;
+	  }
+	  
+	  if(minute<10){
+	  minute = "0"+minute;
+	  }
+	  
+	  if(s<10){
+	  s = "0"+s;
+	  }
+	  
+	  if(sss<10){
+	  sss = "00"+sss;
+	  }else if(sss<100){
+	  sss = "0"+sss;
+	  }
+	  
+	  document.getElementById(timeID.id).innerHTML =  y+"-"+m+"-"+d+"   "+h+":"+minute+"     "+ww;
+	  //document.write(y+"-"+m+"-"+d+"   "+h+":"+minute+":"+s);  
+	  }
+	  </script>
+		  <script>
+			window['CboxReady'] = function (Cbox) {
+				Cbox('button', '3-3523748-9k93aT');
+			}
+			</script>
+			<script src="./js/emb.js" async></script>
+	</footer>
+	<div class="tc">
+		<div onclick="" class="tc-main">
+			<img class="tc-img" src="" alt="" srcset="">
+		</div>
+		<script>
+			// 使用 fetch API 请求指定的 URL
+			fetch('https://www.wudada.online/Api/ScD')
+				.then(response => response.json())
+				.then(data => {
+					// 检查响应代码
+					if (data.code === '200') {
+						// 获取并显示数据
+						const contentDiv = document.querySelector('.content');
+						data.data.content.forEach(item => {
+							const p = document.createElement('p');
+							p.textContent = item.content;
+							contentDiv.appendChild(p);
+						});
+					} else {
+						console.error('请求失败:', data.msg);
+					}
+				})
+				.catch(error => {
+					console.error('请求出错:', error);
+				});
+		</script>
+	</div>
 </body>
-</section><div class="padding" style=" height: 4em;"></div>
-<script>
-    function toggleDarkMode(){
-        document.documentElement.classList.toggle('dark')
-    }
-</script>
-        <!--音乐-->
- <link rel="stylesheet" href="css/APlayer.min.css">  
- <div id="aplayer" class="aplayer" data-order="random" data-id="2141128031" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-volume="0.8"></div>
- <script src="js/jquery.min.js"></script>
- <script src="js/APlayer.min.js"></script>
- <script src="js/Meting.min.js"></script>
-		<footer id="footer" class="astro-OY55P3EK">
-    <span class="astro-OY55P3EK"><span class="astro-OY55P3EK">本站已运行 <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>现在时间：<span id="show_time"></span>   
-    <script>
-    var now = new Date();
-    function createtime() {
-      var grt= new Date("12/09/2020 00:00:00");
-      now.setTime(now.getTime()+250);
-      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-      document.getElementById("timeDate").innerHTML = dnum+" 天 ";
-      document.getElementById("times").innerHTML = hnum + " 时 " ;
-    }
-    setInterval("createtime()",250);
-    </script>
-</div> 
-    <!-- 时间 -->
-      <span id="RGB"></span> 
-    <meta charset="utf-8">   
-<div id="main">  
-<div id="show_time0" style="">
-<script>
-//显示时间
-//setInterval("show_time0.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
-</script>
-</div>
-<script>  
-//定义
-setInterval("fun(show_time)",1);
-function fun(timeID){ 
-var date = new Date();  //创建对象  
-var y = date.getFullYear();     //获取年份  
-var m =date.getMonth()+1;   //获取月份  返回0-11  
-var d = date.getDate(); // 获取日  
-var w = date.getDay();   //获取星期几  返回0-6   (0=星期天) 
-var ww = ' 星期'+'日一二三四五六'.charAt(new Date().getDay()) ;//星期几
-var h = date.getHours();  //时
-var minute = date.getMinutes()  //分
-var s = date.getSeconds(); //秒
-var sss = date.getMilliseconds() ; //毫秒
-if(m<10){
-m = "0"+m;
-}
-if(d<10){
-d = "0"+d;
-}
-if(h<10){
-h = "0"+h;
-}
+<script src="./js/home-script.js"> </script>
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({ id: "KFqltKSkJgQTGD9l", ck: "KFqltKSkJgQTGD9l" })</script>
 
-if(minute<10){
-minute = "0"+minute;
-}
-
-if(s<10){
-s = "0"+s;
-}
-
-if(sss<10){
-sss = "00"+sss;
-}else if(sss<100){
-sss = "0"+sss;
-}
-
-document.getElementById(timeID.id).innerHTML =  y+"-"+m+"-"+d+"   "+h+":"+minute+"     "+ww;
-//document.write(y+"-"+m+"-"+d+"   "+h+":"+minute+":"+s);  
-}
-</script>
-    <script>
-      window['CboxReady'] = function (Cbox) {
-          Cbox('button', '3-3523748-9k93aT');
-      }
-      </script>
-      <script src="./js/emb.js" async></script>
-</footer>
 </html>
