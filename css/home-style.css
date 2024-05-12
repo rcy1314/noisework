@@ -798,3 +798,9 @@ p {cursor:url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/text
 a {cursor:url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/ayuda.cur),auto}
 a:active {cursor:url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/work.cur),alias}
 body {cursor:url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/normal.cur),auto}
+
+hr.dashed {
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 10px 0;
+  }
