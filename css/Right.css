@@ -3,11 +3,8 @@
     padding: 0;
 }
 
-
-
-
 .menu {
-    position: absolute;
+    position: fixed; /* 修改此处从absolute更改为fixed */
     width: 88px;
     padding: 4px;
     box-shadow: 0 1px 4px rgba(33, 33, 33, 0.846), 0 8px 24px rgba(5, 5, 5, 0.859);
@@ -17,7 +14,7 @@
     visibility: hidden;
     overflow: hidden;
     transition: opacity .2s ease, height .3s ease, visibility .3s ease;
-    z-index: 999999; /* 添加这一行 */
+    z-index: 999999; /* 保持菜单在顶层 */
 }
 
 .is-active {
