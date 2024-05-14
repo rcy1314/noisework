@@ -1,7 +1,7 @@
 @font-face {
     font-family: "a";
     /*中文字体*/
-    src: url();
+    src: url(../assets/fonts/STHeiti Light.ttc);
     font-display: swap;
 }
 
@@ -9,7 +9,7 @@
 @font-face {
     font-family: "b";
 
-    src: url(../assets/fonts/Ubuntu-Regular.ttf);
+    src: url();
     font-display: swap;
 }
 
