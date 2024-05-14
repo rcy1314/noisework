@@ -17,6 +17,7 @@
 	<script src="https://kit.fontawesome.com/25cfefa7b1.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./css/Right.css">
 	<link rel="manifest" href="manifest.json">
+	<link rel="stylesheet" type="text/css" href="./css/loading.css"> 
 	<script src="./js/Right.js"></script>
 	<!-- 添加Service Worker -->
     <script>
@@ -32,6 +33,10 @@
     </script>
 </head>
 <body>
+	 <!-- loading加载--> 
+	 <div id="spinner-container">
+        <div class="spinner"></div>
+    </div>
 	 <!-- 右键菜单 -->
 	 <body oncontextmenu="openMenu(event)">
 		<div class="menu">
@@ -767,4 +772,5 @@
 <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
 <script>LA.init({ id: "KFqltKSkJgQTGD9l", ck: "KFqltKSkJgQTGD9l" })</script>
 <script src="js/home-rss.js"></script>
+<script src="js/loading.js"></script>
 </html>
