@@ -15,9 +15,21 @@
 	<link rel="stylesheet" href="./css/home-root.css">
 	<script src="https://kit.fontawesome.com/25cfefa7b1.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./css/Right.css">
+	<link rel="manifest" href="manifest.json">
 	<script src="./js/Right.js"></script>
+	<!-- 添加Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }).catch(function(error) {
+                    console.log('ServiceWorker registration failed: ', error);
+                });
+            });
+        }
+    </script>
 </head>
-
 <body>
 	 <!-- 右键菜单 -->
 	 <body oncontextmenu="openMenu(event)">
