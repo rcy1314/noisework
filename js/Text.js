@@ -1,11 +1,10 @@
-
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function() {
   // 获取弹出框元素
   var popup = document.querySelector(".popup");
   var popupText = document.getElementById("popupText");
 
   // 定义要显示的文字列表
-  var texts = ["📢：主页已更新","🎉:可切换风格","😃","😯","🤔","🥳","🥺"];
+  var texts = ["📢：主页已更新","📢：可切换风格","😃","😯","🤔","🥳","🥺"];
   var currentIndex = 0;
 
   // 更新弹出框文字内容
@@ -35,4 +34,4 @@ window.onload = function() {
       }, 3000); // 弹出时间为3秒
       updatePopupText(); // 更新文字内容
   }, 4000); // 设置时间间隔为4秒
-};
+});
