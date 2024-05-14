@@ -92,8 +92,7 @@
 			</ul>
 		</div>
 	 <!--音乐-->
-	 <link rel="stylesheet" href="./css/APlayer.min.css">  
-	 <div id="aplayer" class="aplayer" data-order="random" data-id="2141128031" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-volume="0.8"></div>
+	 <link rel="stylesheet" href="./css/home-APlayer.min.css">  
 	 <script src="./js/jquery.min.js"></script>
 	 <script src="./js/APlayer.min.js"></script>
 	 <script src="./js/Meting.min.js"></script>
@@ -101,21 +100,14 @@
 	<div class="noise-filter"></div>
 	<div class="noise-main">
 		<div class="noise-left">
-			<div class="logo" style="background-image: url(./assets/logo3.png);">
-				
+			<div class="logo" style="background-image: url(./assets/logo3.png);">		
 			</div>
+			   <!-- 个性签名-->
 			<div class="left-div left-des">
-				<div class="left-des-item"><svg t="1705773709627" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1478"><path d="M512 249.976471c-99.388235 0-180.705882 81.317647-180.705882 180.705882s81.317647 180.705882 180.705882 180.705882 180.705882-81.317647 180.705882-180.705882-81.317647-180.705882-180.705882-180.705882z m0 301.17647c-66.258824 0-120.470588-54.211765-120.470588-120.470588s54.211765-120.470588 120.470588-120.470588 120.470588 54.211765 120.470588 120.470588-54.211765 120.470588-120.470588 120.470588z" p-id="1479"></path><path d="M512 39.152941c-216.847059 0-391.529412 174.682353-391.529412 391.529412 0 349.364706 391.529412 572.235294 391.529412 572.235294s391.529412-222.870588 391.529412-572.235294c0-216.847059-174.682353-391.529412-391.529412-391.529412z m0 891.482353C424.658824 873.411765 180.705882 686.682353 180.705882 430.682353c0-183.717647 147.576471-331.294118 331.294118-331.294118s331.294118 147.576471 331.294118 331.294118c0 256-243.952941 442.729412-331.294118 499.952941z" p-id="1480"></path></svg>芝士星球
-				</div>
+				<div class="left-des-item"><i class="fa-solid fa-location-dot"></i><span>芝士星球</span></div>
 				<div class="left-des-item"><i class="fa-solid fa-user-astronaut"></i><span>芝士探索者</span></div>
 			</div>
-			<!-- 时间代码-->
-		    <div class="left-div left-time">
-			<ul id="line1">	
-				<div id="clock"></div>			
-			</ul>
-		    </div>
-		   <!-- 时间结束-->
+			<!-- 标签-->
 			<div class="left-div left-tag">
 				<div class="left-tag-item">💻数码科技爱好者
 				</div>
@@ -133,6 +125,27 @@
 				</div>
 				<div class="left-tag-item">📸摄影</div>
 			</div>
+			<!-- 时间代码-->
+		    <div class="left-div left-time">
+				<ul id="line1">	
+					<div id="clock"></div>			
+				</ul>
+				</div>
+			   <!-- 时间结束-->
+			<!-- 音乐挂件代码-->
+			<div class="left-div-music">
+							   <div class="swiper-slide">
+								 <div class="aplayer-wrap">
+									 <meting-js
+									  preload="none"
+									   server="netease"
+									   type="playlist"
+									   id="2141128031">
+								   </meting-js>  
+								 </div>
+							  </div> 	   
+				</ul>
+			  </div>
 			<!-- rss订阅文字代码-->
 			<div class="left-div left-time">
 			<ul id="line1">
@@ -758,7 +771,7 @@
 			  const day = now.getDate().toString().padStart(2, '0');
 			  const hours = now.getHours().toString().padStart(2, '0');
 			  const minutes = now.getMinutes().toString().padStart(2, '0');
-			  document.getElementById('clock').textContent = `${month}月${day}日 ${hours}点${minutes}分`;
+			  document.getElementById('clock').textContent = `${year}年${month}月${day}日 - ${hours}点${minutes}分`;
 			}
 		  
 			// 初始更新时钟
@@ -768,6 +781,7 @@
 		  </script>
 	</div>
 </body>
+<script src="./widgets/music-1/js/Meting.min.js"></script>
 <script src="./js/home-script.js"> </script>
 <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
 <script>LA.init({ id: "KFqltKSkJgQTGD9l", ck: "KFqltKSkJgQTGD9l" })</script>

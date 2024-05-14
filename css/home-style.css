@@ -161,14 +161,22 @@ body {
 
 .left-div {
     flex-shrink: 0;
-    width: 100%;
+    width: 120%;
     border-radius: 13px;
     margin-top: 13px;
     padding: 20px;
     backdrop-filter: blur(var(--card_filter));
     background: var(--item_bg_color);
 }
-
+.left-div-music {
+    flex-shrink: 10;
+    width: 120%;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 4px;
+    backdrop-filter: blur(var(--card_filter));
+    background: var(--item_bg_color);
+}
 .left-des {
     display: flex;
     flex-direction: column;
@@ -178,24 +186,26 @@ body {
 .left-des-item {
     display: flex;
     align-items: center;
-    line-height: 40px;
-    font-size: 15px;
-    margin-bottom: 5px;
+    line-height: 20px;
+    font-size: 14px;
+    margin-bottom: 8px;
     overflow: hidden;
+    
 }
 
 .left-des-item i,.left-des-item svg{
     width: 16px;
     height: 19px;
     fill:var(--fill);
-   font-size: 18px;
-    margin-right: 10px;
+    font-size: 16px;
+    margin-right: 18px;
+    justify-content: center; /* 水平居中 */
 }
 .left-tag {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 14px;
+    padding: 13px;
 }
 
 .left-tag-item {
@@ -219,13 +229,17 @@ body {
     overflow-y: scroll;
 }
 #line1 {
+    display: flex; /* 设置为弹性容器 */
+    flex-direction: column; /* 子元素垂直排列 */
     width: 100%;
     height: auto;
     font-size: 13px;
     padding-left: 8px;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
+ 
 }
+
 #line li {
     list-style: none;
     position: relative;
@@ -242,6 +256,9 @@ body {
     padding-left: 8px;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
+    display: flex; /* 设置为弹性容器 */
+    flex-direction: column; /* 子元素垂直排列 */
+    align-items: center; /* 水平居中 */
 }
 
 #line2 img {
@@ -798,6 +815,7 @@ hr.dashed {
 
   #clock {
     font-family: 'Arial', sans-serif;
-    font-size: 15px;
+    font-size: 13px;
     color: #faf6f6; /* 时钟文字颜色 */
+    justify-content: center; /* 水平居中 */
   }
