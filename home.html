@@ -103,6 +103,13 @@
 				</div>
 				<div class="left-des-item"><i class="fa-solid fa-user-astronaut"></i><span>芝士探索者</span></div>
 			</div>
+			<!-- 时间代码-->
+		    <div class="left-div left-time">
+			<ul id="line1">	
+				<div id="clock"></div>			
+			</ul>
+		    </div>
+		   <!-- 时间结束-->
 			<div class="left-div left-tag">
 				<div class="left-tag-item">💻数码科技爱好者
 				</div>
@@ -142,6 +149,17 @@
 				</ul>
 			</div>
 			<!-- 60秒读懂世界结束-->
+			<!-- 摸鱼日历-->
+			<div class="left-div left-time">
+				<ul id="line2">
+				 <li>
+				<div class="container">
+					<img id="moyuImage" src="loading.gif" alt="摸鱼日历图片">
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!-- 摸鱼日历结束-->
 			<div class="left-div left-time">
 				<ul id="line">
 					<li>
@@ -686,6 +704,53 @@
                     console.error('请求出错:', error);
                 });
         </script>
+		<script>
+			// 当文档加载完毕时执行
+			document.addEventListener('DOMContentLoaded', function() {
+				// 获取摸鱼日历API的URL
+				var apiURL = 'https://api.vvhan.com/api/moyu?type=json';
+		
+				// 使用fetch API请求摸鱼日历API
+				fetch(apiURL)
+					.then(function(response) {
+						// 确保响应的状态是OK的
+						if (!response.ok) {
+							throw new Error('Network response was not ok: ' + response.statusText);
+						}
+						// 解析JSON响应
+						return response.json();
+					})
+					.then(function(data) {
+						// 假设API返回的图片URL在data.url中
+						// 更新图片元素的src属性并显示图片
+						var moyuImage = document.getElementById('moyuImage');
+						moyuImage.src = data.url;
+					})
+					.catch(function(error) {
+						// 在控制台打印错误信息
+						console.error('Error fetching moyu calendar:', error);
+						// 在页面上显示错误信息
+						var moyuImage = document.getElementById('moyuImage');
+						moyuImage.alt = '获取失败，请稍后再试。';
+					});
+			});
+		</script>
+		<script>
+			function updateClock() {
+			  const now = new Date();
+			  const year = now.getFullYear();
+			  const month = (now.getMonth() + 1).toString().padStart(2, '0');
+			  const day = now.getDate().toString().padStart(2, '0');
+			  const hours = now.getHours().toString().padStart(2, '0');
+			  const minutes = now.getMinutes().toString().padStart(2, '0');
+			  document.getElementById('clock').textContent = `${month}月${day}日 ${hours}点${minutes}分`;
+			}
+		  
+			// 初始更新时钟
+			updateClock();
+			// 每分钟更新时钟
+			setInterval(updateClock, 60000);
+		  </script>
 	</div>
 </body>
 <script src="./js/home-script.js"> </script>

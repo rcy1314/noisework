@@ -235,6 +235,19 @@ body {
     scroll-snap-align: end;
     color: var(--main_text_color);
 }
+#line2 {
+    width: 100%;
+    height: auto;
+    font-size: 13px;
+    padding-left: 8px;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+#line2 img {
+    max-width: 100%; /* 图片最大宽度为容器的宽度 */
+    height: auto; /* 图片高度根据宽度自动调整 */
+}
 
 .focus {
     width: 8px;
@@ -803,4 +816,10 @@ hr.dashed {
     border: none;
     border-top: 1px dashed #ccc;
     margin: 10px 0;
+  }
+
+  #clock {
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    color: #faf6f6; /* 时钟文字颜色 */
   }

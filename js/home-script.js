@@ -105,22 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     changeTheme(themeState);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     var pageLoading = document.querySelector("#zyyo-loading");
     setTimeout(function () {
         pageLoading.style.opacity = '0';
@@ -170,10 +154,6 @@ document.addEventListener('DOMContentLoaded', function () {
     })();
     
     */
-    
-    
-    
-    
-    
+  
 });
 
