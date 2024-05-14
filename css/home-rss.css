@@ -1,0 +1,21 @@
+/* noise主页rss-CSS样式 */
+.rss-container {
+  display: none;
+}
+
+@media only screen {
+  .rss-container {
+    position: fixed;
+    color: white; 
+    display: flex;
+  }
+
+  /* 修改选择器为 .rss-link a */
+  .rss-link a {
+    font-size: 13px;
+    margin-bottom: 2px;
+    color: white;
+   
+  }
+
+}

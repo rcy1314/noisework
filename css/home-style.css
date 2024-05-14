@@ -553,20 +553,6 @@ body {
 
 }
 
-.skill {
-    padding: 25px;
-    width: 100%;
-}
-
-.skill img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.skill #skillWap {
-    display: none;
-}
 
 footer {
     position: absolute;
@@ -665,14 +651,6 @@ footer {
 
         font-size: 20px;
 
-    }
-
-    .skill #skillWap {
-        display: block;
-    }
-
-    .skill #skillPc {
-        display: none;
     }
 
 }

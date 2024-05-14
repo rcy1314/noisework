@@ -13,6 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" href="./css/home-style.css">
 	<link rel="stylesheet" href="./css/home-root.css">
+	<link rel="stylesheet" href="css/home-rss.css">
 	<script src="https://kit.fontawesome.com/25cfefa7b1.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./css/Right.css">
 	<link rel="manifest" href="manifest.json">
@@ -127,15 +128,24 @@
 				</div>
 				<div class="left-tag-item">📸摄影</div>
 			</div>
+			<!-- rss订阅文字代码-->
+			<div class="left-div left-time">
+			<ul id="line1">
+            <div class="container">
+			<class="title">《近期文章动态一览》
+			<hr class="dashed">
+            <div id="rss-item">
+		    </ul>
+          </div>
 			<!-- 随机一言代码-->
 			<div class="left-div left-time">
 			<ul id="line1">
-				<marquee scrollamount="3" direction="right" behavior="alternate">
+				
 					<div class="container">
 						<span id="hitokoto">正在获取中...</span>
 					</div>
 					<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>  
-				</marquee>    
+				
 			</ul>
 		</div>
 		<!-- 随机一言结束-->
@@ -756,5 +766,5 @@
 <script src="./js/home-script.js"> </script>
 <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
 <script>LA.init({ id: "KFqltKSkJgQTGD9l", ck: "KFqltKSkJgQTGD9l" })</script>
-
+<script src="js/home-rss.js"></script>
 </html>
