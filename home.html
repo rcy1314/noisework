@@ -128,6 +128,7 @@
 			<!-- 时间代码-->
 		    <div class="left-div left-time">
 				<ul id="line1">	
+					<div id="lbl"></div>
 					<div id="clock"></div>			
 				</ul>
 				</div>
@@ -779,6 +780,44 @@
 			// 每分钟更新时钟
 			setInterval(updateClock, 60000);
 		  </script>
+		   <script>
+			var weekday = new Array(7);
+			weekday[0] = "周日";
+			weekday[1] = "周一";
+			weekday[2] = "周二";
+			weekday[3] = "周三";
+			weekday[4] = "周四";
+			weekday[5] = "周五";
+			weekday[6] = "周六";
+		
+			
+			var today = new Date();
+			var hrs = today.getHours();
+			var dayOfWeek = weekday[today.getDay()];
+			var date = dayOfWeek+" "   ;
+		
+			var greet;
+		
+			if (hrs >= 0 && hrs <= 4)
+				greet = "🙃 凌晨好  ";
+			if (hrs >= 5 && hrs <= 8) 
+				greet = "😘 早上好  ";
+			if (hrs >= 9 && hrs <= 11) 
+				greet = "😜 上午好  ";
+			if (hrs >= 11 && hrs <= 13) 
+				greet = "🥳 中午好  ";
+			if (hrs >= 13 && hrs <= 17) 
+				greet = "🥰 下午好  ";
+			if (hrs >= 18 && hrs <= 19) 
+				greet = "🧐 傍晚好  ";
+			if (hrs >= 19 && hrs <= 22) 
+			   greet = "🥳 晚上好  ";
+			if (hrs >= 22 && hrs <= 24) 
+			   greet = "🥺 夜深了  ";
+		
+			document.getElementById('lbl').innerHTML =
+				greet+=` 👉 今天是：${date}</div>`;
+		</script> 
 	</div>
 </body>
 <script src="./widgets/music-1/js/Meting.min.js"></script>

@@ -819,3 +819,19 @@ hr.dashed {
     color: #faf6f6; /* 时钟文字颜色 */
     justify-content: center; /* 水平居中 */
   }
+  #lbl {
+    font-family: brushscriptmt;
+    
+    color: #fdf7f7;
+    padding: 2px;
+    justify-content: center; /* 水平居中 */
+    line-height: 1.5;
+    height:auto;
+    font-size: 13px;
+
+
+}
+#date{
+    font-size: 13px;
+    justify-content: center; /* 水平居中 */
+}
