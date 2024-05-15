@@ -42,11 +42,11 @@
 
 .aplayer.aplayer-withlrc .aplayer-pic {
     height: 90px;
-    width: 90px
+    width: 75px
 }
 
 .aplayer.aplayer-withlrc .aplayer-info {
-    margin-left: 90px;
+    margin-left: 50px;
     height: 90px;
     padding: 10px 7px 0
 }
@@ -56,7 +56,7 @@
 }
 
 .aplayer.aplayer-narrow {
-    width: 66px
+    width: 80px
 }
 
 .aplayer.aplayer-narrow .aplayer-info,
@@ -74,7 +74,7 @@
     margin: 0;
     z-index: 99;
     overflow: visible;
-    max-width: 400px;
+    max-width: 200px;
     box-shadow: none
 }
 
@@ -125,7 +125,7 @@
 }
 
 .aplayer.aplayer-fixed .aplayer-info .aplayer-music {
-    width: calc(100% - 105px)
+    width: calc(100% - 125px)
 }
 
 .aplayer.aplayer-fixed .aplayer-miniswitcher {
@@ -177,8 +177,8 @@
 }
 
 .aplayer .aplayer-icon {
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
     border: none;
     background-color: transparent;
     outline: none;
@@ -221,7 +221,7 @@
     float: left;
 
     background-size: cover;
-    background-position: 50%;
+    background-position: 20%;
     transition: all .3s ease;
     cursor: pointer
 }
@@ -282,7 +282,7 @@
 }
 
 .aplayer .aplayer-info {
-    margin-left: 66px;
+    margin-left: 26px;
     padding: 14px 7px 0 10px;
     height: 66px;
     box-sizing: border-box
@@ -307,7 +307,7 @@
 }
 
 .aplayer .aplayer-info .aplayer-music .aplayer-author {
-    font-size: 12px;
+    font-size: 10px;
     color: rgb(240, 230, 230)
 }
 
@@ -317,7 +317,7 @@
 }
 
 .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap {
-    margin: 0 0 0 5px;
+    margin: 0 0 0 0px;
     padding: 4px 0;
     cursor: pointer !important;
     flex: 1
@@ -331,17 +331,17 @@
 .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar {
     position: relative;
     height: 2px;
-    width: 100%;
+    width: 10%;
     background: #e4e1e1
 }
 
 .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-loaded {
     position: absolute;
-    left: 0;
+    left: 7;
     top: 0;
     bottom: 0;
     background: rgb(255, 253, 253);
-    height: 2px;
+    height: -2px;
     transition: all .5s ease
 }
 
@@ -356,12 +356,12 @@
 .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb {
     position: absolute;
     top: 0;
-    right: 5px;
-    margin-top: -4px;
+    right: 3px;
+    margin-top: 0px;
     margin-right: -10px;
-    height: 10px;
+    height: 17px;
     width: 10px;
-    border-radius: 50%;
+    border-radius: 20%;
     cursor: pointer;
     transition: all .3s ease-in-out;
     -webkit-transform: scale(0);
@@ -370,12 +370,12 @@
 
 .aplayer .aplayer-info .aplayer-controller .aplayer-time {
     position: relative;
-    right: 0;
+    right: 10;
     bottom: 4px;
-    height: 17px;
+    height: 2px;
     color: rgb(240, 231, 231);
-    font-size: 11px;
-    padding-left: 7px
+    font-size: 10px;
+    padding-left: 2px
 }
 
 .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-time-inner {
