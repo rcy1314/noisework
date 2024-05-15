@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="228px" height="281px" viewBox="0 0 228 281" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>mao</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="mao" transform="translate(2.000000, 2.000000)">
+            <path d="M208,50 C122.666667,10 74.6666667,-6 64,2 C48,14 76,50 76,66 C76,82 68,82 60,106 C52,130 56,130 52,146 C48,162 0,166 0,190 C0,214 122.87565,230.238243 152,242 C171.416233,249.841171 190.0829,260.507838 208,274 L208,50 Z" stroke="#000000" stroke-width="4" fill="#000000"></path>
+            <circle id="eye" stroke="#FFFFFF" stroke-width="4" fill="#FFFFFF" cx="138" cy="82" r="18" opacity="0">
+                <animate attributeName="opacity" values="1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 0; 0; 0; 0; 0; 0;" dur="1s" repeatCount="indefinite" />
+            </circle>
+            <circle id="eye" stroke="#FFFFFF" stroke-width="4" fill="#FFFFFF" cx="110" cy="172" r="18" opacity="0">
+                <animate attributeName="opacity" values="1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 0; 0; 0; 0; 0; 0;" dur="1s" repeatCount="indefinite" />
+            </circle>
+            <line x1="120" y1="82" x2="156" y2="82" id="-y-" stroke="#FFFFFF" stroke-width="4" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" transform="translate(138.000000, 82.000000) rotate(105.000000) translate(-138.000000, -82.000000) "></line>
+            <line x1="92" y1="172" x2="128" y2="172" id="-y-" stroke="#FFFFFF" stroke-width="4" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" transform="translate(110.000000, 172.000000) rotate(105.000000) translate(-110.000000, -172.000000) "></line>
+
+        </g>
+    </g>
+</svg>

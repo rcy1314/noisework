@@ -36,6 +36,45 @@
     </script>
 </head>
 <body>
+	<!-- 躲猫猫-->
+<style>
+    #maomao {
+        position: fixed;
+        bottom: 120px; /* 初始高度 */
+        right: -5px;
+        width: 57px;
+        height: 70px;
+        background-image: url(assets/mao.svg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: background .3s;
+		z-index: 9999; /* 确保元素位于顶层 */
+    }
+    #maomao:hover {
+        background-position: 60px 50%;
+    }
+</style>
+<script>
+    var randomNum = function(minNum, maxNum) {
+        switch(arguments.length) {
+            case 1:
+                return parseInt(Math.random() * minNum + 1, 10);
+                break;
+            case 2:
+                return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
+                break;
+            default:
+                return 0;
+                break;
+        }
+    };
+    var duoMaomao = function() {
+        var maomao = $("#maomao");
+        maomao.css("bottom", randomNum(5, 80) + "vh");
+    };
+</script>
+<div id="maomao" onMouseOut="duoMaomao()"></div>
 	 <!-- loading加载--> 
 	 <div id="spinner-container">
         <div class="spinner"></div>
@@ -648,10 +687,10 @@
 								<img src="./assets/i22.png" alt="">
 							</div>
 	
-						</a><a class="projectItem b" target="_blank" href="../e/mv/index.html">
+						</a><a class="projectItem b" target="_blank" href="https://www.noiseblogs.top">
 							<div class="projectItemLeft">
-								<h1>N+放映室</h1>
-								<p>在线网页直链播放</p>
+								<h1>我的博客</h1>
+								<p>BLOG博客站</p>
 							</div>
 							<div class="projectItemRight">
 								<img src="./assets/i35.png" alt="">
