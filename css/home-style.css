@@ -575,7 +575,7 @@ footer {
     position: absolute;
     padding: 10px;
     text-align: center;
-    width: 100%;
+    width: 94%;
     backdrop-filter: blur(var(--card_filter));
     background: var(--item_bg_color);
     color: var(--footer_text_color);
@@ -835,3 +835,19 @@ hr.dashed {
     font-size: 13px;
     justify-content: center; /* 水平居中 */
 }
+.projectItemRightimg { 
+    transition: width 0.4s ease;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background: rgba(20, 20, 20, 0.396);
+    height: 120px; /* 设置一个合适的高度，或者根据需要自动调整 */
+    max-width: 99%;
+    overflow: hidden; /* 隐藏超出容器的内容 */
+  }
+  #img-1 {
+    max-width: 100%;
+    max-height: 100%;
+    margin-right: 6px; /* 添加右侧间隔 */
+  }
+  
