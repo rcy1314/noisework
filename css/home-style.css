@@ -560,6 +560,7 @@ footer {
     .a {
         width: calc(50% - 20px);
     }
+
 .projectItem{
     margin: 10px;
 }
@@ -570,6 +571,19 @@ footer {
 
     }
 }
+.index-logo {
+    width: 40%; /* 图像宽度为父元素的50% */
+    height: 0; /* 高度为0，通过padding-bottom保持宽高比 */
+    padding-bottom: 40%; /* 保持宽高比为1:1 */
+    background-size: cover; /* 背景图像覆盖整个元素 */
+    background-position: center; /* 背景图像居中 */
+    border-radius: 50%; /* 圆形遮罩 */
+    margin-left: 0; /* 靠左侧对齐 */
+    display: inline-block; /* 或flex-item，根据父元素布局方式决定 */
+    background-repeat: no-repeat; /* 不重复背景图像 */
+    display: none;
+}
+
 /*手机尺寸*/
 @media (max-width: 800px) {
     body {
@@ -586,6 +600,9 @@ footer {
 }
 
 @media (max-width: 800px) {
+    .index-logo {
+        display: block;
+    }
     .noise-left {
         display: none;
     }
