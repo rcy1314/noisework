@@ -24,7 +24,6 @@
     body {
         background-attachment: fixed; /* 禁止背景图滚动 */
         background-size: contain; /* 防止背景图过度放大 */
-        backdrop-filter: blur(10px); /* 添加模糊效果 */
         background: var(--main_bg_color);
         background-repeat: no-repeat;
         background-size: cover;
