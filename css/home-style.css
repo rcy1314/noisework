@@ -573,9 +573,14 @@ footer {
 /*手机尺寸*/
 @media (max-width: 800px) {
     body {
-        background-attachment: fixed; /* 禁止背景图滚动 */
-        background-size: cover; /* 防止背景图过度放大 */
-        background-repeat: no-repeat;
+        /* 移除背景图相关的样式 */
+        background-attachment: initial;
+        background-size: initial;
+        background-image: none; /* 移除背景图 */
+        background-repeat: initial;
+        background-position: initial;
+        /* 设置背景颜色 */
+        background-color: #25314ae7; 
       
     }
 }
