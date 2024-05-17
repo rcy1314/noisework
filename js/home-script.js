@@ -29,31 +29,10 @@ function toggleClass(selector, className) {
     });
 }
 
-function pop(imageURL) {
-    var tcMainElement = document.querySelector(".tc-img");
-    if (imageURL) {
-        tcMainElement.src = imageURL;
-    }
-    toggleClass(".tc-main", "active");
-    toggleClass(".tc", "active");
-}
 
-var tc = document.getElementsByClassName('tc');
-var tc_main = document.getElementsByClassName('tc-main');
-tc[0].addEventListener('click', function (event) {
-    pop();
-});
-tc_main[0].addEventListener('click', function (event) {
-    event.stopPropagation();
-});
 
 function setCookie(name, value, days) {
-    var expires = "";
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-        expires = "; expires=" + date.toUTCString();
-    }
+    var expires = days ? "; expires=" + (new Date(Date.now() + days * 24 * 60 * 60 * 1000)).toUTCString() : "";
     document.cookie = name + "=" + value + expires + "; path=/";
 }
 
@@ -61,37 +40,28 @@ function getCookie(name) {
     var nameEQ = name + "=";
     var cookies = document.cookie.split(';');
     for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i];
-        while (cookie.charAt(0) == ' ') {
-            cookie = cookie.substring(1, cookie.length);
-        }
-        if (cookie.indexOf(nameEQ) == 0) {
-            return cookie.substring(nameEQ.length, cookie.length);
+        var cookie = cookies[i].trim();
+        if (cookie.startsWith(nameEQ)) {
+            return cookie.substring(nameEQ.length);
         }
     }
     return null;
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-
     var html = document.querySelector('html');
     var themeState = getCookie("themeState") || "Light";
-    var tanChiShe = document.getElementById("tanChiShe");
+    var Checkbox = document.getElementById('myonoffswitch');
 
     function changeTheme(theme) {
-        tanChiShe.src = "../assets/svg/snake-" + theme + ".svg";
         html.dataset.theme = theme;
         setCookie("themeState", theme, 365);
         themeState = theme;
     }
 
-
-    var Checkbox = document.getElementById('myonoffswitch')
     Checkbox.addEventListener('change', function () {
         if (themeState == "Dark") {
             changeTheme("Light");
-        } else if (themeState == "Light") {
-            changeTheme("Dark");
         } else {
             changeTheme("Dark");
         }
@@ -102,8 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     changeTheme(themeState);
-
-    
 });
 
 const projectItemRightimg = document.querySelector('.projectItemRightimg');
@@ -172,6 +140,34 @@ function stopAutoScroll() {
     }
 }
 
+// 懒加载功能
+function lazyLoad() {
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    const config = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    let observer = new IntersectionObserver((entries, self) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                let img = entry.target;
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                self.unobserve(img);
+            }
+        });
+    }, config);
+
+    lazyImages.forEach(image => {
+        observer.observe(image);
+    });
+}
+
+// 初始化懒加载
+document.addEventListener('DOMContentLoaded', lazyLoad);
+
 // 添加事件监听器
 projectItemRightimg.addEventListener('mousedown', handleMouseDown);
 projectItemRightimg.addEventListener('touchstart', handleTouchStart);
@@ -179,3 +175,4 @@ projectItemRightimg.addEventListener('touchmove', handleTouchMove);
 
 // 开始自动滑动
 startAutoScroll();
+

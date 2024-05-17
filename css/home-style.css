@@ -118,7 +118,6 @@ body {
 }
 
 .noise-main {
-
     width: 100%;
     transition: transform 0.5s ease;
     max-width: 1150px;
@@ -319,10 +318,7 @@ body {
     margin-top: 7px;
 }
 
-
-
 .gradientText {
-
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 200%;
@@ -375,14 +371,11 @@ body {
     align-items: center;
     overflow-x: scroll;
     margin-top: 20px;
-
 }
 
 .iconContainer::-webkit-scrollbar {
     display: none;
 }
-
-
 
 .iconItem {
     width: 49px;
@@ -391,7 +384,6 @@ body {
     border-radius: 7px;
     display: flex;
     margin-left: 10px;
-
     backdrop-filter: blur(var(--card_filter));
     background: var(--item_bg_color);
     align-items: center;
@@ -444,16 +436,6 @@ body {
     background: var(--item_hover_color);
 }
 
-.tanChiShe {
-    width: 85%;
-}
-
-.tanChiShe img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .title {
     display: flex;
     align-items: center;
@@ -499,7 +481,6 @@ body {
     width: calc(25% - 15px);
     backdrop-filter: blur(var(--card_filter));
     transition: opacity 0.5s ease, background-color 0.2s ease, border 0.2s ease, transform 0.3s ease;
-
 }
 
 .projectItem:hover {
@@ -564,7 +545,6 @@ body {
 }
 
 .projectItemRight img {
-
     height: 39px;
     width: 39px;
 
@@ -641,19 +621,24 @@ footer {
         width: 100%;
     }
 
-    .tanChiShe {
-        width: 100%;
-    }
 
     .description {
-        font-size: 16px;
+        font-size: 4vw;
     }
 
     .welcome {
-        font-size: 48px;
+        font-size: 10vw;
+        margin: 2vw 0;
 
     }
+    .iconContainer {
+  
+     margin-top: 4vw;
 
+}
+.projectItem{
+    padding: 10px;
+}
 
     .projectItemLeft p {
         font-size: 13px;
@@ -669,52 +654,6 @@ footer {
         font-size: 20px;
 
     }
-
-}
-
-.tc {
-    position: fixed;
-    display: flex;
-    visibility: hidden;
-    width: 100vw;
-    height: 100vh;
-    backdrop-filter: blur(10px);
-    background: rgba(20, 20, 20, 0.5);
-    z-index: 99999;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.tc-main {
-    z-index: 100000;
-    width: 80%;
-    max-width: 300px;
-    min-height: 200px;
-    background-color: #ffffff;
-    border-radius: 15px;
-
-    display: flex;
-    transition: transform 0.2s linear;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    transform: translateY(50%) scale(0.7);
-
-}
-
-.tc-img {
-    width: 100%;
-    height: 100%;
-}
-
-.tc.active {
-    visibility: visible;
-}
-
-.tc-main.active {
-
-    transform: translateY(0) scale(1);
 
 }
 
