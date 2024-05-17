@@ -20,6 +20,18 @@
     font-display: swap;
 }
 
+@media (max-width: 800px) {
+    body {
+        background-attachment: fixed; /* 禁止背景图滚动 */
+        background-size: contain; /* 防止背景图过度放大 */
+        backdrop-filter: blur(10px); /* 添加模糊效果 */
+        background: var(--main_bg_color);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -774,4 +786,3 @@ hr.dashed {
     max-height: 100%;
     margin-right: 6px; /* 添加右侧间隔 */
   }
-  
