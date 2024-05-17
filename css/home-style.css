@@ -302,15 +302,6 @@ body {
     margin: 20px 0;
 }
 
-.index-logo {
-    flex-shrink: 0;
-    width: 45%;
-    margin-top: 30px;
-    position: relative;
-    aspect-ratio: 1/1;
-    background-size: cover;
-    border-radius: 50%;
-}
 
 .description {
 
@@ -563,12 +554,6 @@ footer {
     bottom: 0;
 }
 
-@media (min-width: 800px) {
-
-    .index-logo {
-        display: none;
-    }
-}
 
 @media (max-width: 1150px) {
     .a {
@@ -636,7 +621,7 @@ footer {
      margin-top: 4vw;
 
 }
-.projectItem{
+    .projectItem{
     padding: 10px;
 }
 
