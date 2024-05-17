@@ -580,13 +580,16 @@ footer {
         background-repeat: initial;
         background-position: initial;
         /* 设置背景颜色 */
-        background-color: #25314ae7; 
+        background-color: #0d0e11e7; 
       
     }
 }
 
 @media (max-width: 800px) {
     .noise-left {
+        display: none;
+    }
+    .switch {
         display: none;
     }
 
