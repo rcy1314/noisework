@@ -19,18 +19,7 @@
     src: url(../assets/fonts/Pacifico-Regular.ttf);
     font-display: swap;
 }
-/*手机尺寸*/
-@media (max-width: 600px) {
-    body {
-        background-attachment: fixed; /* 禁止背景图滚动 */
-        background-size: contain; /* 防止背景图过度放大 */
-        background: var(--main_bg_color);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        backdrop-filter: blur(20px); /* 添加背景模糊效果 */
-    }
-}
+
 
 * {
     margin: 0;
@@ -581,8 +570,18 @@ footer {
 
     }
 }
-
-@media (max-width: 600px) {
+/*手机尺寸*/
+@media (max-width: 800px) {
+    body {
+        background-attachment: fixed; /* 禁止背景图滚动 */
+        background-size: contain; /* 防止背景图过度放大 */
+        background: var(--main_bg_color);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
+@media (max-width: 800px) {
     .noise-left {
         display: none;
     }
