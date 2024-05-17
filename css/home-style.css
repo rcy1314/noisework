@@ -19,8 +19,8 @@
     src: url(../assets/fonts/Pacifico-Regular.ttf);
     font-display: swap;
 }
-
-@media (max-width: 800px) {
+/*手机尺寸*/
+@media (max-width: 600px) {
     body {
         background-attachment: fixed; /* 禁止背景图滚动 */
         background-size: contain; /* 防止背景图过度放大 */
@@ -28,6 +28,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        backdrop-filter: blur(20px); /* 添加背景模糊效果 */
     }
 }
 
@@ -581,7 +582,7 @@ footer {
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     .noise-left {
         display: none;
     }
