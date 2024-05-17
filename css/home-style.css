@@ -399,7 +399,7 @@ body {
     margin-left: 10px;
     backdrop-filter: blur(var(--card_filter));-webkit-backdrop-filter: blur(var(--card_filter));
     background: var(--item_bg_color);
-
+    background: transparent;
     align-items: center;
     justify-content: center;
     transition: width 1s ease, opacity 1s ease, transform 1s ease;
@@ -574,13 +574,14 @@ footer {
 @media (max-width: 800px) {
     body {
         background-attachment: fixed; /* 禁止背景图滚动 */
-        background-size: contain; /* 防止背景图过度放大 */
-        background: var(--main_bg_color);
+        background-size: cover; /* 防止背景图过度放大 */
+        background-image: url('.././assets/31.jpeg'); /* 修正图片路径 */
         background-repeat: no-repeat;
-        background-size: cover;
         background-position: center;
+        backdrop-filter: blur(10px);
     }
 }
+
 @media (max-width: 800px) {
     .noise-left {
         display: none;
