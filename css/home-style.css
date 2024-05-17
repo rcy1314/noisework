@@ -572,17 +572,16 @@ footer {
     }
 }
 .index-logo {
-    width: 40%; /* 图像宽度为父元素的50% */
+    display: none;
+    width: 40%; /* 图像宽度为父元素的40% */
     height: 0; /* 高度为0，通过padding-bottom保持宽高比 */
     padding-bottom: 40%; /* 保持宽高比为1:1 */
     background-size: cover; /* 背景图像覆盖整个元素 */
     background-position: center; /* 背景图像居中 */
     border-radius: 50%; /* 圆形遮罩 */
-    margin-left: 0; /* 靠左侧对齐 */
-    display: inline-block; /* 或flex-item，根据父元素布局方式决定 */
     background-repeat: no-repeat; /* 不重复背景图像 */
-    display: none;
 }
+
 
 /*手机尺寸*/
 @media (max-width: 800px) {
@@ -602,6 +601,7 @@ footer {
 @media (max-width: 800px) {
     .index-logo {
         display: block;
+        margin: 0 auto;
     }
     .noise-left {
         display: none;
@@ -647,18 +647,26 @@ footer {
     }
 
     .welcome {
-        font-size: 10vw;
-        margin: 2vw 0;
-
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    font-size: 10vw;
     }
+
+    .gradientText {
+    display: inline; /* 确保span元素在同一行内显示 */
+    /* 添加其他必要的样式 */
+    }
+
+
     .iconContainer {
   
      margin-top: 4vw;
 
-}
+    }
     .projectItem{
     padding: 10px;
-}
+    }
 
     .projectItemLeft p {
         font-size: 13px;
