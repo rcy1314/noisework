@@ -413,7 +413,7 @@ body {
     border-radius: 7px;
     display: flex;
     margin-left: 10px;
-    backdrop-filter: blur(var(--card_filter));
+    backdrop-filter: blur(var(--card_filter));-webkit-backdrop-filter: blur(var(--card_filter));
     background: var(--item_bg_color);
 
     align-items: center;
