@@ -176,3 +176,14 @@ projectItemRightimg.addEventListener('touchmove', handleTouchMove);
 // 开始自动滑动
 startAutoScroll();
 
+// 图片弹出监听
+function pop(imgPath) {
+    document.getElementById('popupImage').src = imgPath;
+    document.getElementById('imagePopup').style.display = 'block';
+    document.getElementById('imagePopup').addEventListener('click', closePopup);
+}
+
+function closePopup() {
+    document.getElementById('imagePopup').style.display = 'none';
+    document.getElementById('imagePopup').removeEventListener('click', closePopup);
+}
