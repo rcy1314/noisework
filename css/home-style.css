@@ -713,7 +713,7 @@ footer {
     width: 200%;
     height: 100%;
     margin-left: -100%;
-    transition: margin 0.2s ease-in 0s;
+    transition: margin 0.2s linear;
 }
 
 .onoffswitch-inner:before,
@@ -757,7 +757,7 @@ footer {
     right: 5px;
 
     border-radius: 20px;
-    transition: right 0.2s ease-in 0s;
+    transition: right 0.2s linear;
 }
 
 .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner {
