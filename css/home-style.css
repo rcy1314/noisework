@@ -399,10 +399,8 @@ body {
     margin-left: 10px;
     backdrop-filter: blur(var(--card_filter));-webkit-backdrop-filter: blur(var(--card_filter));
     background: var(--item_bg_color);
-
     align-items: center;
     justify-content: center;
-    transition: width 1s ease, opacity 1s ease, transform 1s ease;
     flex-shrink: 0;
 }
 
@@ -713,7 +711,6 @@ footer {
     width: 200%;
     height: 100%;
     margin-left: -100%;
-    transition: margin 0.2s linear;
 }
 
 .onoffswitch-inner:before,
@@ -755,9 +752,7 @@ footer {
     top: 12.5%;
     bottom: 12.5%;
     right: 5px;
-
-    border-radius: 20px;
-    transition: right 0.2s linear;
+    border-radius: 20px;  
 }
 
 .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner {
