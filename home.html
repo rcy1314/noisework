@@ -195,8 +195,19 @@
             <div id="rss-item">
 		    </ul>
           </div>
-			<!-- 随机一言代码-->
-			<div class="left-div left-time">
+		 <!-- 云盘资源-->
+		 <div class="left-div left-time">
+			<ul id="line">
+				<div class="container">
+					<class="title">《云盘资源上新情报》
+						<hr class="dashed">
+					</div>	
+					<div class="ziyuan"></div>	
+			</ul>
+		</div>
+		<!-- 云盘资源结束-->
+		 <!-- 随机一言代码-->
+		 <div class="left-div left-time">
 			<ul id="line1">
 					<div class="container">
 						<span id="hitokoto">正在获取中...</span>
@@ -782,9 +793,44 @@
 			</script>
 			<script src="./js/emb.js" async></script>
 	</footer>
-	
+	<script>
+		// 使用 fetch API 请求网盘资源更新 URL
+		fetch('https://www.pan.noisework.cn/api/search')
+			.then(response => response.json())
+			.then(data => {
+				// 检查data是否为null
+				if (data === null) {
+					// 如果data为null，显示默认错误消息
+					const contentDiv = document.querySelector('.ziyuan');
+					const p = document.createElement('p');
+					p.textContent = '请求失败，没有返回有效信息';
+					contentDiv.appendChild(p);
+				} else {
+					// 如果data不是null，检查code字段
+					if (data.code === 200) {
+						// 如果code是200，显示title和url字段的信息
+						const contentDiv = document.querySelector('.ziyuan');
+						data.data.items.forEach(item => {
+							const p = document.createElement('p');
+							p.innerHTML = `<strong>${item.title}</strong> - <a href="${item.url}" target="_blank">链接🔗 </a>`;
+							p.style.margin = '0.2em 0'; // 添加0.2的上下间隔
+							contentDiv.appendChild(p);
+						});
+					} else {
+						// 如果code不是200，显示msg字段的信息
+						const contentDiv = document.querySelector('.ziyuan');
+						const p = document.createElement('p');
+						p.textContent = data.message || '请求失败，没有返回有效信息';
+						contentDiv.appendChild(p);
+					}
+				}
+			})
+			.catch(error => {
+				console.error('请求出错:', error);
+			});
+	</script>
 		<script>
-            // 使用 fetch API 请求指定的 URL
+            // 使用 fetch API 请求每日60s URL
             fetch('https://www.wudada.online/Api/ScD')
                 .then(response => response.json())
                 .then(data => {
