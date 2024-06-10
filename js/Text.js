@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var popupText = document.getElementById("popupText");
 
   // 定义要显示的文字列表
-  var texts = ["📢：主页已更新","📢：可切换风格","😃","😯","🤔","🥳","🥺"];
+  var texts = ["📢：主页已更新","🔔：可切换模式风格","😃","😯","🤔","🥳","🥺"];
   var currentIndex = 0;
 
   // 更新弹出框文字内容
