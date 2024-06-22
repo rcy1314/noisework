@@ -607,7 +607,7 @@ footer {
 /*手机尺寸*/
 @media (max-width: 800px) {
     body {     
-        background-image: url('.././assets/33.png');   
+        background-image: url(.././assets/33.png);   
         display: flex;
         position: relative;
         font-family: "b",  "a", sans-serif;
@@ -616,6 +616,9 @@ footer {
         color: var(--main_text_color);
         background-size: cover;
         background-attachment: fixed;
+        width: 100vw;
+        position: relative;
+        
     }
 }
 
