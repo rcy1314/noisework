@@ -83,7 +83,7 @@ body {
     font-family: "b",  "a", sans-serif;
     background: var(--main_bg_color);
     background-repeat: no-repeat;
-   
+    background-attachment: fixed;
     
     transition: color 0.1s ease;
     justify-content: center;
@@ -95,7 +95,7 @@ body {
     body {
         background-size: cover;
         background-position: center;
-        background-attachment: fixed;
+     
     }
 }
 @keyframes zoom {
