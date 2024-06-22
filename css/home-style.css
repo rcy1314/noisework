@@ -1,7 +1,7 @@
 @font-face {
     font-family: "a";
     /*中文字体*/
-    src: url(../assets/fonts/STHeiti Light.ttc);
+    src: url(../assets/fonts/STHeitiLight.ttc);
     font-display: swap;
 }
 
@@ -582,17 +582,23 @@ footer {
 
 
 /*手机尺寸*/
-@media (max-width: 800px) {
-    body {
-        /* 移除背景图相关的样式 */
-        background-attachment: initial;
-        background-size: initial;
-        background-image: none; /* 移除背景图 */
-        background-repeat: initial;
-        background-position: initial;
-        /* 设置背景颜色 */
-        background-color: #0d0e11e7; 
-      
+@media (min-width: 800px) {
+    .index-logo {
+        display: none;
+    }
+}
+@media (max-width: 1150px) {
+    .a {
+        width: calc(50% - 20px);
+    }
+.projectItem{
+    margin: 10px;
+}
+    .b {
+
+        width: calc(50% - 20px);
+
+
     }
 }
 
@@ -604,9 +610,7 @@ footer {
     .noise-left {
         display: none;
     }
-    .switch {
-        display: none;
-    }
+   
 
     .a .projectItemRight {
         display: none;
