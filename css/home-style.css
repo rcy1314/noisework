@@ -585,7 +585,7 @@ footer {
 @media (max-width: 800px) {
     body {     
         background-size: auto;
-        
+        background-image: url(.././assets/33.png);     
     }
 }
 
@@ -595,6 +595,9 @@ footer {
         margin: 0 auto;
     }
     .noise-left {
+        display: none;
+    }
+    .switch {
         display: none;
     }
 
