@@ -607,7 +607,7 @@ footer {
 /*手机尺寸*/
 @media (max-width: 800px) {
     body {     
-        background-image: url(.././assets/33.png);   
+        background-image: url('.././assets/33.png');   
         display: flex;
         height: 100%;
         min-height: 100vh;
@@ -617,8 +617,7 @@ footer {
         background: var(--main_bg_color);    
         transition: color 0.1s ease;
         color: var(--main_text_color);
-        background-repeat: repeat; /* 背景图像将重复平铺 */
-        background-size: auto; /* 保持背景图像的原始尺寸 */
+        background-size: cover;
         background-position: center;
         background-attachment: fixed;
     }
