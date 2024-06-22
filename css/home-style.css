@@ -582,23 +582,10 @@ footer {
 
 
 /*手机尺寸*/
-@media (min-width: 800px) {
-    .index-logo {
-        display: none;
-    }
-}
-@media (max-width: 1150px) {
-    .a {
-        width: calc(50% - 20px);
-    }
-.projectItem{
-    margin: 10px;
-}
-    .b {
-
-        width: calc(50% - 20px);
-
-
+@media (max-width: 800px) {
+    body {     
+        background-size: auto;
+        
     }
 }
 
@@ -610,7 +597,6 @@ footer {
     .noise-left {
         display: none;
     }
-   
 
     .a .projectItemRight {
         display: none;
