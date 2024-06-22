@@ -83,15 +83,21 @@ body {
     font-family: "b",  "a", sans-serif;
     background: var(--main_bg_color);
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+   
+    
     transition: color 0.1s ease;
     justify-content: center;
     color: var(--main_text_color);
 
 }
-
+/* 电脑尺寸下的样式 */
+@media (min-width: 992px) {
+    body {
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+}
 @keyframes zoom {
     0% {
         transform: scale(0);
@@ -584,7 +590,9 @@ footer {
 /*手机尺寸*/
 @media (max-width: 800px) {
     body {     
-        background-size: auto;
+        background-size: contain;
+        max-width: 100%;
+        max-height: 100%;
         background-image: url(.././assets/33.png);     
     }
 }
@@ -597,9 +605,7 @@ footer {
     .noise-left {
         display: none;
     }
-    .switch {
-        display: none;
-    }
+ 
 
     .a .projectItemRight {
         display: none;
