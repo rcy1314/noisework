@@ -83,18 +83,35 @@ body {
     font-family: "b",  "a", sans-serif;
     background: var(--main_bg_color);
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
-    
     transition: color 0.1s ease;
     justify-content: center;
     color: var(--main_text_color);
 
+
+ 
 }
 /* 电脑尺寸下的样式 */
 @media (min-width: 992px) {
     body {
+        display: flex;
+        height: 100%;
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+        font-family: "b",  "a", sans-serif;
+        background: var(--main_bg_color);
+        background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        background-attachment: fixed;
+        transition: color 0.1s ease;
+        justify-content: center;
+        color: var(--main_text_color);
+    
+    
      
     }
 }
@@ -591,7 +608,19 @@ footer {
 @media (max-width: 800px) {
     body {     
         background-image: url(.././assets/33.png);   
-        background-size: cover;  
+        display: flex;
+        height: 100%;
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+        font-family: "b",  "a", sans-serif;
+        background: var(--main_bg_color);    
+        transition: color 0.1s ease;
+        color: var(--main_text_color);
+        background-repeat: repeat; /* 背景图像将重复平铺 */
+        background-size: auto; /* 保持背景图像的原始尺寸 */
+        background-position: center;
+        background-attachment: fixed;
     }
 }
 
