@@ -77,7 +77,7 @@ body::-webkit-scrollbar {display: none;}
     width: 340px;
     background-size: cover;
     background-position: center;
-	background-image: linear-gradient(to right,rgba(34,34,34,0) 0%,rgba(34,34,34,0) 180px,rgba(34,34,34) 340px),url(https://jsd.onmicrosoft.cn/gh/rcy1314/my-photo@master/20230226/image.2mctsqprodu0.jpg);
+	background-image: linear-gradient(to right,rgba(34,34,34,0) 0%,rgba(34,34,34,0) 180px,rgba(34,34,34) 340px),url(https://jsd.cdn.noisework.cn/gh/rcy1314/my-photo@master/20230226/image.2mctsqprodu0.jpg);
 }
 #persontag {
     padding: 20px 20px 20px 80px;
