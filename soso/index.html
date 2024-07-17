@@ -245,7 +245,7 @@
         announcement.style.display = 'none';
 
         // 定义多个数据源
-        const dataSources = ['https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/Notionmarks.json', 'https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/AI.json', 'https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/Opensource.json', 'https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/Notiongo.json', 'https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/Daohang.json', 'https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/Marks.json', 'https://jsd.onmicrosoft.cn/gh/rcy1314/noisework@master/soso/Rssbook.json'];
+        const dataSources = ['https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/Notionmarks.json', 'https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/AI.json', 'https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/Opensource.json', 'https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/Notiongo.json', 'https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/Daohang.json', 'https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/Marks.json', 'https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/Rssbook.json'];
 
         // 存储所有的搜索结果
         let allSearchResults = [];
@@ -400,7 +400,7 @@
     showAllButton.addEventListener('click', async () => {
       searchResultsContainer.innerHTML = '';
 
-      const dataSources = ['Notionmark.json', 'AI.json', 'Opensource.json', 'Notiongo.json', 'Daohang.json', 'Marks.json', 'Rssbook.json'];
+      const dataSources = ['https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/Notionmark.json', 'https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/AI.json', 'https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/Opensource.json', 'https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/Notiongo.json', 'https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/Daohang.json', 'https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/Marks.json', 'https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/Rssbook.json'];
 
       for (const dataSource of dataSources) {
         try {
