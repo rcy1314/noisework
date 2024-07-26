@@ -6,8 +6,8 @@ js及css已本地化，根据功能分类，请勿合并，觉得加载过慢再
 
 ## 更新
 
-- 12.29-添加右键菜单【Right.js，Right.css】
-
+- 24.7.27-添加home页手机尺寸侧边弹出栏
+- 23.12.29-添加右键菜单【Right.js，Right.css】
 - 添加聊天室组件【emb.js】https://noise.zhubai.love/posts/2212598888907571200
 - 添加图标引用：https://fontawesome.com
 - 添加loading载入效果【loading.css;loading.js]
