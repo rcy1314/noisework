@@ -598,8 +598,6 @@ footer {
         background-filter: blur(5px);
         /* 背景颜色，用于在图片加载前或模糊效果下提供背景 */
         background-color: #0d0e11e7;
-        /* 防止背景图片在较小设备上过度放大失真 */
-        background-size: contain;
     }
 }
 
