@@ -821,7 +821,7 @@ hr.dashed {
     margin-right: 6px; /* 添加右侧间隔 */
   }
 /* 在手机尺寸下显示的按钮样式 */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     .mobile-nav-button {
       display: block;
       position: fixed;
@@ -859,7 +859,7 @@ hr.dashed {
     }
   }
   /* 侧边栏不显示的元素 */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     .logo {
     display: none;
     }
@@ -871,7 +871,7 @@ hr.dashed {
     }
   }
   /* 在非手机尺寸下隐藏按钮 */
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 800px) {
     .mobile-nav-button {
       display: none;
     }
