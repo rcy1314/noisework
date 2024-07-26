@@ -812,3 +812,60 @@ hr.dashed {
     max-height: 100%;
     margin-right: 6px; /* 添加右侧间隔 */
   }
+/* 在手机尺寸下显示的按钮样式 */
+@media screen and (max-width: 768px) {
+    .mobile-nav-button {
+      display: block;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 199000;
+      width: 50px;
+      height: 50px;
+      background-color: #373a42f9; /* 方块按钮的背景颜色 */
+      color: #fff;
+      text-align: center;
+      line-height: 50px; /* 垂直居中 */
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out; /* 过渡效果 */
+      
+    }
+  
+    /* 侧边栏的弹出样式 */
+    .noise-left {
+      display: none;
+      position: fixed;
+      top: 2;
+      width: 50%;
+      height: 100%;
+      background-color: #010102ff; /* 弹出层的背景颜色 */
+      z-index: 99900; /* 确保弹出层在按钮下面 */
+      transition: left 0.3s ease-in-out;
+    }
+  /* 侧边栏弹出时按钮的位置 */
+
+    /* 显示侧边栏 */
+    .noise-left.show {
+      left: 0;
+    }
+  }
+  /* 侧边栏不显示的元素 */
+@media screen and (max-width: 768px) {
+    .logo {
+    display: none;
+    }
+    .left-des-item {
+    display: none;
+    }
+    .left-tag-item {
+        display: none;
+    }
+  }
+  /* 在非手机尺寸下隐藏按钮 */
+  @media screen and (min-width: 769px) {
+    .mobile-nav-button {
+      display: none;
+    }
+  }
+  

@@ -117,8 +117,8 @@ a {
 }
 .find .item {
     position: relative;
-    height: 80px;
-    line-height: 80px;
+    height: 70px;
+    line-height: 70px;
     transition: all .2s;
     overflow: hidden;
     opacity: 1;
@@ -214,7 +214,7 @@ a {
 .workbox::-webkit-scrollbar {display: none;}
 #first,#last{
 	width: 60px;
-	height: 160px;
+	height: 150px;
 	display: inline-block;
 	margin: 20px 18px 20px 0;
 	background-color: #272727;
@@ -228,7 +228,7 @@ a {
 	color: transparent;
 	transition: 0.3s;
 	font-size: 30px;
-	line-height: 160px;
+	line-height: 150px;
 	width: 58px;
 	text-align: center;
 	display: block;
@@ -238,7 +238,7 @@ a {
 	transition: 0.6s;
 }
 .project{
-	height: 160px;
+	height: 150px;
 	width: 228px;
 	background-color: #272727;
 	border-radius: 20px;
@@ -294,7 +294,7 @@ a {
 	left: 0;
 	letter-spacing: .2em;
     font-weight: bold;
-	font-size: 20px;
+	font-size: 18px;
 	color: rgba(255, 255, 255, 0.5);
 	writing-mode:vertical-lr;
 	line-height: 56px;

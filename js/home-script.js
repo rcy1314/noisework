@@ -187,3 +187,25 @@ function closePopup() {
     document.getElementById('imagePopup').style.display = 'none';
     document.getElementById('imagePopup').removeEventListener('click', closePopup);
 }
+//手机左侧弹出
+document.addEventListener('DOMContentLoaded', function() {
+    var mobileNavButton = document.querySelector('.mobile-nav-button');
+    var noiseLeft = document.querySelector('.noise-left');
+    mobileNavButton.addEventListener('click', function() {
+      if (noiseLeft.style.display === 'block') {
+        noiseLeft.style.display = 'none';
+      } else {
+        noiseLeft.style.display = 'block';
+      }
+  // 切换侧边栏的显示状态
+  if (noiseLeft.classList.contains('show')) {
+    noiseLeft.classList.remove('show');
+    mobileNavButton.style.left = '10px'; 
+  } else {
+    noiseLeft.classList.add('show');
+    mobileNavButton.style.left = '20%'; 
+ 
+  }
+});
+});
+  
