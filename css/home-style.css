@@ -595,7 +595,7 @@ footer {
         /* 背景图片位置 */
         background-position: center center;
         /* 添加模糊效果 */
-        background-filter: blur(5px);
+        background-filter: blur(20px);
         /* 背景颜色，用于在图片加载前或模糊效果下提供背景 */
         background-color: #0d0e11e7;
     }
