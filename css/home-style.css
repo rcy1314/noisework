@@ -581,20 +581,28 @@ footer {
 }
 
 
-/*手机尺寸*/
+/* 手机尺寸 */
 @media (max-width: 800px) {
     body {
-        /* 移除背景图相关的样式 */
-        background-attachment: initial;
-        background-size: initial;
-        background-image: none; /* 移除背景图 */
-        background-repeat: initial;
-        background-position: initial;
-        /* 设置背景颜色 */
-        background-color: #0d0e11e7; 
-      
+        /* 设置背景图片 */
+        background-image: url('../assets/33.png'); /* 请替换为你的图片URL */
+        /* 背景图片覆盖整个元素 */
+        background-size: cover;
+        /* 背景图片不会随着页面滚动 */
+        background-attachment: fixed;
+        /* 背景图片重复方式 */
+        background-repeat: no-repeat;
+        /* 背景图片位置 */
+        background-position: center center;
+        /* 添加模糊效果 */
+        background-filter: blur(5px);
+        /* 背景颜色，用于在图片加载前或模糊效果下提供背景 */
+        background-color: #0d0e11e7;
+        /* 防止背景图片在较小设备上过度放大失真 */
+        background-size: contain;
     }
 }
+
 
 @media (max-width: 800px) {
     .index-logo {
@@ -839,7 +847,7 @@ hr.dashed {
       top: 2;
       width: 50%;
       height: 100%;
-      background-color: #010102ff; /* 弹出层的背景颜色 */
+      background-color:  #0d0e11ed;  /* 弹出层的背景颜色 */
       z-index: 99900; /* 确保弹出层在按钮下面 */
       transition: left 0.3s ease-in-out;
     }
