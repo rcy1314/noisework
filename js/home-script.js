@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileNavButton.style.left = '10px'; 
   } else {
     noiseLeft.classList.add('show');
-    mobileNavButton.style.left = '20%'; 
+    mobileNavButton.style.left = '50%'; 
  
   }
 });

@@ -823,18 +823,18 @@ hr.dashed {
     .mobile-nav-button {
       display: block;
       position: fixed;
-      top: 10px;
+      top: 15px;
       left: 10px;
       z-index: 199000;
       width: 50px;
       height: 50px;
-      background-color: #373a42f9; /* 方块按钮的背景颜色 */
+      background-color: #373a42ef; /* 方块按钮的背景颜色 */
       color: #fff;
       text-align: center;
       line-height: 50px; /* 垂直居中 */
-      border-radius: 3px;
+      border-radius: 6px;
       cursor: pointer;
-      transition: all 0.3s ease-in-out; /* 过渡效果 */
+      transition: all 0.02s ease-in-out; /* 过渡效果 */
       
     }
   
@@ -847,7 +847,7 @@ hr.dashed {
       height: 100%;
       background-color:  #0d0e11ed;  /* 弹出层的背景颜色 */
       z-index: 99900; /* 确保弹出层在按钮下面 */
-      transition: left 0.3s ease-in-out;
+      transition: left 0.1s ease-in-out;
     }
   /* 侧边栏弹出时按钮的位置 */
 
@@ -861,12 +861,7 @@ hr.dashed {
     .logo {
     display: none;
     }
-    .left-des-item {
-    display: none;
-    }
-    .left-tag-item {
-        display: none;
-    }
+  
   }
   /* 在非手机尺寸下隐藏按钮 */
   @media screen and (min-width: 800px) {
