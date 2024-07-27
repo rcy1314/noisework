@@ -34,3 +34,18 @@ js及css已本地化，根据功能分类，请勿合并，觉得加载过慢再
 2、主页index.html文件内，找到注释<!-- 添加版本号-每次更新要改版本号才会刷新缓存 -->更新下面自己设置缓存的文件的版本号
 
 3、清除本地浏览器缓存
+
+<details>
+<summary>✅ 预览【点击展开】</summary>
+
+### 首页
+
+![预览1](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/%25E9%25A2%2584%25E8%25A7%25881.png)
+
+### home页
+
+![预览2](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/%25E9%25A2%2584%25E8%25A7%25882.png)
+
+
+
+![预览3](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/%25E9%25A2%2584%25E8%25A7%25883.png)
