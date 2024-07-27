@@ -40,12 +40,12 @@ js及css已本地化，根据功能分类，请勿合并，觉得加载过慢再
 
 ### 首页
 
-![预览1](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/%25E9%25A2%2584%25E8%25A7%25881.png)
+![home-1](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/home-1.png)
 
 ### home页
 
-![预览2](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/%25E9%25A2%2584%25E8%25A7%25882.png)
+![home-2](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/home-2.png)
 
 
 
-![预览3](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/%25E9%25A2%2584%25E8%25A7%25883.png)
+![home-3](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/home-3.png)
