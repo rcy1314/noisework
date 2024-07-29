@@ -15,7 +15,7 @@
 }
 
 /* 手机端不显示广告位 */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .ad-container {
     display: none;
   }
