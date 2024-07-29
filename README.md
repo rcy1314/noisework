@@ -4,12 +4,14 @@ js及css已本地化，根据功能分类，请勿合并，觉得加载过慢再
 
 需要主题模版请[下载](https://github.com/rcy1314/noisework/releases)
 
-## 配置文档
+## 使用配置文档
 
-  访问：https://github.com/rcy1314/noisework-docs
+  
 
 <details>
 <summary>🚀配置文档预览</summary>
+访问：https://docs.noisework.cn
+
 
 
 ![1722256547263](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/1722256547263.png)
