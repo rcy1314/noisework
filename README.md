@@ -10,7 +10,10 @@ js及css已本地化，根据功能分类，请勿合并，觉得加载过慢再
 
 <details>
 <summary>🚀配置文档预览</summary>
+
+
 ![1722256547263](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/1722256547263.png)
+
 </details>
 
 
