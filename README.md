@@ -1,27 +1,19 @@
+## 使用配置文档
+
+![1722256547263](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/1722256547263.png)
+
+  
+
+
+配置请访问：https://docs.noisework.cn
+
+[GitHub](https://github.com/rcy1314/noisework-docs)
+
 ## 说明
 
 js及css已本地化，根据功能分类，请勿合并，觉得加载过慢再合并或套用CDN
 
 需要主题模版请[下载](https://github.com/rcy1314/noisework/releases)
-
-## 使用配置文档
-
-  
-
-<details>
-<summary>🚀  配置文档预览</summary>
-
-访问：https://docs.noisework.cn
-
-[GitHub](https://github.com/rcy1314/noisework-docs)
-
-
-
-![1722256547263](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/1722256547263.png)
-
-</details>
-
-
 
 ## 更新
 
@@ -54,22 +46,21 @@ js及css已本地化，根据功能分类，请勿合并，觉得加载过慢再
 
 3、清除本地浏览器缓存
 
-## 预览图片
-
-<details>
-<summary>✅ 预览【点击展开】</summary>
-
-
-![233](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/233.png)
+## 预览
 
 ### 首页
 
-![home-1](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/home-1.png)
+![666](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/666.png)
 
 ### home页
 
+![777](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/777.png)
 
 
-![home-3](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/home-3.png)
 
 ![home-2](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/home-2.png)
+
+<details>
+<summary>✅ 【点击展开】</summary>
+
+![233](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/233.png)
