@@ -54,7 +54,16 @@ var imageUrls = [
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/20230704/025.4kt2ai85mx60.png',
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/20230704/026.3v8fb37c3i40.png',
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/20230704/022.6i76zb73k240.png',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/20230704/024.38y8lpvx5ug0.png',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/001.png',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/002.png',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/0003.png',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/0004.png',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/0005.png',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/0006.png',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/0007.png',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/0008.png',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/0010.png',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/0011.png',
     // 这里添加随机前景人物图-添加更多图片URL...
   ];
   
