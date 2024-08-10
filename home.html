@@ -236,8 +236,7 @@
 				<ul id="line2">
 				 <li>
 				<div class="container">
-					<img id="moyuImage" src="loading.gif" alt="摸鱼日历图片">
-				</div>
+					<img src="https://api.52vmy.cn/api/wl/moyu?token=aaddc3454ccbefbb2d8d8461f8f7f481">
 			</li>
 		</ul>
 	</div>
@@ -866,37 +865,6 @@
                     console.error('请求出错:', error);
                 });
         </script>
-		<script>
-			// 当文档加载完毕时执行
-			document.addEventListener('DOMContentLoaded', function() {
-				// 获取摸鱼日历API的URL
-				var apiURL = 'https://api.vvhan.com/api/moyu?type=json';
-		
-				// 使用fetch API请求摸鱼日历API
-				fetch(apiURL)
-					.then(function(response) {
-						// 确保响应的状态是OK的
-						if (!response.ok) {
-							throw new Error('Network response was not ok: ' + response.statusText);
-						}
-						// 解析JSON响应
-						return response.json();
-					})
-					.then(function(data) {
-						// 假设API返回的图片URL在data.url中
-						// 更新图片元素的src属性并显示图片
-						var moyuImage = document.getElementById('moyuImage');
-						moyuImage.src = data.url;
-					})
-					.catch(function(error) {
-						// 在控制台打印错误信息
-						console.error('Error fetching moyu calendar:', error);
-						// 在页面上显示错误信息
-						var moyuImage = document.getElementById('moyuImage');
-						moyuImage.alt = '获取失败，请稍后再试。';
-					});
-			});
-		</script>
 		<script>
 			function updateClock() {
 			  const now = new Date();
