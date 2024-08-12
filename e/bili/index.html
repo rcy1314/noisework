@@ -70,7 +70,7 @@
                 }
 
                 // 使用fetch获取API数据
-                fetch(`https://api.allorigins.win/raw?url=https://api.bilibili.com/x/v3/fav/resource/ids?media_id=${mediaId}`)
+                fetch(`https://api.bilibili.com/x/v3/fav/resource/ids?media_id=${mediaId}`)
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('API请求失败');
@@ -92,7 +92,7 @@
                             document.querySelector('iframe').src = `https://player.bilibili.com/player.html?bvid=${randomBvid}&autoplay=0`;
 
                             // 查找选定视频的duration，如果有，延时后切换到下一个视频
-                            const selectedApiUrl = `https://api.allorigins.win/raw?url=https://api.bilibili.com/x/web-interface/view?bvid=${randomBvid}`;
+                            const selectedApiUrl = `https://api.bilibili.com/x/web-interface/view?bvid=${randomBvid}`;
                             fetch(selectedApiUrl)
                                 .then(response => {
                                     if (!response.ok) {
