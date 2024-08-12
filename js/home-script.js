@@ -312,3 +312,21 @@ document.getElementById("random-video").addEventListener('ended', function() {
 
 // 初始化，随机选择一个视频进行播放
 randomVideo();
+// 预加载视频的函数
+function preloadVideos() {
+    // 预加载当前视频
+    var currentVideo = new Video();
+    currentVideo.src = videos[currentVideoIndex];
+
+    // 预加载接下来的几个视频
+    var nextVideosToPreload = 3; // 预加载的视频数量
+    for (var i = 1; i <= nextVideosToPreload; i++) {
+        var nextVideo = new Video();
+        nextVideo.src = videos[(currentVideoIndex + i) % videos.length];
+    }
+}
+
+// 在页面加载时调用预加载视频的函数
+window.onload = function() {
+    preloadVideos();
+};
