@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOISE-B站播放器</title>
     <!-- 省略了其他meta标签 -->
-
     <style>
         html, body {
             margin: 0;
@@ -14,14 +13,14 @@
             height: 100%;
         }
         .center-message {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 15px; /* 将字体大小调整为15像素 */
-    display: none; /* 默认隐藏 */
-}
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 15px; /* 将字体大小调整为15像素 */
+            display: none; /* 默认隐藏 */
+        }
 
         iframe {
             width: 100%;
@@ -46,16 +45,6 @@
             align-items: center;
             justify-content: center;
         }
-
-        .center-message {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-            font-size: 24px;
-            display: none; /* 默认隐藏 */
-        }
     </style>
 </head>
 <body>
@@ -63,7 +52,7 @@
 
     <button class="floating-button" onclick="playRandomVideo()">⏭</button>
 
-    <div class="center-message" id="centerMessage">目前API抽风中…请等待</div>
+    <div class="center-message" id="centerMessage">目前API抽风中...请等待或...刷新</div>
 
     <script>
         // 获取页面参数
@@ -77,6 +66,9 @@
                 if (timerId) {
                     clearTimeout(timerId);
                 }
+
+                // 显示“API抽风中”的消息
+                document.getElementById('centerMessage').style.display = 'block';
 
                 // 使用fetch获取API数据
                 fetch(`https://api.allorigins.win/raw?url=https://api.bilibili.com/x/v3/fav/resource/ids?media_id=${mediaId}`)
@@ -99,6 +91,7 @@
 
                             // 设置iframe的src属性以载入视频，但不自动播放
                             document.querySelector('iframe').src = `https://player.bilibili.com/player.html?bvid=${randomBvid}&autoplay=0`;
+                            document.getElementById('centerMessage').style.display = 'none'; // 成功加载视频后隐藏消息
 
                             // 查找选定视频的duration，如果有，延时后切换到下一个视频
                             const selectedApiUrl = `https://api.allorigins.win/raw?url=https://api.bilibili.com/x/web-interface/view?bvid=${randomBvid}`;
