@@ -200,29 +200,6 @@
             <div id="rss-item">
 		    </ul>
           </div>
-		  <!-- 视频播放 -->
-<div class="left-div left-time">
-	<ul id="line1">
-	  <div class="container">
-		<!-- 视频容器 -->
-		<div id="video-container">
-		  <!-- 视频元素 -->
-		  <video id="random-video" width="100%" height="auto" controls>
-			<source src="视频链接" type="video/mp4">
-			您的浏览器不支持视频标签。
-		  </video>
-		</div>
-		<!-- 控制按钮 -->
-		<div id="control-buttons">
-		  <button onclick="prevVideo()" style="font-size:11px;">上一个</button>
-		  <button id="play-pause-btn" onclick="togglePlay()" style="font-size:11px;">播放/暂停</button>
-		  <button onclick="nextVideo()" style="font-size:11px;">下一个</button>
-		</div>
-	  </div>
-	</ul>
-  </div>
-<!-- 视频播放结束 -->
-
 		 <!-- 云盘资源-->
 		 <div class="left-div left-time">
 			<ul id="line">
@@ -244,6 +221,29 @@
 			</ul>
 		</div>
 		<!-- 随机一言结束-->
+		  <!-- 视频播放 -->
+<div class="left-div left-time">
+	<ul id="line1">
+	  <div class="container">
+		<!-- 视频容器 -->
+		<div id="video-container">
+		  <!-- 视频元素 -->
+		  <video id="random-video" width="100%" height="auto" controls webkit-playsinline playsinline controlsList="nodownload noremoteplayback">
+			<source src="视频链接" type="video/mp4">
+			您的浏览器不支持视频标签。
+		  </video>
+		</div>
+		<!-- 控制按钮 -->
+		<div id="control-buttons">
+		  <button onclick="prevVideo()" style="font-size:12px;">⏮</button>
+		  <button id="play-pause-btn" onclick="togglePlay()" style="font-size:12px;">▶</button>
+		  <button onclick="nextVideo()" style="font-size:12px;">⏭</button>
+		</div>
+	  </div>
+	</ul>
+  </div>
+<!-- 视频播放结束 -->
+
 	    <!-- 60秒读懂世界-->
 			<div class="left-div left-time">
 				<ul id="line">
