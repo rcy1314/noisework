@@ -248,7 +248,20 @@ function togglePlay() {
         video.pause();
     }
 }
+// 获取视频元素和播放/暂停按钮
+var video = document.getElementById("random-video");
+var playPauseBtn = document.getElementById("play-pause-btn");
 
+// 切换播放和暂停的函数
+function togglePlay() {
+  if (video.paused || video.ended) {
+    video.play();
+    playPauseBtn.textContent = "⏸"; // 播放时显示暂停图标
+  } else {
+    video.pause();
+    playPauseBtn.textContent = "▶"; // 暂停时显示播放图标
+  }
+}
 // 随机选择一个视频
 function randomVideo() {
     currentVideoIndex = Math.floor(Math.random() * videos.length);
