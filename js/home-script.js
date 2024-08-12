@@ -229,6 +229,16 @@ var videos = [
     "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/w0kRrJ.mp4",
     "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/4535fe8ade84441085e5604db4f589ed.mp4",
     "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/%E4%B8%8B%E8%BD%BD.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/20240812_164231.MP4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/20240812_164742.MP4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/ocDBeQ6Avp8zDaGjQCB9VRNnAAAf1NhlgI9EDM%20-%2001.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/osbAADGCxEASJEUiWgUcatQ0vghB4BzkzIceuf%20-%2001.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/oEWaQDEDf3fA29igEmmHAq4IlEFhB9AhLRBDWg%20-%2001.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/oIQFErG7qBmfVoneBBAekQ8cIb9HMZDC7QZEhA%20-%2001.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/oYZZiIwTMFmA0kRm6yDfBeJA9AOn1g4NbQbxsK%20-%2001.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/ocf2RDOy9AXXAvQBC.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/o8CVABWheDHtvi2rmgQ0JEsyIAjy3HzOyn3AfB%20-%2001.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/oYYsgHYNIwzJBgeDW5JfQpfaA7ywExA2Bkfoec%20-%2001.mp4",
     "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/50b8d286b4104a78b8db00ee85296516.mp4"
 ];  // 视频链接数组
 var currentVideoIndex = 0; // 当前视频索引
