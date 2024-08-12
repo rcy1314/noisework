@@ -209,3 +209,83 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 });
   
+// 视频播放组件
+var videos = [
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/f83b646a4cee41e588ca023e2a114e2f.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/bc6473e95d7f4bd1ba2f91d1cf632dfe.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/914f70446ab3414a8b2d2c75be8135a4.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/9e782b9469e04a67a64022a3cb964c83.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/fd1d5b76283f424ab83cd040f15feb3b.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/c570029d2db34069ab3009f779ccf41f.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/f722dfc4481347f1b9df0572bf8bd6a5.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/1719a2f412cb4c57a0264a4c06e72f5d.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/4cff93ffad0542af96e78f0b47a6c13b.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/77e10d9cf3884d21b443f94ce01c4bb9.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/439381abd4b14efa98960e55f6073609.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/f3fc238bd9d94a489e5a060c18733fbf.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/6845544115af4e42b919c53721688aff.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/6af08f9efc454e69b2f37e438279d7ea.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/e26f5c41a7bc4d42b6af0c7d20f22ce2.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/w0kRrJ.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/4535fe8ade84441085e5604db4f589ed.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/%E4%B8%8B%E8%BD%BD.mp4",
+    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/50b8d286b4104a78b8db00ee85296516.mp4"
+];  // 视频链接数组
+var currentVideoIndex = 0; // 当前视频索引
+
+// 播放视频
+function playVideo() {
+    var video = document.getElementById("random-video");
+    video.play();
+}
+
+// 切换播放/暂停
+function togglePlay() {
+    var video = document.getElementById("random-video");
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+    }
+}
+
+// 随机选择一个视频
+function randomVideo() {
+    currentVideoIndex = Math.floor(Math.random() * videos.length);
+    updateVideo();
+}
+
+// 播放下一个视频
+function nextVideo() {
+    currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+    updateVideo();
+    playVideo();
+}
+
+// 播放上一个视频
+function prevVideo() {
+    currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+    updateVideo();
+    playVideo();
+}
+
+// 更新视频
+function updateVideo() {
+    var video = document.getElementById("random-video");
+    video.src = videos[currentVideoIndex];
+    video.load();
+}
+
+// 监听视频错误事件，自动跳过失效视频
+document.getElementById("random-video").addEventListener('error', function() {
+    console.log("视频加载失败，尝试下一个视频");
+    nextVideo(); // 直接调用nextVideo()来尝试下一个视频
+});
+
+// 监听视频结束事件，自动播放下一个视频
+document.getElementById("random-video").addEventListener('ended', function() {
+    nextVideo(); // 直接调用nextVideo()来播放下一个视频
+});
+
+// 初始化，随机选择一个视频进行播放
+randomVideo();

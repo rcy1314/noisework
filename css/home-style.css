@@ -870,3 +870,27 @@ hr.dashed {
     }
   }
   
+  /* 视频组件效果 */
+/* 引入的随机视频组件按钮 */
+#control-buttons {
+    text-align: center;
+    margin-top: 6px; /* 根据需要调整间距 */
+  }
+  
+  #control-buttons button {
+    margin: 0 5px; /* 根据需要调整按钮间距 */
+  }
+/* 基本样式 */
+#video-container {
+    width: 100%;
+    max-width: 172px; /* 最大宽度，可根据需要调整 */
+  }
+  
+  /* 手机屏幕尺寸下的样式 */
+  @media only screen and (max-width: 600px) {
+    #video-container, #random-video {
+      width: 100%;
+      max-width: 100%; /* 在小屏幕上，视频容器和视频元素宽度为100% */
+    }
+  }
+  
