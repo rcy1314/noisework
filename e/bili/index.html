@@ -18,7 +18,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             color: #fff;
-            font-size: 15px; /* 将字体大小调整为15像素 */
+            font-size: 15px;
             display: none; /* 默认隐藏 */
         }
 
@@ -52,7 +52,7 @@
 
     <button class="floating-button" onclick="playRandomVideo()">⏭</button>
 
-    <div class="center-message" id="centerMessage">目前API抽风中...请等待或...刷新</div>
+    <div class="center-message" id="centerMessage">载入中...... 请等待或...刷新</div>
 
     <script>
         // 获取页面参数
@@ -60,15 +60,21 @@
         const mediaId = urlParams.get('id');
         let timerId;
 
+        // 页面加载时检查视频加载是否成功
+        function checkVideoLoad() {
+            const iframe = document.querySelector('iframe');
+            if (!iframe.src) {
+                document.getElementById('centerMessage').style.display = 'block';
+            }
+        }
+
+        // 获取视频数据并播放
         function playRandomVideo() {
             if (mediaId) {
                 // 清除之前的计时器
                 if (timerId) {
                     clearTimeout(timerId);
                 }
-
-                // 显示“API抽风中”的消息
-                document.getElementById('centerMessage').style.display = 'block';
 
                 // 使用fetch获取API数据
                 fetch(`https://api.allorigins.win/raw?url=https://api.bilibili.com/x/v3/fav/resource/ids?media_id=${mediaId}`)
@@ -89,8 +95,8 @@
                             // 随机选择一个bvid
                             const randomBvid = bvids[Math.floor(Math.random() * bvids.length)];
 
-                            // 设置iframe的src属性以载入视频，但不自动播放
-                            document.querySelector('iframe').src = `https://player.bilibili.com/player.html?bvid=${randomBvid}&autoplay=0`;
+                            // 设置iframe的src属性以载入视频，同时关闭弹幕和自动播放
+                            document.querySelector('iframe').src = `https://player.bilibili.com/player.html?bvid=${randomBvid}&autoplay=0&disableDanmaku=1`;
                             document.getElementById('centerMessage').style.display = 'none'; // 成功加载视频后隐藏消息
 
                             // 查找选定视频的duration，如果有，延时后切换到下一个视频
