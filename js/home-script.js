@@ -378,6 +378,15 @@ let images = ['https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo10
               
               // 初始化，设置默认图片
               setDefaultImage();
+              // 使用IntersectionObserver来实现懒加载
+              let observer = new IntersectionObserver((entries, observer) => {
+                // 检查元素是否可见，并且这是第一次观察到的交叉
+                if (entries[0].isIntersecting && entries[0].intersectionRatio === 0) {
+                  changeImage();
+                }
+              }, { threshold: [0] });
+              
+              observer.observe(logoDiv);              
             
  // 手机页面头部logo
 let mobileImages = ['https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo7.gif', 
@@ -421,4 +430,13 @@ img.src = newImage;
 
 // 初始化，设置默认图片
 setDefaultMobileImage();
-   
+// 使用IntersectionObserver来实现懒加载
+let mobileObserver = new IntersectionObserver((entries, observer) => {
+    // 检查元素是否可见，并且这是第一次观察到的交叉
+    if (entries[0].isIntersecting && entries[0].intersectionRatio === 0) {
+      switchImage();
+    }
+  }, { threshold: [0] });
+  
+  mobileObserver.observe(mobileLogoDiv);  
+  
