@@ -306,9 +306,9 @@ document.getElementById("random-video").addEventListener('error', function() {
 });
 
 // 监听视频结束事件，自动播放下一个视频
-document.getElementById("random-video").addEventListener('ended', function() {
-    nextVideo(); // 直接调用nextVideo()来播放下一个视频
-});
+// document.getElementById("random-video").addEventListener('ended', function() {
+//     nextVideo(); // 直接调用nextVideo()来播放下一个视频
+// });
 
 // 初始化，随机选择一个视频进行播放
 randomVideo();
