@@ -186,27 +186,27 @@ function closePopup() {
     document.getElementById('imagePopup').removeEventListener('click', closePopup);
 }
 //手机左侧弹出
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var mobileNavButton = document.querySelector('.mobile-nav-button');
     var noiseLeft = document.querySelector('.noise-left');
-    mobileNavButton.addEventListener('click', function() {
-      if (noiseLeft.style.display === 'block') {
-        noiseLeft.style.display = 'none';
-      } else {
-        noiseLeft.style.display = 'block';
-      }
-  // 切换侧边栏的显示状态
-  if (noiseLeft.classList.contains('show')) {
-    noiseLeft.classList.remove('show');
-    mobileNavButton.style.left = '10px'; 
-  } else {
-    noiseLeft.classList.add('show');
-    mobileNavButton.style.left = '50%'; 
- 
-  }
+    mobileNavButton.addEventListener('click', function () {
+        if (noiseLeft.style.display === 'block') {
+            noiseLeft.style.display = 'none';
+        } else {
+            noiseLeft.style.display = 'block';
+        }
+        // 切换侧边栏的显示状态
+        if (noiseLeft.classList.contains('show')) {
+            noiseLeft.classList.remove('show');
+            mobileNavButton.style.left = '10px';
+        } else {
+            noiseLeft.classList.add('show');
+            mobileNavButton.style.left = '50%';
+
+        }
+    });
 });
-});
-  
+
 // 视频播放组件
 var videos = [
     "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/f83b646a4cee41e588ca023e2a114e2f.mp4",
@@ -262,13 +262,13 @@ var playPauseBtn = document.getElementById("play-pause-btn");
 
 // 切换播放和暂停的函数
 function togglePlay() {
-  if (video.paused || video.ended) {
-    video.play();
-    playPauseBtn.textContent = "⏸"; // 播放时显示暂停图标
-  } else {
-    video.pause();
-    playPauseBtn.textContent = "▶"; // 暂停时显示播放图标
-  }
+    if (video.paused || video.ended) {
+        video.play();
+        playPauseBtn.textContent = "⏸"; // 播放时显示暂停图标
+    } else {
+        video.pause();
+        playPauseBtn.textContent = "▶"; // 暂停时显示播放图标
+    }
 }
 // 随机选择一个视频
 function randomVideo() {
@@ -298,7 +298,7 @@ function updateVideo() {
 }
 
 // 监听视频错误事件，自动跳过失效视频
-document.getElementById("random-video").addEventListener('error', function() {
+document.getElementById("random-video").addEventListener('error', function () {
     console.log("视频加载失败，尝试下一个视频");
     nextVideo(); // 直接调用nextVideo()来尝试下一个视频
 });
@@ -314,7 +314,7 @@ randomVideo();
 var MyVideoPlayer = MyVideoPlayer || {};
 
 // 在命名空间中定义预加载视频的函数
-MyVideoPlayer.preloadVideos = function() {
+MyVideoPlayer.preloadVideos = function () {
     // 预加载当前视频
     var currentVideo = new Video();
     currentVideo.src = MyVideoPlayer.videos[MyVideoPlayer.currentVideoIndex];
@@ -328,105 +328,141 @@ MyVideoPlayer.preloadVideos = function() {
 };
 
 // 使用事件监听器来添加页面加载时的处理函数
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     MyVideoPlayer.preloadVideos();
 });
 
 //pc头像logo
-let images = ['https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo10.gif', 
-              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo9.gif', 
-              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo7.gif',
-              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo6.gif',
-              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo5.gif',
-              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo4.gif',
-              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo3.gif',
-              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo2.gif',
-              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo1.gif',
-              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo11.gif',
-              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo12.gif',
-              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo13.gif',
-              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo15.gif',
-              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo14.gif',
-              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo8.gif',
-              ]; // 图片数组
-              let currentImageIndex = 0;
-              const logoDiv = document.getElementById('logoDiv');
-              const defaultImage = 'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo10.gif'; // 默认图片路径
-              
-              function setDefaultImage() {
-                  logoDiv.style.backgroundImage = `url(${defaultImage})`;
-              }
-              
-              function changeImage() {
-                  currentImageIndex = (currentImageIndex + 1) % images.length;
-                  let newImage = images[currentImageIndex];
-              
-                  let img = new Image();
-                  img.onload = function() {
-                      logoDiv.style.backgroundImage = `url(${newImage})`;
-                  };
-                  img.onerror = function() {
-                      // 如果图片加载失败，尝试下一张，但避免无限循环
-                      if (currentImageIndex < images.length - 1) {
-                          changeImage();
-                      } else {
-                          setDefaultImage();
-                      }
-                  };
-                  img.src = newImage;
-              }
-              
-              // 初始化，设置默认图片
-              setDefaultImage();
-              // 使用IntersectionObserver来实现懒加载
-              let observer = new IntersectionObserver((entries, observer) => {
-                // 检查元素是否可见，并且这是第一次观察到的交叉
-                if (entries[0].isIntersecting && entries[0].intersectionRatio === 0) {
-                  changeImage();
-                }
-              }, { threshold: [0] });
-              
-              observer.observe(logoDiv);              
-            
- // 手机页面头部logo
-let mobileImages = ['https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo7.gif', 
-                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo1.gif', 
-                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo2.gif',
-                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo3.gif',
-                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo4.gif',
-                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo5.gif',
-                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo6.gif',
-                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo8.gif',
-                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo9.gif',
-                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo10.gif',
-                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo11.gif',
-                     ]; // 图片数组
+let images = ['https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo10.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo9.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo7.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo6.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo5.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo4.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo3.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo2.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo1.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo11.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo12.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo13.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo15.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo14.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo8.gif',
+]; // 图片数组
+let currentImageIndex = 0;
+const logoDiv = document.getElementById('logoDiv');
+const defaultImage = 'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo10.gif'; // 默认图片路径
+
+function setDefaultImage() {
+    logoDiv.style.backgroundImage = `url(${defaultImage})`;
+}
+
+let hasChanged = false; // 跟踪是否已经切换过图像
+
+function changeImage() {
+    if (hasChanged) return; // 如果已经切换过，则不再切换
+
+    let newImageIndex;
+    do {
+        newImageIndex = Math.floor(Math.random() * images.length);
+    } while (newImageIndex === currentImageIndex); // 确保不选择当前图像
+
+    currentImageIndex = newImageIndex;
+    let newImage = images[currentImageIndex];
+
+    let img = new Image();
+    img.onload = function () {
+        logoDiv.style.backgroundImage = `url(${newImage})`;
+        hasChanged = true; // 标记为已切换
+    };
+    img.onerror = function () {
+        // 如果图片加载失败，尝试下一张
+        if (currentImageIndex < images.length - 1) {
+            changeImage();
+        } else {
+            // 如果所有图片都尝试过，则使用默认图像
+            setDefaultImage();
+        }
+    };
+    img.src = newImage;
+}
+
+// 添加点击事件监听器
+logoDiv.addEventListener('click', () => {
+    hasChanged = false; // 重置切换状态
+    changeImage();
+});
+
+
+// 初始化，设置默认图片
+setDefaultImage();
+// 使用IntersectionObserver来实现懒加载
+let observer = new IntersectionObserver((entries, observer) => {
+    // 检查元素是否可见，并且这是第一次观察到的交叉
+    if (entries[0].isIntersecting && entries[0].intersectionRatio === 0) {
+        changeImage();
+    }
+}, { threshold: [0] });
+
+observer.observe(logoDiv);
+
+// 手机页面头部logo
+let mobileImages = ['https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo7.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo1.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo2.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo3.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo4.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo5.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo6.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo8.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo9.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo10.gif',
+    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo11.gif',
+]; // 图片数组
 let currentMobileImageIndex = 0;
 const mobileLogoDiv = document.getElementById('mobileLogoDiv');
 const defaultMobileImage = 'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo7.gif'; // 默认图片路径
 
 function setDefaultMobileImage() {
-mobileLogoDiv.style.backgroundImage = `url(${defaultMobileImage})`;
+    mobileLogoDiv.style.backgroundImage = `url(${defaultMobileImage})`;
 }
+
+let hasMobileChanged = false; // 跟踪是否已经切换过图像
 
 function switchImage() {
-currentMobileImageIndex = (currentMobileImageIndex + 1) % mobileImages.length;
-let newImage = mobileImages[currentMobileImageIndex];
+    if (hasMobileChanged) return; // 如果已经切换过，则不再切换
 
-let img = new Image();
-img.onload = function() {
-mobileLogoDiv.style.backgroundImage = `url(${newImage})`;
-};
-img.onerror = function() {
-// 如果图片加载失败，尝试下一张，但避免无限循环
-if (currentMobileImageIndex < mobileImages.length - 1) {
-  switchImage();
-} else {
-  setDefaultMobileImage();
+    let newImageIndex;
+    do {
+        newImageIndex = Math.floor(Math.random() * mobileImages.length);
+    } while (newImageIndex === currentMobileImageIndex); // 确保不选择当前图像
+
+    currentMobileImageIndex = newImageIndex;
+    let newImage = mobileImages[currentMobileImageIndex];
+
+    let img = new Image();
+    img.onload = function () {
+        mobileLogoDiv.style.backgroundImage = `url(${newImage})`;
+        hasMobileChanged = true; // 标记为已切换
+    };
+    img.onerror = function () {
+        // 如果图片加载失败，尝试下一张
+        if (currentMobileImageIndex < mobileImages.length - 1) {
+            switchImage();
+        } else {
+            // 如果所有图片都尝试过，则使用默认图像
+            setDefaultMobileImage();
+        }
+    };
+    img.src = newImage;
 }
-};
-img.src = newImage;
-}
+
+// 添加点击事件监听器
+mobileLogoDiv.addEventListener('click', () => {
+    hasMobileChanged = false; // 重置切换状态
+    switchImage();
+});
+
 
 // 初始化，设置默认图片
 setDefaultMobileImage();
@@ -434,9 +470,8 @@ setDefaultMobileImage();
 let mobileObserver = new IntersectionObserver((entries, observer) => {
     // 检查元素是否可见，并且这是第一次观察到的交叉
     if (entries[0].isIntersecting && entries[0].intersectionRatio === 0) {
-      switchImage();
+        switchImage();
     }
-  }, { threshold: [0] });
-  
-  mobileObserver.observe(mobileLogoDiv);  
-  
+}, { threshold: [0] });
+
+mobileObserver.observe(mobileLogoDiv);
