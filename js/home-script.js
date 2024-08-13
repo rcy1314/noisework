@@ -1,5 +1,3 @@
-
-
 function handlePress(event) {
     this.classList.add('pressed');
 }
@@ -334,3 +332,93 @@ window.addEventListener('load', function() {
     MyVideoPlayer.preloadVideos();
 });
 
+//pc头像logo
+let images = ['https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo10.gif', 
+              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo9.gif', 
+              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo7.gif',
+              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo6.gif',
+              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo5.gif',
+              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo4.gif',
+              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo3.gif',
+              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo2.gif',
+              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo1.gif',
+              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo11.gif',
+              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo12.gif',
+              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo13.gif',
+              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo15.gif',
+              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo14.gif',
+              'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo8.gif',
+              ]; // 图片数组
+              let currentImageIndex = 0;
+              const logoDiv = document.getElementById('logoDiv');
+              const defaultImage = 'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo10.gif'; // 默认图片路径
+              
+              function setDefaultImage() {
+                  logoDiv.style.backgroundImage = `url(${defaultImage})`;
+              }
+              
+              function changeImage() {
+                  currentImageIndex = (currentImageIndex + 1) % images.length;
+                  let newImage = images[currentImageIndex];
+              
+                  let img = new Image();
+                  img.onload = function() {
+                      logoDiv.style.backgroundImage = `url(${newImage})`;
+                  };
+                  img.onerror = function() {
+                      // 如果图片加载失败，尝试下一张，但避免无限循环
+                      if (currentImageIndex < images.length - 1) {
+                          changeImage();
+                      } else {
+                          setDefaultImage();
+                      }
+                  };
+                  img.src = newImage;
+              }
+              
+              // 初始化，设置默认图片
+              setDefaultImage();
+            
+ // 手机页面头部logo
+let mobileImages = ['https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo7.gif', 
+                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo1.gif', 
+                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo2.gif',
+                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo3.gif',
+                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo4.gif',
+                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo5.gif',
+                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo6.gif',
+                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo8.gif',
+                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo9.gif',
+                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo10.gif',
+                    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo11.gif',
+                     ]; // 图片数组
+let currentMobileImageIndex = 0;
+const mobileLogoDiv = document.getElementById('mobileLogoDiv');
+const defaultMobileImage = 'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo7.gif'; // 默认图片路径
+
+function setDefaultMobileImage() {
+mobileLogoDiv.style.backgroundImage = `url(${defaultMobileImage})`;
+}
+
+function switchImage() {
+currentMobileImageIndex = (currentMobileImageIndex + 1) % mobileImages.length;
+let newImage = mobileImages[currentMobileImageIndex];
+
+let img = new Image();
+img.onload = function() {
+mobileLogoDiv.style.backgroundImage = `url(${newImage})`;
+};
+img.onerror = function() {
+// 如果图片加载失败，尝试下一张，但避免无限循环
+if (currentMobileImageIndex < mobileImages.length - 1) {
+  switchImage();
+} else {
+  setDefaultMobileImage();
+}
+};
+img.src = newImage;
+}
+
+// 初始化，设置默认图片
+setDefaultMobileImage();
+   

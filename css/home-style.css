@@ -142,7 +142,7 @@ body {
     display: none;
 }
 
-
+/* 设置PC头像LOGO */
 .logo {
     flex-shrink: 0;
     width: 90%;
@@ -152,12 +152,97 @@ body {
     background-size: cover;
     border-radius: 50%;
     object-fit: cover; /* 裁剪图片以适应圆形遮罩 */
-    transition: transform 0.5s; /* 添加旋转动画 */
+    transition: transform 0.5s ease-in-out; /* 添加过渡效果 */
+}
+
+@keyframes zoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.02); } /* 假设放大到110% */
 }
 
 .logo:hover {
-    transform: rotate(360deg); /* 鼠标悬停时旋转360度 */
-  }
+    animation: zoom 0.5s ease-in-out forwards;
+}
+
+.logo:not(:hover) {
+    animation: zoom 0.5s ease-in-out reverse;
+}
+
+.tooltip {
+    position: absolute;
+    font-size: 13px; /* 设置字体大小 */
+    width: 100%;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
+    background-color: rgba(39, 37, 37, 0.181);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap; /* 防止文本换行 */
+    pointer-events: none; /* 防止点击tooltip触发其他事件 */
+}
+
+.logo:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+/* 设置PC头像LOGO结束 */
+/* 设置手机页面头部LOGO */
+.mobile-logo {
+    display: none;
+    width: 40%; /* 图像宽度为父元素的40% */
+    height: 0; /* 高度为0，通过padding-bottom保持宽高比 */
+    padding-bottom: 40%; /* 保持宽高比为1:1 */
+    background-size: cover; /* 背景图像覆盖整个元素 */
+    background-position: center; /* 背景图像居中 */
+    border-radius: 50%; /* 圆形遮罩 */
+    background-repeat: no-repeat; /* 不重复背景图像 */
+    object-fit: cover; /* 裁剪图片以适应圆形遮罩 */
+    transition: transform 0.5s ease-in-out; /* 添加过渡效果 */
+}
+
+@keyframes mobile-zoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.02); } /* 假设放大到110% */
+}
+
+.mobile-logo:hover {
+    animation: mobile-zoom 0.5s ease-in-out forwards;
+}
+
+.mobile-logo:not(:hover) {
+    animation: mobile-zoom 0.5s ease-in-out reverse;
+}
+
+.mobile-tooltip {
+    position: absolute;
+    font-size: 13px; /* 设置字体大小 */
+    width: 100%;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
+    background-color: rgba(39, 37, 37, 0.181);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap; /* 防止文本换行 */
+    pointer-events: none; /* 防止点击tooltip触发其他事件 */
+}
+
+.mobile-logo:hover .mobile-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+/* 设置手机页面头部LOGO结束 */
 
 .left-div {
     flex-shrink: 0;
@@ -569,16 +654,6 @@ footer {
 
     }
 }
-.index-logo {
-    display: none;
-    width: 40%; /* 图像宽度为父元素的40% */
-    height: 0; /* 高度为0，通过padding-bottom保持宽高比 */
-    padding-bottom: 40%; /* 保持宽高比为1:1 */
-    background-size: cover; /* 背景图像覆盖整个元素 */
-    background-position: center; /* 背景图像居中 */
-    border-radius: 50%; /* 圆形遮罩 */
-    background-repeat: no-repeat; /* 不重复背景图像 */
-}
 
 
 /* 手机尺寸 */
@@ -603,7 +678,7 @@ footer {
 
 
 @media (max-width: 800px) {
-    .index-logo {
+    .mobile-logo {
         display: block;
         margin: 0 auto;
     }
