@@ -457,5 +457,4 @@ let mobileObserver = new IntersectionObserver((entries, observer) => {
         }
     }
 }, { threshold: [0] });
-
 mobileObserver.observe(mobileLogoDiv);
