@@ -349,7 +349,7 @@ let images = ['https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo10
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo14.gif',
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo8.gif',
 ]; // 图片数组
-let currentImageIndex = 0;
+let currentImageIndex = -1; // 初始化为-1，表示还没有选择图片
 const logoDiv = document.getElementById('logoDiv');
 const defaultImage = 'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo10.gif'; // 默认图片路径
 
@@ -357,50 +357,42 @@ function setDefaultImage() {
     logoDiv.style.backgroundImage = `url(${defaultImage})`;
 }
 
-let hasChanged = false; // 跟踪是否已经切换过图像
-
-function changeImage() {
-    if (hasChanged) return; // 如果已经切换过，则不再切换
-
-    let newImageIndex;
-    do {
-        newImageIndex = Math.floor(Math.random() * images.length);
-    } while (newImageIndex === currentImageIndex); // 确保不选择当前图像
-
-    currentImageIndex = newImageIndex;
-    let newImage = images[currentImageIndex];
-
+function loadImage(index) {
     let img = new Image();
     img.onload = function () {
-        logoDiv.style.backgroundImage = `url(${newImage})`;
-        hasChanged = true; // 标记为已切换
+        logoDiv.style.backgroundImage = `url(${images[index]})`;
+        currentImageIndex = index; // 更新当前图片索引
     };
     img.onerror = function () {
         // 如果图片加载失败，尝试下一张
-        if (currentImageIndex < images.length - 1) {
-            changeImage();
+        if (index < images.length - 1) {
+            loadImage(index + 1);
         } else {
             // 如果所有图片都尝试过，则使用默认图像
             setDefaultImage();
         }
     };
-    img.src = newImage;
+    img.src = images[index];
 }
+
+// 初始化，随机选择一个图片进行加载
+loadImage(Math.floor(Math.random() * images.length));
 
 // 添加点击事件监听器
 logoDiv.addEventListener('click', () => {
-    hasChanged = false; // 重置切换状态
-    changeImage();
+    // 重置当前图片索引，以便重新随机选择
+    currentImageIndex = -1;
+    loadImage(Math.floor(Math.random() * images.length));
 });
 
-
-// 初始化，设置默认图片
-setDefaultImage();
 // 使用IntersectionObserver来实现懒加载
 let observer = new IntersectionObserver((entries, observer) => {
-    // 检查元素是否可见，并且这是第一次观察到的交叉
-    if (entries[0].isIntersecting && entries[0].intersectionRatio === 0) {
-        changeImage();
+    // 检查元素是否可见
+    if (entries[0].isIntersecting) {
+        // 如果已经加载过图片，不再重新加载
+        if (currentImageIndex === -1) {
+            loadImage(Math.floor(Math.random() * images.length));
+        }
     }
 }, { threshold: [0] });
 
@@ -419,58 +411,50 @@ let mobileImages = ['https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo10.gif',
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo11.gif',
 ]; // 图片数组
-let currentMobileImageIndex = 0;
+let currentMobileImageIndex = -1; // 初始化为-1，表示还没有选择图片
 const mobileLogoDiv = document.getElementById('mobileLogoDiv');
-const defaultMobileImage = 'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo7.gif'; // 默认图片路径
+const defaultMobileImage = 'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo7.gif'; // 默认手机图片路径
 
 function setDefaultMobileImage() {
     mobileLogoDiv.style.backgroundImage = `url(${defaultMobileImage})`;
 }
 
-let hasMobileChanged = false; // 跟踪是否已经切换过图像
-
-function switchImage() {
-    if (hasMobileChanged) return; // 如果已经切换过，则不再切换
-
-    let newImageIndex;
-    do {
-        newImageIndex = Math.floor(Math.random() * mobileImages.length);
-    } while (newImageIndex === currentMobileImageIndex); // 确保不选择当前图像
-
-    currentMobileImageIndex = newImageIndex;
-    let newImage = mobileImages[currentMobileImageIndex];
-
+function loadMobileImage(index) {
     let img = new Image();
     img.onload = function () {
-        mobileLogoDiv.style.backgroundImage = `url(${newImage})`;
-        hasMobileChanged = true; // 标记为已切换
+        mobileLogoDiv.style.backgroundImage = `url(${mobileImages[index]})`;
+        currentMobileImageIndex = index; // 更新当前手机图片索引
     };
     img.onerror = function () {
         // 如果图片加载失败，尝试下一张
-        if (currentMobileImageIndex < mobileImages.length - 1) {
-            switchImage();
+        if (index < mobileImages.length - 1) {
+            loadMobileImage(index + 1);
         } else {
             // 如果所有图片都尝试过，则使用默认图像
             setDefaultMobileImage();
         }
     };
-    img.src = newImage;
+    img.src = mobileImages[index];
 }
+
+// 初始化，随机选择一个图片进行加载
+loadMobileImage(Math.floor(Math.random() * mobileImages.length));
 
 // 添加点击事件监听器
 mobileLogoDiv.addEventListener('click', () => {
-    hasMobileChanged = false; // 重置切换状态
-    switchImage();
+    // 重置当前图片索引，以便重新随机选择
+    currentMobileImageIndex = -1;
+    loadMobileImage(Math.floor(Math.random() * mobileImages.length));
 });
 
-
-// 初始化，设置默认图片
-setDefaultMobileImage();
 // 使用IntersectionObserver来实现懒加载
 let mobileObserver = new IntersectionObserver((entries, observer) => {
-    // 检查元素是否可见，并且这是第一次观察到的交叉
-    if (entries[0].isIntersecting && entries[0].intersectionRatio === 0) {
-        switchImage();
+    // 检查元素是否可见
+    if (entries[0].isIntersecting) {
+        // 如果已经加载过图片，不再重新加载
+        if (currentMobileImageIndex === -1) {
+            loadMobileImage(Math.floor(Math.random() * mobileImages.length));
+        }
     }
 }, { threshold: [0] });
 
