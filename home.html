@@ -325,10 +325,42 @@
         <!-- 添加了id和点击事件 -->
         <span class="mobile-tooltip">点击可切换头像哦！</span> 
          </div>
-				<div class="welcome">⭐️
-					<span class="gradientText">NOISE'
-						<a href="https://www.noisework.cn" target="_blank">主页</a></span>
-				</div>
+		 <div class="welcome">⭐️
+			<span class="gradientText" style="letter-spacing: 0.05em;">NOISE'
+				<a href="https://www.noisework.cn" target="_blank">主页</a>
+			</span>
+		</div>		
+		<!-- 添加打字机文字 -->
+		<p id="typingText" style="font-size: 15px; width: 450px; height: 40px; overflow: hidden; margin-top: -10px;">
+			<script>
+			  var oP = document.getElementById('typingText');
+			  var str = '欢迎来访！点击头像处可进行切换，还有更多等你来发现哦！';
+			  var i = 0;
+			  var timer;
+		  
+			  function typeWriter() {
+				if (i < str.length) {
+				  var txt = str.substring(0, ++i);
+				  oP.innerText = txt + '✍';
+				  if (i == str.length) {
+					// 文字显示完成后，清除定时器并设置3秒后的重启
+					clearInterval(timer);
+					setTimeout(function() {
+					  i = 0; 
+					  oP.innerText = ''; 
+					  timer = setInterval(typeWriter, 200); 
+					}, 5000);
+				  }
+				} else {
+				  i = 0;
+				  oP.innerText = '';
+				}
+			  }
+		  
+			  timer = setInterval(typeWriter, 200);
+			</script>
+		  </p>
+		  <!-- 打字机文字结束 -->
 				<div class="description">👏<span class="purpleText">欢迎访问本站！ </span> 这是来自NOISE的个人主页。</span>查看 <span class="purpleText textBackground"><a href="https://stats.uptimerobot.com/GoqwLuBl3o" target="_blank" style="color: red;">运行状况</a></span>
 				</div>
 				<div class="description">📝点击→<span class="purpleText textBackground"><a href="./index.html" style="color: rgb(170, 0, 255);">切换模式</a> </span>点击获取→</span><span class="purpleText textBackground"><a href="https://docs.noisework.cn" style="color: rgb(51, 114, 224);">配置文档</a></span>  ，右键唤醒 <span class="purpleText textBackground">弹出</span> 菜单栏 </div>								
