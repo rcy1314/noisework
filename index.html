@@ -474,6 +474,7 @@
     <!--向下滑动监听结束-->    
     <!--所有弹出图片js-->  
     <script>
+        //微信图
         function showImage1() {
             var imagePath = "./lianxi/weixin.png";
             document.getElementById('popupImage1').src = imagePath;
@@ -484,7 +485,7 @@
             this.style.display = 'none';
             document.getElementById('popupImage1').src = '';
         });
-    
+        //公众号图
         function showImage2() {
             var imagePath = "./assets/gongzhonghao.jpg";
             document.getElementById('popupImage2').src = imagePath;
@@ -496,6 +497,13 @@
             document.getElementById('popupImage2').src = '';
         });
     </script>
+    <!-- 启动 WebPushr 跟踪代码 -->
+			<script>(function (w, d, s, id) {
+                if (typeof (w.webpushr) !== 'undefined') return; w.webpushr = w.webpushr || function () { (w.webpushr.q = w.webpushr.q || []).push(arguments) }; var js, fjs = d.getElementsByTagName(s)[0]; js = d.createElement(s); js.id = id; js.async = 1; js.src = "https://cdn.webpushr.com/app.min.js";
+                fjs.parentNode.appendChild(js);
+            }(window, document, 'script', 'webpushr-jssdk'));
+            webpushr('setup', { 'key': 'BD99F5j0E1eQHxPwSdt7LLoy_2AEUSnGxp8e3bFda-PcYZgi42VNFIucsXAbIVsjdrNr8ueyB6wK6G9MbMIIxMU' });</script>
+        <!-- 结束 WebPushr 跟踪代码 -->
     <!--聊天室-->  
     <script>
         window['CboxReady'] = function (Cbox) {
