@@ -404,8 +404,6 @@ let mobileImages = ['https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo2.gif',
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo3.gif',
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo4.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo5.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo6.gif',
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo8.gif',
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo9.gif',
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo10.gif',
@@ -458,3 +456,11 @@ let mobileObserver = new IntersectionObserver((entries, observer) => {
     }
 }, { threshold: [0] });
 mobileObserver.observe(mobileLogoDiv);
+/*scroll向下滑动*/
+let container = document.querySelector('.workbox');
+if (window.innerWidth >720) {
+	container.addEventListener('wheel',(event) => {
+	event.preventDefault();
+	for (var i=0;i<100;i++){
+		setTimeout(() => container.scrollLeft += event.deltaY/100,i);
+}})};

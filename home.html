@@ -790,6 +790,14 @@
 					<img data-src="assets/6ae.gif" id="img-1" alt="description">
 				</div>
 			</br>
+			<!--向下滑动提示-->
+			<div class="scroll-down">
+				<span>向下滑动查看</span>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M0 0h24v24H0z" fill="none"/>
+					<path d="M12 16l-6-6h12z"/>
+				</svg>
+			</div>
 	<footer>		
 		  <span class="astro-OY55P3EK"><span class="astro-OY55P3EK">本站已运行 <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>现在时间：<span id="show_time"></span>   
 		  <script>
@@ -993,6 +1001,39 @@
 			document.getElementById('lbl').innerHTML =
 				greet+=` 👉 今天是：${date}</div>`;
 		</script> 
+		<!--向下滑动监听-->
+		<script>
+			window.addEventListener('DOMContentLoaded', (event) => {
+				var scrollDown = document.querySelector('.scroll-down');
+				
+				function handleScroll() {
+					var scrollPos = window.pageYOffset;
+					var windowHeight = window.innerHeight;
+					var documentHeight = document.documentElement.scrollHeight;
+					
+					if (window.innerWidth <= 768) {
+						if (scrollPos + windowHeight >= documentHeight) {
+							scrollDown.style.display = 'none';
+						} else {
+							scrollDown.style.display = 'block';
+						}
+					} else {
+						scrollDown.style.display = 'none';
+					}
+				}
+			
+				function handleButtonClick() {
+					window.scrollBy({
+						top: window.innerHeight,
+						behavior: 'smooth'
+					});
+				}
+			
+				scrollDown.addEventListener('click', handleButtonClick);
+				window.addEventListener('scroll', handleScroll);
+			});
+			</script>
+			<!--向下滑动监听结束-->    
 	</div>
 </body>
 <script src="./widgets/music-1/js/Meting.min.js"></script>

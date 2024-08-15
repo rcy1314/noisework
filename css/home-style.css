@@ -625,7 +625,6 @@ body {
 
 }
 
-
 footer {
     position: absolute;
     padding: 10px;
@@ -655,14 +654,14 @@ footer {
     }
 }
 
-
 /* 手机尺寸 */
 @media (max-width: 800px) {
     body {
         /* 设置背景图片 */
         background-image: url('../assets/31.png'); /* 请替换为你的图片URL */
-        /* 背景图片覆盖整个元素 */
-        background-size: 100% 100%;
+        /* 背景图片覆盖整个元素，保持宽高比 */
+        /* background-size: 100% 100%; */
+        background-size: cover; /* 或者使用 contain */
         /* 背景图片不会随着页面滚动 */
         background-attachment: fixed;
         /* 背景图片重复方式 */
@@ -675,7 +674,6 @@ footer {
         background-color: #0d0e11e7;
     }
 }
-
 
 @media (max-width: 800px) {
     .mobile-logo {
@@ -981,6 +979,35 @@ hr.dashed {
       max-width: 100%; /* 在小屏幕上，视频容器和视频元素宽度为100% */
     }
   }
-  
+ /* 向下滑动提示 */
+ .scroll-down {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 500;
+	font-size: 16px;
+	color: #ffffff;
+	text-align: center;
+	opacity: 0.7;
+}
+
+.scroll-down span {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.scroll-down svg {
+	width: 24px;
+	height: 24px;
+	fill: #fff;
+}
+
+@media (max-width: 768px) {
+	.scroll-down {
+		display: block;
+	}
+} 
   
   

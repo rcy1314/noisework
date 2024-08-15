@@ -42,8 +42,11 @@ body,html {
 /* 画布尺寸 */
 .main{
 	width: 990px;
-    padding: 30px 330px 5px 20px;
+    height: 100vh; /* 高度设置为100vh，以占满视口的高度 */
+    padding: 42px 330px 5px 17px;
     background: linear-gradient(to right, rgba(34, 34, 34, 0.849), rgba(34, 34, 34, 0) 600px,rgba(34, 34, 34, 0));
+	background-size: 100% 100%; /* 背景大小设置为100%，以覆盖整个元素 */
+    background-repeat: no-repeat; /* 不重复背景 */
 }
 body::-webkit-scrollbar {display: none;}
 .chtitle {
@@ -164,7 +167,7 @@ a {
 .find .item span {
     display: inline-block;
     width: 80px;
-    font-size: 20px;
+    font-size: 19px;
 	color: rgba(255, 255, 255, 0.6);
 	transition: 0.3s;
 }
@@ -212,16 +215,21 @@ a {
 	overflow-x: scroll;
 }
 .workbox::-webkit-scrollbar {display: none;}
-#first,#last{
+#first, #last {
 	width: 60px;
 	height: 160px;
 	display: inline-block;
 	margin: 20px 18px 20px 0;
 	background-color: #272727;
-	border: 1px #292929 solid;
-	position: relative;
 	border: 1px #2e2e2e solid;
+	position: relative;
+	transition: transform 0.3s; /* 添加过渡效果 */
 }
+
+#first:hover, #last:hover {
+	transform: scale(1.1); /* 鼠标悬停时放大到原来的1.1倍 */
+}
+
 #first{border-radius: 0 20px 20px 0;border-left: none;}
 #last{border-radius: 20px 0 0 20px;margin-right: 0;border-right: none;}
 #first i,#last i{
@@ -237,9 +245,9 @@ a {
 	color: rgba(255, 255, 255, 1);
 	transition: 0.6s;
 }
-.project{
+.project {
 	height: 150px;
-	width: 228px;
+	width: 208px;
 	background-color: #272727;
 	border-radius: 20px;
 	display: inline-block;
@@ -248,14 +256,20 @@ a {
 	position: relative;
 	padding: 20px;
 	vertical-align: top;
+	transition: transform 0.3s ease; /* 添加过渡效果 */
 }
+
+.project:hover {
+	transform: scale(1.1); /* 鼠标悬停时放大到原来的1.1倍 */
+}
+
 .project i{
 	display: block;
-	font-size: 20px;
-	color: rgba(255, 255, 255, 0.6);
+	font-size: 18px;
+	color: rgba(255, 255, 255, 0.277);
 	position: absolute;
 	top: 20px;
-	right: 20px;
+	right: 30px;
 }
 .project h3{
 	color: rgba(255, 255, 255, 0.8);
@@ -263,7 +277,7 @@ a {
 }
 .project h3:hover{
 	text-decoration: underline;
-	color: white;
+	color: rgb(255, 255, 255);
 }
 .project p{
 	color: rgba(255, 255, 255, 0.6);
@@ -288,20 +302,25 @@ a {
 	display: inline-block;
 	margin: 0 5px;
 }
-.workbox span{
+.workbox span {
 	position: absolute;
 	top: 0;
 	left: 0;
 	letter-spacing: .2em;
-    font-weight: bold;
+	font-weight: bold;
 	font-size: 18px;
 	color: rgba(255, 255, 255, 0.5);
-	writing-mode:vertical-lr;
+	writing-mode: vertical-lr;
 	line-height: 56px;
 	text-align: center;
 	height: 160px;
-	transition: 0.3s;
+	transition: transform 0.3s; /* 修改过渡效果 */
 }
+
+.workbox span:hover {
+	transform: scale(1.1); /* 鼠标悬停时放大到原来的1.1倍 */
+}
+
 #first:hover span,#last:hover span{
 	color: transparent;
 	transition: 0.6s;
@@ -506,7 +525,7 @@ a {
 .clock {
 	display: none;
 	position: fixed;
-	top: 3%;
+	top: 6%;
 	right: 32%;
 	text-align: center;
 	font-size: 20px;
