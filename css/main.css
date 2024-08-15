@@ -40,13 +40,15 @@ body,html {
 	left:6.5vw !important;
 }
 /* 画布尺寸 */
-.main{
-	width: 990px;
-    height: 100vh; /* 高度设置为100vh，以占满视口的高度 */
-    padding: 42px 330px 5px 17px;
-    background: linear-gradient(to right, rgba(34, 34, 34, 0.849), rgba(34, 34, 34, 0) 600px,rgba(34, 34, 34, 0));
-	background-size: 100% 100%; /* 背景大小设置为100%，以覆盖整个元素 */
-    background-repeat: no-repeat; /* 不重复背景 */
+.main {
+    width: 990px;
+    padding: 45px 330px 5px 17px;
+    background: linear-gradient(to right, rgba(34, 34, 34, 0.849), rgba(34, 34, 34, 0) 600px, rgba(34, 34, 34, 0));
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    /* 添加 min-height 以确保最小高度 */
+    min-height: 100vh;
 }
 body::-webkit-scrollbar {display: none;}
 .chtitle {

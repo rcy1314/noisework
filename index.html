@@ -438,36 +438,35 @@
     <script src="js/Meting.min.js"></script>
     <!--向下滑动监听-->
     <script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-        var scrollDown = document.querySelector('.scroll-down');
-        
-        function handleScroll() {
-            var scrollPos = window.pageYOffset;
-            var windowHeight = window.innerHeight;
-            var documentHeight = document.documentElement.scrollHeight;
+        window.addEventListener('DOMContentLoaded', (event) => {
+            var scrollDown = document.querySelector('.scroll-down');
             
-            if (window.innerWidth <= 768) {
+            function handleScroll() {
+                var scrollPos = window.pageYOffset;
+                var windowHeight = window.innerHeight;
+                var documentHeight = document.documentElement.scrollHeight;
+        
                 if (scrollPos + windowHeight >= documentHeight) {
                     scrollDown.style.display = 'none';
                 } else {
                     scrollDown.style.display = 'block';
                 }
-            } else {
-                scrollDown.style.display = 'none';
             }
-        }
-    
-        function handleButtonClick() {
-            window.scrollBy({
-                top: window.innerHeight,
-                behavior: 'smooth'
-            });
-        }
-    
-        scrollDown.addEventListener('click', handleButtonClick);
-        window.addEventListener('scroll', handleScroll);
-    });
-    </script>
+            
+            function handleButtonClick() {
+                window.scrollBy({
+                    top: window.innerHeight,
+                    behavior: 'smooth'
+                });
+            }
+            
+            scrollDown.addEventListener('click', handleButtonClick);
+            window.addEventListener('scroll', handleScroll);
+            
+            // 初始化滚动监听
+            handleScroll();
+        });
+        </script>        
     <!--向下滑动监听结束-->    
     <!--所有弹出图片js-->  
     <script>
