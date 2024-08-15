@@ -440,33 +440,37 @@
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
             var scrollDown = document.querySelector('.scroll-down');
-            
-            function handleScroll() {
-                var scrollPos = window.pageYOffset;
-                var windowHeight = window.innerHeight;
-                var documentHeight = document.documentElement.scrollHeight;
         
-                if (scrollPos + windowHeight >= documentHeight) {
-                    scrollDown.style.display = 'none';
-                } else {
-                    scrollDown.style.display = 'block';
+            function handleScroll() {
+                // 检查屏幕宽度是否小于或等于768px
+                if (window.innerWidth <= 768) {
+                    var scrollPos = window.pageYOffset;
+                    var windowHeight = window.innerHeight;
+                    var documentHeight = document.documentElement.scrollHeight;
+        
+                    if (scrollPos + windowHeight >= documentHeight) {
+                        scrollDown.style.display = 'none';
+                    } else {
+                        scrollDown.style.display = 'block';
+                    }
                 }
             }
-            
+  
             function handleButtonClick() {
                 window.scrollBy({
                     top: window.innerHeight,
                     behavior: 'smooth'
                 });
             }
-            
+        
             scrollDown.addEventListener('click', handleButtonClick);
             window.addEventListener('scroll', handleScroll);
-            
+            window.addEventListener('resize', handleScroll); // 添加resize事件监听，以便在窗口大小变化时重新检查
+        
             // 初始化滚动监听
             handleScroll();
         });
-        </script>        
+        </script>     
     <!--向下滑动监听结束-->    
     <!--所有弹出图片js-->  
     <script>
