@@ -19,6 +19,7 @@ var assetsToCache = [
   '/js/main.js',
   './js/home-script.js',
   './js/AD.js',
+  './js/emb.js',
   './css/home-APlayer.min.css',
   './css/home-root.css',
   './css/home-style.css',
