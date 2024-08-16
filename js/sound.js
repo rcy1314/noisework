@@ -25,12 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
         audioObject.play();
     }
 
+    // 检测屏幕宽度，如果是手机尺寸，则不播放鼠标点击音效
+    var isMobile = window.matchMedia("screen and (max-width: 768px)").matches;
+
     // 监听鼠标点击事件
     document.addEventListener('mousedown', function(event) {
-        if (event.button === 0) { // 左键点击
-            playSound(leftClickSound); // 播放左键点击音效
-        } else if (event.button === 2) { // 右键点击
-            playSound(rightClickSound); // 播放右键点击音效
+        if (!isMobile) { // 如果不是手机尺寸
+            if (event.button === 0) { // 左键点击
+                playSound(leftClickSound); // 播放左键点击音效
+            } else if (event.button === 2) { // 右键点击
+                playSound(rightClickSound); // 播放右键点击音效
+            }
         }
     });
 
