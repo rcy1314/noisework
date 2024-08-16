@@ -1,26 +1,32 @@
 document.addEventListener('DOMContentLoaded', function() {
     // 预加载音效
-    var leftClickSound = new Audio('../assets/sound/鼠点左.mp3');
-    var rightClickSound = new Audio('../assets/sound/风铃.mp3');
-    var hoverSoundlogoDiv = new Audio('../assets/sound/门铃.mp3'); // logoDiv悬停音效
-    var hoverSoundavatar = new Audio('../assets/sound/门铃.mp3'); // avatar悬停音效
-    var hoverSoundfirst = new Audio('../assets/sound/开瓶.mp3'); // first悬停音效
-    var hoverSoundclock = new Audio('../assets/sound/叮.mp3'); // clock悬停音效
+    var leftClickSound = new Audio('../assets/sound/鼠点左2.mp3'); // 鼠标左
+    var rightClickSound = new Audio('../assets/sound/风铃.mp3'); // 鼠标右
+    var hoverSoundlogoDiv = new Audio('../assets/sound/门铃.mp3'); // 头像logo
+    var hoverSoundavatar = new Audio('../assets/sound/门铃.mp3'); // 头像logo
+    var hoverSoundfirst = new Audio('../assets/sound/开瓶.mp3'); // 首页切换风格文字
+    var hoverSoundclock = new Audio('../assets/sound/叮.mp3'); // 时钟
+    var hoverSounddescriptiontext1 = new Audio('../assets/sound/开瓶.mp3'); // home切换模式文字
+    var hoverSounddescriptiontext3 = new Audio('../assets/sound/动1.mp3'); // home运行文字
 
     leftClickSound.preload = 'auto';
     rightClickSound.preload = 'auto';
-    hoverSoundlogoDiv.preload = 'auto'; // 预加载logoDiv悬停音效
-    hoverSoundavatar.preload = 'auto'; // 预加载avatar悬停音效
-    hoverSoundfirst.preload = 'auto'; // 预加载first悬停音效
-    hoverSoundclock.preload = 'auto'; // 预加载clock悬停音效
+    hoverSoundlogoDiv.preload = 'auto'; 
+    hoverSoundavatar.preload = 'auto'; 
+    hoverSoundfirst.preload = 'auto'; 
+    hoverSoundclock.preload = 'auto'; 
+    hoverSounddescriptiontext1.preload = 'auto'; 
+    hoverSounddescriptiontext3.preload = 'auto'; 
 
     // 尝试播放音频，以确保它们被加载到缓存中
     leftClickSound.load();
     rightClickSound.load();
-    hoverSoundlogoDiv.load(); // 加载logoDiv悬停音效
-    hoverSoundavatar.load(); // 加载avatar悬停音效
-    hoverSoundfirst.load(); // 加载first悬停音效
-    hoverSoundclock.load(); // 加载clock悬停音效
+    hoverSoundlogoDiv.load(); 
+    hoverSoundavatar.load(); 
+    hoverSoundfirst.load(); 
+    hoverSoundclock.load(); 
+    hoverSounddescriptiontext1.load(); 
+    hoverSounddescriptiontext3.load(); 
 
     // 鼠标点击音效函数
     function playSound(audioObject) {
@@ -37,8 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('mousedown', function(event) {
         if (!isMobileDevice()) { // 如果不是移动设备
             if (event.button === 0) { // 左键点击
-                playSound(leftClickSound); // 播放左键点击音效
-            } else if (event.button === 2) { // 右键点击
+                playSound(leftClickSound); 
+            } else if (event.button === 2) { 
                 playSound(rightClickSound); // 播放右键点击音效
             }
         }
@@ -48,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var logoDiv = document.getElementById('logoDiv');
     if (logoDiv) {
         // 监听鼠标悬停事件
-        logoDiv.addEventListener('mouseover', function() {
+        logoDiv.addEventListener('mouseenter', function() {
             playSound(hoverSoundlogoDiv); // 播放logoDiv悬停音效
         });
     } else {
@@ -59,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var first = document.getElementById('first');
     if (first) {
         // 监听鼠标悬停事件
-        first.addEventListener('mouseover', function() {
+        first.addEventListener('mouseenter', function() {
             playSound(hoverSoundfirst); // 播放first悬停音效
         });
     } else {
@@ -70,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var avatar = document.getElementById('avatar');
     if (avatar) {
         // 监听鼠标悬停事件
-        avatar.addEventListener('mouseover', function() {
+        avatar.addEventListener('mouseenter', function() {
             playSound(hoverSoundavatar); // 播放avatar悬停音效
         });
     } else {
@@ -81,11 +87,86 @@ document.addEventListener('DOMContentLoaded', function() {
     var clock = document.getElementById('clock');
     if (clock) {
         // 监听鼠标悬停事件
-        clock.addEventListener('mouseover', function() {
+        clock.addEventListener('mouseenter', function() {
             playSound(hoverSoundclock); // 播放clock悬停音效
         });
     } else {
         console.warn('没有找到ID为clock的元素');
     }
 
-});
+    // 获取descriptiontext1元素
+    var descriptiontext1 = document.getElementById('descriptiontext1');
+    if (descriptiontext1) {
+        // 监听鼠标悬停事件
+        descriptiontext1.addEventListener('mouseenter', function() {
+            playSound(hoverSounddescriptiontext1); // 播放descriptiontext1悬停音效
+        });
+    } else {
+        console.warn('没有找到ID为descriptiontext1的元素');
+    }
+
+    // 获取descriptiontext3元素
+    var descriptiontext3 = document.getElementById('descriptiontext3');
+    if (descriptiontext3) {
+        // 监听鼠标悬停事件
+        descriptiontext3.addEventListener('mouseenter', function() {
+            playSound(hoverSounddescriptiontext3); // 播放descriptiontext3悬停音效
+        });
+    } else {
+        console.warn('没有找到ID为descriptiontext3的元素');
+    }
+
+// 元素音效
+// 网址过渡音
+var websiteHoverSound = new Audio('../assets/sound/缓慢1.mp3');
+websiteHoverSound.preload = 'auto';
+
+// 广告位音
+var adHoverSound = new Audio('../assets/sound/动1.mp3');
+adHoverSound.preload = 'auto';
+
+function playSound(audioObject) {
+    // 重置音频到开始并播放
+    audioObject.currentTime = 0;
+    audioObject.play();
+}
+
+// 为每个选择器添加音效
+function addSoundToElements(selectors, sound) {
+    selectors.forEach(function(selector) {
+        document.querySelectorAll(selector).forEach(function(element) {
+            element.addEventListener('mouseenter', function() {
+                // 只有在音频暂停或结束时才播放
+                if (sound.paused || sound.ended) {
+                    playSound(sound);
+                }
+            });
+        });
+    });
+}
+
+// 要添加音效的元素选择器数组
+var elementsSelectors = ['.iconItem', '.item', '.projectItem','.project','.switch'];
+addSoundToElements(elementsSelectors, websiteHoverSound);
+
+// 广告位元素选择器数组
+var adElementsSelectors = ['.ad-container','.rss-container'];
+addSoundToElements(adElementsSelectors, adHoverSound);
+
+// home配置文档文字音
+var hoverSoundescriptiontext2 = new Audio('https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/streaming-arcade-game-jump-epic-stock-media-1-00-00.mp3'); // 请替换为您的音效文件路径
+hoverSoundescriptiontext2.preload = 'auto';
+var escriptiontext2 = document.getElementById('descriptiontext2');
+if (escriptiontext2) {
+    escriptiontext2.addEventListener('mouseenter', function() {
+        playSound(hoverSoundescriptiontext2); 
+    });
+} else {
+    console.warn('没有找到ID为descriptiontext2的元素');
+}
+
+
+    });
+
+
+
