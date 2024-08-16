@@ -1,10 +1,11 @@
-var cacheName = 'Noise主页-v2.1.1';
+var cacheName = 'Noise主页-v2.1.2';
 var assetsToCache = [
   './home.html',
   './index.html',
   './assets/sound/鼠点左.mp3',
   './assets/sound/风铃.mp3',
   './assets/sound/开瓶.mp3',
+  './assets/sound/叮.mp3.mp3',
   './assets/31.jpeg',
   './assets/3.png',
   './assets/1ae.gif',
@@ -13,7 +14,7 @@ var assetsToCache = [
   './assets/4ae.gif',
   './assets/5ae.gif',
   './assets/6ae.gif',
-  "js/sound.js",
+  '.js/sound.js',
   './js/jquery.min.js',
   './js/APlayer.min.js',
   './js/Meting.min.js',
