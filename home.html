@@ -173,114 +173,111 @@
 				<div class="left-tag-item">📸摄影</div>
 			</div>
 			<!-- 时间代码-->
-		    <div class="left-div left-time">
-				<ul id="line1">	
+			<div class="left-div left-time">
+				<ul id="line1">
 					<div id="lbl"></div>
-					<div id="clock"></div>			
+					<div id="clock"></div>
 				</ul>
-				</div>
-			   <!-- 时间结束-->
+			</div>
+			<!-- 时间结束-->
 			<!-- 音乐挂件代码-->
 			<div class="left-div-music">
-							   <div class="swiper-slide">
-								 <div class="aplayer-wrap">
-									 <meting-js
-									  preload="none"
-									   server="netease"
-									   type="playlist"
-									   id="128460001">
-								   </meting-js>  
-								 </div>
-							  </div> 	   
+				<div class="swiper-slide">
+					<div class="aplayer-wrap">
+						<meting-js preload="none" server="netease" type="playlist" id="128460001">
+						</meting-js>
+					</div>
+				</div>
 				</ul>
-			  </div>
+			</div>
 			<!-- rss订阅文字代码-->
 			<div class="left-div left-time">
-			<ul id="line1">
-            <div class="container">
-			<class="title">《近期文章动态一览》
-			<hr class="dashed">
-            <div id="rss-item">
-		    </ul>
-          </div>
-		  <!-- B站收藏-->
-		  <div class="left-div left-time">
-			<ul id="line1">
-            <div class="container">
-				<class="title">《我的B站收藏夹视频》
-						<hr class="dashed">
-					</div>	
+				<ul id="line3">
+					<div class="container">
+						<class="title">《近期文章动态一览》
+							<hr class="dashed">
+							<div id="rss-item">
+				</ul>
+			</div>
+			<!-- B站收藏-->
+			<div class="left-div left-time" id="bilibiliContainer">
+				<ul id="line4">
+					<div class="container">
+						<class="title">《我的B站收藏夹视频》
+							<hr class="dashed">
+					</div>
 					<iframe src="https://www.noisework.cn/e/bili/index.html?id=3271958393" frameborder="0"></iframe>
-			</ul>
-		</div>
-		<!-- B站收藏结束-->
-		 <!-- 云盘资源-->
-		 <div class="left-div left-time">
-			<ul id="line">
-				<div class="container">
-					<class="title">《云盘资源上新情报》
-						<hr class="dashed">
-					</div>	
-					<div class="ziyuan"></div>	
-			</ul>
-		</div>
-		<!-- 云盘资源结束-->
-		  <!-- 视频播放 -->
-<div class="left-div left-time">
-	<ul id="line2">
-	  <div class="container">
-		<!-- 视频容器 -->
-		<div id="video-container">
-		  <!-- 视频元素 -->
-		  <video id="random-video" width="100%" height="auto" controls webkit-playsinline playsinline controlsList="nodownload noremoteplayback">
-			<source src="视频链接" type="video/mp4">
-			您的浏览器不支持视频标签。
-		  </video>
-		</div>
-		<!-- 控制按钮 -->
-		<div id="control-buttons">
-		  <button onclick="prevVideo()" style="font-size:12px;">⏮</button>
-		  <button id="play-pause-btn" onclick="togglePlay()" style="font-size:12px;">▶</button>
-		  <button onclick="nextVideo()" style="font-size:12px;">⏭</button>
-		</div>
-	  </div>
-	</ul>
-  </div>
-<!-- 视频播放结束 -->
-	    <!-- 60秒读懂世界-->
-			<div class="left-div left-time">
+				</ul>
+			</div>
+			<!-- B站收藏结束-->
+			<!-- 云盘资源-->
+			<div class="left-div left-time" id="panContainer">
 				<ul id="line">
 					<div class="container">
+						<class="title">《云盘资源上新情报》
+							<hr class="dashed">
+					</div>
+					<div class="ziyuan"></div>
+				</ul>
+			</div>
+			<!-- 云盘资源结束-->
+			<!-- 视频播放 -->
+			<div class="left-div left-time">
+				<ul id="line5">
+					<div class="container">
+						<!-- 视频容器 -->
+						<div id="video-container">
+							<!-- 视频元素 -->
+							<video id="random-video" width="100%" height="auto" controls webkit-playsinline playsinline
+								controlsList="nodownload noremoteplayback">
+								<source src="视频链接" type="video/mp4">
+								您的浏览器不支持视频标签。
+							</video>
+						</div>
+						<!-- 控制按钮 -->
+						<div id="control-buttons">
+							<button onclick="prevVideo()" style="font-size:12px;">⏮</button>
+							<button id="play-pause-btn" onclick="togglePlay()" style="font-size:12px;">▶</button>
+							<button onclick="nextVideo()" style="font-size:12px;">⏭</button>
+						</div>
+					</div>
+				</ul>
+			</div>
+			<!-- 视频播放结束 -->
+			<!-- 60秒读懂世界-->
+			<div class="left-div left-time" id="worldContainer">
+				<ul id="line6">
+					<div class="container">
 						<class="title">《每天60秒读懂世界》
-                            <hr class="dashed">
-						<div class="content"></div>	
+							<hr class="dashed">
+							<div class="content"></div>
 				</ul>
 			</div>
 			<!-- 60秒读懂世界结束-->
 			<!-- 摸鱼日历-->
-			<div class="left-div left-time">
+			<div class="left-div left-time" id="moyuContainer">
 				<ul id="line2">
 					<li>
 						<div class="container">
-							<a href="https://dayu.qqsuu.cn/moyuribao/apis.php" target="_blank">
-								<img src="https://dayu.qqsuu.cn/moyuribao/apis.php">
+							<a href="https://dayu.qqsuu.cn/moyurili/apis.php" target="_blank">
+								<img src="https://dayu.qqsuu.cn/moyurili/apis.php">
 							</a>
 						</div>
 					</li>
 				</ul>
-			</div>			
-	<!-- 摸鱼日历结束-->
-	 <!-- 随机一言代码-->
-	 <div class="left-div left-time">
-		<ul id="line1">
-				<div class="container">
-					<span id="hitokoto">正在获取中...</span>
-				</div>
-				<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>  				
-		</ul>
-	</div>
-	<!-- 随机一言结束-->
-	 <!--页面日志-->
+			</div>
+			<!-- 摸鱼日历结束-->
+			<!-- 随机一言代码-->
+			<div class="left-div left-time" id="hitokotoContainer">
+				<ul id="line7">
+					<div class="container">
+						<span id="hitokoto">正在获取中...</span>
+					</div>
+					<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+				</ul>
+			</div>
+			<!-- 随机一言结束-->
+			<!--页面日志-->
 			<div class="left-div left-time">
 				<ul id="line">
 					<li>
@@ -307,7 +304,7 @@
 						</div>
 						<div>2023.9</div>
 					</li>
-				    <li>
+					<li>
 						<div class="focus"></div>
 						<div>添加聊天室组件
 						</div>
@@ -320,94 +317,110 @@
 					</li>
 				</ul>
 			</div>
-		</div>
-		<div class="noise-right">
-			<header>
-             	<!-- 手机页面头部logo -->
-        <div class="mobile-logo" id="mobileLogoDiv" onclick="switchImage()"> 
-        <!-- 添加了id和点击事件 -->
-        <span class="mobile-tooltip">点击可切换头像哦！</span> 
-         </div>
-		 <div class="welcome">⭐️
-			<span class="gradientText" style="letter-spacing: 0.05em;">NOISE'
-				<a href="https://www.noisework.cn" target="_blank">主页</a>
-			</span>
-		</div>		
-		<!-- 添加打字机文字 -->
-		<p id="typingText" style="font-size: 14px; width: 390px; height: 40px; overflow: hidden; margin-top: -10px;">
-			<script>
-			  var oP = document.getElementById('typingText');
-			  var str = '欢迎来访！点击头像处可进行切换，还有更多等你来发现哦!';
-			  var i = 0;
-			  var timer;
-		  
-			  function typeWriter() {
-				if (i < str.length) {
-				  var txt = str.substring(0, ++i);
-				  oP.innerText = txt + '✍';
-				  if (i == str.length) {
-					// 文字显示完成后，清除定时器并设置3秒后的重启
-					clearInterval(timer);
-					setTimeout(function() {
-					  i = 0; 
-					  oP.innerText = ''; 
-					  timer = setInterval(typeWriter, 200); 
-					}, 5000);
-				  }
-				} else {
-				  i = 0;
-				  oP.innerText = '';
-				}
-			  }
-		  
-			  timer = setInterval(typeWriter, 200);
-			</script>
-		  </p>
-		  <!-- 打字机文字结束 -->
-				<div class="description">👏<span class="purpleText">欢迎访问本站！ </span> 这是来自NOISE的个人主页。</span>查看 <span class="purpleText textBackground" id="descriptiontext3"><a href="https://stats.uptimerobot.com/GoqwLuBl3o" target="_blank" style="color: red;">运行状况</a></span>
-				</div>
-				<div class="description" >📝点击→<span class="purpleText textBackground" id="descriptiontext1"><a href="./index.html" style="color: rgb(170, 0, 255);">切换模式</a> </span>点击获取→</span><span class="purpleText textBackground" id="descriptiontext2"><a href="https://docs.noisework.cn" style="color: rgb(51, 114, 224);">配置文档</a></span>  ，右键唤醒 <span class="purpleText textBackground">弹出</span> 菜单栏 </div>								
+			</div>
+			<div class="noise-right">
+				<header>
+					<!-- 手机页面头部logo -->
+					<div class="mobile-logo" id="mobileLogoDiv" onclick="switchImage()">
+						<!-- 添加了id和点击事件 -->
+						<span class="mobile-tooltip">点击可切换头像哦！</span>
+					</div>
+					<div class="welcome">⭐️
+						<span class="gradientText" style="letter-spacing: 0.05em;">NOISE'
+							<a href="https://www.noisework.cn" target="_blank">主页</a>
+						</span>
+					</div>
+					<!-- 添加打字机文字 -->
+					<p id="typingText" style="font-size: 14px; width: 390px; height: 40px; overflow: hidden; margin-top: -10px;">
+						<script>
+							var oP = document.getElementById('typingText');
+							var str = '欢迎来访！点击头像处可进行切换，还有更多等你来发现哦!';
+							var i = 0;
+							var timer;
 
-				<div class="iconContainer">
-					<a class="iconItem" onclick="" target="_blank" href="https://github.com/rcy1314">
-						<svg t="1704870335945" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2487">
-                            <path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9 23.5 23.2 38.1 55.4 38.1 91v112.5c0.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"  p-id="2488"></path>
-                        </svg>
-						<div class="iconTip">Github</div>
-					
-						<a class="iconItem" onclick="" target="_blank" href="./e/zhichi/">
-						<svg t="1705247464964" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4987" >
-                            <path d="M995.575172 725.451034c-12.358621-26.835862-38.488276-64.794483-92.689655-94.27862-62.146207-33.721379-136.297931-40.96-208.860689-20.303448l-99.928276 28.424827-279.304828-126.057931H22.775172v489.401379h509.704828l432.375172-195.266207c15.006897-6.708966 26.835862-19.42069 32.662069-34.957241 5.649655-15.36 4.943448-31.955862-1.942069-46.962759z m-482.162758 188.910345H111.051034V601.688276h184.673104l166.664828 75.387586-3.354483 0.882759h-170.372414v88.275862H471.393103l246.819311-70.267586c49.434483-14.124138 101.517241-9.357241 142.653793 12.888275 18.184828 9.886897 30.72 20.833103 39.371034 30.896552l-386.824827 174.609655z"  p-id="4988"></path>
-                            <path d="M695.437241 163.486897l58.615173-142.30069h-397.24138l66.736552 143.36c-121.82069 53.142069-207.095172 174.433103-207.095172 315.674483 0 28.601379 3.531034 57.202759 10.593103 84.744827l85.627586-21.715862c-5.12-20.48-7.768276-41.666207-7.768275-63.028965 0-141.241379 114.758621-256 256-256s256 114.758621 256 256c0 51.023448-14.830345 100.104828-43.078621 142.300689l73.268965 49.08138c37.958621-56.673103 58.085517-122.88 58.085518-191.382069-0.176552-141.947586-86.686897-264.121379-209.743449-316.733793zM467.508966 91.983448h180.965517l-21.009655 50.846897a348.16 348.16 0 0 0-66.913104-6.708966c-23.834483 0-46.962759 2.471724-69.384827 7.062069l-23.657931-51.2z"  p-id="4989"></path>
-                            <path d="M683.431724 427.431724v-70.62069h-38.311724l30.190345-30.190344-49.964138-49.964138-62.49931 62.49931h-6.002759L494.344828 276.656552l-49.787587 49.964138 30.013793 30.190344h-38.311724v70.62069h88.275862v35.310345h-88.275862v70.62069h88.275862v52.965517h70.62069v-52.965517h88.275862v-70.62069h-88.275862v-35.310345z"  p-id="4990"></path>
-                        </svg>
-						<div class="iconTip">赞助</div>
-						<a class="iconItem" onclick="" target="_blank" href="https://twitter.com/liangwenhao3">
-						<i class="fa-brands fa-square-x-twitter"></i>
-						<div class="iconTip">Twitter</div>
-						<a class="iconItem" onclick="" target="_blank" href="https://www.noiseblogs.top">
-						<i class="fa-solid fa-blog"></i>
-						<div class="iconTip">Blog</div>
-					</a><a class="iconItem" onclick="pop('./lianxi/weixin.png')" href="javascript:void(0)">
-						<i class="fa-brands fa-weixin"></i>
-						<div class="iconTip">微信</div>
-					</a><a class="iconItem" onclick="pop('./assets/gongzhonghao.jpg')" href="javascript:void(0)">
-						<i class="fa-solid fa-comments"></i>
-						<div class="iconTip"> .公众号</div>
-						<a class="iconItem" onclick="" target="_blank" href="https://t.me/quanshoulu">
-						<i class="fa-brands fa-telegram"></i>
-						<div class="iconTip">TG频道</div>
-					</a>  <a class="switch" href="javascript:void(0)">
-						<div class="onoffswitch">
-							<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"
-								checked>
-							<label class="onoffswitch-label" for="myonoffswitch">
-								<span class="onoffswitch-inner"></span>
-								<span class="onoffswitch-switch"></span>
-							</label>
-						</div>
-					</a>
-				</div>
+							function typeWriter() {
+								if (i < str.length) {
+									var txt = str.substring(0, ++i);
+									oP.innerText = txt + '✍';
+									if (i == str.length) {
+										// 文字显示完成后，清除定时器并设置3秒后的重启
+										clearInterval(timer);
+										setTimeout(function () {
+											i = 0;
+											oP.innerText = '';
+											timer = setInterval(typeWriter, 200);
+										}, 5000);
+									}
+								} else {
+									i = 0;
+									oP.innerText = '';
+								}
+							}
+
+							timer = setInterval(typeWriter, 200);
+						</script>
+					</p>
+					<!-- 打字机文字结束 -->
+					<div class="description">👏<span class="purpleText">欢迎访问本站！ </span> 这是来自NOISE的个人主页。</span>查看 <span
+							class="purpleText textBackground" id="descriptiontext3"><a
+								href="https://stats.uptimerobot.com/GoqwLuBl3o" target="_blank" style="color: red;">运行状况</a></span>
+					</div>
+					<div class="description">📝点击→<span class="purpleText textBackground" id="descriptiontext1"><a
+								href="./index.html" style="color: rgb(170, 0, 255);">切换模式</a> </span>点击获取→</span><span
+							class="purpleText textBackground" id="descriptiontext2"><a href="https://docs.noisework.cn"
+								style="color: rgb(51, 114, 224);">配置文档</a></span> ，右键唤醒 <span
+							class="purpleText textBackground">弹出</span> 菜单栏 </div>
+			
+					<div class="iconContainer">
+						<a class="iconItem" onclick="" target="_blank" href="https://github.com/rcy1314">
+							<svg t="1704870335945" class="icon" viewBox="0 0 1024 1024" version="1.1"
+								xmlns="http://www.w3.org/2000/svg" p-id="2487">
+								<path
+									d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9 23.5 23.2 38.1 55.4 38.1 91v112.5c0.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"
+									p-id="2488"></path>
+							</svg>
+							<div class="iconTip">Github</div>
+			
+							<a class="iconItem" onclick="" target="_blank" href="./e/zhichi/">
+								<svg t="1705247464964" class="icon" viewBox="0 0 1024 1024" version="1.1"
+									xmlns="http://www.w3.org/2000/svg" p-id="4987">
+									<path
+										d="M995.575172 725.451034c-12.358621-26.835862-38.488276-64.794483-92.689655-94.27862-62.146207-33.721379-136.297931-40.96-208.860689-20.303448l-99.928276 28.424827-279.304828-126.057931H22.775172v489.401379h509.704828l432.375172-195.266207c15.006897-6.708966 26.835862-19.42069 32.662069-34.957241 5.649655-15.36 4.943448-31.955862-1.942069-46.962759z m-482.162758 188.910345H111.051034V601.688276h184.673104l166.664828 75.387586-3.354483 0.882759h-170.372414v88.275862H471.393103l246.819311-70.267586c49.434483-14.124138 101.517241-9.357241 142.653793 12.888275 18.184828 9.886897 30.72 20.833103 39.371034 30.896552l-386.824827 174.609655z"
+										p-id="4988"></path>
+									<path
+										d="M695.437241 163.486897l58.615173-142.30069h-397.24138l66.736552 143.36c-121.82069 53.142069-207.095172 174.433103-207.095172 315.674483 0 28.601379 3.531034 57.202759 10.593103 84.744827l85.627586-21.715862c-5.12-20.48-7.768276-41.666207-7.768275-63.028965 0-141.241379 114.758621-256 256-256s256 114.758621 256 256c0 51.023448-14.830345 100.104828-43.078621 142.300689l73.268965 49.08138c37.958621-56.673103 58.085517-122.88 58.085518-191.382069-0.176552-141.947586-86.686897-264.121379-209.743449-316.733793zM467.508966 91.983448h180.965517l-21.009655 50.846897a348.16 348.16 0 0 0-66.913104-6.708966c-23.834483 0-46.962759 2.471724-69.384827 7.062069l-23.657931-51.2z"
+										p-id="4989"></path>
+									<path
+										d="M683.431724 427.431724v-70.62069h-38.311724l30.190345-30.190344-49.964138-49.964138-62.49931 62.49931h-6.002759L494.344828 276.656552l-49.787587 49.964138 30.013793 30.190344h-38.311724v70.62069h88.275862v35.310345h-88.275862v70.62069h88.275862v52.965517h70.62069v-52.965517h88.275862v-70.62069h-88.275862v-35.310345z"
+										p-id="4990"></path>
+								</svg>
+								<div class="iconTip">赞助</div>
+								<a class="iconItem" onclick="" target="_blank" href="https://twitter.com/liangwenhao3">
+									<i class="fa-brands fa-square-x-twitter"></i>
+									<div class="iconTip">Twitter</div>
+									<a class="iconItem" onclick="" target="_blank" href="https://www.noiseblogs.top">
+										<i class="fa-solid fa-blog"></i>
+										<div class="iconTip">Blog</div>
+									</a><a class="iconItem" onclick="pop('./lianxi/weixin.png')" href="javascript:void(0)">
+										<i class="fa-brands fa-weixin"></i>
+										<div class="iconTip">微信</div>
+									</a><a class="iconItem" onclick="pop('./assets/gongzhonghao.jpg')" href="javascript:void(0)">
+										<i class="fa-solid fa-comments"></i>
+										<div class="iconTip"> .公众号</div>
+										<a class="iconItem" onclick="" target="_blank" href="https://t.me/quanshoulu">
+											<i class="fa-brands fa-telegram"></i>
+											<div class="iconTip">TG频道</div>
+										</a> <a class="switch" href="javascript:void(0)">
+											<div class="onoffswitch">
+												<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox"
+													id="myonoffswitch" checked>
+												<label class="onoffswitch-label" for="myonoffswitch">
+													<span class="onoffswitch-inner"></span>
+													<span class="onoffswitch-switch"></span>
+												</label>
+											</div>
+										</a>
+					</div>
 				<!--图片弹出pop容器-->
 				<div id="imagePopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1000;">
 					<img id="popupImage" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);" src="" alt="Popup Image">
@@ -451,11 +464,8 @@
 					</span>
 					</a>
 						 </strong></marquee>
-					</p>
-					
-				
-			</header>
-			
+					</p>		
+			</header>			
 			<content>
 				<div class="title"><i class="fa-solid fa-star"></i>
 				</svg>关联站点 </div>
@@ -884,6 +894,70 @@
                 });
         </script>
 		<script>
+			// 监听B站收藏夹视频链接
+			checkIframeLoad("bilibiliContainer", "https://www.noisework.cn/e/bili/index.html?id=3271958393");
+
+			// 监听云盘资源链接
+			checkLink("https://www.pan.noisework.cn/api/search", "panContainer");
+
+			// 监听60秒读懂世界链接
+			checkLink("https://www.wudada.online/Api/ScD", "worldContainer");
+
+			// 监听摸鱼日历链接
+			checkLink("https://dayu.qqsuu.cn/moyurili/apis.php", "moyuContainer");
+
+			// 监听随机一言代码链接
+			checkScriptLoad("hitokotoContainer", "https://v1.hitokoto.cn/?encode=js&select=%23hitokoto");
+
+			// 检查链接是否有效的函数
+			function checkLink(url, containerId) {
+				fetch(url, { method: 'HEAD' })
+					.then(response => {
+						if (response.ok) {
+							// 如果链接有效，显示容器
+							document.getElementById(containerId).style.display = 'block';
+						} else {
+							// 如果链接无效，隐藏容器
+							document.getElementById(containerId).style.display = 'none';
+						}
+					})
+					.catch(error => {
+						// 如果请求失败，隐藏容器
+						document.getElementById(containerId).style.display = 'none';
+					});
+			}
+
+			// 检查iframe是否成功加载内容的函数
+			function checkIframeLoad(containerId, iframeSrc) {
+				const iframe = document.createElement('iframe');
+				iframe.src = iframeSrc;
+				iframe.onload = function () {
+					// 如果iframe成功加载，显示容器
+					document.getElementById(containerId).style.display = 'block';
+				};
+				iframe.onerror = function () {
+					// 如果iframe加载失败，隐藏容器
+					document.getElementById(containerId).style.display = 'none';
+				};
+				// 这里不需要将iframe添加到页面上，只是用来检查链接的有效性
+			}
+
+			// 检查脚本是否成功加载的函数
+			function checkScriptLoad(containerId, scriptSrc) {
+				const script = document.createElement('script');
+				script.src = scriptSrc;
+				script.onload = function () {
+					// 如果脚本成功加载，显示容器
+					document.getElementById(containerId).style.display = 'block';
+				};
+				script.onerror = function () {
+					// 如果脚本加载失败，隐藏容器
+					document.getElementById(containerId).style.display = 'none';
+				};
+			}
+
+		</script>
+		<script>
 			function updateClock() {
 				const now = new Date();
 				const year = now.getFullYear();
@@ -972,8 +1046,7 @@
 					fjs.parentNode.appendChild(js);
 				}(window, document, 'script', 'webpushr-jssdk'));
 				webpushr('setup', { 'key': 'BD99F5j0E1eQHxPwSdt7LLoy_2AEUSnGxp8e3bFda-PcYZgi42VNFIucsXAbIVsjdrNr8ueyB6wK6G9MbMIIxMU' });</script>
-			<!-- 结束 WebPushr 跟踪代码 -->
-		
+			<!-- 结束 WebPushr 跟踪代码 -->		
 </body>
 <script src="./widgets/music-1/js/Meting.min.js"></script>
 <script src="./js/home-script.js"> </script>
