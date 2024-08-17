@@ -798,77 +798,41 @@
 					<path d="M12 16l-6-6h12z"/>
 				</svg>
 			</div>
-	<footer>		
-		  <span>Copyright©2024 <a href="https://www.noisework.cn">www.noisework.cn</a></span>&nbsp;<span class="astro-OY55P3EK"><span class="astro-OY55P3EK">本站已运行</span>&nbsp;<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
-		  <script>
-		  var now = new Date();
-		  function createtime() {
-			var grt= new Date("12/09/2020 00:00:00");
-			now.setTime(now.getTime()+250);
-			days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-			hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-			if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-			mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-			seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-			snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-			document.getElementById("timeDate").innerHTML = dnum+" 天 ";
-			document.getElementById("times").innerHTML = hnum + " 时 " ;
-		  }
-		  setInterval("createtime()",250);
-		  </script>
-	  </div> 
-		  <!-- 时间 -->
-			<span id="RGB"></span> 
-		  <meta charset="utf-8">   
-	  <div id="main">  
-	  <div id="show_time0" style="">
-	  <script>
-	  //显示时间
-	  //setInterval("show_time0.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
-	  </script>
-	  </div>
-	  <script>  
-	  //定义
-	  setInterval("fun(show_time)",1);
-	  function fun(timeID){ 
-	  var date = new Date();  //创建对象  
-	  var y = date.getFullYear();     //获取年份  
-	  var m =date.getMonth()+1;   //获取月份  返回0-11  
-	  var d = date.getDate(); // 获取日  
-	  var w = date.getDay();   //获取星期几  返回0-6   (0=星期天) 
-	  var ww = ' 星期'+'日一二三四五六'.charAt(new Date().getDay()) ;//星期几
-	  var h = date.getHours();  //时
-	  var minute = date.getMinutes()  //分
-	  var s = date.getSeconds(); //秒
-	  var sss = date.getMilliseconds() ; //毫秒
-	  if(m<10){
-	  m = "0"+m;
-	  }
-	  if(d<10){
-	  d = "0"+d;
-	  }
-	  if(h<10){
-	  h = "0"+h;
-	  }
-	  
-	  if(minute<10){
-	  minute = "0"+minute;
-	  }
-	  
-	  if(s<10){
-	  s = "0"+s;
-	  }
-	  
-	  if(sss<10){
-	  sss = "00"+sss;
-	  }else if(sss<100){
-	  sss = "0"+sss;
-	  }
-	  
-	  document.getElementById(timeID.id).innerHTML =  y+"-"+m+"-"+d+"   "+h+":"+minute+"     "+ww;
-	  //document.write(y+"-"+m+"-"+d+"   "+h+":"+minute+":"+s);  
-	  }
-	  </script>
+	<footer>
+		<span>Copyright©<span id="copyrightYear"></span></span>
+		<a href="https://www.noisework.cn">www.noisework.cn</a>
+		<span class="astro-OY55P3EK">本站已运行</span>
+		<span id="timeDate">载入天数...</span>
+		<span id="times">载入时分秒...</span>
+		<script>
+			function updateCopyrightYear() {
+				var yearElement = document.getElementById("copyrightYear");
+				yearElement.textContent = new Date().getFullYear();
+			}
+
+			function updateTime() {
+				var now = new Date();
+				var grt = new Date("12/09/2020 00:00:00"); // 设置起始时间
+				var days = (now - grt) / 1000 / 60 / 60 / 24;
+				var dnum = Math.floor(days);
+				var hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+				var hnum = Math.floor(hours);
+				var minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+				var mnum = Math.floor(minutes);
+				var seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+				var snum = Math.round(seconds);
+
+				document.getElementById("timeDate").textContent = dnum + " 天 ";
+				document.getElementById("times").textContent = hnum + " 时 " + mnum + " 分 " + snum + " 秒";
+			}
+
+			window.onload = function () {
+				updateCopyrightYear();
+				setInterval(updateTime, 1000); // 每秒更新时间
+			}
+		</script>
+		</script>
+		</div>
 		  <script>
 			window['CboxReady'] = function (Cbox) {
 				Cbox('button', '3-3523748-9k93aT');
