@@ -182,7 +182,7 @@ var adElementsSelectors = ['.ad-container','.rss-container'];
 addSoundToElements(adElementsSelectors, adHoverSound);
 
 // home配置文档文字音
-var hoverSoundescriptiontext2 = new Audio('../assets/sound/载入.mp3'); // 请替换为您的音效文件路径
+var hoverSoundescriptiontext2 = new Audio('../assets/sound/滴滴.mp3'); // 请替换为您的音效文件路径
 hoverSoundescriptiontext2.preload = 'auto';
 var escriptiontext2 = document.getElementById('descriptiontext2');
 if (escriptiontext2) {
@@ -195,7 +195,7 @@ if (escriptiontext2) {
 
 
 // 页面加载音效
-var pageLoadSound = new Audio('https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/%E8%BD%BD%E5%85%A51.mp3');
+var pageLoadSound = new Audio('../assets/sound/载入.mp3');
 pageLoadSound.preload = 'auto';
 pageLoadSound.muted = true; // 设置为静音，以提高自动播放的可能性
 
