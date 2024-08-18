@@ -527,29 +527,39 @@ a {
 .clock {
 	display: none;
 	position: fixed;
-	top: 6%;
-	right: 32%;
+	top: 11%;
+	right: 33%;
 	text-align: center;
-	font-size: 20px;
-	color: #fbf7f7;
-	background-color: #1514140c;
-	padding: 10px;
+	font-size: 19px;
+	color: #faf5f5;
+	border-radius: 8px;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	border-style: solid;
+	border-width: 6px;
+	border-color: #d6d5d5bd;
+	background-color: #0e0d0dc1;
+	padding: 8px;
 	border-radius: 10px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.198);
 	opacity: 0;
-	transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out; /* 添加transform的过渡效果 */
+	transform: scale(1); /* 默认缩放比例 */
   }
   
   .clock.show {
 	opacity: 1;
   }
   
+  .clock:hover { /* 鼠标滑过时的样式 */
+	transform: scale(1.1); /* 放大10% */
+  }
   
   @media (min-width: 768px) {
 	.clock {
 	  display: block;
 	}
   }
+  
  /* footer */
  #footer {
 	position: fixed;
