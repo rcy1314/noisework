@@ -175,7 +175,6 @@
 			<!-- 时间代码-->
 			<div class="left-div left-time">
 				<ul id="line1">
-					<div id="lbl"></div>
 					<div id="clock"></div>
 				</ul>
 			</div>
@@ -815,7 +814,9 @@
 		<span id="runningTimeDate">载入天数...</span>
 		<span id="runningTimes">载入时分秒...</span>
 	</footer>
-	<div id="lbl"></div>		
+	<!--待添加元素-->
+	<div id="lbl"></div>
+	<!--待添加元素结束-->		
 		  <script>
 			window['CboxReady'] = function (Cbox) {
 				Cbox('button', '3-3523748-9k93aT');
@@ -996,7 +997,7 @@
 				const formattedHours = hrs.toString().padStart(2, '0');
 				const formattedMinutes = min.toString().padStart(2, '0');
 
-				document.getElementById('clock').innerHTML = `${greet} 👉 今天是：${dayOfWeek} &nbsp;&nbsp;${year}年${month}月${day}日${formattedHours}时${formattedMinutes}分`;
+				document.getElementById('clock').innerHTML = `${greet}👉 今天是：${dayOfWeek}</br>${year}年${month}月${day}日 ${formattedHours}时${formattedMinutes}分`;
 			}
 
 			// 初始更新时钟和问候语
