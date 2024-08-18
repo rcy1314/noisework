@@ -204,6 +204,8 @@ function playLoadSound() {
     pageLoadSound.play().then(function() {
         console.log('音效开始播放');
         pageLoadSound.muted = false; // 如果播放成功，取消静音
+        // 设置已播放标记
+        localStorage.setItem('hasPlayed', 'true');
     }).catch(function(error) {
         console.error('播放失败，可能被浏览器阻止', error);
         // 如果播放失败，尝试在用户交互后播放
@@ -217,9 +219,18 @@ function playLoadSound() {
 
 // 当页面加载完成时尝试播放音效
 window.addEventListener('load', function() {
-    // 确保在页面加载完成后尝试播放音效
-    playLoadSound();
+    // 检查是否已经播放过
+    if (!localStorage.getItem('hasPlayed')) {
+        // 确保在页面加载完成后尝试播放音效
+        playLoadSound();
+    }
 });
+
+// 当页面卸载时，清除已播放标记
+window.addEventListener('beforeunload', function() {
+    localStorage.removeItem('hasPlayed');
+});
+
 
 
 
