@@ -186,13 +186,17 @@ a {
 	transition: 0.6s;
 }
 #morelink{
-	right: 20px;
+	right: 16px;
 	bottom: 20px;
 	background-color: rgba(255, 255, 255, 0.15);
 	z-index: 5;
 }
 .bt{
 	border-radius: 32px;
+	display: flex;
+	justify-content: center; /* 水平居中 */
+	align-items: center; /* 垂直居中 */
+	margin: 0 5px;
 	height: 32px;
 	width: 32px;
 	text-align: center;
@@ -205,7 +209,7 @@ a {
 	transform: scale(1.1);
 }
 .bt i:hover{color: white;}
-.bt i{display: block;font-size: 20px;color: rgba(255, 255, 255, 0.5);}
+.bt i{display: block;font-size: 23px;color: rgba(255, 255, 255, 0.5);} 
 .workbox{
 	height: 200px;
 	border-radius: 20px;
