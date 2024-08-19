@@ -729,7 +729,7 @@ footer {
 @media (max-width: 800px) {
     body {
         /* 设置背景图片 */
-        /* background-image: url('../assets/31.png'); /* 请替换为你的图片URL */
+        background-image: url('../assets/31.png'); /* 请替换为你的图片URL */
         /* 背景图片覆盖整个元素，保持宽高比 */
         /* background-size: 100% 100%; */
         background-size: cover; /* 或者使用 contain */
@@ -754,7 +754,9 @@ footer {
     .noise-left {
         display: none;
     }
-
+    .switchbg {
+        display: none;
+    }
     .a .projectItemRight {
         display: none;
 
