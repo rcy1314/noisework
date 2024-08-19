@@ -13,7 +13,6 @@
 	<meta name="twitter:image" content="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/73shots_so.png" />
 	<meta name="google-adsense-account" content="ca-pub-1078287385751140">
 	<link rel="stylesheet" href="./css/home-style.css">
-	<link rel="stylesheet" href="./css/home-root.css">
 	<link rel="stylesheet" href="css/home-rss.css">
 	<script src="https://kit.fontawesome.com/25cfefa7b1.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./css/Right.css">
@@ -180,7 +179,7 @@
 			</div>
 			<!-- 时间结束-->
 			<!-- 音乐挂件代码-->
-			<div class="left-div-music">
+			<div class="left-div-music" id="neteasemusic">
 				<div class="swiper-slide">
 					<div class="aplayer-wrap">
 						<meting-js preload="none" server="netease" type="playlist" id="128460001">
@@ -406,19 +405,13 @@
 									</a><a class="iconItem" onclick="pop('./assets/gongzhonghao.jpg')" href="javascript:void(0)">
 										<i class="fa-solid fa-comments"></i>
 										<div class="iconTip"> .公众号</div>
-										<a class="iconItem" onclick="" target="_blank" href="https://t.me/quanshoulu">
+										<a class="iconItem" id="mytg" onclick="" target="_blank" href="https://t.me/quanshoulu">
 											<i class="fa-brands fa-telegram"></i>
 											<div class="iconTip">TG频道</div>
-										</a> <a class="switch" href="javascript:void(0)">
-											<div class="onoffswitch">
-												<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox"
-													id="myonoffswitch" checked>
-												<label class="onoffswitch-label" for="myonoffswitch">
-													<span class="onoffswitch-inner"></span>
-													<span class="onoffswitch-switch"></span>
-												</label>
-											</div>
-										</a>
+									<a class="switchbg" href="javascript:void(0)" onclick="bg()">
+												<i class="fa-solid fa-star-of-david" id="rotateIcon" style="color: #fcfcfc; font-size: 22px;"></i>
+												<div class="switchbgtip">换背景</div>
+										</a>																															
 					</div>
 				<!--图片弹出pop容器-->
 				<div id="imagePopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1000;">
@@ -908,8 +901,8 @@
 			checkLink("https://dayu.qqsuu.cn/moyurili/apis.php", "moyuContainer");
 
 			// 监听随机一言代码链接
-			checkScriptLoad("hitokotoContainer", "https://v1.hitokoto.cn/?encode=js&select=%23hitokoto");
-
+			checkScriptLoad("hitokotoContainer", "https://v1.hitokoto.cn/?encode=js&select=%23hitokoto");			
+		
 			// 检查链接是否有效的函数
 			function checkLink(url, containerId) {
 				fetch(url, { method: 'HEAD' })
@@ -1040,7 +1033,13 @@
 				window.addEventListener('scroll', handleScroll);
 			});
 			</script>
-			<!--向下滑动监听结束-->    
+			<!--向下滑动监听结束-->   
+			<!--背景图调用逻辑-->  
+			<script>
+				document.addEventListener('DOMContentLoaded', function() {
+					bg(); // 调用bg函数
+				});
+			</script>
 			<!-- 启动 WebPushr 跟踪代码 -->
 			<script>(function (w, d, s, id) {
 					if (typeof (w.webpushr) !== 'undefined') return; w.webpushr = w.webpushr || function () { (w.webpushr.q = w.webpushr.q || []).push(arguments) }; var js, fjs = d.getElementsByTagName(s)[0]; js = d.createElement(s); js.id = id; js.async = 1; js.src = "https://cdn.webpushr.com/app.min.js";

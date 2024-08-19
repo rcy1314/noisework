@@ -46,31 +46,7 @@ function getCookie(name) {
     return null;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    var html = document.querySelector('html');
-    var themeState = getCookie("themeState") || "Light";
-    var Checkbox = document.getElementById('myonoffswitch');
 
-    function changeTheme(theme) {
-        html.dataset.theme = theme;
-        setCookie("themeState", theme, 365);
-        themeState = theme;
-    }
-
-    Checkbox.addEventListener('change', function () {
-        if (themeState == "Dark") {
-            changeTheme("Light");
-        } else {
-            changeTheme("Dark");
-        }
-    });
-
-    if (themeState == "Dark") {
-        Checkbox.checked = false;
-    }
-
-    changeTheme(themeState);
-});
 
 const projectItemRightimg = document.querySelector('.projectItemRightimg');
 const img = document.getElementById('img-1');
@@ -464,3 +440,72 @@ if (window.innerWidth >720) {
 	for (var i=0;i<100;i++){
 		setTimeout(() => container.scrollLeft += event.deltaY/100,i);
 }})};
+
+// 切换背景时旋转图标的函数
+function rotateIcon() {
+    var icon = document.getElementById('rotateIcon');
+    icon.style.transition = 'transform 0.3s ease';
+    icon.style.transform += 'rotate(360deg)';
+    setTimeout(function() {
+        icon.style.transition = 'none';
+        icon.style.transform = 'rotate(0deg)';
+    }, 300);
+}
+// 更换背景
+function bg() {
+    // 背景图片数组
+    var bgImages = [
+        '.././assets/bg/bg1.jpeg',
+        '.././assets/bg/bg2.jpeg',
+        '.././assets/bg/bg3.jpeg',
+        '.././assets/bg/bg4.jpeg',
+        '.././assets/bg/bg5.jpeg',
+        '.././assets/bg/bg6.jpeg',
+        '.././assets/bg/bg7.jpeg',
+        '.././assets/bg/bg8.jpeg',
+        '.././assets/bg/bg9.jpeg',
+        '.././assets/bg/bg10.jpeg',
+        '.././assets/bg/bg11.jpeg',
+        '.././assets/bg/bg12.jpeg',
+        '.././assets/bg/bg13.jpeg',
+        '.././assets/bg/bg14.jpeg',
+        '.././assets/bg/bg15.jpeg',
+        '.././assets/bg/bg16.jpeg',
+        '.././assets/3.png',
+        '',
+
+        // 更多背景图片...
+    ];
+
+    // 用于跟踪已显示图片的索引
+    var shownImages = [];
+
+    // 获取当前背景
+    var currentBg = getComputedStyle(document.documentElement).getPropertyValue('--main_bg_color');
+    var currentBgUrl = currentBg.slice(4, -1).replace(/"/g, '');
+    var currentIndex = bgImages.indexOf(currentBgUrl);
+
+    // 如果当前图片的索引存在，将其添加到shownImages数组中
+    if (currentIndex !== -1) {
+        shownImages.push(currentIndex);
+    }
+
+    // 如果所有图片都已显示过，重置shownImages数组
+    if (shownImages.length === bgImages.length) {
+        shownImages = [];
+    }
+
+    // 从未显示过的图片中随机选择一张
+    var remainingImages = bgImages.filter((img, index) => !shownImages.includes(index));
+    var randomIndex = Math.floor(Math.random() * remainingImages.length);
+    var nextBg = remainingImages[randomIndex];
+
+    // 更新背景属性
+    document.documentElement.style.setProperty('--main_bg_color', 'url(' + nextBg + ')');
+
+    // 调用旋转图标的函数
+    rotateIcon();
+}
+
+// 页面加载时自动调用bg函数
+window.onload = bg;

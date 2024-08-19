@@ -120,22 +120,4 @@ html {
      --fill:#000000;
 }
 
-html {
-    /*图片模糊背景＋黑色透明卡片+白色svg**/
-    --name: 主题5;
-    --main_bg_color: url(.././assets/3.png);
-    --main_text_color: #eeeeee;
-    --gradient: linear-gradient(120deg, #bd34fe, #e0321b 30%, #41d1ff 60%);
-    --purple_text_color: #747bff;
-    --text_bg_color: #00000040;
-    --item_bg_color: #00000038;
-    --item_hover_color: #33333338;
-    --item_left_title_color: #ffffff;
-    --item_left_text_color: #ffffff;
-    --footer_text_color: #ffffff;
-    --left_tag_item: rgb(27 42 57 / 20%);
-    --card_filter: 0px;
-    --back_filter: 20px;
-    --back_filter_color: #00000030;
-    --fill:#ffffff;
-}
+
