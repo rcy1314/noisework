@@ -1,4 +1,4 @@
-var cacheName = 'Noise主页-v2.1.17';
+var cacheName = 'Noise主页-v2.1.18';
 var assetsToCache = [
   './home.html',
   './index.html',
@@ -133,8 +133,6 @@ var assetsToCache = [
   './assets/bg/bg10.png',
   './assets/bg/bg11.png',
   './assets/bg/bg12.png',
-  './assets/bg/bg13.png',
-  '/assets/bg/bg14.png',
 
   './assets/mobilebg/bg1.png',
   './assets/mobilebg/bg2.png',

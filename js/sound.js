@@ -192,7 +192,7 @@ if (escriptiontext2) {
 } else {
     console.warn('没有找到ID为descriptiontext2的元素');
 }
-// 请替换为您的音效文件路径
+// 浮动文字
 var floatingTextSoundPath = '../assets/sound/jump.mp3';
 
 // 创建floating-text元素的音效对象

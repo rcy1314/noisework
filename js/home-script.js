@@ -453,8 +453,6 @@ function bg() {
         '../assets/bg/bg10.png',
         '../assets/bg/bg11.png',
         '../assets/bg/bg12.png',
-        '../assets/bg/bg13.png',
-        '../assets/bg/bg14.png',
         '../assets/3.png',
     ];
     var shownImages = [];
