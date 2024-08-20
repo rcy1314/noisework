@@ -192,6 +192,37 @@ if (escriptiontext2) {
 } else {
     console.warn('没有找到ID为descriptiontext2的元素');
 }
+// 请替换为您的音效文件路径
+var floatingTextSoundPath = '../assets/sound/jump.mp3';
+
+// 创建floating-text元素的音效对象
+var floatingTextHoverSound = new Audio(floatingTextSoundPath);
+floatingTextHoverSound.preload = 'auto';
+
+// 创建播放音效的函数
+function playSound(audioObject) {
+    // 重置音频到开始并播放
+    audioObject.currentTime = 0;
+    audioObject.play();
+}
+
+// 为指定选择器的元素添加音效
+function addSoundToElements(selectors, sound) {
+    selectors.forEach(function(selector) {
+        document.querySelectorAll(selector).forEach(function(element) {
+            element.addEventListener('mouseenter', function() {
+                // 只有在音频暂停或结束时才播放
+                if (sound.paused || sound.ended) {
+                    playSound(sound);
+                }
+            });
+        });
+    });
+}
+
+// 要为floating-text类元素添加音效的选择器
+var floatingTextSelectors = ['.floating-text'];
+addSoundToElements(floatingTextSelectors, floatingTextHoverSound);
 
 
 // 页面加载音效

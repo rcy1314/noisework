@@ -1,19 +1,26 @@
-* {
+/*中文字体*/
+@font-face {
+	font-family: 'MyLocalFont';
+	src: url('../assets/fonts/QingNiaoHuaGuangJianCaiYun-2.ttf') format('truetype');
+  }
+  
+  * {
 	padding: 0;
 	margin: 0;
 	transition-timing-function: cubic-bezier(.19, 1, .22, 1);
 	-webkit-tap-highlight-color: transparent;
 	box-sizing: border-box;
 	cursor: none;
-}
-body,html {
-	font-family: Microsoft YaHei;
+  }
+  
+  body, html {
+	font-family: 'MyLocalFont', Microsoft YaHei, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	color: #fff;
 	font-size: 14px;
 	overflow-x: hidden;
 	position: relative;
-}
+  }
 #sence{
 	height: 100vh;
 	width: 100vw;
@@ -547,11 +554,11 @@ a {
 	overflow-y: hidden;
 	overflow-x: hidden;
 	border-style: solid;
-	border-width: 6px;
+	border-width: 4px;
 	border-color: #d6d5d5bd;
 	background-color: #0e0d0dc1;
 	padding: 8px;
-	border-radius: 10px;
+	border-radius: 6px;
 	opacity: 0;
 	transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out; /* 添加transform的过渡效果 */
 	transform: scale(1); /* 默认缩放比例 */
@@ -570,7 +577,6 @@ a {
 	  display: block;
 	}
   }
-  
  /* footer */
  #footer {
 	position: fixed;

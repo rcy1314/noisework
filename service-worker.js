@@ -1,4 +1,4 @@
-var cacheName = 'Noise主页-v2.1.16';
+var cacheName = 'Noise主页-v2.1.17';
 var assetsToCache = [
   './home.html',
   './index.html',
@@ -13,6 +13,7 @@ var assetsToCache = [
   './assets/sound/载入.mp3',
   './assets/sound/滴滴.mp3',
   './assets/sound/打字.mp3',
+  './assets/sound/jump.mp3',
   './assets/31.jpeg',
   './assets/3.png',
   './assets/1ae.gif',

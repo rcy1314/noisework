@@ -1,11 +1,12 @@
+/*中文字体*/
 @font-face {
     font-family: "a";
     /*中文字体*/
     src: url(../assets/fonts/STHeitiLight.ttc);
     font-display: swap;
-}
-
-
+	font-family: 'MyLocalFont';
+	src: url('../assets/fonts/QingNiaoHuaGuangJianCaiYun-2.ttf') format('truetype');
+  }
 @font-face {
     font-family: "b";
 
@@ -19,8 +20,6 @@
     src: url(../assets/fonts/Pacifico-Regular.ttf);
     font-display: swap;
 }
-
-
 * {
     margin: 0;
     padding: 0;
@@ -91,6 +90,7 @@ body {
     transition: background 0.6s ease; /* 添加背景过渡效果 */
     justify-content: center;
     color: var(--main_text_color);
+    font-family: 'MyLocalFont', Microsoft YaHei, sans-serif;
 }
 
 
