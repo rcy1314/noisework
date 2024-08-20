@@ -772,8 +772,24 @@ footer {
         /* background-size: 100% 100%; */
         background-size: cover; /* 或者使用 contain */
         /* 背景图片不会随着页面滚动 */
+        position: relative; /* 确保可以相对于body定位伪元素 */
+    }
+
+    body::before {
+        content: ""; /* 必须设置content属性 */
+        position: absolute; /* 相对于body定位 */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: var(--background-image);
+        background-size: cover;
+        background-attachment: fixed;
+        filter: blur(20px); /* 添加模糊效果 */
+        z-index: -1; /* 确保伪元素在内容之下 */
+    }
 }
-}
+
 /* 默认隐藏.mobileswitchbg */
 .mobileswitchbg {
     display: none;
