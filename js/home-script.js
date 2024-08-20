@@ -27,8 +27,6 @@ function toggleClass(selector, className) {
     });
 }
 
-
-
 function setCookie(name, value, days) {
     var expires = days ? "; expires=" + (new Date(Date.now() + days * 24 * 60 * 60 * 1000)).toUTCString() : "";
     document.cookie = name + "=" + value + expires + "; path=/";
@@ -45,9 +43,6 @@ function getCookie(name) {
     }
     return null;
 }
-
-
-
 const projectItemRightimg = document.querySelector('.projectItemRightimg');
 const img = document.getElementById('img-1');
 
@@ -286,10 +281,7 @@ document.getElementById("random-video").addEventListener('error', function () {
 
 // 初始化，随机选择一个视频进行播放
 randomVideo();
-// 创建一个命名空间
 var MyVideoPlayer = MyVideoPlayer || {};
-
-// 在命名空间中定义预加载视频的函数
 MyVideoPlayer.preloadVideos = function () {
     // 预加载当前视频
     var currentVideo = new Video();
@@ -410,28 +402,22 @@ function loadMobileImage(index) {
     };
     img.src = mobileImages[index];
 }
-
-// 初始化，随机选择一个图片进行加载
 loadMobileImage(Math.floor(Math.random() * mobileImages.length));
-
-// 添加点击事件监听器
 mobileLogoDiv.addEventListener('click', () => {
-    // 重置当前图片索引，以便重新随机选择
     currentMobileImageIndex = -1;
     loadMobileImage(Math.floor(Math.random() * mobileImages.length));
 });
 
 // 使用IntersectionObserver来实现懒加载
 let mobileObserver = new IntersectionObserver((entries, observer) => {
-    // 检查元素是否可见
     if (entries[0].isIntersecting) {
-        // 如果已经加载过图片，不再重新加载
         if (currentMobileImageIndex === -1) {
             loadMobileImage(Math.floor(Math.random() * mobileImages.length));
         }
     }
 }, { threshold: [0] });
 mobileObserver.observe(mobileLogoDiv);
+
 /*scroll向下滑动*/
 let container = document.querySelector('.workbox');
 if (window.innerWidth >720) {
@@ -451,61 +437,91 @@ function rotateIcon() {
         icon.style.transform = 'rotate(0deg)';
     }, 300);
 }
-// 更换背景
+// PC更换背景
 function bg() {
     // 背景图片数组
     var bgImages = [
-        '.././assets/bg/bg1.jpeg',
-        '.././assets/bg/bg2.jpeg',
-        '.././assets/bg/bg3.jpeg',
-        '.././assets/bg/bg4.jpeg',
-        '.././assets/bg/bg5.jpeg',
-        '.././assets/bg/bg6.jpeg',
-        '.././assets/bg/bg7.jpeg',
-        '.././assets/bg/bg8.jpeg',
-        '.././assets/bg/bg9.jpeg',
-        '.././assets/bg/bg10.jpeg',
-        '.././assets/bg/bg11.jpeg',
-        '.././assets/bg/bg12.jpeg',
-        '.././assets/bg/bg13.jpeg',
-        '.././assets/bg/bg14.jpeg',
-        '.././assets/bg/bg15.jpeg',
-        '.././assets/bg/bg16.jpeg',
-        '.././assets/3.png',
-        '',
-
-        // 更多背景图片...
+        '../assets/mobilebg/bg1.png',
+        '../assets/bg/bg2.png',
+        '../assets/bg/bg3.png',
+        '../assets/bg/bg4.png',
+        '../assets/bg/bg5.png',
+        '../assets/bg/bg6.png',
+        '../assets/bg/bg7.png',
+        '../assets/bg/bg8.png',
+        '../assets/bg/bg9.png',
+        '../assets/bg/bg10.png',
+        '../assets/bg/bg11.png',
+        '../assets/bg/bg12.png',
+        '../assets/bg/bg13.png',
+        '../assets/bg/bg14.png',
+        '../assets/3.png',
     ];
-
-    // 用于跟踪已显示图片的索引
     var shownImages = [];
-
-    // 获取当前背景
     var currentBg = getComputedStyle(document.documentElement).getPropertyValue('--main_bg_color');
     var currentBgUrl = currentBg.slice(4, -1).replace(/"/g, '');
     var currentIndex = bgImages.indexOf(currentBgUrl);
-
-    // 如果当前图片的索引存在，将其添加到shownImages数组中
     if (currentIndex !== -1) {
         shownImages.push(currentIndex);
     }
-
-    // 如果所有图片都已显示过，重置shownImages数组
     if (shownImages.length === bgImages.length) {
         shownImages = [];
     }
-
-    // 从未显示过的图片中随机选择一张
     var remainingImages = bgImages.filter((img, index) => !shownImages.includes(index));
     var randomIndex = Math.floor(Math.random() * remainingImages.length);
     var nextBg = remainingImages[randomIndex];
-
-    // 更新背景属性
     document.documentElement.style.setProperty('--main_bg_color', 'url(' + nextBg + ')');
-
-    // 调用旋转图标的函数
     rotateIcon();
 }
-
-// 页面加载时自动调用bg函数
 window.onload = bg;
+// PC背景切换结束
+// 手机尺寸背景切换
+var canToggleBg = true;
+
+// 背景图片数组
+var bgImages = [
+    '../assets/mobilebg/bg1.png',
+    '../assets/mobilebg/bg2.png',
+    '../assets/mobilebg/bg3.png',
+    '../assets/mobilebg/bg4.png',
+    '../assets/mobilebg/bg5.png',
+    '../assets/mobilebg/bg6.png',
+    '../assets/mobilebg/bg7.png',
+    '../assets/mobilebg/bg8.png',
+    '../assets/mobilebg/bg9.png',
+    // ... 其他背景图片路径
+];
+
+var shownImages = JSON.parse(localStorage.getItem('shownImages')) || [];
+var currentIndex = 0; 
+
+// 页面加载时设置随机背景图
+window.onload = function() {
+    currentIndex = Math.floor(Math.random() * bgImages.length);
+    setRandomBackground();
+};
+
+function setRandomBackground() {
+    document.documentElement.style.setProperty('--background-image', 'url(' + bgImages[currentIndex] + ')');
+    shownImages.push(currentIndex);
+    localStorage.setItem('shownImages', JSON.stringify(shownImages));
+}
+function toggleMobileBg() {
+    if (!canToggleBg) {
+        return; 
+    }
+    currentIndex = (currentIndex + 1) % bgImages.length;   
+    document.documentElement.style.setProperty('--background-image', 'url(' + bgImages[currentIndex] + ')');  
+    shownImages.push(currentIndex);
+    localStorage.setItem('shownImages', JSON.stringify(shownImages));
+    mobilerotateIcon();
+}
+function mobilerotateIcon() {
+    var icon = document.getElementById('mobilerotateIcon');
+    icon.style.transition = 'transform 0.3s ease';
+    icon.style.transform += 'rotate(360deg)';
+    setTimeout(function() {
+        icon.style.transition = 'none';
+        icon.style.transform = 'rotate(0deg)';
+    }, 300);
+}

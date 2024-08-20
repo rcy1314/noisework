@@ -4,7 +4,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>
 		NOISE主页 </title>
-	<link rel="icon" href="./assets/favicon.ico">
+	<link rel="icon" href="./assets/icon.png">
 	<meta name="description" content="这是来自Noise的个人主页，通过本页可获取所有关联的站点服务.">
 	<meta name="keywords" content="noise主页,个人主页,homepage,noise引导页">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -33,6 +33,7 @@
     </script>
 </head>
 <body>
+	<div class="background-image-container"></div>
 	<!-- 躲猫猫-->
 <style>
     #maomao {
@@ -320,7 +321,7 @@
 				<header>
 					<!-- 手机页面头部logo -->
 					<div class="mobile-logo" id="mobileLogoDiv" onclick="switchImage()">
-						<!-- 添加了id和点击事件 -->
+						<!-- id和点击事件 -->
 						<span class="mobile-tooltip">点击可切换头像哦！</span>
 					</div>
 					<div class="welcome">⭐️
@@ -332,26 +333,26 @@
 					<p id="typingText" style="font-size: 14px; width: 390px; height: 40px; overflow: hidden; margin-top: -10px;">
 						<script>
 							var oP = document.getElementById('typingText');
-							var str = '欢迎来访！点击头像处可进行切换，还有更多等你来发现哦!';
+							var strArray = ['欢迎来访！点击头像处可进行切换，✡︎图标可切换随机背景！', '相关配置请查看文档，还有更多等你来发现哦!']; // 可以继续添加更多行
+							var currentStr = '';
 							var i = 0;
+							var strIndex = 0;
 							var timer;
 
 							function typeWriter() {
-								if (i < str.length) {
-									var txt = str.substring(0, ++i);
+								currentStr = strArray[strIndex];
+								if (i < currentStr.length) {
+									var txt = currentStr.substring(0, ++i);
 									oP.innerText = txt + '✍';
-									if (i == str.length) {
-										// 文字显示完成后，清除定时器并设置3秒后的重启
-										clearInterval(timer);
-										setTimeout(function () {
-											i = 0;
-											oP.innerText = '';
-											timer = setInterval(typeWriter, 200);
-										}, 5000);
-									}
 								} else {
-									i = 0;
-									oP.innerText = '';
+									// 文字显示完成后，清除定时器并设置4秒后的重启
+									clearInterval(timer);
+									setTimeout(function () {
+										i = 0;
+										oP.innerText = '';
+										strIndex = (strIndex + 1) % strArray.length; // 切换到下一个字符串
+										timer = setInterval(typeWriter, 200);
+									}, 4000);
 								}
 							}
 
@@ -359,6 +360,7 @@
 						</script>
 					</p>
 					<!-- 打字机文字结束 -->
+
 					<div class="description">👏<span class="purpleText">欢迎访问本站！ </span> 这是来自NOISE的个人主页。</span>查看 <span
 							class="purpleText textBackground" id="descriptiontext3"><a
 								href="https://stats.uptimerobot.com/GoqwLuBl3o" target="_blank" style="color: red;">运行状况</a></span>
@@ -405,13 +407,16 @@
 									</a><a class="iconItem" onclick="pop('./assets/gongzhonghao.jpg')" href="javascript:void(0)">
 										<i class="fa-solid fa-comments"></i>
 										<div class="iconTip"> .公众号</div>
-										<a class="iconItem" id="mytg" onclick="" target="_blank" href="https://t.me/quanshoulu">
-											<i class="fa-brands fa-telegram"></i>
-											<div class="iconTip">TG频道</div>
+										
 									<a class="switchbg" href="javascript:void(0)" onclick="bg()">
 												<i class="fa-solid fa-star-of-david" id="rotateIcon" style="color: #fcfcfc; font-size: 22px;"></i>
 												<div class="switchbgtip">换背景</div>
-										</a>																															
+										</a>
+									
+                                    <a class="mobileswitchbg" href="javascript:void(0)" onclick="toggleMobileBg()">
+                                            <i class="fa-solid fa-star-of-david" id="mobilerotateIcon" style="color: #fcfcfc; font-size: 22px;"></i>
+                                         </a>
+																																								
 					</div>
 				<!--图片弹出pop容器-->
 				<div id="imagePopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1000;">
@@ -1039,7 +1044,7 @@
 				document.addEventListener('DOMContentLoaded', function() {
 					bg(); // 调用bg函数
 				});
-			</script>
+			</script>	
 			<!-- 启动 WebPushr 跟踪代码 -->
 			<script>(function (w, d, s, id) {
 					if (typeof (w.webpushr) !== 'undefined') return; w.webpushr = w.webpushr || function () { (w.webpushr.q = w.webpushr.q || []).push(arguments) }; var js, fjs = d.getElementsByTagName(s)[0]; js = d.createElement(s); js.id = id; js.async = 1; js.src = "https://cdn.webpushr.com/app.min.js";

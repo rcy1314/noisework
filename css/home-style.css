@@ -541,7 +541,7 @@ body {
     border-radius: 7px;
     display: flex;
     margin-left: 10px;
-    backdrop-filter: blur(var(--card_filter));
+    backdrop-filter: blur(var(--card_filter));-webkit-backdrop-filter: blur(var(--card_filter));
     background: var(--item_bg_color);
     align-items: center;
     justify-content: center;
@@ -560,6 +560,44 @@ body {
     display: block;
     transform: translateX(5px); /* 将文本移离图标更远的地方 */
 }
+
+.switchbgtip {
+    white-space: nowrap;
+    display: none;
+}
+
+.mobileswitchbg {
+    width: 49px;
+    height: 43px;
+    box-sizing: border-box;
+    padding: 2px;
+    justify-content: center; /* 水平居中 */
+    padding: 10px; /* 这将影响所有四边的间距 */
+    text-align: center; /* 文本水平居中 */
+    line-height: 1.5;
+    height:auto;
+    height: auto;
+    font-size: 13px;
+    line-height: 2; 
+    border-radius: 7px;
+    display: flex;
+    margin-left: 10px;
+    backdrop-filter: blur(var(--card_filter));-webkit-backdrop-filter: blur(var(--card_filter));
+    background: var(--item_bg_color);
+    align-items: center;
+    justify-content: center;
+    transition: width 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.mobileswitchbg:hover {
+    width: 49px;
+    /* transform: translateY(-2px); */
+    background: var(--item_hover_color);
+}
+
+
 
 .switchbgtip {
     white-space: nowrap;
@@ -729,22 +767,25 @@ footer {
 @media (max-width: 800px) {
     body {
         /* 设置背景图片 */
-        background-image: url('../assets/31.png'); /* 请替换为你的图片URL */
+        background-image: var(--background-image);
         /* 背景图片覆盖整个元素，保持宽高比 */
         /* background-size: 100% 100%; */
         background-size: cover; /* 或者使用 contain */
         /* 背景图片不会随着页面滚动 */
-        background-attachment: fixed;
-        /* 背景图片重复方式 */
-        background-repeat: no-repeat;
-        /* 背景图片位置 */
-        background-position: center center;
-        /* 添加模糊效果 */
-        background-filter: blur(28px);
-        /* 背景颜色，用于在图片加载前或模糊效果下提供背景 */
-        background-color: #0d0e11e7;
+}
+}
+/* 默认隐藏.mobileswitchbg */
+.mobileswitchbg {
+    display: none;
+}
+
+/* 当屏幕尺寸小于或等于600px时显示.mobileswitchbg */
+@media only screen and (max-width: 600px) {
+    .mobileswitchbg {
+        display: inline-block; /* 或者使用其他适当的显示类型 */
     }
 }
+
 
 @media (max-width: 800px) {
     .mobile-logo {

@@ -1,4 +1,4 @@
-var cacheName = 'Noise主页-v2.1.13';
+var cacheName = 'Noise主页-v2.1.14';
 var assetsToCache = [
   './home.html',
   './index.html',
@@ -120,22 +120,30 @@ var assetsToCache = [
   'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/0010.png',
   'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/0011.png',
 
-  './assets/bg/bg1.jpeg',
-  './assets/bg/bg2.jpeg',
-  './assets/bg/bg3.jpeg',
-  './assets/bg/bg4.jpeg',
-  './assets/bg/bg5.jpeg',
-  './assets/bg/bg6.jpeg',
-  './assets/bg/bg7.jpeg',
-  './assets/bg/bg8.jpeg',
-  './assets/bg/bg9.jpeg',
-  './assets/bg/bg10.jpeg',
-  './assets/bg/bg11.jpeg',
-  './assets/bg/bg12.jpeg',
-  './assets/bg/bg13.jpeg',
-  '/assets/bg/bg14.jpeg',
-  './assets/bg/bg15.jpeg',
-  './assets/bg/bg16.jpeg',
+  './assets/bg/bg1.png',
+  './assets/bg/bg2.png',
+  './assets/bg/bg3.png',
+  './assets/bg/bg4.png',
+  './assets/bg/bg5.png',
+  './assets/bg/bg6.png',
+  './assets/bg/bg7.png',
+  './assets/bg/bg8.png',
+  './assets/bg/bg9.png',
+  './assets/bg/bg10.png',
+  './assets/bg/bg11.png',
+  './assets/bg/bg12.png',
+  './assets/bg/bg13.png',
+  '/assets/bg/bg14.png',
+
+  './assets/mobilebg/bg1.png',
+  './assets/mobilebg/bg2.png',
+  './assets/mobilebg/bg3.png',
+  './assets/mobilebg/bg4.png',
+  './assets/mobilebg/bg5.png',
+  './assets/mobilebgbg6.png',
+  './assets/mobilebg/bg7.png',
+  './assets/mobilebg/bg8.png',
+  './assets/mobilebg/bg9.png',
  
   // 添加您需要缓存的其他静态资源
 ];
