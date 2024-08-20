@@ -397,7 +397,6 @@ body {
     padding-left: 0px;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
-    text-align: center; /* 文本水平居中 */
 }
 #line li {
     list-style: none;

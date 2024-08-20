@@ -1,4 +1,5 @@
-var imageUrls = [
+
+  var backgroundUrls = [
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/191437o3371I8.png',
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/2308hbVHt.png',
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/184324ohb.png',
@@ -14,15 +15,8 @@ var imageUrls = [
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/20230705/ffass.omhkiqmx0ww.jpg',
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/20230705/fasfasf.1qt1n1e9q8yo.jpg',
     // 这里随机背景壁纸-添加更多图片URL...
-  ];
-  
-  var randomIndex = Math.floor(Math.random() * imageUrls.length);
-  var randomImageUrl = imageUrls[randomIndex];
-  
-  var randomImageElement = document.getElementById('background');
-  randomImageElement.style.backgroundImage = 'url(' + randomImageUrl + ')';
-//°. * 。.:*・° ✰.。.:*・° ✰.。.:*°. * 。.:*・° ✰.。.:*・° ✰.。.:*°. * 。.:*・° ✰.。.:*・° ✰.。.:*
-  var imageUrls = [
+];
+var foregroundUrls = [
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/20230704/023.5se6p3kcd840.png',
     'https://jsd.cdn.noisework.cn/gh/rcy1314/my-photo@master/20230227/人物5.34tnn2jnn1q0.png',
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/004.47zk9hg17zg0.png',
@@ -65,10 +59,54 @@ var imageUrls = [
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/0010.png',
     'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/0011.png',
     // 这里添加随机前景人物图-添加更多图片URL...
-  ];
-  
-  var randomIndex = Math.floor(Math.random() * imageUrls.length);
-  var randomImageUrl = imageUrls[randomIndex];
-  
-  var randomImageElement = document.getElementById('bg');
-  randomImageElement.style.backgroundImage = 'url(' + randomImageUrl + ')';
+];
+
+var shownBackgrounds = [];
+var shownForegrounds = [];
+
+function changeBackground() {
+    var randomBackgroundIndex = getRandomIndex(backgroundUrls, shownBackgrounds);
+    var randomForegroundIndex = getRandomIndex(foregroundUrls, shownForegrounds);
+
+    var backgroundElement = document.getElementById('background');
+    var foregroundElement = document.getElementById('bg');
+
+    // 切换背景图
+    backgroundElement.style.backgroundImage = 'url(' + backgroundUrls[randomBackgroundIndex] + ')';
+    shownBackgrounds.push(backgroundUrls[randomBackgroundIndex]);
+
+    // 切换前景图
+    foregroundElement.style.backgroundImage = 'url(' + foregroundUrls[randomForegroundIndex] + ')';
+    shownForegrounds.push(foregroundUrls[randomForegroundIndex]);
+
+    // 旋转SVG
+    rotateSVG();
+}
+
+function getRandomIndex(imageUrls, shownImages) {
+    var availableImages = imageUrls.filter(function(url) {
+        return shownImages.indexOf(url) === -1;
+    });
+
+    if (availableImages.length === 0) {
+        // 如果所有图片都显示过，重置已显示的图片数组
+        shownImages.length = 0;
+        availableImages = imageUrls;
+    }
+
+    var randomIndex = Math.floor(Math.random() * availableImages.length);
+    return imageUrls.indexOf(availableImages[randomIndex]);
+}
+
+function rotateSVG() {
+    var svgElement = document.querySelector('.bt i');
+    svgElement.style.transition = 'transform 0.5s ease-in-out';
+    svgElement.style.transform = 'rotate(360deg)';
+    // 重置旋转，以便下次点击时再次旋转
+    setTimeout(function() {
+        svgElement.style.transform = 'rotate(0deg)';
+    }, 500);
+}
+
+// 初始化背景和前景图
+changeBackground();
