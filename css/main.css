@@ -1,7 +1,7 @@
 /*中文字体*/
 @font-face {
 	font-family: 'MyLocalFont';
-	src: url('../assets/fonts/QingNiaoHuaGuangJianCaiYun-2.ttf') format('truetype');
+	src: url('') format('truetype');
   }
   
   * {

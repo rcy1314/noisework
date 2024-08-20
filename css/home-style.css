@@ -5,7 +5,7 @@
     src: url(../assets/fonts/STHeitiLight.ttc);
     font-display: swap;
 	font-family: 'MyLocalFont';
-	src: url('../assets/fonts/QingNiaoHuaGuangJianCaiYun-2.ttf') format('truetype');
+	src: url('') format('truetype');
   }
 @font-face {
     font-family: "b";
@@ -17,7 +17,7 @@
 @font-face {
     font-family: "title";
     /*英文字体*/
-    src: url(../assets/fonts/Pacifico-Regular.ttf);
+    src: url();
     font-display: swap;
 }
 * {
