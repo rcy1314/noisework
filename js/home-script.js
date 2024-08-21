@@ -477,7 +477,7 @@ window.onload = bg;
 var canToggleBg = true;
 
 // 背景图片数组
-var bgImages = [
+const bgImages = [
     '../assets/mobilebg/bg1.png',
     '../assets/mobilebg/bg2.png',
     '../assets/mobilebg/bg3.png',
@@ -490,37 +490,71 @@ var bgImages = [
     '../assets/mobilebg/bg10.png',
     // ... 其他背景图片路径
 ];
+// 预加载图片
+const imageCache = {};
+function preloadImages(images) {
+    images.forEach(imgSrc => {
+        const img = new Image();
+        img.onload = () => {
+            imageCache[imgSrc] = img;
+        };
+        img.onerror = () => {
+            console.error(`无法加载图片: ${imgSrc}`);
+        };
+        img.src = imgSrc;
+    });
+}
+preloadImages(bgImages);
 
-var shownImages = JSON.parse(localStorage.getItem('shownImages')) || [];
-var currentIndex = 0; 
+// 从localStorage获取已显示的图片索引
+let shownImages = JSON.parse(localStorage.getItem('shownImages')) || [];
+let currentIndex = 0; 
 
-// 页面加载时设置随机背景图
-window.onload = function() {
-    currentIndex = Math.floor(Math.random() * bgImages.length);
-    setRandomBackground();
-};
-
+// 设置随机背景图
 function setRandomBackground() {
-    document.documentElement.style.setProperty('--background-image', 'url(' + bgImages[currentIndex] + ')');
-    shownImages.push(currentIndex);
+    currentIndex = Math.floor(Math.random() * bgImages.length);
+    setBackgroundImage(bgImages[currentIndex]);
+}
+
+// 更新localStorage
+function updateLocalStorage() {
     localStorage.setItem('shownImages', JSON.stringify(shownImages));
 }
-function toggleMobileBg() {
-    if (!canToggleBg) {
-        return; 
-    }
-    currentIndex = (currentIndex + 1) % bgImages.length;   
-    document.documentElement.style.setProperty('--background-image', 'url(' + bgImages[currentIndex] + ')');  
+
+// 设置背景图片
+function setBackgroundImage(imgUrl) {
+    document.documentElement.style.setProperty('--background-image', `url(${imgUrl})`);
     shownImages.push(currentIndex);
-    localStorage.setItem('shownImages', JSON.stringify(shownImages));
+    updateLocalStorageIfNecessary();
+}
+
+// 如果需要，更新localStorage
+function updateLocalStorageIfNecessary() {
+    if(shownImages.length === bgImages.length) {
+        updateLocalStorage();
+        shownImages = []; // 重置数组，避免重复
+    }
+}
+
+// 切换背景【按顺序】
+function toggleMobileBg() {
+    if (!canToggleBg) return; 
+    currentIndex = (currentIndex + 1) % bgImages.length;   
+    setBackgroundImage(bgImages[currentIndex]);
     mobilerotateIcon();
 }
+
+// 旋转图标动画
 function mobilerotateIcon() {
-    var icon = document.getElementById('mobilerotateIcon');
+    const icon = document.getElementById('mobilerotateIcon');
     icon.style.transition = 'transform 0.3s ease';
     icon.style.transform += 'rotate(360deg)';
-    setTimeout(function() {
+    setTimeout(() => {
         icon.style.transition = 'none';
         icon.style.transform = 'rotate(0deg)';
     }, 300);
 }
+
+// 页面加载时设置背景图
+window.onload = setRandomBackground;
+
