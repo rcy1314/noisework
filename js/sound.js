@@ -225,10 +225,47 @@ var floatingTextSelectors = ['.floating-text'];
 addSoundToElements(floatingTextSelectors, floatingTextHoverSound);
 
 // 页面加载音效
-var pageLoadSound = new Audio('../assets/sound/载入.mp3');
-pageLoadSound.preload = 'auto';
+soundFiles = [
+    '../assets/sound/载入1.mp3',
+    '../assets/sound/载入2.mp3',
+    '../assets/sound/载入3.mp3',
+    '../assets/sound/载入4.mp3',
+    '../assets/sound/载入5.mp3',
+    '../assets/sound/载入6.mp3',
+    '../assets/sound/载入7.mp3',
+    '../assets/sound/载入8.mp3',
+    '../assets/sound/载入9.mp3',
+    // 添加更多音效路径...
+];
 
+// 随机排列数组并返回
+function shuffleArray(array) {
+    let currentIndex = array.length, temporaryValue, randomIndex;
+
+    // 当还剩有元素待洗牌时继续
+    while (currentIndex !== 0) {
+        // 取一个待洗牌的元素
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // 与当前元素进行交换
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
+
+// 页面加载音效
 function playLoadSound() {
+    // 随机排列音效数组
+    var shuffledSoundFiles = shuffleArray(soundFiles.slice());
+    // 选择第一个音效
+    var randomSoundFile = shuffledSoundFiles[0];
+    var pageLoadSound = new Audio(randomSoundFile);
+    pageLoadSound.preload = 'auto';
+
     pageLoadSound.currentTime = 0; // 重置音频到开始
     pageLoadSound.play().then(function() {
         console.log('音效开始播放');
@@ -247,16 +284,10 @@ function playLoadSound() {
 
 // 当页面加载完成时尝试播放音效
 window.addEventListener('load', function() {
-    // 检查是否已经播放过
-    if (!localStorage.getItem('hasPlayed')) {
-        // 确保在页面加载完成后尝试播放音效
-        playLoadSound();
-    }
-});
-
-// 当页面卸载时，清除已播放标记
-window.addEventListener('beforeunload', function() {
+    // 清除已播放标记，确保每次刷新都能播放
     localStorage.removeItem('hasPlayed');
+    // 尝试播放音效
+    playLoadSound();
 });
 
 
