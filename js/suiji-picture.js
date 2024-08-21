@@ -71,17 +71,19 @@ function changeBackground() {
     var backgroundElement = document.getElementById('background');
     var foregroundElement = document.getElementById('bg');
 
-    // 切换背景图
-    backgroundElement.style.backgroundImage = 'url(' + backgroundUrls[randomBackgroundIndex] + ')';
-    shownBackgrounds.push(backgroundUrls[randomBackgroundIndex]);
-
-    // 切换前景图
-    foregroundElement.style.backgroundImage = 'url(' + foregroundUrls[randomForegroundIndex] + ')';
-    shownForegrounds.push(foregroundUrls[randomForegroundIndex]);
-
-    // 旋转SVG
-    rotateSVG();
-}
+    preloadAndChangeImage(
+        'background',
+        backgroundUrls[randomBackgroundIndex],
+        shownBackgrounds
+      );
+      preloadAndChangeImage(
+        'bg',
+        foregroundUrls[randomForegroundIndex],
+        shownForegrounds
+      );
+    
+      rotateSVG();
+    }
 
 function getRandomIndex(imageUrls, shownImages) {
     var availableImages = imageUrls.filter(function(url) {
@@ -108,5 +110,22 @@ function rotateSVG() {
     }, 500);
 }
 
-// 初始化背景和前景图
-changeBackground();
+function preloadAndChangeImage(elementId, imageUrl, shownImages) {
+    var img = new Image();
+    var element = document.getElementById(elementId);
+  
+    // 显示加载动画
+    element.classList.add('loading');
+  
+    img.onload = function() {
+      // 当图片加载完成后，切换图片并移除加载动画
+      element.style.backgroundImage = 'url(' + imageUrl + ')';
+      element.classList.remove('loading');
+      shownImages.push(imageUrl);
+    };
+  
+    img.src = imageUrl; // 开始加载图片
+  }
+  
+  // 初始化背景和前景图
+  changeBackground();
