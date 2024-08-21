@@ -487,9 +487,8 @@ const bgImages = [
     '../assets/mobilebg/bg7.png',
     '../assets/mobilebg/bg8.png',
     '../assets/mobilebg/bg9.png',
-    '../assets/mobilebg/bg10.png',
-    // ... 其他背景图片路径
-];
+    '../assets/mobilebg/bg10.png'
+   ];
 // 预加载图片
 const imageCache = {};
 function preloadImages(images) {
