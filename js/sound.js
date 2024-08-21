@@ -224,17 +224,14 @@ function addSoundToElements(selectors, sound) {
 var floatingTextSelectors = ['.floating-text'];
 addSoundToElements(floatingTextSelectors, floatingTextHoverSound);
 
-
 // 页面加载音效
 var pageLoadSound = new Audio('../assets/sound/载入.mp3');
 pageLoadSound.preload = 'auto';
-pageLoadSound.muted = true; // 设置为静音，以提高自动播放的可能性
 
 function playLoadSound() {
     pageLoadSound.currentTime = 0; // 重置音频到开始
     pageLoadSound.play().then(function() {
         console.log('音效开始播放');
-        pageLoadSound.muted = false; // 如果播放成功，取消静音
         // 设置已播放标记
         localStorage.setItem('hasPlayed', 'true');
     }).catch(function(error) {
@@ -261,8 +258,6 @@ window.addEventListener('load', function() {
 window.addEventListener('beforeunload', function() {
     localStorage.removeItem('hasPlayed');
 });
-
-
 
 
 
