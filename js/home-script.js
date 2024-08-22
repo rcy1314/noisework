@@ -475,7 +475,6 @@ window.onload = bg;
 // PC背景切换结束
 // 手机尺寸背景切换
 var canToggleBg = true;
-
 // 背景图片数组
 const bgImages = [
     '../assets/mobilebg/bg1.png',
@@ -489,6 +488,11 @@ const bgImages = [
     '../assets/mobilebg/bg9.png',
     '../assets/mobilebg/bg10.png'
    ];
+
+
+// 设置默认背景图
+document.documentElement.style.setProperty('--background-image', `url(${bgImages[0]})`);
+
 // 预加载图片
 const imageCache = {};
 function preloadImages(images) {
@@ -503,7 +507,6 @@ function preloadImages(images) {
         img.src = imgSrc;
     });
 }
-preloadImages(bgImages);
 
 // 从localStorage获取已显示的图片索引
 let shownImages = JSON.parse(localStorage.getItem('shownImages')) || [];
@@ -554,6 +557,8 @@ function mobilerotateIcon() {
     }, 300);
 }
 
-// 页面加载时设置背景图
-window.onload = setRandomBackground;
-
+// 页面加载时预加载图片
+window.onload = () => {
+    preloadImages(bgImages);
+    setRandomBackground(); // 设置随机背景图
+};
