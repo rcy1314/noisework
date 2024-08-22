@@ -1,4 +1,4 @@
-var cacheName = 'Noise主页-v2.2.3';
+var cacheName = 'Noise主页-v2.2.4';
 var assetsToCache = [
   './home.html',
   './index.html',
@@ -163,36 +163,11 @@ self.addEventListener('install', function(event) {
   );
 });
 
-self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      if (response) {
-        // 检查资源是否需要刷新
-        event.waitUntil(
-          refreshCache(event.request)
-        );
-        return response;
-      }
-
-      // 如果请求未在缓存中找到，则发起网络请求
-      return fetch(event.request).then(function(networkResponse) {
-        // 将请求的响应添加到缓存中
-        caches.open(cacheName).then(function(cache) {
-          cache.put(event.request, networkResponse.clone());
-        });
-
-        return networkResponse;
-      });
-    })
-  );
-});
-
 self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.filter(function(name) {
-          // 删除旧版本的缓存
           return name !== cacheName;
         }).map(function(name) {
           return caches.delete(name);
@@ -202,15 +177,94 @@ self.addEventListener('activate', function(event) {
   );
 });
 
-// 定义一个函数来刷新缓存
-function refreshCache(request) {
+self.addEventListener('fetch', function(event) {
+  var request = event.request;
+
+  if (request.method !== 'GET') {
+    event.respondWith(fetch(request));
+    return;
+  }
+
+  if (isCriticalRequest(request)) {
+    event.respondWith(
+      caches.match(request).then(function(response) {
+        return response || fetchAndCache(request);
+      })
+    );
+  } else {
+    event.respondWith(lazyLoad(request));
+  }
+});
+
+function fetchAndCache(request) {
   return fetch(request).then(function(networkResponse) {
-    if (networkResponse && networkResponse.status === 200) {
-      return caches.open(cacheName).then(function(cache) {
-        return cache.put(request, networkResponse.clone());
-      });
-    }
-  }).catch(function(error) {
-    console.error('Error refreshing cache for ', request.url, error);
+    return caches.open(cacheName).then(function(cache) {
+      cache.put(request, networkResponse.clone());
+      return networkResponse;
+    });
+  }).catch(function() {
+    return caches.match('/index.html');
   });
 }
+
+function isCriticalRequest(request) {
+  return request.url.includes('/home/');
+}
+
+function lazyLoad(request) {
+  return fetch(request).catch(function() {
+    return caches.match(request);
+  });
+}
+
+function cleanUpCache() {
+  caches.keys().then(function(cacheNames) {
+    cacheNames.forEach(function(cacheName) {
+      caches.open(cacheName).then(function(cache) {
+        cache.keys().then(function(keys) {
+          keys.forEach(function(key) {
+            // 根据需求实现清理逻辑，例如基于最后修改时间或大小
+          });
+        });
+      });
+    });
+  });
+}
+
+function monitorPerformance() {
+  self.performance = self.performance || {};
+  self.performance.timing = performance.timing;
+  self.performance.navigation = performance.navigation;
+
+  // 记录缓存命中情况
+  self.addEventListener('fetch', function(event) {
+    if (event.request.method === 'GET') {
+      event.respondWith(
+        caches.match(event.request).then(function(response) {
+          if (response) {
+            self.performance.cacheHits = self.performance.cacheHits || 0;
+            self.performance.cacheHits++;
+          } else {
+            self.performance.cacheMisses = self.performance.cacheMisses || 0;
+            self.performance.cacheMisses++;
+          }
+          return response || fetch(event.request);
+        })
+      );
+    }
+  });
+}
+
+setInterval(function() {
+  updateCache();
+}, 24 * 60 * 60 * 1000);
+
+function updateCache() {
+  assetsToCache.forEach(function(asset) {
+    fetchAndCache(new Request(asset));
+  });
+}
+
+// 初始化性能监控和缓存清理
+monitorPerformance();
+cleanUpCache();
