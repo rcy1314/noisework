@@ -254,16 +254,16 @@ function monitorPerformance() {
     }
   });
 }
+// 定时刷新缓存
+//setInterval(function() {
+//  updateCache();
+// }, 24 * 60 * 60 * 1000);
 
-setInterval(function() {
-  updateCache();
-}, 24 * 60 * 60 * 1000);
-
-function updateCache() {
-  assetsToCache.forEach(function(asset) {
-    fetchAndCache(new Request(asset));
-  });
-}
+//function updateCache() {
+//  assetsToCache.forEach(function(asset) {
+//    fetchAndCache(new Request(asset));
+//  });
+// }
 
 // 初始化性能监控和缓存清理
 monitorPerformance();

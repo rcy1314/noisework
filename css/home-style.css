@@ -131,6 +131,7 @@ body {
 .noise-left {
     overflow-y: scroll;
     width: 230px;
+    left: 290px;
     height: 100vh;
     display: flex;
     padding: 0 15px;

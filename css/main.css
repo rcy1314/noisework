@@ -48,15 +48,22 @@
 }
 /* 画布尺寸 */
 .main {
+    /* 设置宽度为990像素 */
     width: 990px;
+    /* 设置填充（内边距）：顶部45像素，右侧330像素，底部5像素，左侧17像素 */
     padding: 45px 330px 5px 17px;
+    /* 设置背景为一个从左到右的线性渐变，颜色从深灰色（透明度为0.849）到完全透明（在600像素处过渡） */
     background: linear-gradient(to right, rgba(34, 34, 34, 0.849), rgba(34, 34, 34, 0) 600px, rgba(34, 34, 34, 0));
+    /* 设置背景图像的大小，使背景宽度填充整个元素，高度保持不变 */
     background-size: 100% auto;
+    /* 设置背景图像不重复 */
     background-repeat: no-repeat;
+    /* 设置元素的盒模型，这样元素的宽度、高度和内边距将包括在元素的宽度和高度中 */
     box-sizing: border-box;
-    /* 添加 min-height 以确保最小高度 */
+    /* 设置元素的最小高度为视口（viewport）的高度，确保元素至少和视口一样高 */
     min-height: 100vh;
 }
+
 body::-webkit-scrollbar {display: none;}
 .chtitle {
     padding-bottom: 15px;
