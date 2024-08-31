@@ -7,7 +7,9 @@
 
 使用配置文档：https://docs.noisework.cn
 
-[GitHub](https://github.com/rcy1314/noisework-docs)
+查看[介绍](https://docs.noisework.cn/guide/intro.html)
+
+文档[GitHub](https://github.com/rcy1314/noisework-docs)
 
 针对化一些js及css已本地化，根据功能分类，请勿合并，觉得加载过慢再合并或套用CDN
 
