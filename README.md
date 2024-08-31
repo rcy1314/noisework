@@ -40,7 +40,7 @@
 
 
 <details>
-<summary>✅ 更新状况【点击查看】</summary>
+<summary><h2>✅ 更新状况【点击查看】</h2></summary>
 
 ## 更新
 
