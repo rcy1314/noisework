@@ -25,9 +25,9 @@
         '关键词': '5qyi6L+O5L2/55So5YWz6ZSu6K+N5Zue5aSN5Yqf6IO977yM6K+36L6T5YWl5Lul5LiL5oyH5a6a5YWz6ZSu6K+N5p+l55yL5Zue5aSN77yM5aSN5Yi26K+36YCJ5oup5ZCOY29tbWFuZC9jdHJs77yLQyDlhbblroPor7flvq7kv6Hnp4Hkv6HvvIEK4oCc56eR5a2m5LiK572R4oCd4oCU4oCU5LiA5Lqb56eR5a2m5LiK572R5pa55byP6IqC54K577yBIOKAnENBTlZB5YWN6LS54oCd4oCU4oCUQ2FudmEgcHJv5Zu96ZmF5YWN6LS55Zui6Zif54mI77yBIOKAnOWJquaYoOKAneKAlOKAlFBD5Ymq5pig56C06Kej54mI77yB',
         '剪映': '5Ymq5pigcHJvLXY2LjAuMee7v+iJsuWFjeWuieijheeJiDpodHRwczovL3Bhbi5xdWFyay5jbi9zL2M4NWRlYzMwZGJjNArliarmmKBwcm8tdjYuMOaPkuS7tueJiDpodHRwczovL3Bhbi5xdWFyay5jbi9zL2QyYjZhZjlhMzY2MwrliarmmKBwcm8tdjMuMijkuI3pnIBWSVDkvJrlkZjmnIDpq5jniYgpOmh0dHBzOi8vcGFuLnF1YXJrLmNuL3MvMWU5NDNiNzc2M2E3CjEyM+ebmOmTvuaOpe+8mmh0dHBzOi8vd3d3LjEyM3Bhbi5jb20vcy85VDZBLXo2RXhkLmh0bWwK5Lul5LiK77yM5LuF6ZmQV0lO57O757uf',
         '科学上网': '6K6i6ZiF6IqC54K5MTpodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTWVtb3J5MjMxNC9WTWVzc2xpbmtzL21haW4vbGlua3Mvdm1lc3MK6K6i6ZiF6IqC54K5MjpodHRwczovL21pcnJvci5naHByb3h5LmNvbS9odHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vQmFyYWJhbWEvRnJlZU5vZGVzL21hc3Rlci9ub2Rlcy95dWRvdTY2LnR4dArorqLpmIXoioLngrkzOmh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9wZWFzb2Z0L05vTW9yZVdhbGxzL21hc3Rlci9saXN0LnR4dArorqLpmIXoioLngrk0Omh0dHBzOi8vbWlycm9yLmdocHJveHkuY29tL2h0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9CYXJhYmFtYS9GcmVlTm9kZXMvbWFzdGVyL25vZGVzL2trenVpLnR4dArorqLpmIXoioLngrk1Omh0dHBzOi8vbWlycm9yLmdocHJveHkuY29tL2h0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9CYXJhYmFtYS9GcmVlTm9kZXMvbWFzdGVyL25vZGVzL2JsdWVzLnR4dArkvb/nlKjku6PnkIYx77yaaHR0cHM6Ly9nZW9wcm94eS5pbgrkvb/nlKjku6PnkIYy77yaaHR0cHM6Ly9vcGVucHJveHlsaXN0LmNvbQrluLjop4TlrqLmiLfnq6/lj4rnp5Hmma7or7forr/pl67vvJpodHRwczovL3d3dy5ub2lzZWJsb2dzLnRvcC92cG4vCuaIlmh0dHBzOi8vd3d3LnYycmF5LmNvbS9hd2Vzb21lL3Rvb2xzLmh0bWwKUGFuZG9yYS1Cb3joh6rluKborqLpmIXnur/ot6/vvJpodHRwczovL2dpdGh1Yi5jb20vc25ha2VtOTgyL1BhbmRvcmEtQm94',
-        'CANVA免费': 'Q2FudmEgcHJv5Zu96ZmF5YWN6LS55Zui6Zif54mICuacieabtOaWsOa4oOmBk+eahFRH6aKR6YGT77yaaHR0cHM6Ly90Lm1lL01hbmlUZWNoaVRlY2gK5Y+v55So5bm/5ZGK6ZO+5o6l5Yqg5YWl77yaaHR0cHM6Ly9qdXN0Y3V0LmlvLzhHSGNRWArms6jmhI/vvJror7fnlZnmhI/ml7bpl7Tlj5jliqg=',
+        'CANVA免费': 'Q2FudmEgcHJv5Zu96ZmF5YWN6LS55Zui6Zif54mICuacieabtOaWsOa4oOmBk+eahFRH6aKR6YGTMe+8mmh0dHBzOi8vdC5tZS9NYW5pVGVjaGlUZWNoCuacieabtOaWsOa4oOmBk+eahFRH6aKR6YGTMu+8mmh0dHBzOi8vdC5tZS9DYW52YXByb2ZyZWVzZQrlj6/nlKjlub/lkYrpk77mjqXliqDlhaXvvJpodHRwczovL2p1c3RjdXQuaW8vOEdIY1FYCuazqOaEj++8muivt+eVmeaEj+aXtumXtOWPmOWKqA==',
         '你好': base64Encode('你好！很高兴见到你。'),
-        '帮助': base64Encode('你可以输入 <span style="color: #ffbc00">help</span> 查看可用命令列表。'),
+        '帮助': base64Encode('你可以输入 <span style="color: #ffbc00">help</span> 查看常规命令列表。'),
         '彩蛋': base64Encode('这是一个彩蛋版本！希望你喜欢！')
     };
 
@@ -251,39 +251,79 @@
         }
     }
 
-    function cmdouyin(text) {
-        var res1 = analysis(text, 'douyin');
-        if (res1[0] == -3) {
-            print('没有提供参数', 'error');
-        } else if (res1 != 'error') {
-            if (res1[0][0] == 1) {
-                print(command['douyin']['help'], 'message');
+    function enter() {
+        terminal.scrollTop = 10000;
+        var event = window.event || event;
+        if (event.keyCode == 13) {
+            print(head.innerHTML + input.value);
+            var com = input.value.split(' ').filter(i => i != '');
+    
+            // 检查命令是否存在于定义中
+            if (com[0] in command) {
+                command[com[0]]['fun'](com.slice(1));
+            } else if (keywordResponses[com[0]]) {
+                // 解码Base64
+                const response = base64Decode(keywordResponses[com[0]]);
+                print(response, 'message');
             } else {
-                var url = 'https://api.pearktrue.cn/api/video/douyin?url=' + res1[1][0];
-                var fetchUrl = url; // 保存url
-                print('正在获取抖音视频: ' + url);
-                fetch(fetchUrl, {
-                    method: 'GET', // 使用GET请求方式
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.code === 200) {
-                            var videoUrl = data.data.url;
-                            print('获取到的视频地址: ' + videoUrl);
-                            window.open(videoUrl, '_blank');
-                        } else {
-                            print('获取视频失败: ' + data.msg, 'error');
-                        }
-                    })
-                    .catch(error => {
-                        print('获取视频失败: ' + error, 'error');
-                    });
+                print('未找到命令: ' + input.value, 'error');
             }
+            update();
+        } else if (event.keyCode == 38 && line > 0) {
+            line -= 1;
+            input.value = his[line];
+        } else if (event.keyCode == 40 && line < his.length - 1) {
+            line += 1;
+            input.value = his[line];
         }
     }
+    
+    function cmdouyin(text) {
+        if (!text || text.length === 0) {
+            print('没有提供参数', 'error');
+            return;
+        }
+    
+        // 合并输入数组为单个字符串
+        var inputText = text.join(' ');
+    
+        // 正则表达式匹配 Douyin 链接
+        var douyinLinkRegex = /https:\/\/v\.douyin\.com\/[^\s]+/;
+        var match = inputText.match(douyinLinkRegex);
+    
+        if (!match) {
+            print('未找到有效的抖音链接', 'error');
+            return;
+        }
+    
+        var url = match[0]; // 提取到的抖音链接
+        print('识别到的抖音链接: ' + url);
+    
+        // 构建 API 请求 URL
+        var apiUrl = 'https://api.pearktrue.cn/api/video/douyin?url=' + encodeURIComponent(url);
+        print('正在获取抖音视频: ' + apiUrl);
+    
+        fetch(apiUrl, {
+            method: 'GET', // 使用 GET 请求
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.code === 200) {
+                var videoUrl = data.data.url;
+                print('获取到的视频地址: ' + videoUrl);
+                window.open(videoUrl, '_blank');
+            } else {
+                print('获取视频失败: ' + data.msg, 'error');
+            }
+        })
+        .catch(error => {
+            print('获取视频失败: ' + error, 'error');
+        });
+    }
+    
 
     /* AI 响应函数 */
     function decryptApiKey(encryptedKey, passphrase) {
@@ -349,6 +389,6 @@
     terminal.appendChild(input);
     container.appendChild(terminal);
     update();
-    print("欢迎来到模拟终端！（彩蛋版本 :2.1）", 'warning');
-    print('输入 <span style="color: #ffbc00">help</span> 查看可用命令列表。增加输入 <span style="color: #ffbc00">关键词</span> 可查看指定关键词回复列表，输入 <span style="color: #ffbc00">douyin（必须有空格）视频地址</span> 可解析该视频。输入 <span style="color: #ffbc00">/AI（必须有空格）你的问题</span> 可进行AI问答，输入 <span style="color: #ffbc00">visit 空格 网址</span> 可前往该地址（必须包含https://）', 'warning');
+    print("欢迎来到模拟终端！（彩蛋版本 :2.2）", 'warning');
+    print('输入 <span style="color: #ffbc00">help</span> 查看常规命令列表。增加输入 <span style="color: #ffbc00">关键词</span> 可查看指定关键词回复列表，输入 <span style="color: #ffbc00">douyin（必须有空格）视频地址</span> 可解析该视频。输入 <span style="color: #ffbc00">/AI（必须有空格）你的问题</span> 可进行AI问答，输入 <span style="color: #ffbc00">visit 空格 网址</span> 可前往该地址（必须包含https://）', 'warning');
 })();
