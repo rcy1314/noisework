@@ -1,6 +1,6 @@
 ## 使用配置文档
 
-![](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/1722256547263.png)
+![](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/1725097441525.png)
 
   
 
