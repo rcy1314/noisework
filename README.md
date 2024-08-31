@@ -1,22 +1,50 @@
 ## 使用配置文档
 
-![1722256547263](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/1722256547263.png)
+![](https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/1722256547263.png)
 
   
 
 
-配置请访问：https://docs.noisework.cn
+使用配置文档：https://docs.noisework.cn
 
 [GitHub](https://github.com/rcy1314/noisework-docs)
 
-## 说明
+针对化一些js及css已本地化，根据功能分类，请勿合并，觉得加载过慢再合并或套用CDN
 
-js及css已本地化，根据功能分类，请勿合并，觉得加载过慢再合并或套用CDN
+需要修改模版请[下载](https://github.com/rcy1314/noisework/releases)
 
-需要主题模版请[下载](https://github.com/rcy1314/noisework/releases)
+## 特证
+
+- **个性化支持**：将各类组件以js形式引入。使一个页面包含多种功能
+- **多模式**：加入不同页面去构成一个统一的模式框架。
+- **广告位支持**：引入了侧边广告位及横幅标语式文字通告
+- **相册支持**： 你可以在home页引入更多相关相册。
+- **组件个性化**：适配了组件css样式。让页面整体更统一
+- **API组件支持**：通过请求api响应的json，可以加入如每日60秒看世界及摸鱼日历的引入
+- **移动端适配**：完美支持移动端，实现自适应布局。
+- 主页还在持续更新中，本项目欢迎您的参与，共同维护，逐步完善，将项目做得更完善
+- 如果你想提供一些好的建议或者提交 pr，欢迎随时联系或留言
+
+## 基础文件引入
+
+- 右键菜单【Right.js，Right.css】
+- 聊天室组件【emb.js】
+- loading载入效果【loading.css;loading.js]
+- 随机背景+随机前景【suiji-picture.js】
+- 侧边圈形按钮菜单【tb.css;tab.js】
+- PWA【service-worker.js】
+- 广告位图文弹窗【AD.css;AD.js】
+- 弹入弹出式侧边文字【Text.css;Text.js】
+- RSS信息动态展示【rss.css;rss.js】
+
+
+
+<details>
+<summary>✅ 更新状况【点击查看】</summary>
 
 ## 更新
 
+- 调整模拟终端加入指定关键词及AI对话等命令
 - 8.22-优化首页头像右下角图标处切换背景图的逻辑
 - 调整页面载入时的音效为随机音效数组
 - 优化home页手机尺寸下的随机背景载入逻辑
@@ -56,15 +84,13 @@ js及css已本地化，根据功能分类，请勿合并，觉得加载过慢再
 - 添加RSS信息动态展示,手机端尺寸不显示【rss.css;rss.js】
 - 添加隐藏式数字时钟及隐藏式底部页脚
 
-## 清除PWA缓存
+</details>
 
-添加了两个缓存方案
+## 清除缓存
 
-1、service-worker.js文件内更换cacheName版本号会自动清除上个版本设置的缓存文件
+service-worker.js文件内已配置自动更新缓存，可自定义版本号
 
-2、主页index.html文件内，找到注释<!-- 添加版本号-每次更新要改版本号才会刷新缓存 -->更新下面自己设置缓存的文件的版本号
-
-3、清除本地浏览器缓存
+如遇未及时更新云端缓存时请清除本地浏览器缓存
 
 ## 预览
 
