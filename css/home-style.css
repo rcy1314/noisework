@@ -409,17 +409,6 @@ body {
 }
 
 
-.focus {
-    width: 8px;
-    height: 8px;
-    border-radius: 22px;
-    background-color: rgb(255 255 255);
-    border: 2px solid #fff;
-    position: absolute;
-    left: -5px;
-    top: 50%;
-}
-
 #line li:first-child .focus:first-child {
     background-color: #aaffcd;
     animation: focus 1.8s ease infinite;
