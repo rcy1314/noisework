@@ -257,12 +257,16 @@
         if (event.keyCode == 13) {
             print(head.innerHTML + input.value);
             var com = input.value.split(' ').filter(i => i != '');
-    
-            // 检查命令是否存在于定义中
-            if (com[0] in command) {
+            if (com[0].startsWith('/')) {
+                const commandName = com[0].substring(1); 
+                if (commandName in command) {
+                    command[commandName]['fun'](com.slice(1));
+                } else {
+                    print('未找到命令: ' + input.value, 'error');
+                }
+            } else if (com[0] in command) {          
                 command[com[0]]['fun'](com.slice(1));
             } else if (keywordResponses[com[0]]) {
-                // 解码Base64
                 const response = base64Decode(keywordResponses[com[0]]);
                 print(response, 'message');
             } else {
@@ -277,6 +281,7 @@
             input.value = his[line];
         }
     }
+    
     
     function cmdouyin(text) {
         if (!text || text.length === 0) {
@@ -390,5 +395,5 @@
     container.appendChild(terminal);
     update();
     print("欢迎来到模拟终端！（彩蛋版本 :2.2）", 'warning');
-    print('输入 <span style="color: #ffbc00">help</span> 查看常规命令列表。增加输入 <span style="color: #ffbc00">关键词</span> 可查看指定关键词回复列表，输入 <span style="color: #ffbc00">douyin（必须有空格）视频地址</span> 可解析该视频。输入 <span style="color: #ffbc00">/AI（必须有空格）你的问题</span> 可进行AI问答，输入 <span style="color: #ffbc00">visit 空格 网址</span> 可前往该地址（必须包含https://）', 'warning');
+    print('输入 <span style="color: #ffbc00">help</span> 查看常规命令列表。增加输入 <span style="color: #ffbc00">关键词</span> 可查看指定关键词回复列表，输入 <span style="color: #ffbc00">douyin（必须有空格）视频地址</span> 可解析该视频。输入 <span style="color: #ffbc00">/AI（必须为大写且有空格）你的问题</span> 可进行AI问答，输入 <span style="color: #ffbc00">visit 空格 网址</span> 可前往该地址（必须包含https://）', 'warning');
 })();
