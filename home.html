@@ -19,6 +19,7 @@
 	<link rel="manifest" href="manifest.json">
 	<link rel="stylesheet" type="text/css" href="./css/loading.css"> 
 	<script src="./js/Right.js"></script>
+	<link rel="stylesheet" href="./css/waline.css"/>
 	<!-- 添加Service Worker -->
     <script>
         if ('serviceWorker' in navigator) {
@@ -747,6 +748,8 @@
 
 					</a></div>
 				</br>
+				<div class="title"><i class="fa-solid fa-image"></i>
+				</svg>滚动相册</div>
 				<div class="projectItemRightimg">
 					<img data-src="assets/1ae.gif" id="img-1" alt="description">
 					<img data-src="assets/2ae.gif" id="img-1" alt="description">
@@ -756,6 +759,11 @@
 					<img data-src="assets/6ae.gif" id="img-1" alt="description">
 				</div>
 			</br>
+			<!-- 评论区 -->
+			<div class="title"><i class="fa-solid fa-comment"></i>
+			</svg>留言评论</div>
+			<div class="romment">
+			<div id="waline"></div>
 			<!--向下滑动提示-->
 			<div class="scroll-down">
 				<span>向下滑动查看</span>
@@ -1012,6 +1020,30 @@
 				webpushr('setup', { 'key': 'BD99F5j0E1eQHxPwSdt7LLoy_2AEUSnGxp8e3bFda-PcYZgi42VNFIucsXAbIVsjdrNr8ueyB6wK6G9MbMIIxMU' });</script>
 			<!-- 结束 WebPushr 跟踪代码 -->		
 </body>
+<!-- 引入评论 -->		
+<script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+    init({
+      el: '#waline',
+      serverURL: 'https://ment.noisework.cn',
+	  meta: ['nick','mail','link'],
+      requiredMeta: ['mail','nick'],
+      pageview: true,
+      search: true,
+      comment: false,
+      login: true,
+      wordLimit: 50,
+      pageSize: 5,
+      avatar: 'monsterid',
+	  emoji: [
+             'https://unpkg.com/@waline/emojis@1.2.0/tieba',
+         ],
+         //禁止图片上传按钮
+         imageUploader: false,
+         //不显示版权标志
+         copyright: false,
+     });
+  </script>
 <script src="./widgets/music-1/js/Meting.min.js"></script>
 <script src="./js/home-script.js"> </script>
 <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>

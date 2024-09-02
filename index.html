@@ -32,6 +32,7 @@
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="css/Right.css">
     <script src="js/Right.js"></script>
+    <link rel="stylesheet" href="./css/waline.css"/>
     <!--  引入JS -->   
     <script src="js/instantclick.min.js"></script>
     <!-- data-no-instant表示该标签不进行预加载 -->
@@ -297,7 +298,11 @@
         <div class="work">
             <h2 class="chtitle"><span>网站</span>合集</span>【滑动或左右键可切换】</h2>
             <div class="workbox">
-                <a href="./home.html" title="右滑动查看,mac用户请用键盘左右键或触控板上下滑动查看，PC用户鼠标滚轮向右查看" ><div id="first"></i><i class="fa-solid fa-wand-magic-sparkles"></i><span>切换风格模式</span></div></a>
+                <a href="./home.html" title="右滑动查看,mac用户请用键盘左右键或触控板上下滑动查看，PC用户鼠标滚轮向右查看">
+                    <div id="first"></i><i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span style="font-size: 17px;">❤️切换风格模式</span>
+                  </div>
+                  </a>
                 <div class="project">
                     <i class="fa-solid fa-star"></i>
                     <a href="https://www.noisedh.link" target="_blank"><h3>Noise导航站</h3></a>
@@ -412,9 +417,16 @@
                     <p>一些站点的备用地址</p>
                     <div class="language"><div style="--color:#e34c26">多域名，多备用</div></div>
                 </div>
-                <a href="./home.html" target="_blank"><div id="last"><i class="fa-sharp fa-solid fa-magnifying-glass"></i><span>更换风格查看</span></div></a>
+                <a href="./home.html" target="_blank"><div id="last"><i class="fa-sharp fa-solid fa-magnifying-glass"></i><span>❤️切换风格模式</span></div></a>
             </div>
         </div>
+    </br>
+        <!-- 评论区 -->
+        <div class="work">
+            <h2 class="chtitle"><span>留言</span>评论</span></h2>
+        <div class="rommentindex">
+        <div id="waline"></div>
+    </div>
         <div class="menu-box">
             <!-- 图标按钮 -->
             <div class="menu-button">
@@ -510,6 +522,30 @@
             document.getElementById('popupImage2').src = '';
         });
     </script>
+    <!-- 引入评论 -->		
+    <script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+    init({
+      el: '#waline',
+      serverURL: 'https://ment.noisework.cn',
+	  meta: ['nick','mail','link'],
+      requiredMeta: ['mail','nick'],
+      pageview: true,
+      search: true,
+      comment: false,
+      login: true,
+      wordLimit: 50,
+      pageSize: 5,
+      avatar: 'monsterid',
+	  emoji: [
+             'https://unpkg.com/@waline/emojis@1.2.0/tieba',
+         ],
+         //禁止图片上传按钮
+         imageUploader: false,
+         //不显示版权标志
+         copyright: false,
+     });
+  </script>
     <!--聊天室-->  
     <script>
         window['CboxReady'] = function (Cbox) {
