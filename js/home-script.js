@@ -156,25 +156,38 @@ function closePopup() {
     document.getElementById('imagePopup').style.display = 'none';
     document.getElementById('imagePopup').removeEventListener('click', closePopup);
 }
-//手机左侧弹出
-document.addEventListener('DOMContentLoaded', function () {
+// 添加一个遮罩层来监听点击事件
+var mask = document.createElement('div');
+mask.className = 'mask';
+document.body.appendChild(mask);
+
+mask.addEventListener('click', function() {
+  noiseLeft.style.display = 'none';
+  mask.remove(); // 移除遮罩层
+});
+
+// 手机左侧弹出
+document.addEventListener('DOMContentLoaded', function() {
     var mobileNavButton = document.querySelector('.mobile-nav-button');
     var noiseLeft = document.querySelector('.noise-left');
-    mobileNavButton.addEventListener('click', function () {
-        if (noiseLeft.style.display === 'block') {
-            noiseLeft.style.display = 'none';
-        } else {
-            noiseLeft.style.display = 'block';
-        }
-        // 切换侧边栏的显示状态
-        if (noiseLeft.classList.contains('show')) {
-            noiseLeft.classList.remove('show');
-            mobileNavButton.style.left = '10px';
-        } else {
-            noiseLeft.classList.add('show');
-            mobileNavButton.style.left = '50%';
+    var mask = document.createElement('div');
+    mask.className = 'mask';
+    document.body.appendChild(mask);
 
-        }
+    mobileNavButton.addEventListener('click', function() {
+      if (noiseLeft.style.display === 'block') {
+        noiseLeft.style.display = 'none';
+        mask.style.display = 'none'; // 同时隐藏遮罩层
+      } else {
+        noiseLeft.style.display = 'block';
+        mask.style.display = 'block'; // 显示遮罩层
+      }
+    });
+
+    // 遮罩层上的点击事件，用于关闭侧边栏
+    mask.addEventListener('click', function() {
+      noiseLeft.style.display = 'none';
+      mask.style.display = 'none'; // 同时隐藏遮罩层
     });
 });
 

@@ -931,24 +931,41 @@ hr.dashed {
     max-height: 100%;
     margin-right: 6px; /* 添加右侧间隔 */
   }
+
+/* 添加遮罩层 */
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.079); /* 半透明背景 */
+    z-index: 998; /* 确保遮罩层在侧边栏之上 */
+    display: none; /* 默认不显示 */
+  }
+  
+  /* 当侧边栏显示时显示遮罩层 */
+  .noise-left.show + .mask {
+    display: block;
+  }
+  
 /* 在手机尺寸下显示的按钮样式 */
 @media screen and (max-width: 800px) {
     .mobile-nav-button {
       display: block;
-      position: fixed;
-      top: 15px;
+      position: absolute;
+      top: 18px;
       left: 10px;
       z-index: 999;
-      width: 50px;
+      width: 53px;
       height: 50px;
-      background-color: #232730f5; /* 方块按钮的背景颜色 */
+      background-color: #2327307b; /* 方块按钮的背景颜色 */
       color: #fff;
       text-align: center;
-      line-height: 50px; /* 垂直居中 */
-      border-radius: 6px;
+      line-height: 53px; /* 垂直居中 */
+      border-radius: 12px;
       cursor: pointer;
       transition: all 0.02s ease-in-out; /* 过渡效果 */
-      
     }
   
     /* 侧边栏的弹出样式 */
@@ -958,17 +975,17 @@ hr.dashed {
       top: 2;
       width: 50%;
       height: 100%;
-      background-color:  #0d0e11ed;  /* 弹出层的背景颜色 */
+      background-color: #0d0e11ed; /* 弹出层的背景颜色 */
       z-index: 99900; /* 确保弹出层在按钮下面 */
       transition: left 0.1s ease-in-out;
     }
-  /* 侧边栏弹出时按钮的位置 */
-
+  
     /* 显示侧边栏 */
     .noise-left.show {
       left: 0;
     }
   }
+
   /* 侧边栏不显示的元素 */
 @media screen and (max-width: 800px) {
     .logo {
