@@ -604,3 +604,39 @@ a {
     background-image: url('../assets/logoDiv/Ghosts.gif'); 
     background-size: cover;
   }
+  
+/* 引入B站收藏 */
+.bilibiliindex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #323232;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.bilibilititle-left, .bilibilititle-right {
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 20%; /* 宽度可以调整，以适应你的布局 */
+    margin: 0 10px; /* 左右边距 */
+    flex-direction: column; /* 垂直排列 */
+}
+
+.bilibilititle-left img, .bilibilititle-right img {
+    width: 100%; /* 设置图片宽度为100%，以填充容器 */
+    height: auto; /* 保持图片原始高度 */
+    transition: transform 0.3s ease; /* 添加过渡效果 */
+}
+
+.bilibilititle-left img:hover, .bilibilititle-right img:hover {
+    transform: scale(1.1); /* 鼠标悬停时放大1.1倍 */
+}
+
+
