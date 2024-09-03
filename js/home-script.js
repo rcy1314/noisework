@@ -562,3 +562,18 @@ window.onload = () => {
     preloadImages(bgImages);
     setRandomBackground(); // 设置随机背景图
 };
+// 页面重定向
+window.addEventListener('DOMContentLoaded', function() {
+    var pathname = window.location.pathname;
+    // 检查路径是否为 /home.html，如果是，则替换为 /home
+    if (pathname === '/home.html') {
+      var newUrl = window.location.protocol + '//' + window.location.host + '/home';
+      window.history.replaceState({ path: newUrl }, '', newUrl);
+    }
+    else if (pathname.endsWith('/')) {
+      var newUrl = pathname.replace(/\/$/, '');
+      window.history.replaceState({ path: newUrl }, '', newUrl);
+    }
+  });
+  
+  

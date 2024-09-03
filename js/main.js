@@ -165,3 +165,18 @@ window.addEventListener('DOMContentLoaded', () => {
      footer.style.display = 'none'; // 隐藏footer
    }
  });
+ 
+// 页面重定向
+window.addEventListener('DOMContentLoaded', function() {
+  var pathname = window.location.pathname;
+  // 检查路径是否为 /index.html，如果是，则替换为 /
+  if (pathname === '/index.html') {
+    var newUrl = window.location.protocol + '//' + window.location.host;
+    window.history.replaceState({ path: newUrl }, '', newUrl);
+  }
+  // 处理末尾的斜杠
+  else if (pathname.endsWith('/')) {
+    var newUrl = pathname.replace(/\/$/, '');
+    window.history.replaceState({ path: newUrl }, '', newUrl);
+  }
+});
