@@ -32,7 +32,8 @@
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="css/Right.css">
     <script src="js/Right.js"></script>
-    <link rel="stylesheet" href="./css/waline.css"/>
+    <link rel="stylesheet" href="./css/waline.css">
+    <link rel="stylesheet" href="./css/friendlink.css">
     <!--  引入JS -->   
     <script src="js/instantclick.min.js"></script>
     <!-- data-no-instant表示该标签不进行预加载 -->
@@ -417,56 +418,119 @@
                     <p>一些站点的备用地址</p>
                     <div class="language"><div style="--color:#e34c26">多域名，多备用</div></div>
                 </div>
-                <a href="./home.html" target="_blank"><div id="last"><i class="fa-sharp fa-solid fa-magnifying-glass"></i><span>❤️切换风格模式</span></div></a>
-            </div>
-        </div>
-    </br>
-        <!-- 评论区 -->
-        <div class="work">
-            <h2 class="chtitle"><span>留言</span>评论</span></h2>
-        <div class="rommentindex">
-        <div id="waline"></div>
-    </div>
-        <div class="menu-box">
-            <!-- 图标按钮 -->
-            <div class="menu-button">
-                <div class="line-box">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
+                <a href="./home.html" target="_blank">
+                    <div id="last"><i class="fa-sharp fa-solid fa-magnifying-glass"></i><span>❤️切换风格模式</span></div>
+                </a>
                 </div>
-            </div>
-            <!-- 菜单列表 -->
-            <div>
-                <ul class="menu-list">
-                     <!-- <li><a style="color:rgb(243, 237, 236);" href="https://efficiency.discut.io" target="_blank"></i><span> 🎁近期动态</span></a></li> -->
-                    <!-- <li><a style="color:rgb(252, 246, 246);" href="https://jsd.cdn.noisework.cn/gh/rcy1314/my-photo@master/20230508/赞赏.1wsad0fm5ri8.jpg" target="_blank"></i><span> 🧧赞助支持</span></a></li>-->
-                    <!-- <li><a style="color:rgb(247, 245, 245);" href="https://www.noiseblogs.top/link/" target="_blank"></i><span>🎲常用收藏</span></a></li>-->
-                    <li><a style="color:rgb(252, 246, 246);" href="./e/zhichi/index.html" target="_blank"></i><span> 🧧赞助支持</span></a></li>
-                    <li><a style="color:rgb(248, 244, 244);" href="./e/newsletter/index.html" target="_blank"></i><span>📧欢迎订阅</span></a></li>
-                    <li><a style="color:rgb(248, 244, 244);" href="./home.html" id="check1"></i><span>🌟切换模式</span></a></li>
-                    <li><a style="color:rgb(248, 244, 244);" href="./fw/index.html" target="_blank"></i><span>🎉公共服务</span></a></li>
-                    <li><a style="color:rgb(248, 244, 244);" href="https://docs.noisework.cn" target="_blank"></i><span>💻配置文档</span></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--隐藏式页脚-->
-    <div id="footer">
-        <p>本站已运行: <span id="days"></span></p>
-        <p> ღゝ◡╹ノ♡ <a href="https://www.noisework.cn">Noise主页</a></p>
-      </div>
-    <!--音乐-->
-    <link rel="stylesheet" href="css/APlayer.min.css">  
-    <div id="aplayer" class="aplayer" data-order="random" data-id="2141128031" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-volume="0.8"></div>
-    <script src="js/APlayer.min.js"></script>
-    <script src="js/Meting.min.js"></script>
-    <!--向下滑动监听-->
-    <script>
-        window.addEventListener('DOMContentLoaded', (event) => {
-            var scrollDown = document.querySelector('.scroll-down');
-        
-            function handleScroll() {
+                </div>
+                </br>
+                <!-- 友情链接 -->
+                <div class="work">
+                    <h2 class="chtitle"><span>友情</span>链接</span></h2>
+                    <div class="friendcardindex">
+                        <div class="friendlinks-container">
+                            <div class="friendlinks-card">
+                                <div class="avatar">
+                                    <a href="https://rcy1314.github.io/Idea/">
+                                        <img alt="" loading="lazy" decoding="async"
+                                            src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/43w.jpeg">
+                                    </a>
+                                </div>
+                                <div class="info">
+                                    <a class="friendname" target="_blank" href="https://rcy1314.github.io/Idea/">idea book</a>
+                                    <p class="frienddescription">旧的专栏</p>
+                                </div>
+                            </div>
+                            <div class="friendlinks-card">
+                                <div class="avatar">
+                                    <a href="#">
+                                        <img alt="" loading="lazy" decoding="async"
+                                            src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/33s.jpeg">
+                                    </a>
+                                </div>
+                                <div class="info">
+                                    <a class="friendname" target="_blank" href="#">待添加</a>
+                                    <p class="frienddescription">未来可期</p>
+                                </div>
+                            </div>
+                            <div class="friendlinks-card">
+                                <div class="avatar">
+                                    <a href="#">
+                                        <img alt="" loading="lazy" decoding="async"
+                                            src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/43e.jpeg">
+                                    </a>
+                                </div>
+                                <div class="info">
+                                    <a class="friendname" target="_blank" href="#">待添加</a>
+                                    <p class="frienddescription">未来可期</p>
+                                </div>
+                            </div>
+                            <div class="friendlinks-card">
+                                <div class="avatar">
+                                    <a href="#">
+                                        <img alt="" loading="lazy" decoding="async"
+                                            src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/335r.jpeg">
+                                    </a>
+                                </div>
+                                <div class="info">
+                                    <a class="friendname" target="_blank" href="#">待添加</a>
+                                    <p class="frienddescription">未来可期</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </br>
+                    <!-- 评论区 -->
+                    <div class="work">
+                        <h2 class="chtitle"><span>留言</span>评论</span></h2>
+                        <div class="rommentindex">
+                            <div id="waline"></div>
+                        </div>
+                        <div class="menu-box">
+                            <!-- 图标按钮 -->
+                            <div class="menu-button">
+                                <div class="line-box">
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                </div>
+                            </div>
+                            <!-- 菜单列表 -->
+                            <div>
+                                <ul class="menu-list">
+                                    <!-- <li><a style="color:rgb(243, 237, 236);" href="https://efficiency.discut.io" target="_blank"></i><span> 🎁近期动态</span></a></li> -->
+                                    <!-- <li><a style="color:rgb(252, 246, 246);" href="https://jsd.cdn.noisework.cn/gh/rcy1314/my-photo@master/20230508/赞赏.1wsad0fm5ri8.jpg" target="_blank"></i><span> 🧧赞助支持</span></a></li>-->
+                                    <!-- <li><a style="color:rgb(247, 245, 245);" href="https://www.noiseblogs.top/link/" target="_blank"></i><span>🎲常用收藏</span></a></li>-->
+                                    <li><a style="color:rgb(252, 246, 246);" href="./e/zhichi/index.html" target="_blank"></i><span>
+                                                🧧赞助支持</span></a></li>
+                                    <li><a style="color:rgb(248, 244, 244);" href="./e/newsletter/index.html"
+                                            target="_blank"></i><span>📧欢迎订阅</span></a></li>
+                                    <li><a style="color:rgb(248, 244, 244);" href="./home.html" id="check1"></i><span>🌟切换模式</span></a>
+                                    </li>
+                                    <li><a style="color:rgb(248, 244, 244);" href="./fw/index.html"
+                                            target="_blank"></i><span>🎉公共服务</span></a></li>
+                                    <li><a style="color:rgb(248, 244, 244);" href="https://docs.noisework.cn"
+                                            target="_blank"></i><span>💻配置文档</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--隐藏式页脚-->
+                    <div id="footer">
+                        <p>本站已运行: <span id="days"></span></p>
+                        <p> ღゝ◡╹ノ♡ <a href="https://www.noisework.cn">Noise主页</a></p>
+                    </div>
+                    <!--音乐-->
+                    <link rel="stylesheet" href="css/APlayer.min.css">
+                    <div id="aplayer" class="aplayer" data-order="random" data-id="2141128031" data-server="netease" data-type="playlist"
+                        data-fixed="true" data-autoplay="false" data-volume="0.8"></div>
+                    <script src="js/APlayer.min.js"></script>
+                    <script src="js/Meting.min.js"></script>
+                    <!--向下滑动监听-->
+                    <script>
+                        window.addEventListener('DOMContentLoaded', (event) => {
+                    var scrollDown = document.querySelector('.scroll-down');
+                    function handleScroll() {
                 // 检查屏幕宽度是否小于或等于768px
                 if (window.innerWidth <= 768) {
                     var scrollPos = window.pageYOffset;

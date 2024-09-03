@@ -19,7 +19,8 @@
 	<link rel="manifest" href="manifest.json">
 	<link rel="stylesheet" type="text/css" href="./css/loading.css"> 
 	<script src="./js/Right.js"></script>
-	<link rel="stylesheet" href="./css/waline.css"/>
+	<link rel="stylesheet" href="./css/waline.css">
+	<link rel="stylesheet" href="./css/friendlink.css">
 	<!-- 添加Service Worker -->
     <script>
         if ('serviceWorker' in navigator) {
@@ -746,10 +747,79 @@
 								<img src="./assets/i35.png" alt="">
 							</div>
 
-					</a></div>
-				</br>
-				<div class="title"><i class="fa-solid fa-image"></i>
-				</svg>滚动相册</div>
+					</a></div>			
+				
+				<!-- 友情链接 -->
+				<div class="title"><i class="fa-solid fa-user-plus"></i>友情链接</div>
+				<div class="friendcardbg">
+					<div class="friendlinks-container">
+						<div class="friendlinks-card">
+							<div class="avatar">
+								<a href="https://rcy1314.github.io/Idea/">
+									<img alt="" loading="lazy" decoding="async"
+										src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/43w.jpeg">
+								</a>
+							</div>
+							<div class="info">
+								<a class="friendname" target="_blank" href="https://rcy1314.github.io/Idea/">idea book</a>
+								<p class="frienddescription">旧的专栏</p>
+							</div>
+						</div>
+						<div class="friendlinks-card">
+							<div class="avatar">
+								<a href="#">
+									<img alt="" loading="lazy" decoding="async"
+										src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/33s.jpeg">
+								</a>
+							</div>
+							<div class="info">
+								<a class="friendname" target="_blank" href="#">待添加</a>
+								<p class="frienddescription">未来可期</p>
+							</div>
+						</div>
+						<div class="friendlinks-card">
+							<div class="avatar">
+								<a href="#">
+									<img alt="" loading="lazy" decoding="async"
+										src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/43e.jpeg">
+								</a>
+							</div>
+							<div class="info">
+								<a class="friendname" target="_blank" href="#">待添加</a>
+								<p class="frienddescription">未来可期</p>
+							</div>
+						</div>
+						<div class="friendlinks-card">
+							<div class="avatar">
+								<a href="#">
+									<img alt="" loading="lazy" decoding="async"
+										src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/335r.jpeg">
+								</a>
+							</div>
+							<div class="info">
+								<a class="friendname" target="_blank" href="#">待添加</a>
+								<p class="frienddescription">未来可期</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- 评论区 -->
+				<div class="title"><i class="fa-solid fa-comment"></i>
+					</svg>留言评论</div>
+				<div class="romment">
+					<div id="waline"></div>
+					<!--向下滑动提示-->
+					<div class="scroll-down">
+						<span>向下滑动查看</span>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+							<path d="M0 0h24v24H0z" fill="none" />
+							<path d="M12 16l-6-6h12z" />
+						</svg>
+					</div></div>
+					<!--相册-->
+					<div class="title"><i class="fa-solid fa-image"></i>
+					</svg>滚动相册</div>
 				<div class="projectItemRightimg">
 					<img data-src="assets/1ae.gif" id="img-1" alt="description">
 					<img data-src="assets/2ae.gif" id="img-1" alt="description">
@@ -758,21 +828,7 @@
 					<img data-src="assets/5ae.gif" id="img-1" alt="description">
 					<img data-src="assets/6ae.gif" id="img-1" alt="description">
 				</div>
-			</br>
-			<!-- 评论区 -->
-			<div class="title"><i class="fa-solid fa-comment"></i>
-			</svg>留言评论</div>
-			<div class="romment">
-			<div id="waline"></div>
-			<!--向下滑动提示-->
-			<div class="scroll-down">
-				<span>向下滑动查看</span>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-					<path d="M0 0h24v24H0z" fill="none"/>
-					<path d="M12 16l-6-6h12z"/>
-				</svg>
-			</div>
-	<footer>
+					<footer>
 		<span>Copyright©<span id="copyrightYear"></span></span>
 		<a href="https://www.noisework.cn">www.noisework.cn</a>
 		<span class="astro-OY55P3EK">本站已运行</span>

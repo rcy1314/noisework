@@ -173,8 +173,8 @@ function addSoundToElements(selectors, sound) {
     });
 }
 
-// 要添加音效的元素选择器数组
-var elementsSelectors = ['.iconItem', '.item', '.projectItem','.project','.switchbg','.mobileswitchbg','.menu-item'];
+// 网址过渡音数组
+var elementsSelectors = ['.iconItem', '.item', '.projectItem','.project','.switchbg','.mobileswitchbg','.friendlinks-card','.menu-item'];
 addSoundToElements(elementsSelectors, websiteHoverSound);
 
 // 广告位元素选择器数组

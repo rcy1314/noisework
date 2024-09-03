@@ -1,0 +1,96 @@
+.friendcardindex {
+    background: rgba(34, 33, 33, 0.971); /* 圆弧透明黑色背景 */
+    border-radius: 20px; /* 圆角边框 */
+    padding: 20px; /* 内边距 */
+}
+.friendcardbg {
+    background: rgba(34, 33, 33, 0.343); /* 圆弧透明黑色背景 */
+    border-radius: 20px; /* 圆角边框 */
+    padding: 20px; /* 内边距 */
+}
+.friendlinks-container {
+    display: flex; /* 使用flex布局 */
+    flex-wrap: wrap; /* 允许换行 */
+    gap: 20px; /* 卡片之间的间距 */
+}
+
+.friendlinks-card {
+    flex: 1 1 auto; /* 设置为自动宽度，根据剩余空间自动调整 */
+    max-width: calc(25% - 15px); /* 最大宽度为四分之一 */
+    padding: 10px;
+    background: rgba(16, 15, 15, 0); /* 透明黑色背景 */
+    border-radius: 15px; /* 圆角边框 */
+    overflow: hidden; /* 溢出隐藏 */
+    text-align: center; /* 中心对齐 */
+    transition: transform 0.3s, box-shadow 0.3s; /* 卡片放大效果与阴影 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 初始阴影 */
+}
+
+.avatar img {
+    /* 头像样式 */
+    width: 100px;
+    height: 100px; /* 设置头像高度 */
+    border-radius: 50%; /* 头像圆角 */
+    margin-bottom: 6px; /* 头像和文字之间的间距 */
+    object-fit: cover; /* 确保头像图片保持圆形 */
+    border: 2px solid #ffffff; /* 白色边框 */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* 发光效果 */
+    transition: transform 0.5s; /* 头像旋转效果 */
+}
+
+.avatar:hover img {
+    transform: rotate(360deg); /* 鼠标悬停时头像旋转 */
+}
+
+.info {
+    /* 信息样式 */
+    margin-top: 3px; /* 增加顶部间距 */
+}
+
+.friendname {
+    /* 姓名样式 */
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.005em; /* 增大字体 */
+    transition: color 0.3s; /* 姓名颜色过渡 */
+}
+
+.friendname:hover {
+    color: #00e6e6; /* 鼠标悬停时的颜色变化 */
+}
+
+.frienddescription {
+    /* 描述样式 */
+    color: #dddddd;
+    font-size: 0.9em; 
+    margin-top: 3px; /* 描述与姓名之间的间距 */
+    overflow: hidden; /* 隐藏超出部分的内容 */
+    text-overflow: ellipsis; /* 当内容超出时显示省略号 */
+    white-space: nowrap; /* 禁止换行 */
+}
+
+/* 鼠标悬停效果 */
+.friendlinks-card:hover {
+    transform: scale(1.05); /* 卡片放大效果 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 悬停时的阴影 */
+}
+
+/* 媒体查询：针对手机尺寸 */
+@media (max-width: 890px) {
+    .friendlinks-container {
+        flex-wrap: wrap; /* 允许换行 */
+        gap: 20px; /* 卡片之间的间距 */
+    }
+    .friendlinks-card {
+        flex: 1 1 calc(50% - 15px); /* 设置为固定宽度，即使少于四个卡片也能保持相同大小 */
+        max-width: calc(50% - 15px); /* 最大宽度为一半 */
+    }
+}
+
+@media (max-width: 480px) {
+    .friendlinks-card {
+        flex: 1 1 calc(100% - 15px); /* 在极小屏幕上每行显示一个卡片 */
+        max-width: calc(100% - 15px); /* 最大宽度为屏幕宽度 */
+    }
+}
