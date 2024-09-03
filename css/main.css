@@ -362,12 +362,7 @@ a {
 		background: rgba(32, 32, 32, 0.4);
 	}
 	.find a {flex-basis: calc(33vw - 55px);}
-	.workbox{
-		border-radius: 0;
-		width: 100vw;
-		left: -20px;
-		position: relative;
-	}
+	
 	@keyframes op2{
 		0%{opacity: 0;}
 		100%{opacity: 0.1;}
