@@ -178,7 +178,7 @@ var elementsSelectors = ['.iconItem', '.item', '.projectItem','.project','.switc
 addSoundToElements(elementsSelectors, websiteHoverSound);
 
 // 广告位元素选择器数组
-var adElementsSelectors = ['.ad-container','.rss-container'];
+var adElementsSelectors = ['.ad-container','.friendname','.rss-container'];
 addSoundToElements(adElementsSelectors, adHoverSound);
 
 // home配置文档文字音
