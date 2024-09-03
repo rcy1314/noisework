@@ -22,6 +22,10 @@ var assetsToCache = [
   './assets/sound/载入7.mp3',
   './assets/sound/载入8.mp3',
   './assets/sound/载入9.mp3',
+
+  './assets/r1.png',
+  './assets/r3.png',
+  './assets/31.jpeg',
   './assets/31.jpeg',
   './assets/3.png',
   './assets/1ae.gif',
