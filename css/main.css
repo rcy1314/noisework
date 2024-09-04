@@ -291,7 +291,7 @@ a {
 	margin: 20px 18px 20px 0;
 	border: 1px #2e2e2e solid;
 	position: relative;
-	padding: 20px;
+	padding: 10px;
 	vertical-align: top;
 	transition: transform 0.3s ease; /* 添加过渡效果 */
 }
@@ -368,7 +368,7 @@ a {
 @media screen and (max-width:720px) {
 	.main{
 		width: 100vw;
-		padding: 20px;
+		padding: 10px;
 		background: rgba(32, 32, 32, 0.4);
 	}
 	.find a {flex-basis: calc(23vw - 35px);}
