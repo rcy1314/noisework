@@ -66,7 +66,7 @@
 
 body::-webkit-scrollbar {display: none;}
 .chtitle {
-    padding-bottom: 15px;
+    padding-bottom: 12px;
     font-size: 18px;
     letter-spacing: .2em;
     color: hsla(0, 0%, 100%, .5)
@@ -80,7 +80,7 @@ body::-webkit-scrollbar {display: none;}
     width: 10%;
     height: 5px;
     background-color: hsla(0, 0%, 100%, .5);
-    margin-top: 20px;
+    margin-top: 10px;
 }
 #clear {
     background-color: #222222;
@@ -112,14 +112,14 @@ body::-webkit-scrollbar {display: none;}
 .find a {
     color: #fff;
     text-decoration: none;
-	flex-basis: 150px;
-	margin: 0 20px 20px 0;
+	flex-basis: 120px;
+	margin: 0 13px 13px 0;
 	position: relative;
 	flex-grow: 1;
 	transition: 0.3s;
 }
 .find a:hover{
-	flex-grow: 10;
+	flex-grow: 8;
 	transition: 0.6s;
 }
 a {
@@ -361,7 +361,7 @@ a {
 		padding: 20px;
 		background: rgba(32, 32, 32, 0.4);
 	}
-	.find a {flex-basis: calc(33vw - 55px);}
+	.find a {flex-basis: calc(23vw - 35px);}
 	
 	@keyframes op2{
 		0%{opacity: 0;}
@@ -393,7 +393,7 @@ a {
 	}
 	.item span{left: 20px;}
 	#persontag{z-index: 3;opacity: 1;}
-	.find a {flex-basis: calc(50vw - 60px);}
+	.find a {flex-basis: calc(30vw - 40px);}
 }
 @media screen and (max-width: 360px) {
 	.find .item span{
