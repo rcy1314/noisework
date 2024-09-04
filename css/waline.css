@@ -889,7 +889,7 @@
 }
 
 .wl-card .wl-quote {
-    border-inline-start: 1px dashed rgba(237, 237, 237, .5)
+    border-inline-start: 1px dashed rgba(237, 237, 237, 0)
 }
 
 .wl-card .wl-quote .wl-user {

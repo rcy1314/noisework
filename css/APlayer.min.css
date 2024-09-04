@@ -2,7 +2,7 @@
     background: rgb(26, 25, 25);
     font-family: Arial, Helvetica, sans-serif;
     margin: 5px;
-    box-shadow: 0 2px 2px 0 rgba(247, 240, 240, 0.911), 0 1px 5px 0 rgb(236, 230, 230);
+    box-shadow: 0 2px 2px 0 rgba(23, 23, 23, 0.911), 0 1px 5px 0 rgb(29, 28, 28);
     border-radius: 2px;
     overflow: hidden;
     -webkit-user-select: none;
@@ -24,11 +24,11 @@
 
 .aplayer svg circle,
 .aplayer svg path {
-    fill: rgb(248, 245, 245)
+    fill: rgb(40, 38, 38)
 }
 
 .aplayer.aplayer-withlist .aplayer-info {
-    border-bottom: 1px solid #f1eeee
+    border-bottom: 1px solid #f1eeee00
 }
 
 .aplayer.aplayer-withlist .aplayer-list {
@@ -263,7 +263,7 @@
     border-radius: 50%;
     opacity: .8;
     text-shadow: 0 1px 1px rgba(255, 252, 252, 0.952);
-    box-shadow: 0 1px 1px rgb(247, 241, 241);
+    box-shadow: 0 1px 1px rgb(23, 23, 23);
     background: rgba(17, 17, 17, 0.918);
     transition: all .1s ease
 }
@@ -424,7 +424,7 @@
 }
 
 .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon:hover path {
-    fill: rgb(240, 8, 8)
+    fill: rgba(235, 229, 229, 0.647)
 }
 
 .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon.aplayer-icon-menu,
@@ -462,6 +462,7 @@
 .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap .aplayer-volume-bar {
     position: absolute;
     bottom: 0;
+    
     right: 10px;
     width: 5px;
     height: 35px;
@@ -500,7 +501,7 @@
 .aplayer .aplayer-lrc:before {
     top: 0;
     height: 10%;
-    background: linear-gradient(180deg, #fff 0, hsla(0, 95%, 49%, 0.938));
+    background: linear-gradient(180deg, #07070700 0, hsla(0, 13%, 95%, 0.007));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#00ffffff", GradientType=0)
 }
 
@@ -517,8 +518,9 @@
 .aplayer .aplayer-lrc:after {
     bottom: 0;
     height: 33%;
-    background: linear-gradient(180deg, hsla(0, 96%, 48%, 0.897) 0, rgb(255, 255, 255));
+    background: linear-gradient(180deg, hsla(0, 96%, 48%, 0) 0, rgba(255, 255, 255, 0));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ffffff", endColorstr="#ccffffff", GradientType=0)
+    
 }
 
 .aplayer .aplayer-lrc p {
