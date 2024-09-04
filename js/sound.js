@@ -196,7 +196,9 @@ if (escriptiontext2) {
 // 配置音乐菜单选择音效
 var hoverSoundPath = '../assets/sound/缓慢1.mp3';
 var hoverSound = new Audio(hoverSoundPath);
-document.querySelectorAll('.aplayer-list').forEach(function(li) {
+
+// 选择所有li元素并添加mouseover事件监听器
+document.querySelectorAll('.aplayer-list ol li').forEach(function(li) {
     li.addEventListener('mouseover', function() {
         // 当鼠标悬停时播放音效
         hoverSound.play();
@@ -207,6 +209,7 @@ document.querySelectorAll('.aplayer-list').forEach(function(li) {
 hoverSound.addEventListener('ended', function() {
     hoverSound.currentTime = 0; // 重置音频播放位置
 });
+
 
 // 浮动文字
 var floatingTextSoundPath = '../assets/sound/jump.mp3';
