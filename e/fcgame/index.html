@@ -56,35 +56,29 @@
         }
     </style>
     <script type="text/javascript" charset="utf-8">
-        var nes;
         $(function () {
-            nes = new JSNES({
-                'ui': $('#emulator').JSNESUI({
-                    "超级玛丽": [
-                        ['超级马里奥1 (W) Super Mario Bros. [!]', 'roms/rom1/(W) Super Mario Bros. [!].nes'],
-                    ],
-                    "魂斗罗": [
-                        ['魂斗罗1', 'roms/Contra/Contra1(U)30S.nes'],
-                    ],
-                    "松鼠大作战": [
-                        ['松鼠大作战2', 'roms/xiaoji/squirrelbattle2.nes'],
-                    ],
-                    "坦克": [
-                        ['坦克 (J) Battle City', 'roms/rom1/(J) Battle City.nes'],
-                    ],
-                    "其它": [
-                        ['1944', 'roms/xiaoji/1944.nes'],
-                        ['冒险岛3 中文版', 'roms/xiaoji/Island of Adventure3.nes'],
-                        ['三目童子', 'roms/xiaoji/three eyes boy.nes'],
-                    ]
-                }),
-                emulateSound: true
-            });
+            const loadingMessage = $('#loading-message');
+            const emulator = $('#emulator');
+            
+            // 设置初始的游戏屏幕样式（假设黑屏背景）
+            emulator.css('background-color', 'black');
 
-            // 假设这里是游戏载入或开始的事件
-            $('#emulator').on('gameLoaded', function() {
-                $('#loading-message').hide(); // 隐藏加载中的文字
-            });
+            // 定义一个函数来检测屏幕颜色变化
+            function checkScreenContent() {
+                // 获取当前背景颜色
+                const bgColor = emulator.css('background-color');
+                
+                // 检查是否不是黑色（意味着有内容）
+                if (bgColor !== 'rgb(0, 0, 0)') {
+                    loadingMessage.hide(); // 隐藏加载中的文字
+                } else {
+                    // 如果是黑屏，继续检查
+                    requestAnimationFrame(checkScreenContent);
+                }
+            }
+
+            // 开始检测屏幕内容变化
+            requestAnimationFrame(checkScreenContent);
         });
     </script>
 </head>
