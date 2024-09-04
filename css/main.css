@@ -622,9 +622,9 @@ a {
     align-items: center;
     height: 100vh;
     background-color: #323232;
-    border: 2px solid #000;
+    border: 2px solid #212020;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 10px rgba(46, 45, 45, 0.5);
 }
 
 .bilibilititle-left, .bilibilititle-right {
