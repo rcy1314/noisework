@@ -28,70 +28,17 @@
             width: auto;
         }
     </style>
-<head>
-    <style>
-        /* 设置父容器为相对定位 */
-        .function-area {
-            position: relative;
-        }
-
-        /* 创建覆盖层, 绝对定位在父容器中居中 */
-        #loading-message {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 24px;
-            color: white; /* 设置文字为白色 */
-            text-align: center;
-            padding: 20px;
-            z-index: 10; /* 确保文字在最上层 */
-        }
-
-        /* 屏幕区样式 */
-        #screen {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-    <script type="text/javascript" charset="utf-8">
-        $(function () {
-            const loadingMessage = $('#loading-message');
-            const emulator = $('#main');
-            
-            // 设置初始的游戏屏幕样式（假设黑屏背景）
-            emulator.css('background-color', 'black');
-
-            // 定义一个函数来检测屏幕颜色变化
-            function checkScreenContent() {
-                // 获取当前背景颜色
-                const bgColor = emulator.css('background-color');
-                
-                // 检查是否不是黑色（意味着有内容）
-                if (bgColor !== 'rgb(0, 0, 0)') {
-                    loadingMessage.hide(); // 隐藏加载中的文字
-                } else {
-                    // 如果是黑屏，继续检查
-                    requestAnimationFrame(checkScreenContent);
-                }
-            }
-
-            // 开始检测屏幕内容变化
-            requestAnimationFrame(checkScreenContent);
-        });
-    </script>
 </head>
 <body>
     <div class="main">
         <div class="panel">  
             <div class="function-area">
                 <div id="screen" class="screen">
-                    <!-- 加载中的文字 -->
-                    <div id="loading-message">游戏时光，陪伴你我</div>
                     <div id="emulator" align="center" style="width:100%;height:100%"></div>
                 </div> 
-            </div>            
+            </div>
+            
+            
         </div>
     </div>
 </body>
