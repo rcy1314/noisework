@@ -28,8 +28,8 @@
 
 .avatar img {
     /* 头像样式 */
-    width: 100px;
-    height: 100px; /* 设置头像高度 */
+    width: 80px;
+    height: 80px; /* 设置头像高度 */
     border-radius: 50%; /* 头像圆角 */
     margin-bottom: 6px; /* 头像和文字之间的间距 */
     object-fit: cover; /* 确保头像图片保持圆形 */
