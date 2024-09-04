@@ -283,7 +283,7 @@ a {
 	transition: 0.6s;
 }
 .project {
-	height: 150px;
+	height: 160px;
 	width: 208px;
 	background-color: #272727;
 	border-radius: 20px;
@@ -291,7 +291,7 @@ a {
 	margin: 20px 18px 20px 0;
 	border: 1px #2e2e2e solid;
 	position: relative;
-	padding: 10px;
+	padding: 20px;
 	vertical-align: top;
 	transition: transform 0.3s ease; /* 添加过渡效果 */
 }
@@ -322,7 +322,7 @@ a {
 }
 .language{
 	position: absolute;
-	bottom: 20px;
+	bottom: 25px;
 	left: 15px;
 	color: rgba(255, 255, 255, 0.6);
 }
@@ -348,7 +348,7 @@ a {
 	font-size: 18px;
 	color: rgba(255, 255, 255, 0.5);
 	writing-mode: vertical-lr;
-	line-height: 56px;
+	line-height: 50px;
 	text-align: center;
 	height: 160px;
 	transition: transform 0.3s; /* 修改过渡效果 */
