@@ -649,4 +649,25 @@ a {
     transform: scale(1.1); /* 鼠标悬停时放大1.1倍 */
 }
 
+/* 引入游戏容器 */
+.gamendex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #323232;
+    border: 2px solid #212020;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(46, 45, 45, 0.5);
+}
+/* 默认隐藏这些元素 */
+.pc-only {
+    display: none;
+  }
 
+  /* 在PC尺寸（例如宽度大于768px）下显示这些元素 */
+  @media (min-width: 768px) {
+    .pc-only {
+      display: block;
+    }
+  }

@@ -1,0 +1,200 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="yes">
+    <meta name="browsermode" content="application">
+    <meta name="x5-orientation" content="landscape">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="x5-page-mode" content="app">
+    <title>Family Computer Game </title>
+    <meta name="keywords" content="fc,在线fc游戏,fc在线模拟器,nes在线模拟器,魂斗罗,超级玛丽,忍者龙剑传," />
+    <meta name="description" content="任天堂FC/NES原版ROM在线玩，可以近乎完美的还原fc卡带游戏的视频和声音。" />
+    <link href="css/jsnes.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="favicon.png">
+    <style>
+        .function button,
+        .action button {
+            color: #000;
+        }
+
+        .function button {
+            height: 32px;
+            width: auto;
+        }
+    </style>
+<head>
+    <style>
+        /* 设置父容器为相对定位 */
+        .function-area {
+            position: relative;
+        }
+
+        /* 创建覆盖层, 绝对定位在父容器中居中 */
+        #loading-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: white; /* 设置文字为白色 */
+            text-align: center;
+            padding: 20px;
+            z-index: 10; /* 确保文字在最上层 */
+        }
+
+        /* 屏幕区样式 */
+        #screen {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        var nes;
+        $(function () {
+            nes = new JSNES({
+                'ui': $('#emulator').JSNESUI({
+                    "超级玛丽": [
+                        ['超级马里奥1 (W) Super Mario Bros. [!]', 'roms/rom1/(W) Super Mario Bros. [!].nes'],
+                    ],
+                    "魂斗罗": [
+                        ['魂斗罗1', 'roms/Contra/Contra1(U)30S.nes'],
+                    ],
+                    "松鼠大作战": [
+                        ['松鼠大作战2', 'roms/xiaoji/squirrelbattle2.nes'],
+                    ],
+                    "坦克": [
+                        ['坦克 (J) Battle City', 'roms/rom1/(J) Battle City.nes'],
+                    ],
+                    "其它": [
+                        ['1944', 'roms/xiaoji/1944.nes'],
+                        ['冒险岛3 中文版', 'roms/xiaoji/Island of Adventure3.nes'],
+                        ['三目童子', 'roms/xiaoji/three eyes boy.nes'],
+                    ]
+                }),
+                emulateSound: true
+            });
+
+            // 假设这里是游戏载入或开始的事件
+            $('#emulator').on('gameLoaded', function() {
+                $('#loading-message').hide(); // 隐藏加载中的文字
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div class="panel">  
+            <div class="function-area">
+                <div id="screen" class="screen">
+                    <!-- 加载中的文字 -->
+                    <div id="loading-message">游戏时光，陪伴你我</div>
+                    <div id="emulator" align="center" style="width:100%;height:100%"></div>
+                </div> 
+            </div>            
+        </div>
+    </div>
+</body>
+<script src="lib/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/dynamicaudio-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="source/nes.js" type="text/javascript" charset="utf-8"></script>
+<script src="source/utils.js" type="text/javascript" charset="utf-8"></script>
+<script src="source/cpu.js" type="text/javascript" charset="utf-8"></script>
+<script src="source/keyboard.js" type="text/javascript" charset="utf-8"></script>
+<script src="source/mappers.js" type="text/javascript" charset="utf-8"></script>
+<script src="source/papu.js" type="text/javascript" charset="utf-8"></script>
+<script src="source/ppu.js" type="text/javascript" charset="utf-8"></script>
+<script src="source/rom.js" type="text/javascript" charset="utf-8"></script>
+<script src="source/ui.js" type="text/javascript" charset="utf-8"></script>
+<!-- <script src="lib/debug.mini.js" type="text/javascript" charset="utf-8"></script>   -->
+<!--<script src="lib/nipplejs.min.js" type="text/javascript" charset="utf-8"></script> -->
+<script src="lib/joystick.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+    var nes;
+    $(function () {
+        nes = new JSNES({
+            'ui': $('#emulator').JSNESUI({
+                "超级玛丽": [
+                    ['超级马里奥1 (W) Super Mario Bros. [!]', 'roms/rom1/(W) Super Mario Bros. [!].nes'],
+                ],
+                "魂斗罗": [
+                    ['魂斗罗1', 'roms/Contra/Contra1(U)30S.nes'],
+                ],
+                "松鼠大作战": [
+                    ['松鼠大作战2', 'roms/xiaoji/squirrelbattle2.nes'],
+                ],
+                "坦克": [
+                    ['坦克 (J) Battle City', 'roms/rom1/(J) Battle City.nes'],
+                ],
+                "其它": [
+                    ['1944', 'roms/xiaoji/1944.nes'],
+                    ['冒险岛3 中文版', 'roms/xiaoji/Island of Adventure3.nes'],
+                    ['三目童子', 'roms/xiaoji/three eyes boy.nes'],
+                ]
+            }),
+            emulateSound:true
+        });
+    });
+</script>
+<!--[if IE]>
+    <script type="text/vbscript" src="source/jsnes-ie-hacks.vbscript"></script>
+<![endif]-->
+<script>
+    function touchDwon(evt) {
+        nes.keyboard.keyDown({
+            keyCode: evt.keyCode
+        });
+    };
+
+    function touchUp(evt) {
+        nes.keyboard.keyUp({
+            keyCode: evt.keyCode
+        });
+    };
+
+    function select(val) {
+        if (val.substring(0, 1) == "#") {
+            return document.querySelector(val);
+        } else {
+            return document.getElementById(val);
+        }
+    }
+
+    var joystick = new Joystick({
+        el: select("controls-rocker"),
+        mode: 'static',
+        color: "#808080",
+        size: 150,
+        isFourBtn: false,
+        keyCodes: [87, 83, 65, 68],
+        keyCodes2: [104,98,100,102],
+        btn_down_fn: touchDwon,
+        btn_up_fn: touchUp,
+        relative: true,
+    });
+    joystick.init();
+</script>
+<script>
+    //全屏
+    function fullScreen() {
+        nes["ui"].RunZoom();
+        // var element = select("#screen");
+        // if (element.requestFullscreen) {
+        //     element.requestFullscreen();
+        // } else if (element.mozRequestFullScreen) {
+        //     element.mozRequestFullScreen();
+        // } else if (element.msRequestFullscreen) {
+        //     element.msRequestFullscreen();
+        // } else if (element.webkitRequestFullscreen) {
+        //     element.webkitRequestFullScreen();
+        // }
+    }
+</script>
+
+</html>
