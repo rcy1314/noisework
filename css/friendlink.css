@@ -1,5 +1,5 @@
 .friendcardindex {
-    background: rgba(34, 33, 33, 0.971); /* 圆弧透明黑色背景 */
+    background:#1f1f1ff4; /* 圆弧透明黑色背景 */
     border-radius: 20px; /* 圆角边框 */
     padding: 20px; /* 内边距 */
 }
@@ -28,8 +28,8 @@
 }
 .avatar img {
     /* 头像样式 */
-    width: 80px;
-    height: 80px; /* 设置头像高度 */
+    width: 75px;
+    height: 75px; /* 设置头像高度 */
     border-radius: 50%; /* 头像圆角 */
     margin-bottom: 6px; /* 头像和文字之间的间距 */
     object-fit: cover; /* 确保头像图片保持圆形 */

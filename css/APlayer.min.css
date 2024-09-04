@@ -1,9 +1,9 @@
 .aplayer {
     font-family: Arial, Helvetica, sans-serif;
     margin: 5px;
-    box-shadow: 0 2px 2px 0 rgba(14, 14, 14, 0.911), 0 1px 5px 0 rgb(32, 32, 32);
-    background-color: #222020f9;
-    border: 2px solid #2b2929;
+    box-shadow: 0 2px 2px 0 rgba(36, 35, 35, 0.911), 0 1px 5px 0 rgb(32, 32, 32);
+    background-color: #1f1f1ff9;
+    border: 2px solid #343437;
     border-radius: 10px; /* 保持这个，用于边框 */
     overflow: hidden;
     -webkit-user-select: none;
@@ -495,16 +495,16 @@
 .aplayer .aplayer-lrc {
     display: none;
     position: relative;
-    height: 30px;
+    height: 33px;
     text-align: center;
     overflow: hidden;
-    margin: -10px 0 7px
+    margin: -5px 0 7px
 }
 
 .aplayer .aplayer-lrc:before {
     top: 0;
     height: 10%;
-    background: linear-gradient(180deg, #07070700 0, hsla(0, 13%, 95%, 0.007));
+    background: linear-gradient(180deg, #1e1e1e16 0, hsla(0, 12%, 95%, 0));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#00ffffff", GradientType=0)
 }
 
@@ -521,7 +521,7 @@
 .aplayer .aplayer-lrc:after {
     bottom: 0;
     height: 33%;
-    background: linear-gradient(180deg, hsla(0, 96%, 48%, 0) 0, rgba(255, 255, 255, 0));
+    background: linear-gradient(180deg, hsla(0, 1%, 15%, 0) 0, rgba(255, 255, 255, 0));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ffffff", endColorstr="#ccffffff", GradientType=0)
     
 }
@@ -609,11 +609,11 @@
 }
 
 .aplayer .aplayer-list ol li:hover {
-    background: #4c6f72
+    background: #04040467
 }
 
 .aplayer .aplayer-list ol li.aplayer-list-light {
-    background: #5e6479
+    background: #04040436
 }
 
 .aplayer .aplayer-list ol li.aplayer-list-light .aplayer-list-cur {
