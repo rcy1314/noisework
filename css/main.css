@@ -403,7 +403,7 @@ a {
 	}
 	.item span{left: 20px;}
 	#persontag{z-index: 3;opacity: 1;}
-	.find a {flex-basis: calc(40vw - 80px);}
+	.find a {flex-basis: calc(45vw - 70px);}
 }
 @media screen and (max-width: 360px) {
 	.find .item span{
