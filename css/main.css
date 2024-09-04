@@ -371,7 +371,7 @@ a {
 		padding: 10px;
 		background: rgba(32, 32, 32, 0.4);
 	}
-	.find a {flex-basis: calc(23vw - 35px);}
+	.find a {flex-basis: calc(32vw - 45px);}
 	
 	@keyframes op2{
 		0%{opacity: 0;}

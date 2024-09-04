@@ -192,6 +192,22 @@ if (escriptiontext2) {
 } else {
     console.warn('没有找到ID为descriptiontext2的元素');
 }
+
+// 配置音乐菜单选择音效
+var hoverSoundPath = '../assets/sound/缓慢1.mp3';
+var hoverSound = new Audio(hoverSoundPath);
+document.querySelectorAll('.aplayer-list').forEach(function(li) {
+    li.addEventListener('mouseover', function() {
+        // 当鼠标悬停时播放音效
+        hoverSound.play();
+    });
+});
+
+// 防止音频自动播放时出现用户交互问题
+hoverSound.addEventListener('ended', function() {
+    hoverSound.currentTime = 0; // 重置音频播放位置
+});
+
 // 浮动文字
 var floatingTextSoundPath = '../assets/sound/jump.mp3';
 

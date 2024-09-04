@@ -1,4 +1,4 @@
-var cacheName = 'Noise主页-v2.3';
+var cacheName = 'Noise主页-v2.3.1';
 var assetsToCache = [
   './home.html',
   './index.html',
