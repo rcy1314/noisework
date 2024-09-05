@@ -10,7 +10,10 @@
     right: -500px;
     transform: translateY(-50%);
     width: 180px;
-    background-color: rgba(0, 0, 0, 0.643);
+    box-shadow: 0 2px 2px 0 rgba(36, 35, 35, 0.911), 0 1px 5px 0 rgb(32, 32, 32);
+    background-color: #1a1919e9;
+    border: 2px solid #34343712;
+    border-radius: 8px;
     padding: 13px;
     border-radius: 10px 0 0 10px;
     transition: right 0.3s ease-in-out;

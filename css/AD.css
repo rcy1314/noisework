@@ -1,8 +1,8 @@
 .ad-container {
   position: fixed;
-  top: 22%;
+  top: 63px;
   right: -500px;
-  transform: translateY(-50%);
+/* transform: translateY(-50%);  */
   width: 180px;
   height: 160px;
   background-color: transparent;
