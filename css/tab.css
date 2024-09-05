@@ -102,7 +102,10 @@
 .menu-list li:last-child::before {
     display: none;
 }
-
+.menu-list li:hover {
+    background-color: #127de7de;
+    transition: background-color 0.3s ease; /* 添加过渡效果 */
+}
 .menu-list .fa {
     font-size: 18px;
     width: 18px;

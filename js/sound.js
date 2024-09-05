@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 元素音效
 // 网址过渡音
-var websiteHoverSound = new Audio('../assets/sound/缓慢1.mp3');
+var websiteHoverSound = new Audio('https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/%E4%BC%A0%E9%80%817.mp3');
 websiteHoverSound.preload = 'auto';
 
 // 广告位音
@@ -174,7 +174,7 @@ function addSoundToElements(selectors, sound) {
 }
 
 // 网址过渡音数组
-var elementsSelectors = ['.iconItem', '.item', '.projectItem','.project','.switchbg','.mobileswitchbg','.friendlinks-card','.bilibilititle-left','.bilibilititle-right','.menu-item'];
+var elementsSelectors = ['.iconItem', '.item', '.projectItem','.project','.switchbg','.mobileswitchbg','.friendlinks-card','.bilibilititle-left','.bilibilititle-right','.menu-item','.menu-list li'];
 addSoundToElements(elementsSelectors, websiteHoverSound);
 
 // 广告位元素选择器数组
