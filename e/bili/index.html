@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/25cfefa7b1.js" crossorigin="anonymous"></script>
     <title>NOISE-B站播放器</title>
     <!-- 省略了其他meta标签 -->
     <style>
@@ -37,8 +38,8 @@
             top: 88%;
             right: 6px;
             transform: translateY(-50%);
-            width: 25px;
-            height: 25px;
+            width: 28px;
+            height: 28px;
             background-color: #1e3241e0;
             color: #fff;
             border: none;
@@ -54,7 +55,7 @@
     <body>
         <iframe name="player" onload="iframeLoaded()"></iframe> 
 
-        <button class="floating-button" onclick="playRandomVideo()">⏭</button>
+        <button class="floating-button" onclick="playRandomVideo()"><i class="fa-solid fa-forward-fast"></i></button>
 
         <div class="center-message" id="centerMessage">载入中...... 请等待API生效或...尝试刷新</div>
 
