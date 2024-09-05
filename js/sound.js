@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var hoverSoundclock = new Audio('../assets/sound/叮.mp3'); // 时钟
     var hoverSounddescriptiontext1 = new Audio('../assets/sound/开瓶.mp3'); // home切换模式文字
     var hoverSounddescriptiontext3 = new Audio('../assets/sound/滴滴.mp3'); // home运行文字
-    var hoverSoundcheck1 = new Audio('../assets/sound/缓慢1.mp3'); // 首页右侧切换模式文字
+    var hoverSoundcheck1 = new Audio('../assets/sound/开瓶.mp3'); // 首页右侧切换模式文字
     var hoverSoundtypingText = new Audio('../assets/sound/打字.mp3'); // home页打字机文字
 
     leftClickSound.preload = 'auto';
