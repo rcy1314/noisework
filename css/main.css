@@ -455,6 +455,7 @@ a {
 	height: 100%;
 	position: relative;
 }
+  /* 鼠标样式 */
 .cursor {
 	pointer-events: none;
 	position: fixed;
@@ -527,7 +528,8 @@ a {
 	}
   }
   
-  .node::before {
+
+ .node::before {
 	content: ' ';
 	height: 100%;
 	width: 100%;
