@@ -1,4 +1,4 @@
-# robots.txt generated at http://tool.chinaz.com/robots/ 
+# robots.txt generated at http://tool.chinaz.com/robots/
 User-agent: Baiduspider
 Disallow: 
 User-agent: Sosospider
@@ -31,6 +31,6 @@ User-agent: psbot
 Disallow: 
 User-agent: *
 Disallow: 
-Disallow: /bin/
+
 Sitemap: http://www.noisework.cn/sitemap.xml
 Sitemap: http://www.noisework.cn/sitemap.html
