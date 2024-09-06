@@ -1,7 +1,5 @@
-var cacheName = 'Noise主页-v2.7';
+var cacheName = 'Noise主页-v2.8';
 var assetsToCache = [
-  './home.html',
-  './index.html',
   './assets/sound/鼠点左1.mp3',
   './assets/sound/鼠点左2.mp3',
   './assets/sound/缓慢1.mp3',
@@ -50,7 +48,7 @@ var assetsToCache = [
   './css/root.css',
   './css/style.css',
   '/css/main.css',
-  './assets/1ae.gif',
+
   'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo10.gif',
   'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo9.gif',
   'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo7.gif',
