@@ -180,3 +180,28 @@ window.addEventListener('DOMContentLoaded', function() {
     window.history.replaceState({ path: newUrl }, '', newUrl);
   }
 });
+
+// 在主线程中
+
+// 定义发送数据的函数
+function sendDataToWorker(data) {
+  var worker = new Worker('worker.js');
+
+  worker.onmessage = function(event) {
+      var result = event.data;
+      // 在这里处理结果
+      console.log('Worker 计算结果是:', result);
+  };
+
+  worker.onerror = function(error) {
+      console.error('Worker 错误:', error);
+  };
+
+  worker.postMessage(data); // 向Worker发送数据
+
+  // 适当的时候关闭Worker
+  worker.terminate();
+}
+
+// 调用函数发送数据
+sendDataToWorker('3');
