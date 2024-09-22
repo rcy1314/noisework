@@ -31,7 +31,7 @@ if (memo.APIVersion === 'new') {
     const filter = `creator=='users/${memo.creatorId}'&&visibilities==['PUBLIC']`;
     memoUrl = `${memos}/api/v1/memos?filter=${encodeURIComponent(filter)}`;
 } else if (memo.APIVersion === 'legacy') {
-    memoUrl = memos + "/api/v1/memo?creatorId=" + memo.creatorId + "&rowStatus=NORMAL";
+    memoUrl = memos + "/api/v1/memos?creatorId=" + memo.creatorId + "&rowStatus=NORMAL";
 } else {
     throw new Error('Invalid APIVersion');
 }
@@ -180,37 +180,61 @@ document.addEventListener('click', function (event) {
     if (target.tagName.toLowerCase() === 'a' && target.getAttribute('href').startsWith('#')) {
         event.preventDefault();
         tag = target.getAttribute('href').substring(1); // 获取标签名
-        if (btnRemove) { // 如果按钮被移除
+        if (btnRemove) {    // 如果 botton 被 remove
             btnRemove = 0;
             memoDom.insertAdjacentHTML('afterend', load);
             // 添加 button 事件监听器
             var btn = document.querySelector("button.button-load");
             btn.addEventListener("click", function () {
-                if (isLoading) return; // 如果正在加载，返回
-                isLoading = true; // 设置加载状态
                 btn.textContent = '努力加载中……';
-                if (nextLength < limit) { // 如果没有更多数据
-                    btn.textContent = '已加载全部'; // 修改按钮文本
-                    btn.disabled = true; // 禁用按钮
-                    isLoading = false; // 重置加载状态
-                    return;
+                updateHTMl(nextDom)
+                if (nextLength < limit) { // 返回数据条数小于限制条数，隐藏
+                    document.querySelector("button.button-load").remove()
+                    btnRemove = 1
+                    return
                 }
-                updateHTMl(nextDom); // 更新内容
-                getNextList(); // 加载下一页
+                getNextList()
             });
-        }
-        // 重新加载数据
-        page = 1; // 重置页码
-        offset = 0; // 重置偏移量
-        nextLength = 0; // 重置下一页长度
-        nextDom = ''; // 清空下一页数据
-        nextPageToken = ''; // 清空下一页令牌
-        getFirstList(); // 重新加载第一页
+            
+        }        
+        getTagFirstList();
+        var filterElem = document.getElementById('tag-filter');
+        filterElem.style.display = 'block';    // 显示过滤器
+        var tags = document.getElementById('tags');
+        var tagresult = `Filter: <span class='tag-span'><a rel='noopener noreferrer' href=''>#${tag}</a></span>`
+        tags.innerHTML = tagresult;
+        scrollTo(0,0);    // 回到顶部
     }
 });
 
-
+function getTagFirstList() {
+    if (memo.APIVersion === 'new') {
+        console.log('Could not list tag')
+    } else if (memo.APIVersion === 'legacy') {
+        page = 1;
+        offset = 0;
+        nextLength = 0;
+        nextDom = '';
+        memoDom.innerHTML = "";
+        var memoUrl_tag = memoUrl + "&limit=" + limit + "&tag=" + tag;
+        fetch(memoUrl_tag).then(res => res.json()).then(resdata => {
+            updateHTMl(resdata);
+            var nowLength = resdata.length
+            if (nowLength < limit) { // 返回数据条数小于 limit 则直接移除“加载更多”按钮，中断预加载
+                document.querySelector("button.button-load").remove()
+                btnRemove = 1
+                return
+            }
+            page++
+            offset = limit * (page - 1)
+            getNextList()
+        });
+    } else {
+        throw new Error('Invalid APIVersion');
+    }
+}
 // 标签选择 end
+
 
 function updateHTMl(data) {
     var memoResult = "", resultAll = "";
@@ -220,7 +244,6 @@ function updateHTMl(data) {
 
     // 解析各种链接
     const BILIBILI_REG = /<a\shref="https:\/\/www\.bilibili\.com\/video\/((av[\d]{1,10})|(BV([\w]{10})))\/?">.*<\/a>/g;
-   
     const QQMUSIC_REG = /<a\shref="https:\/\/y\.qq\.com\/.*(\/[0-9a-zA-Z]+)(\.html)?".*?>.*?<\/a>/g;
     const QQVIDEO_REG = /<a\shref="https:\/\/v\.qq\.com\/.*\/([a-zA-Z0-9]+)\.html".*?>.*<\/a>/g;
     const SPOTIFY_REG = /<a\shref="https:\/\/open\.spotify\.com\/(track|album)\/([\s\S]+)".*?>.*<\/a>/g;
@@ -250,8 +273,6 @@ function updateHTMl(data) {
             .replace(QQVIDEO_REG, "<div class='video-wrapper'><iframe src='https://v.qq.com/iframe/player.html?vid=\$1' allowFullScreen='true' frameborder='no'></iframe></div>")
             .replace(SPOTIFY_REG, "<div class='spotify-wrapper'><iframe style='border-radius:12px' src='https://open.spotify.com/embed/\$1/\$2?utm_source=generator&theme=0' width='100%' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe></div>")
             .replace(YOUKU_REG, "<div class='video-wrapper'><iframe src='https://player.youku.com/embed/\$1' frameborder='0' allowfullscreen></iframe></div>");
-
-
 
         // 解析内置资源文件
         if (memo.APIVersion === 'new') {
@@ -326,7 +347,7 @@ function updateHTMl(data) {
         } else {
                 throw new Error('Invalid APIVersion');
         }
-        memoResult += '<li class="timeline"><div class="memos__content"><div class="memos__text"><div class="memos__userinfo"><div>' + memo.name + '</div><div><svg viewBox="0 0 24 24" aria-label="认证账号" class="memos__verify"><g><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"></path></g></svg></div><div class="memos__id">@' + memo.username + '</div></div><p>' + memoContREG + '</p></div><div class="memos__meta"><small class="memos__date">' + relativeTime + '  </small></div></div></li>'
+         memoResult += '<li class="timeline"><div class="memos__content"><div class="memos__text"><div class="memos__userinfo"><div>' + memo.name + '</div><div><svg viewBox="0 0 24 24" aria-label="认证账号" class="memos__verify"><g><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"></path></g></svg></div><div class="memos__id">@' + memo.username + '</div></div><p>' + memoContREG + '</p></div><div class="memos__meta"><small class="memos__date">' + relativeTime + ' • From「<a href="' + memo.host + 'm/' + data[i].uid + '" target="_blank">Memos</a>」</small></div></div></li>'
     }
     var memoBefore = '<ul class="">'
     var memoAfter = '</ul>'
@@ -337,6 +358,7 @@ function updateHTMl(data) {
     }
     document.querySelector('button.button-load').textContent = '加载更多';
 }
+
 // Memos End
 
 // 解析豆瓣 Start
@@ -433,7 +455,7 @@ function getTotal() {
             // Do something for an error here
         });
     } else if (memo.APIVersion === 'legacy') {
-        totalUrl = memos + "/api/v1/memo/stats?creatorId=" + memo.creatorId
+        totalUrl = memos + "/api/v1/memos/stats?creatorId=" + memo.creatorId
         fetch(totalUrl).then(res => res.json()).then(resdata => {
             if (resdata) {
                 var allnums = resdata.length
