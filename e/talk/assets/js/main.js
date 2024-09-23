@@ -540,3 +540,43 @@ themeToggle.addEventListener("click", () => {
         );
 });
 // Darkmode End
+//显隐按钮  
+function showReposBtn(){  
+    var clientHeight = $(window).height();  
+    var scrollTop = $(document).scrollTop();  
+    var maxScroll = $(document).height() - clientHeight;  
+    //滚动距离超过可视一屏的距离时显示返回顶部按钮  
+    if( scrollTop > clientHeight ){  
+        $('#retopbtn').show();  
+    }else{  
+        $('#retopbtn').hide();  
+    }  
+    //滚动距离到达最底部时隐藏返回底部按钮  
+    if( scrollTop >= maxScroll ){  
+        $('#rebtmbtn').hide();  
+    }else{  
+        $('#rebtmbtn').show();  
+    }  
+}  
+  
+window.onload = function(){  
+    //获取文档对象  
+    $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $("html") : $("body")) : $("html,body");  
+    //显示按钮  
+    showReposBtn();  
+}  
+  
+window.onscroll = function(){  
+    //滚动时调整按钮显隐  
+    showReposBtn();  
+}  
+  
+//返回顶部  
+function returnTop(){  
+    $body.animate({scrollTop: 0},400);  
+}  
+  
+//返回底部  
+function returnBottom(){  
+    $body.animate({scrollTop: $(document).height()},400);  
+}  
