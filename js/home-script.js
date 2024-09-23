@@ -421,15 +421,7 @@ mobileLogoDiv.addEventListener('click', () => {
     loadMobileImage(Math.floor(Math.random() * mobileImages.length));
 });
 
-// 使用IntersectionObserver来实现懒加载
-let mobileObserver = new IntersectionObserver((entries, observer) => {
-    if (entries[0].isIntersecting) {
-        if (currentMobileImageIndex === -1) {
-            loadMobileImage(Math.floor(Math.random() * mobileImages.length));
-        }
-    }
-}, { threshold: [0] });
-mobileObserver.observe(mobileLogoDiv);
+
 
 /*scroll向下滑动*/
 let container = document.querySelector('.workbox');
@@ -506,20 +498,7 @@ const bgImages = [
 // 设置默认背景图
 document.documentElement.style.setProperty('--background-image', `url(${bgImages[0]})`);
 
-// 预加载图片
-const imageCache = {};
-function preloadImages(images) {
-    images.forEach(imgSrc => {
-        const img = new Image();
-        img.onload = () => {
-            imageCache[imgSrc] = img;
-        };
-        img.onerror = () => {
-            console.error(`无法加载图片: ${imgSrc}`);
-        };
-        img.src = imgSrc;
-    });
-}
+
 
 // 从localStorage获取已显示的图片索引
 let shownImages = JSON.parse(localStorage.getItem('shownImages')) || [];
@@ -570,11 +549,7 @@ function mobilerotateIcon() {
     }, 300);
 }
 
-// 页面加载时预加载图片
-window.onload = () => {
-    preloadImages(bgImages);
-    setRandomBackground(); // 设置随机背景图
-};
+
 // 页面重定向
 window.addEventListener('DOMContentLoaded', function() {
     var pathname = window.location.pathname;
