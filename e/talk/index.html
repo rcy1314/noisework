@@ -14,7 +14,28 @@
     <title>NOISE的碎碎念</title>
 
 </head>
+<style type='text/css'>  
+    #retopbtn{  
+        position:fixed; 
+       
+  
+    
+        bottom:10px;  
+        right:10px;  
+      
+    z-index: 98;
+    }  
+    #rebtmbtn{  
+        position:fixed;  
+        
+    
+   
+        top:10px;  
+        right:10px;  
 
+    z-index: 98;
+    }  
+</style> 
 <body>
     <header>
         <div class="menu">
@@ -26,7 +47,8 @@
                           -webkit-background-clip: text; 
                           -webkit-text-fill-color: transparent;">前往查看</a>
             </div>
-                      
+            <div id='rebtmbtn' onclick='returnBottom()'>👇</div>  
+            <div id='retopbtn' onclick='returnTop()'>👆</div>   
 
         </div>
         
@@ -41,7 +63,7 @@
             <p>NOISE <del>碎碎念</del>,忆往昔- <em>都是故事</em></p>
         </blockquote>
 
-        <div class="total">已记录 <span id="total">0</span> 条🎉</div>
+        <div class="total">已记录 <span id="total">0</span>条 🎉</div>
 
         <blockquote id="tag-filter" class="filter">
             <div id="tags"></div>
@@ -63,8 +85,7 @@
             -webkit-text-fill-color: transparent;">NOISE</a> All Rights Reserved.
         </p>
     </footer>
-    
-
+        
     <!-- Your Memos API -->
     <script type="text/javascript">
         var memos = {
@@ -78,10 +99,11 @@
             APIVersion: 'new', // 'new' or 'legacy', Memos API Version, <v0.22.0: 'legacy', >=v0.22.0: 'new'.
             total: true, // 显示备忘录总数。新版本中不显示任何界面.
             doubanAPI: '', // Fill a API to render douban subject. `null` to disable. API self-hosted: https://github.com/eallion/douban-api-rs
+            walineUrl: 'https://ment.noisework.cn'
         }
 
     </script>
-
+    <script type='text/javascript' src='./assets/js/jquery-3.2.1.js'></script> 
     <script type="text/javascript" src="./assets/js/lazyload.min.js"></script>
     <script type="text/javascript" src="./assets/js/marked.umd.min.js"></script>
     <script type="text/javascript" src="./assets/js/view-image.min.js"></script>
