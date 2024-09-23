@@ -14,7 +14,7 @@ body.light-theme,
     --color-border-muted: #d8dee4;
     --color-post-preview: #fff;
     --color-memos-pre-bg: #f3f4f6;;
-
+    
     /* variables for js, must be the same as these in @custom-media queries */
     --phoneWidth: (max-width: 684px);
     --tabletWidth: (max-width: 900px);
@@ -85,6 +85,25 @@ body {
     margin: 0 auto;
     padding: 45px;
 }
+
+/* 自定义滚动条样式 */
+::-webkit-scrollbar {
+    width: 4px; /* 滚动条宽度 */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; /* 滚动条轨道背景 */
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(33, 59, 84, 0.5); /* 滚动条颜色（透明黑色） */
+    border-radius: 4px; /* 滚动条圆角 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(42, 89, 165, 0.7); /* 鼠标悬停时的颜色 */
+}
+
 
 header {
     display: flex;
