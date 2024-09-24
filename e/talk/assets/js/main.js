@@ -214,6 +214,8 @@ function initWaline(container, index) {
             ],
             imageUploader: false,
             copyright: false,
+            // 使用 path 参数来确保评论区的唯一性
+            path: `memos/${index}`, // 使用 index 作为唯一标识
         });
     });
 }
@@ -256,6 +258,7 @@ function updateHTMl(data) {
             .replace(QQVIDEO_REG, "<div class='video-wrapper'><iframe src='https://v.qq.com/iframe/player.html?vid=\$1' allowFullScreen='true' frameborder='no'></iframe></div>")
             .replace(SPOTIFY_REG, "<div class='spotify-wrapper'><iframe style='border-radius:12px' src='https://open.spotify.com/embed/\$1/\$2?utm_source=generator&theme=0' width='100%' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe></div>")
             .replace(YOUKU_REG, "<div class='video-wrapper'><iframe src='https://player.youku.com/embed/\$1' frameborder='0' allowfullscreen></iframe></div>");
+
         // 解析内置资源文件
         if (memo.APIVersion === 'new') {
             if (data[i].resourceList && data[i].resourceList.length > 0) {
@@ -295,8 +298,12 @@ function updateHTMl(data) {
             getRelativeTime(new Date(data[i].createTime)) : 
             getRelativeTime(new Date(data[i].createdTs * 1000));
 
+        // 生成唯一 ID
+        const safeRelativeTime = relativeTime.replace(/\s+/g, '-').replace(/[^\w-]/g, ''); // 替换空格和特殊字符
+        const uid = data[i].uid; // 使用 uid 作为唯一标识
+        const commentIndex = `${safeRelativeTime}-${uid}`; // 组合生成唯一 ID
+
         // 在生成每个条目时确保有评论按钮
-        const commentIndex = currentPage * 10 + i; // 每页10个条目
         memoResult += `
 <li class="timeline">
     <div class="memos__content">
@@ -308,7 +315,7 @@ function updateHTMl(data) {
             <p>${memoContREG}</p>
         </div>
         <div class="memos__meta">
-            <small class="memos__date">${relativeTime} • From「<a href="${memo.host}m/${data[i].uid}" target="_blank">Memos</a>」</small>
+            <small class="memos__date">${relativeTime} • From「<a href="${memo.host}m/${uid}" target="_blank">Memos</a>」</small>
             <small class="comment-button" data-index="${commentIndex}">• 📧 评论</small>
         </div>
         <div id="comment-box-${commentIndex}" class="comment-box" style="display: none;"></div>
