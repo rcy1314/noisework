@@ -11,30 +11,41 @@
     <link href="./assets/css/APlayer.min.css" rel="stylesheet" type="text/css">
     <link href="./assets/css/highlight.github.min.css" rel="stylesheet" type="text/css">
     <link href="./assets/css/custom.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./assets/css/waline.css"/>
     <title>NOISE的碎碎念</title>
 
 </head>
 <style type='text/css'>  
     #retopbtn{  
-        position:fixed; 
-       
-  
-    
+        position:fixed;  
         bottom:10px;  
-        right:10px;  
-      
-    z-index: 98;
+        right:10px;      
+        z-index: 98;
     }  
     #rebtmbtn{  
         position:fixed;  
-        
-    
-   
         top:10px;  
         right:10px;  
-
-    z-index: 98;
+        z-index: 98;
     }  
+    .comment-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    z-index: 9999;
+}
+
+.comment-box {
+    margin-top: 10px;
+    padding: 10px;
+    background: #03030309;
+   
+    border-radius: 5px;
+    z-index: 9999;
+}
+
 </style> 
 <body>
     <header>
@@ -70,11 +81,10 @@
         </blockquote>
 
         <div id="memos" class="memos">
-            <!-- Memos Container -->
         </div>
 
     </section>
-
+   
     <footer class="markdown-body footer">
         <p>Copyright @
             <script>
@@ -103,6 +113,30 @@
         }
 
     </script>
+    <!-- 引入评论 -->		
+  
+
+<script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+    init({
+      el: '#waline',
+      serverURL: 'https://ment.noisework.cn',
+	  meta: ['nick','mail','link'],
+      requiredMeta: ['mail','nick'],
+      pageview: true,
+      search: false,
+      wordLimit: 200,
+      pageSize: 5,
+      avatar: 'monsterid',
+	  emoji: [
+             'https://unpkg.com/@waline/emojis@1.2.0/tieba',
+         ],
+         imageUploader: false,
+         copyright: false,
+     });
+  </script>
+
+
     <script type='text/javascript' src='./assets/js/jquery-3.2.1.js'></script> 
     <script type="text/javascript" src="./assets/js/lazyload.min.js"></script>
     <script type="text/javascript" src="./assets/js/marked.umd.min.js"></script>

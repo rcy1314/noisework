@@ -1,9 +1,9 @@
 .aplayer {
     font-family: Arial, Helvetica, sans-serif;
     margin: 5px;
-    box-shadow: 0 2px 2px 0 rgba(36, 35, 35, 0.911), 0 1px 5px 0 rgb(32, 32, 32);
-    background-color: #1f1f1fbb;
-    border: 2px solid #ebebf235;
+    box-shadow: 0 2px 2px 0 rgba(58, 57, 57, 0.417), 0 1px 5px 0 rgba(32, 32, 32, 0.514);
+   
+    border: 2px solid #34343762;
     border-radius: 10px; /* 保持这个，用于边框 */
     overflow: hidden;
     -webkit-user-select: none;
@@ -98,7 +98,7 @@
     right: 0;
     margin: 0;
     z-index: 99;
-    background: rgb(12, 12, 12);
+   
     padding-right: 18px;
     transition: all .3s ease;
     max-width: 400px
@@ -113,7 +113,7 @@
     margin: 0;
     z-index: 98;
     pointer-events: none;
-    text-shadow: -1px -1px 0 rgb(247, 244, 244)
+   
 }
 
 .aplayer.aplayer-fixed .aplayer-lrc:after,
@@ -265,7 +265,7 @@
     position: absolute;
     border-radius: 50%;
     opacity: .8;
-    text-shadow: 0 1px 1px rgba(255, 252, 252, 0.952);
+  
     box-shadow: 0 1px 1px rgb(23, 23, 23);
     background: rgba(17, 17, 17, 0.918);
     transition: all .1s ease
@@ -282,7 +282,7 @@
 .aplayer .aplayer-pic .aplayer-play {
     width: 26px;
     height: 26px;
-    border: 2px solid rgb(241, 235, 235);
+   
     bottom: 50%;
     right: 50%;
     margin: 0 -15px -15px 0
@@ -299,7 +299,7 @@
 .aplayer .aplayer-pic .aplayer-pause {
     width: 16px;
     height: 16px;
-    border: 2px solid #fff;
+   
     bottom: 4px;
     right: 4px
 }
@@ -339,7 +339,7 @@
 
 .aplayer .aplayer-info .aplayer-music .aplayer-author {
     font-size: 12px;
-    color: rgb(240, 230, 230)
+   
 }
 
 .aplayer .aplayer-info .aplayer-controller {
@@ -371,7 +371,7 @@
     left: 0;
     top: 0;
     bottom: 0;
-    background: rgb(255, 253, 253);
+   
     height: 2px;
     transition: all .5s ease
 }
@@ -469,7 +469,7 @@
     right: 10px;
     width: 5px;
     height: 35px;
-    background: rgb(252, 246, 246);
+    
     border-radius: 2.5px;
     overflow: hidden
 }
@@ -504,7 +504,7 @@
 .aplayer .aplayer-lrc:before {
     top: 0;
     height: 10%;
-    background: linear-gradient(180deg, #1e1e1e16 0, hsla(0, 12%, 95%, 0));
+   
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#00ffffff", GradientType=0)
 }
 
@@ -521,14 +521,14 @@
 .aplayer .aplayer-lrc:after {
     bottom: 0;
     height: 33%;
-    background: linear-gradient(180deg, hsla(0, 1%, 15%, 0) 0, rgba(255, 255, 255, 0));
+   
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ffffff", endColorstr="#ccffffff", GradientType=0)
     
 }
 
 .aplayer .aplayer-lrc p {
     font-size: 12px;
-    color: rgb(241, 228, 228);
+   
     line-height: 16px !important;
     height: 16px !important;
     padding: 0 !important;
