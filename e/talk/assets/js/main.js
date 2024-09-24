@@ -349,7 +349,8 @@ function loadMore() {
 // 绑定加载更多按钮
 document.querySelector('button.button-load').addEventListener('click', loadMore);
 
-
+// Images lightbox
+window.ViewImage && ViewImage.init('.container img');
 // Memos Total Start
 // Get Memos total count
 function getTotal() {
