@@ -181,13 +181,13 @@ function getTagFirstList() {
 let currentPage = 0;
 
 // 切换评论框显示
-function toggleCommentBox(link) {
-    const commentBox = document.getElementById(`comment-box-${link}`);
+function toggleCommentBox(index) {
+    const commentBox = document.getElementById(`comment-box-${index}`);
     if (commentBox) {
         if (commentBox.style.display === "none") {
             commentBox.style.display = "block";
             // 初始化 Waline 评论框
-            initWaline(commentBox, link);
+            initWaline(commentBox, index);
         } else {
             commentBox.style.display = "none";
         }
@@ -195,8 +195,8 @@ function toggleCommentBox(link) {
 }
 
 // 初始化 Waline 评论框
-function initWaline(container, link) {
-    const commentId = `waline-${link}`; // 使用链接生成唯一 ID
+function initWaline(container, index) {
+    const commentId = `waline-${index}`; // 使用 index 生成唯一 ID
     container.innerHTML = `<div id="${commentId}"></div>`;
     import('https://unpkg.com/@waline/client@v3/dist/waline.js').then(({ init }) => {
         init({
@@ -256,7 +256,6 @@ function updateHTMl(data) {
             .replace(QQVIDEO_REG, "<div class='video-wrapper'><iframe src='https://v.qq.com/iframe/player.html?vid=\$1' allowFullScreen='true' frameborder='no'></iframe></div>")
             .replace(SPOTIFY_REG, "<div class='spotify-wrapper'><iframe style='border-radius:12px' src='https://open.spotify.com/embed/\$1/\$2?utm_source=generator&theme=0' width='100%' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe></div>")
             .replace(YOUKU_REG, "<div class='video-wrapper'><iframe src='https://player.youku.com/embed/\$1' frameborder='0' allowfullscreen></iframe></div>");
-
         // 解析内置资源文件
         if (memo.APIVersion === 'new') {
             if (data[i].resourceList && data[i].resourceList.length > 0) {
@@ -296,11 +295,8 @@ function updateHTMl(data) {
             getRelativeTime(new Date(data[i].createTime)) : 
             getRelativeTime(new Date(data[i].createdTs * 1000));
 
-        // 使用实际链接生成评论区的唯一ID
-        const memoLink = `${memo.host}m/${data[i].uid}`;
-        const commentIndex = encodeURIComponent(memoLink); // 对链接进行编码以确保其有效性
-
         // 在生成每个条目时确保有评论按钮
+        const commentIndex = currentPage * 10 + i; // 每页10个条目
         memoResult += `
 <li class="timeline">
     <div class="memos__content">
@@ -312,8 +308,8 @@ function updateHTMl(data) {
             <p>${memoContREG}</p>
         </div>
         <div class="memos__meta">
-            <small class="memos__date">${relativeTime} • From「<a href="${memoLink}" target="_blank">Memos</a>」</small>
-            <small class="comment-button" data-link="${commentIndex}">• 📧 评论</small>
+            <small class="memos__date">${relativeTime} • From「<a href="${memo.host}m/${data[i].uid}" target="_blank">Memos</a>」</small>
+            <small class="comment-button" data-index="${commentIndex}">• 📧 评论</small>
         </div>
         <div id="comment-box-${commentIndex}" class="comment-box" style="display: none;"></div>
     </div>
@@ -332,8 +328,8 @@ function updateHTMl(data) {
 // 绑定事件到 memoDom 上
 memoDom.addEventListener('click', function (event) {
     if (event.target.classList.contains('comment-button')) {
-        const link = event.target.getAttribute('data-link'); // 获取自定义数据属性
-        toggleCommentBox(link);
+        const index = event.target.getAttribute('data-index'); // 获取自定义数据属性
+        toggleCommentBox(index);
     }
 });
 
@@ -345,6 +341,7 @@ function loadMore() {
 
 // 绑定加载更多按钮
 document.querySelector('button.button-load').addEventListener('click', loadMore);
+
 
 // Memos Total Start
 // Get Memos total count
