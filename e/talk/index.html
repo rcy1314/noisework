@@ -17,14 +17,21 @@
         header {
             position: relative;
             height: 200px; /* Adjust height as needed */
+            width: 100%; /* Ensure header takes full width */
             background-size: cover;
             background-position: center;
             color: white;
             padding: 20px;
-            min-width: 200px;
-            max-width: 100%;
             backdrop-filter: blur(16px); /* Add blur effect */
             transition: background-image 0.5s ease; /* Smooth transition */
+            display: flex;
+            justify-content: flex-start; /* Align items to the left */
+            align-items: center; /* Center content vertically */
+        }
+
+        .menu {
+            text-align: left; /* Align text to the left */
+            margin-right: auto; /* Push the profile to the right */
         }
 
         .profile {
@@ -89,6 +96,26 @@
             border-radius: 5px;
             z-index: 9999;
         }
+        /* Mobile specific styles */
+        @media (max-width: 600px) {
+            header {
+                height: 150px; /* Adjust height for mobile */
+            }
+
+            .menu .title {
+                font-size: 20px; /* Adjust title size for mobile */
+            }
+
+            .profile {
+                bottom: 10px; /* Adjust position for mobile */
+            }
+
+            .theme-toggle {
+                top: 10px; /* Adjust position for mobile */
+                right: 10px; /* Adjust position for mobile */
+            }
+        }
+
     </style>
 </head>
 
@@ -141,7 +168,8 @@
             -webkit-text-fill-color: transparent;">NOISE</a> All Rights Reserved.
         </p>
     </footer>
-
+    <div id='rebtmbtn' onclick='returnBottom()'>👇</div>
+    <div id='retopbtn' onclick='returnTop()'>👆</div>
     <script type="text/javascript">
         const backgrounds = [
             '../../assets/bg/bg11.png',
@@ -204,8 +232,6 @@
         });
     </script>
 
-    <div id='rebtmbtn' onclick='returnBottom()'>👇</div>
-    <div id='retopbtn' onclick='returnTop()'>👆</div>
     <script type='text/javascript' src='./assets/js/jquery-3.2.1.js'></script>
     <script type="text/javascript" src="./assets/js/lazyload.min.js"></script>
     <script type="text/javascript" src="./assets/js/marked.umd.min.js"></script>
