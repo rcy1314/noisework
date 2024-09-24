@@ -11,60 +11,108 @@
     <link href="./assets/css/APlayer.min.css" rel="stylesheet" type="text/css">
     <link href="./assets/css/highlight.github.min.css" rel="stylesheet" type="text/css">
     <link href="./assets/css/custom.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="./assets/css/waline.css"/>
+    <link rel="stylesheet" href="./assets/css/waline.css" />
     <title>NOISE的碎碎念</title>
+    <style type='text/css'>
+        header {
+            position: relative;
+            height: 200px; /* Adjust height as needed */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 20px;
+            min-width: 200px;
+            max-width: 100%;
+            backdrop-filter: blur(16px); /* Add blur effect */
+            transition: background-image 0.5s ease; /* Smooth transition */
+        }
 
+        .profile {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .profile img {
+            width: 60px; /* Adjust size as needed */
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .profile .title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .profile .description {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        #retopbtn, #rebtmbtn, .theme-toggle {
+            position: fixed;
+            z-index: 98;
+        }
+
+        #rebtmbtn {
+            top: 10px;
+            right: 10px;
+        }
+        
+        #retopbtn {
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .theme-toggle {
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .comment-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+            z-index: 9999;
+        }
+
+        .comment-box {
+            margin-top: 10px;
+            padding: 10px;
+            background: #03030309;
+            border-radius: 5px;
+            z-index: 9999;
+        }
+    </style>
 </head>
-<style type='text/css'>  
-    #retopbtn{  
-        position:fixed;  
-        bottom:10px;  
-        right:10px;      
-        z-index: 98;
-    }  
-    #rebtmbtn{  
-        position:fixed;  
-        top:10px;  
-        right:10px;  
-        z-index: 98;
-    }  
-    .comment-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 10px;
-    z-index: 9999;
-}
 
-.comment-box {
-    margin-top: 10px;
-    padding: 10px;
-    background: #03030309;
-   
-    border-radius: 5px;
-    z-index: 9999;
-}
-
-</style> 
 <body>
-    <header>
+    <header id="header">
         <div class="menu">
             <div class="title">碎碎念...</div>
-
             <div class="pages">
-                <a href="https://memos.noisework.cn" target="_blank" rel="noopener noreferrer" 
+                <a href="https://memos.noisework.cn" target="_blank" rel="noopener noreferrer"
                    style="font-size: 14px; background: linear-gradient(90deg, #5fbcff, #7b84fe); 
                           -webkit-background-clip: text; 
                           -webkit-text-fill-color: transparent;">前往查看</a>
             </div>
-            <div id='rebtmbtn' onclick='returnBottom()'>👇</div>  
-            <div id='retopbtn' onclick='returnTop()'>👆</div>   
-
         </div>
-        
-        <div class='theme-toggle'>🌕</div>
 
+        <div class="profile">
+            <img src="./assets/img/avatar.png" onclick="changeBackground()" alt="头像">
+            <div>
+                <div class="title">Noise</div>
+                <div class="description">执迷不悟</div>
+            </div>
+        </div>
+
+        <div class='theme-toggle'>🌓</div>
     </header>
 
     <section id="main" class="container">
@@ -80,64 +128,85 @@
             <div id="tags"></div>
         </blockquote>
 
-        <div id="memos" class="memos">
-        </div>
-
+        <div id="memos" class="memos"></div>
     </section>
-   
+
     <footer class="markdown-body footer">
         <p>Copyright @
             <script>
                 document.write(new Date().getFullYear())
             </script>
-            <a href="https://www.noisework.cn" target="_blank"   style="font-size: 14px; background: linear-gradient(90deg, #5fbcff, #7b84fe); 
+            <a href="https://www.noisework.cn" target="_blank" style="font-size: 14px; background: linear-gradient(90deg, #5fbcff, #7b84fe); 
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent;">NOISE</a> All Rights Reserved.
         </p>
     </footer>
-        
+
+    <script type="text/javascript">
+        const backgrounds = [
+            '../../assets/bg/bg11.png',
+            '../../assets/bg/bg2.png',
+            '../../assets/bg/bg3.png',
+            '../../assets/bg/bg4.png',
+            '../../assets/bg/bg7.png',
+            '../../assets/bg/bg9.png',
+            '../../assets/bg/bg10.png',
+            '../../assets/bg/bg12.png',
+            '../../assets/3.png',
+            '../../assets/5ae.gif',
+            // 添加更多背景图路径
+        ];
+
+        function changeBackground() {
+            const header = document.getElementById('header');
+            const randomIndex = Math.floor(Math.random() * backgrounds.length);
+            header.style.setProperty('background-image', `url('${backgrounds[randomIndex]}')`, 'important');
+        }
+
+        // 在文档完全加载后随机选择背景图
+        document.addEventListener('DOMContentLoaded', changeBackground);
+    </script>
+
     <!-- Your Memos API -->
     <script type="text/javascript">
         var memos = {
-            host: 'https://memos.noisework.cn/',  // Your Memos instance.
-            limit: '10',  // Pagination to show.
-            creatorId: '1',  // The old instance is 101, and the new instance is 1. 
-            domId: '#memos',  // Default #memos.
-            username: 'noise',  // You can customize the display ID that is not related to memos.
-            name: '诺伊斯',  // 您可以自定义显示的全名，该全名与 memo 无关.
-            language: 'zh-CN', // 'en' 'zh-CN' etc. Used by Relative Time.
-            APIVersion: 'new', // 'new' or 'legacy', Memos API Version, <v0.22.0: 'legacy', >=v0.22.0: 'new'.
-            total: true, // 显示备忘录总数。新版本中不显示任何界面.
-            doubanAPI: '', // Fill a API to render douban subject. `null` to disable. API self-hosted: https://github.com/eallion/douban-api-rs
+            host: 'https://memos.noisework.cn/',
+            limit: '10',
+            creatorId: '1',
+            domId: '#memos',
+            username: 'noise',
+            name: '诺伊斯',
+            language: 'zh-CN',
+            APIVersion: 'new',
+            total: true,
+            doubanAPI: '',
             walineUrl: 'https://ment.noisework.cn'
         }
-
     </script>
-    <!-- 引入评论 -->		
-  
 
-<script type="module">
-    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-    init({
-      el: '#waline',
-      serverURL: 'https://ment.noisework.cn',
-	  meta: ['nick','mail','link'],
-      requiredMeta: ['mail','nick'],
-      pageview: true,
-      search: false,
-      wordLimit: 200,
-      pageSize: 5,
-      avatar: 'monsterid',
-	  emoji: [
-             'https://unpkg.com/@waline/emojis@1.2.0/tieba',
-         ],
-         imageUploader: false,
-         copyright: false,
-     });
-  </script>
+    <script type="module">
+        import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+        init({
+            el: '#waline',
+            serverURL: 'https://ment.noisework.cn',
+            meta: ['nick', 'mail', 'link'],
+            requiredMeta: ['mail', 'nick'],
+            pageview: true,
+            search: false,
+            wordLimit: 200,
+            pageSize: 5,
+            avatar: 'monsterid',
+            emoji: [
+                'https://unpkg.com/@waline/emojis@1.2.0/tieba',
+            ],
+            imageUploader: false,
+            copyright: false,
+        });
+    </script>
 
-
-    <script type='text/javascript' src='./assets/js/jquery-3.2.1.js'></script> 
+    <div id='rebtmbtn' onclick='returnBottom()'>👇</div>
+    <div id='retopbtn' onclick='returnTop()'>👆</div>
+    <script type='text/javascript' src='./assets/js/jquery-3.2.1.js'></script>
     <script type="text/javascript" src="./assets/js/lazyload.min.js"></script>
     <script type="text/javascript" src="./assets/js/marked.umd.min.js"></script>
     <script type="text/javascript" src="./assets/js/view-image.min.js"></script>
