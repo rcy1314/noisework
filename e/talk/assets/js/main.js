@@ -262,13 +262,13 @@ function updateHTMl(data) {
 let currentPage = 0;
 
 // 切换评论框显示
-function toggleCommentBox(index) {
-    const commentBox = document.getElementById(`comment-box-${index}`);
+function toggleCommentBox(host) {
+    const commentBox = document.getElementById(`comment-box-${host}`);
     if (commentBox) {
         if (commentBox.style.display === "none") {
             commentBox.style.display = "block";
             // 初始化 Waline 评论框
-            initWaline(commentBox, index);
+            initWaline(commentBox, host);
         } else {
             commentBox.style.display = "none";
         }
@@ -276,11 +276,11 @@ function toggleCommentBox(index) {
 }
 
 // 初始化 Waline 评论框
-function initWaline(container, index) {
-    const commentId = `waline-${index}`; // 使用 index 生成唯一 ID
+function initWaline(container, host) {
+    const commentId = `waline-${host}`; // 使用 host 生成唯一 ID
     container.innerHTML = `<div id="${commentId}"></div>`;
     import('https://unpkg.com/@waline/client@v3/dist/waline.js').then(({ init }) => {
-        const uid = index.split('-').pop(); // 从 index 中提取 uid
+        const uid = host.split('-').pop(); // 从 host 中提取 uid
         init({
             el: `#${commentId}`, // 使用生成的唯一 ID
             serverURL: 'https://ment.noisework.cn',
@@ -297,7 +297,7 @@ function initWaline(container, index) {
             imageUploader: false,
             copyright: false,
             // 使用 path 参数来确保评论区的唯一性
-            path: `${memo.host}m/${uid}`, // 指向实际链接
+            path: `/${memo.host}m/${uid}`, // 指向实际链接
         });
     });
 }
@@ -385,7 +385,7 @@ function updateHTMl(data) {
         // 生成唯一 ID
         const safeRelativeTime = relativeTime.replace(/\s+/g, '-').replace(/[^\w-]/g, ''); // 替换空格和特殊字符
         const uid = data[i].uid; // 使用 uid 作为唯一标识
-        const commentIndex = `${safeRelativeTime}-${uid}`; // 组合生成唯一 ID
+        const commenthost = `${safeRelativeTime}-${uid}`; // 组合生成唯一 ID
 
         // 在生成每个条目时确保有评论按钮
         memoResult += `
@@ -400,9 +400,9 @@ function updateHTMl(data) {
         </div>
         <div class="memos__meta">
             <small class="memos__date">${relativeTime} • From「<a href="${memo.host}m/${uid}" target="_blank">Memos</a>」</small>
-            <small class="comment-button" data-index="${commentIndex}">• 📧 评论</small>
+            <small class="comment-button" data-host="${commenthost}">• 📧 评论</small>
         </div>
-        <div id="comment-box-${commentIndex}" class="comment-box" style="display: none;"></div>
+        <div id="comment-box-${commenthost}" class="comment-box" style="display: none;"></div>
     </div>
 </li>
 `;
@@ -419,8 +419,8 @@ function updateHTMl(data) {
 // 绑定事件到 memoDom 上
 memoDom.addEventListener('click', function (event) {
     if (event.target.classList.contains('comment-button')) {
-        const index = event.target.getAttribute('data-index'); // 获取自定义数据属性
-        toggleCommentBox(index);
+        const host = event.target.getAttribute('data-host'); // 获取自定义数据属性
+        toggleCommentBox(host);
     }
 });
 
