@@ -41,12 +41,45 @@ var btnRemove = 0;
 var memoDom = document.querySelector(memo.domId);
 var load = '<button class="load-btn button-load">加载更多</button>';
 var isLoading = false; // 新增加载状态标志
+var isMemosPage = true; // 默认在碎碎念页面
 
 if (memoDom) {
     memoDom.insertAdjacentHTML('afterend', load);
     getFirstList(); // 首次加载数据
+}
 
-    // 添加 button 事件监听器
+// 显示页面的函数
+function showPage(pageName) {
+    // 隐藏所有页面
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+
+    // 显示当前页面
+    var currentPage = document.getElementById(pageName);
+    if (currentPage) {
+        currentPage.classList.add('active');
+    }
+
+    // 根据当前页面判断是否显示“加载更多”按钮
+    if (pageName === 'memos') {
+        isMemosPage = true; // 设置为碎碎念页面
+        var btn = document.querySelector("button.button-load");
+        if (!btn) {
+            memoDom.insertAdjacentHTML('afterend', load); // 重新添加按钮
+            addLoadMoreEvent(); // 重新添加事件监听器
+        }
+    } else {
+        isMemosPage = false; // 设置为非碎碎念页面
+        var btn = document.querySelector("button.button-load");
+        if (btn) {
+            btn.remove(); // 移除加载更多按钮
+        }
+    }
+}
+
+// 添加“加载更多”按钮的事件监听器
+function addLoadMoreEvent() {
     var btn = document.querySelector("button.button-load");
     btn.addEventListener("click", function () {
         if (isLoading || btnRemove) return; // 如果正在加载或按钮已被移除，返回
@@ -75,7 +108,7 @@ function getFirstList() {
         }).finally(() => {
             isLoading = false; // 重置加载状态
         });
-    } 
+    }
 }
 
 // 预加载下一页数据
@@ -110,9 +143,11 @@ function getNextList() {
 // 处理无更多数据的情况
 function handleNoMoreData() {
     var btn = document.querySelector("button.button-load");
-    btn.textContent = '已加载全部'; // 修改按钮文本
-    btn.disabled = true; // 禁用按钮
-    btnRemove = 1; // 标记按钮已移除
+    if (btn) {
+        btn.textContent = '已加载全部'; // 修改按钮文本
+        btn.disabled = true; // 禁用按钮
+        btnRemove = 1; // 标记按钮已移除
+    }
 }
 
 // 更新 HTML 内容的函数
@@ -129,53 +164,95 @@ document.addEventListener('click', function (event) {
     var target = event.target;
     if (target.tagName.toLowerCase() === 'a' && target.getAttribute('href').startsWith('#')) {
         event.preventDefault();
-        tag = target.getAttribute('href').substring(1); // 获取标签名
-        if (btnRemove) { // 如果按钮被移除
-            btnRemove = 0;
-            memoDom.insertAdjacentHTML('afterend', load);
-            var btn = document.querySelector("button.button-load");
-            btn.addEventListener("click", function () {
-                if (isLoading || btnRemove) return; // 如果正在加载或按钮已被移除，返回
-                isLoading = true; // 设置加载状态
-                getTagFirstList(); // 加载标签相关内容
-            });
-        }        
-        getTagFirstList();
+        var tag = target.getAttribute('href').substring(1); // 获取标签名
+        
+        // 获取与标签相关的内容
+        getTagFirstList(tag);
+        
+        // 显示过滤器
         var filterElem = document.getElementById('tag-filter');
-        filterElem.style.display = 'block';    // 显示过滤器
+        filterElem.style.display = 'block';    
         var tags = document.getElementById('tags');
         var tagresult = `Filter: <span class='tag-span'><a rel='noopener noreferrer' href=''>#${tag}</a></span>`;
         tags.innerHTML = tagresult;
-        scrollTo(0, 0);    // 回到顶部
+        
+        scrollTo(0, 0); // 回到顶部
+
+        // 当前不是碎碎念页面，移除加载更多按钮
+        if (!isMemosPage) {
+            var btn = document.querySelector("button.button-load");
+            if (btn) {
+                btn.remove(); // 移除加载更多按钮
+            }
+        }
     }
 });
 
-function getTagFirstList() {
+function getTagFirstList(tag) { // 接收标签参数
     if (memo.APIVersion === 'new') {
         console.log('Could not list tag');
     } else if (memo.APIVersion === 'legacy') {
         page = 1;
         nextLength = 0;
         nextDom = [];
-        memoDom.innerHTML = "";
-        var memoUrl_tag = memoUrl + "&limit=" + limit + "&tag=" + tag;
-        fetch(memoUrl_tag).then(res => res.json()).then(resdata => {
-            updateHTMl(resdata);
-            var nowLength = resdata.length;
-            if (nowLength < limit) { // 返回数据条数小于 limit 则直接移除“加载更多”按钮
-                handleNoMoreData();
-                return;
-            }
-            page++;
-            nextPageToken = resdata.nextPageToken; // 更新下一页的标识
-            getNextList(); // 加载下一页数据
-        }).catch(err => {
-            console.error(err);
-        });
+        memoDom.innerHTML = ""; // 清空现有内容
+        
+        // 构造请求 URL
+        var memoUrl_tag = `${memoUrl}&limit=${limit}&tag=${tag}`;
+        
+        fetch(memoUrl_tag)
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return res.json();
+            })
+            .then(resdata => {
+                // 检查返回的数据
+                if (!Array.isArray(resdata) || resdata.length === 0) {
+                    memoDom.innerHTML = "<p>No content found for this tag.</p>";
+                    return;
+                }
+
+                // 过滤数据
+                const filteredData = resdata.filter(item => item.tags && item.tags.includes(tag));
+                
+                // 更新 HTML 内容
+                updateHTMl(filteredData);
+                
+                var nowLength = filteredData.length;
+                if (nowLength < limit) { // 返回数据条数小于 limit 则直接移除“加载更多”按钮
+                    handleNoMoreData();
+                    return;
+                }
+                page++;
+                nextPageToken = resdata.nextPageToken; // 更新下一页的标识
+                getNextList(); // 加载下一页数据
+            })
+            .catch(err => {
+                console.error(err);
+                memoDom.innerHTML = "<p>Error loading content.</p>";
+            });
     } else {
         throw new Error('Invalid APIVersion');
     }
 }
+
+function updateHTMl(data) {
+    // 清空现有内容
+    memoDom.innerHTML = ""; 
+
+    // 遍历数据并更新 HTML
+    data.forEach(item => {
+        var content = `<div class="content-item">
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+            <span>Tags: ${item.tags.join(', ')}</span>
+        </div>`;
+        memoDom.insertAdjacentHTML('beforeend', content);
+    });
+}
+
 
 // 当前页数
 let currentPage = 0;
@@ -229,7 +306,7 @@ function updateHTMl(data) {
 
     // 解析各种链接
     const BILIBILI_REG = /<a\shref="https:\/\/www\.bilibili\.com\/video\/((av[\d]{1,10})|(BV([\w]{10})))\/?">.*<\/a>/g;
-    const QQMUSIC_REG = /<a\shref="https:\/\/y\.qq\.com\/.*(\/[0-9a-zA-Z]+)(\.html)?".*?>.*?<\/a>/g;
+    const QQMUSIC_REG = /<a\shref="https\:\/\/y\.qq\.com\/.*(\/[0-9a-zA-Z]+)(\.html)?".*?>.*?<\/a>/g;
     const QQVIDEO_REG = /<a\shref="https:\/\/v\.qq\.com\/.*\/([a-zA-Z0-9]+)\.html".*?>.*?<\/a>/g;
     const SPOTIFY_REG = /<a\shref="https:\/\/open\.spotify\.com\/(track|album)\/([\s\S]+)".*?>.*?<\/a>/g;
     const YOUKU_REG = /<a\shref="https:\/\/v\.youku\.com\/.*\/id_([a-zA-Z0-9=]+)\.html".*?>.*<\/a>/g;
@@ -254,10 +331,11 @@ function updateHTMl(data) {
             .replace(BILIBILI_REG, "<div class='video-wrapper'><iframe src='https://player.bilibili.com/player.html?bvid=\$1&as_wide=1&high_quality=1&danmaku=0&autoplay=0' scrolling='no' border='0' frameborder='no' allowfullscreen='true' style='position:absolute;height:100%;width:100%;'></iframe></div>")
             .replace(YOUTUBE_REG, "<div class='video-wrapper'><iframe src='https://www.youtube.com/embed/\$1' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen title='YouTube Video'></iframe></div>")
             .replace(NETEASE_MUSIC_REG, "<div class='music-wrapper'><meting-js auto='https://music.163.com/#/song?id=\$1'></meting-js></div>")
-            .replace(QQMUSIC_REG, "<div class='music-wrapper'><meting-js auto='https://y.qq.com/n/yqq/song\$1.html'></meting-js></div>")
-            .replace(QQVIDEO_REG, "<div class='video-wrapper'><iframe src='https://v.qq.com/iframe/player.html?vid=\$1' allowFullScreen='true' frameborder='no'></iframe></div>")
-            .replace(SPOTIFY_REG, "<div class='spotify-wrapper'><iframe style='border-radius:12px' src='https://open.spotify.com/embed/\$1/\$2?utm_source=generator&theme=0' width='100%' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe></div>")
-            .replace(YOUKU_REG, "<div class='video-wrapper'><iframe src='https://player.youku.com/embed/\$1' frameborder='0' allowfullscreen></iframe></div>");
+            .replace(QQMUSIC_REG, "<meting-js auto='https://y.qq.com/n/yqq/song$1.html'></meting-js>")
+            .replace(QQVIDEO_REG, "<div class='video-wrapper'><iframe src='//v.qq.com/iframe/player.html?vid=$1' allowFullScreen='true' frameborder='no'></iframe></div>")
+            .replace(SPOTIFY_REG, "<div class='spotify-wrapper'><iframe style='border-radius:12px' src='https://open.spotify.com/embed/$1/$2?utm_source=generator&theme=0' width='100%' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe></div>")
+            .replace(YOUKU_REG, "<div class='video-wrapper'><iframe src='https://player.youku.com/embed/$1' frameborder=0 'allowfullscreen'></iframe></div>")
+            
 
         // 解析内置资源文件
         if (memo.APIVersion === 'new') {

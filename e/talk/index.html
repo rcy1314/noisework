@@ -6,15 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="referrer" content="no-referrer">
+    <meta name="description" content="这是来自Noise的个人朋友圈，通过本页你可以浏览我的一些日常碎碎念.">
+    <meta name="keywords" content="noise主页,个人主页,朋友圈,碎碎念">
     <link rel="icon" href="./assets/img/avatar.png" type="image/png" />
     <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="./assets/css/APlayer.min.css" rel="stylesheet" type="text/css">
     <link href="./assets/css/highlight.github.min.css" rel="stylesheet" type="text/css">
     <link href="./assets/css/custom.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="./assets/css/waline.css" />
+    <link rel="stylesheet" href="./assets/css/friendlink.css">
     <title>NOISE的碎碎念</title>
     <style type='text/css'>
-        header {
+         header {
             position: relative;
             height: 200px; /* Adjust height as needed */
             width: 100%; /* Ensure header takes full width */
@@ -100,6 +103,45 @@
            
             width: 104%;
         }
+        .button-container {
+            margin: 16px 0;
+            display: flex;
+            justify-content: flex-start; /* Align buttons to the left */
+        }
+
+        .nav-button {
+            background-color: #3c5b71e0;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 8px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: #7b84fe;
+            color: #fff;
+        }
+
+        .nav-button svg {
+            height: 16px;
+            width: 16px;
+            margin-right: 5px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
         /* Mobile specific styles */
         @media (max-width: 600px) {
             header {
@@ -113,16 +155,9 @@
             .profile {
                 bottom: 10px; /* Adjust position for mobile */
             }
-
-            .theme-toggle {
-                top: 10px; /* Adjust position for mobile */
-                right: 10px; /* Adjust position for mobile */
-            }
         }
-
     </style>
 </head>
-
 <body>
     <header id="header">
         <div class="menu">
@@ -147,7 +182,7 @@
     </header>
 
     <section id="main" class="container">
-        <h1>顾海涛涛，念念不忘</h1>
+        <h2>顾海涛涛，念念不忘</h2>
 
         <blockquote>
             <p>NOISE <del>碎碎念</del>,忆往昔- <em>都是故事</em></p>
@@ -159,7 +194,116 @@
             <div id="tags"></div>
         </blockquote>
 
-        <div id="memos" class="memos"></div>
+        <div class="button-container">
+            <button class="nav-button" onclick="showPage('memos')">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm0 14a6 6 0 1 1 6-6 6 6 0 0 1-6 6z"/>
+                </svg>
+                碎碎念
+            </button>
+            <button class="nav-button" onclick="showPage('friendlinks')">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm1 12H7v-1h2v1zm0-3H7V4h2v5z"/>
+                </svg>
+                友情链接
+            </button>
+            <button class="nav-button" onclick="showPage('waline')">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm1 12H7v-1h2v1zm0-3H7V4h2v5z"/>
+                </svg>
+                留言
+            </button>
+        </div>
+
+        <div id="memos" class="memos page active"></div>
+        <div id="friendlinks" class="page">
+           
+             
+                        <div class="title"><i class="fa-solid fa-user-plus"></i>友情链接</div>
+                        </br>
+                        <div class="friendlinks-container">
+                            <div class="friendlinks-card">
+                                    <div class="avatar">
+                                        <a href="https://rcy1314.github.io/Idea/">
+                                            <img alt="" loading="lazy" decoding="async"
+                                                src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/43w.jpeg">
+                                        </a>
+                                    </div>
+                                    <div class="info">
+                                        <a class="friendname" target="_blank" href="https://rcy1314.github.io/Idea/">idea book</a>
+                                        <p class="frienddescription">旧的专栏</p>
+                                    </div>
+                                </div>
+                                <div class="friendlinks-card">
+                                    <div class="avatar">
+                                        <a href="https://rcy1314.github.io/Idea/">
+                                            <img alt="" loading="lazy" decoding="async"
+                                                src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/43w.jpeg">
+                                        </a>
+                                    </div>
+                                    <div class="info">
+                                        <a class="friendname" target="_blank" href="https://rcy1314.github.io/Idea/">idea book</a>
+                                        <p class="frienddescription">旧的专栏</p>
+                                    </div>
+                                </div>
+                                <div class="friendlinks-card">
+                                    <div class="avatar">
+                                        <a href="https://rcy1314.github.io/Idea/">
+                                            <img alt="" loading="lazy" decoding="async"
+                                                src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/43w.jpeg">
+                                        </a>
+                                    </div>
+                                    <div class="info">
+                                        <a class="friendname" target="_blank" href="https://rcy1314.github.io/Idea/">idea book</a>
+                                        <p class="frienddescription">旧的专栏</p>
+                                    </div>
+                                </div>
+                                <div class="friendlinks-card">
+                                    <div class="avatar">
+                                        <a href="#">
+                                            <img alt="" loading="lazy" decoding="async"
+                                                src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/33s.jpeg">
+                                        </a>
+                                    </div>
+                                    <div class="info">
+                                        <a class="friendname" target="_blank" href="#">待添加</a>
+                                        <p class="frienddescription">未来可期</p>
+                                    </div>
+                                </div>
+                                <div class="friendlinks-card">
+                                    <div class="avatar">
+                                        <a href="#">
+                                            <img alt="" loading="lazy" decoding="async"
+                                                src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/43e.jpeg">
+                                        </a>
+                                    </div>
+                                    <div class="info">
+                                        <a class="friendname" target="_blank" href="#">待添加</a>
+                                        <p class="frienddescription">未来可期</p>
+                                    </div>
+                                </div>
+                                <div class="friendlinks-card">
+                                    <div class="avatar">
+                                        <a href="#">
+                                            <img alt="" loading="lazy" decoding="async"
+                                                src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/335r.jpeg">
+                                        </a>
+                                    </div>
+                                    <div class="info">
+                                        <a class="friendname" target="_blank" href="#">待添加</a>
+                                        <p class="frienddescription">未来可期</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="waline" class="page">
+            <div id="waline"></div>
+        </div>
     </section>
 
     <footer class="markdown-body footer">
@@ -172,10 +316,7 @@
             -webkit-text-fill-color: transparent;">NOISE</a> All Rights Reserved.
         </p>
     </footer>
-    <!--
-    <div id='rebtmbtn' onclick='returnBottom()'>👇</div>
-    <div id='retopbtn' onclick='returnTop()'>👆</div>
-     -->
+
     <script type="text/javascript">
         const backgrounds = [
             '../../assets/bg/bg11.png',
@@ -188,7 +329,6 @@
             '../../assets/bg/bg12.png',
             '../../assets/3.png',
             '../../assets/5ae.gif',
-            // 添加更多背景图路径
         ];
 
         function changeBackground() {
@@ -197,11 +337,17 @@
             header.style.setProperty('background-image', `url('${backgrounds[randomIndex]}')`, 'important');
         }
 
-        // 在文档完全加载后随机选择背景图
         document.addEventListener('DOMContentLoaded', changeBackground);
+
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
     </script>
 
-    <!-- Your Memos API -->
     <script type="text/javascript">
         var memos = {
             host: 'https://memos.noisework.cn/',
@@ -248,6 +394,7 @@
     <script type="text/javascript" src="./assets/js/highlight.min.js"></script>
     <script type="text/javascript" src="./assets/js/main.js"></script>
     <script type="text/javascript" src="./assets/js/custom.js"></script>
+    <script src="../../js/sound.js"></script>
 </body>
 
 </html>
