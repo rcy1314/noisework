@@ -297,7 +297,7 @@ function initWaline(container, host) {
             imageUploader: false,
             copyright: false,
             // 使用 path 参数来确保评论区的唯一性
-            path: `/${memo.host}m/${uid}`, // 指向实际链接
+            path: `/m/${uid}`, // 指向实际链接
         });
     });
 }
