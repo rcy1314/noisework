@@ -39,8 +39,8 @@
 
         .profile {
             position: absolute;
-            bottom: 20px;
-            right: 20px;
+            bottom: -30px;
+            right: 16px;
             display: flex;
             align-items: center;
         }
@@ -55,11 +55,17 @@
         .profile .title {
             font-size: 16px;
             font-weight: bold;
+            background: linear-gradient(90deg, #ff6b6b, #4aa3f7, #6bcb77); /* 渐变颜色 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; /* 使文本填充为透明，以显示渐变 */
         }
 
         .profile .description {
             font-size: 13px;
             opacity: 0.8;
+            background: linear-gradient(90deg, #766bcb, #ff6b6b, #f7e14a); /* 渐变颜色 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; /* 使文本填充为透明，以显示渐变 */
         }
 
         #retopbtn, #rebtmbtn, .theme-toggle {
@@ -153,7 +159,7 @@
             }
 
             .profile {
-                bottom: 10px; /* Adjust position for mobile */
+                bottom: -30px; /* Adjust position for mobile */
             }
         }
     </style>
