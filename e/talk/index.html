@@ -42,16 +42,19 @@
         .profile {
             position: absolute;
             bottom: -30px;
-            right: 5px;
+            right: 2px;
             display: flex;
             align-items: center;
+            margin-left: auto; /* 将头像推到右侧 */
         }
-
+        .profile-info {
+        margin-right: 8px; /* 文本和头像之间的间距 */
+        }
         .profile img {
             width: 60px; /* Adjust size as needed */
             height: 60px;
             border-radius: 50%;
-            margin-right: 10px;
+            margin-right: 2px;
         }
 
         .profile .title {
@@ -64,7 +67,7 @@
 
         .profile .description {
             font-size: 13px;
-            opacity: 0.8;
+            opacity: 1.2;
             background: linear-gradient(90deg, #766bcb, #ff6b6b, #f7e14a); /* 渐变颜色 */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent; /* 使文本填充为透明，以显示渐变 */
@@ -179,11 +182,11 @@
         </div>
 
         <div class="profile">
-            <img src="./assets/img/avatar.png" onclick="changeBackground()" alt="头像">
-            <div>
+            <div class="profile-info">
                 <div class="title">Noise</div>
                 <div class="description">执迷不悟</div>
             </div>
+            <img src="./assets/img/avatar.png" onclick="changeBackground()" alt="头像">
         </div>
 
         <div class='theme-toggle'>🌓</div>
