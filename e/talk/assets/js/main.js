@@ -274,18 +274,13 @@ function toggleCommentBox(host) {
         }
     }
 }
+
 // 初始化 Waline 评论框
 function initWaline(container, host) {
     const commentId = `waline-${host}`; // 使用 host 生成唯一 ID
     container.innerHTML = `<div id="${commentId}"></div>`;
     import('https://unpkg.com/@waline/client@v3/dist/waline.js').then(({ init }) => {
         const uid = host.split('-').pop(); // 从 host 中提取 uid
-        
-        // 打印 uid 和 path 以调试
-        console.log('UID:', uid);
-        const fixedPath = `https://memos.noisework.cn/m/${uid}`;
-        console.log('Path:', fixedPath);
-
         init({
             el: `#${commentId}`, // 使用生成的唯一 ID
             serverURL: 'https://ment.noisework.cn',
@@ -301,8 +296,8 @@ function initWaline(container, host) {
             ],
             imageUploader: false,
             copyright: false,
-            // 使用固定的 path
-            path: fixedPath, // 直接使用固定的值
+            // 使用 path 参数来确保评论区的唯一性
+            path: `/m/${uid}`, // 指向实际链接
         });
     });
 }
