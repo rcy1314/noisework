@@ -280,6 +280,7 @@ function initWaline(container, index) {
     const commentId = `waline-${index}`; // 使用 index 生成唯一 ID
     container.innerHTML = `<div id="${commentId}"></div>`;
     import('https://unpkg.com/@waline/client@v3/dist/waline.js').then(({ init }) => {
+        const uid = index.split('-').pop(); // 从 index 中提取 uid
         init({
             el: `#${commentId}`, // 使用生成的唯一 ID
             serverURL: 'https://ment.noisework.cn',
@@ -296,7 +297,7 @@ function initWaline(container, index) {
             imageUploader: false,
             copyright: false,
             // 使用 path 参数来确保评论区的唯一性
-            path: `memos/${index}`, // 使用 index 作为唯一标识
+            path: `${memo.host}m/${uid}`, // 指向实际链接
         });
     });
 }
