@@ -89,9 +89,12 @@
         }
 
         .theme-toggle {
-            top: 20px;
-            right: 20px;
-            cursor: pointer;
+        position: absolute; /* 改为绝对定位 */
+        top: 20px; /* 调整位置 */
+        right: 20px; /* 调整位置 */
+        cursor: pointer;
+        font-size: 20px; /* 增加字体大小以便更易于点击 */
+        z-index: 2; /* 确保在其他元素之上 */
         }
 
         .comment-button {
@@ -157,6 +160,10 @@
         @media (max-width: 600px) {
             header {
                 height: 150px; /* Adjust height for mobile */
+            }
+            .theme-toggle {
+            top: 10px; /* 在移动设备上调整位置 */
+            right: 10px; /* 在移动设备上调整位置 */
             }
 
             .menu .title {
@@ -361,8 +368,10 @@
             -webkit-text-fill-color: transparent;">NOISE</a> All Rights Reserved.
         </p>
     </footer>
-    
-
+    <!-- 
+    <div id='rebtmbtn' onclick='returnBottom()'>👇</div>
+    <div id='retopbtn' onclick='returnTop()'>👆</div>
+    -->
     <script type="text/javascript">
         const backgrounds = [
             '../../assets/bg/bg11.png',
