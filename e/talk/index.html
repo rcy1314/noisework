@@ -307,6 +307,40 @@
     </section>
 
     <footer class="markdown-body footer">
+        <div class="bsz">
+           <!--  <span id="busuanzi_container_site_pv">主页总访问量: <span id="busuanzi_value_site_pv"></span> 次</span> -->
+        </div>
+        <div style="margin-top: 10px;">
+            &nbsp; 
+            <span id="momk"></span>
+            <span id="momk_red" style="color: #ff0000;"></span> 
+            <script type="text/javascript">
+                function NewDate(str) {
+                    str = str.split('-');
+                    var date = new Date();
+                    date.setUTCFullYear(str[0], str[1] - 1, str[2]);
+                    date.setUTCHours(0, 0, 0, 0);
+                    return date;
+                }
+    
+                function momxc() {
+                    var birthDay = NewDate("2020-12-09");
+                    var today = new Date();
+                    var timeold = today.getTime() - birthDay.getTime();
+                    var msPerDay = 24 * 60 * 60 * 1000;
+                    var daysold = Math.floor(timeold / msPerDay);
+                    var e_hrsold = (timeold % msPerDay) / (1000 * 60 * 60);
+                    var hrsold = Math.floor(e_hrsold);
+                    var e_minsold = (timeold % (1000 * 60 * 60)) / (1000 * 60);
+                    var minsold = Math.floor(e_minsold);
+                    var seconds = Math.floor((timeold % (1000 * 60)) / 1000);
+    
+                    document.getElementById("momk").innerHTML = "本站已运行: " + daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+                    setTimeout(momxc, 1000);
+                }
+                momxc();
+            </script> 
+        </div>
         <p>Copyright @
             <script>
                 document.write(new Date().getFullYear())
@@ -316,6 +350,7 @@
             -webkit-text-fill-color: transparent;">NOISE</a> All Rights Reserved.
         </p>
     </footer>
+    
 
     <script type="text/javascript">
         const backgrounds = [
@@ -383,7 +418,7 @@
             copyright: false,
         });
     </script>
-
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <script type='text/javascript' src='./assets/js/jquery-3.2.1.js'></script>
     <script type="text/javascript" src="./assets/js/lazyload.min.js"></script>
     <script type="text/javascript" src="./assets/js/marked.umd.min.js"></script>
