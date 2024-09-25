@@ -45,6 +45,7 @@ var isMemosPage = true; // 默认在碎碎念页面
 
 if (memoDom) {
     memoDom.insertAdjacentHTML('afterend', load);
+    addLoadMoreEvent(); // 确保首次加载时添加事件监听
     getFirstList(); // 首次加载数据
 }
 
@@ -81,11 +82,13 @@ function showPage(pageName) {
 // 添加“加载更多”按钮的事件监听器
 function addLoadMoreEvent() {
     var btn = document.querySelector("button.button-load");
-    btn.addEventListener("click", function () {
-        if (isLoading || btnRemove) return; // 如果正在加载或按钮已被移除，返回
-        isLoading = true; // 设置加载状态
-        getNextList(); // 加载下一页
-    });
+    if (btn) {
+        btn.addEventListener("click", function () {
+            if (isLoading || btnRemove) return; // 如果正在加载或按钮已被移除，返回
+            isLoading = true; // 设置加载状态
+            getNextList(); // 加载下一页
+        });
+    }
 }
 
 function getFirstList() {
@@ -238,6 +241,7 @@ function getTagFirstList(tag) { // 接收标签参数
     }
 }
 
+// 更新 HTML 内容的函数
 function updateHTMl(data) {
     // 清空现有内容
     memoDom.innerHTML = ""; 
