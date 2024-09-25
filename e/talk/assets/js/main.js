@@ -261,35 +261,36 @@ function updateHTMl(data) {
 
         // 解析内置资源文件
         if (memo.APIVersion === 'new') {
-            if (data[i].resourceList && data[i].resourceList.length > 0) {
-                var resourceList = data[i].resourceList;
-                var imgUrl = '', resUrl = '', resImgLength = 0;
+            if (data[i].resources && data[i].resources.length > 0) {
+                var resourceList = data[i].resources; // 修改为 resources
+                var imgUrl = '', resUrl = '';
                 for (var j = 0; j < resourceList.length; j++) {
                     var resType = resourceList[j].type.slice(0, 5);
                     var resexlink = resourceList[j].externalLink;
                     var resLink = '';
-                    if (resexlink) {
-                        resLink = resexlink;
-                    } else {
-                        var fileId = resourceList[j].publicId || resourceList[j].filename;
-                        resLink = memos + '/o/r/' + resourceList[j].id + '/' + fileId;
-                    }
+                    var filename = resourceList[j].filename;
+                    var name = resourceList[j].name; // 获取资源的名称
+        
                     if (resType === 'image') {
-                        imgUrl += '<div class="resimg"><img loading="lazy" src="' + resLink + '"/></div>';
-                        resImgLength += 1;
-                    }
-                    if (resType !== 'image') {
-                        resUrl += '<a target="_blank" rel="noreferrer" href="' + resLink + '">' + resourceList[j].filename + '</a>';
+                        if (resexlink) {
+                            imgUrl += '<div class="resimg"><img loading="lazy" src="' + resexlink + '"/></div>';
+                        } else {
+                            resLink = memos + '/file/' + name + '/' + filename;
+                            imgUrl += '<div class="resimg"><img loading="lazy" src="' + resLink + '"/></div>';
+                        }
+                    } else {
+                        resLink = memos + '/file/' + name + '/' + filename;
+                        resUrl += '<a target="_blank" rel="noreferrer" href="' + resLink + '">' + filename + '</a>';
                     }
                 }
                 if (imgUrl) {
-                    memoContREG += '<div class="resource-wrapper"><div class="images-wrapper">' + imgUrl + '</div></div>';
+                    memoContREG += '<div class="resource-wrapper "><div class="images-wrapper">' + imgUrl + '</div></div>';
                 }
                 if (resUrl) {
-                    memoContREG += '<div class="resource-wrapper"><p class="datasource">' + resUrl + '</p></div>';
+                    memoContREG += '<div class="resource-wrapper "><p class="datasource">' + resUrl + '</p></div>';
                 }
             }
-        } else {
+        }else {
             throw new Error('Invalid APIVersion');
         }
 
