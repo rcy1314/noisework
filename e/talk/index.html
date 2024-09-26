@@ -216,34 +216,43 @@
         <blockquote id="tag-filter" class="filter">
             <div id="tags"></div>
         </blockquote>
-
+        
         <div class="button-container">
             <button class="nav-button" onclick="showPage('memos')">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm0 14a6 6 0 1 1 6-6 6 6 0 0 1-6 6z"/>
+                <svg width='64' height='64' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                    <path fill='#ffffff'
+                        d="M923 283.6a260.04 260.04 0 0 0-56.9-82.8 264.4 264.4 0 0 0-84-55.5A265.34 265.34 0 0 0 679.7 125c-49.3 0-97.4 13.5-139.2 39-10 6.1-19.5 12.8-28.5 20.1-9-7.3-18.5-14-28.5-20.1-41.8-25.5-89.9-39-139.2-39-35.5 0-69.9 6.8-102.4 20.3-31.4 13-59.7 31.7-84 55.5a258.44 258.44 0 0 0-56.9 82.8c-13.9 32.3-21 66.6-21 101.9 0 33.3 6.8 68 20.3 103.3 11.3 29.5 27.5 60.1 48.2 91 32.8 48.9 77.9 99.9 133.9 151.6 92.8 85.7 184.7 144.9 188.6 147.3l23.7 15.2c10.5 6.7 24 6.7 34.5 0l23.7-15.2c3.9-2.5 95.7-61.6 188.6-147.3 56-51.7 101.1-102.7 133.9-151.6 20.7-30.9 37-61.5 48.2-91 13.5-35.3 20.3-70 20.3-103.3.1-35.3-7-69.6-20.9-101.9z">
+                    </path>
                 </svg>
+        
                 碎碎念
             </button>
             <button class="nav-button" onclick="showPage('friendlinks')">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm1 12H7v-1h2v1zm0-3H7V4h2v5z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width='64' height='64' fill='#ffffff' viewBox="0 0 16 16">
+                    <path
+                        d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5">
+                    </path>
                 </svg>
-                友情链接
+        
+                友链
             </button>
             <button class="nav-button" onclick="showPage('waline')">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm1 12H7v-1h2v1zm0-3H7V4h2v5z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width='64' height='64' fill='#ffffff' viewBox="0 0 16 16">
+                    <path
+                        d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z">
+                    </path>
                 </svg>
+        
                 留言
             </button>
         </div>
-
+        
         <div id="memos" class="memos page active"></div>
         <div id="friendlinks" class="page">
-           
-             
-                        <div class="title"><i class="fa-solid fa-user-plus"></i>友情链接</div>
-                        </br>
+        
+        
+            <div class="title"><i class="fa-solid fa-user-plus"></i>友情链接</div>
+            </br>
                         <div class="friendlinks-container">
                             <div class="friendlinks-card">
                                     <div class="avatar">
@@ -379,16 +388,16 @@
     -->
     <script type="text/javascript">
         const backgrounds = [
-            '../../assets/bg/bg11.png',
-            '../../assets/bg/bg2.png',
-            '../../assets/bg/bg3.png',
-            '../../assets/bg/bg4.png',
-            '../../assets/bg/bg7.png',
-            '../../assets/bg/bg9.png',
-            '../../assets/bg/bg10.png',
-            '../../assets/bg/bg12.png',
-            '../../assets/3.png',
-            '../../assets/5ae.gif',
+            './assets/img/bg/bg11.png',
+            './assets/img/bg/bg2.png',
+            './assets/img/bg/bg3.png',
+            './assets/img/bg/bg4.png',
+            './assets/img/bg/bg7.png',
+            './assets/img/bg/bg9.png',
+            './assets/img/bg/bg10.png',
+            './assets/img/bg/bg12.png',
+            './assets/img/bg/3.png',
+            './assets/img/bg/5ae.gif',
         ];
 
         function changeBackground() {

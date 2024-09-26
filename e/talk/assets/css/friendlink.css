@@ -17,8 +17,8 @@
 .friendlinks-card {
     flex: 1 1 auto; /* 设置为自动宽度，根据剩余空间自动调整 */
     width: calc(50% + 10px);
-    max-width: calc(20% - 0px); 
-    padding: 10px;
+    max-width: calc(16% - 0px); 
+    padding: 5px;
     background: rgba(35, 54, 76, 0.55); 
     border-radius: 15px; /* 圆角边框 */
     overflow: hidden; /* 溢出隐藏 */
@@ -28,8 +28,8 @@
 }
 .avatar img {
     /* 头像样式 */
-    width: 65px;
-    height: 65px; /* 设置头像高度 */
+    width: 55px;
+    height: 55px; /* 设置头像高度 */
     border-radius: 50%; /* 头像圆角 */
     margin-bottom: 6px; /* 头像和文字之间的间距 */
     object-fit: cover; /* 确保头像图片保持圆形 */
