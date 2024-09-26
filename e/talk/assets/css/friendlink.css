@@ -52,7 +52,7 @@
     color: #ffffff;
     font-weight: bold;
     text-decoration: none;
-    font-size: 1.005em; /* 增大字体 */
+    font-size: 0.005em; /* 增大字体 */
     transition: color 0.3s; /* 姓名颜色过渡 */
 }
 
@@ -63,7 +63,7 @@
 .frienddescription {
     /* 描述样式 */
     color: #dddddd;
-    font-size: 0.9em; 
+    font-size: 0.08em; 
     margin-top: 3px; /* 描述与姓名之间的间距 */
     overflow: hidden; /* 隐藏超出部分的内容 */
     text-overflow: ellipsis; /* 当内容超出时显示省略号 */
