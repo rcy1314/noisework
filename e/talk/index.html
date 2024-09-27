@@ -426,15 +426,26 @@
             './assets/img/bg/3.png',
             './assets/img/bg/5ae.gif',
         ];
-
+    
+        // 预加载图像
+        const preloadImages = (images) => {
+            images.forEach((image) => {
+                const img = new Image();
+                img.src = image;
+            });
+        };
+    
+        // 预加载背景图像
+        preloadImages(backgrounds);
+    
         function changeBackground() {
             const header = document.getElementById('header');
             const randomIndex = Math.floor(Math.random() * backgrounds.length);
             header.style.setProperty('background-image', `url('${backgrounds[randomIndex]}')`, 'important');
         }
-
+    
         document.addEventListener('DOMContentLoaded', changeBackground);
-
+    
         function showPage(pageId) {
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => {
@@ -443,6 +454,7 @@
             document.getElementById(pageId).classList.add('active');
         }
     </script>
+    
 
     <script type="text/javascript">
         var memos = {
