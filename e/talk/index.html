@@ -122,7 +122,8 @@
         .button-container {
             margin: 16px 0;
             display: flex;
-            justify-content: flex-start; /* Align buttons to the left */
+            justify-content: flex-start; 
+            flex-wrap: wrap; /* 允许换行 */
         }
 
         .nav-button {
@@ -137,6 +138,10 @@
             display: flex;
             align-items: center;
             transition: background-color 0.3s, color 0.3s;
+            min-width: 30px; /* 设置按钮的最小宽度 */
+            max-width: calc(60% - 8px); /* 限制按钮的最大宽度，保持比例 */
+            flex: 0 0 auto; /* 允许按钮缩放 */
+            margin-bottom: 2px; /* 为按钮添加底部间距 */
         }
 
         .nav-button:hover {
@@ -177,6 +182,12 @@
         }
             .profile {
                 bottom: -30px; /* Adjust position for mobile */
+            }
+            .nav-button {
+             max-width: 30%; /* 在手机上使按钮占满宽度 */
+             flex: 0 0 auto;
+             margin-right: 10; /* 在手机上移除右边距 */
+             margin-bottom: 10px; /* 为按钮添加底部间距 */
             }
         }
     </style>
