@@ -137,17 +137,10 @@
          display: flex;
          align-items: center;
          transition: background-color 0.3s, color 0.3s;
-         min-width: 10px; /* 设置按钮的最小宽度 */
-         flex: 0 0 auto; /* 允许按钮缩放 */
+         min-width: 10px; /* 设置按钮的最小宽度 */     
          margin-bottom: 8px; /* 增加底部间距 */
          margin-right: 8px; /* 增加右边距 */
         }
-
-       /* 处理最后一个按钮的右边距 */
-       .button-container .nav-button:last-child {
-         margin-right: 0; /* 移除最后一个按钮的右边距 */
-        }
-
 
         .nav-button:hover {
             background-color: #7b84fe;
@@ -190,6 +183,8 @@
             }
             .nav-button {
              max-width: 100%; /* 在手机上使按钮占满宽度 */
+             flex: 1 1 auto; /* 允许按钮缩放 */
+             padding: 5px 6px;
              font-size: 13px;
              margin-bottom: 8px; /* 为按钮添加底部间距 */
             }
