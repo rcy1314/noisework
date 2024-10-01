@@ -1,4 +1,4 @@
-var cacheName = 'Noise主页-v2.13';
+var cacheName = 'Noise主页-v2.14';
 var assetsToCache = [
   './assets/sound/鼠点左1.mp3',
   './assets/sound/鼠点左2.mp3',
