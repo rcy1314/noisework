@@ -23,6 +23,7 @@
 	<script src="./js/Right.js"></script>
 	<link rel="stylesheet" href="./css/waline.css">
 	<link rel="stylesheet" href="./css/friendlink.css">
+	<script src="./moyu/ics_parser.mjs"></script>
 	<!-- 添加Service Worker -->
     <script>
         if ('serviceWorker' in navigator) {
@@ -260,13 +261,68 @@
 			<!-- 摸鱼日历-->
 			<div class="left-div left-time" id="moyuContainer">
 				<ul id="line2">
-					<li>
-						<div class="container">
-							<a href="https://dayu.qqsuu.cn/moyurili/apis.php" target="_blank">
-								<img src="https://dayu.qqsuu.cn/moyurili/apis.php">
-							</a>
-						</div>
-					</li>
+					<div class="container" id="favs">
+				<script>
+				const FAVS = ['元旦', '劳动节', '国庆节', '春节', '清明', '端午', '中秋']
+				const arr = [0, 0, 46, 3, 94, 4, 120, 1, 168, 5, 266, 6, 273, 2, 365, 0, 400, 3, 459, 4, 485, 1, 522, 5, 620, 6, 638, 2, 730, 0, 754, 3, 824, 4, 851, 1, 906, 5, 1004, 2, 1004, 6, 1096, 0, 1138, 3, 1189, 4, 1216, 1, 1260, 5, 1359, 6, 1369, 2, 1461, 0, 1492, 3, 1555, 4, 1581, 1, 1614, 5, 1713, 6, 1734, 2, 1826, 0, 1847, 3, 1920, 4, 1946, 1, 1998, 5, 2097, 6, 2099, 2, 2191, 0, 2231, 3, 2285, 4, 2312, 1, 2352, 5, 2451, 6, 2465, 2, 2557, 0, 2585, 3, 2650, 4, 2677, 1, 2707, 5, 2830, 2, 2835, 6, 2922, 0, 2969, 3, 3016, 4, 3042, 1, 3091, 5, 3189, 6, 3195, 2, 3287, 0, 3323, 3, 3381, 4, 3407, 1, 3446, 5, 3544, 6, 3560, 2, 3652, 0, 3677, 3, 3746, 4, 3773, 1, 3800, 5, 3926, 2, 3928, 6, 4018, 0, 4061, 3, 4111, 4, 4138, 1, 4184, 5, 4282, 6, 4291, 2, 4383, 0, 4416, 3, 4477, 4, 4503, 1, 4637, 6, 4656, 2];
+				const getResult = (_n) => {
+					const n = Math.floor((_n - 1514736000000) / 86400000)
+					for (let i = 0; i < arr.length; i += 2) {
+						if (arr[i] >= n) {
+							const result = new Array()
+							for (let j = 0; j < 14; j += 2) {
+								const m = arr[i + j]
+								result.push([m - n, arr[i + j + 1]])
+							}
+							return result
+						}
+					}
+					return []
+				}
+				
+				const now = new Date()
+				const hour = now.getHours()
+				const day = 6 - now.getDay()
+				favs.innerHTML = `<li>距离周六还有:${day}天</li>`
+				if (day < 1) {
+					favs.innerHTML = `<li><span style="text-decoration: line-through;">距离周六还有: </span> 周六快乐！(#^.^#) </li>`
+				}			
+				favs.innerHTML += getResult(now).map(([a, b]) => `<li>距离${FAVS[b]}还有:${a}天</li>`).join('\n')
+				</script>
+				<script language="JavaScript">
+					function startTime()   
+					{   
+						var today=new Date();
+						var yyyy = today.getFullYear();
+						var MM = today.getMonth()+1;
+						var dd = today.getDate();
+						var hh=today.getHours();
+						var mm=today.getMinutes();
+						var ss=today.getSeconds();
+						MM=checkTime(MM);
+						dd=checkTime(dd);
+						mm=checkTime(mm);   
+						ss=checkTime(ss);    
+						var day; 
+						if(today.getDay()==0)   day   =   "星期日 " 
+						if(today.getDay()==1)   day   =   "星期一 " 
+						if(today.getDay()==2)   day   =   "星期二 " 
+						if(today.getDay()==3)   day   =   "星期三 " 
+						if(today.getDay()==4)   day   =   "星期四 " 
+						if(today.getDay()==5)   day   =   "星期五 " 
+						if(today.getDay()==6)   day   =   "星期六 " 
+						document.getElementById('nowDateTimeSpan').innerHTML=yyyy+"-"+MM +"-"+ dd +" " + hh+":"+mm+":"+ss+"   " + day;   
+						setTimeout('startTime()',1000);
+					}   
+				
+					function checkTime(i)   
+					{   
+						if (i<10){
+							i="0" + i;
+						}   
+						  return i;
+					}  
+				</script>   
 				</ul>
 			</div>
 			<!-- 摸鱼日历结束-->
