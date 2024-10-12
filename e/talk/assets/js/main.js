@@ -388,10 +388,33 @@ function updateHTMl(data) {
             throw new Error('Invalid APIVersion');
         }
 
-// 获取相对时间
-var relativeTime = memo.APIVersion === 'new' ?
-    getRelativeTime(new Date(data[i].createTime)) :
-    getRelativeTime(new Date(data[i].createdTs * 1000));
+        // 获取相对时间
+        var createTime = memo.APIVersion === 'new' ?
+            new Date(data[i].createTime) :
+            new Date(data[i].createdTs * 1000);
+
+        // 格式化日期和时间为“2024年10月9日几时几分”
+        var options = {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: false
+        };
+
+        // 获取格式化的日期和时间
+        var formattedDate = createTime.toLocaleString('zh-CN', options);
+
+        // 将日期和时间分开，构建所需格式
+        var [datePart, timePart] = formattedDate.split(' ');
+
+        // 处理日期部分，确保格式为“2024年10月9日”
+        var dateComponents = datePart.split('/');
+        var formattedDateString = `${dateComponents[0]}年${dateComponents[1]}月${dateComponents[2]}日`;
+
+        // 合并日期和时间部分
+        var relativeTime = `${formattedDateString} ${timePart}`;
 
         // 生成唯一 ID
         const safeRelativeTime = relativeTime.replace(/\s+/g, '-').replace(/[^\w-]/g, ''); // 替换空格和特殊字符
