@@ -1,4 +1,4 @@
-var cacheName = 'Noise主页-v2.14';
+var cacheName = 'Noise主页-v2.15';
 var assetsToCache = [
   './assets/sound/鼠点左1.mp3',
   './assets/sound/鼠点左2.mp3',
@@ -39,7 +39,8 @@ var assetsToCache = [
   './js/suiji-picture.js',
   './js/Right.js',
   './js/subscription-form.js',
-  '/js/main.js',
+  './js/bilibili-video.js',
+  './js/main.js',
   './js/home-script.js',
   './js/AD.js',
   './js/emb.js',

@@ -661,21 +661,40 @@ a {
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 20%; /* 宽度可以调整，以适应你的布局 */
-    margin: 0 10px; /* 左右边距 */
-    flex-direction: column; /* 垂直排列 */
+    width: 20%; 
+    margin: 0 10px; 
+    flex-direction: column; 
+    position: relative; 
 }
 
 .bilibilititle-left img, .bilibilititle-right img {
-    width: 100%; /* 设置图片宽度为100%，以填充容器 */
-    height: auto; /* 保持图片原始高度 */
-    transition: transform 0.3s ease; /* 添加过渡效果 */
+    width: 100%; 
+    height: auto; 
+    transition: transform 0.3s ease; 
 }
 
 .bilibilititle-left img:hover, .bilibilititle-right img:hover {
-    transform: scale(1.1); /* 鼠标悬停时放大1.1倍 */
+    transform: scale(1.1); 
 }
 
+.tooltip {
+    display: none; 
+    position: absolute; 
+    bottom: 100%;
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: rgba(0, 0, 0, 0.549);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap; 
+    z-index: 10; 
+}
+
+.bilibilititle-left:hover .tooltip,
+.bilibilititle-right:hover .tooltip {
+    display: block; /* 鼠标悬停时显示提示 */
+}
 /* 引入游戏容器 */
 .gamendex {
     display: flex;

@@ -210,44 +210,73 @@
 						<class="title">《我的B站收藏夹视频》
 							<hr class="dashed">
 					</div>
-					<iframe src="https://www.noisework.cn/e/bili/index.html?id=3271958393" frameborder="0"></iframe>
-				</ul>
-			</div>
-			<!-- B站收藏结束-->
-			<!-- 云盘资源-->
-			<div class="left-div left-time" id="panContainer">
-				<ul id="line">
-					<div class="container">
-						<class="title">《云盘资源上新情报》
-							<hr class="dashed">
+					<!-- 视频播放器将在这里动态插入 -->
+					<div id="bilibiliVideoContainer">
 					</div>
-					<div class="ziyuan"></div>
-				</ul>
 			</div>
-			<!-- 云盘资源结束-->
-			<!-- 视频播放 -->
-			<div class="left-div left-time">
-				<ul id="line5">
-					<div class="container">
-						<!-- 视频容器 -->
-						<div id="video-container">
-							<!-- 视频元素 -->
-							<video id="random-video" width="100%" height="auto" controls webkit-playsinline playsinline
-								controlsList="nodownload noremoteplayback">
-								<source src="视频链接" type="video/mp4">
-								您的浏览器不支持视频标签。
-							</video>
-						</div>
-						<!-- 控制按钮 -->
-						<div id="control-buttons">
-							<button onclick="prevVideo()" style="font-size:12px;">⏮</button>
-							<button id="play-pause-btn" onclick="togglePlay()" style="font-size:12px;">▶</button>
-							<button onclick="nextVideo()" style="font-size:12px;">⏭</button>
-						</div>
-					</div>
-				</ul>
-			</div>
-			<!-- 视频播放结束 -->
+			<script src="./js/bilibili-video.js"></script>
+			<script>
+				let currentBilibiliIndex = 0; 
+
+				function loadBilibiliVideo(index) {
+					const videoUrl = videoList[index];
+					const bvid = videoUrl.split('/')[4]; 
+					const iframe = document.createElement('iframe');
+					iframe.src = `https://www.bilibili.com/blackboard/html5mobileplayer.html?bvid=${bvid}&as_wide=1&high_quality=1&danmaku=0`;
+					iframe.frameBorder = '0'; 
+					iframe.width = '100%'; 
+
+					const bilibiliVideoContainer = document.getElementById('bilibiliVideoContainer');
+					bilibiliVideoContainer.innerHTML = '';
+					bilibiliVideoContainer.appendChild(iframe);
+				}
+
+				function loadRandomBilibiliVideo() {
+					currentBilibiliIndex = Math.floor(Math.random() * videoList.length);
+					loadBilibiliVideo(currentBilibiliIndex);
+				}
+
+				// 页面加载时随机播放视频
+				window.onload = loadRandomBilibiliVideo;
+			</script>
+<!-- B站收藏结束-->
+
+<!-- 云盘资源-->
+<div class="left-div left-time" id="panContainer">
+	<ul id="line">
+		<div class="container">
+			<class="title">《云盘资源上新情报》
+				<hr class="dashed">
+		</div>
+		<div class="ziyuan"></div>
+	</ul>
+</div>
+<!-- 云盘资源结束-->
+
+<!-- 视频播放 -->
+<div class="left-div left-time">
+    <ul id="line5">
+        <div class="container">
+            <!-- 视频容器 -->
+            <div id="localVideoContainer">
+                <!-- 视频元素 -->
+                <video id="random-video" width="100%" height="auto" controls webkit-playsinline playsinline
+                    controlsList="nodownload noremoteplayback">
+                    <source src="视频链接" type="video/mp4">
+                    您的浏览器不支持视频标签。
+                </video>
+            </div>
+            <!-- 控制按钮 -->
+            <div id="control-buttons">
+                <button onclick="prevVideo()" style="font-size:12px;">⏮</button>
+                <button id="play-pause-btn" onclick="togglePlay()" style="font-size:12px;">▶</button>
+                <button onclick="nextVideo()" style="font-size:12px;">⏭</button>
+            </div>
+        </div>
+    </ul>
+</div>
+<!-- 视频播放结束 -->
+
 			<!-- 60秒读懂世界-->
 			<div class="left-div left-time" id="worldContainer">
 				<ul id="line6">

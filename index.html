@@ -460,19 +460,69 @@
                     </br>
                     <!-- B站收藏-->
                     <div class="work">
-                        <h2 class="chtitle"><span>B站</span>收藏夹</span></h2>
+                        <h2 class="chtitle"><span>B站</span>收藏夹</h2>
                         <div class="bilibiliindex" style="background-color: #1e1d1dce; height: 25vh;">
                             <div class="bilibilititle-left">
-                                <img src="./assets/r1.png" alt="B站收藏夹" class="zoominimage">
+                                <img src="./assets/r1.png" id="prevButton" alt="上一个" class="zoominimage">
+                                <div class="tooltip" id="prevTooltip">点击播放上一个</div>
                             </div>
-                            <iframe src="https://www.noisework.cn/e/bili/index.html?id=3271958393" style="width: 70%; height: 100%; border: none; "></iframe>
+                    
+                            <!-- 视频播放器 -->
+                            <div class="video-wrapper" id="video-player" style="width: 70%; height: 100%; position: relative;">
+                                <iframe id="bilibili-iframe" src="" style="width: 100%; height: 100%; border: none;"></iframe>
+                            </div>
+                    
                             <div class="bilibilititle-right">
-                                <img src="./assets/r3.png" alt="等你来观看" class="zoominimage">
+                                <img src="./assets/r3.png" id="nextButton" alt="下一个" class="zoominimage">
+                                <div class="tooltip" id="nextTooltip">点击播放下一个</div>
                             </div>
                         </div>
-		        	<!-- B站收藏结束-->
-                     <!-- 游戏加载
-                    <div class="pc-only">
+                    
+                        <!-- 控制按钮 -->
+                        <div style="text-align: center; margin-top: 10px;">
+                            <!-- 可以在这里添加其他按钮或内容 -->
+                        </div>
+                    </div>
+                    
+                    <script src="./js/bilibili-video.js"></script>
+                    <script>
+                        let currentVideoIndex = 0;
+
+                        function loadVideo(index) {
+                            const videoUrl = videoList[index];
+                            const bvid = videoUrl.split('/')[4];
+                            const iframe = document.getElementById('bilibili-iframe');
+                            iframe.src = `https://www.bilibili.com/blackboard/html5mobileplayer.html?bvid=${bvid}&as_wide=1&high_quality=1&danmaku=0`;
+                        }
+
+                        function loadRandomVideo() {
+                            currentVideoIndex = Math.floor(Math.random() * videoList.length);
+                            loadVideo(currentVideoIndex);
+                        }
+
+                        function playPrevVideo() {
+                            currentVideoIndex = (currentVideoIndex - 1 + videoList.length) % videoList.length; // 循环播放
+                            loadVideo(currentVideoIndex);
+                        }
+
+                        function playNextVideo() {
+                            currentVideoIndex = (currentVideoIndex + 1) % videoList.length; // 循环播放
+                            loadVideo(currentVideoIndex);
+                        }
+
+                        // 页面加载时随机播放视频
+                        window.onload = loadRandomVideo;
+
+                        // 按钮事件监听
+                        document.getElementById('prevButton').onclick = playPrevVideo;
+                        document.getElementById('nextButton').onclick = playNextVideo;
+                    </script>
+                    
+                    
+                    
+                    <!-- B站收藏结束-->
+                    <!-- 游戏加载
+                   <div class="pc-only">
                     </br>
                     <div class="work">
                       <h2 class="chtitle"><span>游戏</span>时间</h2>
