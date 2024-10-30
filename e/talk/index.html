@@ -351,6 +351,10 @@
                 style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
                        -webkit-background-clip: text; 
                        -webkit-text-fill-color: transparent;">点击查看</a></p> 
+            <p>已备份数据库：<a href="https://drive.google.com/file/d/1I8SDBAZb8erwRE1F93EyVguXC50GVDUx/view?usp=sharing target="_blank" rel="noopener noreferrer"
+                style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
+                       -webkit-background-clip: text; 
+                       -webkit-text-fill-color: transparent;">点击查看</a></p> 
              <p>致谢：<a href="https://github.com/eallion/memos.top" target="_blank" rel="noopener noreferrer"
                 style=" background: linear-gradient(90deg, #6079f7, #a36bde); 
                        -webkit-background-clip: text; 
@@ -400,7 +404,7 @@
                     var minsold = Math.floor(e_minsold);
                     var seconds = Math.floor((timeold % (1000 * 60)) / 1000);
     
-                    document.getElementById("momk").innerHTML = "运行: " + daysold + "天" + hrsold + "小时" + minsold + "分" ;
+                    document.getElementById("momk").innerHTML = "运行: " + daysold + "天" + hrsold + "小时" ;
                     setTimeout(momxc, 1000);
                 }
                 momxc();
@@ -465,7 +469,7 @@
     <script type="text/javascript">
         var memos = {
             host: 'https://memos.noisework.cn/', //修改为你自己的memos服务地址，结尾要有/
-            limit: '10',
+            limit: '13',
             creatorId: '1',
             domId: '#memos',
             username: 'noise',
