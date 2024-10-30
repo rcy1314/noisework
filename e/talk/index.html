@@ -375,10 +375,8 @@
     </section>
     <footer class="markdown-body footer">
         <div class="bsz">
-           <!--  <span id="busuanzi_container_site_pv">主页总访问量: <span id="busuanzi_value_site_pv"></span> 次</span> -->
-        </div>
-        <div style="margin-top: 10px;">
-            &nbsp; 
+        <span id="busuanzi_container_site_pv">本页已被访问: <span id="busuanzi_value_site_pv"></span> 次 🧐</span> 
+       
             <span id="momk"></span>
             <span id="momk_red" style="color: #ff0000;"></span> 
             <script type="text/javascript">
@@ -402,7 +400,7 @@
                     var minsold = Math.floor(e_minsold);
                     var seconds = Math.floor((timeold % (1000 * 60)) / 1000);
     
-                    document.getElementById("momk").innerHTML = "本站已运行: " + daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+                    document.getElementById("momk").innerHTML = "运行: " + daysold + "天" + hrsold + "小时" + minsold + "分" ;
                     setTimeout(momxc, 1000);
                 }
                 momxc();
@@ -417,10 +415,10 @@
             -webkit-text-fill-color: transparent;">NOISE</a> All Rights Reserved.
         </p>
     </footer>
-    <!-- 
+    
     <div id='rebtmbtn' onclick='returnBottom()'>👇</div>
     <div id='retopbtn' onclick='returnTop()'>👆</div>
-    -->
+   
     <script type="text/javascript">
         const backgrounds = [
             './assets/img/bg/bg11.png',
