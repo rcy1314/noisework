@@ -340,15 +340,14 @@ function updateHTMl(data) {
             .replace(QQVIDEO_REG, "<div class='video-wrapper'><iframe src='//v.qq.com/iframe/player.html?vid=$1' allowFullScreen='true' frameborder='no'></iframe></div>")
             .replace(SPOTIFY_REG, "<div class='spotify-wrapper'><iframe style='border-radius:12px' src='https://open.spotify.com/embed/$1/$2?utm_source=generator&theme=0' width='100%' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe></div>")
             .replace(YOUKU_REG, "<div class='video-wrapper'><iframe src='https://player.youku.com/embed/$1' frameborder=0 'allowfullscreen'></iframe></div>")
-            
+
 
         // 解析内置资源文件
         if (memo.APIVersion === 'new') {
             if (data[i].resources && data[i].resources.length > 0) {
-                var resourceList = data[i].resources; 
+                var resourceList = data[i].resources;
                 var imgUrl = '', resUrl = '';
 
-                // 使用一个容器来包裹所有图像
                 imgUrl += '<div class="resource-wrapper"><div class="images-wrapper" style="display: flex; flex-wrap: wrap; gap: 10px;">';
 
                 for (var j = 0; j < resourceList.length; j++) {
@@ -356,17 +355,17 @@ function updateHTMl(data) {
                     var resexlink = resourceList[j].externalLink;
                     var resLink = '';
                     var filename = resourceList[j].filename;
-                    var name = resourceList[j].name; 
+                    var name = resourceList[j].name;
 
                     if (resType === 'image') {
                         if (resexlink) {
-                            imgUrl += '<div class="resimg" style="flex: 1 1 calc(33.33% - 10px); overflow: hidden; position: relative; height: 200px;">' +
-                                '<img loading="lazy" src="' + resexlink + '" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"/>' +
+                            imgUrl += '<div class="resimg" style="flex: 1 1 auto; position: relative; overflow: hidden;">' +
+                                '<img loading="lazy" src="' + resexlink + '" style="width: auto; height: 100%; object-fit: contain;" onload="adjustHeight(this)"/>' +
                                 '</div>';
                         } else {
                             resLink = memos + '/file/' + name + '/' + filename;
-                            imgUrl += '<div class="resimg" style="flex: 1 1 calc(33.33% - 10px); overflow: hidden; position: relative; height: 200px;">' +
-                                '<img loading="lazy" src="' + resLink + '" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"/>' +
+                            imgUrl += '<div class="resimg" style="flex: 1 1 auto; position: relative; overflow: hidden;">' +
+                                '<img loading="lazy" src="' + resLink + '" style="width: auto; height: 100%; object-fit: contain;" onload="adjustHeight(this)"/>' +
                                 '</div>';
                         }
                     } else {
@@ -375,7 +374,7 @@ function updateHTMl(data) {
                     }
                 }
 
-                imgUrl += '</div></div>'; 
+                imgUrl += '</div></div>';
 
                 if (imgUrl) {
                     memoContREG += imgUrl;
@@ -387,6 +386,17 @@ function updateHTMl(data) {
         } else {
             throw new Error('Invalid APIVersion');
         }
+
+        // 调整容器高度的函数
+        function adjustHeight(img) {
+            var container = img.parentElement;
+            var imgAspectRatio = img.naturalHeight / img.naturalWidth;
+            var containerWidth = container.clientWidth;
+            var newHeight = containerWidth * imgAspectRatio;
+
+            container.style.height = newHeight + 'px';
+        }
+
 
         // 获取相对时间
         var createTime = memo.APIVersion === 'new' ?
