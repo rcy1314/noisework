@@ -110,16 +110,29 @@ body {
     backdrop-filter: blur(30px); /* 背景模糊效果 */
     box-sizing: border-box;
 }
-
-/* 针对移动设备的媒体查询 */
-@media (max-width: 860px) {
+/* 手机尺寸 */
+@media (max-width: 800px) {
     body {
-        padding: 0; /* 移动设备上移除内边距 */
-        margin: 0; /* 移除默认边距 */
-        background-attachment: scroll; /* 移动设备上背景随滚动 */
+        /* 设置背景图片 */
+        background-size: cover; /* 或者使用 contain */
+        /* 背景图片不会随着页面滚动 */
+        position: relative; /* 确保可以相对于body定位伪元素 */
+    }
+
+    body::before {
+        content: ""; /* 必须设置content属性 */
+        position: absolute; /* 相对于body定位 */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: var(--back-image);
+        background-size: cover;
+        background-attachment: fixed;
+        filter: blur(30px); /* 添加模糊效果 */
+        z-index: -1; /* 确保伪元素在内容之下 */
     }
 }
-
 
 /* 针对Webkit浏览器隐藏滚动条 */
 body::-webkit-scrollbar {
