@@ -113,26 +113,25 @@ body {
 /* 手机尺寸 */
 @media (max-width: 800px) {
     body {
-        /* 设置背景图片 */
+        background-image: var(--bg-image); /* 使用 JS 设置的背景 */
         background-size: cover; /* 或者使用 contain */
-        /* 背景图片不会随着页面滚动 */
-        position: relative; /* 确保可以相对于body定位伪元素 */
+        position: relative;
     }
 
     body::before {
-        content: ""; /* 必须设置content属性 */
-        position: absolute; /* 相对于body定位 */
+        content: "";
+        position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: var(--back-image);
+        background-image: var(--back-image); /* 使用 JS 设置的背景 */
         background-size: cover;
-        background-attachment: fixed;
-        filter: blur(30px); /* 添加模糊效果 */
-        z-index: -1; /* 确保伪元素在内容之下 */
+        filter: blur(20px);
+        z-index: -1;
     }
 }
+
 
 /* 针对Webkit浏览器隐藏滚动条 */
 body::-webkit-scrollbar {
