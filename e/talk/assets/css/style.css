@@ -99,14 +99,27 @@ body {
     color: var(--color-main);
     background-image: var(--bg-image); /* 使用 CSS 变量作为背景图片 */
     background-size: cover; /* 使背景图片覆盖整个区域 */
-    background-attachment: fixed; /* 背景图片固定，不会随页面滚动 */
-    backdrop-filter: blur(30px); /* 背景模糊效果 */
-    box-sizing: border-box;
+    background-position: center; /* 背景图片居中对齐 */
+    background-repeat: no-repeat; /* 不重复背景图片 */
+    background-attachment: fixed; /* 背景图片固定，不随页面滚动 */
     min-width: 200px;
     max-width: 860px;
     margin: 0 auto;
     padding: 55px;
+    min-height: 100vh; /* 确保背景至少覆盖视口高度 */
+    backdrop-filter: blur(30px); /* 背景模糊效果 */
+    box-sizing: border-box;
 }
+
+/* 针对移动设备的媒体查询 */
+@media (max-width: 860px) {
+    body {
+        padding: 0; /* 移动设备上移除内边距 */
+        margin: 0; /* 移除默认边距 */
+        background-attachment: scroll; /* 移动设备上背景随滚动 */
+    }
+}
+
 
 /* 针对Webkit浏览器隐藏滚动条 */
 body::-webkit-scrollbar {
