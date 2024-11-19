@@ -622,3 +622,26 @@ function returnTop(){
 function returnBottom(){  
     $body.animate({scrollTop: $(document).height()},400);  
 }  
+// 图片数组
+const bgImages = [
+    '../img/bgx/bg1.webp',
+    '../img/bgx/bg2.webp',
+    '../img/bgx/bg3.webp',
+    '../img/bgx/bg4.webp',
+    '../img/bgx/bg5.webp',
+    '../img/bgx/bg6.webp',
+    '../img/bgx/bg7.webp',
+    '../img/bgx/bg8.webp',
+    // ... 其他图片路径
+];
+
+// 随机选择一个图片路径
+function getRandomBackgroundImage() {
+    return bgImages[Math.floor(Math.random() * bgImages.length)];
+}
+
+
+
+
+
+

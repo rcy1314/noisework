@@ -1,7 +1,7 @@
 body.light-theme,
 :root {
     /* light theme color */
-    --color-main: #222;
+    --color-main: #000000ed;
     --color-background: #fff;
     --color-text-bg: #eaeaea;
     --color-text-hover: #eeeef1;
@@ -10,15 +10,32 @@ body.light-theme,
     --color-tag: #2563eb;
     --color-tag-hover: #54a3ff;
     --color-link: #3a65a2;
-    --color-fg-muted: #576061;
+    --color-fg-muted: #4c6c7e;
     --color-border-default: #d0d7de;
     --color-border-muted: #d8dee4;
     --color-post-preview: #fff;
-    --color-memos-pre-bg: #f3f4f6;;
-    
+    --color-memos-pre-bg: #f3f4f6;
+
     /* variables for js, must be the same as these in @custom-media queries */
     --phoneWidth: (max-width: 684px);
     --tabletWidth: (max-width: 900px);
+}
+.main-title {
+    color: white; /* 设置文字颜色为白色 */
+}
+.total{
+    color: white; /* 设置文字颜色为白色 */
+}
+.footer {
+    color: white; /* 设置 footer 中的文字颜色为白色 */
+}
+
+.footer a {
+    color: inherit; /* 继承父元素的颜色 */
+}
+
+.footer a:hover {
+    color: #ff0000; /* 可选：设置鼠标悬停时的颜色 */
 }
 
 body.dark-theme {
@@ -39,7 +56,7 @@ body.dark-theme {
 @media (prefers-color-scheme: light) {
     body:not(.dark-theme) {
         /* light theme color */
-        --color-main: #222;
+        --color-main: #ffffff;
         --color-background: #fff;
         --color-text-bg: #eaeaea;
         --color-text-hover: #eeeef1;
@@ -58,7 +75,7 @@ body.dark-theme {
 @media (prefers-color-scheme: dark) {
     body:not(.light-theme) {
         /* dark theme colors */
-        --color-main: #adbac7;
+        --color-main: #f9fafb;
         --color-background: #1c2128;
         --color-text-bg: #22272e;
         --color-text-hover: #272c32;
@@ -71,6 +88,7 @@ body.dark-theme {
         --color-memos-pre-bg: #2d333b;
     }
 }
+
 blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
     margin: 0;
 }
@@ -79,30 +97,20 @@ body {
         Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei",
         "Microsoft Yahei", "Segoe UI", sans-serif, serif;
     color: var(--color-main);
-    background-color: var(--color-background);
+    background-image: var(--bg-image); /* 使用 CSS 变量作为背景图片 */
+    background-size: cover; /* 使背景图片覆盖整个区域 */
+    background-attachment: fixed; /* 背景图片固定，不会随页面滚动 */
+    backdrop-filter: blur(30px); /* 背景模糊效果 */
     box-sizing: border-box;
     min-width: 200px;
-    max-width: 980px;
+    max-width: 860px;
     margin: 0 auto;
-    padding: 45px;
+    padding: 55px;
 }
 
-/* 自定义滚动条样式 */
-::-webkit-scrollbar {
-    width: 4px; /* 滚动条宽度 */
-}
-
-::-webkit-scrollbar-track {
-    background: transparent; /* 滚动条轨道背景 */
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(33, 59, 84, 0.5); /* 滚动条颜色（透明黑色） */
-    border-radius: 4px; /* 滚动条圆角 */
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(42, 89, 165, 0.7); /* 鼠标悬停时的颜色 */
+/* 针对Webkit浏览器隐藏滚动条 */
+body::-webkit-scrollbar {
+    display: none;
 }
 
 
@@ -200,11 +208,11 @@ blockquote {
     position: absolute;
     background: url('../img/avatar.png') no-repeat;
     background-size: contain;
-    width: 40px;
-    height: 40px;
+    width: 55px;
+    height: 60px;
     border-radius: 40px;
-    left: -50px;
-    top: 10px;
+    left: -80px;
+    top: 5px;
     border: 0;
     object-fit: cover;
 }

@@ -17,22 +17,22 @@
     <link rel="stylesheet" href="./assets/css/friendlink.css">
     <title>NOISE的说说</title>
     <style type='text/css'>
-         header {
-            position: relative;
-            height: 200px; /* Adjust height as needed */
-            width: 100%; /* Ensure header takes full width */
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 20px;
-            backdrop-filter: blur(16px); /* Add blur effect */
-            transition: background-image 0.5s ease; /* Smooth transition */
-            display: flex;
-            justify-content: flex-start; /* Align items to the left */
-            align-items: center; /* Center content vertically */
-            border-radius: 15px; /* 圆角边框 */
-            
-        }
+    header {
+        position: relative;
+        height: 200px; /* Adjust height as needed */
+        width: 100%; /* Ensure header takes full width */
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 16px;
+        backdrop-filter: blur(16px); /* Add blur effect */
+        transition: background-image 0.5s ease; /* Smooth transition */
+        display: flex;
+        justify-content: flex-start; /* Align items to the left */
+        align-items: center; /* Center content vertically */
+        border-radius: 15px; /* 圆角边框 */
+        margin: 0; /* 去除顶部空隙 */
+    }
 
         .menu {
             text-align: left; /* Align text to the left */
@@ -137,7 +137,7 @@
          display: flex;
          align-items: center;
          transition: background-color 0.3s, color 0.3s;
-         min-width: 10px; /* 设置按钮的最小宽度 */     
+         min-width: 20px; /* 设置按钮的最小宽度 */     
          margin-bottom: 8px; /* 增加底部间距 */
          margin-right: 8px; /* 增加右边距 */
         }
@@ -214,8 +214,8 @@
         <div class='theme-toggle'>🌓</div>
     </header>
 
-    <section id="main" class="container">
-        <div class="main-title">顾海涛涛，念念不忘</div>
+    <section id="main" class="container" >
+        <div class="main-title">这里记录碎片化的想法</div>
 
         <blockquote>
             <p>NOISE <del>说说空间</del>,忆往昔- <em>都是故事</em></p>
@@ -425,16 +425,10 @@
    
     <script type="text/javascript">
         const backgrounds = [
-            './assets/img/bg/bg11.png',
-            './assets/img/bg/bg2.png',
-            './assets/img/bg/bg3.png',
-            './assets/img/bg/bg4.png',
-            './assets/img/bg/bg7.png',
-            './assets/img/bg/bg9.png',
-            './assets/img/bg/bg10.png',
-            './assets/img/bg/bg12.png',
-            './assets/img/bg/3.png',
-            './assets/img/bg/5ae.gif',
+            './assets/img/bg/bg1.gif',
+            './assets/img/bg/bg2.jpeg',
+            './assets/img/bg/bg3.gif',
+            './assets/img/bg/bg4.gif',
         ];
     
         // 预加载图像
@@ -500,6 +494,7 @@
         });
     </script>
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script src="./assets/js/bg.js"></script>
     <script type='text/javascript' src='./assets/js/jquery-3.2.1.js'></script>
     <script type="text/javascript" src="./assets/js/lazyload.min.js"></script>
     <script type="text/javascript" src="./assets/js/marked.umd.min.js"></script>
