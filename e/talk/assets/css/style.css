@@ -110,10 +110,11 @@ body {
     backdrop-filter: blur(30px); /* 背景模糊效果 */
     box-sizing: border-box;
 }
+
 /* 手机尺寸 */
 @media (max-width: 800px) {
     body {
-        background-image: var(--bg-image); /* 使用 JS 设置的背景 */
+        background-image: var(--mobile-image); /* 使用 JS 设置的背景 */
         background-size: cover; /* 或者使用 contain */
         position: relative;
     }
@@ -125,12 +126,13 @@ body {
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: var(--back-image); /* 使用 JS 设置的背景 */
+        background-image: var(--mobile-image); /* 使用 JS 设置的背景 */
         background-size: cover;
         filter: blur(20px);
         z-index: -1;
     }
 }
+
 
 
 /* 针对Webkit浏览器隐藏滚动条 */
