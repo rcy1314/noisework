@@ -340,15 +340,13 @@ function updateHTMl(data) {
             .replace(QQVIDEO_REG, "<div class='video-wrapper'><iframe src='//v.qq.com/iframe/player.html?vid=$1' allowFullScreen='true' frameborder='no'></iframe></div>")
             .replace(SPOTIFY_REG, "<div class='spotify-wrapper'><iframe style='border-radius:12px' src='https://open.spotify.com/embed/$1/$2?utm_source=generator&theme=0' width='100%' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe></div>")
             .replace(YOUKU_REG, "<div class='video-wrapper'><iframe src='https://player.youku.com/embed/$1' frameborder=0 'allowfullscreen'></iframe></div>")
-
-
         // 解析内置资源文件
         if (memo.APIVersion === 'new') {
             if (data[i].resources && data[i].resources.length > 0) {
                 var resourceList = data[i].resources;
                 var imgUrl = '', resUrl = '';
 
-                imgUrl += '<div class="resource-wrapper"><div class="images-wrapper" style="display: flex; flex-wrap: wrap; gap: 10px;">';
+                imgUrl += '<div class="resource-wrapper"><div class="images-wrapper" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-start;">';
 
                 for (var j = 0; j < resourceList.length; j++) {
                     var resType = resourceList[j].type.slice(0, 5);
@@ -358,16 +356,12 @@ function updateHTMl(data) {
                     var name = resourceList[j].name;
 
                     if (resType === 'image') {
-                        if (resexlink) {
-                            imgUrl += '<div class="resimg" style="flex: 1 1 auto; position: relative; overflow: hidden;">' +
-                                '<img loading="lazy" src="' + resexlink + '" style="width: auto; height: 100%; object-fit: contain;" onload="adjustHeight(this)"/>' +
-                                '</div>';
-                        } else {
-                            resLink = memos + '/file/' + name + '/' + filename;
-                            imgUrl += '<div class="resimg" style="flex: 1 1 auto; position: relative; overflow: hidden;">' +
-                                '<img loading="lazy" src="' + resLink + '" style="width: auto; height: 100%; object-fit: contain;" onload="adjustHeight(this)"/>' +
-                                '</div>';
-                        }
+                        // 请求更小的图片尺寸，300x200
+                        var lowResLink = resexlink ? resexlink + '?w=300&h=200' : memos + '/file/' + name + '/' + filename + '?w=300&h=200';
+
+                        imgUrl += '<div class="resimg" style="flex: 1 1 calc(33.33% - 10px); height: auto; position: relative; overflow: hidden;">' +
+                            '<img loading="lazy" src="' + lowResLink + '" style="width: 100%; height: auto; object-fit: cover; display: block;" onload="adjustHeight(this)" alt="Image loading..."/>' +
+                            '</div>';
                     } else {
                         resLink = memos + '/file/' + name + '/' + filename;
                         resUrl += '<a target="_blank" rel="noreferrer" href="' + resLink + '">' + filename + '</a>';
@@ -386,17 +380,6 @@ function updateHTMl(data) {
         } else {
             throw new Error('Invalid APIVersion');
         }
-
-        // 调整容器高度的函数
-        function adjustHeight(img) {
-            var container = img.parentElement;
-            var imgAspectRatio = img.naturalHeight / img.naturalWidth;
-            var containerWidth = container.clientWidth;
-            var newHeight = containerWidth * imgAspectRatio;
-
-            container.style.height = newHeight + 'px';
-        }
-
 
         // 获取相对时间
         var createTime = memo.APIVersion === 'new' ?

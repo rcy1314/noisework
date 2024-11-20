@@ -10,7 +10,7 @@ body.light-theme,
     --color-tag: #2563eb;
     --color-tag-hover: #54a3ff;
     --color-link: #3a65a2;
-    --color-fg-muted: #4c6c7e;
+    --color-fg-muted: #6b52f6;
     --color-border-default: #d0d7de;
     --color-border-muted: #d8dee4;
     --color-post-preview: #fff;
@@ -105,10 +105,23 @@ body {
     min-width: 200px;
     max-width: 860px;
     margin: 0 auto;
-    padding: 55px;
+    padding: 3px 55px;
     min-height: 100vh; /* 确保背景至少覆盖视口高度 */
-    backdrop-filter: blur(30px); /* 背景模糊效果 */
     box-sizing: border-box;
+    position: relative; /* 确保相对定位 */
+}
+
+/* 添加一个透明度和背景色的覆盖层 */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit; /* 继承背景 */
+    filter: blur(20px); /* 应用模糊效果 */
+    z-index: -1; /* 确保在内容下方 */
 }
 
 /* 手机尺寸 */
@@ -572,7 +585,7 @@ blockquote {
 @media (max-width: 683px) {
 
     body {
-        padding: 45px 50px 45px 20px;
+        padding: 5px 50px 45px 20px;
     }
 
     .menu,
