@@ -112,7 +112,7 @@
                                 playedVideos.push(randomBvid); // 将选定的视频添加到已播放列表
 
                                 // 设置iframe的src属性以载入视频，同时关闭自动播放
-                                document.querySelector('iframe').src = `https://player.bilibili.com/player.html?bvid=${randomBvid}&autoplay=0&disableDanmaku=1`;
+                                document.querySelector('iframe').src = `https://www.bilibili.com/blackboard/html5mobileplayer.html?bvid=${randomBvid}&as_wide=1&high_quality=1&danmaku=0`;
                                 document.getElementById('centerMessage').style.display = 'none'; // 成功加载视频后隐藏消息
                                // 等待视频加载完成后再添加事件监听器
                                 const iframe = document.querySelector('iframe');
