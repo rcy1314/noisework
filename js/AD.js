@@ -12,11 +12,6 @@ var ads = [
     description: "超大流量卡优惠办理渠道2"
   },
   {
-    image: "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/1704116804-98dd36fd8711e66.png",
-    link: "https://www.aipaperpass.com?pic=mLnw",
-    description: "AI一键论文-AIPaperPass"
-  },
-  {
     image: "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/%E8%B6%85%E5%A4%A7%E6%B5%81.png",
     link: "https://simhaoka.com/phone/index?id=A7BA17EFD6DC47F6826F0C67B898725A",
     description: "超大流量卡优惠办理手机渠道1"
@@ -30,11 +25,6 @@ var ads = [
     image: "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/919.png",
     link: "https://www.noisework.cn/soso",
     description: "书签检索-bookmark"
-  },
-  {
-    image: "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/1707542539504.png",
-    link: "https://xinghuo.xfyun.cn",
-    description: "讯飞星火大模型"
   },
   {
     image: "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/%E8%B6%85%E5%A4%A7%E6%B5%81%E9%87%8F%E5%8D%A1.png",
@@ -55,11 +45,6 @@ var ads = [
     image: "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/%E6%A0%AA%E3%82%AD%E3%82%99%E3%83%A3%E3%83%AB%20on%20X.jpeg",
     link: "https://www.noisework.cn",
     description: "广告位+点击可查看"
-  },
-  {
-    image: "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/1695139067-c4ca4238a0b9238.png",
-    link: "https://aigc.yizhentv.com/?_f=nobaibao",
-    description: "AI视频创作神器一帧秒创"
   },
   {
     image: "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/%F0%9D%95%9E%F0%9D%95%A0%F0%9D%95%A6%F0%9D%95%A6%F0%9D%95%9F.jpeg",
