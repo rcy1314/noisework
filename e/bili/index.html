@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,19 +55,48 @@
 
     <button class="floating-button" onclick="playRandomVideo()"><i class="fa-solid fa-forward-fast"></i></button>
 
-    <div class="center-message" id="centerMessage">载入中...... 请等待API生效或...尝试刷新</div>
+    <div class="center-message" id="centerMessage">载入中...请等待API生效或尝试刷新,如果失败请切换至支持bilibili的地区ID</div>
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const mediaId = urlParams.get('id');
         let timerId;
         let isManualPlay = false; // 用于跟踪手动播放状态
+        let isVideoPlaying = false; // 用于跟踪视频播放状态
+        let lastPlayTime = 0; // 上次播放时间
 
         function iframeLoaded() {
             document.getElementById('centerMessage').style.display = 'none';
+            checkVideoPlaying();
         }
 
         let playedVideos = [];
+
+        function checkVideoPlaying() {
+            const iframe = document.querySelector('iframe');
+            const video = iframe.contentWindow.document.querySelector('video');
+
+            if (video) {
+                isVideoPlaying = !video.paused;
+            } else {
+                isVideoPlaying = false;
+            }
+
+            if (isVideoPlaying) {
+                // 如果视频正在播放，停止计时
+                clearTimeout(timerId);
+                lastPlayTime = Date.now(); // 更新上次播放时间
+            } else {
+                // 检查是否已经过了3分钟
+                const currentTime = Date.now();
+                if (currentTime - lastPlayTime >= 180000) { // 3分钟
+                    playRandomVideo();
+                }
+            }
+
+            // 每隔1秒检查一次
+            setTimeout(checkVideoPlaying, 1000);
+        }
 
         function playRandomVideo() {
             if (mediaId) {
@@ -113,10 +141,10 @@
 
                                     // 延时后切换到下一个视频
                                     timerId = setTimeout(() => {
-                                        if (!isManualPlay) { // 仅在未手动播放时切换
+                                        if (!isManualPlay && !isVideoPlaying) { // 仅在未手动播放且没有视频播放时切换
                                             playRandomVideo();
                                         }
-                                    }, duration * 1000);
+                                    }, Math.max(duration * 1000, 180000)); // 至少3分钟
                                 })
                                 .catch(error => {
                                     console.error('Error fetching video data:', error);
@@ -144,5 +172,4 @@
         playRandomVideo();
     </script>
 </body>
-
 </html>
