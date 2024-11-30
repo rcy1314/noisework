@@ -330,8 +330,45 @@
         });
     }
     
+    /* AI 响应函数Loki.AI */
+async function aiResponse(text) {
+    if (text.length === 0) {
+        print("请问你想问什么？", 'message');
+        return;
+    }
 
-    /* AI 响应函数 */
+    const userInput = text.join(' ');
+    print("正在获取AI回复...", 'message');
+
+    const apiUrl = 'https://parthsadaria-lokiai.hf.space/chat/completions'; 
+
+    const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            model: 'gpt-4o', // 使用新的模型
+            messages: [{ role: 'user', content: userInput }],
+            stream: false // 指定为 false
+        })
+    });
+
+    if (!response.ok) {
+        print('AI 请求失败: ' + response.statusText, 'error');
+        return;
+    }
+
+    const data = await response.json();
+    if (data.choices && data.choices.length > 0) {
+        const aiReply = data.choices[0].message.content; // 获取 AI 回复
+        print(aiReply, 'message');
+    } else {
+        print('没有返回有效的 AI 回复', 'error');
+    }
+}
+    
+    /* AI 响应函数使用open ai格式带加密
     function decryptApiKey(encryptedKey, passphrase) {
         const decrypted = CryptoJS.AES.decrypt(encryptedKey, passphrase);
         return decrypted.toString(CryptoJS.enc.Utf8);
@@ -375,7 +412,7 @@
         const aiReply = data.choices[0].message.content;
         print(aiReply, 'message');
     }
-    
+     */
 
     /* 初始化 */
     let headb = '[<span class="g">guest</span>@浏览器<span class="b">';
