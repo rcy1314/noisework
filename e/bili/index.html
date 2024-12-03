@@ -140,11 +140,11 @@
                                     console.log(`Video Duration: ${duration} seconds`);
 
                                     // 延时后切换到下一个视频
-                                    timerId = setTimeout(() => {
-                                        if (!isManualPlay && !isVideoPlaying) { // 仅在未手动播放且没有视频播放时切换
-                                            playRandomVideo();
-                                        }
-                                    }, Math.max(duration * 1000, 180000)); // 至少3分钟
+                                timerId = setTimeout(() => {
+                            if (!isManualPlay && !isVideoPlaying) { // 仅在未手动播放且没有视频播放时切换
+                                 playRandomVideo();
+                                }
+                                }, Math.max(duration * 1000, 1680000)); // 至少28分钟
                                 })
                                 .catch(error => {
                                     console.error('Error fetching video data:', error);
