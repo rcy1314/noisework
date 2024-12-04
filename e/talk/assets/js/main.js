@@ -11,6 +11,7 @@ var memo = {
     total: true,
     doubanAPI: '',
 }
+// 从全局的 memos 中合并配置
 if (typeof (memos) !== "undefined") {
     for (var key in memos) {
         if (memos[key]) {
@@ -22,12 +23,13 @@ if (typeof (memos) !== "undefined") {
 var limit = memo.limit
 var memos = memo.host.replace(/\/$/, '')
 
+// 构造 API 请求 URL
 let memoUrl;
 if (memo.APIVersion === 'new') {
     const filter = `creator=='users/${memo.creatorId}'&&visibilities==['PUBLIC']`;
     memoUrl = `${memos}/api/v1/memos?filter=${encodeURIComponent(filter)}`;
 } else if (memo.APIVersion === 'legacy') {
-    memoUrl = memos + "/api/v1/memos?creatorId=" + memo.creatorId + "&rowStatus=NORMAL";
+    memoUrl = `${memos}/api/v1/memos?creatorId=${memo.creatorId}&rowStatus=NORMAL`;
 } else {
     throw new Error('Invalid APIVersion');
 }
@@ -92,26 +94,26 @@ function addLoadMoreEvent() {
 }
 
 function getFirstList() {
-    let memoUrl_first;
-    if (memo.APIVersion === 'new') {
-        memoUrl_first = memoUrl + '&pageSize=' + limit;
-        fetch(memoUrl_first).then(res => res.json()).then(resdata => {
+    let memoUrl_first = `${memos}/api/v1/memos?filter=creator=='users/${memo.creatorId}'&&visibilities==['PUBLIC']&pageSize=${limit}`;
+    fetch(memoUrl_first)
+        .then(res => res.json())
+        .then(resdata => {
             updateHTMl(resdata);
             nextPageToken = resdata.nextPageToken;
             nextLength = resdata.length;
 
-            // 检查是否还有更多内容
             if (nextLength < limit) {
                 handleNoMoreData();
             } else {
                 page++;
             }
-        }).catch(err => {
+        })
+        .catch(err => {
             console.error(err);
-        }).finally(() => {
+        })
+        .finally(() => {
             isLoading = false; // 重置加载状态
         });
-    }
 }
 
 // 预加载下一页数据
@@ -121,26 +123,28 @@ function getNextList() {
         return;
     }
 
-    var memoUrl_next = memoUrl + '&pageSize=' + limit + '&pageToken=' + nextPageToken;
-    fetch(memoUrl_next).then(res => res.json()).then(resdata => {
-        nextPageToken = resdata.nextPageToken;
-        nextDom = resdata;
-        nextLength = nextDom.length;
+    var memoUrl_next = `${memos}/api/v1/memos?filter=creator=='users/${memo.creatorId}'&&visibilities==['PUBLIC']&pageSize=${limit}&pageToken=${nextPageToken}`;
+    fetch(memoUrl_next)
+        .then(res => res.json())
+        .then(resdata => {
+            nextPageToken = resdata.nextPageToken;
+            nextDom = resdata;
+            nextLength = nextDom.length;
 
-        // 更新内容
-        updateHTMl(nextDom);
+            updateHTMl(nextDom);
 
-        // 检查是否还有更多内容
-        if (nextLength < limit) {
-            handleNoMoreData();
-        } else {
-            page++;
-        }
-    }).catch(err => {
-        console.error(err);
-    }).finally(() => {
-        isLoading = false; // 重置加载状态
-    });
+            if (nextLength < limit) {
+                handleNoMoreData();
+            } else {
+                page++;
+            }
+        })
+        .catch(err => {
+            console.error(err);
+        })
+        .finally(() => {
+            isLoading = false; // 重置加载状态
+        });
 }
 
 // 处理无更多数据的情况
@@ -149,41 +153,53 @@ function handleNoMoreData() {
     if (btn) {
         btn.textContent = '已加载全部'; // 修改按钮文本
         btn.disabled = true; // 禁用按钮
-        btnRemove = 1; // 标记按钮已移除
     }
 }
 
 // 更新 HTML 内容的函数
 function updateHTMl(data) {
-    data.forEach(item => {
-        const newItem = document.createElement('div');
-        newItem.textContent = item.content; // 根据实际数据结构调整
-        memoDom.appendChild(newItem);
-    });
-}
+    memoDom.innerHTML = ""; // 清空现有内容
+    let memoResult = "";
 
+    // 遍历数据并更新 HTML
+    data.forEach(item => {
+        const tags = item.property?.tags || []; // 获取标签
+        const content = `
+            <div class="content-item">
+                <h3>${item.title || '无标题'}</h3>
+                <p>${item.description || '无描述'}</p>
+                <span>Tags: ${tags.length > 0 ? tags.join(', ') : '无标签'}</span>
+            </div>
+        `;
+        memoResult += content;
+    });
+
+    memoDom.insertAdjacentHTML('beforeend', memoResult);
+}
+ /* 
 // 标签选择
 document.addEventListener('click', function (event) {
-    var target = event.target;
+    const target = event.target;
     if (target.tagName.toLowerCase() === 'a' && target.getAttribute('href').startsWith('#')) {
         event.preventDefault();
-        var tag = target.getAttribute('href').substring(1); // 获取标签名
-        
+        const tag = target.getAttribute('href').substring(1); // 获取标签名
+
         // 获取与标签相关的内容
         getTagFirstList(tag);
-        
+
         // 显示过滤器
-        var filterElem = document.getElementById('tag-filter');
-        filterElem.style.display = 'block';    
-        var tags = document.getElementById('tags');
-        var tagresult = `Filter: <span class='tag-span'><a rel='noopener noreferrer' href=''>#${tag}</a></span>`;
-        tags.innerHTML = tagresult;
-        
+        const filterElem = document.getElementById('tag-filter');
+        filterElem.style.display = 'block';
+
+        const tags = document.getElementById('tags');
+        const tagResult = `Filter: <span class='tag-span'><a rel='noopener noreferrer' href=''>#${tag}</a></span>`;
+        tags.innerHTML = tagResult;
+
         scrollTo(0, 0); // 回到顶部
 
         // 当前不是碎碎念页面，移除加载更多按钮
         if (!isMemosPage) {
-            var btn = document.querySelector("button.button-load");
+            const btn = document.querySelector("button.button-load");
             if (btn) {
                 btn.remove(); // 移除加载更多按钮
             }
@@ -191,54 +207,62 @@ document.addEventListener('click', function (event) {
     }
 });
 
-function getTagFirstList(tag) { // 接收标签参数
-    if (memo.APIVersion === 'new') {
-        console.log('Could not list tag');
-    } else if (memo.APIVersion === 'legacy') {
-        page = 1;
-        nextLength = 0;
-        nextDom = [];
-        memoDom.innerHTML = ""; // 清空现有内容
-        
-        // 构造请求 URL
-        var memoUrl_tag = `${memoUrl}&limit=${limit}&tag=${tag}`;
-        
-        fetch(memoUrl_tag)
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return res.json();
-            })
-            .then(resdata => {
-                // 检查返回的数据
-                if (!Array.isArray(resdata) || resdata.length === 0) {
-                    memoDom.innerHTML = "<p>No content found for this tag.</p>";
-                    return;
-                }
+function getTagFirstList() {
+    memoDom.innerHTML = ""; // 清空现有内容
+    const creatorId = memo.creatorId; // 从全局配置中获取 creatorId
 
-                // 过滤数据
-                const filteredData = resdata.filter(item => item.tags && item.tags.includes(tag));
-                
-                // 更新 HTML 内容
-                updateHTMl(filteredData);
-                
-                var nowLength = filteredData.length;
-                if (nowLength < limit) { // 返回数据条数小于 limit 则直接移除“加载更多”按钮
-                    handleNoMoreData();
-                    return;
-                }
-                page++;
-                nextPageToken = resdata.nextPageToken; // 更新下一页的标识
-                getNextList(); // 加载下一页数据
-            })
-            .catch(err => {
-                console.error(err);
-                memoDom.innerHTML = "<p>Error loading content.</p>";
-            });
-    } else {
-        throw new Error('Invalid APIVersion');
+    // 构造 API 请求 URL
+    const filterString = `creator == 'users/${creatorId}'`;
+    const memoUrlTag = `https://memos.noisework.cn/api/v1/memos?filter=${encodeURIComponent(filterString)}&view=MEMO_VIEW_METADATA_ONLY`;
+
+    console.log(memoUrlTag); // 打印请求的 URL
+
+    // 发起请求
+    fetch(memoUrlTag)
+        .then(res => {
+            if (!res.ok) {
+                console.error('Network response was not ok', res); // 打印响应信息
+                throw new Error('Network response was not ok');
+            }
+            return res.json();
+        })
+        .then(resdata => {
+            console.log(resdata); // 打印返回的数据
+            const memos = resdata.memos; // 获取备忘录列表
+
+            // 检查 memos 是否存在且是数组
+            if (!Array.isArray(memos)) {
+                console.error('Memos is not an array or is undefined:', memos);
+                memoDom.innerHTML = "<p>No content found.</p>"; // 显示没有内容的提示
+                return;
+            }
+
+            // 更新 HTML 内容
+            updateHTMl(memos);
+        })
+        .catch(err => {
+            console.error('Fetch error:', err); // 打印错误信息
+            memoDom.innerHTML = "<p>Error loading content.</p>"; // 显示错误提示
+        });
+}
+
+function updateHTHl(memos) {
+    // 确保 memos 是一个有效的数组
+    if (!Array.isArray(memos)) {
+        console.error('Memos is not a valid array:', memos);
+        return; // 早期返回，避免后续代码执行
     }
+
+    // 处理 memos 数组并更新 HTML
+    memos.forEach(memo => {
+        // 更新 HTML 逻辑
+        console.log('Processing memo:', memo); // 调试输出
+        const memoElement = document.createElement('div');
+        memoElement.textContent = memo.title; // 假设每个备忘录有一个 title 属性
+        memoDom.appendChild(memoElement);
+    });
+
+    console.log('Total memos processed:', memos.length); // 打印处理的备忘录数量
 }
 
 // 更新 HTML 内容的函数
@@ -256,7 +280,7 @@ function updateHTMl(data) {
         memoDom.insertAdjacentHTML('beforeend', content);
     });
 }
-
+*/
 
 // 当前页数
 let currentPage = 0;
@@ -622,9 +646,3 @@ const bgImages = [
 function getRandomBackgroundImage() {
     return bgImages[Math.floor(Math.random() * bgImages.length)];
 }
-
-
-
-
-
-
