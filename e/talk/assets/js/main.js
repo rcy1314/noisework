@@ -213,7 +213,7 @@ function getTagFirstList() {
 
     // 构造 API 请求 URL
     const filterString = `creator == 'users/${creatorId}'`;
-    const memoUrlTag = `https://memos.noisework.cn/api/v1/memos?filter=${encodeURIComponent(filterString)}&view=MEMO_VIEW_METADATA_ONLY`;
+    const memoUrlTag = `${memos}/api/v1/memos?filter=${encodeURIComponent(filterString)}&view=MEMO_VIEW_METADATA_ONLY`;
 
     console.log(memoUrlTag); // 打印请求的 URL
 

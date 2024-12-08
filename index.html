@@ -390,18 +390,32 @@
                 </div>
                 </div>
                 </br>
-                <!-- 音乐-->
+                <!-- 音乐 -->
                 <div class="work">
                     <h2 class="chtitle"><span>音乐</span>赏析</span></h2>
-                    <meting-js list-max-height="130px" server="netease" type="playlist" data-fixed="true" data-autoplay="false"
-                        id="128460001">
-                    </meting-js>
+                    <div id="music-player">
+                        <meting-js list-max-height="130px" server="netease" type="playlist" data-fixed="true" data-autoplay="false"
+                            id="128460001">
+                        </meting-js>
+                    </div>
                 </div>
-                </div>
-              <link rel="stylesheet" href="css/APlayer.min.css">
-              <script src="js/APlayer.min.js"></script>
-              <script src="js/Meting.min.js"></script>
-                </br>
+                
+                <!-- 确保 APlayer 和 Meting 的样式和脚本文件加载 -->
+                <link rel="stylesheet" href="css/APlayer.min.css" media="all">
+                <noscript>
+                    <link rel="stylesheet" href="css/APlayer.min.css">
+                </noscript>
+                
+                <script src="js/APlayer.min.js"></script>
+                <script src="js/Meting.min.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        if (typeof Meting !== 'undefined') {
+                            Meting.init();
+                        }
+                    });
+                </script>
+                <br>
                 <!-- 友情链接 -->
                 <div class="work">
                     <h2 class="chtitle"><span>友情</span>链接</span></h2>
