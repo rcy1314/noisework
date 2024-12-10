@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="logo.png" type="image/png" />
   <style>
-    * {
+       * {
       box-sizing: border-box;
     }
 
@@ -46,7 +46,7 @@
       margin-right: 10px;
       padding: 10px;
       font-size: 15px;
-      background-color:#333; /* 设置分类搜索框背景颜色为白色 */
+      background-color: #333; /* 设置分类搜索框背景颜色为白色 */
       color: #fff; /* 设置分类搜索框文字颜色为暗黑色 */
       border: none;
       flex: 1; /* 设置为自动扩展剩余宽度 */
@@ -175,6 +175,57 @@
     .return-button:hover {
       opacity: 1;
     }
+
+    .random-bookmarks {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px; /* 书签之间的间隔 */
+}
+
+.random-bookmark {
+  width: 150px;
+  height: 100px;
+  background: transparent; /* 透明背景 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* 添加边框 */
+  z-index: 1; /* 确保不会被遮挡 */
+  overflow: hidden; /* 隐藏超出部分 */
+}
+
+.random-bookmark a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* 隐藏超出部分 */
+  white-space: nowrap; /* 防止文字换行 */
+  text-overflow: ellipsis; /* 超出部分显示为省略号 */
+}
+
+.random-bookmark:hover {
+  transform: scale(1.05);
+}
+
+@media only screen and (max-width: 600px) {
+  .random-bookmark {
+    width: auto;
+    height: 80px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -202,9 +253,9 @@
       <div class="announcement" id="announcement">🪧：欢迎访问！注意！首次搜索数据需要缓存才能快速加载，如有无法用关键词检索的信息时请点击显示全部！</div>
       <div class="search-results" id="search-results"></div>
       <button class="return-button" id="return-button" title="返回顶部">👆</button>
-    </div>
+   
   </div>
-
+  <div class="random-bookmarks" id="random-bookmarks"></div>
   <footer>
     <p><a href="https://noisework.cn" style="color: white;">数据来自Noise导航站、notion收录页及浏览器书签收藏等</a></p>
   </footer>
@@ -516,5 +567,127 @@
     window.addEventListener('resize', checkSearchResultsHeight);
     window.addEventListener('load', checkSearchResultsHeight);
   </script>
+   <script>
+// 获取随机书签显示区域
+const randomBookmarksContainer = document.getElementById('random-bookmarks');
+
+// 定义数据源
+const dataSources = [
+  'https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/Notionmarks.json',
+  'https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/AI.json',
+  'https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/Opensource.json',
+  'https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/Notiongo.json',
+  'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/Dahang.json',
+  'https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/Marks.json',
+  'https://jsd.cdn.noisework.cn/gh/rcy1314/noisework@master/soso/Rssbook.json'
+];
+
+// 获取随机书签
+const getRandomBookmarks = async () => {
+  let allBookmarks = [];
+
+  for (const dataSource of dataSources) {
+    try {
+      const response = await fetch(dataSource);
+      const data = await response.json();
+
+      if (Array.isArray(data)) {
+        data.forEach(item => {
+          if (item.name && item.URL) {
+            allBookmarks.push({ name: item.name, URL: item.URL });
+          } else if (item.links) {
+            item.links.forEach(link => {
+              allBookmarks.push({ name: link.title, URL: link.url });
+            });
+          } else {
+            allBookmarks.push({ name: item.title, URL: item.url });
+          }
+        });
+      }
+    } catch (error) {
+      console.log('加载数据失败:', error);
+    }
+  }
+
+  return allBookmarks;
+};
+
+// 显示随机书签
+const displayRandomBookmarks = async () => {
+  const bookmarks = await getRandomBookmarks();
+  const randomBookmarks = shuffleArray(bookmarks).slice(0, 35);
+
+  randomBookmarks.forEach((bookmark, index) => {
+    const bookmarkElement = document.createElement('div');
+    bookmarkElement.className = 'random-bookmark';
+    bookmarkElement.innerHTML = `<a href="${bookmark.URL}" target="_blank">${bookmark.name}</a>`;
+
+    // 随机设置初始位置
+    const containerWidth = randomBookmarksContainer.offsetWidth;
+    const containerHeight = randomBookmarksContainer.offsetHeight;
+
+    const maxWidth = containerWidth - 150; // 书签宽度
+    const maxHeight = containerHeight - 100; // 书签高度
+
+    const initialX = Math.random() * maxWidth;
+    const initialY = Math.random() * maxHeight;
+
+    const floatDirection = Math.random() < 0.5 ? 1 : -1; // 1 for up, -1 for down
+    const initialZ = Math.random() * 20 * floatDirection;
+
+    bookmarkElement.style.left = `${initialX}px`;
+    bookmarkElement.style.top = `${initialY}px`;
+    bookmarkElement.style.transform = `translateZ(${initialZ}px)`;
+
+    // 添加浮空效果
+    const float = () => {
+      const currentZ = parseFloat(bookmarkElement.style.transform.match(/translateZ\(([-\d.]+)px\)/)[1]);
+      const newZ = currentZ + floatDirection * 0.5;
+
+      if (newZ > 20 || newZ < -20) {
+        floatDirection *= -1;
+      }
+
+      bookmarkElement.style.transform = `translateZ(${newZ}px)`;
+      requestAnimationFrame(float);
+    };
+
+    float();
+
+    randomBookmarksContainer.appendChild(bookmarkElement);
+  });
+};
+
+// Fisher-Yates 洗牌算法
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
+// 页面加载时显示随机书签
+window.addEventListener('load', () => {
+  displayRandomBookmarks();
+});
+
+// 隐藏随机书签
+const hideRandomBookmarks = () => {
+  randomBookmarksContainer.innerHTML = '';
+};
+
+// 搜索按钮点击时隐藏随机书签
+searchButton.addEventListener('click', () => {
+  hideRandomBookmarks();
+});
+
+// 显示全部按钮点击时隐藏随机书签
+showAllButton.addEventListener('click', () => {
+  hideRandomBookmarks();
+});
+
+
+   </script>
 </body>
 </html>
