@@ -1,6 +1,5 @@
-{
-    "Sheet1":[
-     {
+[
+    {
       "name": "频道页面",
       "url": "https://tg.noisework.cn",
       "description": "我的TG频道页面"
@@ -12428,6 +12427,5 @@
       "name": "ReadMusic",
       "url": "https://howtoreadsheetmusic.org",
       "description": "这是一个帮助音乐爱好者学习并联系五线谱识谱的网站，包含技巧教程、实战练习等功能"
-     }
-    ]
     }
+]
