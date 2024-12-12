@@ -223,23 +223,6 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
-@media (min-width: 1024px) {
-  .grid-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 2000px) {
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 900px) {
-  .grid-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
 /* 媒体查询：屏幕宽度小于 768px 时生效 */
 @media (max-width: 768px) {
   .hotcard {
