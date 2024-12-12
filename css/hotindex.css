@@ -46,7 +46,7 @@
 
 .hotcard {
   width: 300px; /* 固定宽度 */
-  height: 300px; /* 固定高度 */
+  height: 280px; /* 固定高度 */
   border-radius: 15px;
   position: relative;
   padding: 20px;
