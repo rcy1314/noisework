@@ -21,14 +21,14 @@
 }
 
 .hotindex::-webkit-scrollbar-thumb {
-  background-color: gray; /* 设置滚动条拇指（可拖动部分）的背景颜色为灰色 */
+  background-color: rgba(45, 43, 43, 0.707); /* 设置滚动条拇指（可拖动部分）的背景颜色为灰色 */
   border-radius: 6px; /* 圆角样式 */
 }
 
 /* Firefox */
 .hotindex {
   scrollbar-width: thin; /* 设置滚动条的宽度为细 */
-  scrollbar-color: gray transparent; /* 设置滚动条拇指颜色为灰色，轨道颜色为透明 */
+  scrollbar-color: rgba(74, 72, 72, 0.862) transparent; /* 设置滚动条拇指颜色为灰色，轨道颜色为透明 */
 }
 
 /* IE and Edge */
@@ -79,7 +79,7 @@
 
 .hotcard h2 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 
