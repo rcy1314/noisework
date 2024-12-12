@@ -174,7 +174,7 @@ function addSoundToElements(selectors, sound) {
 }
 
 // 网址过渡音数组
-var elementsSelectors = ['.iconItem', '.item', '.projectItem','.project','.switchbg','.mobileswitchbg','.friendlinks-card','.bilibilititle-left','.bilibilititle-right','.menu-item','.menu-list li'];
+var elementsSelectors = ['.iconItem', '.item', '.projectItem','.project','.switchbg','.mobileswitchbg','.friendlinks-card','.bilibilititle-left','.bilibilititle-right','.menu-item','.hotcard','.menu-list li'];
 addSoundToElements(elementsSelectors, websiteHoverSound);
 
 // 广告位元素选择器数组
