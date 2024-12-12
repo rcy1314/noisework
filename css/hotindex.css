@@ -96,7 +96,7 @@
   cursor: pointer;
   font-size: 18px;
   z-index: 1;
-  color: #f3f4f8;
+  color: #c1c3c7b4;
 }
 
 .hotcard .content {
@@ -208,7 +208,7 @@
 }
 
 .text-white {
-  color: white;
+  color: #f5f8fcf8;
 }
 
 .p-4 {
