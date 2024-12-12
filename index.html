@@ -35,8 +35,7 @@
     <script src="js/Right.js"></script>
     <link rel="stylesheet" href="./css/waline.css">
     <link rel="stylesheet" href="./css/friendlink.css">
-    
-   
+    <link rel="stylesheet" href="./css/hotindex.css"> 
 </head>
 <body>
     <script type="worker" src="worker.js"></script>
@@ -389,8 +388,113 @@
                 </a>
                 </div>
                 </div>
-                </br>
+                <!-- 热榜-->
+            </br>
+            <div class="work">
+                <h2 class="chtitle"><span>热榜</span>快讯</span></h2>
+                <div class="hotindex">
+                    <div class="grid-container">
+                        <div class="bg-orange-500 text-white p-4 rounded-lg shadow-lg hotcard" id="douyin">
+                            <div class="header">
+                              <img src="https://www.douyin.com/favicon.ico" alt="抖音">
+                              <h2 class="text-lg font-bold">抖音</h2>
+                            </div>
+                            <p class="update-time">数据更新时间: -</p>
+                            <span class="refresh-icon" onclick="refreshData('douyin')"><i class="fas fa-refresh"></i></span>
+                            <div class="content">
+                              <ol class="list-decimal pl-5" id="douyin-list">
+                              </ol>
+                            </div>
+                          </div>
+                          <div class="bg-indigo-500 text-white p-4 rounded-lg shadow-lg hotcard" id="hellogithub">
+                            <div class="header">
+                              <img src="https://hellogithub.com/favicon/android-icon-192x192.png" alt="HelloGitHub">
+                              <h2 class="text-lg font-bold">HelloGitHub</h2>
+                            </div>
+                            <p class="update-time">数据更新时间: -</p>
+                            <span class="refresh-icon" onclick="refreshData('hellogithub')"><i class="fas fa-refresh"></i></span>
+                            <div class="content">
+                              <ol class="list-decimal pl-5" id="hellogithub-list">
+                              </ol>
+                            </div>
+                          </div>
+                          <div class="bg-green-500 text-white p-4 rounded-lg shadow-lg hotcard" id="bilibili">
+                            <div class="header">
+                              <img src="https://www.bilibili.com/favicon.ico" alt="哔哩哔哩">
+                              <h2 class="text-lg font-bold">哔哩哔哩</h2>
+                            </div>
+                            <p class="update-time">数据更新时间: -</p>
+                            <span class="refresh-icon" onclick="refreshData('bilibili')"><i class="fas fa-refresh"></i></span>
+                            <div class="content">
+                              <ol class="list-decimal pl-5" id="bilibili-list">
+                              </ol>
+                            </div>
+                          </div>
+                      <div class="bg-blue-500 text-white p-4 rounded-lg shadow-lg hotcard" id="zhihu">
+                        <div class="header">
+                          <img src="https://static.zhihu.com/heifetz/favicon.ico" alt="知乎">
+                          <h2 class="text-lg font-bold">知乎</h2>
+                        </div>
+                        <p class="update-time">数据更新时间: -</p>
+                        <span class="refresh-icon" onclick="refreshData('zhihu')"><i class="fas fa-refresh"></i></span>
+                        <div class="content">
+                          <ol class="list-decimal pl-5" id="zhihu-list">
+                          </ol>
+                        </div>
+                      </div>
+                      <div class="bg-red-500 text-white p-4 rounded-lg shadow-lg hotcard" id="weibo">
+                        <div class="header">
+                          <img src="https://sina.com.cn/favicon.ico" alt="微博">
+                          <h2 class="text-lg font-bold">微博</h2>
+                        </div>
+                        <p class="update-time">数据更新时间: -</p>
+                        <span class="refresh-icon" onclick="refreshData('weibo')"><i class="fas fa-refresh"></i></span>
+                        <div class="content">
+                          <ol class="list-decimal pl-5" id="weibo-list">
+                          </ol>
+                        </div>
+                      </div>
+                      <div class="bg-purple-500 text-white p-4 rounded-lg shadow-lg hotcard" id="baidu">
+                        <div class="header">
+                          <img src="https://www.baidu.com/favicon.ico" alt="百度贴吧">
+                          <h2 class="text-lg font-bold">百度贴吧</h2>
+                        </div>
+                        <p class="update-time">数据更新时间: -</p>
+                        <span class="refresh-icon" onclick="refreshData('baidu')"><i class="fas fa-refresh"></i></span>
+                        <div class="content">
+                          <ol class="list-decimal pl-5" id="baidu-list">
+                          </ol>
+                        </div>
+                      </div>
+                      <div class="bg-yellow-500 text-white p-4 rounded-lg shadow-lg hotcard" id="toutiao">
+                        <div class="header">
+                          <img src="https://www.toutiao.com/favicon.ico" alt="今日头条">
+                          <h2 class="text-lg font-bold">今日头条</h2>
+                        </div>
+                        <p class="update-time">数据更新时间: -</p>
+                        <span class="refresh-icon" onclick="refreshData('toutiao')"><i class="fas fa-refresh"></i></span>
+                        <div class="content">
+                          <ol class="list-decimal pl-5" id="toutiao-list">
+                          </ol>
+                        </div>
+                      </div>
+                      <div class="bg-teal-500 text-white p-4 rounded-lg shadow-lg hotcard" id="v2ex">
+                        <div class="header">
+                          <img src="https://s2.loli.net/2024/12/12/kz5t8fuXBLl6cFi.jpg" alt="V2EX">
+                          <h2 class="text-lg font-bold">V2EX</h2>
+                        </div>
+                        <p class="update-time">数据更新时间: -</p>
+                        <span class="refresh-icon" onclick="refreshData('v2ex')"><i class="fas fa-refresh"></i></span>
+                        <div class="content">
+                          <ol class="list-decimal pl-5" id="v2ex-list">
+                          </ol>
+                        </div>
+                      </div>
+                    </div>
+                   </div>
+                </div>
                 <!-- 音乐 -->
+                </br>
                 <div class="work">
                     <h2 class="chtitle"><span>音乐</span>赏析</span></h2>
                     <div id="music-player">
@@ -485,6 +589,7 @@
                             </div>
                         </div>
 		        	<!-- B站收藏结束-->
+                     
                      <!-- 游戏加载
                     <div class="pc-only">
                     </br>
@@ -633,5 +738,7 @@
     <!--  <script src="js/Text.js"></script> -->  
     <script src="js/rss.js"></script>
     <script src="js/sound.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script src="js/hotindex.js"></script>
 </body>
 </html>

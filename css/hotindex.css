@@ -1,0 +1,242 @@
+.hotindex {
+  background-color: #222222;
+  border: 1px solid #0c0c0c42;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+  max-width: 100%; 
+  overflow-x: scroll; 
+  overflow-y: hidden; 
+  white-space: nowrap; 
+  position: relative;
+}
+
+/* Chrome, Safari and Opera */
+.hotindex::-webkit-scrollbar {
+  width: 12px; 
+}
+
+.hotindex::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+.hotindex::-webkit-scrollbar-thumb {
+  background-color: gray; /* 设置滚动条拇指（可拖动部分）的背景颜色为灰色 */
+  border-radius: 6px; /* 圆角样式 */
+}
+
+/* Firefox */
+.hotindex {
+  scrollbar-width: thin; /* 设置滚动条的宽度为细 */
+  scrollbar-color: gray transparent; /* 设置滚动条拇指颜色为灰色，轨道颜色为透明 */
+}
+
+/* IE and Edge */
+.hotindex {
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* 自动隐藏滚动条，但仍可使用 */
+}
+
+
+.grid-container {
+  display: flex; /* 修改为弹性布局 */
+  flex-wrap: nowrap; /* 不允许换行 */
+  gap: 0.5rem; /* 项目之间的间距 */
+  padding: 1rem;
+}
+
+.hotcard {
+  width: 300px; /* 固定宽度 */
+  height: 360px; /* 固定高度 */
+  border-radius: 15px;
+  position: relative;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #f1f5f9;
+  color: #111827;
+  flex: 0 0 auto; /* 确保每个卡片保持固定宽度 */
+  overflow: hidden; /* 确保内容不会超出卡片 */
+  word-wrap: break-word; /* 允许文字换行 */
+}
+
+.hotcard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hotcard .header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.hotcard .header img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.hotcard h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.hotcard .update-time {
+  font-size: 12px;
+  color: #FFFFFF;
+  margin-top: 5px;
+}
+
+.hotcard .refresh-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 1;
+  color: #f3f4f8;
+}
+
+.hotcard .content {
+  margin-top: 20px;
+  text-align: left;
+  height: calc(100% - 80px);
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hotcard .content::-webkit-scrollbar {
+  display: none;
+}
+
+.hotcard ol {
+  margin: 0;
+  padding: 0 10px;
+  background: rgba(50, 46, 46, 0.33);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none; /* 隐藏滚动条 - Firefox */
+  -ms-overflow-style: none; /* 隐藏滚动条 - IE和Edge */
+}
+
+.hotcard ol::-webkit-scrollbar {
+  display: none;
+}
+
+.hotcard ol li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 13.5px;
+  padding: 5px 10px;
+  transition: background-color 0.3s;
+  text-align: left;
+  overflow: hidden; /* 隐藏超过容器的内容 */
+  white-space: nowrap; /* 防止文字换行 */
+  text-overflow: ellipsis; /* 超出部分用省略号显示 */
+  position: relative; /* 为绝对定位的伪元素提供参考 */
+}
+
+.hotcard ol li:hover {
+  overflow: visible; /* 鼠标悬停时显示所有内容 */
+  white-space: normal; /* 鼠标悬停时允许文字换行 */
+  text-overflow: clip; /* 鼠标悬停时取消省略号 */
+  z-index: 1; /* 确保悬停时内容在其他元素之上 */
+}
+
+.hotcard ol li:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none; /* 伪元素不响应鼠标事件 */
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgb(44, 53, 76) 100%); /* 渐变背景，模拟滚动效果 */
+  z-index: -1; /* 伪元素在内容之下 */
+}
+
+
+.hotcard ol li::before {
+  content: attr(data-index);
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.hotcard ol li:nth-child(-n+3)::before {
+  color: red;
+}
+
+/* 颜色和样式类 */
+.bg-blue-500 {
+  background-color: #252627e6;
+}
+
+.bg-red-500 {
+  background-color: #252627e6;
+}
+
+.bg-green-500 {
+  background-color: #252627e6;
+}
+
+.bg-orange-500 {
+  background-color: #252627e6;
+}
+
+.bg-purple-500 {
+  background-color: #252627e6;
+}
+
+.bg-yellow-500 {
+  background-color: #252627e6;
+}
+
+.bg-teal-500 {
+  background-color: #252627e6;
+}
+
+.bg-indigo-500 {
+  background-color: #252627e6;
+}
+
+.text-white {
+  color: white;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.rounded-lg {
+  border-radius: 15px;
+}
+
+.shadow-lg {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 2000px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

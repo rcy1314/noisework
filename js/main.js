@@ -21,7 +21,7 @@ function change(){
     state = 'a'},300)}}
 
 /*scroll*/
-let container = document.querySelector('.workbox');
+/* let container = document.querySelector('.workbox');
 if (window.innerWidth >720) {
 	container.addEventListener('wheel',(event) => {
 	event.preventDefault();
