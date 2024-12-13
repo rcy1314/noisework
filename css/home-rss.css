@@ -1,30 +1,28 @@
 /* noise-home主页rss-CSS样式 */
 .rss-container {
-  display: none;
+  position: fixed;
+  color: white; 
+  display: flex;
+  text-align: center;
+  overflow: hidden; /* 防止内容溢出 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
 }
 
-@media only screen {
-  .rss-container {
-    position: fixed;
-    color: white; 
-    display: flex;
-    text-align: center;
-    display: block;
-    overflow: hidden; /* 防止内容溢出 */
-  }
+/* 修改选择器为 .rss-link a */
+.rss-link a {
+  font-size: 13px;
+  margin-bottom: 2px;
+  color: white;
+  text-decoration: none;
+}
 
-  /* 修改选择器为 .rss-link a */
-  .rss-link a {
-    font-size: 13px;
-    margin-bottom: 2px;
-    color: white;
-   
-  }
-
-  /* 图片样式 */
-  .rss-link img {
-    width: 100%; /* 图片宽度自适应容器 */
-    height: auto; /* 高度按比例自适应 */
-    border-radius: 5px; /* 可选：给图片添加圆角 */
-  }
+/* 图片样式 */
+.rss-link img {
+  width: 50px; /* 固定图片宽度 */
+  height: 50px; /* 固定图片高度 */
+  border-radius: 5px; /* 可选：给图片添加圆角 */
 }

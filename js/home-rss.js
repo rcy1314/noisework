@@ -32,12 +32,6 @@ function fetchRssItems(url) {
         }
 
         var thumbnailUrl = thumbnails.length > 0 ? thumbnails[0] : '';
-        if (!thumbnailUrl && thumbnails.length > 1) {
-          thumbnailUrl = thumbnails[1];
-        }
-        if (!thumbnailUrl && thumbnails.length > 2) {
-          thumbnailUrl = thumbnails[2];
-        }
 
         var rssLink = document.createElement('div');
         rssLink.classList.add('rss-link');
@@ -49,6 +43,12 @@ function fetchRssItems(url) {
         `;
 
         rssItem.appendChild(rssLink);
+
+        // 递增当前项目索引
+        currentRssItemIndex = (currentRssItemIndex + 1) % data.items.length;
+        if (currentRssItemIndex === 0) {
+          currentRssIndex = (currentRssIndex + 1) % rssSources.length;
+        }
       } else {
         showError();
       }
@@ -68,10 +68,6 @@ fetchRssItems(rssSources[currentRssIndex]);
 
 // 每隔8秒变换一次信息
 setInterval(function() {
-  currentRssItemIndex = (currentRssItemIndex + 1) % data.items.length;
-  if (currentRssItemIndex === 0) {
-    currentRssIndex = (currentRssIndex + 1) % rssSources.length;
-  }
   fetchRssItems(rssSources[currentRssIndex]);
 }, 8000);
 
