@@ -1,5 +1,3 @@
-// 目前已修改为私有的rss2json的api key进行监测更新，除本站外这个key无法加入到其它域名，请修改为自己的key，默认每1小时更新限制
-// 要使用完全免费的rss2json的api调用获取代码请查看https://www.noiseblogs.top/posts/fcbd92b4或访问https://noisevip.cn/17001.html
 // JavaScript代码-rss
 var rssContainer = document.querySelector('.rss-container');
 var rssItem = document.getElementById('rss-item');
@@ -86,15 +84,8 @@ function showError() {
   rssItem.innerHTML = '<p>错误！请检查您的RSS源或Api-key配置是否正确！</p>';
 }
 
-// 获取并解析所有RSS信息源的数据
-rssSources.forEach(source => {
-  fetchRssItems(source);
-});
-
-// 页面载入后延迟2秒后弹出效果
-setTimeout(function() {
-  rssContainer.classList.add('open');
-}, 2000);
+// 初始加载时显示第一个RSS项
+fetchRssItems(rssSources[currentRssIndex]);
 
 // 点击关闭按钮后隐藏容器
 var closeButton = document.getElementById('close-button');
@@ -105,7 +96,10 @@ closeButton.addEventListener('click', function() {
 // 每隔8秒变换一次信息
 setInterval(function() {
   fetchRssItems(rssSources[currentRssIndex]);
-  currentRssIndex = (currentRssIndex + 1) % rssSources.length;
+  currentRssItemIndex = (currentRssItemIndex + 1) % 3; // 假设每条RSS最多3个项目
+  if (currentRssItemIndex === 0) {
+    currentRssIndex = (currentRssIndex + 1) % rssSources.length;
+  }
 }, 8000);
 
 // 定时检查RSS源是否有更新
