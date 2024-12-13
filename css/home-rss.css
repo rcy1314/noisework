@@ -3,7 +3,7 @@
   position: fixed;
   color: white; 
   display: flex;
-  text-align: center;
+  text-align: left; /* 文本左对齐 */
   flex-direction: column; /* 使内容垂直排列 */
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
@@ -11,17 +11,24 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
   overflow: hidden; /* 防止内容溢出 */
+  padding: 20px; /* 添加内边距 */
 }
 
 /* 修改选择器为 .rss-link a */
+.rss-link {
+  display: flex;
+  flex-direction: column; /* 使内容垂直排列 */
+  align-items: flex-start; /* 文本左对齐 */
+  width: 100%; /* 使链接宽度与容器一致 */
+  margin-bottom: 20px; /* 使每个RSS项之间有间距 */
+}
+
 .rss-link a {
   font-size: 13px;
-  margin-bottom: 2px;
   color: white;
   text-decoration: none;
-  display: block; /* 使链接块级显示，确保图片在其下方 */
   width: 100%; /* 使链接宽度与容器一致 */
-  text-align: center; /* 使文本居中 */
+  text-align: left; /* 文本左对齐 */
 }
 
 /* 图片样式 */
