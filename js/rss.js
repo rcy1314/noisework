@@ -3,8 +3,8 @@
 var rssContainer = document.querySelector('.rss-container');
 var rssItem = document.getElementById('rss-item');
 var rssSources = [
-  'https://memos.noisework.cn/u/noise/rss.xml',
   'https://www.noiseblogs.top/atom.xml',
+  'https://memos.noisework.cn/u/noise/rss.xml',
   'https://noisevip.cn/feed',
   // 添加更多的RSS信息源
 ];
