@@ -15,7 +15,10 @@ var lastUpdateTimes = {}; // 记录每个RSS源的最后更新时间
 
 function fetchRssItems(url) {
   fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}&api_key=${apiKey}`)
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) throw new Error('Network response was not ok');
+      return response.json();
+    })
     .then(data => {
       rssItem.innerHTML = ''; // 清空之前的RSS项
 
@@ -32,22 +35,36 @@ function fetchRssItems(url) {
           if (thumbnails.length === 3) break;
         }
 
-        var thumbnailUrl = thumbnails.length > 0 ? thumbnails[0] : '';
-        if (!thumbnailUrl && thumbnails.length > 1) {
-          thumbnailUrl = thumbnails[1];
-        }
-        if (!thumbnailUrl && thumbnails.length > 2) {
-          thumbnailUrl = thumbnails[2];
-        }
+        var thumbnailUrl = thumbnails.find(url => url) || '';
 
         var rssLink = document.createElement('div');
         rssLink.classList.add('rss-link');
         rssLink.innerHTML = `
           <a href="${item.link}" target="_blank">
             ${item.title} - ${formattedDate}
-            ${thumbnailUrl ? `<img src="${thumbnailUrl}" alt="缩略图" width="50" height="50">` : ''}
+            <span class="thumbnail-container" style="display: none;"></span>
           </a>
         `;
+
+        var thumbnailContainer = rssLink.querySelector('.thumbnail-container');
+
+        if (thumbnailUrl) {
+          var img = new Image();
+          img.src = thumbnailUrl;
+          img.alt = "缩略图";
+          img.width = 50;
+          img.height = 50;
+
+          img.onload = function() {
+            thumbnailContainer.appendChild(img);
+            thumbnailContainer.style.display = 'block'; // 仅在图片加载成功后显示
+          };
+
+          img.onerror = function() {
+            console.error('Image could not be loaded:', thumbnailUrl);
+            thumbnailContainer.style.display = 'none'; // 图片加载失败时隐藏
+          };
+        }
 
         rssItem.appendChild(rssLink);
 
@@ -69,33 +86,46 @@ function showError() {
   rssItem.innerHTML = '<p>错误！请检查您的RSS源或Api-key配置是否正确！</p>';
 }
 
-
 // 获取并解析所有RSS信息源的数据
 rssSources.forEach(source => {
   fetchRssItems(source);
 });
 
+// 页面载入后延迟2秒后弹出效果
+setTimeout(function() {
+  rssContainer.classList.add('open');
+}, 2000);
+
+// 点击关闭按钮后隐藏容器
+var closeButton = document.getElementById('close-button');
+closeButton.addEventListener('click', function() {
+  rssContainer.style.display = 'none';
+});
 
 // 每隔8秒变换一次信息
 setInterval(function() {
-  currentRssIndex = (currentRssIndex + 1) % rssSources.length;
   fetchRssItems(rssSources[currentRssIndex]);
+  currentRssIndex = (currentRssIndex + 1) % rssSources.length;
 }, 8000);
 
 // 定时检查RSS源是否有更新
 setInterval(function() {
   rssSources.forEach(source => {
     fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(source)}&api_key=${apiKey}`)
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.json();
+      })
       .then(data => {
         var latestItem = data.items[0];
         var pubDate = new Date(latestItem.pubDate);
         if (!lastUpdateTimes[source] || pubDate > lastUpdateTimes[source]) {
-          // 有新的更新，立即刷新显示最新信息
           fetchRssItems(source);
-          // 更新最后更新时间
           lastUpdateTimes[source] = pubDate;
         }
+      })
+      .catch(error => {
+        console.error('Update check error:', error);
       });
   });
-}, 3600000); // 每隔1小时检查一次RSS源是否有更新
+}, 3600000);

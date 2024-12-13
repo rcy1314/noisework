@@ -35,22 +35,36 @@ function fetchRssItems(url) {
           if (thumbnails.length === 3) break;
         }
 
-        var thumbnailUrl = thumbnails.length > 0 ? thumbnails[0] : '';
-        if (!thumbnailUrl && thumbnails.length > 1) {
-          thumbnailUrl = thumbnails[1];
-        }
-        if (!thumbnailUrl && thumbnails.length > 2) {
-          thumbnailUrl = thumbnails[2];
-        }
+        var thumbnailUrl = thumbnails.find(url => url) || '';
 
         var rssLink = document.createElement('div');
         rssLink.classList.add('rss-link');
         rssLink.innerHTML = `
           <a href="${item.link}" target="_blank">
             ${item.title} - ${formattedDate}
-            ${thumbnailUrl ? `<img src="${thumbnailUrl}" alt="缩略图" width="50" height="50">` : ''}
+            <span class="thumbnail-container" style="display: none;"></span>
           </a>
         `;
+
+        var thumbnailContainer = rssLink.querySelector('.thumbnail-container');
+
+        if (thumbnailUrl) {
+          var img = new Image();
+          img.src = thumbnailUrl;
+          img.alt = "缩略图";
+          img.width = 50;
+          img.height = 50;
+
+          img.onload = function() {
+            thumbnailContainer.appendChild(img);
+            thumbnailContainer.style.display = 'block'; // 仅在图片加载成功后显示
+          };
+
+          img.onerror = function() {
+            console.error('Image could not be loaded:', thumbnailUrl);
+            thumbnailContainer.style.display = 'none'; // 图片加载失败时隐藏
+          };
+        }
 
         rssItem.appendChild(rssLink);
 
