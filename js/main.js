@@ -1,24 +1,33 @@
+/* 双击启动 */
+document.getElementById('clear').ondblclick = change;
+let state = 'a';
+const avatar = document.getElementById('avatar');
+const persontag = document.getElementById('persontag');
+const terminal = document.getElementById('terminal');
 
-/*双击启动*/
-document.getElementById('clear').ondblclick = change
-let state = 'a'
-function change(){
-    if (state == 'a'){   
-    document.getElementById('avatar').className = 'dap';
-    document.getElementById('persontag').className = 'dap';
-    setTimeout(() => {document.getElementById('avatar').style.display = 'none';
-    document.getElementById('persontag').style.display = 'none';
-    document.getElementById('terminal').style.display = 'block';
-    document.getElementById('terminal').className = 'ap';
-    state = 't'},300)
-    }else{
-    document.getElementById('terminal').className = 'dap'
-    setTimeout(() => {document.getElementById('terminal').style.display = 'none';
-    document.getElementById('avatar').style.display = 'block';
-    document.getElementById('persontag').style.display = 'block';
-    document.getElementById('avatar').className = 'ap';
-    document.getElementById('persontag').className = 'ap';
-    state = 'a'},300)}}
+function change() {
+    if (state === 'a') {
+        avatar.className = 'dap';
+        persontag.className = 'dap';
+        setTimeout(() => {
+            avatar.style.display = 'none';
+            persontag.style.display = 'none';
+            terminal.style.display = 'block';
+            terminal.className = 'ap';
+            state = 't';
+        }, 300);
+    } else {
+        terminal.className = 'dap';
+        setTimeout(() => {
+            terminal.style.display = 'none';
+            avatar.style.display = 'block';
+            persontag.style.display = 'block';
+            avatar.className = 'ap';
+            persontag.className = 'ap';
+            state = 'a';
+        }, 300);
+    }
+}
 
 /*scroll*/
 /* let container = document.querySelector('.workbox');
@@ -50,157 +59,113 @@ console.log(` %c
    ' 　 ｀ー- 、　｀　|＼/　 丶、　 　 |│　；
 　 　 　 　 　 ＼ 　_!　　　　　 ＼　　|│　;
 `,'font-family: "MS PGothic", "ＭＳ Ｐゴシック", "Trebuchet MS", Verdana, Futura, Arial, Helvetica, sans-serif;line-height: 1;font-size: 12pt;');
-var sence = document.getElementById('sence')
-if(window.innerWidth > 720){
-var parallaxInstance = new Parallax(sence, {
-  relativeInput: true,
-  clipRelativeInput: false,
-  hoverOnly:false
-});
-$( function() {
-  // init plugin
-  NodeCursor({
-    cursor : true, 
-    node : true, 
-    cursor_velocity : 1, 
-    node_velocity : 0.15, 
-    native_cursor : 'none', 
-    element_to_hover : 'a', 
-    cursor_class_hover : 'expand', 
-    node_class_hover : 'expand', 
-    hide_mode : true, 
-    hide_timing : 2000, 
-  });
-})}
-else {
-  if (window.DeviceOrientationEvent) {
-    var bg = document.getElementById('bg')
-    window.addEventListener("deviceorientation", 
-    function(event) {
-      bg.style.translate = (-event.beta) +'px '+(-event.alpha)+'px';
-  })}
-  else{
+
+const sence = document.getElementById('sence');
+if (window.innerWidth > 720) {
+    const parallaxInstance = new Parallax(sence, {
+        relativeInput: true,
+        clipRelativeInput: false,
+        hoverOnly: false
+    });
+    $(function() {
+        NodeCursor({
+            cursor: true,
+            node: true,
+            cursor_velocity: 1,
+            node_velocity: 0.15,
+            native_cursor: 'none',
+            element_to_hover: 'a',
+            cursor_class_hover: 'expand',
+            node_class_hover: 'expand',
+            hide_mode: true,
+            hide_timing: 2000,
+        });
+    });
+} else if (window.DeviceOrientationEvent) {
+    const bg = document.getElementById('bg');
+    window.addEventListener("deviceorientation", (event) => {
+        bg.style.transform = `translate(${-event.beta}px, ${-event.alpha}px)`; // 使用transform替代translate
+    });
+} else {
     console.log("DeviceOrientationEvent is not supported");
-  }
 }
- //*数字时钟*//
+
+/* 数字时钟 */
 window.addEventListener('DOMContentLoaded', () => {
-  const clock = document.getElementById('clock');
-  let isMouseOver = false;
-  let isMobile = false;
-  let isClicked = false;
+    const clock = document.getElementById('clock');
+    let isMouseOver = false;
+    let isMobile = false;
+    let isClicked = false;
 
-  // 检测是否为手机端尺寸
-  const checkMobile = () => {
-    if (window.innerWidth <= 600) {
-      isMobile = true;
-      clock.classList.remove('show');
-    } else {
-      isMobile = false;
-      if (isClicked) {
-        clock.classList.add('show');
-      }
-    }
-  };
+    const checkMobile = () => {
+        isMobile = window.innerWidth <= 600;
+        clock.classList.toggle('show', !isMobile && isClicked);
+    };
 
-  // 监听窗口大小变化
-  window.addEventListener('resize', checkMobile);
-  
-  // 初始检测一次窗口大小
-  checkMobile();
+    window.addEventListener('resize', checkMobile);
+    checkMobile();
 
-  clock.addEventListener('mouseover', () => {
-    isMouseOver = true;
-    if (!isMobile) {
-      clock.classList.add('show');
-    }
-  });
-
-  clock.addEventListener('mouseout', () => {
-    isMouseOver = false;
-    if (!isMobile && !isClicked) {
-      setTimeout(() => {
-        if (!isMouseOver) {
-          clock.classList.remove('show');
+    clock.addEventListener('mouseover', () => {
+        isMouseOver = true;
+        if (!isMobile) {
+            clock.classList.add('show');
         }
-      }, 2000);
-    }
-  });
+    });
 
-  clock.addEventListener('click', () => {
-    isClicked = true;
-    clock.classList.add('show');
-  });
+    clock.addEventListener('mouseout', () => {
+        isMouseOver = false;
+        if (!isMobile && !isClicked) {
+            setTimeout(() => {
+                if (!isMouseOver) {
+                    clock.classList.remove('show');
+                }
+            }, 2000);
+        }
+    });
 
-  setInterval(() => {
-    if ((isMouseOver || isClicked) && !isMobile) {
-      const date = new Date();
-      const hours = String(date.getHours()).padStart(2, '0');
-      const minutes = String(date.getMinutes()).padStart(2, '0');
-      const seconds = String(date.getSeconds()).padStart(2, '0');
-      const time = `${hours}:${minutes}:${seconds}`;
-      clock.textContent = time;
-    }
-  }, 1000);
+    clock.addEventListener('click', () => {
+        isClicked = true;
+        clock.classList.add('show');
+    });
+
+    setInterval(() => {
+        if ((isMouseOver || isClicked) && !isMobile) {
+            const date = new Date();
+            clock.textContent = date.toLocaleTimeString('en-US', { hour12: false });
+        }
+    }, 1000);
 });
 
- //*footer*//
- // 计算站点运行天数
- var startDate = new Date('2020/12/09');
- var currentDate = new Date();
- var daysElement = document.getElementById('days');
- var days = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24));
- daysElement.textContent = days + '天';
+/* footer */
+const startDate = new Date('2020/12/09');
+const daysElement = document.getElementById('days');
+const days = Math.floor((new Date() - startDate) / (1000 * 60 * 60 * 24));
+daysElement.textContent = `${days}天`;
 
- // 监听鼠标移动事件
- document.addEventListener('mousemove', function(event) {
-   var footer = document.getElementById('footer');
-   var windowHeight = window.innerHeight;
-   var y = event.clientY;
+document.addEventListener('mousemove', (event) => {
+    const footer = document.getElementById('footer');
+    footer.style.display = (event.clientY >= window.innerHeight - 50) ? 'block' : 'none';
+});
 
-   // 判断鼠标位置是否在页面底部
-   if (y >= windowHeight - 50) {
-     footer.style.display = 'block'; // 显示footer
-   } else {
-     footer.style.display = 'none'; // 隐藏footer
-   }
- });
- 
-// 页面重定向
+/* 页面重定向 */
 window.addEventListener('DOMContentLoaded', function() {
-  var pathname = window.location.pathname;
-  // 检查路径是否为 /index.html，如果是，则替换为 /
-  if (pathname === '/index.html') {
-    var newUrl = window.location.protocol + '//' + window.location.host;
-    window.history.replaceState({ path: newUrl }, '', newUrl);
-  }
-  // 处理末尾的斜杠
-  else if (pathname.endsWith('/')) {
-    var newUrl = pathname.replace(/\/$/, '');
-    window.history.replaceState({ path: newUrl }, '', newUrl);
-  }
+    const pathname = window.location.pathname;
+    if (pathname === '/index.html') {
+        const newUrl = `${window.location.protocol}//${window.location.host}`;
+        window.history.replaceState({ path: newUrl }, '', newUrl);
+    } else if (pathname.endsWith('/')) {
+        const newUrl = pathname.replace(/\/$/, '');
+        window.history.replaceState({ path: newUrl }, '', newUrl);
+    }
 });
 
-// 在主线程中
-
-// 定义发送数据的函数
+/* 在主线程中 */
 function sendDataToWorker(data) {
-  var worker = new Worker('worker.js');
-
-  worker.onmessage = function(event) {
-      var result = event.data;
-      // 在这里处理结果
-      console.log('Worker 计算结果是:', result);
-  };
-
-  worker.onerror = function(error) {
-      console.error('Worker 错误:', error);
-  };
-
-  worker.postMessage(data); // 向Worker发送数据
-
-  // 适当的时候关闭Worker
-  worker.terminate();
+    const worker = new Worker('worker.js');
+    worker.onmessage = (event) => console.log('Worker 计算结果是:', event.data);
+    worker.onerror = (error) => console.error('Worker 错误:', error);
+    worker.postMessage(data);
+    worker.terminate();
 }
 
 // 调用函数发送数据
