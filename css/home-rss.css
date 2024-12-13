@@ -4,12 +4,13 @@
   color: white; 
   display: flex;
   text-align: center;
-  overflow: hidden; /* 防止内容溢出 */
+  flex-direction: column; /* 使内容垂直排列 */
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+  overflow: hidden; /* 防止内容溢出 */
 }
 
 /* 修改选择器为 .rss-link a */
@@ -18,11 +19,15 @@
   margin-bottom: 2px;
   color: white;
   text-decoration: none;
+  display: block; /* 使链接块级显示，确保图片在其下方 */
+  width: 100%; /* 使链接宽度与容器一致 */
+  text-align: center; /* 使文本居中 */
 }
 
 /* 图片样式 */
 .rss-link img {
-  width: 50px; /* 固定图片宽度 */
-  height: 50px; /* 固定图片高度 */
+  width: 100%; /* 图片宽度与容器一致 */
+  height: auto; /* 高度按比例自适应 */
   border-radius: 5px; /* 可选：给图片添加圆角 */
+  margin-top: 5px; /* 使图片与文本之间有间距 */
 }
