@@ -18,19 +18,57 @@ function fetchRssItems(url) {
     .then(response => response.json())
     .then(data => {
       rssItem.innerHTML = ''; // 清空之前的RSS项
-      var rssLink = document.createElement('div');
-      rssLink.classList.add('rss-link');
-      var item = data.items[currentRssItemIndex];
-      var pubDate = new Date(item.pubDate);
-      var formattedDate = pubDate.toLocaleDateString();
-      rssLink.innerHTML = `<a href="${item.link}" target="_blank">${item.title} - ${formattedDate}</a>`;
-      rssItem.appendChild(rssLink);
-      currentRssItemIndex = (currentRssItemIndex + 1) % data.items.length;
-      if (currentRssItemIndex === 0) {
-        currentRssIndex = (currentRssIndex + 1) % rssSources.length;
+
+      if (data.items && data.items.length > 0) {
+        var item = data.items[currentRssItemIndex];
+        var pubDate = new Date(item.pubDate);
+        var formattedDate = pubDate.toLocaleDateString();
+
+        var imgRegex = /<img[^>]+src="([^">]+)"/g;
+        var match;
+        var thumbnails = [];
+        while ((match = imgRegex.exec(item.content)) !== null) {
+          thumbnails.push(match[1]);
+          if (thumbnails.length === 3) break;
+        }
+
+        var thumbnailUrl = thumbnails.length > 0 ? thumbnails[0] : '';
+        if (!thumbnailUrl && thumbnails.length > 1) {
+          thumbnailUrl = thumbnails[1];
+        }
+        if (!thumbnailUrl && thumbnails.length > 2) {
+          thumbnailUrl = thumbnails[2];
+        }
+
+        var rssLink = document.createElement('div');
+        rssLink.classList.add('rss-link');
+        rssLink.innerHTML = `
+          <a href="${item.link}" target="_blank">
+            ${item.title} - ${formattedDate}
+            ${thumbnailUrl ? `<img src="${thumbnailUrl}" alt="缩略图" width="50" height="50">` : ''}
+          </a>
+        `;
+
+        rssItem.appendChild(rssLink);
+
+        currentRssItemIndex = (currentRssItemIndex + 1) % data.items.length;
+        if (currentRssItemIndex === 0) {
+          currentRssIndex = (currentRssIndex + 1) % rssSources.length;
+        }
+      } else {
+        showError();
       }
+    })
+    .catch(error => {
+      console.error('Fetch error:', error);
+      showError();
     });
 }
+
+function showError() {
+  rssItem.innerHTML = '<p>错误！请检查您的RSS源或Api-key配置是否正确！</p>';
+}
+
 
 // 获取并解析所有RSS信息源的数据
 rssSources.forEach(source => {

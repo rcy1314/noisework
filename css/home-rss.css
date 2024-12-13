@@ -1,4 +1,4 @@
-/* noise主页rss-CSS样式 */
+/* noise-home主页rss-CSS样式 */
 .rss-container {
   display: none;
 }
@@ -8,6 +8,9 @@
     position: fixed;
     color: white; 
     display: flex;
+    text-align: center;
+    display: block;
+    overflow: hidden; /* 防止内容溢出 */
   }
 
   /* 修改选择器为 .rss-link a */
@@ -18,4 +21,10 @@
    
   }
 
+  /* 图片样式 */
+  .rss-link img {
+    width: 100%; /* 图片宽度自适应容器 */
+    height: auto; /* 高度按比例自适应 */
+    border-radius: 5px; /* 可选：给图片添加圆角 */
+  }
 }

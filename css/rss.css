@@ -21,6 +21,7 @@
     color: white;
     text-align: center;
     display: block;
+    overflow: hidden; /* 防止内容溢出 */
   }
 
   .rss-container.open {
@@ -37,13 +38,31 @@
     margin-bottom: 10px;
   }
 
+  /* 设置链接容器样式 */
+  .rss-link {
+    display: flex;
+    flex-direction: column; /* 垂直排列图片和文字 */
+    align-items: center;
+    margin-bottom: 5px;
+    overflow: hidden; /* 防止内容溢出 */
+  }
+
   /* 修改选择器为 .rss-link a */
   .rss-link a {
     font-size: 13px;
-    margin-bottom: 2px;
     color: white;
-    /* 添加文字发光效果 */
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    margin-top: 5px; /* 确保文字与图片分开 */
+    text-align: center;
+    word-break: break-all; /* 防止长单词溢出 */
+    white-space: normal; /* 允许文本换行 */
+  }
+
+  /* 图片样式 */
+  .rss-link img {
+    width: 100%; /* 图片宽度自适应容器 */
+    height: auto; /* 高度按比例自适应 */
+    border-radius: 5px; /* 可选：给图片添加圆角 */
   }
 
   /* 添加关闭按钮样式 */
