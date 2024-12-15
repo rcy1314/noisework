@@ -5,9 +5,15 @@
 	transition-timing-function: cubic-bezier(.19, 1, .22, 1);
 	-webkit-tap-highlight-color: transparent;
 	box-sizing: border-box;
-	cursor: none;
+	
   }
-  
+  /*鼠标小黑猫光标*/
+button {cursor:url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/work.cur),alias}
+p {cursor:url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/texto.cur),auto}
+a {cursor:url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/ayuda.cur),auto}
+a:active {cursor:url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/work.cur),alias}
+body {cursor:url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/normal.cur),auto}
+
   body, html {
 	font-family: 'MyLocalFont', Microsoft YaHei, sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -455,101 +461,7 @@ a {
 	height: 100%;
 	position: relative;
 }
-  /* 鼠标样式 */
-.cursor {
-	pointer-events: none;
-	position: fixed;
-	z-index: 9999999;
-	display: block;
-	transition: opacity .3s linear;
-	opacity: 0;
-	width: 12px;
-	height: 12px;
-	transform: translate(1px,1px);
-  }
-  
-  .cursor.moving {
-	opacity: 1;
-  }
-  
-  .cursor::before {
-	content: ' ';
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	background-color: rgb(255, 255, 255);
-	border-radius: 50%;
-	top: 0;
-	left: 0;
-  
-	opacity: 1;
-	transition: opacity .3s linear;
-	box-shadow: rgba(255, 255, 255, 0.5) 0 0 20px;
-	transition: opacity 250ms linear, transform 300ms linear, border 300ms linear;
-  }
-  
-  
-  .cursor.expand::before {
-	transform: scale(3);
-	opacity: 0;
-  }
-  
-  
-   /* 鼠标样式 */
-  .node {
-	pointer-events: none;
-	position: fixed;
-	z-index: 100;
-	top: 0;
-	left: 0;
-	display: block; 
-	transition: opacity .3s linear;
-	opacity: 0;
-	z-index: 9999999;	
-	width: 16px;
-	height: 16px;
-  }
  
-  .node.moving {
-	opacity: 1;
-	z-index: 999999999; /* 显示在所有图层最上层 */
-  }
-  @media screen and (max-width: 768px), (display-mode: standalone) {
-	* {
-	  cursor: pointer;
-	}
-	
-	a {
-	  cursor: crosshair;
-	}
-	
-	.button {
-	  cursor: pointer;
-	}
-  }
-  
-
- .node::before {
-	content: ' ';
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	background-color: transparent;
-	border-radius: 50%;
-	top: 0;
-	left: 0;
-	border: 1px solid #ffffff;
-	transform: scale(1);
-	opacity: 1;
-	transition: opacity 150ms linear, transform 300ms cubic-bezier(0.68, -0.55, 0.27, 1.55), border 300ms linear, background-color 150ms linear;
-  }
-  
-
-  .node.expand::before {
-	transform: scale(1.0);
-	background-color: #ffffff;
-	opacity: 0.2;
-  }
   /* 向下滑动提示 */
   .scroll-down {
 	display: none;
