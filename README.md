@@ -27,12 +27,17 @@
 - 弹入弹出式侧边文字【Text.css;Text.js】
 - RSS信息动态展示【rss.css;rss.js】
 
+## 低端设备兼容
 
+在最近更新中添加了兼容低端无图形加速设备（如linux）的文件（主要移除背景前景的视觉差效果），文件为lowmain.js
+
+如果你想在低端设备中使用，可以在首页的HTML中的`<script src="js/main.js"></script>`改为`<script src="js/lowmain.js"></script>`，有图形加速及有正常显卡的设备请不要修改
 
 <details>
 <summary><h2>✅ 更新状况【点击查看】</h2></summary>
 ## 更新
 
+- 首页增加低端设备下无显卡无图形加速时的兼容文件-lowmain.js
 - 调整首页鼠标样式为黑猫光标，原有样式已注释保留
 - 更新main.js文件，优化首页页面性能
 - 调整rss卡片组件为图文版显示
