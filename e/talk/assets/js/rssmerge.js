@@ -59,7 +59,7 @@ async function fetchRSS() {
             } else if (descriptionElement) {
                 description = parseCDATA(descriptionElement);
             } else {
-                description = '无描述';
+                description = '';
             }
 
             const cleanedDescription = removeSpecialChars(description);
