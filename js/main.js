@@ -31,11 +31,11 @@ function change() {
 
 /*scroll*/
 /* let container = document.querySelector('.workbox');
-if (window.innerWidth >720) {
-	container.addEventListener('wheel',(event) => {
-	event.preventDefault();
-	for (var i=0;i<100;i++){
-		setTimeout(() => container.scrollLeft += event.deltaY/100,i);
+if (window.innerWidth > 720) {
+    container.addEventListener('wheel',(event) => {
+    event.preventDefault();
+    for (var i=0;i<100;i++){
+        setTimeout(() => container.scrollLeft += event.deltaY/100,i);
 }})};
 /*imform*/
 console.log(" %c Islet %c v1.0.0 ", "color: #FFFFFF !important; background: #FF6666; padding:5px;", "background: #1c2b36; padding:5px;color:white !important");
@@ -81,13 +81,8 @@ if (window.innerWidth > 720) {
             hide_timing: 2000,
         });
     });
-} else if (window.DeviceOrientationEvent) {
-    const bg = document.getElementById('bg');
-    window.addEventListener("deviceorientation", (event) => {
-        bg.style.transform = `translate(${-event.beta}px, ${-event.alpha}px)`; // 使用transform替代translate
-    });
 } else {
-    console.log("DeviceOrientationEvent is not supported");
+    console.log("视差效果已禁用，设备宽度小于等于720px");
 }
 
 /* 数字时钟 */
