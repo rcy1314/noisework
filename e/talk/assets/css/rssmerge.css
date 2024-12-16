@@ -1,0 +1,101 @@
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.rssmergecard {
+    background: #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    max-width: 100%;
+    max-height: 400px;
+    width: 100%;
+    min-height: 100px;
+    overflow: hidden;
+}
+
+.rssmergecard:hover {
+    background-color: rgba(0, 0, 255, 0.1);
+}
+
+.rssmergecard-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.rssmergecard-title {
+    font-size: 1.0em;
+    margin: 0;
+    color: #007BFF;
+    text-decoration: none;
+    word-break: break-word;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+}
+
+.rssmergecard-title::before {
+    content: "点击可查看原文";
+    position: absolute;
+    top: -1.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+    color: #FFA500;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.rssmergecard-title:hover::before {
+    opacity: 1;
+}
+
+.rssmergecard-description {
+    margin: 10px 0;
+    color: #555;
+    word-break: break-word;
+    flex-grow: 1;
+    overflow-y: scroll;
+    max-height: 200px; /* 设置最大高度，确保可以滚动 */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.rssmergecard-description::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+.rssmergecard-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.rssmergecard-time {
+    font-size: 0.9em;
+    color: #999;
+}
+
+.rssmergecard-source {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.rssmergecard-content img {
+    max-width: 100%;
+    height: auto;
+}

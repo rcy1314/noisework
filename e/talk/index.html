@@ -17,6 +17,7 @@
     <link href="./assets/css/custom.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="./assets/css/waline.css" />
     <link rel="stylesheet" href="./assets/css/friendlink.css">
+    <link rel="stylesheet" href="./assets/css/rssmerge.css">
     <title>NOISE的说说</title>
     <style type='text/css'>
     header {
@@ -262,17 +263,19 @@
                 </svg>       
                 关于
             </button>
-            <button class="nav-button" onclick="window.open('https://memos.noisework.cn/u/noise/rss.xml', '_blank')">
+            <button class="nav-button" onclick="showPage('rssmerge')">
                 <svg xmlns="http://www.w3.org/2000/svg" width='64' height='64' fill='#ffffff' viewBox="0 0 16 16">
-                    <path
-                        d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2m0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2m.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3">
-                    </path>
+                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2m0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2m.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"></path>
                 </svg>
-            
-                订阅
+                信息流
             </button>
+        </div>
+<!-- 聚合页 -->
+<div id="rssmerge" class="page">
+        <div class="container">
+            <div id="rss-cards" class="cards-container"></div>
             </div>
-        
+        </div>
         <div id="memos" class="memos page active"></div>
         <div id="friendlinks" class="page"> 
             <div class="title"><i class="fa-solid fa-user-plus"></i>友链示例</div>
@@ -350,6 +353,10 @@
             </br>  
             <p>这是一个通过 Memos API 渲染的静态网页</p>  
             <p>由Noise使用memos发布，使用 <a href="https://memos.noisework.cn" target="_blank" rel="noopener noreferrer"
+                style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
+                       -webkit-background-clip: text; 
+                       -webkit-text-fill-color: transparent;">点击查看</a></p> 
+            <p>RSS订阅站点：<a href="https://memos.noisework.cn/u/noise/rss.xml"_blank" rel="noopener noreferrer"
                 style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
                        -webkit-background-clip: text; 
                        -webkit-text-fill-color: transparent;">点击查看</a></p> 
@@ -508,6 +515,7 @@
     <script type="text/javascript" src="./assets/js/moment.twitter.js"></script>
     <script type="text/javascript" src="./assets/js/highlight.min.js"></script>
     <script type="text/javascript" src="./assets/js/main.js"></script>
+    <script type="text/javascript" src="./assets/js/rssmerge.js"></script>
 </body>
 
 </html>
