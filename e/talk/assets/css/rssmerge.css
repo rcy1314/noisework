@@ -13,7 +13,7 @@
 }
 
 .rssmergecard {
-    background: #e0e0e0;
+    background: #2726268c;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
@@ -39,7 +39,7 @@
 .rssmergecard-title {
     font-size: 1.0em;
     margin: 0;
-    color: #007BFF;
+    color: #3c8cddb9;
     text-decoration: none;
     word-break: break-word;
     position: relative;
@@ -65,7 +65,7 @@
 
 .rssmergecard-description {
     margin: 10px 0;
-    color: #555;
+    color: #f7efef;
     word-break: break-word;
     flex-grow: 1;
     overflow-y: scroll;
@@ -87,12 +87,12 @@
 
 .rssmergecard-time {
     font-size: 0.9em;
-    color: #999;
+    color: #f6f2f2;
 }
 
 .rssmergecard-source {
     font-size: 0.9em;
-    color: #555;
+    color: #f7f3f3;
 }
 
 .rssmergecard-content img {
