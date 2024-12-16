@@ -1,9 +1,10 @@
-
-
+.container {
+    margin: 0 auto;
+}
 
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: 1fr; /* 每行只显示一个卡片 */
     gap: 20px;
 }
 
@@ -18,11 +19,11 @@
     min-height: 100px;
     overflow: hidden;
 }
-
+/*
 .rssmergecard:hover {
     background-color: rgba(0, 0, 255, 0.1);
 }
-
+*/
 .rssmergecard-content {
     padding: 15px;
     display: flex;
@@ -34,7 +35,7 @@
 .rssmergecard-title {
     font-size: 1.0em;
     margin: 0;
-    color: #3c8cddb9;
+    color: #977ceab9;
     text-decoration: none;
     word-break: break-word;
     position: relative;
