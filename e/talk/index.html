@@ -467,8 +467,6 @@
             document.getElementById(pageId).classList.add('active');
         }
     </script>
-    
-
     <script type="text/javascript">
         var memos = {
             host: 'https://memos.noisework.cn/', //修改为你自己的memos服务地址，结尾要有/
@@ -482,25 +480,46 @@
             total: true,
         }
     </script>
+  <!-- 页面初始化不加载聚合页 -->   
+     <script>
+ function showPage(pageName) {
+    if (pageName === 'rssmerge') {
+        // 确保只加载一次
+        if (!document.querySelector('#rssmerge').classList.contains('loaded')) {
+            loadRSSMergeContent();
+        }
+    }
+    // 显示相应页面
+    document.querySelectorAll('.page').forEach(page => {
+        if (page.id === pageName) {
+            page.style.display = 'block';
+        } else {
+            page.style.display = 'none';
+        }
+    });
+}
 
-    <script type="module">
-        import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-        init({
-            el: '#waline',
-            serverURL: 'https://ment.noisework.cn', //修改为你自己的waline服务端地址
-            meta: ['nick', 'mail', 'link'],
-            requiredMeta: ['mail', 'nick'],
-            pageview: true,
-            search: false,
-            wordLimit: 200,
-            pageSize: 5,
-            avatar: 'monsterid',
-            emoji: [
-                'https://unpkg.com/@waline/emojis@1.2.0/tieba',
-            ],
-            imageUploader: false,
-            copyright: false,
-        });
+function loadRSSMergeContent() {
+    // 动态加载 CSS 文件
+    const cssLink = document.createElement('link');
+    cssLink.rel = 'stylesheet';
+    cssLink.href = './assets/css/rssmerge.css';
+    document.head.appendChild(cssLink);
+
+    // 动态加载 JavaScript 文件
+    const jsScript = document.createElement('script');
+    jsScript.src = './assets/js/rssmerge.js';
+    jsScript.onload = function() {
+        // JavaScript 加载完成后，执行初始化函数
+        if (typeof initializeRSSMerge === 'function') {
+            initializeRSSMerge();
+        }
+    };
+    document.body.appendChild(jsScript);
+
+    // 标记为已加载
+    document.querySelector('#rssmerge').classList.add('loaded');
+}
     </script>
     <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
