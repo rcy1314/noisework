@@ -36,6 +36,60 @@
     <link rel="stylesheet" href="./css/waline.css">
     <link rel="stylesheet" href="./css/friendlink.css">
     <link rel="stylesheet" href="./css/hotindex.css"> 
+    <!--根据设备性能自动切换main.js-->  
+    <script>
+        // 检测页面卡顿
+        function detectPageLag() {
+            return new Promise((resolve) => {
+                const frames = [];
+                const startTime = performance.now();
+                const frame = () => {
+                    frames.push(performance.now());
+                    if (frames.length === 60) {
+                        const endTime = performance.now();
+                        const totalDuration = endTime - startTime;
+                        const avgFPS = (60 / (totalDuration / 1000));
+                        resolve(avgFPS < 20); // 如果平均FPS低于20，则认为卡顿
+                    } else {
+                        requestAnimationFrame(frame);
+                    }
+                };
+                requestAnimationFrame(frame);
+            });
+        }
+
+        // 检测图形加速
+        function hasWebGL() {
+            try {
+                const canvas = document.createElement('canvas');
+                return !!window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl'));
+            } catch (e) {
+                return false;
+            }
+        }
+
+        async function loadScriptBasedOnDetection() {
+            const isLagging = await detectPageLag();
+            const hasAcceleration = hasWebGL();
+
+            if (isLagging || !hasAcceleration) {
+                // 卡顿或无图形加速
+                const script = document.createElement('script');
+                script.src = 'js/lowmain.js';
+                script.async = true; // 确保异步加载
+                document.head.appendChild(script);
+            } else {
+                // 无卡顿且有图形加速
+                const script = document.createElement('script');
+                script.src = 'js/main.js';
+                script.async = true; // 确保异步加载
+                document.head.appendChild(script);
+            }
+        }
+
+        // 立即执行检测
+        loadScriptBasedOnDetection();
+    </script>
 </head>
 <body>
     <script type="worker" src="worker.js"></script>
@@ -727,55 +781,7 @@
             Cbox('button', '3-3523748-9k93aT');
         }
     </script>
-    <!--根据设备性能自动切换main.js-->  
-    <script>
-        // 检测页面卡顿
-        function detectPageLag() {
-            return new Promise((resolve) => {
-                const frames = [];
-                const startTime = performance.now();
-                const frame = () => {
-                    frames.push(performance.now());
-                    if (frames.length === 60) {
-                        const endTime = performance.now();
-                        const totalDuration = endTime - startTime;
-                        const avgFPS = (60 / (totalDuration / 1000));
-                        resolve(avgFPS < 20); // 如果平均FPS低于20，则认为卡顿
-                    } else {
-                        requestAnimationFrame(frame);
-                    }
-                };
-                requestAnimationFrame(frame);
-            });
-        }
-
-        // 检测图形加速
-        function hasWebGL() {
-            try {
-                const canvas = document.createElement('canvas');
-                return !!window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl'));
-            } catch (e) {
-                return false;
-            }
-        }
-        async function loadScriptBasedOnDetection() {
-            const isLagging = await detectPageLag();
-            const hasAcceleration = hasWebGL();
-
-            if (isLagging || !hasAcceleration) {
-                // 卡顿或无图形加速
-                const script = document.createElement('script');
-                script.src = 'js/lowmain.js';
-                document.body.appendChild(script);
-            } else {
-                // 无卡顿且有图形加速
-                const script = document.createElement('script');
-                script.src = 'js/main.js';
-                document.body.appendChild(script);
-            }
-        }
-        window.addEventListener('load', loadScriptBasedOnDetection);
-    </script>
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
     <script src="./js/emb.js" async></script>
     <script src="js/nodecursor-jquery.js"></script>
