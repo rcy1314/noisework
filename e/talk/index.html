@@ -20,179 +20,189 @@
     <link rel="stylesheet" href="./assets/css/rssmerge.css">
     <title>NOISE的说说</title>
     <style type='text/css'>
-    header {
-        position: relative;
-        height: 200px; /* Adjust height as needed */
-        width: 100%; /* Ensure header takes full width */
-        background-size: cover;
-        background-position: center;
-        color: white;
-        padding: 16px;
-        backdrop-filter: blur(16px); /* Add blur effect */
-        transition: background-image 0.5s ease; /* Smooth transition */
-        display: flex;
-        justify-content: flex-start; /* Align items to the left */
-        align-items: center; /* Center content vertically */
-        border-radius: 15px; /* 圆角边框 */
-        margin: 0; /* 去除顶部空隙 */
-    }
-
-        .menu {
-            text-align: left; /* Align text to the left */
-            margin-right: auto; /* Push the profile to the right */
-        }
-        .main-title {
-        font-size: 18px; 
-        }
-        .profile {
-            position: absolute;
-            bottom: -30px;
-            right: 2px;
+        header {
+            position: relative;
+            height: 200px; /* Adjust height as needed */
+            width: 100%; /* Ensure header takes full width */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 16px;
+            backdrop-filter: blur(16px); /* Add blur effect */
+            transition: background-image 0.5s ease; /* Smooth transition */
             display: flex;
-            align-items: center;
-            margin-left: auto; /* 将头像推到右侧 */
+            justify-content: flex-start; /* Align items to the left */
+            align-items: center; /* Center content vertically */
+            border-radius: 15px; /* 圆角边框 */
+            margin: 0; /* 去除顶部空隙 */
         }
-        .profile-info {
-        margin-right: 8px; /* 文本和头像之间的间距 */
-        }
-        .profile img {
-            width: 60px; /* Adjust size as needed */
-            height: 60px;
-            border-radius: 50%;
-            margin-right: 2px;
-        }
-
-        .profile .title {
-            font-size: 16px;
-            font-weight: bold;
-            background: linear-gradient(90deg, #ff6b6b, #4aa3f7, #6bcb77); /* 渐变颜色 */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; /* 使文本填充为透明，以显示渐变 */
-        }
-
-        .profile .description {
-            font-size: 13px;
-            opacity: 1.2;
-            background: linear-gradient(90deg, #766bcb, #ff6b6b, #f7e14a); /* 渐变颜色 */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; /* 使文本填充为透明，以显示渐变 */
-        }
-
-        #retopbtn, #rebtmbtn, .theme-toggle {
-            position: fixed;
-            z-index: 98;
-        }
-
-        #rebtmbtn {
-            top: 10px;
-            right: 10px;
-        }
-        
-        #retopbtn {
-            bottom: 10px;
-            right: 10px;
-        }
-
-        .theme-toggle {
-        position: absolute; /* 改为绝对定位 */
-        top: 20px; /* 调整位置 */
-        right: 20px; /* 调整位置 */
-        cursor: pointer;
-        font-size: 20px; /* 增加字体大小以便更易于点击 */
-        z-index: 2; /* 确保在其他元素之上 */
-        }
-
-        .comment-button {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-            margin-top: 10px;
-            z-index: 9999;
-            max-width: 120%;
-            width: 100%;
-        }
-
-        .comment-box {
-            margin-top: 0px;
-            padding: 0px;
-           
-            border-radius: 5px;
-            z-index: 9999;
-           
-            width: 104%;
-        }
-        .button-container {
-            margin: 12px 0;
-            display: flex;
-            justify-content: flex-start; 
-            flex-wrap: wrap; /* 允许换行 */
-        }
-
-        .nav-button {
-         background-color:  #2d324362;
-         color: white;
-         border: none;
-         padding: 5px 10px;
-         border-radius: 5px;
-         cursor: pointer;
-         font-size: 14px;
-         display: flex;
-         align-items: center;
-         transition: background-color 0.3s, color 0.3s;
-         min-width: 20px; /* 设置按钮的最小宽度 */     
-         margin-bottom: 8px; /* 增加底部间距 */
-         margin-right: 8px; /* 增加右边距 */
-        }
-
-        .nav-button:hover {
-            background-color: #7b84fe;
-            color: #fff;
-        }
-
-        .nav-button svg {
-            height: 16px;
-            width: 16px;
-            margin-right: 5px;
-        }
-
-        .page {
-            display: none;
-        }
-
-        .active {
-            display: block;
-        }
-
-        /* Mobile specific styles */
-        @media (max-width: 600px) {
-            header {
-                height: 150px; /* Adjust height for mobile */
+    
+            .menu {
+                text-align: left; /* Align text to the left */
+                margin-right: auto; /* Push the profile to the right */
             }
-            .theme-toggle {
-            top: 10px; /* 在移动设备上调整位置 */
-            right: 10px; /* 在移动设备上调整位置 */
-            }
-
-            .menu .title {
-                font-size: 16px; /* Adjust title size for mobile */
-            }
-
             .main-title {
-            font-size: 16px; /* 在手机尺寸下调整字体大小 */
-        }
+            font-size: 18px; 
+            }
             .profile {
-                bottom: -30px; /* Adjust position for mobile */
+                position: absolute;
+                bottom: -30px;
+                right: 2px;
+                display: flex;
+                align-items: center;
+                margin-left: auto; /* 将头像推到右侧 */
             }
+            .profile-info {
+            margin-right: 8px; /* 文本和头像之间的间距 */
+            }
+            .profile img {
+                width: 60px; /* Adjust size as needed */
+                height: 60px;
+                border-radius: 50%;
+                margin-right: 2px;
+            }
+    
+            .profile .title {
+                font-size: 16px;
+                font-weight: bold;
+                background: linear-gradient(90deg, #ff6b6b, #4aa3f7, #6bcb77); /* 渐变颜色 */
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent; /* 使文本填充为透明，以显示渐变 */
+            }
+    
+            .profile .description {
+                font-size: 13px;
+                opacity: 1.2;
+                background: linear-gradient(90deg, #766bcb, #ff6b6b, #f7e14a); /* 渐变颜色 */
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent; /* 使文本填充为透明，以显示渐变 */
+            }
+    
+            #retopbtn, #rebtmbtn, .theme-toggle {
+                position: fixed;
+                z-index: 98;
+            }
+    
+            #rebtmbtn {
+                top: 10px;
+                right: 10px;
+            }
+            
+            #retopbtn {
+                bottom: 10px;
+                right: 10px;
+            }
+    
+            .theme-toggle {
+            position: absolute; /* 改为绝对定位 */
+            top: 20px; /* 调整位置 */
+            right: 20px; /* 调整位置 */
+            cursor: pointer;
+            font-size: 20px; /* 增加字体大小以便更易于点击 */
+            z-index: 2; /* 确保在其他元素之上 */
+            }
+    
+            .comment-button {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                font-size: 14px;
+                margin-top: 10px;
+                z-index: 9999;
+                max-width: 120%;
+                width: 100%;
+            }
+    
+            .comment-box {
+                margin-top: 0px;
+                padding: 0px;
+               
+                border-radius: 5px;
+                z-index: 9999;
+               
+                width: 104%;
+            }
+            .button-container {
+                margin: 16px 0;
+                display: flex;
+                overflow-x: auto;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none; /* Firefox */
+                -ms-overflow-style: none; /* IE and Edge */
+                padding-bottom: 5px; /* 为滚动条预留空间 */
+            }
+    
+            .button-container::-webkit-scrollbar {
+                display: none; /* Chrome, Safari and Opera */
+            }
+    
             .nav-button {
-             max-width: 100%; /* 在手机上使按钮占满宽度 */
-             flex: 1 1 auto; /* 允许按钮缩放 */
-             padding: 5px 6px;
-             font-size: 11px;
-             margin-bottom: 8px; /* 为按钮添加底部间距 */
+                background-color: #2d324362;
+                color: white;
+                border: none;
+                padding: 5px 10px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 14px;
+                display: inline-flex;
+                align-items: center;
+                transition: background-color 0.3s, color 0.3s;
+                margin-right: 8px;
+                flex: 0 0 auto;
+                white-space: nowrap;
             }
-        }
-    </style>
+    
+            .nav-button:hover {
+                background-color: #7b84fe;
+                color: #fff;
+            }
+    
+            .nav-button svg {
+                height: 16px;
+                width: 16px;
+                margin-right: 5px;
+            }
+    
+            .page {
+                display: none;
+            }
+    
+            .active {
+                display: block;
+            }
+    
+            /* Mobile specific styles */
+            @media (max-width: 600px) {
+                header {
+                    height: 150px; /* Adjust height for mobile */
+                }
+                .theme-toggle {
+                    top: 10px; /* 在移动设备上调整位置 */
+                    right: 10px; /* 在移动设备上调整位置 */
+                }
+    
+                .menu .title {
+                    font-size: 20px; /* Adjust title size for mobile */
+                }
+    
+                .main-title {
+                    font-size: 16px; /* 在手机尺寸下调整字体大小 */
+                }
+                .profile {
+                    bottom: -30px; /* Adjust position for mobile */
+                }
+                .nav-button {
+                    padding: 5px 6px;
+                    font-size: 13px;
+                }
+                
+                .button-container {
+                    margin: 16px -10px; /* 负边距以扩展容器宽度 */
+                    padding: 0 10px; /* 添加内边距以保持按钮不贴边 */
+                }
+            }
+        </style>
 </head>
 <body>
     <header id="header">
