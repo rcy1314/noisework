@@ -25,11 +25,6 @@ a {
         gap: 16px;
     }
 
-    /* 媒体查询：非常小的屏幕设备（手机） */
-    @media (max-width: 480px) {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
 }
 
 .rssmergecard {
