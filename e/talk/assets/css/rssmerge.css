@@ -21,13 +21,13 @@ a {
 
     /* 媒体查询：小屏幕设备 */
     @media (max-width: 768px) {
-        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 16px;
     }
 
     /* 媒体查询：非常小的屏幕设备（手机） */
     @media (max-width: 480px) {
-        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        grid-template-columns: 1fr;
         gap: 12px;
     }
 }
@@ -64,7 +64,7 @@ a {
     word-break: break-word;
     position: relative;
     cursor: pointer;
-    text-align: center;
+    text-align: left;
     font-weight: 600;
     line-height: 1.4;
 }
@@ -73,8 +73,8 @@ a {
     content: "点击可查看原文";
     position: absolute;
     top: -1.8em;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    transform: none;
     font-size: 0.8em;
     color: #FFA500;
     opacity: 0;
