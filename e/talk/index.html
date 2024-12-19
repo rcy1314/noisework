@@ -17,200 +17,385 @@
     <link href="./assets/css/custom.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="./assets/css/waline.css" />
     <link rel="stylesheet" href="./assets/css/friendlink.css">
-    <link rel="stylesheet" href="./assets/css/rssmerge.css">
+
     <title>NOISE的说说</title>
     <style type='text/css'>
         header {
             position: relative;
-            height: 200px; /* Adjust height as needed */
-            width: 100%; /* Ensure header takes full width */
+            height: 200px;
+            /* Adjust height as needed */
+            width: 100%;
+            /* Ensure header takes full width */
             background-size: cover;
             background-position: center;
             color: white;
             padding: 16px;
-            backdrop-filter: blur(16px); /* Add blur effect */
-            transition: background-image 0.5s ease; /* Smooth transition */
+            backdrop-filter: blur(16px);
+            /* Add blur effect */
+            transition: background-image 0.5s ease;
+            /* Smooth transition */
             display: flex;
-            justify-content: flex-start; /* Align items to the left */
-            align-items: center; /* Center content vertically */
-            border-radius: 15px; /* 圆角边框 */
-            margin: 0; /* 去除顶部空隙 */
+            justify-content: flex-start;
+            /* Align items to the left */
+            align-items: center;
+            /* Center content vertically */
+            border-radius: 15px;
+            /* 圆角边框 */
+            margin: 0;
+            /* 去除顶部空隙 */
         }
-    
-            .menu {
-                text-align: left; /* Align text to the left */
-                margin-right: auto; /* Push the profile to the right */
+
+        /* 信息流卡片样式 */
+        html::-webkit-scrollbar {
+            width: 0;
+        }
+
+        a {
+            color: #FFA500;
+        }
+
+        .container {
+            width: auto;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(560px, 1fr));
+            gap: 24px;
+
+            /* 媒体查询：小屏幕设备 */
+            @media (max-width: 768px) {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 16px;
             }
-            .main-title {
-            font-size: 18px; 
-            }
-            .profile {
-                position: absolute;
-                bottom: -30px;
-                right: 2px;
-                display: flex;
-                align-items: center;
-                margin-left: auto; /* 将头像推到右侧 */
-            }
-            .profile-info {
-            margin-right: 8px; /* 文本和头像之间的间距 */
-            }
-            .profile img {
-                width: 60px; /* Adjust size as needed */
-                height: 60px;
-                border-radius: 50%;
-                margin-right: 2px;
-            }
-    
-            .profile .title {
-                font-size: 16px;
-                font-weight: bold;
-                background: linear-gradient(90deg, #ff6b6b, #4aa3f7, #6bcb77); /* 渐变颜色 */
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent; /* 使文本填充为透明，以显示渐变 */
-            }
-    
-            .profile .description {
-                font-size: 13px;
-                opacity: 1.2;
-                background: linear-gradient(90deg, #766bcb, #ff6b6b, #f7e14a); /* 渐变颜色 */
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent; /* 使文本填充为透明，以显示渐变 */
-            }
-    
-            #retopbtn, #rebtmbtn, .theme-toggle {
-                position: fixed;
-                z-index: 98;
-            }
-    
-            #rebtmbtn {
-                top: 10px;
-                right: 10px;
-            }
-            
-            #retopbtn {
-                bottom: 10px;
-                right: 10px;
-            }
-    
-            .theme-toggle {
-            position: absolute; /* 改为绝对定位 */
-            top: 20px; /* 调整位置 */
-            right: 20px; /* 调整位置 */
+
+        }
+
+        .rssmergecard {
+            background: rgba(36, 43, 50, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.593);
+            transition: all 0.3s ease;
+            width: 100%;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .rssmergecard:hover {
+            background-color: rgba(36, 38, 42, 0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .rssmergecard-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .rssmergecard-title {
+            font-size: 14px;
+            margin: 0 0 15px 0;
+            color: #cfdefd;
+            text-decoration: none;
+            word-break: break-word;
+            position: relative;
             cursor: pointer;
-            font-size: 20px; /* 增加字体大小以便更易于点击 */
-            z-index: 2; /* 确保在其他元素之上 */
+            text-align: left;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .rssmergecard-title::before {
+            content: "点击可查看原文";
+            position: absolute;
+            top: -1.8em;
+            left: 0;
+            transform: none;
+            font-size: 0.8em;
+            color: #FFA500;
+            opacity: 0;
+            transition: opacity 0.3s;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .rssmergecard-title:hover::before {
+            opacity: 1;
+        }
+
+        .rssmergecard-description {
+            margin: 0;
+            color: #ffffff;
+            word-break: break-word;
+            flex-grow: 1;
+            overflow-y: auto;
+            font-size: 13px;
+            line-height: 1.6;
+            padding-right: 8px;
+            max-height: 400px;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+        }
+
+        .rssmergecard-description::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .rssmergecard-description::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .rssmergecard-description::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        .rssmergecard-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .rssmergecard-time {
+            font-size: 0.85em;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        .rssmergecard-source {
+            font-size: 0.85em;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        .rssmergecard-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        /* 信息流卡片样式结束 */
+        .menu {
+            text-align: left;
+            /* Align text to the left */
+            margin-right: auto;
+            /* Push the profile to the right */
+        }
+
+        .main-title {
+            font-size: 18px;
+        }
+
+        .profile {
+            position: absolute;
+            bottom: -30px;
+            right: 2px;
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            /* 将头像推到右侧 */
+        }
+
+        .profile-info {
+            margin-right: 8px;
+            /* 文本和头像之间的间距 */
+        }
+
+        .profile img {
+            width: 60px;
+            /* Adjust size as needed */
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 2px;
+        }
+
+        .profile .title {
+            font-size: 16px;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff6b6b, #4aa3f7, #6bcb77);
+            /* 渐变颜色 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* 使文本填充为透明，以显示渐变 */
+        }
+
+        .profile .description {
+            font-size: 13px;
+            opacity: 1.2;
+            background: linear-gradient(90deg, #766bcb, #ff6b6b, #f7e14a);
+            /* 渐变颜色 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* 使文本填充为透明，以显示渐变 */
+        }
+
+        #retopbtn,
+        #rebtmbtn,
+        .theme-toggle {
+            position: fixed;
+            z-index: 98;
+        }
+
+        #rebtmbtn {
+            top: 10px;
+            right: 10px;
+        }
+
+        #retopbtn {
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .theme-toggle {
+            position: absolute;
+            /* 改为绝对定位 */
+            top: 20px;
+            /* 调整位置 */
+            right: 20px;
+            /* 调整位置 */
+            cursor: pointer;
+            font-size: 20px;
+            /* 增加字体大小以便更易于点击 */
+            z-index: 2;
+            /* 确保在其他元素之上 */
+        }
+
+        .comment-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+            z-index: 9999;
+            max-width: 120%;
+            width: 100%;
+        }
+
+        .comment-box {
+            margin-top: 0px;
+            padding: 0px;
+
+            border-radius: 5px;
+            z-index: 9999;
+
+            width: 104%;
+        }
+
+        .button-container {
+            margin: 16px 0;
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            padding-bottom: 5px;
+            /* 为滚动条预留空间 */
+        }
+
+        .button-container::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari and Opera */
+        }
+
+        .nav-button {
+            background-color: #2d324362;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            transition: background-color 0.3s, color 0.3s;
+            margin-right: 8px;
+            flex: 0 0 auto;
+            white-space: nowrap;
+        }
+
+        .nav-button:hover {
+            background-color: #7b84fe;
+            color: #fff;
+        }
+
+        .nav-button svg {
+            height: 16px;
+            width: 16px;
+            margin-right: 5px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Mobile specific styles */
+        @media (max-width: 600px) {
+            header {
+                height: 150px;
+                /* Adjust height for mobile */
             }
-    
-            .comment-button {
-                background-color: transparent;
-                border: none;
-                cursor: pointer;
-                font-size: 14px;
-                margin-top: 10px;
-                z-index: 9999;
-                max-width: 120%;
-                width: 100%;
+
+            .theme-toggle {
+                top: 10px;
+                /* 在移动设备上调整位置 */
+                right: 10px;
+                /* 在移动设备上调整位置 */
             }
-    
-            .comment-box {
-                margin-top: 0px;
-                padding: 0px;
-               
-                border-radius: 5px;
-                z-index: 9999;
-               
-                width: 104%;
+
+            .menu .title {
+                font-size: 20px;
+                /* Adjust title size for mobile */
             }
-            .button-container {
-                margin: 16px 0;
-                display: flex;
-                overflow-x: auto;
-                white-space: nowrap;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none; /* Firefox */
-                -ms-overflow-style: none; /* IE and Edge */
-                padding-bottom: 5px; /* 为滚动条预留空间 */
+
+            .main-title {
+                font-size: 16px;
+                /* 在手机尺寸下调整字体大小 */
             }
-    
-            .button-container::-webkit-scrollbar {
-                display: none; /* Chrome, Safari and Opera */
+
+            .profile {
+                bottom: -30px;
+                /* Adjust position for mobile */
             }
-    
+
             .nav-button {
-                background-color: #2d324362;
-                color: white;
-                border: none;
-                padding: 5px 10px;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 14px;
-                display: inline-flex;
-                align-items: center;
-                transition: background-color 0.3s, color 0.3s;
-                margin-right: 8px;
-                flex: 0 0 auto;
-                white-space: nowrap;
+                padding: 5px 6px;
+                font-size: 13px;
             }
-    
-            .nav-button:hover {
-                background-color: #7b84fe;
-                color: #fff;
+
+            .button-container {
+                margin: 16px -10px;
+                /* 负边距以扩展容器宽度 */
+                padding: 0 10px;
+                /* 添加内边距以保持按钮不贴边 */
             }
-    
-            .nav-button svg {
-                height: 16px;
-                width: 16px;
-                margin-right: 5px;
-            }
-    
-            .page {
-                display: none;
-            }
-    
-            .active {
-                display: block;
-            }
-    
-            /* Mobile specific styles */
-            @media (max-width: 600px) {
-                header {
-                    height: 150px; /* Adjust height for mobile */
-                }
-                .theme-toggle {
-                    top: 10px; /* 在移动设备上调整位置 */
-                    right: 10px; /* 在移动设备上调整位置 */
-                }
-    
-                .menu .title {
-                    font-size: 20px; /* Adjust title size for mobile */
-                }
-    
-                .main-title {
-                    font-size: 16px; /* 在手机尺寸下调整字体大小 */
-                }
-                .profile {
-                    bottom: -30px; /* Adjust position for mobile */
-                }
-                .nav-button {
-                    padding: 5px 6px;
-                    font-size: 13px;
-                }
-                
-                .button-container {
-                    margin: 16px -10px; /* 负边距以扩展容器宽度 */
-                    padding: 0 10px; /* 添加内边距以保持按钮不贴边 */
-                }
-            }
-        </style>
+        }
+    </style>
 </head>
+
 <body>
     <header id="header">
         <div class="menu">
             <div class="title">Memos空间...</div>
             <div class="pages">
-                <a href="https://memos.noisework.cn" target="_blank" rel="noopener noreferrer"
-                   style="font-size: 14px; background: linear-gradient(90deg, #5fbcff, #7b84fe); 
+                <a href="https://memos.noisework.cn" target="_blank" rel="noopener noreferrer" style="font-size: 14px; background: linear-gradient(90deg, #5fbcff, #7b84fe); 
                           -webkit-background-clip: text; 
                           -webkit-text-fill-color: transparent;">前往查看</a>
             </div>
@@ -227,7 +412,7 @@
         <div class='theme-toggle'>🌓</div>
     </header>
 
-    <section id="main" class="container" >
+    <section id="main" class="container">
         <div class="main-title">这里记录碎片化的想法</div>
 
         <blockquote>
@@ -239,7 +424,7 @@
         <blockquote id="tag-filter" class="filter">
             <div id="tags"></div>
         </blockquote>
-        
+
         <div class="button-container">
             <button class="nav-button" onclick="showPage('memos')">
                 <svg xmlns="http://www.w3.org/2000/svg" fill='#ffffff' width='64' height='64' viewBox="0 0 56 56">
@@ -254,7 +439,7 @@
                     <path
                         d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5">
                     </path>
-                </svg>       
+                </svg>
                 友链
             </button>
             <button class="nav-button" onclick="showPage('waline')">
@@ -262,7 +447,7 @@
                     <path
                         d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z">
                     </path>
-                </svg>       
+                </svg>
                 留言
             </button>
             <button class="nav-button" onclick="showPage('about')">
@@ -270,138 +455,134 @@
                     <path
                         d="M 25.9257 28.5390 L 25.9257 16.1172 L 22.4335 16.1172 C 18.5663 16.1172 16.5272 13.6094 16.5272 11.1719 C 16.5272 8.6406 18.4023 7.1406 20.9101 7.1406 C 23.7929 7.1406 26.0429 9.3672 26.0429 13.0937 L 26.0429 16.1172 L 29.9570 16.1172 L 29.9570 13.0937 C 29.9570 9.3672 32.2070 7.1406 35.0897 7.1406 C 37.5976 7.1406 39.4960 8.6406 39.4960 11.1719 C 39.4960 13.6094 37.3866 16.1172 33.5663 16.1172 L 30.0741 16.1172 L 30.0741 28.5390 L 46.5976 28.5390 C 49.1524 28.5390 50.5352 27.5547 50.5352 25.0468 L 50.5352 19.6094 C 50.5352 17.1250 49.1524 16.1172 46.5976 16.1172 L 41.1366 16.1172 C 42.5897 14.8047 43.4570 13.0234 43.4570 11.0078 C 43.4570 6.4844 39.8710 3.2266 35.3241 3.2266 C 31.9492 3.2266 29.2070 5.1015 28.0116 8.4297 C 26.8163 5.1015 24.0507 3.2266 20.6757 3.2266 C 16.1523 3.2266 12.5429 6.4844 12.5429 11.0078 C 12.5429 13.0234 13.3866 14.8047 14.8632 16.1172 L 9.4023 16.1172 C 6.9882 16.1172 5.4648 17.1250 5.4648 19.6094 L 5.4648 25.0468 C 5.4648 27.5547 6.8710 28.5390 9.4023 28.5390 Z M 25.9257 52.7734 L 25.9257 31.0468 L 8.8163 31.0468 L 8.8163 46.8203 C 8.8163 50.7344 11.1132 52.7734 15.0272 52.7734 Z M 30.0741 31.0468 L 30.0741 52.7734 L 40.9726 52.7734 C 44.8866 52.7734 47.1835 50.7344 47.1835 46.8203 L 47.1835 31.0468 Z">
                     </path>
-                </svg>       
+                </svg>
                 关于
             </button>
             <button class="nav-button" onclick="showPage('rssmerge')">
                 <svg xmlns="http://www.w3.org/2000/svg" width='54' height='64' fill='#ffffff' viewBox="0 0 16 16">
-                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2m0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2m.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"></path>
+                    <path
+                        d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2m0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2m.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3">
+                    </path>
                 </svg>
                 信息流
             </button>
         </div>
-<!-- 聚合页 -->
-<div id="rssmerge" class="page">
-        <div class="container">
-            <div id="rss-cards" class="cards-container"></div>
+        <!-- 聚合页 -->
+        <div id="rssmerge" class="page">
+            <div class="container">
+                <div id="rss-cards" class="cards-container"></div>
             </div>
         </div>
         <div id="memos" class="memos page active"></div>
-        <div id="friendlinks" class="page"> 
+        <div id="friendlinks" class="page">
             <div class="title"><i class="fa-solid fa-user-plus"></i>友链示例</div>
             </br>
             <div class="friendcardindex">
-            <div class="friendlinks-container">
-                <div class="friendlinks-card">
-                    <div class="avatar">
-                        <a href="https://ladfenemies.cc/">
-                            <img alt="" loading="lazy" decoding="async"
-                                src="https://ipfs.crossbell.io/ipfs/QmNXCVARSQqT1gfmo6sPpaRuphK9pB6cbLdcjniGobZytR">
-                        </a>
-                    </div>
-                    <div class="info">
-                        <a class="friendname" target="_blank" href="https://ladfenemies.cc/">leaf</a>
-                        <p class="frienddescription">量化开发</p>
-                    </div>
-                                </div>
-                                <div class="friendlinks-card">
-                                    <div class="avatar">
-                                        <a href="https://rcy1314.github.io/Idea/">
-                                            <img alt="" loading="lazy" decoding="async"
-                                                src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/43w.jpeg">
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <a class="friendname" target="_blank" href="#">待添加</a>
-                                        <p class="frienddescription">未来可期</p>
-                                    </div>
-                                </div>
-                                <div class="friendlinks-card">
-                                    <div class="avatar">
-                                        <a href="#">
-                                            <img alt="" loading="lazy" decoding="async"
-                                                src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/43e.jpeg">
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <a class="friendname" target="_blank" href="#">待添加</a>
-                                        <p class="frienddescription">未来可期</p>
-                                    </div>
-                                </div>
-                                <div class="friendlinks-card">
-                                    <div class="avatar">
-                                        <a href="#">
-                                            <img alt="" loading="lazy" decoding="async"
-                                                src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/43e.jpeg">
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <a class="friendname" target="_blank" href="#">待添加</a>
-                                        <p class="frienddescription">未来可期</p>
-                                    </div>
-                                </div>
-                                <div class="friendlinks-card">
-                                    <div class="avatar">
-                                        <a href="#">
-                                            <img alt="" loading="lazy" decoding="async"
-                                                src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/335r.jpeg">
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <a class="friendname" target="_blank" href="#">待添加</a>
-                                        <p class="frienddescription">未来可期</p>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="friendlinks-container">
+                    <div class="friendlinks-card">
+                        <div class="avatar">
+                            <a href="https://ladfenemies.cc/">
+                                <img alt="" loading="lazy" decoding="async"
+                                    src="https://ipfs.crossbell.io/ipfs/QmNXCVARSQqT1gfmo6sPpaRuphK9pB6cbLdcjniGobZytR">
+                            </a>
                         </div>
-                    </div> 
+                        <div class="info">
+                            <a class="friendname" target="_blank" href="https://ladfenemies.cc/">leaf</a>
+                            <p class="frienddescription">量化开发</p>
+                        </div>
+                    </div>
+                    <div class="friendlinks-card">
+                        <div class="avatar">
+                            <a href="https://rcy1314.github.io/Idea/">
+                                <img alt="" loading="lazy" decoding="async"
+                                    src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/43w.jpeg">
+                            </a>
+                        </div>
+                        <div class="info">
+                            <a class="friendname" target="_blank" href="#">待添加</a>
+                            <p class="frienddescription">未来可期</p>
+                        </div>
+                    </div>
+                    <div class="friendlinks-card">
+                        <div class="avatar">
+                            <a href="#">
+                                <img alt="" loading="lazy" decoding="async"
+                                    src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/43e.jpeg">
+                            </a>
+                        </div>
+                        <div class="info">
+                            <a class="friendname" target="_blank" href="#">待添加</a>
+                            <p class="frienddescription">未来可期</p>
+                        </div>
+                    </div>
+                    <div class="friendlinks-card">
+                        <div class="avatar">
+                            <a href="#">
+                                <img alt="" loading="lazy" decoding="async"
+                                    src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/43e.jpeg">
+                            </a>
+                        </div>
+                        <div class="info">
+                            <a class="friendname" target="_blank" href="#">待添加</a>
+                            <p class="frienddescription">未来可期</p>
+                        </div>
+                    </div>
+                    <div class="friendlinks-card">
+                        <div class="avatar">
+                            <a href="#">
+                                <img alt="" loading="lazy" decoding="async"
+                                    src="https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/335r.jpeg">
+                            </a>
+                        </div>
+                        <div class="info">
+                            <a class="friendname" target="_blank" href="#">待添加</a>
+                            <p class="frienddescription">未来可期</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="waline" class="page">
             <div id="waline"></div>
         </div>
-        <div id="about" class="page"> 
+        <div id="about" class="page">
             <div class="title"><i class="fa-solid fa-user-plus"></i>关于</div>
-            </br>  
-            <p>这是一个通过 Memos API 渲染的静态网页</p>  
-            <p>由Noise使用memos发布，使用 <a href="https://memos.noisework.cn" target="_blank" rel="noopener noreferrer"
-                style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
+            </br>
+            <p>这是一个通过 Memos API 渲染的静态网页</p>
+            <p>由Noise使用memos发布，使用 <a href="https://memos.noisework.cn" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
                        -webkit-background-clip: text; 
-                       -webkit-text-fill-color: transparent;">点击查看</a></p> 
-            <p>RSS订阅站点：<a href="https://memos.noisework.cn/u/noise/rss.xml"_blank" rel="noopener noreferrer"
-                style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
+                       -webkit-text-fill-color: transparent;">点击查看</a></p>
+            <p>RSS订阅站点：<a href="https://memos.noisework.cn/u/noise/rss.xml" _blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
                        -webkit-background-clip: text; 
-                       -webkit-text-fill-color: transparent;">点击查看</a></p> 
-            <p>已备份数据库：<a href="https://drive.google.com/drive/folders/1PqS-j38nefbRhq_FSe33oqy_hWnB8OpN?usp=sharing"_blank" rel="noopener noreferrer"
-                style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
+                       -webkit-text-fill-color: transparent;">点击查看</a></p>
+            <p>已备份数据库：<a href="https://drive.google.com/drive/folders/1PqS-j38nefbRhq_FSe33oqy_hWnB8OpN?usp=sharing"
+                    _blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
                        -webkit-background-clip: text; 
-                       -webkit-text-fill-color: transparent;">点击查看</a></p> 
-             <p>致谢：<a href="https://github.com/eallion/memos.top" target="_blank" rel="noopener noreferrer"
-                style=" background: linear-gradient(90deg, #6079f7, #a36bde); 
+                       -webkit-text-fill-color: transparent;">点击查看</a></p>
+            <p>致谢：<a href="https://github.com/eallion/memos.top" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #6079f7, #a36bde); 
                        -webkit-background-clip: text; 
-                       -webkit-text-fill-color: transparent;">项目</a> 
-                     ⎥ 你也可以 <a href="https://www.noisework.cn" target="_blank" rel="noopener noreferrer"
-                style=" background: linear-gradient(90deg, #5fd4ff, #7bc1fe); 
+                       -webkit-text-fill-color: transparent;">项目</a>
+                ⎥ 你也可以 <a href="https://www.noisework.cn" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #5fd4ff, #7bc1fe); 
                        -webkit-background-clip: text; 
-                       -webkit-text-fill-color: transparent;">访问主页</a></p>   
-                       <p>官方API文档 <a href="https://memos.apidocumentation.com" target="_blank"rel="noopener noreferrer"
-                        style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
+                       -webkit-text-fill-color: transparent;">访问主页</a></p>
+            <p>官方API文档 <a href="https://memos.apidocumentation.com" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
                                -webkit-background-clip: text; 
-                               -webkit-text-fill-color: transparent;">点击查看</a></p> 
-                        <p>浏览器扩展 <a href="https://chromewebstore.google.com/detail/cbhjebjfccgchgbmfbobjmebjjckgofe" target="_blank"rel="noopener noreferrer"
-                            style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
+                               -webkit-text-fill-color: transparent;">点击查看</a></p>
+            <p>浏览器扩展 <a href="https://chromewebstore.google.com/detail/cbhjebjfccgchgbmfbobjmebjjckgofe" target="_blank"
+                    rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
                                    -webkit-background-clip: text; 
-                                   -webkit-text-fill-color: transparent;">点击查看</a></p>  
-                        <p>桌面及手机APP程序 <a href="https://memos.moe" target="_blank"rel="noopener noreferrer"
-                            style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
+                                   -webkit-text-fill-color: transparent;">点击查看</a></p>
+            <p>桌面及手机APP程序 <a href="https://memos.moe" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
                                    -webkit-background-clip: text; 
-                                   -webkit-text-fill-color: transparent;">点击查看</a></p>                    
-    </div>
+                                   -webkit-text-fill-color: transparent;">点击查看</a></p>
+        </div>
     </section>
     <footer class="markdown-body footer">
         <div class="bsz">
-        <span id="busuanzi_container_site_pv">本页被访问: <span id="busuanzi_value_site_pv"></span>次 🧐</span> 
-       
+            <span id="busuanzi_container_site_pv">本页被访问: <span id="busuanzi_value_site_pv"></span>次 🧐</span>
+
             <span id="momk"></span>
-            <span id="momk_red" style="color: #ff0000;"></span> 
+            <span id="momk_red" style="color: #ff0000;"></span>
             <script type="text/javascript">
                 function NewDate(str) {
                     str = str.split('-');
@@ -410,7 +591,7 @@
                     date.setUTCHours(0, 0, 0, 0);
                     return date;
                 }
-    
+
                 function momxc() {
                     var birthDay = NewDate("2020-12-09");
                     var today = new Date();
@@ -422,12 +603,12 @@
                     var e_minsold = (timeold % (1000 * 60 * 60)) / (1000 * 60);
                     var minsold = Math.floor(e_minsold);
                     var seconds = Math.floor((timeold % (1000 * 60)) / 1000);
-    
-                    document.getElementById("momk").innerHTML = "已运行: " + daysold + "天" + hrsold + "小时" ;
+
+                    document.getElementById("momk").innerHTML = "已运行: " + daysold + "天" + hrsold + "小时";
                     setTimeout(momxc, 1000);
                 }
                 momxc();
-            </script> 
+            </script>
         </div>
         <p>Copyright @
             <script>
@@ -438,10 +619,10 @@
             -webkit-text-fill-color: transparent;">NOISE</a> All Rights Reserved.
         </p>
     </footer>
-    
+
     <div id='rebtmbtn' onclick='returnBottom()'>👇</div>
     <div id='retopbtn' onclick='returnTop()'>👆</div>
-   
+
     <script type="text/javascript">
         const backgrounds = [
             './assets/img/bg/bg1.gif',
@@ -449,7 +630,7 @@
             './assets/img/bg/bg3.gif',
             './assets/img/bg/bg4.gif',
         ];
-    
+
         // 预加载图像
         const preloadImages = (images) => {
             images.forEach((image) => {
@@ -457,18 +638,18 @@
                 img.src = image;
             });
         };
-    
+
         // 预加载背景图像
         preloadImages(backgrounds);
-    
+
         function changeBackground() {
             const header = document.getElementById('header');
             const randomIndex = Math.floor(Math.random() * backgrounds.length);
             header.style.setProperty('background-image', `url('${backgrounds[randomIndex]}')`, 'important');
         }
-    
+
         document.addEventListener('DOMContentLoaded', changeBackground);
-    
+
         function showPage(pageId) {
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => {
@@ -477,7 +658,7 @@
             document.getElementById(pageId).classList.add('active');
         }
     </script>
-    
+
 
     <script type="text/javascript">
         var memos = {
@@ -492,48 +673,42 @@
             total: true,
         }
     </script>
-<!-- 页面初始化不加载聚合页 -->   
-<script>
-    function showPage(pageName) {
-    if (pageName === 'rssmerge') {
-        // 确保只加载一次
-        if (!document.querySelector('#rssmerge').classList.contains('loaded')) {
-            loadRSSMergeContent();
+    <!-- 页面初始化不加载聚合页 -->
+    <script>
+        function showPage(pageName) {
+            if (pageName === 'rssmerge') {
+                // 确保只加载一次
+                if (!document.querySelector('#rssmerge').classList.contains('loaded')) {
+                    loadRSSMergeContent();
+                }
+            }
+            // 显示相应页面
+            document.querySelectorAll('.page').forEach(page => {
+                if (page.id === pageName) {
+                    page.style.display = 'block';
+                } else {
+                    page.style.display = 'none';
+                }
+            });
         }
-    }
-    // 显示相应页面
-    document.querySelectorAll('.page').forEach(page => {
-        if (page.id === pageName) {
-            page.style.display = 'block';
-        } else {
-            page.style.display = 'none';
+
+        function loadRSSMergeContent() {
+            // 动态加载 JavaScript 文件
+            const jsScript = document.createElement('script');
+            jsScript.src = './assets/js/rssmerge.js';
+            jsScript.onload = function () {
+                // JavaScript 加载完成后，执行初始化函数
+                if (typeof initializeRSSMerge === 'function') {
+                    initializeRSSMerge();
+                }
+            };
+            document.body.appendChild(jsScript);
+
+            // 标记为已加载
+            document.querySelector('#rssmerge').classList.add('loaded');
         }
-    });
-}
 
-function loadRSSMergeContent() {
-    // 动态加载 CSS 文件
-    const cssLink = document.createElement('link');
-    cssLink.rel = 'stylesheet';
-    cssLink.href = './assets/css/rssmerge.css';
-    document.head.appendChild(cssLink);
-
-    // 动态加载 JavaScript 文件
-    const jsScript = document.createElement('script');
-    jsScript.src = './assets/js/rssmerge.js';
-    jsScript.onload = function() {
-        // JavaScript 加载完成后，执行初始化函数
-        if (typeof initializeRSSMerge === 'function') {
-            initializeRSSMerge();
-        }
-    };
-    document.body.appendChild(jsScript);
-
-    // 标记为已加载
-    document.querySelector('#rssmerge').classList.add('loaded');
-}
-
-</script>
+    </script>
 
     <script type="module">
         import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
