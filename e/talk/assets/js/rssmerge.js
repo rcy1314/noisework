@@ -8,24 +8,29 @@ function escapeHtml(unsafe) {
 }
 
 function parseCDATA(content) {
-    if (content.startsWith("<![CDATA[")) {
-        content = content.slice(9, -3); // 去掉开头的 <![CDATA[ 和结尾的 ]]>
-    }
-    return content;
+    return content.startsWith("<![CDATA[") ? content.slice(9, -3) : content;
 }
 
 function removeSpecialChars(content) {
-    return content
-        .replace(/&lt;/g, "<")
-        .replace(/&gt;/g, ">")
-        .replace(/&amp;/g, "&")
-        .replace(/&quot;/g, '"')
-        .replace(/&apos;/g, "'");
+    const replacements = {
+        '&lt;': '<',
+        '&gt;': '>',
+        '&amp;': '&', 
+        '&quot;': '"',
+        '&apos;': "'"
+    };
+    return content.replace(/&[^;]+;/g, m => replacements[m] || m);
 }
 
 async function fetchRSS() {
     try {
-        const response = await fetch('https://extension.noisework.cn/api/corsmergerss');
+        const cardsContainer = document.getElementById('rss-cards');
+        cardsContainer.innerHTML = '<p>加载中...</p>';
+
+        const response = await fetch('https://extension.noisework.cn/api/corsmergerss', {
+            cache: 'force-cache'
+        });
+        
         if (!response.ok) throw new Error('网络错误');
 
         const text = await response.text();
@@ -33,12 +38,12 @@ async function fetchRSS() {
         const xmlDoc = parser.parseFromString(text, "text/xml");
         const items = xmlDoc.getElementsByTagName('item');
         
-        const cardsContainer = document.getElementById('rss-cards');
-
         if (items.length === 0) {
             cardsContainer.innerHTML = '<p>没有找到RSS内容。</p>';
             return;
         }
+
+        const fragment = document.createDocumentFragment();
 
         Array.from(items).forEach(item => {
             const title = parseCDATA(item.getElementsByTagName('title')[0]?.textContent || '无标题');
@@ -46,48 +51,42 @@ async function fetchRSS() {
             const pubDate = item.getElementsByTagName('pubDate')[0]?.textContent || new Date().toISOString();
             const source = item.getElementsByTagName('source')[0]?.textContent || '未知来源';
 
-            // 解析内容
             let description = '';
             const contentEncoded = item.getElementsByTagName('content:encoded')[0]?.textContent;
             const contentHtml = item.getElementsByTagName('content')[0]?.textContent;
             const descriptionElement = item.getElementsByTagName('description')[0]?.textContent;
 
-            if (contentEncoded) {
-                description = parseCDATA(contentEncoded);
-            } else if (contentHtml) {
-                description = parseCDATA(contentHtml);
-            } else if (descriptionElement) {
-                description = parseCDATA(descriptionElement);
-            } else {
-                description = '';
-            }
-
+            description = parseCDATA(contentEncoded || contentHtml || descriptionElement || '');
             const cleanedDescription = removeSpecialChars(description);
 
             const rssmergecard = document.createElement('div');
             rssmergecard.className = 'rssmergecard';
 
-            // 创建一个临时的 div 来解析 HTML 内容
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = cleanedDescription;
 
-            const rssmergecardContent = document.createElement('div');
-            rssmergecardContent.className = 'rssmergecard-content';
-            rssmergecardContent.innerHTML = `
-                <a href="${link}" target="_blank" class="rssmergecard-title">${title}</a>
-                <div class="rssmergecard-description">${tempDiv.innerHTML}</div>
-                <div class="rssmergecard-meta">
-                    <p class="rssmergecard-time">${new Date(pubDate).toLocaleString()}</p>
-                    <p class="rssmergecard-source">来源: ${source}</p>
+            rssmergecard.innerHTML = `
+                <div class="rssmergecard-content">
+                    <a href="${link}" target="_blank" class="rssmergecard-title">${title}</a>
+                    <div class="rssmergecard-description">${tempDiv.innerHTML}</div>
+                    <div class="rssmergecard-meta">
+                        <p class="rssmergecard-time">${new Date(pubDate).toLocaleString()}</p>
+                        <p class="rssmergecard-source">来源: ${source}</p>
+                    </div>
                 </div>
             `;
-            rssmergecard.appendChild(rssmergecardContent);
-            cardsContainer.appendChild(rssmergecard);
+
+            fragment.appendChild(rssmergecard);
         });
+
+        cardsContainer.innerHTML = '';
+        cardsContainer.appendChild(fragment);
+
     } catch (error) {
         console.error('获取RSS失败:', error);
         document.getElementById('rss-cards').innerHTML = '<p>加载内容失败，请稍后再试。</p>';
     }
 }
 
-document.addEventListener('DOMContentLoaded', fetchRSS);
+// 页面加载完成后延迟加载RSS内容
+window.addEventListener('load', () => setTimeout(fetchRSS, 100));
