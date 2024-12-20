@@ -1,21 +1,16 @@
-const encryptedApiEndpoints = {
-  zhihu: 'U2FsdGVkX18Gvv8yhSaN5wmW8b0mgc+9UIMlDY8IPIdQYdW2ZGiJpQH3bzZ0ZaHfBweJ58Tg9gnNPSXl1LnOJg==',
-  weibo: 'U2FsdGVkX18pW39V0DNa+PnuekNvtR+guTUl+cFpnrnfnqAgQH378meBzkWK1tX9uFAP4gME3kCeP6P8g2CeQg==',
-  bilibili: 'U2FsdGVkX19uiAsvVfyH1vDTcWtDnNnU+bc1ELKImtJk50Y0hVL1l4+h1TWzbBR9+8+AU9RekKPO++RWWGhVMA==',
-  douyin: 'U2FsdGVkX1+AoY93cWAPSJnVMS7awb0/nBtKeU991Y/A0hV2dl3u5o6mo2HaNY2uy7fG4610xfZEp5TCfO2yvQ==',
-  baidu: 'U2FsdGVkX1+pZvqxFc2dmyh8U62yKsKuOKt4OMB5w008MnO8tmrJj4ueeeCatzArDtTfMFdb8tDRX7DJhoLZxQ==',
-  toutiao: 'U2FsdGVkX1+CNdJ9T/GfsPS7KfxaWM9Pe+ZLl7k+kSh8paV1gcurCcf323CLb61YPpLEZAUD0IXoxnYxkaQeog==',
-  v2ex: 'U2FsdGVkX19222d2VHCM2iE7ePXi01rHuWR6GjEOloNhIo0oFnMZv3+tmM/k8+Z4vq7ndRkKbFSlUnnwHaQ1Jg==',
-  hellogithub: 'U2FsdGVkX197BLSzQPts30tMTd+4Me/9rG/wtOAeIvujAJv+xqWPWMeg0AIolzTJbbcH4FPLlngPaSj313pENw=='
+// 定义API接口,请自己部署自己的借口，不要使用我的
+const apiEndpoints = {
+  zhihu: 'https://hot.noisework.cn/zhihu',
+  weibo: 'https://hot.noisework.cn/sina',
+  bilibili: 'https://hot.noisework.cn/bilibili',
+  douyin: 'https://hot.noisework.cn/douyin',
+  baidu: 'https://hot.noisework.cn/tieba',
+  toutiao: 'https://hot.noisework.cn/toutiao',
+  v2ex: 'https://hot.noisework.cn/v2ex',
+  hellogithub: 'https://hot.noisework.cn/hellogithub'
 };
-function decryptApi(encryptedApi) {
-  const decrypted = CryptoJS.AES.decrypt(encryptedApi, 'noise'); 
-  return decrypted.toString(CryptoJS.enc.Utf8);
-}
-const apiEndpoints = {};
-for (const [key, value] of Object.entries(encryptedApiEndpoints)) {
-  apiEndpoints[key] = decryptApi(value);
-}
+
+// 使用 fetch API 从不同的API端点请求数据
 function fetchData(url, target) {
   const updateTimeElement = document.getElementById(target).querySelector('.update-time');
   updateTimeElement.textContent = '数据更新时间: 加载中...';
@@ -31,7 +26,7 @@ function fetchData(url, target) {
       console.log('Data received from', url, data);
       loadData(data.data, target);
       updateTimeElement.textContent = `数据更新时间: ${new Date().toLocaleString()}`;
-      saveDataToLocalStorage(target, data.data); 
+      saveDataToLocalStorage(target, data.data); // 保存数据到本地存储
     })
     .catch(error => {
       console.error('Error fetching data from', url, error);
