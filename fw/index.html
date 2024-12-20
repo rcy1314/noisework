@@ -6,6 +6,74 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 		<link rel="stylesheet" href="css/stylemx.css">
 		<link rel="shortcut icon" href="../assets/favicon.png" type="images/x-icon">
+		<style>
+			/* 添加滚动条样式 */
+			::-webkit-scrollbar {
+				display: none;
+			}
+			* {
+				-ms-overflow-style: none;  /* IE and Edge */
+				scrollbar-width: none;  /* Firefox */
+			}
+			.service-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 20px;
+				padding: 20px;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+			.service-card {
+				background: rgba(255, 255, 255, 0.1);
+				border-radius: 12px;
+				padding: 15px;
+				backdrop-filter: blur(10px);
+				transition: transform 0.3s ease;
+			}
+			.service-card:hover {
+				transform: translateY(-5px);
+			}
+			.service-card a {
+				color: white;
+				display: block;
+				padding: 12px;
+				border-radius: 8px;
+				background: rgba(255, 255, 255, 0.05);
+				margin: 8px 0;
+				transition: all 0.3s ease;
+			}
+			.service-card a:hover {
+				background: rgba(255, 255, 255, 0.15);
+			}
+			.category-title {
+				color: #fcfcfc;
+				font-size: 1.2em;
+				margin: 15px 0;
+				text-align: center;
+			}
+			.support-links {
+				margin-top: 30px;
+				text-align: center;
+			}
+			.support-links a {
+				display: inline-block;
+				padding: 12px 25px;
+				margin: 0 10px;
+				background: linear-gradient(45deg, #373535bb, #616161c2);
+				border-radius: 25px;
+				color: white;
+				font-weight: 500;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 15px rgba(8, 8, 8, 0.2);
+			}
+			.support-links a:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 6px 20px rgba(10, 10, 10, 0.3);
+			}
+			.support-links a.return-btn {
+				background: linear-gradient(45deg, #373535bb, #616161c2);
+			}
+		</style>
 	</head>
 	<body>
 		<div class="centerBox">
@@ -13,71 +81,92 @@
 			<div class="center-list">
 				<div class="centerBody">
 					<img src="img/noise.png" />
-						<h2>公共服务</h2>
-					</br>
-		<!-- 向右流动代码-->
-   
-		<marquee scrollamount="4" direction="right" behavior="alternate">
-   
-			<a>😄😃😀</a>
-	   
-			</marquee>
-			 <!-- jQuery -->
-			 <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.5.1/jquery.min.js"></script>
-			 <!-- 引入样式 -->	
-			 <link rel="stylesheet" type="text/css" href="./css/mobile.css">
-			 <!-- Izitoast -->
-			 <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/izitoast/1.4.0/css/iziToast.min.css">
-			 <script type="text/javascript"
-				 src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/izitoast/1.4.0/js/iziToast.min.js">
-			 </script>
-			 <!-- IE Out -->
-			 <script>
-				 if ( /*@cc_on!@*/ false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href =
-					 "https://www.noisework.cn/?referrer=" + encodeURIComponent(window.location
-					 .href);
-			 </script>
-
-			 <!-- JS -->
-			 <script type="text/javascript" src="./js/main.js"></script>
-			 <script type="text/javascript" src="./js/js.cookie.js"></script>	 
-		 </section>
-	<p class="txt-w"><font style="color: #fcfcfc;font-size:15px;letter-spacing: 11px;font-weight: 100;padding-left:  20px;">有你的支持，才是我前行的动力</font></p>		
-				</br></br>
-				<p class="btn-p">
-					<a href="https://t.me/NoiseMessagesbot" target="_blank" title="这是一个来自RSStT_Bot的托管实例，目前托管在云服务器上，你可以自由的使用它，如果bot矿机了，可以到频道中 @quanshoulu 反馈给我">📰TG-RSS</a>
-					<a href="https://t.me/Efficiencysearchbot" target="_blank" title="这是为频道https://t.me/quanshoulu设置的专用搜索机器人">🚀TG搜索</a>
-					<a href="https://t.me/noisewowbot" target="_blank" title="这是为频道https://t.me/quanshoulu设置的专用投稿机器人">🚀TG投稿</a></br></br></br>
-					<a href="https://rssnoise.fly.dev" target="_blank" title="这是一个运行在 fly.io 上面的 RSSHUB实例">🚇RSShub实例</a>
-					<a href="https://www.noisewechat.online" target="_blank" title="Docker部署werss实例，提供公众号转rss">📮公众号RSS</a>
-					<a href="../widgets/index.html" target="_blank" title="为Notion使用者提供动力">🏆Notion小部件</a>				
-				</br></br></br>					
-					<a href="../e/utf8/index.html" target="_blank" title="Docker部署werss实例，提供公众号转rss">🤖二进制中文互译</a>
-					<a href="../e/photomosh/index.html" target="_blank" title="图像和视频故障效果制作"> 📇故障视觉</a>
-					<a href="../e/unlock-music/index.html" target="_blank" title="移除已购音乐的加密保护">🎹音乐解锁</a>					
-				    </br></br></br>
-				    <a href="../soso/index.html" target="_blank" title="书签搜索">📚Book Mark索引</a>
-					<a href="../e/ts/index.html" target="_blank" title="颜色选择器">  👑调色板</a>
-					<a href="../e/idea/index.html" target="_blank" title="在线托管的轻量沉浸式体验的文本编辑器">🧰 IDEA编辑器</a>
-				</br></br></br>				
-					<a href="https://chatai.noisework.cn" target="_blank" title="需要设置哦">🚇Gpt-Next</a>
-					<a href="https://www.noiseapi.top" target="_blank" title="提供gpt等接口API">🎉Noise-Api</a>
-					<a href="https://jsd.cdn.noisework.cn" target="_blank" title="我的jsDelivr镜像站">🔋jsDelivr镜像站</a></br></br></br>			
-					</p></br></br></br></br>
-					<p><a style="color:rgb(218, 91, 79);" href="https://www.noisework.cn/e/zhichi" target="_blank"> 💳赞 助  </a>
-					<a style="color:rgb(218, 91, 79);" href="http://zanzhu.vercel.app" target="_blank"> 💳爱发电  </a>
-					
-					<a style="color:rgb(218, 91, 79);" href="../index.html" target="_blank">🚀返回  </a></p>
-				</div>
+					<h2>公共服务</h2>
 				
+					<marquee scrollamount="4" direction="right" behavior="alternate">
+						<a>😄😃😀</a>
+					</marquee>
+					<p class="txt-w"><font style="color: #fcfcfc;font-size:15px;letter-spacing: 11px;font-weight: 100;padding-left: 20px;">有你的支持，才是我前行的动力</font></p>
+					<div class="service-grid">
+						<div class="service-card">
+							<h3 class="category-title">在线服务</h3>
+							<a href="https://t.me/NoiseMessagesbot" target="_blank" title="这是一个来自RSStT_Bot的托管实例，目前托管在云服务器上，你可以自由的使用它，如果bot矿机了，可以到频道中 @quanshoulu 反馈给我">📰 TG-RSS</a>
+							<a href="https://rssnoise.fly.dev" target="_blank" title="这是一个运行在 fly.io 上面的 RSSHUB实例">🚇 RSShub实例</a>
+							<a href="https://www.noisewechat.online" target="_blank" title="Docker部署werss实例，提供公众号转rss">📮 公众号RSS</a>
+							<a href="https://rcy1314.github.io/news/" target="_blank" title="github运行的RSS聚合阅读页">🌟 RSS聚合阅读页</a>
+							
+						</div>
+
+						<div class="service-card">
+							<h3 class="category-title">工具服务</h3>
+							<a href="../widgets/index.html" target="_blank" title="实用网页组件，可用于notion等">📻 网页小组件</a>
+							<a href="../e/utf8/index.html" target="_blank" title="Docker部署werss实例，提供公众号转rss">🤖 二进制中文互译</a>
+							<a href="../e/photomosh/index.html" target="_blank" title="图像和视频故障效果制作">📇 故障视觉</a>
+							<a href="../e/unlock-music/index.html" target="_blank" title="移除已购音乐的加密保护">🎹 音乐解锁</a>
+						</div>
+
+						<div class="service-card">
+							<h3 class="category-title">实用工具</h3>
+							<a href="../soso/index.html" target="_blank" title="书签搜索">📚 Book Mark索引</a>
+							<a href="../e/ts/index.html" target="_blank" title="颜色选择器">👑 调色板</a>
+							<a href="../e/idea/index.html" target="_blank" title="在线托管的轻量沉浸式体验的文本编辑器">🧰 IDEA编辑器</a>
+							<a href="../e/code-edit/index.html" target="_blank" title="在线托管的轻量沉浸式体验的文本编辑器">💻 代码在线编辑器</a>
+						</div>
+
+						<div class="service-card">
+							<h3 class="category-title">API服务</h3>
+							<a href="https://chatai.noisework.cn" target="_blank" title="需要设置哦">🚇 Gpt-Next</a>
+							<a href="https://www.noiseapi.top" target="_blank" title="提供gpt等接口API">🎉 Noise-Api</a>
+							<a href="https://edgetts.noisework.cn" target="_blank" title="tts文本转语音">😺 文本转语音</a>
+							<a href="https://hot.noisework.cn" target="_blank" title="今日热榜API">🎉 热榜API</a>
+						</div>
+
+						<div class="service-card">
+							<h3 class="category-title">工具服务</h3>
+							<a href="https://jsd.cdn.noisework.cn" target="_blank" title="我的jsDelivr镜像站">🔋 jsDelivr镜像站</a>
+							<a href="https://t.me/Efficiencysearchbot" target="_blank" title="这是为频道https://t.me/quanshoulu设置的专用搜索机器人">🚀 本频道TG搜索</a>
+							<a href="https://t.me/noisewowbot" target="_blank" title="这是为频道https://t.me/quanshoulu设置的专用投稿机器人">🚀 本频道TG投稿</a>
+							<a href="#" target="_blank" title="待添加">🤖 待添加</a>
+						</div>
+
+						<div class="service-card">
+							<h3 class="category-title">其它</h3>
+							<a href="../e/fcgame/index.html" target="_blank" title="在线fc游戏">🕹️ FC-GAME</a>
+							<a href="../e/yanhua/index.html" target="_blank" title="在线放烟花">🎆 烟花模拟器</a>
+							<a href="../e/music/index.html" target="_blank" title="听歌">🔉 歌单音乐</a>
+							<a href="../moyu/index.html" target="_blank" title="H5摸鱼人">🧸 摸鱼人日历I</a>
+						</div>
+					</div>
+
+					<div class="support-links">
+						<a href="https://www.noisework.cn/e/zhichi" target="_blank">💝 赞助</a>
+						<a href="http://zanzhu.vercel.app" target="_blank">💖 爱发电</a>
+						<a href="../index.html" target="_blank" class="return-btn">🏠 返回</a>
+					</div>
+				</div>
 			</div>
 			<div class="footer">
 				<div class="center-footer">
-					<p class="banquan"> © NOISE&2023</p>
-	
+					<p class="banquan"> © NOISE-服务</p>
+				</div>
 			</div>
 		</div>
+
+		<!-- jQuery -->
+		<script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.5.1/jquery.min.js"></script>
+		<!-- 引入样式 -->	
+		<link rel="stylesheet" type="text/css" href="./css/mobile.css">
+		<!-- Izitoast -->
+		<link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/izitoast/1.4.0/css/iziToast.min.css">
+		<script type="text/javascript" src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/izitoast/1.4.0/js/iziToast.min.js"></script>
+		<!-- IE Out -->
+		<script>
+			if ( /*@cc_on!@*/ false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href = "https://www.noisework.cn/?referrer=" + encodeURIComponent(window.location.href);
+		</script>
+		<!-- JS -->
+		<script type="text/javascript" src="./js/main.js"></script>
+		<script type="text/javascript" src="./js/js.cookie.js"></script>
+		<script src='js/simplex-noise.min.js'></script>
+		<script src="js/index.js"></script>
 	</body>
-	<script src='js/simplex-noise.min.js'></script>
-	<script src="js/index.js"></script>
 </html>

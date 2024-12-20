@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代码编辑器演示</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/codemirror.min.css">
+    <link rel="stylesheet" href="css/dracula.min.css">
+    <script src="js/codemirror.min.js"></script>
+    <script src="js/htmlmixed.min.js"></script>
+    <script src="js/xml.min.js"></script>
+    <script src="js/javascript.min.js"></script>
+    <script src="js/css.min.js"></script>
+    <script src="js/clike.min.js"></script>
+    <script src="js/php.min.js"></script>
+    <script src="js/closetag.min.js"></script>
+    <script src="js/closebrackets.min.js"></script>
+    <script src="js/show-hint.min.js"></script>
+    <script src="js/html-hint.min.js"></script>
+    <script src="js/lint.min.js"></script>
+    <script src="js/javascript-lint.min.js"></script>
+    <script src="js/css-lint.min.js"></script>
+    <script src="js/foldcode.min.js"></script>
+    <script src="js/foldgutter.min.js"></script>
+    <script src="js/brace-fold.min.js"></script>
+    <script src="js/xml-fold.min.js"></script>
+    <script src="js/comment-fold.min.js"></script>
+    <script src="js/jshint.min.js"></script>
+    <script src="js/csslint.min.js"></script>
+    <script src="js/htmlhint.js"></script>
+    <link rel="stylesheet" href="css/show-hint.min.css">
+    <link rel="stylesheet" href="css/lint.min.css">
+    <link rel="stylesheet" href="css/foldgutter.min.css">
+    <style>
+        .CodeMirror {
+            height: 100%;
+            font-size: 14px;
+            border: 1px solid #6272a4;
+            border-radius: 0 0 4px 4px;
+        }
+        .CodeMirror-gutters {
+            background-color: #282a36;
+            border-right: 1px solid #6272a4;
+        }
+        .CodeMirror-linenumber {
+            color: #6272a4;
+        }
+        .CodeMirror-selected {
+            background-color: #44475a !important;
+        }
+        .CodeMirror-cursor {
+            border-left: 2px solid #f8f8f2;
+        }
+        .cm-s-dracula .CodeMirror-activeline-background {
+            background-color: #44475a;
+        }
+        #errorIndicator {
+            display: none;
+            background-color: #ff5555;
+            color: #f8f8f2;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #errorTooltip {
+            display: none;
+            position: absolute;
+            background-color: #282a36;
+            color: #f8f8f2;
+            border: 1px solid #6272a4;
+            padding: 10px;
+            border-radius: 4px;
+            z-index: 1000;
+        }
+        .CodeMirror-foldmarker {
+            color: #fff;
+            text-shadow: #b9f 1px 1px 2px, #b9f -1px -1px 2px, #b9f 1px -1px 2px, #b9f -1px 1px 2px;
+            font-family: arial;
+            line-height: .3;
+            cursor: pointer;
+        }
+        .CodeMirror-foldgutter {
+            width: .7em;
+        }
+        .CodeMirror-foldgutter-open,
+        .CodeMirror-foldgutter-folded {
+            cursor: pointer;
+        }
+        .CodeMirror-foldgutter-open:after {
+            content: "\25BE";
+        }
+        .CodeMirror-foldgutter-folded:after {
+            content: "\25B8";
+        }
+        .editor-container, .preview-container {
+            height: 600px; /* 或者您想要的固定高度 */
+            overflow: auto;
+        }
+        #preview {
+            height: 100%;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="container mx-auto p-4">
+        <div class="flex">
+            <div class="w-1/2 pr-2">
+                <div class="bg-gray-800 p-2 rounded-t">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm">index.html</span>
+                        <div class="flex items-center">
+                            <span id="errorIndicator" class="mr-2">X</span>
+                            <button id="saveBtn" class="bg-blue-500 hover:bg-blue-600 text-white text-xs py-1 px-2 rounded">保存</button>
+                            <button id="runBtn" class="bg-green-500 hover:bg-green-600 text-white text-xs py-1 px-2 rounded ml-2">运行</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="editor-container">
+                    <textarea id="editor" class="w-full"></textarea>
+                </div>
+            </div>
+            <div class="w-1/2 pl-2">
+                <div class="bg-gray-800 p-2 rounded-t">
+                    <span class="text-sm">预览</span>
+                </div>
+                <div class="preview-container">
+                    <div id="preview" class="bg-white text-black p-4 border border-gray-700 rounded-b"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="errorTooltip"></div>
+    <script>
+        $(document).ready(function() {
+            var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+                mode: "application/x-httpd-php",
+                lineNumbers: true,
+                autoCloseTags: true,
+                autoCloseBrackets: true,
+                extraKeys: {"Ctrl-Space": "autocomplete"},
+                gutters: ["CodeMirror-lint-markers", "CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+                lint: {
+                    getAnnotations: function(text, updateLinting, options, cm) {
+                        var found = [];
+                        // HTML lint
+                        if (typeof HTMLHint !== "undefined" && typeof HTMLHint.verify === "function") {
+                            var htmlResult = HTMLHint.verify(text, {
+                                "tagname-lowercase": true,
+                                "attr-lowercase": true,
+                                "attr-value-double-quotes": true,
+                                "doctype-first": true,
+                                "tag-pair": true,
+                                "spec-char-escape": true,
+                                "id-unique": true,
+                                "src-not-empty": true,
+                                "attr-no-duplication": true
+                            });
+                            htmlResult.forEach(function(msg) {
+                                found.push({
+                                    from: CodeMirror.Pos(msg.line - 1, msg.col - 1),
+                                    to: CodeMirror.Pos(msg.line - 1, msg.col),
+                                    message: msg.message,
+                                    severity: msg.type
+                                });
+                            });
+                        }
+                        // PHP lint (自定义)
+                        var lines = text.split('\n');
+                        lines.forEach(function(line, index) {
+                            if (line.match(/<\?[^p]/)) {
+                                found.push({
+                                    from: CodeMirror.Pos(index, 0),
+                                    to: CodeMirror.Pos(index, line.length),
+                                    message: "PHP开始标记应为 <?php",
+                                    severity: "error"
+                                });
+                            }
+                            if (line.match(/<?php.*[^;]\s*$/)) {
+                                found.push({
+                                    from: CodeMirror.Pos(index, line.length - 1),
+                                    to: CodeMirror.Pos(index, line.length),
+                                    message: "PHP语句应以分号结束",
+                                    severity: "error"
+                                });
+                            }
+                        });
+                        var openTags = (text.match(/<\?php/g) || []).length;
+                        var closeTags = (text.match(/\?>/g) || []).length;
+                        if (openTags > closeTags) {
+                            found.push({
+                                from: CodeMirror.Pos(lines.length - 1, 0),
+                                to: CodeMirror.Pos(lines.length - 1, lines[lines.length - 1].length),
+                                message: "存在未闭合的PHP标签",
+                                severity: "error"
+                            });
+                        }
+                        updateLinting(cm, found);
+                    },
+                    async: true
+                },
+                theme: "dracula",
+                indentUnit: 4,
+                indentWithTabs: false,
+                lineWrapping: true,
+                styleActiveLine: true,
+                foldGutter: true,
+                foldOptions: {
+                    widget: (from, to) => {
+                        var count = to.line - from.line;
+                        return `\u21A4 ${count} lines folded`;
+                    }
+                }
+            });
+            var errorIndicator = $("#errorIndicator");
+            var errorTooltip = $("#errorTooltip");
+            var errors = [];
+            function updateErrorDisplay() {
+                editor.clearGutter("CodeMirror-lint-markers");
+                if (errors.length > 0) {
+                    errorIndicator.show();
+                    var tooltipContent = [];
+                    errors.forEach(function(error) {
+                        tooltipContent.push("行 " + (error.from.line + 1) + ": " + error.message);
+                        var marker = document.createElement("div");
+                        marker.classList.add("CodeMirror-lint-marker-error");
+                        marker.innerHTML = "⚠️";
+                        marker.title = error.message;
+                        editor.setGutterMarker(error.from.line, "CodeMirror-lint-markers", marker);
+                    });
+                    errorTooltip.html(tooltipContent.join("<br>"));
+                } else {
+                    errorIndicator.hide();
+                    errorTooltip.hide();
+                }
+            }
+            errorIndicator.on("mouseenter", function() {
+                var pos = errorIndicator.offset();
+                errorTooltip.css({
+                    top: pos.top + errorIndicator.outerHeight(),
+                    left: pos.left
+                }).show();
+            }).on("mouseleave", function() {
+                errorTooltip.hide();
+            });
+            editor.on("change", function() {
+                localStorage.setItem("editorContent", editor.getValue());
+                editor.performLint();
+            });
+            editor.on("lint", function(_, lintResults) {
+                errors = lintResults;
+                updateErrorDisplay();
+            });
+            $("#saveBtn").click(function() {
+                localStorage.setItem("editorContent", editor.getValue());
+                alert("代码已保存");
+            });
+            $("#runBtn").click(function() {
+                var code = editor.getValue();
+                $("#preview").html(code);
+            });
+            var savedContent = localStorage.getItem("editorContent");
+            if (savedContent) {
+                editor.setValue(savedContent);
+            } else {
+                var initialContent = `<!DOCTYPE html>
+<html>
+<head>
+    <title>测试页面</title>
+    <style>
+        body { background-color: #f0f0f0; }
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <?php
+    echo "Hello from PHP!";
+    ?>
+    <script>
+        console.log("Hello from JavaScript!");
+    <\/script>
+</body>
+</html>`;
+                editor.setValue(initialContent);
+            }
+            editor.performLint();
+        });
+    </script>
+</body>
+</html>
