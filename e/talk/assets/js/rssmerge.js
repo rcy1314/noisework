@@ -41,7 +41,7 @@ function displayItems() {
         rssmergecardContent.className = 'rssmergecard-content';
         rssmergecardContent.innerHTML = `
             <a href="${item.link}" target="_blank" class="rssmergecard-title">${item.title}</a>
-            <div class="rssmergecard-description">${tempDiv.innerHTML}</div>
+            <div class="rssmergecard-description">${tempDiv.innerHTML.replace(/href="([^"]+)"/g, 'href="$1" target="_blank"')}</div>
             <div class="rssmergecard-meta">
                 <p class="rssmergecard-time">${new Date(item.pubDate).toLocaleString()}</p>
                 <p class="rssmergecard-source">来源: ${item.source}</p>
