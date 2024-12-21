@@ -41,6 +41,7 @@
 
 .menu-item:hover {
     background: #127de7f7;
+    transform: translateX(2px);
 }
 
 .menu-item svg {
@@ -67,4 +68,8 @@
 
 .menu-item-danger:hover {
     background: #b32c2c95;
+    transform: translateX(2px);
+}
+.menu-item-danger:hover svg path {
+    fill: #f94a05f7;
 }

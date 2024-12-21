@@ -137,3 +137,23 @@ a {
     border-radius: 6px;
     margin: 10px 0;
 }
+.load-more {
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #FFA500;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.load-more:hover {
+    background-color: #ff8c00;
+}
+
+.loaded-all {
+    color: #ffffff;
+    text-align: center;
+    margin: 20px 0;
+}
