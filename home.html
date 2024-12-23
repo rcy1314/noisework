@@ -24,6 +24,14 @@
 	<link rel="stylesheet" href="./css/waline.css">
 	<link rel="stylesheet" href="./css/friendlink.css">
 	<script src="./moyu/ics_parser.mjs"></script>
+	<!-- 引入Petercat-AI助手">-->
+	<script src="https://cdn.jsdelivr.net/npm/react/umd/react.development.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.development.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/dayjs/dayjs.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/antd/dist/antd.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lottie-web/build/player/lottie.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@petercatai/assistant@1.0.7/dist/umd/assistant.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@petercatai/assistant@1.0.7/dist/umd/assistant.min.css">
 	<!-- 添加Service Worker -->
     <script>
         if ('serviceWorker' in navigator) {
@@ -1188,6 +1196,15 @@
          copyright: false,
      });
   </script>
+  <!-- 引入Petercat-AI助手">-->
+  <script>
+	PetercatLUI.initAssistant({
+	  apiDomain: 'https://api.petercat.ai',
+	  token: '4f300a6a-59d5-4f35-a242-47cf3a90dc23',
+	  starters: ['我该怎样快速上手', '如何配置留言'],
+	  clearMessage: true
+	});
+ </script>
 <script src="./widgets/music-1/js/Meting.min.js"></script>
 <script src="./js/home-script.js"> </script>
 <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
