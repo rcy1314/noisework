@@ -1,41 +1,56 @@
-// 定义API接口,请自己部署自己的借口，不要使用我的
+// 定义API接口,请自己部署自己的api，不要使用我的
+// 定义API接口
+const primaryEndpoints = ['https://hot.noisework.cn', 'https://hot.noisedh.link'];
+
 const apiEndpoints = {
-  zhihu: 'https://hot.noisework.cn/zhihu',
-  weibo: 'https://hot.noisework.cn/sina',
-  bilibili: 'https://hot.noisework.cn/bilibili',
-  douyin: 'https://hot.noisework.cn/douyin',
-  baidu: 'https://hot.noisework.cn/tieba',
-  toutiao: 'https://hot.noisework.cn/toutiao',
-  v2ex: 'https://hot.noisework.cn/v2ex',
-  hellogithub: 'https://hot.noisework.cn/hellogithub'
+  zhihu: '/zhihu',
+  weibo: '/sina',
+  bilibili: '/bilibili',
+  douyin: '/douyin',
+  baidu: '/tieba',
+  toutiao: '/toutiao',
+  v2ex: '/v2ex',
+  hellogithub: '/hellogithub'
 };
 
 // 使用 fetch API 从不同的API端点请求数据
-function fetchData(url, target) {
+function fetchData(target) {
   const updateTimeElement = document.getElementById(target).querySelector('.update-time');
   updateTimeElement.textContent = '数据更新时间: 加载中...';
-  
-  fetch(url)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log('Data received from', url, data);
-      loadData(data.data, target);
-      updateTimeElement.textContent = `数据更新时间: ${new Date().toLocaleString()}`;
-      saveDataToLocalStorage(target, data.data); // 保存数据到本地存储
-    })
-    .catch(error => {
-      console.error('Error fetching data from', url, error);
-      updateTimeElement.textContent = `数据更新时间: 错误`;
-      const list = document.getElementById(target + '-list');
-      const li = document.createElement('li');
-      li.textContent = `Error: ${error.message}`;
-      list.appendChild(li);
-    });
+
+  const endpointPath = apiEndpoints[target];
+  let currentEndpointIndex = 0; // 默认使用第一个API
+
+  const fetchFromEndpoint = (url) => {
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Data received from', url, data);
+        loadData(data.data, target);
+        updateTimeElement.textContent = `数据更新时间: ${new Date().toLocaleString()}`;
+        saveDataToLocalStorage(target, data.data); // 保存数据到本地存储
+      })
+      .catch(error => {
+        console.error('Error fetching data from', url, error);
+        currentEndpointIndex++;
+        if (currentEndpointIndex < primaryEndpoints.length) {
+          fetchFromEndpoint(`${primaryEndpoints[currentEndpointIndex]}${endpointPath}`);
+        } else {
+          updateTimeElement.textContent = `数据更新时间: 错误`;
+          const list = document.getElementById(target + '-list');
+          const li = document.createElement('li');
+          li.textContent = `Error: ${error.message}`;
+          list.appendChild(li);
+        }
+      });
+  };
+
+  fetchFromEndpoint(`${primaryEndpoints[currentEndpointIndex]}${endpointPath}`);
 }
 
 function loadData(data, target) {
@@ -74,21 +89,16 @@ function loadFromLocalStorage(target) {
 }
 
 function refreshData(target) {
-  const url = apiEndpoints[target];
-  if (url) {
-    fetchData(url, target);
-  } else {
-    console.error('Unknown target:', target);
-  }
+  fetchData(target);
 }
 
 // 页面加载时初始化数据
 document.addEventListener('DOMContentLoaded', () => {
-  const targets = ['zhihu', 'weibo', 'bilibili', 'douyin', 'baidu', 'toutiao', 'v2ex', 'hellogithub'];
+  const targets = Object.keys(apiEndpoints);
   targets.forEach(target => {
     loadFromLocalStorage(target);
     // 初始加载数据
-    fetchData(apiEndpoints[target], target);
+    fetchData(target);
   });
 });
 
