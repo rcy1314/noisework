@@ -45,7 +45,7 @@
 #bg{
 	width: 120%;
 	filter: brightness(0.7);
-	background-image: url(); /* 默认前景图片URL */
+	background-image: url(./../assets/suijpic/023.5se6p3kcd840.webp); /* 默认前景图片URL */
     background-size: cover;
 	height: 120%;
 	position: absolute;
