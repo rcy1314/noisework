@@ -193,35 +193,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 视频播放组件
 var videos = [
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/f83b646a4cee41e588ca023e2a114e2f.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/bc6473e95d7f4bd1ba2f91d1cf632dfe.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/914f70446ab3414a8b2d2c75be8135a4.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/9e782b9469e04a67a64022a3cb964c83.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/fd1d5b76283f424ab83cd040f15feb3b.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/c570029d2db34069ab3009f779ccf41f.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/f722dfc4481347f1b9df0572bf8bd6a5.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/1719a2f412cb4c57a0264a4c06e72f5d.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/4cff93ffad0542af96e78f0b47a6c13b.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/77e10d9cf3884d21b443f94ce01c4bb9.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/439381abd4b14efa98960e55f6073609.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/f3fc238bd9d94a489e5a060c18733fbf.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/6845544115af4e42b919c53721688aff.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/6af08f9efc454e69b2f37e438279d7ea.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/e26f5c41a7bc4d42b6af0c7d20f22ce2.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/w0kRrJ.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/4535fe8ade84441085e5604db4f589ed.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/%E4%B8%8B%E8%BD%BD.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/20240812_164231.MP4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/20240812_164742.MP4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/ocDBeQ6Avp8zDaGjQCB9VRNnAAAf1NhlgI9EDM%20-%2001.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/osbAADGCxEASJEUiWgUcatQ0vghB4BzkzIceuf%20-%2001.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/oEWaQDEDf3fA29igEmmHAq4IlEFhB9AhLRBDWg%20-%2001.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/oIQFErG7qBmfVoneBBAekQ8cIb9HMZDC7QZEhA%20-%2001.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/oYZZiIwTMFmA0kRm6yDfBeJA9AOn1g4NbQbxsK%20-%2001.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/ocf2RDOy9AXXAvQBC.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/o8CVABWheDHtvi2rmgQ0JEsyIAjy3HzOyn3AfB%20-%2001.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/oYYsgHYNIwzJBgeDW5JfQpfaA7ywExA2Bkfoec%20-%2001.mp4",
-    "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/50b8d286b4104a78b8db00ee85296516.mp4"
+  "https://cdn.jsdelivr.net/f83b646a4cee41e588ca023e2a114e2f.mp4",
+  "https://cdn.jsdelivr.net/bc6473e95d7f4bd1ba2f91d1cf632dfe.mp4",
+  "https://cdn.jsdelivr.net/914f70446ab3414a8b2d2c75be8135a4.mp4",
+  "https://cdn.jsdelivr.net/9e782b9469e04a67a64022a3cb964c83.mp4",
+  "https://cdn.jsdelivr.net/fd1d5b76283f424ab83cd040f15feb3b.mp4",
+  "https://cdn.jsdelivr.net/c570029d2db34069ab3009f779ccf41f.mp4",
+  "https://cdn.jsdelivr.net/f722dfc4481347f1b9df0572bf8bd6a5.mp4",
+  "https://cdn.jsdelivr.net/1719a2f412cb4c57a0264a4c06e72f5d.mp4",
+  "https://cdn.jsdelivr.net/4cff93ffad0542af96e78f0b47a6c13b.mp4",
+  "https://cdn.jsdelivr.net/77e10d9cf3884d21b443f94ce01c4bb9.mp4",
+  "https://cdn.jsdelivr.net/439381abd4b14efa98960e55f6073609.mp4",
+  "https://cdn.jsdelivr.net/f3fc238bd9d94a489e5a060c18733fbf.mp4",
+  "https://cdn.jsdelivr.net/6845544115af4e42b919c53721688aff.mp4",
+  "https://cdn.jsdelivr.net/6af08f9efc454e69b2f37e438279d7ea.mp4",
+  "https://cdn.jsdelivr.net/e26f5c41a7bc4d42b6af0c7d20f22ce2.mp4",
+  "https://cdn.jsdelivr.net/w0kRrJ.mp4",
+  "https://cdn.jsdelivr.net/4535fe8ade84441085e5604db4f589ed.mp4",
+  "https://cdn.jsdelivr.net/%E4%B8%8B%E8%BD%BD.mp4",
+  "https://cdn.jsdelivr.net/20240812_164231.MP4",
+  "https://cdn.jsdelivr.net/20240812_164742.MP4",
+  "https://cdn.jsdelivr.net/ocDBeQ6Avp8zDaGjQCB9VRNnAAAf1NhlgI9EDM%20-%2001.mp4",
+  "https://cdn.jsdelivr.net/osbAADGCxEASJEUiWgUcatQ0vghB4BzkzIceuf%20-%2001.mp4",
+  "https://cdn.jsdelivr.net/oEWaQDEDf3fA29igEmmHAq4IlEFhB9AhLRBDWg%20-%2001.mp4",
+  "https://cdn.jsdelivr.net/oIQFErG7qBmfVoneBBAekQ8cIb9HMZDC7QZEhA%20-%2001.mp4",
+  "https://cdn.jsdelivr.net/oYZZiIwTMFmA0kRm6yDfBeJA9AOn1g4NbQbxsK%20-%2001.mp4",
+  "https://cdn.jsdelivr.net/ocf2RDOy9AXXAvQBC.mp4",
+  "https://cdn.jsdelivr.net/o8CVABWheDHtvi2rmgQ0JEsyIAjy3HzOyn3AfB%20-%2001.mp4",
+  "https://cdn.jsdelivr.net/oYYsgHYNIwzJBgeDW5JfQpfaA7ywExA2Bkfoec%20-%2001.mp4",
+  "https://cdn.jsdelivr.net/50b8d286b4104a78b8db00ee85296516.mp4",
 ];  // 视频链接数组
 var currentVideoIndex = 0; // 当前视频索引
 
@@ -314,25 +314,25 @@ window.addEventListener('load', function () {
 });
 
 //pc头像logo
-let images = ['https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo10.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo9.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo7.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo6.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo5.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo4.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo3.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo2.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo1.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo11.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo12.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo13.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo15.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo14.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo8.gif',
+let images = ['../assets/logoDiv/logo10.gif',
+    '../assets/logoDiv/logo9.gif',
+    '../assets/logoDiv/logo7.gif',
+    '../assets/logoDiv/logo6.gif',
+    '../assets/logoDiv/logo5.gif',
+    '../assets/logoDiv/logo4.gif',
+    '../assets/logoDiv/logo3.gif',
+    '../assets/logoDiv/logo2.gif',
+    '../assets/logoDiv/logo1.gif',
+    '../assets/logoDiv/logo11.gif',
+    '../assets/logoDiv/logo12.gif',
+    '../assets/logoDiv/logo13.gif',
+    '../assets/logoDiv/logo15.gif',
+    '../assets/logoDiv/logo14.gif',
+    '../assets/logoDiv/logo8.gif',
 ]; // 图片数组
 let currentImageIndex = -1; // 初始化为-1，表示还没有选择图片
 const logoDiv = document.getElementById('logoDiv');
-const defaultImage = 'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/logo10.gif'; // 默认图片路径
+const defaultImage = '../assets/logoDiv/logo10.gif'; // 默认图片路径
 
 function setDefaultImage() {
     logoDiv.style.backgroundImage = `url(${defaultImage})`;
@@ -380,19 +380,19 @@ let observer = new IntersectionObserver((entries, observer) => {
 observer.observe(logoDiv);
 
 // 手机页面头部logo
-let mobileImages = ['https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo7.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo1.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo2.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo3.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo4.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo8.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo9.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo10.gif',
-    'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo11.gif',
+let mobileImages = ['../assets/mobileLogoDiv/mobileLogo7.gif',
+    '../assets/mobileLogoDiv/mobileLogo1.gif',
+    '../assets/mobileLogoDiv/mobileLogo2.gif',
+    '../assets/mobileLogoDiv/mobileLogo3.gif',
+    '../assets/mobileLogoDiv/mobileLogo4.gif',
+    '../assets/mobileLogoDiv/mobileLogo8.gif',
+    '../assets/mobileLogoDiv/mobileLogo9.gif',
+    '../assets/mobileLogoDiv/mobileLogo10.gif',
+    '../assets/mobileLogoDiv/mobileLogo11.gif',
 ]; // 图片数组
 let currentMobileImageIndex = -1; // 初始化为-1，表示还没有选择图片
 const mobileLogoDiv = document.getElementById('mobileLogoDiv');
-const defaultMobileImage = 'https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/mobileLogo7.gif'; // 默认手机图片路径
+const defaultMobileImage = '../assets/mobileLogoDiv/mobileLogo7.gif'; // 默认手机图片路径
 
 function setDefaultMobileImage() {
     mobileLogoDiv.style.backgroundImage = `url(${defaultMobileImage})`;
