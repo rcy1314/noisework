@@ -284,7 +284,7 @@
     position: relative;
     flex-shrink: 1;
     width: 100%;
-    margin: .5em;
+    margin: 1em;
     border: var(--waline-border);
     border-radius: .75em;
     background: var(--waline-bg-color);

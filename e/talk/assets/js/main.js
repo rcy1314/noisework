@@ -27,19 +27,20 @@ var memos = memo.host.replace(/\/$/, '')
 let memoUrl;
 if (memo.APIVersion === 'new') {
     const filter = `creator=='users/${memo.creatorId}'&&visibilities==['PUBLIC']`;
-    memoUrl = `${memos}/api/v1/memos?filter=${encodeURIComponent(filter)}`;
+    memoUrl = `${memos}/api/v1/memos?filter=${encodeURIComponent(filter)}&view=MEMO_VIEW_FULL`;
 } else if (memo.APIVersion === 'legacy') {
-    memoUrl = `${memos}/api/v1/memos?creatorId=${memo.creatorId}&rowStatus=NORMAL`;
+    memoUrl = memos + "/api/v1/memo?creatorId=" + memo.creatorId + "&rowStatus=NORMAL";
 } else {
     throw new Error('Invalid APIVersion');
 }
 
 var page = 1,
+    offset = 0,
     nextLength = 0,
-    nextDom = [];
-var tag = '';
+    nextDom = '';
+var tag='';
 var nextPageToken = '';
-var btnRemove = 0;
+var btnRemove = 0
 var memoDom = document.querySelector(memo.domId);
 var load = '<button class="load-btn button-load">加载更多</button>';
 var isLoading = false; // 新增加载状态标志
@@ -94,26 +95,38 @@ function addLoadMoreEvent() {
 }
 
 function getFirstList() {
-    let memoUrl_first = `${memos}/api/v1/memos?filter=creator=='users/${memo.creatorId}'&&visibilities==['PUBLIC']&pageSize=${limit}`;
-    fetch(memoUrl_first)
-        .then(res => res.json())
-        .then(resdata => {
-            updateHTMl(resdata);
+    let memoUrl_first;
+    if (memo.APIVersion === 'new') {
+        memoUrl_first = memoUrl + '&pageSize=' + limit;
+        fetch(memoUrl_first).then(res => res.json()).then(resdata => {
+            updateHTMl(resdata)
             nextPageToken = resdata.nextPageToken;
-            nextLength = resdata.length;
-
-            if (nextLength < limit) {
-                handleNoMoreData();
-            } else {
-                page++;
+            var nowLength = resdata.length
+            if (nowLength < limit) { // 返回数据条数小于 limit 则直接移除“加载更多”按钮，中断预加载
+                document.querySelector("button.button-load").remove()
+                btnRemove = 1
+                return
             }
-        })
-        .catch(err => {
-            console.error(err);
-        })
-        .finally(() => {
-            isLoading = false; // 重置加载状态
+            page++
+            getNextList()
         });
+    } else if (memo.APIVersion === 'legacy') {
+        memoUrl_first = memoUrl + "&limit=" + limit;
+        fetch(memoUrl_first).then(res => res.json()).then(resdata => {
+            updateHTMl(resdata)
+            var nowLength = resdata.length
+            if (nowLength < limit) { // 返回数据条数小于 limit 则直接移除“加载更多”按钮，中断预加载
+                document.querySelector("button.button-load").remove()
+                btnRemove = 1
+                return
+            }
+            page++
+            offset = limit * (page - 1)
+            getNextList()
+        });
+    } else {
+        throw new Error('Invalid APIVersion');
+    }
 }
 
 // 预加载下一页数据
@@ -448,10 +461,12 @@ function updateHTMl(data) {
                 <div class="memos__id">@${memo.username}</div>
             </div>
             <p>${memoContREG}</p>
-        </div>
+        <hr style="border: 0.2px solid rgba(255, 255, 255, 0.14); margin-top: 10px; margin-bottom: 15px;"/> 
         <div class="memos__meta">
-            <small class="memos__date">${relativeTime} • From「<a href="${memo.host}m/${uid}" target="_blank">Memos</a>」</small>
-            <small class="comment-button" data-host="${commenthost}">• 📧 评论</small>
+            <small class="memos__date">${relativeTime} • 来自「<a href="${memo.host}m/${uid}" target="_blank">Memos</a>」</small>
+            <div style="float: right;">
+                <small class="comment-button" data-host="${commenthost}">📮 评论</small>
+            </div>
         </div>
         <div id="comment-box-${commenthost}" class="comment-box" style="display: none;"></div>
     </div>
