@@ -27,6 +27,10 @@ function fetchRssItems(url) {
         var pubDate = new Date(item.pubDate);
         var formattedDate = pubDate.toLocaleDateString();
 
+        // 处理标题和描述
+        var title = item.title || '无标题';
+        var description = item.description || '无描述';
+
         var imgRegex = /<img[^>]+src="([^">]+)"/g;
         var match;
         var thumbnails = [];
@@ -41,9 +45,10 @@ function fetchRssItems(url) {
         rssLink.classList.add('rss-link');
         rssLink.innerHTML = `
           <a href="${item.link}" target="_blank">
-            ${item.title} - ${formattedDate}
+            ${title} - ${formattedDate}
             <span class="thumbnail-container" style="display: none;"></span>
           </a>
+          <p>${description}</p>
         `;
 
         var thumbnailContainer = rssLink.querySelector('.thumbnail-container');
