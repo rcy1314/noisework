@@ -31,10 +31,13 @@ function fetchRssItems(url) {
         var title = item.title || '无标题';
         var description = item.description || '无描述';
 
+        // 处理内容中的HTML
+        var content = item.content || '';
+
         var imgRegex = /<img[^>]+src="([^">]+)"/g;
         var match;
         var thumbnails = [];
-        while ((match = imgRegex.exec(item.content)) !== null) {
+        while ((match = imgRegex.exec(content)) !== null) {
           thumbnails.push(match[1]);
           if (thumbnails.length === 3) break;
         }
@@ -49,6 +52,7 @@ function fetchRssItems(url) {
             <span class="thumbnail-container" style="display: none;"></span>
           </a>
           <p>${description}</p>
+          <div>${content}</div>
         `;
 
         var thumbnailContainer = rssLink.querySelector('.thumbnail-container');
