@@ -12,6 +12,11 @@ var ads = [
     description: "超大流量卡优惠办理渠道2"
   },
   {
+    image: "i8DnSdCvIsFXBOo](https://s2.loli.net/2024/12/31/i8DnSdCvIsFXBOo.png",
+    link: "https://www.noisework.cn/lianxi/weixin.png",
+    description: "优惠专业苹果证书定制，稳定售后一年"
+  },
+  {
     image: "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/uPic/%E8%B6%85%E5%A4%A7%E6%B5%81.png",
     link: "https://simhaoka.com/phone/index?id=A7BA17EFD6DC47F6826F0C67B898725A",
     description: "超大流量卡优惠办理手机渠道1"
