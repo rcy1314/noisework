@@ -12,7 +12,7 @@ var ads = [
     description: "超大流量卡优惠办理渠道2"
   },
   {
-    image: "i8DnSdCvIsFXBOo](https://s2.loli.net/2024/12/31/i8DnSdCvIsFXBOo.png",
+    image: "https://s2.loli.net/2024/12/31/i8DnSdCvIsFXBOo.png",
     link: "https://www.noisework.cn/lianxi/weixin.png",
     description: "优惠专业苹果证书定制，稳定售后一年"
   },
