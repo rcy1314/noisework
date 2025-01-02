@@ -2,6 +2,11 @@
 // 广告数组
 var ads = [
   {
+    image: "../assets/mh.webp",
+    link: "https://app.xkcc.vip/invitation_register?invitation_code=KIklg4ZV",
+    description: "专业破解软件下载商店"
+  },
+  {
     image: "https://jsd.cdn.noisework.cn/gh/rcy1314/tuchuang@main/20230818/11宝.5gadu623kd00.jpg",
     link: "https://noisevip.cn",
     description: "包罗万象-Noise宝藏阁"
@@ -12,7 +17,7 @@ var ads = [
     description: "超大流量卡优惠办理渠道2"
   },
   {
-    image: "https://s2.loli.net/2024/12/31/i8DnSdCvIsFXBOo.png",
+    image: "../assets/p121.webp",
     link: "https://www.noisework.cn/lianxi/weixin.png",
     description: "优惠专业苹果证书定制，稳定售后一年"
   },
