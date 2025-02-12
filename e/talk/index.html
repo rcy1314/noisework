@@ -548,37 +548,39 @@
         <div id="waline" class="page">
             <div id="waline"></div>
         </div>
-        <div id="about" class="page">
-            <div class="title"><i class="fa-solid fa-user-plus"></i>关于</div>
-            </br>
-            <p>这是一个通过 Memos API 渲染的静态网页</p>
-            <p>由Noise使用memos发布，使用 <a href="https://memos.noisework.cn" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
-                       -webkit-background-clip: text; 
-                       -webkit-text-fill-color: transparent;">点击查看</a></p>
-            <p>RSS订阅站点：<a href="https://memos.noisework.cn/u/noise/rss.xml" _blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
-                       -webkit-background-clip: text; 
-                       -webkit-text-fill-color: transparent;">点击查看</a></p>
-            <p>已备份数据库：<a href="https://drive.google.com/drive/folders/1PqS-j38nefbRhq_FSe33oqy_hWnB8OpN?usp=sharing"
-                    _blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
-                       -webkit-background-clip: text; 
-                       -webkit-text-fill-color: transparent;">点击查看</a></p>
-            <p>致谢：<a href="https://github.com/eallion/memos.top" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #6079f7, #a36bde); 
-                       -webkit-background-clip: text; 
-                       -webkit-text-fill-color: transparent;">项目</a>
-                ⎥ 你也可以 <a href="https://www.noisework.cn" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #5fd4ff, #7bc1fe); 
-                       -webkit-background-clip: text; 
-                       -webkit-text-fill-color: transparent;">访问主页</a></p>
-            <p>官方API文档 <a href="https://memos.apidocumentation.com" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
-                               -webkit-background-clip: text; 
-                               -webkit-text-fill-color: transparent;">点击查看</a></p>
-            <p>浏览器扩展 <a href="https://chromewebstore.google.com/detail/cbhjebjfccgchgbmfbobjmebjjckgofe" target="_blank"
-                    rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
-                                   -webkit-background-clip: text; 
-                                   -webkit-text-fill-color: transparent;">点击查看</a></p>
-            <p>桌面及手机APP程序 <a href="https://memos.moe" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
-                                   -webkit-background-clip: text; 
-                                   -webkit-text-fill-color: transparent;">点击查看</a></p>
+        <div id="about" class="page rssmergecard">
+            <div class="rssmergecard-content">
+                <div class="rssmergecard-title"><i class="fa-solid fa-user-plus"></i>关于本页</div>
+                <p class="rssmergecard-description">这是一个通过 Memos API 渲染的静态网页</p>
+                <p class="rssmergecard-description">由Noise使用memos发布，使用 <a href="https://memos.noisework.cn" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
+                           -webkit-background-clip: text; 
+                           -webkit-text-fill-color: transparent;">点击查看 </a>由于Memos官方不停更改版本的API，为固定化本页，使用支持V0.23.0版本，部署为docker run -d --name memos -p 5230:5230 -v ~/.memos/:/var/opt/memos neosmemo/memos:0.23.0</p>
+                <p class="rssmergecard-description">RSS订阅站点：<a href="https://memos.noisework.cn/u/noise/rss.xml" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
+                           -webkit-background-clip: text; 
+                           -webkit-text-fill-color: transparent;">点击查看</a></p>
+                <p class="rssmergecard-description">已备份数据库：<a href="https://drive.google.com/drive/folders/1PqS-j38nefbRhq_FSe33oqy_hWnB8OpN?usp=sharing"
+                        target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
+                           -webkit-background-clip: text; 
+                           -webkit-text-fill-color: transparent;">点击查看</a></p>
+                <p class="rssmergecard-description">致谢：<a href="https://github.com/eallion/memos.top" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #6079f7, #a36bde); 
+                           -webkit-background-clip: text; 
+                           -webkit-text-fill-color: transparent;">项目</a>
+                    ⎥ 你也可以 <a href="https://www.noisework.cn" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #5fd4ff, #7bc1fe); 
+                           -webkit-background-clip: text; 
+                           -webkit-text-fill-color: transparent;">访问主页</a></p>
+                <p class="rssmergecard-description">官方API文档 <a href="https://memos.apidocumentation.com" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
+                                       -webkit-background-clip: text; 
+                                       -webkit-text-fill-color: transparent;">点击查看</a></p>
+                <p class="rssmergecard-description">浏览器扩展 <a href="https://chromewebstore.google.com/detail/cbhjebjfccgchgbmfbobjmebjjckgofe" target="_blank"
+                        rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
+                                       -webkit-background-clip: text; 
+                                       -webkit-text-fill-color: transparent;">点击查看</a></p>
+                <p class="rssmergecard-description">桌面及手机APP程序 <a href="https://memos.moe" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
+                                       -webkit-background-clip: text; 
+                                       -webkit-text-fill-color: transparent;">点击查看</a></p>
+            </div>
         </div>
+        
     </section>
     <footer class="markdown-body footer">
         <div class="bsz">
