@@ -24,6 +24,18 @@
             color: #fff;
             font-size: 15px;
             display: none;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .close-button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 12px;
         }
 
         iframe {
@@ -57,7 +69,10 @@
 
     <button class="floating-button" onclick="playRandomVideo()"><i class="fa-solid fa-forward-fast"></i></button>
 
-    <div class="center-message" id="centerMessage">载入中...请等待API生效或尝试刷新,如果失败请切换至支持bilibili的地区</div>
+    <div class="center-message" id="centerMessage">
+        <span class="close-button" onclick="closeMessage()"><i class="fa-solid fa-xmark"></i></span>
+        载入中...请等待API生效或尝试刷新,如果失败请切换至支持bilibili的地区
+    </div>
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
@@ -66,9 +81,17 @@
         let isManualPlay = false; // 用于跟踪手动播放状态
         let isVideoPlaying = false; // 用于跟踪视频播放状态
         let lastPlayTime = 0; // 上次播放时间
+        let showMessage = true; // 用于控制消息显示
+
+        function closeMessage() {
+            showMessage = false;
+            document.getElementById('centerMessage').style.display = 'none';
+        }
 
         function iframeLoaded() {
-            document.getElementById('centerMessage').style.display = 'none';
+            if (showMessage) {
+                document.getElementById('centerMessage').style.display = 'none';
+            }
             checkVideoPlaying();
         }
 
@@ -118,13 +141,17 @@
                         const bvids = videoData.data.map(item => item.bvid).filter(bvid => !playedVideos.includes(bvid));
 
                         if (bvids.length === 0) {
-                            document.getElementById('centerMessage').style.display = 'block';
+                            if (showMessage) {
+                                document.getElementById('centerMessage').style.display = 'block';
+                            }
                         } else {
                             const randomBvid = bvids[Math.floor(Math.random() * bvids.length)];
                             playedVideos.push(randomBvid);
 
                             document.querySelector('iframe').src = `https://www.bilibili.com/blackboard/html5mobileplayer.html?bvid=${randomBvid}&as_wide=1&high_quality=1&danmaku=0`;
-                            document.getElementById('centerMessage').style.display = 'none';
+                            if (showMessage) {
+                                document.getElementById('centerMessage').style.display = 'none';
+                            }
 
                             // 设置手动播放标志
                             isManualPlay = false;
@@ -150,17 +177,23 @@
                                 })
                                 .catch(error => {
                                     console.error('Error fetching video data:', error);
-                                    document.getElementById('centerMessage').style.display = 'block';
+                                    if (showMessage) {
+                                        document.getElementById('centerMessage').style.display = 'block';
+                                    }
                                 });
                         }
                     })
                     .catch(error => {
                         console.error('Error fetching API data:', error);
-                        document.getElementById('centerMessage').style.display = 'block';
+                        if (showMessage) {
+                            document.getElementById('centerMessage').style.display = 'block';
+                        }
                     });
             } else {
                 console.error('Missing "id" parameter in the URL.');
-                document.getElementById('centerMessage').style.display = 'block';
+                if (showMessage) {
+                    document.getElementById('centerMessage').style.display = 'block';
+                }
             }
         }
 
