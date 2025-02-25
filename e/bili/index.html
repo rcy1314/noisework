@@ -44,13 +44,11 @@
             border: none;
         }
 
-        .floating-button {
+        .control-button {
             position: fixed;
-            top: 88%;
-            right: 6px;
-            transform: translateY(-50%);
-            width: 28px;
-            height: 28px;
+            top: 45%;
+            width: 36px;
+            height: 36px;
             background-color: #1e3241e0;
             color: #fff;
             border: none;
@@ -60,6 +58,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .prev-button {
+            left: 20px;
+        }
+
+        .next-button {
+            right: 20px;
+        }
+
+        body:hover .control-button {
+            opacity: 1;
         }
     </style>
 </head>
@@ -67,7 +79,12 @@
 <body>
     <iframe name="player" onload="iframeLoaded()"></iframe>
 
-    <button class="floating-button" onclick="playRandomVideo()"><i class="fa-solid fa-forward-fast"></i></button>
+    <button class="control-button prev-button" onclick="playPreviousVideo()">
+        <i class="fa-solid fa-backward"></i>
+    </button>
+    <button class="control-button next-button" onclick="playRandomVideo()">
+        <i class="fa-solid fa-forward"></i>
+    </button>
 
     <div class="center-message" id="centerMessage">
         <span class="close-button" onclick="closeMessage()"><i class="fa-solid fa-xmark"></i></span>
@@ -82,6 +99,7 @@
         let isVideoPlaying = false; // 用于跟踪视频播放状态
         let lastPlayTime = 0; // 上次播放时间
         let showMessage = true; // 用于控制消息显示
+        let currentVideoIndex = -1; // 当前播放视频的索引
 
         function closeMessage() {
             showMessage = false;
@@ -97,6 +115,14 @@
 
         let playedVideos = [];
 
+        function playPreviousVideo() {
+            if (currentVideoIndex > 0) {
+                currentVideoIndex--;
+                const previousBvid = playedVideos[currentVideoIndex];
+                document.querySelector('iframe').src = `https://www.bilibili.com/blackboard/html5mobileplayer.html?bvid=${previousBvid}&as_wide=1&high_quality=1&danmaku=0`;
+            }
+        }
+
         function checkVideoPlaying() {
             const iframe = document.querySelector('iframe');
             const video = iframe.contentWindow.document.querySelector('video');
@@ -108,18 +134,15 @@
             }
 
             if (isVideoPlaying) {
-                // 如果视频正在播放，停止计时
                 clearTimeout(timerId);
-                lastPlayTime = Date.now(); // 更新上次播放时间
+                lastPlayTime = Date.now();
             } else {
-                // 检查是否已经过了3分钟
                 const currentTime = Date.now();
-                if (currentTime - lastPlayTime >= 180000) { // 3分钟
+                if (currentTime - lastPlayTime >= 180000) {
                     playRandomVideo();
                 }
             }
 
-            // 每隔1秒检查一次
             setTimeout(checkVideoPlaying, 1000);
         }
 
@@ -147,16 +170,15 @@
                         } else {
                             const randomBvid = bvids[Math.floor(Math.random() * bvids.length)];
                             playedVideos.push(randomBvid);
+                            currentVideoIndex = playedVideos.length - 1;
 
                             document.querySelector('iframe').src = `https://www.bilibili.com/blackboard/html5mobileplayer.html?bvid=${randomBvid}&as_wide=1&high_quality=1&danmaku=0`;
                             if (showMessage) {
                                 document.getElementById('centerMessage').style.display = 'none';
                             }
 
-                            // 设置手动播放标志
                             isManualPlay = false;
 
-                            // 获取视频时长
                             fetch(`https://api.allorigins.win/get?url=https://api.bilibili.com/x/web-interface/view?bvid=${randomBvid}`)
                                 .then(response => {
                                     if (response.status !== 200) {
@@ -168,12 +190,11 @@
                                     const duration = JSON.parse(videoData.contents).data.duration;
                                     console.log(`Video Duration: ${duration} seconds`);
 
-                                    // 延时后切换到下一个视频
-                                timerId = setTimeout(() => {
-                            if (!isManualPlay && !isVideoPlaying) { // 仅在未手动播放且没有视频播放时切换
-                                 playRandomVideo();
-                                }
-                                }, Math.max(duration * 1000, 1680000)); // 至少28分钟
+                                    timerId = setTimeout(() => {
+                                        if (!isManualPlay && !isVideoPlaying) {
+                                            playRandomVideo();
+                                        }
+                                    }, Math.max(duration * 1000, 1680000));
                                 })
                                 .catch(error => {
                                     console.error('Error fetching video data:', error);
@@ -197,13 +218,6 @@
             }
         }
 
-        // 处理手动播放事件
-        document.querySelector('.floating-button').addEventListener('click', () => {
-            isManualPlay = true; // 设置手动播放标志
-            playRandomVideo();
-        });
-
-        // 开始载入第一个视频
         playRandomVideo();
     </script>
 </body>
