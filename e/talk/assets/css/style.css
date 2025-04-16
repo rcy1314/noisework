@@ -98,18 +98,95 @@ body {
         Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei",
         "Microsoft Yahei", "Segoe UI", sans-serif, serif;
     color: var(--color-main);
-    background-image: var(--bg-image); /* 使用 CSS 变量作为背景图片 */
-    background-size: cover; /* 使背景图片覆盖整个区域 */
-    background-position: center; /* 背景图片居中对齐 */
-    background-repeat: no-repeat; /* 不重复背景图片 */
-    background-attachment: fixed; /* 背景图片固定，不随页面滚动 */
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     min-width: 200px;
     max-width: 860px;
     margin: 0 auto;
     padding: 3px 55px;
-    min-height: 100vh; /* 确保背景至少覆盖视口高度 */
+    min-height: 100vh;
     box-sizing: border-box;
-    position: relative; /* 确保相对定位 */
+    position: relative;
+}
+
+/* 手机尺寸优化，去除多余空白，内容铺满 */
+@media (max-width: 800px) {
+    body {
+        max-width: 100vw;
+        padding: 0 !important;
+        margin: 0 !important;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+    header {
+        max-width: 100vw;
+        width: 100vw;
+        margin: 0 auto !important;
+        /* 增加左右边距 */
+        padding: 0 12px !important;
+        border-radius: 0 !important;
+        justify-content: center !important;
+        align-items: center !important;
+        display: flex;
+        box-sizing: border-box;
+    }
+    .search-container {
+    display: flex;
+    gap: 8px;
+    max-width: 680px;
+    margin: 0 auto;
+}
+.search-container {
+    
+    width: auto;
+    margin: 0 auto;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+    .container, #main {
+        max-width: 100vw;
+        width: 100vw;
+        /* 增加左右边距 */
+        padding: 0 12px !important;
+        margin: 0 !important;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .cards-container {
+        width: 100%;
+        max-width: 100vw;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        /* 增加左右边距 */
+        padding: 0 4px;
+        margin: 0;
+        box-sizing: border-box;
+        justify-items: center;
+    }
+    .rssmergecard {
+        width: 100%;
+        max-width: 100vw;
+        min-width: 0;
+        margin: 0;
+        /* 增加左右内边距 */
+        padding: 10px 6px;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+    .note-container {
+        width: 100%;
+        max-width: 100vw;
+        min-width: 0;
+        /* 增加左右边距 */
+        padding: 0 4px 16px 4px;
+        margin: 0;
+        box-sizing: border-box;
+    }
 }
 
 /* 添加一个透明度和背景色的覆盖层 */
@@ -224,7 +301,7 @@ blockquote {
 .search-container {
     display: flex;
     gap: 8px;
-    max-width: 600px;
+    max-width: 680px;
     margin: 0 auto;
 }
 

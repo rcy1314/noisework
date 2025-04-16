@@ -75,14 +75,12 @@
 
         .cards-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); /* 卡片宽度更小 */
-            gap: 18px; /* 间距略缩小 */
-
-            /* 媒体查询：小屏幕设备 */
-            @media (max-width: 768px) {
-                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-                gap: 10px;
-            }
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 18px;
+            justify-items: center; /* 卡片居中 */
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
         }
     .container {
         width: auto;
@@ -104,15 +102,17 @@
     }
 
     .rssmergecard {
-        background: rgba(36, 43, 50, 0.95);
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.593);
-        transition: all 0.3s ease;
-        width: 95%;
-        min-height: 120px;
-        display: flex;
-        flex-direction: column;
-    }
+            background: rgba(36, 43, 50, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.593);
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 560px;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto; /* 居中卡片 */
+        }
 
         .rssmergecard:hover {
             background-color: rgba(36, 38, 42, 0.95);
@@ -367,46 +367,7 @@
         }
 
         /* Mobile specific styles */
-        @media (max-width: 600px) {
-            header {
-                height: 150px;
-                /* Adjust height for mobile */
-            }
-
-            .theme-toggle {
-                top: 10px;
-                /* 在移动设备上调整位置 */
-                right: 10px;
-                /* 在移动设备上调整位置 */
-            }
-
-            .menu .title {
-                font-size: 20px;
-                /* Adjust title size for mobile */
-            }
-
-            .main-title {
-                font-size: 16px;
-                /* 在手机尺寸下调整字体大小 */
-            }
-
-            .profile {
-                bottom: -30px;
-                /* Adjust position for mobile */
-            }
-
-            .nav-button {
-                padding: 5px 6px;
-                font-size: 13px;
-            }
-
-            .button-container {
-                margin: 16px -10px;
-                /* 负边距以扩展容器宽度 */
-                padding: 0 10px;
-                /* 添加内边距以保持按钮不贴边 */
-            }
-        }
+      
     </style>
 </head>
 
