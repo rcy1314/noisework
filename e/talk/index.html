@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="referrer" content="no-referrer">
     <meta itemprop="name" content="NOISE的说说">
-    <meta name="description" content="这是来自Noise的个人说说空间，通过本页你可以浏览我的一些日常记录.使用memos作为后端。">
+    <meta name="description" content="这是来自Noise的个人说说空间，通过本页你可以浏览我的一些日常记录.使用说说笔记作为后端。">
     <meta name="keywords" content="noise主页,个人主页,朋友圈,说说空间">
     <meta itemprop="image" content="https://s2.loli.net/2024/11/20/MBzRuHe86nWi2xC.png">
     <link rel="icon" href="./assets/img/avatar.png" type="image/png" />
@@ -17,6 +17,12 @@
     <link href="./assets/css/custom.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="./assets/css/waline.css" />
     <link rel="stylesheet" href="./assets/css/friendlink.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <title>NOISE的说说</title>
     <style type='text/css'>
@@ -45,8 +51,14 @@
             /* 去除顶部空隙 */
         }
 
-        /* 信息流卡片样式 */
-        html::-webkit-scrollbar {
+        
+
+        
+
+/* 信息流卡片样式 */
+#rssmerge {  /* 添加 ID 选择器限制作用域 */
+    /* 信息流卡片样式 */
+    html::-webkit-scrollbar {
             width: 0;
         }
 
@@ -54,7 +66,7 @@
             color: #FFA500;
         }
 
-        .container {
+    .container {
             width: auto;
             max-width: 1400px;
             margin: 0 auto;
@@ -63,27 +75,44 @@
 
         .cards-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(560px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); /* 卡片宽度更小 */
+            gap: 18px; /* 间距略缩小 */
 
             /* 媒体查询：小屏幕设备 */
             @media (max-width: 768px) {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 16px;
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 10px;
             }
-
         }
+    .container {
+        width: auto;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px;
+    }
 
-        .rssmergecard {
-            background: rgba(36, 43, 50, 0.95);
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.593);
-            transition: all 0.3s ease;
-            width: 100%;
-            min-height: 120px;
-            display: flex;
-            flex-direction: column;
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(560px, 1fr));
+        gap: 24px;
+
+        /* 媒体查询：小屏幕设备 */
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
         }
+    }
+
+    .rssmergecard {
+        background: rgba(36, 43, 50, 0.95);
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.593);
+        transition: all 0.3s ease;
+        width: 95%;
+        min-height: 120px;
+        display: flex;
+        flex-direction: column;
+    }
 
         .rssmergecard:hover {
             background-color: rgba(36, 38, 42, 0.95);
@@ -184,7 +213,7 @@
             border-radius: 6px;
             margin: 10px 0;
         }
-
+    }
         /* 信息流卡片样式结束 */
         .menu {
             text-align: left;
@@ -271,16 +300,7 @@
             /* 确保在其他元素之上 */
         }
 
-        .comment-button {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-            margin-top: 10px;
-            z-index: 9999;
-            max-width: 120%;
-            width: 100%;
-        }
+       
 
         .comment-box {
             margin-top: 0px;
@@ -393,9 +413,9 @@
 <body>
     <header id="header">
         <div class="menu">
-            <div class="title">Memos空间...</div>
+            <div class="title">说说笔记空间...</div>
             <div class="pages">
-                <a href="https://memos.noisework.cn" target="_blank" rel="noopener noreferrer" style="font-size: 14px; background: linear-gradient(90deg, #5fbcff, #7b84fe); 
+                <a href="https://note.noisework.cn" target="_blank" rel="noopener noreferrer" style="font-size: 14px; background: linear-gradient(90deg, #5fbcff, #7b84fe); 
                           -webkit-background-clip: text; 
                           -webkit-text-fill-color: transparent;">前往查看</a>
             </div>
@@ -409,7 +429,7 @@
             <img src="./assets/img/avatar.png" onclick="changeBackground()" alt="头像">
         </div>
 
-        <div class='theme-toggle'>🌓</div>
+        
     </header>
 
     <section id="main" class="container">
@@ -419,14 +439,10 @@
             <p>NOISE <del>说说空间</del>,忆往昔- <em>都是故事</em></p>
         </blockquote>
 
-        <div class="total">已记录 <span id="total">0</span>条 🎉</div>
-
-        <blockquote id="tag-filter" class="filter">
-            <div id="tags"></div>
-        </blockquote>
+       
 
         <div class="button-container">
-            <button class="nav-button" onclick="showPage('memos')">
+            <button class="nav-button" onclick="showPage('note')">
                 <svg xmlns="http://www.w3.org/2000/svg" fill='#ffffff' width='64' height='64' viewBox="0 0 56 56">
                     <path
                         d="M 16.0938 52.3164 C 17.0313 52.3164 17.6876 51.8476 18.7891 50.8164 L 27.2735 43.0820 L 43.0938 43.1055 C 50.0783 43.1289 53.8280 39.2383 53.8280 32.3711 L 53.8280 14.4180 C 53.8280 7.5508 50.0783 3.6836 43.0938 3.6836 L 12.9064 3.6836 C 5.9454 3.6836 2.1720 7.5273 2.1720 14.4180 L 2.1720 32.3711 C 2.1720 39.2617 5.9454 43.1055 12.9064 43.0820 L 14.0079 43.0820 L 14.0079 49.9024 C 14.0079 51.3555 14.7813 52.3164 16.0938 52.3164 Z M 19.9376 24.3555 C 19.9376 26.2070 18.2969 27.8242 16.4220 27.8242 C 14.5469 27.8242 12.9532 26.2070 12.9532 24.3555 C 12.9532 22.4805 14.5001 20.8398 16.4220 20.8398 C 18.2969 20.8398 19.9376 22.5039 19.9376 24.3555 Z M 31.6564 24.3555 C 31.6564 26.2070 30.0391 27.8242 28.1642 27.8242 C 26.3126 27.8242 24.6954 26.2070 24.6954 24.3555 C 24.6954 22.4805 26.2657 20.8398 28.1642 20.8398 C 30.0391 20.8398 31.6564 22.5039 31.6564 24.3555 Z M 43.3751 24.3555 C 43.3751 26.2070 41.8048 27.8242 39.9064 27.8242 C 38.0313 27.8242 36.4142 26.2070 36.4142 24.3555 C 36.4142 22.4805 38.0079 20.8398 39.9064 20.8398 C 41.8048 20.8398 43.3751 22.5039 43.3751 24.3555 Z">
@@ -476,9 +492,18 @@
                 <div id="loaded-all" class="loaded-all" style="display: none;">已加载全部</div>
         </div>
         </div>
-        <div id="memos" class="memos page active"></div>
+        <div id="note" class="page">
+            <div class="search-container">
+                <input type="text" id="tag-search" placeholder="搜索标签 #..." />
+                <button id="search-btn">搜索</button>
+            </div>
+            <div class="note-container">
+                <div class="loading-wrapper">加载中...</div>
+                <!-- 如果这里有 <button class="load-more">加载更多</button>，请删除这一行 -->
+            </div>
+        </div>
         <div id="friendlinks" class="page">
-            <div class="title"><i class="fa-solid fa-user-plus"></i>友链示例</div>
+            <div class="title">友链示例</div>
             </br>
             <div class="friendcardindex">
                 <div class="friendlinks-container">
@@ -550,34 +575,33 @@
         </div>
         <div id="about" class="page rssmergecard">
             <div class="rssmergecard-content">
-                <div class="rssmergecard-title"><i class="fa-solid fa-user-plus"></i>关于本页</div>
-                <p class="rssmergecard-description">这是一个通过 Memos API 渲染的静态网页</p>
-                <p class="rssmergecard-description">由Noise使用memos发布，使用 <a href="https://memos.noisework.cn" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
+                <div class="rssmergecard-title">关于本页</div>
+                <p class="rssmergecard-description">这是一个通过 说说笔记 API 渲染的静态网页</p>
+                <p class="rssmergecard-description">由Noise使用说说笔记发布，使用 <a href="https://note.noisework.cn" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
                            -webkit-background-clip: text; 
-                           -webkit-text-fill-color: transparent;">点击查看 </a>由于Memos官方不停更改版本的API，为固定化本页，使用支持V0.23.0版本，部署为docker run -d --name memos -p 5230:5230 -v ~/.memos/:/var/opt/memos neosmemo/memos:0.23.0</p>
-                <p class="rssmergecard-description">RSS订阅站点：<a href="https://memos.noisework.cn/u/noise/rss.xml" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
+                           -webkit-text-fill-color: transparent;">点击查看 </a>docker run -d \
+  --name Ech0-Noise \
+  --platform linux/amd64 \
+  -p 1314:1314 \
+  noise233/echo-noise</p>
+                <p class="rssmergecard-description">RSS订阅站点：<a href="https://note.noisework.cn/rss" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
                            -webkit-background-clip: text; 
                            -webkit-text-fill-color: transparent;">点击查看</a></p>
-                <p class="rssmergecard-description">已备份数据库：<a href="https://drive.google.com/drive/folders/1PqS-j38nefbRhq_FSe33oqy_hWnB8OpN?usp=sharing"
+                <p class="rssmergecard-description">已备份数据库：<a href="https://drive.google.com/file/d/1PZT4nGxitMbICpWAiZo6So4t48VL8Yce/view?usp=sharing"
                         target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
                            -webkit-background-clip: text; 
                            -webkit-text-fill-color: transparent;">点击查看</a></p>
-                <p class="rssmergecard-description">致谢：<a href="https://github.com/eallion/memos.top" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #6079f7, #a36bde); 
+                <p class="rssmergecard-description">项目地址：<a href="https://github.com/rcy1314/echo-noise" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #6079f7, #a36bde); 
                            -webkit-background-clip: text; 
                            -webkit-text-fill-color: transparent;">项目</a>
                     ⎥ 你也可以 <a href="https://www.noisework.cn" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #5fd4ff, #7bc1fe); 
                            -webkit-background-clip: text; 
                            -webkit-text-fill-color: transparent;">访问主页</a></p>
-                <p class="rssmergecard-description">官方API文档 <a href="https://memos.apidocumentation.com" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
+                <p class="rssmergecard-description">API文档 <a href="https://github.com/rcy1314/echo-noise?tab=readme-ov-file#-api%E8%AF%A6%E6%83%85%E7%82%B9%E5%87%BB%E6%9F%A5%E7%9C%8B" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
                                        -webkit-background-clip: text; 
                                        -webkit-text-fill-color: transparent;">点击查看</a></p>
-                <p class="rssmergecard-description">浏览器扩展 <a href="https://chromewebstore.google.com/detail/cbhjebjfccgchgbmfbobjmebjjckgofe" target="_blank"
-                        rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
-                                       -webkit-background-clip: text; 
-                                       -webkit-text-fill-color: transparent;">点击查看</a></p>
-                <p class="rssmergecard-description">桌面及手机APP程序 <a href="https://memos.moe" target="_blank" rel="noopener noreferrer" style=" background: linear-gradient(90deg, #ba5fff, #7bc1fe); 
-                                       -webkit-background-clip: text; 
-                                       -webkit-text-fill-color: transparent;">点击查看</a></p>
+               
+               
             </div>
         </div>
         
@@ -625,8 +649,7 @@
         </p>
     </footer>
 
-    <div id='rebtmbtn' onclick='returnBottom()'>👇</div>
-    <div id='retopbtn' onclick='returnTop()'>👆</div>
+  
 
     <script type="text/javascript">
         const backgrounds = [
@@ -655,29 +678,9 @@
 
         document.addEventListener('DOMContentLoaded', changeBackground);
 
-        function showPage(pageId) {
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => {
-                page.classList.remove('active');
-            });
-            document.getElementById(pageId).classList.add('active');
-        }
+        
     </script>
 
-
-    <script type="text/javascript">
-        var memos = {
-            host: 'https://memos.noisework.cn/', //修改为你自己的memos服务地址，结尾要有/
-            limit: '13',
-            creatorId: '1',
-            domId: '#memos',
-            username: 'noise',
-            name: '诺伊斯',
-            language: 'zh-CN',
-            APIVersion: 'new',
-            total: true,
-        }
-    </script>
     <!-- 页面初始化不加载聚合页 -->
     <script>
         function showPage(pageName) {
@@ -714,41 +717,86 @@
         }
 
     </script>
+<script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+    init({
+        el: '#waline',
+        serverURL: 'https://ment.noisework.cn', //修改为你自己的waline服务端地址
+        reaction: 'true', 
+        meta: ['nick', 'mail', 'link'],
+        requiredMeta: ['mail', 'nick'],
+        pageview: true,
+        search: false,
+        wordLimit: 200,
+        pageSize: 5,
+        avatar: 'monsterid',
+        emoji: [
+            'https://unpkg.com/@waline/emojis@1.2.0/tieba',
+        ],
+        imageUploader: false,
+        copyright: false,
+    });
+</script>
 
-    <script type="module">
-        import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-        init({
-            el: '#waline',
-            serverURL: 'https://ment.noisework.cn', //修改为你自己的waline服务端地址
-            reaction: 'true', 
-            meta: ['nick', 'mail', 'link'],
-            requiredMeta: ['mail', 'nick'],
-            pageview: true,
-            search: false,
-            wordLimit: 200,
-            pageSize: 5,
-            avatar: 'monsterid',
-            emoji: [
-                'https://unpkg.com/@waline/emojis@1.2.0/tieba',
-            ],
-            imageUploader: false,
-            copyright: false,
+<script>
+    // 确保所有链接在新标签页打开
+    document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('click', function(e) {
+            const target = e.target.closest('a');
+            if (target && !target.hasAttribute('target')) {
+                target.setAttribute('target', '_blank');
+            }
         });
-    </script>
+    });
+</script>
+     <script type='text/javascript' src='./assets/js/jquery-3.2.1.js'></script>
     <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script type="text/javascript" src="./assets/js/marked.umd.min.js"></script>
+    <script src="./assets/js/note.js"></script> 
+
+    <script type="text/javascript" src="./assets/js/lazyload.min.js"></script>
     <script src="./assets/js/bg.js"></script>
     <script src="./assets/js/bg-mobile.js"></script>
-    <script type='text/javascript' src='./assets/js/jquery-3.2.1.js'></script>
-    <script type="text/javascript" src="./assets/js/lazyload.min.js"></script>
-    <script type="text/javascript" src="./assets/js/marked.umd.min.js"></script>
+
     <script type="text/javascript" src="./assets/js/view-image.min.js"></script>
     <script type="text/javascript" src="./assets/js/APlayer.min.js"></script>
     <script type="text/javascript" src="./assets/js/Meting.min.js"></script>
     <script type="text/javascript" src="./assets/js/moment.twitter.js"></script>
     <script type="text/javascript" src="./assets/js/highlight.min.js"></script>
-    <script type="text/javascript" src="./assets/js/main.js"></script>
+   
+   
     <script type="text/javascript" src="./assets/js/rssmerge.js"></script>
+    <script>
+        window.note = {
+            host: 'https://note.noisework.cn', // 修改为你的服务器地址
+            limit: '10',
+            domId: '#note',  // 修改选择器以匹配 DOM 结构
+            commentServer: 'https://ment.noisework.cn', // 修改为你的评论服务器地址
+            sourceName: '「说说笔记」' // 修改为你的源名称
+        };
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof marked !== 'undefined') {
+                marked.setOptions({
+                    breaks: true,
+                    gfm: true
+                });
+            }
+            
+            // 确保页面显示
+            showPage('note');
+            
+            // 手动触发 note.js 的初始化
+            if (typeof initializeNote === 'function') {
+                initializeNote();
+            }
+        });
+    </script>
 </body>
 
+</html>
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+<!-- 确保在 note.js 之前引入 -->
+<script src="./assets/js/note.js"></script> 
 </html>

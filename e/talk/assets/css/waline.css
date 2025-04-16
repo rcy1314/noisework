@@ -6,9 +6,9 @@
     --waline-theme-color: #324363;
     --waline-active-color: #577bbe;
     
-    --waline-bg-color: #1e1d1d00;
+    --waline-bg-color: rgba(19, 21, 23, 0.763); /* 修改为黑色透明 */
    
-    --waline-bg-color-hover: #f3e6e6;
+    --waline-bg-color-hover: rgba(0,0,0,0.85); 
     --waline-border-color: #f2ecec85;
     --waline-disable-bg-color: #100f0f32;
     --waline-disable-color: #000;
