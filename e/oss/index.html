@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>编程猫CDN上传</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3266fc;
+            --secondary: #25d366;
+            --hover: #1f4dca;
+        }
+
+        body {
+            background: transparent;
+            font-family: 'Segoe UI', system-ui;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .upload-card {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .drag-area {
+            border: 3px dashed #e0e0e0;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            background: #f8f9fa;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .drag-area.active {
+            border-color: var(--primary);
+            background: rgba(50,102,252,0.05);
+        }
+
+        .drag-area i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .drag-area:hover i {
+            transform: translateY(-5px);
+        }
+
+        .file-name {
+            color: #666;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .upload-btn, .submit-btn {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .upload-btn {
+            background: linear-gradient(135deg, var(--primary) 0%, #254dca 100%);
+            color: white;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--secondary) 0%, #1bac55 100%);
+            color: white;
+        }
+
+        .upload-btn:hover, .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        #sjurl {
+            width: 100%;
+            padding: 12px;
+            margin-top: 1.5rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.9);
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        #sjurl:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+
+        #tips {
+            text-align: center;
+            margin-top: 1rem;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .progress-wave {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 15px,
+                rgba(255,255,255,0.3) 15px,
+                rgba(255,255,255,0.3) 30px
+            );
+            animation: wave 2s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes wave {
+            0% { background-position: 0 0; }
+            100% { background-position: 60px 0; }
+        }
+    </style>
+</head>
+<body>
+<div class="upload-card">
+    <div id="app">
+        <div class="content" id="fil">
+            <div class="drag-area">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <div class="file-name" id="filename">拖放文件上传</div>
+                <div class="progress-wave"></div>
+            </div>
+            
+            <div class="button-group">
+                <button class="upload-btn" onclick="document.getElementById('files').click()">
+                    <i class="fas fa-folder-open"></i>
+                    选择文件
+                </button>
+                <button class="submit-btn" onclick="tourl()">
+                    <i class="fas fa-paper-plane"></i>
+                    开始上传
+                </button>
+            </div>
+
+            <input type="file" id="files" style="display:none;" />
+            <input type="text" readonly id="sjurl" onclick="copyUrl1()">
+            <p id="tips"></p>
+        </div>
+    </div>
+</div>
+
+<script src="https://static2.pgaot.com/Assets/js/jquery-2.2.4.min.js"></script>
+<script>
+    let currentFile = null;
+
+    $("#fil").on({
+        "dragenter": function(e) {
+            e.preventDefault();
+        },
+        "dragover": function(e) {
+            $(this).addClass('active');
+            e.preventDefault();
+        },
+        "dragleave": function(e) {
+            $(this).removeClass('active');
+            e.preventDefault();
+        },
+        "drop": function(e) {
+            e.preventDefault();
+            $(this).removeClass('active');
+            currentFile = e.originalEvent.dataTransfer.files[0];
+            updateFilename(currentFile.name);
+            $("#files").prop("files", e.originalEvent.dataTransfer.files);
+        }
+    });
+
+    $('#files').change(function(e) {
+        currentFile = this.files[0];
+        updateFilename(currentFile.name);
+    });
+
+    function updateFilename(name) {
+        $('#filename').text(name || '拖放文件或点击上传');
+        $('.progress-wave').css('opacity', name ? 0.3 : 0);
+    }
+
+    function tourl() {
+        if (!currentFile) {
+            showTip('请先选择要上传的文件!', 'tomato');
+            return;
+        }
+
+        let data = new FormData();
+        data.append('file', currentFile);
+        $('.progress-wave').css('opacity', 0.7);
+        
+        $.ajax({
+            type: 'post',
+            url: "https://api.pgaot.com/user/up_cat_file",
+            cache: false,
+            processData: false,
+            contentType: false,
+            data: data,
+            success: data => {
+                let json = JSON.parse(data);
+                $('.progress-wave').css('opacity', 0);
+                
+                if (json.url) {
+                    $('#sjurl').val(json.url);
+                    showTip('上传成功 ✓ 点击输入框复制链接', 'var(--secondary)');
+                    updateFilename();
+                    $('#files').val('');
+                    currentFile = null;
+                } else {
+                    showTip(json.msg || '上传失败，请重试', 'tomato');
+                }
+            },
+            error: () => {
+                $('.progress-wave').css('opacity', 0);
+                showTip('上传失败，请检查网络', 'tomato');
+            }
+        });
+    }
+
+    function copyUrl1() {
+        if ($('#sjurl').val()) {
+            navigator.clipboard.writeText($('#sjurl').val());
+            showTip('链接已复制到剪贴板!', 'var(--primary)');
+        }
+    }
+
+    function showTip(message, color) {
+        $('#tips').text(message).css('color', color).css('opacity', 1).css('transform', 'translateY(0)');
+        setTimeout(() => {
+            $('#tips').css('opacity', 0).css('transform', 'translateY(10px)');
+        }, 2000);
+    }
+</script>
+</body>
+</html>

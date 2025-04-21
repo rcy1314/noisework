@@ -362,14 +362,6 @@ body::-webkit-scrollbar {
     transition: max-height 0.3s ease-in-out;
 }
 
-.rssmergecard-description img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px 0;
-    border-radius: 6px;
-}
-
 /* 媒体容器样式 */
 .note-container .video-wrapper,
 .note-container .music-wrapper,
@@ -575,6 +567,20 @@ body::-webkit-scrollbar {
     justify-content: space-between;
     align-items: center;
 }
+.medium-zoom-image--opened {
+    display: block;
+    margin: 0 auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    max-width: 96vw;
+    max-height: 96vh;
+    z-index: 1001;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45);
+    background: transparent;
+}
+
 
 .comment-button {
     cursor: pointer;
@@ -608,22 +614,10 @@ body::-webkit-scrollbar {
     text-decoration: underline;
 }
 
-.zoom-image {
-    cursor: zoom-in;
-    transition: transform 0.3s ease-in-out;
-}
 
-.zoom-image:hover {
-    transform: scale(1.02);
-}
 
-.medium-zoom-overlay {
-    z-index: 999;
-}
 
-.medium-zoom-image--opened {
-    z-index: 1000;
-}
+
 
 .video-wrapper {
     height: 0;

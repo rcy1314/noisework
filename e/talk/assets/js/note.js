@@ -444,3 +444,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // 将filterByTag函数暴露到全局作用域
     window.filterByTag = filterByTag;
 });
+const zoomImages = document.querySelectorAll('.zoom-image');
+
+if (typeof mediumZoom === 'function') {
+    const zoomInstance = mediumZoom(zoomImages, {
+        margin: 24,
+        background: 'rgba(0, 0, 0, 0.9)',
+        scrollOffset: 0,
+    });
+
+    zoomInstance.on('open', (event) => {
+        console.log('图片已打开');
+        event.target.addEventListener('click', () => {
+            zoomInstance.close();
+        }, { once: true });
+    });
+
+    zoomInstance.on('close', () => {
+        console.log('图片已关闭');
+    });
+}

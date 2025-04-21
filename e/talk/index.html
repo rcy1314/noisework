@@ -50,9 +50,6 @@
             margin: 0;
             /* 去除顶部空隙 */
         }
-
-        
-
         
 
 /* 信息流卡片样式 */
@@ -299,9 +296,6 @@
             z-index: 2;
             /* 确保在其他元素之上 */
         }
-
-       
-
         .comment-box {
             margin-top: 0px;
             padding: 0px;
@@ -365,8 +359,6 @@
         .active {
             display: block;
         }
-
-        /* Mobile specific styles */
       
     </style>
 </head>
@@ -644,13 +636,21 @@
 
     <!-- 页面初始化不加载聚合页 -->
     <script>
-        function showPage(pageName) {
-            if (pageName === 'rssmerge') {
-                // 确保只加载一次
-                if (!document.querySelector('#rssmerge').classList.contains('loaded')) {
-                    loadRSSMergeContent();
-                }
+       // 在页面加载时就预加载rssmerge.js
+    document.addEventListener('DOMContentLoaded', function() {
+        const preloadScript = document.createElement('link');
+        preloadScript.rel = 'preload';
+        preloadScript.href = './assets/js/rssmerge.js';
+        preloadScript.as = 'script';
+        document.head.appendChild(preloadScript);
+    });
+
+    function showPage(pageName) {
+        if (pageName === 'rssmerge') {
+            if (!window.rssMergeLoaded) {
+                loadRSSMergeContent();
             }
+        }
             // 显示相应页面
             document.querySelectorAll('.page').forEach(page => {
                 if (page.id === pageName) {
@@ -662,20 +662,25 @@
         }
 
         function loadRSSMergeContent() {
-            // 动态加载 JavaScript 文件
+        const container = document.querySelector('#rss-cards');
+       
+
+        // 使用缓存策略
+        if (!window.rssMergeLoaded) {
             const jsScript = document.createElement('script');
-            jsScript.src = './assets/js/rssmerge.js';
-            jsScript.onload = function () {
-                // JavaScript 加载完成后，执行初始化函数
+            jsScript.src = './assets/js/rssmerge.js?v=' + Date.now();
+            jsScript.async = true;
+            jsScript.onload = function() {
+                window.rssMergeLoaded = true;
                 if (typeof initializeRSSMerge === 'function') {
-                    initializeRSSMerge();
+                    initializeRSSMerge(1); // 分页加载第一页
                 }
             };
             document.body.appendChild(jsScript);
-
-            // 标记为已加载
-            document.querySelector('#rssmerge').classList.add('loaded');
+        } else if (typeof initializeRSSMerge === 'function') {
+            initializeRSSMerge(1);
         }
+    }
 
     </script>
 <script type="module">
