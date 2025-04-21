@@ -142,6 +142,18 @@
             opacity: 0;
         }
 
+        .history-section {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .history-item {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+
         @keyframes wave {
             0% { background-position: 0 0; }
             100% { background-position: 60px 0; }
@@ -172,6 +184,11 @@
             <input type="file" id="files" style="display:none;" />
             <input type="text" readonly id="sjurl" onclick="copyUrl1()">
             <p id="tips"></p>
+            
+            <div class="history-section">
+                <h3 style="color: var(--primary); margin-bottom: 10px;">上传历史</h3>
+                <div id="history-list" style="max-height: 200px; overflow-y: auto;"></div>
+            </div>
         </div>
     </div>
 </div>
@@ -179,6 +196,11 @@
 <script src="https://static2.pgaot.com/Assets/js/jquery-2.2.4.min.js"></script>
 <script>
     let currentFile = null;
+
+    // 初始化页面时加载历史记录
+    $(document).ready(function() {
+        renderHistory();
+    });
 
     $("#fil").on({
         "dragenter": function(e) {
@@ -237,6 +259,9 @@
                     showTip('上传成功 ✓ 点击输入框复制链接', 'var(--secondary)');
                     updateFilename();
                     $('#files').val('');
+                    
+                    // 保存上传记录
+                    addToUploadHistory(json.url, currentFile.name);
                     currentFile = null;
                 } else {
                     showTip(json.msg || '上传失败，请重试', 'tomato');
@@ -261,6 +286,57 @@
         setTimeout(() => {
             $('#tips').css('opacity', 0).css('transform', 'translateY(10px)');
         }, 2000);
+    }
+
+    // 添加上传记录到本地存储
+    function addToUploadHistory(url, filename) {
+        const history = JSON.parse(localStorage.getItem('uploadHistory') || '[]');
+        history.unshift({
+            url: url,
+            filename: filename,
+            timestamp: new Date().toISOString()
+        });
+        
+        // 限制最多保存20条记录
+        if (history.length > 20) {
+            history.pop();
+        }
+        
+        localStorage.setItem('uploadHistory', JSON.stringify(history));
+        renderHistory();
+    }
+
+    // 渲染历史记录
+    function renderHistory() {
+        const history = JSON.parse(localStorage.getItem('uploadHistory') || '[]');
+        const historyList = $('#history-list');
+        
+        if (history.length > 0) {
+            $('.history-section').show();
+            historyList.empty();
+            
+            history.forEach(item => {
+                const historyItem = $(`
+                    <div class="history-item">
+                        <span title="${item.filename}" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 60%;">
+                            ${item.filename}
+                        </span>
+                        <span style="color: var(--primary); cursor: pointer;" onclick="copyHistoryUrl('${item.url}')">
+                            复制链接
+                        </span>
+                    </div>
+                `);
+                historyList.append(historyItem);
+            });
+        } else {
+            $('.history-section').hide();
+        }
+    }
+
+    // 复制历史记录中的URL
+    function copyHistoryUrl(url) {
+        navigator.clipboard.writeText(url);
+        showTip('链接已复制到剪贴板!', 'var(--primary)');
     }
 </script>
 </body>
