@@ -152,6 +152,31 @@
             border-bottom: 1px solid #eee;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+        }
+
+        .history-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .history-copy {
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        .history-delete {
+            color: #ff4d4f;
+            cursor: pointer;
+        }
+
+        .clear-all-btn {
+            background: none;
+            border: none;
+            color: #ff4d4f;
+            cursor: pointer;
+            font-size: 12px;
+            padding: 0;
         }
 
         @keyframes wave {
@@ -186,7 +211,12 @@
             <p id="tips"></p>
             
             <div class="history-section">
-                <h3 style="color: var(--primary); margin-bottom: 10px;">上传历史</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <h3 style="color: var(--primary); margin: 0;">上传历史</h3>
+                    <button class="clear-all-btn" onclick="clearAllHistory()">
+                        <i class="fas fa-trash-alt"></i> 清除全部
+                    </button>
+                </div>
                 <div id="history-list" style="max-height: 200px; overflow-y: auto;"></div>
             </div>
         </div>
@@ -315,15 +345,20 @@
             $('.history-section').show();
             historyList.empty();
             
-            history.forEach(item => {
+            history.forEach((item, index) => {
                 const historyItem = $(`
                     <div class="history-item">
                         <span title="${item.filename}" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 60%;">
                             ${item.filename}
                         </span>
-                        <span style="color: var(--primary); cursor: pointer;" onclick="copyHistoryUrl('${item.url}')">
-                            复制链接
-                        </span>
+                        <div class="history-actions">
+                            <span class="history-copy" onclick="copyHistoryUrl('${item.url}')">
+                                <i class="fas fa-copy"></i>
+                            </span>
+                            <span class="history-delete" onclick="removeHistoryItem(${index})">
+                                <i class="fas fa-trash"></i>
+                            </span>
+                        </div>
                     </div>
                 `);
                 historyList.append(historyItem);
@@ -337,6 +372,28 @@
     function copyHistoryUrl(url) {
         navigator.clipboard.writeText(url);
         showTip('链接已复制到剪贴板!', 'var(--primary)');
+    }
+
+    // 删除单个历史记录
+    function removeHistoryItem(index) {
+        if (confirm('确定要删除这条记录吗？')) {
+            const history = JSON.parse(localStorage.getItem('uploadHistory') || '[]');
+            if (index >= 0 && index < history.length) {
+                history.splice(index, 1);
+                localStorage.setItem('uploadHistory', JSON.stringify(history));
+                renderHistory();
+                showTip('已删除记录', 'var(--primary)');
+            }
+        }
+    }
+
+    // 清除全部历史记录
+    function clearAllHistory() {
+        if (confirm('确定要清除所有上传历史记录吗？')) {
+            localStorage.removeItem('uploadHistory');
+            renderHistory();
+            showTip('已清除所有历史记录', 'var(--primary)');
+        }
     }
 </script>
 </body>
