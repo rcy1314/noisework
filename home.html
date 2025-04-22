@@ -947,63 +947,55 @@
 			});
 	</script>
 		<script>
-			// 使用 fetch API 请求每日60s URL
-			fetch('https://60s.viki.moe/60s?v2=1')
-				.then(response => response.json())
-				.then(data => {
-					// 检查data是否为null
-					if (data === null) {
-						// 如果data为null，显示默认错误消息
-						const contentDiv = document.querySelector('.content');
-						const p = document.createElement('p');
-						p.textContent = '请求失败，没有返回有效信息';
-						contentDiv.appendChild(p);
-					} else {
-						// 如果data不是null，检查status字段
-						if (data.status === 200) {
-							// 如果status是200，显示news字段的信息
-							const contentDiv = document.querySelector('.content');
-		
-							// 显示cover图像
-							if (data.data.cover) {
-								const img = document.createElement('img');
-								img.src = data.data.cover;
-								img.alt = 'Cover Image';
-								img.classList.add('cover-image'); // 添加一个类以便样式控制
-								contentDiv.appendChild(img);
-							}
-		
-							data.data.news.forEach(item => {
-								const p = document.createElement('p');
-								p.textContent = item;
-								contentDiv.appendChild(p);
-							});
-		
-							// 显示tip信息
-							const tipP = document.createElement('p');
-							tipP.textContent = data.data.tip;
-							contentDiv.appendChild(tipP);
-		
-							// 显示更多信息的链接
-							if (data.data.url) {
-								const linkA = document.createElement('a');
-								linkA.href = data.data.url;
-								linkA.textContent = '更多详情...';
-								linkA.target = '_blank';
-								contentDiv.appendChild(linkA);
-							}
-						} else {
-							// 如果status不是200，显示message字段的信息
-							const contentDiv = document.querySelector('.content');
-							const p = document.createElement('p');
-							p.textContent = data.message || '请求失败，没有返回有效信息';
-							contentDiv.appendChild(p);
-						}
-					}
-				})
-				.catch(error => {
-					console.error('请求出错:', error);
-				});
+// 使用 fetch API 请求每日60s URL
+fetch('https://60s-api.viki.moe/v2/60s?encoding=text')
+    .then(response => response.text()) // 修改为response.text()处理纯文本响应
+    .then(text => {
+        const contentDiv = document.querySelector('.content');
+        
+        // 清空现有内容
+        contentDiv.innerHTML = '';
+        
+        // 解析文本内容
+        const lines = text.split('\n').filter(line => line.trim()); // 分割文本并过滤空行
+        
+        if (lines.length > 0) {
+            // 添加标题（第一行）
+            const title = document.createElement('h3');
+            title.textContent = lines[0];
+            contentDiv.appendChild(title);
+            
+            // 添加新闻内容（从第二行开始）
+            for (let i = 1; i < lines.length; i++) {
+                const line = lines[i];
+                
+                // 检查是否是"微语"部分
+                if (line.startsWith('【微语】')) {
+                    const tipP = document.createElement('p');
+                    tipP.style.fontStyle = 'italic';
+                    tipP.style.color = '#666';
+                    tipP.textContent = line;
+                    contentDiv.appendChild(tipP);
+                } else {
+                    const p = document.createElement('p');
+                    p.textContent = line;
+                    contentDiv.appendChild(p);
+                }
+            }
+        } else {
+            // 如果没有内容，显示错误信息
+            const p = document.createElement('p');
+            p.textContent = '暂无每日新闻更新';
+            contentDiv.appendChild(p);
+        }
+    })
+    .catch(error => {
+        console.error('请求出错:', error);
+        const contentDiv = document.querySelector('.content');
+        const p = document.createElement('p');
+        p.textContent = '获取新闻数据失败，请稍后再试';
+        contentDiv.appendChild(p);
+    });
 		</script>
 		<style>
 			.cover-image {
