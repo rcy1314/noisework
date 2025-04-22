@@ -813,6 +813,13 @@
           clearMessage: true
         });
      </script>
-     <script defer src="js/mouse-click.js"></script>
+     <script>
+        if (!/Android|webOS|iPhone|iPod|BlackBerry|iPad|Windows Phone/i.test(navigator.userAgent)) {
+          var script = document.createElement('script');
+          script.src = 'js/mouse-click.js';
+          script.defer = true;
+          document.head.appendChild(script);
+        }
+      </script>
 </body>
 </html>
