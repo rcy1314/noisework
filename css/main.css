@@ -7,11 +7,11 @@
   }
 
   /*鼠标小黑猫光标*/
-  button {cursor:url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/work.cur),alias}
-  p {cursor:url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/texto.cur),auto}
-  a {cursor:url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/ayuda.cur),auto}
-  a:active {cursor:url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/work.cur),alias}
-  body {cursor:url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/normal.cur),auto}
+  button {cursor:url(../assets/cursor/work.cur),alias}
+  p {cursor:url(../assets/cursor/texto.cur),auto}
+  a {cursor:url(../assets/cursor/ayuda.cur),auto}
+  a:active {cursor:url(../assets/cursor/work.cur),alias}
+  body {cursor:url(../assets/cursor/normal.cur),auto}
 
 
   body,
