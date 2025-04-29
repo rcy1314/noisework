@@ -230,7 +230,24 @@ self.addEventListener('fetch', function(event) {
     event.respondWith(lazyLoad(request));
   }
 });
-
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      if (response) {
+        // 添加压缩响应头
+        const headers = new Headers(response.headers);
+        headers.set('Content-Encoding', 'gzip');
+        
+        return new Response(response.body, {
+          status: response.status,
+          statusText: response.statusText,
+          headers: headers
+        });
+      }
+      return fetch(event.request);
+    })
+  );
+});
 function fetchAndCache(request) {
   return fetch(request).then(function(networkResponse) {
     return caches.open(cacheName).then(function(cache) {

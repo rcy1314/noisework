@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="css/fira_code.css">
     <script src="https://cdn.staticfile.net/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.net/layer/3.1.1/layer.js"></script>
-    <script src="js/fetch.min.js"></script>
-    <script src="js/axios.min.js"></script>
-    <script src="js/parallax.min.js"></script>
+    <script src="js/fetch.min.js" defer></script>
+<script src="js/axios.min.js" defer></script>
+<script src="js/parallax.min.js" defer></script>
     <link rel="stylesheet" type="text/css" href="css/flotext.css">
     <script src="js/flotext.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/loading.css"> 
@@ -77,26 +77,15 @@
         }
 
         async function loadScriptBasedOnDetection() {
-            const isLagging = await detectPageLag();
-            const hasAcceleration = hasWebGL();
-
-            if (isLagging || !hasAcceleration) {
-                // 卡顿或无图形加速
-                const script = document.createElement('script');
-                script.src = 'js/lowmain.js';
-                script.async = true; // 确保异步加载
-                document.head.appendChild(script);
-            } else {
-                // 无卡顿且有图形加速
-                const script = document.createElement('script');
-                script.src = 'js/main.js';
-                script.async = true; // 确保异步加载
-                document.head.appendChild(script);
-            }
-        }
-
-        // 立即执行检测
-        loadScriptBasedOnDetection();
+    // 简化检测逻辑，避免长时间阻塞
+    const hasAcceleration = hasWebGL();
+    const script = document.createElement('script');
+    script.src = hasAcceleration ? 'js/main.js' : 'js/lowmain.js';
+    script.async = true;
+    document.head.appendChild(script);
+}
+// 立即执行检测
+loadScriptBasedOnDetection();
     </script>
 </head>
 <body>
@@ -199,14 +188,13 @@
     <!-- 添加Service Worker -->
     <script>
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }).catch(function(error) {
-                    console.log('ServiceWorker registration failed: ', error);
-                });
-            });
-        }
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js', {
+            scope: '/',
+            updateViaCache: 'none'
+        }).catch(console.error);
+    });
+}
     </script>
     <div class="node" id="node"></div>
     <div class="cursor" id="cursor"></div>
@@ -277,7 +265,7 @@
                     </div>
                 </a>
                <!-- 弹出效果 -->
-               <a href="#" onclick="showImage2()">
+               <a href="javascript:void(0)" style="color: white; text-decoration: none;" onclick="showImage2(); return false;">
                 <div class="item" style="--color:rgba(0, 102, 255,0.3)">
                     <div class="bg" style="background-color:rgb(0, 102, 255)"></div>
                     <div class="inner"> <i class="fa-brands fa-weixin"></i><span>公众号</span></div>
@@ -303,7 +291,7 @@
                     </div>
                 </a>
                 <!-- 弹出效果 -->
-                <a href="#" onclick="showImage1()">
+                <a href="javascript:void(0)" style="color: white; text-decoration: none;" onclick="showImage1(); return false;">
                     <div class="item" style="--color:rgba(35, 45, 55,0.3)">
                         <div class="bg" style="background-color: rgb(43, 41, 41);"></div>
                         <div class="inner"> <i class="fa-brands fa-weixin"></i><span>微信号</span></div>
@@ -704,15 +692,8 @@
                      <!-- 说说卡片 -->   
                      <link rel="stylesheet" href="./css/card-styles.css">                 
                      <link rel="stylesheet" href="./css/expand-card.css">
-                     <base target="_blank">
                      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
                      <script src="https://unpkg.com/medium-zoom/dist/medium-zoom.min.js"></script>
-                     <!-- 添加代码高亮支持 -->
-                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
-                     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
-                     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
-                     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
-                     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
                      <!-- 预加载关键资源 -->
                      <link rel="preload" href="./js/note.js" as="script">
                      <link rel="preload" href="./css/card-styles.css" as="style">
@@ -725,7 +706,7 @@
                                     </a>
                                     <div class="content-sec">
                                         <a href="https://note.noisework.cn/" target="_blank" class="note-title-link">
-                                            <h2 style="margin-bottom: 8px;">「说说笔记」</h2>
+                                            <h2 style="margin-bottom: 2px; font-size: 16px;">「说说笔记」</h2>
                                         </a>
                                         <span id="typewriter-text">右侧展开查看，双击可关闭卡片</span>
                                     </div>
@@ -894,6 +875,13 @@
           script.defer = true;
           document.head.appendChild(script);
         }
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+      <script>
+      function gzipCompress(data) {
+          const compressed = pako.gzip(JSON.stringify(data));
+          return btoa(String.fromCharCode.apply(null, compressed));
+      }
       </script>
 </body>
 </html>

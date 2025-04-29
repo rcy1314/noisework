@@ -19,15 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-// 确保所有链接在新标签页打开
-document.addEventListener('DOMContentLoaded', function() {
-    document.addEventListener('click', function(e) {
-        const target = e.target.closest('a');
-        if (target && !target.hasAttribute('target')) {
-            target.setAttribute('target', '_blank');
-        }
-    });
-});
+
 function hideCardPermanently() {
     const card = document.getElementById('note-expand-card');
     const content = document.getElementById('expand-content');
