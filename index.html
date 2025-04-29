@@ -701,7 +701,81 @@
                         <p>本站已运行: <span id="days"></span></p>
                         <p> ღゝ◡╹ノ♡ <a href="https://www.noisework.cn">Noise主页</a></p>
                     </div>
-                    <!--向下滑动监听-->
+                     <!-- 说说卡片 -->   
+                     <link rel="stylesheet" href="./css/card-styles.css">                 
+                     <link rel="stylesheet" href="./css/expand-card.css">
+                     <base target="_blank">
+                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+                     <script src="https://unpkg.com/medium-zoom/dist/medium-zoom.min.js"></script>
+                     <!-- 添加代码高亮支持 -->
+                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+                     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+                     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+                     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+                     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+                     <!-- 预加载关键资源 -->
+                     <link rel="preload" href="./js/note.js" as="script">
+                     <link rel="preload" href="./css/card-styles.css" as="style">
+                     <div id="note-expand-card" class="expand-card-container delayed-slide-in">
+                        <div class="expand-card-stack float-animate" id="expand-card-stack" ondblclick="hideCardPermanently()">
+                            <div class="expand-card park-sec park-sec1">
+                                <div class="park-inside">
+                                    <a class="avatar-link" id="expand-avatar" title="查看说说">
+                                        <img src="https://s2.loli.net/2025/03/24/HnSXKvibAQlosIW.png" alt="">
+                                    </a>
+                                    <div class="content-sec">
+                                        <a href="https://note.noisework.cn/" target="_blank" class="note-title-link">
+                                            <h2 style="margin-bottom: 8px;">「说说笔记」</h2>
+                                        </a>
+                                        <span id="typewriter-text">右侧展开查看，双击可关闭卡片</span>
+                                    </div>
+                                </div>
+                                <span class="date" id="expand-toggle-btn">展开 <span class="expand-arrow">▼</span></span>
+                            </div>
+                            <div class="expand-card park-sec park-sec2"></div>
+                            <div class="expand-card park-sec park-sec3"></div>
+                        </div>
+                         <div id="expand-content" style="display:none;">
+                             <div id="note">
+                                 <div class="note-header">
+                                     <div class="search-container">
+                                         <input type="text" id="tag-search" placeholder="搜索标签 #..." />
+                                         <button id="search-btn" target="_self">搜索</button>
+                                     </div>
+                                 </div>
+                                 <div class="note-container">
+                                     <div class="loading-wrapper">加载中...</div>
+                                 </div>
+                             </div>                        
+                         <div class="expand-bottom-divider"></div>
+                     </div>
+                     <!-- 确保所有脚本在内容加载后执行 -->
+                     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+                     <script src="./js/expand-card.js"></script>
+                     <script src="./js/jquery-3.2.1.js"></script>
+                     <script>
+                         window.note = {
+                             host: 'https://note.noisework.cn',
+                             limit: '10',
+                             domId: '#note',
+                             sourceName: '「说说笔记」',
+                             loadingTimeout: 10000  // 添加加载超时时间配置
+                         };
+                         // 添加加载超时处理
+                         setTimeout(() => {
+                             const loadingWrapper = document.querySelector('.loading-wrapper');
+                             if (loadingWrapper && loadingWrapper.style.display !== 'none') {
+                                 loadingWrapper.textContent = '加载失败，请刷新重试';
+                             }
+                         }, window.note.loadingTimeout);
+                         
+                         marked.setOptions({
+                             breaks: true,
+                             gfm: true,
+                         }); 
+                     </script>
+                     <script src="./js/note.js"></script>
+                <!--向下滑动监听-->
                     <script>
                         window.addEventListener('DOMContentLoaded', (event) => {
                     var scrollDown = document.querySelector('.scroll-down');

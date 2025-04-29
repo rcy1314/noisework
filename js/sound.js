@@ -174,7 +174,7 @@ function addSoundToElements(selectors, sound) {
 }
 
 // 网址过渡音数组
-var elementsSelectors = ['.iconItem', '.item', '.projectItem','.project','.switchbg','.mobileswitchbg','.friendlinks-card','.bilibilititle-left','.bilibilititle-right','.menu-item','.hotcard','.menu-list li'];
+var elementsSelectors = ['.iconItem', '.item', '.projectItem','.project','.switchbg','.mobileswitchbg','.friendlinks-card','.bilibilititle-left','.bilibilititle-right','.menu-item','.hotcard','.menu-list li','.expand-card'];
 addSoundToElements(elementsSelectors, websiteHoverSound);
 
 // 广告位元素选择器数组
@@ -240,7 +240,7 @@ function addSoundToElements(selectors, sound) {
 }
 
 // 要为floating-text类元素添加音效的选择器
-var floatingTextSelectors = ['.floating-text'];
+var floatingTextSelectors = ['.floating-text', '.avatar-link'];
 addSoundToElements(floatingTextSelectors, floatingTextHoverSound);
 
 // 页面加载音效

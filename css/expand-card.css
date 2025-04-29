@@ -1,0 +1,241 @@
+/* expand-card.css 用于实现顶部堆叠卡片的独立样式和动画 */
+body {
+  position: relative;
+}
+#note-expand-card.hidden {
+  display: none !important;
+}
+
+#expand-content.hidden {
+  display: none !important;
+}
+.expand-card-container {
+  position: fixed; /* 由 absolute 改为 fixed */
+  top: 80px;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 52vw;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.expand-card-stack {
+  position: relative;
+  width: 480px;
+  height: 120px;
+  transition: box-shadow 0.3s;
+  z-index: 2;
+  margin-right: 0;
+}
+.expand-card {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  border-radius: 32px;
+  background-color: #222222;
+    border-radius: 20px;
+  
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  transition: transform 0.4s cubic-bezier(.4,2,.6,1), box-shadow 0.4s;
+  overflow: hidden;
+}
+
+
+/* 添加新的滑入动画 */
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 添加延迟动画类 */
+.delayed-slide-in {
+  animation: slideIn 0.5s ease-out 2.5s forwards;
+  opacity: 0;
+}
+.park-sec1 { z-index: 3; transform: translateY(0) scale(1); }
+.park-sec2 { z-index: 2; transform: translateY(18px) scale(0.97); opacity: 0.7; }
+.park-sec3 { z-index: 1; transform: translateY(36px) scale(0.94); opacity: 0.5; }
+.expand-card .park-inside {
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+}
+.expand-card img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin-right: 18px;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.expand-card .content-sec h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f7f3f3;
+}
+.expand-card .content-sec span {
+  color: #888;
+  font-size: 1rem;
+}
+.expand-card .date {
+  margin-left: auto;
+  margin-right: 32px;
+  color: #f1f2f6;
+  font-size: 1.1rem;
+  background: rgba(0,0,0,0.18);
+  padding: 4px 16px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.expand-card-stack.expanded .park-sec1 {
+  transform: translateY(-20px) scale(1.04);
+  box-shadow: 0 16px 48px 0 rgba(31,38,135,0.22);
+}
+.expand-card-stack.expanded .park-sec2 {
+  transform: translateY(0) scale(1);
+  opacity: 0.85;
+}
+.expand-card-stack.expanded .park-sec3 {
+  transform: translateY(18px) scale(0.97);
+  opacity: 0.7;
+}
+.btn-grp {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  background: #ffffffb1;
+  color: #444444;
+  border: none;
+  border-radius: 32px;
+  padding: 16px 48px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px 0 rgba(31,38,135,0.10);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.btn:hover {
+  background-color: #222222;
+    border-radius: 20px;
+}
+.expand-arrow {
+  font-size: 1.2em;
+  margin-left: 8px;
+  transition: transform 0.3s;
+}
+/* 添加在适当位置 */
+#typewriter-text {
+  overflow: hidden;
+  border-right: 2px solid #333;
+  white-space: pre-wrap;
+  margin: 0 auto;
+  letter-spacing: 2px;
+  animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #333 }
+}
+#expand-content {
+  width: 500px;
+  margin: 0;
+  margin-top: 3px;
+  background: transparent;
+  border-radius: 24px;
+  box-shadow: none;
+  padding: 24px 0 0 0;
+  transition: max-height 0.5s cubic-bezier(.4,2,.6,1), opacity 0.5s;
+  max-height: 800px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  /* 隐藏滚动条，兼容主流浏览器 */
+  scrollbar-width: none; /* Firefox */
+}
+#expand-content::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Edge */
+}
+@media (max-width: 500px) {
+  .expand-card-stack, #expand-content {
+    width: 88vw;
+    min-width: 0;
+    max-width: 100vw;
+  }
+  .expand-card {
+    height: 80px;
+  }
+  .btn {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+  }
+  #expand-content {
+    max-height: 80vh;
+    scrollbar-width: none;
+  }
+  #expand-content::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.expand-bottom-divider {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #e0e0e0 30%, #bdbdbd 70%);
+  opacity: 0.7;
+  z-index: 2;
+  margin-top: 24px;
+  border-radius: 1px;
+  pointer-events: none;
+}
+/* 上下浮动动画 */
+@keyframes float {
+  0% { transform: translateY(0);}
+  50% { transform: translateY(-18px);}
+  100% { transform: translateY(0);}
+}
+.float-animate {
+  animation: float 2.8s ease-in-out infinite;
+}
+
+#note-expand-card .avatar-link img {
+  transition: transform 0.25s cubic-bezier(.4,2,.6,1);
+}
+#note-expand-card .avatar-link img:hover {
+  transform: scale(1.18);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+#note-expand-card .note-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 600px) {
+  #note-expand-card {
+    display: none !important;
+  }
+}
