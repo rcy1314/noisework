@@ -23,10 +23,10 @@
     <script src="js/fetch.min.js" defer></script>
 <script src="js/axios.min.js" defer></script>
 <script src="js/parallax.min.js" defer></script>
-    <link rel="stylesheet" type="text/css" href="css/flotext.css">
+<link rel="stylesheet" href="css/flotext.css" media="print" onload="this.media='all'">
     <script src="js/flotext.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/loading.css"> 
-    <link rel="stylesheet" href="css/tab.css">
+    <link rel="stylesheet" href="css/tab.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/AD.css">
     <!--  <link rel="stylesheet" href="css/Text.css">-->
     <link rel="stylesheet" href="css/rss.css">
@@ -158,42 +158,18 @@ loadScriptBasedOnDetection();
     <div id="spinner-container">
         <div class="spinner"></div>
     </div>
-    <!-- 弹窗信息提醒代码开始 -->
-    <script>
-    window.addEventListener('load', function() {
-        var currentTime = new Date().getHours();
-        var greeting;
-        if (currentTime < 5) {
-            greeting = "凌晨好！";
-        } else if (currentTime < 8) {
-            greeting = "早上好！";
-        } else if (currentTime < 11) {
-            greeting = "上午好！";
-        } else if (currentTime < 13) {
-            greeting = "中午好！";
-        } else if (currentTime < 18) {
-            greeting = "下午好！";
-        } else if (currentTime < 19) {
-            greeting = "傍晚好！";
-        } else if (currentTime < 24) {
-            greeting = "晚上好！";
-        }
-     
-		layer.msg(greeting + "👏欢迎你的访问！");
-    });
-    </script>
-    <!-- 弹窗信息提醒代码结束 -->
      <!-- 底层背景 -->
     <div id="low-bg"></div>
     <!-- 添加Service Worker -->
     <script>
         if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
+    // 延迟注册Service Worker
+    setTimeout(function() {
         navigator.serviceWorker.register('/service-worker.js', {
             scope: '/',
             updateViaCache: 'none'
         }).catch(console.error);
-    });
+    }, 2000);
 }
     </script>
     <div class="node" id="node"></div>
@@ -884,4 +860,29 @@ loadScriptBasedOnDetection();
       }
       </script>
 </body>
+ <!-- 弹窗信息提醒代码开始 -->
+ <script>
+    window.addEventListener('load', function() {
+        var currentTime = new Date().getHours();
+        var greeting;
+        if (currentTime < 5) {
+            greeting = "凌晨好！";
+        } else if (currentTime < 8) {
+            greeting = "早上好！";
+        } else if (currentTime < 11) {
+            greeting = "上午好！";
+        } else if (currentTime < 13) {
+            greeting = "中午好！";
+        } else if (currentTime < 18) {
+            greeting = "下午好！";
+        } else if (currentTime < 19) {
+            greeting = "傍晚好！";
+        } else if (currentTime < 24) {
+            greeting = "晚上好！";
+        }
+     
+		layer.msg(greeting + "👏欢迎你的访问！");
+    });
+    </script>
+    <!-- 弹窗信息提醒代码结束 -->
 </html>
