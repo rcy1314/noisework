@@ -34,15 +34,15 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@petercatai/assistant@1.0.7/dist/umd/assistant.min.css">
 	<!-- 添加Service Worker -->
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }).catch(function(error) {
-                    console.log('ServiceWorker registration failed: ', error);
-                });
-            });
-        }
+         if ('serviceWorker' in navigator) {
+    // 延迟注册Service Worker
+    setTimeout(function() {
+        navigator.serviceWorker.register('/service-worker.js', {
+            scope: '/',
+            updateViaCache: 'none'
+        }).catch(console.error);
+    }, 2000);
+}
     </script>
 </head>
 <body>
@@ -222,7 +222,7 @@
 				</ul>
 			</div>
 			<!-- B站收藏结束-->
-			<!-- 云盘资源-->
+			<!-- 云盘资源
 			<div class="left-div left-time" id="panContainer">
 				<ul id="line">
 					<div class="container">
@@ -232,7 +232,7 @@
 					<div class="ziyuan"></div>
 				</ul>
 			</div>
-			<!-- 云盘资源结束-->
+			 云盘资源结束-->
 			<!-- 视频播放 -->
 			<div class="left-div left-time">
 				<ul id="line5">
@@ -256,7 +256,7 @@
 						</ul>
 						</div>
 						<!-- 视频播放结束 -->
-						<!-- 60秒读懂世界-->
+						<!-- 60秒读懂世界
 						<div class="left-div left-time" id="worldContainer">
 							<ul id="line6">
 								<div class="container">
@@ -265,7 +265,7 @@
 										<div class="content"></div>
 							</ul>
 						</div>
-						<!-- 60秒读懂世界结束-->
+						 60秒读懂世界结束-->
 						<!-- 摸鱼日历-->
 			<div class="left-div left-time" id="moyuContainer">
 				<ul id="line2">
@@ -1013,7 +1013,7 @@ fetch('https://60s-api.viki.moe/v2/60s?encoding=text')
 			checkLink("https://www.pan.noisework.cn/api/search", "panContainer");
 
 			// 监听60秒读懂世界链接
-			checkLink("https://60s.viki.moe/60s?v2=1", "worldContainer");
+			checkLink("https://60s-api.viki.moe/v2/60s?encoding=text", "worldContainer");
 
 			// 监听摸鱼日历链接
 			checkLink("https://dayu.qqsuu.cn/moyurili/apis.php", "moyuContainer");
