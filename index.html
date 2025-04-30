@@ -162,8 +162,17 @@ loadScriptBasedOnDetection();
     <div id="low-bg"></div>
     <!-- 添加Service Worker -->
     <script>
+     // 延迟注册Service Worker
+    if ('serviceWorker' in navigator) {
+    setTimeout(function() {
+        navigator.serviceWorker.register('service-worker.js', {
+            scope: '/',
+            updateViaCache: 'none'
+        }).catch(console.error);
+    }, 2000);
+}
         // 延迟到页面加载完成后再注册 Service Worker
-        if ('serviceWorker' in navigator) {
+        /*if ('serviceWorker' in navigator) {
           window.addEventListener('load', function() {
             navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
               registration.onupdatefound = function() {
@@ -179,7 +188,7 @@ loadScriptBasedOnDetection();
               };
             });
           });
-        }
+        }*/
     </script>
     <div class="node" id="node"></div>
     <div class="cursor" id="cursor"></div>

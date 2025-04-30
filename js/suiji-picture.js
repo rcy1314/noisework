@@ -58,6 +58,8 @@ var foregroundUrls = [
     'assets/suijpic/0008.webp',
     'assets/suijpic/0010.webp',
     'assets/suijpic/0011.webp',
+    'assets/suijpic/人物51.567n54xp81s0.webp',
+    'assets/suijpic/人物52.567n54xp81s0.webp',
     // 这里添加随机前景人物图-添加更多图片URL.
 ];
 

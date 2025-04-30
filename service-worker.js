@@ -163,6 +163,8 @@ var assetsToCache = [
   './assets/suijpic/0008.webp',
   './assets/suijpic/0010.webp',
   './assets/suijpic/0011.webp',
+  './assets/suijpic/人物51.567n54xp81s0.webp',
+  './assets/suijpic/人物52.567n54xp81s0.webp',
 
   './assets/bg/bg1.png',
   './assets/bg/bg2.png',
@@ -189,7 +191,7 @@ var assetsToCache = [
  
   // 添加您需要缓存的其他静态资源
 ];
-
+// 安装阶段：缓存静态资源
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(cacheName).then(function(cache) {
@@ -204,10 +206,10 @@ self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
       return Promise.all(
-        cacheNames.filter(function(name) {
-          return name !== cacheName;
-        }).map(function(name) {
-          return caches.delete(name);
+        cacheNames.map(function(name) {
+          if (name !== cacheName) {
+            return caches.delete(name);
+          }
         })
       );
     })
@@ -215,48 +217,32 @@ self.addEventListener('activate', function(event) {
   self.clients.claim();
 });
 
+// fetch 阶段：缓存优先，网络兜底，自动缓存新资源
 self.addEventListener('fetch', function(event) {
-  var request = event.request;
-
-  if (request.method !== 'GET') {
-    event.respondWith(fetch(request));
-    return;
-  }
-
-  if (isCriticalRequest(request)) {
-    // 关键页面缓存优先，网络兜底并自动缓存
-    event.respondWith(
-      caches.match(request).then(function(response) {
-        return response || fetchAndCache(request);
-      })
-    );
-  } else {
-    // 其他资源网络优先，失败兜底缓存
-    event.respondWith(lazyLoad(request));
-  }
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      if (response) {
+        return response; // 命中缓存，直接返回
+      }
+      // 未命中缓存，走网络并自动缓存
+      return fetch(event.request).then(function(networkResponse) {
+        if (
+          !networkResponse || 
+          networkResponse.status !== 200 || 
+          networkResponse.type !== 'basic'
+        ) {
+          return networkResponse;
+        }
+        // 克隆响应流，缓存副本
+        var responseToCache = networkResponse.clone();
+        caches.open(cacheName).then(function(cache) {
+          cache.put(event.request, responseToCache);
+        });
+        return networkResponse;
+      });
+    })
+  );
 });
-
-function fetchAndCache(request) {
-  return fetch(request).then(function(networkResponse) {
-    return caches.open(cacheName).then(function(cache) {
-      cache.put(request, networkResponse.clone());
-      return networkResponse;
-    });
-  }).catch(function() {
-    return caches.match('/index.html');
-  });
-}
-
-function isCriticalRequest(request) {
-  // 可根据实际情况调整关键页面路径
-  return request.url.includes('/home');
-}
-
-function lazyLoad(request) {
-  return fetch(request).catch(function() {
-    return caches.match(request);
-  });
-}
 
 // 可选：缓存清理和性能监控（开发调试时用）
 // function cleanUpCache() { ... }
