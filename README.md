@@ -37,7 +37,8 @@
 <summary><h2>✅ 更新状况【点击查看】</h2></summary>
 
 
-- 首页增加说说笔记卡片，优化css及js的加载逻辑
+- 对pwa（service-worker.js）开启延迟注册，并开启压缩
+- 首页增加说说笔记卡片，优化css及js的加载逻辑，配置请访问https://docs.noisework.cn/guide/shuoshuo
 - 调整小黑猫鼠标为本地引入，调整点击特效仅在非移动端下生效
 - 添加鼠标点击效果
 - 重新设计了公共服务页UI，添加部署在云服务器中的热榜API服务并更换热榜数据API
