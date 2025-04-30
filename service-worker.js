@@ -1,4 +1,4 @@
-var cacheName = 'Noise主页-v2.21';
+var cacheName = 'Noise主页-v2.22-20250430-1200';
 var assetsToCache = [
   './assets/sound/鼠点左1.mp3',
   './assets/sound/鼠点左2.mp3',
@@ -182,7 +182,7 @@ var assetsToCache = [
   './assets/mobilebg/bg3.png',
   './assets/mobilebg/bg4.png',
   './assets/mobilebg/bg5.png',
-  './assets/mobilebgbg6.png',
+  './assets/mobilebg/bg6.png',
   './assets/mobilebg/bg7.png',
   './assets/mobilebg/bg8.png',
   './assets/mobilebg/bg9.png',
@@ -196,8 +196,10 @@ self.addEventListener('install', function(event) {
       return cache.addAll(assetsToCache);
     })
   );
+  self.skipWaiting();
 });
 
+// 激活阶段：清理旧缓存
 self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
@@ -210,6 +212,7 @@ self.addEventListener('activate', function(event) {
       );
     })
   );
+  self.clients.claim();
 });
 
 self.addEventListener('fetch', function(event) {
@@ -221,33 +224,18 @@ self.addEventListener('fetch', function(event) {
   }
 
   if (isCriticalRequest(request)) {
+    // 关键页面缓存优先，网络兜底并自动缓存
     event.respondWith(
       caches.match(request).then(function(response) {
         return response || fetchAndCache(request);
       })
     );
   } else {
+    // 其他资源网络优先，失败兜底缓存
     event.respondWith(lazyLoad(request));
   }
 });
-self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      if (response) {
-        // 添加压缩响应头
-        const headers = new Headers(response.headers);
-        headers.set('Content-Encoding', 'gzip');
-        
-        return new Response(response.body, {
-          status: response.status,
-          statusText: response.statusText,
-          headers: headers
-        });
-      }
-      return fetch(event.request);
-    })
-  );
-});
+
 function fetchAndCache(request) {
   return fetch(request).then(function(networkResponse) {
     return caches.open(cacheName).then(function(cache) {
@@ -260,7 +248,8 @@ function fetchAndCache(request) {
 }
 
 function isCriticalRequest(request) {
-  return request.url.includes('/home/');
+  // 可根据实际情况调整关键页面路径
+  return request.url.includes('/home');
 }
 
 function lazyLoad(request) {
@@ -269,54 +258,8 @@ function lazyLoad(request) {
   });
 }
 
-function cleanUpCache() {
-  caches.keys().then(function(cacheNames) {
-    cacheNames.forEach(function(cacheName) {
-      caches.open(cacheName).then(function(cache) {
-        cache.keys().then(function(keys) {
-          keys.forEach(function(key) {
-            // 根据需求实现清理逻辑，例如基于最后修改时间或大小
-          });
-        });
-      });
-    });
-  });
-}
-
-function monitorPerformance() {
-  self.performance = self.performance || {};
-  self.performance.timing = performance.timing;
-  self.performance.navigation = performance.navigation;
-
-  // 记录缓存命中情况
-  self.addEventListener('fetch', function(event) {
-    if (event.request.method === 'GET') {
-      event.respondWith(
-        caches.match(event.request).then(function(response) {
-          if (response) {
-            self.performance.cacheHits = self.performance.cacheHits || 0;
-            self.performance.cacheHits++;
-          } else {
-            self.performance.cacheMisses = self.performance.cacheMisses || 0;
-            self.performance.cacheMisses++;
-          }
-          return response || fetch(event.request);
-        })
-      );
-    }
-  });
-}
-// 定时刷新缓存
-//setInterval(function() {
-//  updateCache();
-// }, 24 * 60 * 60 * 1000);
-
-//function updateCache() {
-//  assetsToCache.forEach(function(asset) {
-//    fetchAndCache(new Request(asset));
-//  });
-// }
-
-// 初始化性能监控和缓存清理
-monitorPerformance();
-cleanUpCache();
+// 可选：缓存清理和性能监控（开发调试时用）
+// function cleanUpCache() { ... }
+// function monitorPerformance() { ... }
+// cleanUpCache();
+// monitorPerformance();

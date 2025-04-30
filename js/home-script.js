@@ -314,25 +314,25 @@ window.addEventListener('load', function () {
 });
 
 //pc头像logo
-let images = ['../assets/logoDiv/logo10.gif',
-    '../assets/logoDiv/logo9.gif',
-    '../assets/logoDiv/logo7.gif',
-    '../assets/logoDiv/logo6.gif',
-    '../assets/logoDiv/logo5.gif',
-    '../assets/logoDiv/logo4.gif',
-    '../assets/logoDiv/logo3.gif',
-    '../assets/logoDiv/logo2.gif',
-    '../assets/logoDiv/logo1.gif',
-    '../assets/logoDiv/logo11.gif',
-    '../assets/logoDiv/logo12.gif',
-    '../assets/logoDiv/logo13.gif',
-    '../assets/logoDiv/logo15.gif',
-    '../assets/logoDiv/logo14.gif',
-    '../assets/logoDiv/logo8.gif',
+let images = ['assets/logoDiv/logo10.gif',
+    'assets/logoDiv/logo9.gif',
+    'assets/logoDiv/logo7.gif',
+    'assets/logoDiv/logo6.gif',
+    'assets/logoDiv/logo5.gif',
+    'assets/logoDiv/logo4.gif',
+    'assets/logoDiv/logo3.gif',
+    'assets/logoDiv/logo2.gif',
+    'assets/logoDiv/logo1.gif',
+    'assets/logoDiv/logo11.gif',
+    'assets/logoDiv/logo12.gif',
+    'assets/logoDiv/logo13.gif',
+    'assets/logoDiv/logo15.gif',
+    'assets/logoDiv/logo14.gif',
+    'assets/logoDiv/logo8.gif',
 ]; // 图片数组
 let currentImageIndex = -1; // 初始化为-1，表示还没有选择图片
 const logoDiv = document.getElementById('logoDiv');
-const defaultImage = '../assets/logoDiv/logo10.gif'; // 默认图片路径
+const defaultImage = 'assets/logoDiv/logo10.gif'; // 默认图片路径
 
 function setDefaultImage() {
     logoDiv.style.backgroundImage = `url(${defaultImage})`;
@@ -380,15 +380,15 @@ let observer = new IntersectionObserver((entries, observer) => {
 observer.observe(logoDiv);
 
 // 手机页面头部logo
-let mobileImages = ['../assets/mobileLogoDiv/mobileLogo7.gif',
-    '../assets/mobileLogoDiv/mobileLogo1.gif',
-    '../assets/mobileLogoDiv/mobileLogo2.gif',
-    '../assets/mobileLogoDiv/mobileLogo3.gif',
-    '../assets/mobileLogoDiv/mobileLogo4.gif',
-    '../assets/mobileLogoDiv/mobileLogo8.gif',
-    '../assets/mobileLogoDiv/mobileLogo9.gif',
-    '../assets/mobileLogoDiv/mobileLogo10.gif',
-    '../assets/mobileLogoDiv/mobileLogo11.gif',
+let mobileImages = ['assets/mobileLogoDiv/mobileLogo7.gif',
+    'assets/mobileLogoDiv/mobileLogo1.gif',
+    'assets/mobileLogoDiv/mobileLogo2.gif',
+    'assets/mobileLogoDiv/mobileLogo3.gif',
+    'assets/mobileLogoDiv/mobileLogo4.gif',
+    'assets/mobileLogoDiv/mobileLogo8.gif',
+    'assets/mobileLogoDiv/mobileLogo9.gif',
+    'assets/mobileLogoDiv/mobileLogo10.gif',
+    'assets/mobileLogoDiv/mobileLogo11.gif',
 ]; // 图片数组
 let currentMobileImageIndex = -1; // 初始化为-1，表示还没有选择图片
 const mobileLogoDiv = document.getElementById('mobileLogoDiv');

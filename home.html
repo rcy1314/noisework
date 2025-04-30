@@ -34,16 +34,25 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@petercatai/assistant@1.0.7/dist/umd/assistant.min.css">
 	<!-- 添加Service Worker -->
     <script>
-         if ('serviceWorker' in navigator) {
-    // 延迟注册Service Worker
-    setTimeout(function() {
-        navigator.serviceWorker.register('/service-worker.js', {
-            scope: '/',
-            updateViaCache: 'none'
-        }).catch(console.error);
-    }, 2000);
-}
-    </script>
+		// 延迟到页面加载完成后再注册 Service Worker
+		if ('serviceWorker' in navigator) {
+		  window.addEventListener('load', function() {
+			navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+			  registration.onupdatefound = function() {
+				var installingWorker = registration.installing;
+				installingWorker.onstatechange = function() {
+				  if (installingWorker.state === 'installed') {
+					if (navigator.serviceWorker.controller) {
+					  // 有新内容，自动刷新页面
+					  window.location.reload();
+					}
+				  }
+				};
+			  };
+			});
+		  });
+		}
+	</script>
 </head>
 <body>
 	<div class="background-image-container"></div>

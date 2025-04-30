@@ -37,6 +37,7 @@
 <summary><h2>✅ 更新状况【点击查看】</h2></summary>
 
 
+- 优化pwa文件，避免沉余缓存及重复监听，优化背景图等图片路径，避免本地无法预览
 - 对pwa（service-worker.js）开启延迟注册，并开启压缩
 - 首页增加说说笔记卡片，优化css及js的加载逻辑，配置请访问https://docs.noisework.cn/guide/shuoshuo
 - 调整小黑猫鼠标为本地引入，调整点击特效仅在非移动端下生效
