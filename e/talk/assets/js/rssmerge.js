@@ -63,7 +63,7 @@ function displayItems() {
 
 async function fetchRSS() {
     try {
-        const response = await fetch('https://extension.noisework.cn/api/corsmergerss');
+        const response = await fetch('https://rssserversub.fly.dev/rss');
         if (!response.ok) throw new Error('网络错误');
 
         const text = await response.text();
