@@ -280,6 +280,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .replace(QQVIDEO_REG, "<div class='video-wrapper'><iframe src='//v.qq.com/iframe/player.html?vid=$1' allowFullScreen='true' frameborder='no'></iframe></div>")
         .replace(SPOTIFY_REG, "<div class='spotify-wrapper'><iframe style='border-radius:12px' src='https://open.spotify.com/embed/$1/$2?utm_source=generator&theme=0' width='100%' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe></div>")
         .replace(YOUKU_REG, "<div class='video-wrapper'><iframe src='https://player.youku.com/embed/$1' frameborder=0 'allowfullscreen'></iframe></div>")
+        // github卡片渲染
+        /*
         .replace(GITHUB_REPO_REG, (match, owner, repo) => {
             const cardId = `github-card-${owner}-${repo}-${Math.random().toString(36).slice(2, 8)}`;
             setTimeout(() => fetchGitHubRepoInfo(owner, repo, cardId), 0);
@@ -287,6 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="github-card-loading">Loading GitHub Repo...</div>
             </div>`;
         });
+        */
 
     return content;
 }
@@ -379,6 +382,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let processedContent = message.content || '无内容';
         processedContent = parseContent(processedContent);
         description.innerHTML = processedContent;
+
+        buildImageGrids(description);
 
         // 初始化图片灯箱效果
         const zoomImages = description.querySelectorAll('.zoom-image');
@@ -502,6 +507,117 @@ document.addEventListener('DOMContentLoaded', function() {
         messageDiv.appendChild(contentDiv);
         
         return messageDiv;
+    }
+
+    function buildImageGrids(root) {
+        try {
+            const nodes = Array.from(root.childNodes);
+            let run = [];
+            const isWhitespaceText = (n) => n.nodeType === 3 && (!n.textContent || n.textContent.trim() === '');
+            const isBr = (n) => n.nodeType === 1 && n.tagName && n.tagName.toLowerCase() === 'br';
+            const isImgElement = (el) => el.tagName && el.tagName.toLowerCase() === 'img';
+            const isAWithImg = (el) => el.tagName && el.tagName.toLowerCase() === 'a' && !!el.querySelector('img');
+            const isPOnlyImages = (el) => {
+                if (!(el.tagName && el.tagName.toLowerCase() === 'p')) return false;
+                return Array.from(el.childNodes).every((cn) => {
+                    if (isWhitespaceText(cn) || isBr(cn)) return true;
+                    if (cn.nodeType !== 1) return false;
+                    const ct = cn.tagName.toLowerCase();
+                    if (ct === 'img') return true;
+                    if (ct === 'a') return !!cn.querySelector('img');
+                    return false;
+                });
+            };
+
+            const flush = () => {
+                if (run.length < 2) { run = []; return; }
+                const grid = document.createElement('div');
+                const count = run.length;
+                const cols = (count === 2 || count === 4) ? 2 : Math.min(3, count);
+                grid.className = `image-grid cols-${cols}`;
+                for (const n of run) {
+                    const item = document.createElement('div');
+                    item.className = 'image-grid-item';
+                    let node = null;
+                    if (n.nodeType === 1) {
+                        if (isImgElement(n) || isAWithImg(n)) {
+                            node = n;
+                        } else if (isPOnlyImages(n)) {
+                            const a = n.querySelector('a');
+                            node = a && a.querySelector('img') ? a : (n.querySelector('img') || null);
+                        }
+                    }
+                    if (!node) continue;
+                    item.appendChild(node);
+                    grid.appendChild(item);
+                }
+
+                grid.querySelectorAll('img').forEach((img) => {
+                    const item = img.closest('.image-grid-item');
+                    const setAR = () => {
+                        if (!item) return;
+                        const w = img.naturalWidth;
+                        const h = img.naturalHeight;
+                        item.classList.remove('ar-169','ar-34','ar-11');
+                        if (w > h) item.classList.add('ar-169');
+                        else if (h > w) item.classList.add('ar-34');
+                        else item.classList.add('ar-11');
+                    };
+                    if (img.complete && img.naturalWidth && img.naturalHeight) setAR();
+                    else img.addEventListener('load', setAR, { once: true });
+                });
+
+                const firstEl = run.find((n) => n.nodeType === 1);
+                if (firstEl) firstEl.replaceWith(grid);
+                run.forEach((n) => {
+                    if (n !== firstEl && n.nodeType === 1 && n.parentNode) n.parentNode.removeChild(n);
+                });
+                run = [];
+            };
+
+            for (const n of nodes) {
+                if (isWhitespaceText(n) || isBr(n)) {
+                    continue;
+                }
+                const el = n;
+                const isBlock = (
+                    n.nodeType === 1 && (
+                        isImgElement(el) || isAWithImg(el) || isPOnlyImages(el)
+                    )
+                );
+                if (isBlock) {
+                    run.push(el);
+                } else {
+                    flush();
+                }
+            }
+            flush();
+
+            if (!root.querySelector('.image-grid')) {
+                const candidates = Array.from(root.querySelectorAll(':scope > p > img, :scope > p > a > img, :scope > img, :scope > a > img'))
+                    .map((img) => img.closest('a') || img);
+                if (candidates.length >= 2) {
+                    const grid = document.createElement('div');
+                    const count = candidates.length;
+                    const cols = (count === 2 || count === 4) ? 2 : Math.min(3, count);
+                    grid.className = `image-grid cols-${cols}`;
+                    candidates.forEach((node) => {
+                        const item = document.createElement('div');
+                        item.className = 'image-grid-item';
+                        item.appendChild(node);
+                        grid.appendChild(item);
+                    });
+                    const firstNode = candidates[0].closest('p') || candidates[0];
+                    if (firstNode && firstNode.parentNode) {
+                        firstNode.parentNode.insertBefore(grid, firstNode);
+                        candidates.forEach((node) => {
+                            const host = node.closest('p') || node;
+                            if (host && host.parentNode) host.parentNode.removeChild(host);
+                        });
+                    }
+                }
+            }
+        } catch (e) {}
     }
     
     // 将filterByTag函数暴露到全局作用域

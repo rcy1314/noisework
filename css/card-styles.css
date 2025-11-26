@@ -77,6 +77,30 @@ body::-webkit-scrollbar {
     border-radius: 6px;
 }
 
+.image-grid {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    width: 100%;
+    grid-auto-flow: dense;
+    align-items: stretch;
+    justify-items: stretch;
+}
+.image-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.image-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.image-grid-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.image-grid-item > a { display: block; width: 100%; height: 100%; }
+.image-grid-item > a > img { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center center !important; display: block !important; }
+.image-grid-item img { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center center !important; display: block !important; margin: 0 !important; max-width: none !important; }
+.image-grid-item.ar-169 { aspect-ratio: 16 / 9; }
+.image-grid-item.ar-34 { aspect-ratio: 3 / 4; }
+.image-grid-item.ar-11 { aspect-ratio: 1 / 1; }
+
 /* 媒体容器样式 */
 .note-container .video-wrapper,
 .note-container .music-wrapper,
