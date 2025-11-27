@@ -112,11 +112,14 @@ body {
 
 .noise-filter {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
+    pointer-events: none;
     backdrop-filter: blur(var(--back_filter));
-     -webkit-backdrop-filter: blur(var(--back-filter));
-    z-index: -99999999;
+    -webkit-backdrop-filter: blur(var(--back_filter));
+    z-index: -1;
     background: var(--back_filter_color);
 }
 
