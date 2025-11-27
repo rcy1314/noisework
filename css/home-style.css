@@ -129,7 +129,6 @@ html, body { overflow-x: hidden; }
     transition: transform 0.5s ease;
     max-width: 1150px;
     position: relative;
-    display: flex;
     flex-direction: row;
 }
 
