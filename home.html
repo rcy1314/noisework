@@ -2,8 +2,11 @@
 <head class="noisework.cn">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>
-		NOISE主页 </title>
+    <title>
+        NOISE主页 </title>
+    <link rel="preconnect" href="https://fastly.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdn.staticfile.net" crossorigin>
+    <link rel="preconnect" href="https://jsd.cdn.noisework.cn" crossorigin>
 	<link rel="icon" href="./assets/favicon.png">
 	<meta name="description" content="这是来自Noise的个人主页，通过本页可获取所有关联的站点服务.">
 	<meta name="keywords" content="noise主页,个人主页,homepage,noise引导页">
@@ -19,11 +22,11 @@
      <!-- 图标引用 引入自托管fontawesome免费web包-->
 	<link rel="stylesheet" href="./css/Right.css">
 	<link rel="manifest" href="manifest.json">
-	<link rel="stylesheet" type="text/css" href="./css/loading.css"> 
-	<script src="./js/Right.js"></script>
-	<link rel="stylesheet" href="./css/waline.css">
+    <link rel="stylesheet" type="text/css" href="./css/loading.css"> 
+    <script src="./js/Right.js" defer></script>
+    <link rel="stylesheet" href="./css/waline.css" media="print" onload="this.media='all'">
 	<link rel="stylesheet" href="./css/friendlink.css" media="print" onload="this.media='all'">
-	<script src="./moyu/ics_parser.mjs"></script>
+    <script src="./moyu/ics_parser.mjs" defer></script>
 	<!-- 添加Service Worker -->
     <script>
 		// 延迟到页面加载完成后再注册 Service Worker
@@ -146,10 +149,10 @@
 			</ul>
 		</div>
 	 <!--音乐-->
-	 <link rel="stylesheet" href="./css/home-APlayer.min.css">  
-	 <script src="./js/jquery.min.js"></script>
-	 <script src="./js/APlayer.min.js"></script>
-	 <script src="./js/Meting.min.js"></script>
+     <link rel="stylesheet" href="./css/home-APlayer.min.css">  
+     <script src="./js/jquery.min.js" defer></script>
+     <script src="./js/APlayer.min.js" defer></script>
+     <script src="./js/Meting.min.js" defer></script>
     <!-- 在手机尺寸下显示的导航按钮 -->
     <div class="mobile-nav-button">
 		<a title="点击可弹出侧边栏"><i class="fa-solid fa-list" style="color: #fcfcfc; font-size: 23px;"></i></a>
@@ -219,7 +222,7 @@
 						<class="title">《我的B站收藏夹视频》
 							<hr class="dashed">
 					</div>
-					<iframe src="https://www.noisework.cn/e/bili/index.html?id=3271958393" frameborder="0"></iframe>
+                    <iframe src="https://www.noisework.cn/e/bili/index.html?id=3271958393" loading="lazy" frameborder="0"></iframe>
 				</ul>
 			</div>
 			<!-- B站收藏结束-->
@@ -231,8 +234,8 @@
 						<!-- 视频容器 -->
 						<div id="video-container">
 							<!-- 视频元素 -->
-							<video id="random-video" width="100%" height="auto" controls webkit-playsinline playsinline
-								controlsList="nodownload noremoteplayback">
+                            <video id="random-video" width="100%" height="auto" controls webkit-playsinline playsinline preload="none"
+                                controlsList="nodownload noremoteplayback">
 								<source src="视频链接" type="video/mp4">
 								您的浏览器不支持视频标签。
 							</video>
@@ -430,7 +433,7 @@
 					</div>
 				<!--图片弹出pop容器-->
 				<div id="imagePopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1000;">
-					<img id="popupImage" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);" src="" alt="Popup Image">
+                    <img id="popupImage" loading="lazy" decoding="async" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);" src="" alt="Popup Image">
 					<a href="javascript:void(0)" onclick="closePopup()" style="position:absolute; top:10px; right:10px; color:white; font-size:24px;">&times;</a>
 				</div>
 				 <!--公告-->
@@ -481,7 +484,7 @@
 							<p>强大的综合导航站</p>
 						</div>
 						<div class="projectItemRight">
-							<img src="./assets/i15.png" alt="">
+                            <img loading="lazy" decoding="async" src="./assets/i15.png" alt="">
 						</div>
 
 					</a><a class="projectItem a" target="_blank" href="https://noisevip.cn">
@@ -490,7 +493,7 @@
 							<p>强大的资源分类支持</p>
 						</div>
 						<div class="projectItemRight">
-							<img src="./assets/i8.png" alt="">
+                            <img loading="lazy" decoding="async" src="./assets/i8.png" alt="">
 						</div>
 
 					</a><a class="projectItem a" target="_blank" href="https://noiseyp.top">
@@ -499,7 +502,7 @@
 							<p>云盘资源的挂载站</p>
 						</div>
 						<div class="projectItemRight">
-							<img src="./assets/i23.png" alt="">
+                            <img loading="lazy" decoding="async" src="./assets/i23.png" alt="">
 						</div>
 
 					</a><a class="projectItem a" target="_blank" href="https://www.efficiency.vip">
@@ -508,7 +511,7 @@
 							<p>NOISE秘密基地</p>
 						</div>
 						<div class="projectItemRight">
-							<img src="./assets/7y.png" alt="">
+                            <img loading="lazy" decoding="async" src="./assets/7y.png" alt="">
 						</div>
 
 					</a></div>
@@ -521,7 +524,7 @@
 									<p>我的相册</p>
 								</div>
 								<div class="projectItemRight">
-									<img src="./assets/i16.png" alt="">
+                                    <img loading="lazy" decoding="async" src="./assets/i16.png" alt="">
 								</div>	
 		
 							</a><a class="projectItem a" target="_blank" href="./photo/index.html">
@@ -530,7 +533,7 @@
 									<p>备用静态化相册</p>
 								</div>
 								<div class="projectItemRight">
-									<img src="./assets/i17.png" alt="">
+                                    <img loading="lazy" decoding="async" src="./assets/i17.png" alt="">
 								</div>
 		
 							</a><a class="projectItem a" target="_blank" href="./qun/index.html">
@@ -539,7 +542,7 @@
 									<p>欢迎参与</p>
 								</div>
 								<div class="projectItemRight">
-									<img src="./assets/i31.png" alt="">
+                                    <img loading="lazy" decoding="async" src="./assets/i31.png" alt="">
 								</div>
 		
 							</a><a class="projectItem a" target="_blank" href="https://rcy1314.github.io/some-stars/">
@@ -548,7 +551,7 @@
 									<p>我的start列表，每日更新</p>
 								</div>
 								<div class="projectItemRight">
-									<img src="./assets/i21.png" alt="">
+                                    <img loading="lazy" decoding="async" src="./assets/i21.png" alt="">
 								</div>
 		
 							</a></div>
@@ -562,7 +565,7 @@
 							<p>从上万个书签中搜索</p>
 						</div>
 						<div class="projectItemRight">
-							<img src="./assets/i32.png" alt="">
+                            <img loading="lazy" decoding="async" src="./assets/i32.png" alt="">
 						</div>
 
 					</a><a class="projectItem a" target="_blank" href="./e/soso/index.html">
@@ -571,7 +574,7 @@
 							<p>软件插件搜索</p>
 						</div>
 						<div class="projectItemRight">
-							<img src="./assets/i20.png" alt="">
+                            <img loading="lazy" decoding="async" src="./assets/i20.png" alt="">
 						</div>
 
 					</a><a class="projectItem a" target="_blank" href="https://efficiency.super.site/">
@@ -580,7 +583,7 @@
 							<p>知识效率集</p>
 						</div>
 						<div class="projectItemRight">
-							<img src="./assets/i7.png" alt="">
+                            <img loading="lazy" decoding="async" src="./assets/i7.png" alt="">
 						</div>
 
 					</a><a class="projectItem a" target="_blank" href="https://www.noisework.cn/moyu/">
@@ -589,7 +592,7 @@
 							<p>全体打工人提醒您摸鱼</p>
 						</div>
 						<div class="projectItemRight">
-							<img src="./assets/i13.png" alt="">
+                            <img loading="lazy" decoding="async" src="./assets/i13.png" alt="">
 						</div>
 
 					</a></div>
@@ -603,7 +606,7 @@
 									<p>一个RSS_Bot的托管实例</p>
 								</div>
 								<div class="projectItemRight">
-									<img src="./assets/i1.png" alt="">
+                                    <img loading="lazy" decoding="async" src="./assets/i1.png" alt="">
 								</div>
 		
 							</a><a class="projectItem a" target="_blank" href="https://t.me/Efficiencysearchbot">
@@ -612,7 +615,7 @@
 									<p>TG频道搜索</p>
 								</div>
 								<div class="projectItemRight">
-									<img src="./assets/i2.png" alt="">
+                                    <img loading="lazy" decoding="async" src="./assets/i2.png" alt="">
 								</div>
 		
 							</a><a class="projectItem a" target="_blank" href="../e/utf8/index.html">
@@ -621,7 +624,7 @@
 									<p>二进制中文互译</p>
 								</div>
 								<div class="projectItemRight">
-									<img src="./assets/i3.png" alt="">
+                                    <img loading="lazy" decoding="async" src="./assets/i3.png" alt="">
 								</div>
 		
 							</a><a class="projectItem a" target="_blank" href="../e/unlock-music/index.html">
@@ -630,7 +633,7 @@
 									<p>音乐解锁</p>
 								</div>
 								<div class="projectItemRight">
-									<img src="./assets/i4.png" alt="">
+                                    <img loading="lazy" decoding="async" src="./assets/i4.png" alt="">
 								</div>
 		
 							</a></div>
@@ -643,7 +646,7 @@
 											<p>聚合Rss阅读页</p>
 										</div>
 										<div class="projectItemRight">
-											<img src="./assets/i38.png" alt="">
+                                            <img loading="lazy" decoding="async" src="./assets/i38.png" alt="">
 										</div>
 				
 									</a><a class="projectItem a" target="_blank" href="https://rssnoise.fly.dev">
@@ -652,7 +655,7 @@
 											<p>fly.io运行RSShub实例</p>
 										</div>
 										<div class="projectItemRight">
-											<img src="./assets/i39.png" alt="">
+                                            <img loading="lazy" decoding="async" src="./assets/i39.png" alt="">
 										</div>
 				
 									</a><a class="projectItem a" target="_blank" href="https://rcy1314.github.io/Rss-Translation">
@@ -661,7 +664,7 @@
 											<p>RSS翻译转换实例</p>
 										</div>
 										<div class="projectItemRight">
-											<img src="./assets/i37.png" alt="">
+                                            <img loading="lazy" decoding="async" src="./assets/i37.png" alt="">
 										</div>
 				
 									</a><a class="projectItem a" target="_blank" href="https://www.noisewechat.online">
@@ -670,7 +673,7 @@
 											<p>公众号RSS</p>
 										</div>
 										<div class="projectItemRight">
-											<img src="./assets/i14.png" alt="">
+                                            <img loading="lazy" decoding="async" src="./assets/i14.png" alt="">
 										</div>
 				
 									</a></div>
@@ -684,7 +687,7 @@
 													<p>Gpt-Next实例</p>
 												</div>
 												<div class="projectItemRight">
-													<img src="./assets/i33.png" alt="">
+                                                    <img loading="lazy" decoding="async" src="./assets/i33.png" alt="">
 												</div>
 						
 											</a><a class="projectItem a" target="_blank" href="https://www.noiseapi.top">
@@ -693,7 +696,7 @@
 													<p>one-api</p>
 												</div>
 												<div class="projectItemRight">
-													<img src="./assets/i14.png" alt="">
+                                                    <img loading="lazy" decoding="async" src="./assets/i14.png" alt="">
 												</div>
 						
 											</a><a class="projectItem a" target="_blank" href="https://jsd.cdn.noisework.cn">
@@ -702,7 +705,7 @@
 													<p>我的jsDelivr镜像站</p>
 												</div>
 												<div class="projectItemRight">
-													<img src="./assets/i30.png" alt="">
+                                                    <img loading="lazy" decoding="async" src="./assets/i30.png" alt="">
 												</div>
 						
 											</a><a class="projectItem a" target="_blank" href="https://edgetts.noisework.cn">
@@ -711,7 +714,7 @@
 													<p>Edge-tts-Api接口</p>
 												</div>
 												<div class="projectItemRight">
-													<img src="./assets/i18.png" alt="">
+                                                    <img loading="lazy" decoding="async" src="./assets/i18.png" alt="">
 												</div>
 						
 											</a></div>
@@ -724,7 +727,7 @@
 															<p>Notion网页小组件</p>
 														</div>
 														<div class="projectItemRight">
-															<img src="./assets/favicon1.png" alt="">
+                                                            <img loading="lazy" decoding="async" src="./assets/favicon1.png" alt="">
 														</div>
 								
 													</a><a class="projectItem a" target="_blank" href="https://noise.zhubai.love">
@@ -733,7 +736,7 @@
 															<p>竹白专栏</p>
 														</div>
 														<div class="projectItemRight">
-															<img src="./assets/favicon3.png" alt="">
+                                                            <img loading="lazy" decoding="async" src="./assets/favicon3.png" alt="">
 														</div>
 								
 													</a><a class="projectItem a" target="_blank" href="./e/talk/">
@@ -742,7 +745,7 @@
 															<p>noise说说笔记</p>
 														</div>
 														<div class="projectItemRight">
-															<img src="./assets/favicon4.png" alt="">
+                                                            <img loading="lazy" decoding="async" src="./assets/favicon4.png" alt="">
 														</div>
 								
 													</a><a class="projectItem a" target="_blank" href="https://pan.noisework.cn">
@@ -751,7 +754,7 @@
 															<p>云盘搜索站</p>
 														</div>
 														<div class="projectItemRight">
-															<img src="./assets/favicon11.png" alt="">
+                                                            <img loading="lazy" decoding="async" src="./assets/favicon11.png" alt="">
 														</div>
 								
 													</a></div>
@@ -765,7 +768,7 @@
 								<p>图像和视频故障效果制作</p>
 							</div>
 							<div class="projectItemRight">
-								<img src="./assets/i12.png" alt="">
+                                <img loading="lazy" decoding="async" src="./assets/i12.png" alt="">
 							</div>
 	
 						</a><a class="projectItem b" target="_blank" href="../e/idea/index.html">
@@ -774,7 +777,7 @@
 								<p>在线文本编辑器</p>
 							</div>
 							<div class="projectItemRight">
-								<img src="./assets/i36.png" alt="">
+                                <img loading="lazy" decoding="async" src="./assets/i36.png" alt="">
 							</div>
 	
 						</a><a class="projectItem b" target="_blank" href="../e/ts/index.html">
@@ -783,7 +786,7 @@
 								<p>颜色选择器</p>
 							</div>
 							<div class="projectItemRight">
-								<img src="./assets/i22.png" alt="">
+                                <img loading="lazy" decoding="async" src="./assets/i22.png" alt="">
 							</div>
 	
 						</a><a class="projectItem b" target="_blank" href="https://www.noiseblogs.top">
@@ -792,7 +795,7 @@
 								<p>BLOG博客站</p>
 							</div>
 							<div class="projectItemRight">
-								<img src="./assets/i35.png" alt="">
+                                <img loading="lazy" decoding="async" src="./assets/i35.png" alt="">
 							</div>
 
 					</a></div>			
@@ -869,12 +872,12 @@
 					<div class="title"><i class="fa-solid fa-image"></i>
 					</svg>滚动相册</div>
 				<div class="projectItemRightimg">
-					<img data-src="assets/1ae.gif" id="img-1" alt="description">
-					<img data-src="assets/2ae.gif" id="img-1" alt="description">
-					<img data-src="assets/3ae.gif" id="img-1" alt="description">
-					<img data-src="assets/4ae.gif" id="img-1" alt="description">
-					<img data-src="assets/5ae.gif" id="img-1" alt="description">
-					<img data-src="assets/6ae.gif" id="img-1" alt="description">
+                    <img loading="lazy" decoding="async" data-src="assets/1ae.gif" id="img-1" alt="description">
+                    <img loading="lazy" decoding="async" data-src="assets/2ae.gif" id="img-1" alt="description">
+                    <img loading="lazy" decoding="async" data-src="assets/3ae.gif" id="img-1" alt="description">
+                    <img loading="lazy" decoding="async" data-src="assets/4ae.gif" id="img-1" alt="description">
+                    <img loading="lazy" decoding="async" data-src="assets/5ae.gif" id="img-1" alt="description">
+                    <img loading="lazy" decoding="async" data-src="assets/6ae.gif" id="img-1" alt="description">
 				</div>
 					<footer>
 		<span>Copyright©<span id="copyrightYear"></span></span>
@@ -1171,13 +1174,13 @@ fetch('https://60s-api.viki.moe/v2/60s?encoding=text')
          copyright: false,
      });
   </script>
-<script src="./widgets/music-1/js/Meting.min.js"></script>
-<script src="./js/home-script.js"> </script>
+<script src="./widgets/music-1/js/Meting.min.js" defer></script>
+<script src="./js/home-script.js" defer> </script>
 <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
 <script>LA.init({ id: "KFqltKSkJgQTGD9l", ck: "KFqltKSkJgQTGD9l" })</script>
-<script src="js/home-rss.js"></script>
-<script src="js/loading.js"></script>
-<script src="js/sound.js"></script>
+<script src="js/home-rss.js" defer></script>
+<script src="js/loading.js" defer></script>
+<script src="js/sound.js" defer></script>
 <script>
 	if (!/Android|webOS|iPhone|iPod|BlackBerry|iPad|Windows Phone/i.test(navigator.userAgent)) {
 	  var script = document.createElement('script');

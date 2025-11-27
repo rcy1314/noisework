@@ -292,8 +292,24 @@ document.getElementById("random-video").addEventListener('error', function () {
 //     nextVideo(); // 直接调用nextVideo()来播放下一个视频
 // });
 
-// 初始化，随机选择一个视频进行播放
-randomVideo();
+// 延迟到视频容器可见时再加载视频资源
+document.addEventListener('DOMContentLoaded', function() {
+  var container = document.getElementById('video-container');
+  var observed = false;
+  if ('IntersectionObserver' in window && container) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting && !observed) {
+          observed = true;
+          randomVideo();
+        }
+      });
+    }, {root: null, threshold: 0.1});
+    io.observe(container);
+  } else {
+    randomVideo();
+  }
+});
 var MyVideoPlayer = MyVideoPlayer || {};
 MyVideoPlayer.preloadVideos = function () {
     // 预加载当前视频

@@ -72,12 +72,13 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             const url = buildApiUrl();
             console.log('请求URL:', url);
-            
-            const response = await fetch(url);
+            const controller = new AbortController();
+            const timer = setTimeout(function(){ controller.abort(); }, (window.note && window.note.loadingTimeout) || 8000);
+            const response = await fetch(url, { signal: controller.signal });
             if (!response.ok) {
                 throw new Error(`HTTP错误! 状态码: ${response.status}`);
             }
-            
+            clearTimeout(timer);
             const result = await response.json();
             console.log('API响应数据:', result);
             
@@ -99,7 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
             showLoadError();
         } finally {
             // 确保无论成功失败都隐藏加载状态
-            container.querySelector('.loading-wrapper').style.display = 'none';
+            const lw = container.querySelector('.loading-wrapper');
+            if (lw) lw.style.display = 'none';
         }
     }
 
@@ -118,8 +120,23 @@ document.addEventListener('DOMContentLoaded', function() {
         loadInitialContent();
     });
     
-    // Initial load
-    loadInitialContent();
+    // Lazy load: only fetch when #note enters viewport
+    var noteRoot = document.querySelector('#note');
+    var initialLoaded = false;
+    if ('IntersectionObserver' in window && noteRoot) {
+        var io = new IntersectionObserver(function(entries){
+            entries.forEach(function(entry){
+                if (entry.isIntersecting && !initialLoaded) {
+                    initialLoaded = true;
+                    loadInitialContent();
+                    io.disconnect();
+                }
+            });
+        }, {root: null, threshold: 0.15});
+        io.observe(noteRoot);
+    } else {
+        loadInitialContent();
+    }
     
     function handleSearch() {
         const searchValue = searchInput.value.trim();
@@ -178,12 +195,13 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             const url = buildApiUrl();
             console.log('请求URL:', url);
-            
-            const response = await fetch(url);
+            const controller = new AbortController();
+            const timer = setTimeout(function(){ controller.abort(); }, (window.note && window.note.loadingTimeout) || 8000);
+            const response = await fetch(url, { signal: controller.signal });
             if (!response.ok) {
                 throw new Error(`HTTP错误! 状态码: ${response.status}`);
             }
-            
+            clearTimeout(timer);
             const result = await response.json();
             console.log('API响应数据:', result);
             
@@ -204,7 +222,8 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('加载内容失败:', error);
             showLoadError();
         } finally {
-            container.querySelector('.loading-wrapper').style.display = 'none';
+            const lw2 = container.querySelector('.loading-wrapper');
+            if (lw2) lw2.style.display = 'none';
         }
     }
 

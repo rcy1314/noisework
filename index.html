@@ -12,53 +12,45 @@
     <meta name="google-adsense-account" content="ca-pub-1078287385751140">
     <link rel="icon" href="./assets/favicon.png" type="image/png" />
     <title>Noise主页</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.staticfile.net" crossorigin>
+    <link rel="preconnect" href="https://jsd.cdn.noisework.cn" crossorigin>
+    <link rel="dns-prefetch" href="//note.noisework.cn">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preload" as="image" href="assets/suijpic/191437o3371I8.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/suijpic/023.5se6p3kcd840.webp" fetchpriority="high">
     <!-- 图标引用 引入自托管fontawesome免费web包-->
     <link rel="stylesheet" href="assets/fontawesome-free-6.7.2/css/all.css">
      <!-- 图标引用 引入自托管fontawesome免费web包-->
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/terminal.css">
     <link rel="stylesheet" href="css/fira_code.css">
-    <script src="https://cdn.staticfile.net/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.net/layer/3.1.1/layer.js"></script>
-    <script src="js/fetch.min.js"></script>
-    <script src="js/axios.min.js"></script>
-    <script src="js/parallax.min.js"></script>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="https://cdn.staticfile.net/layer/3.1.1/layer.js" defer></script>
+    <script src="js/fetch.min.js" defer></script>
+    <script src="js/axios.min.js" defer></script>
+    <script src="js/parallax.min.js" defer></script>
     <link rel="stylesheet" href="css/flotext.css" media="print" onload="this.media='all'">
-    <script src="js/flotext.js"></script>
+    <script src="js/flotext.js" defer></script>
     <link rel="stylesheet" type="text/css" href="./css/loading.css"> 
     <link rel="stylesheet" href="css/tab.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/AD.css">
+    <link rel="stylesheet" href="css/AD.css" media="print" onload="this.media='all'">
     <!--  <link rel="stylesheet" href="css/Text.css">-->
-    <link rel="stylesheet" href="css/rss.css">
+    <link rel="stylesheet" href="css/rss.css" media="print" onload="this.media='all'">
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="css/Right.css">
-    <script src="js/Right.js"></script>
-    <link rel="stylesheet" href="./css/waline.css">
-    <link rel="stylesheet" href="./css/friendlink.css">
-    <link rel="stylesheet" href="./css/hotindex.css"> 
+    <link rel="stylesheet" href="css/Right.css" media="print" onload="this.media='all'">
+    <script src="js/Right.js" defer></script>
+    <link rel="stylesheet" href="./css/waline.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="./css/friendlink.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="./css/hotindex.css" media="print" onload="this.media='all'"> 
     <!--根据设备性能自动切换main.js-->  
+    <style>
+      .hotindex,.friendcardindex,.bilibiliindex,.workbox,.project{content-visibility:auto; contain-intrinsic-size: 800px;}
+      #background{background-image:url('assets/suijpic/191437o3371I8.webp')}
+      #bg{background-image:url('assets/suijpic/023.5se6p3kcd840.webp')}
+    </style>
     <script>
-        // 检测页面卡顿
-        function detectPageLag() {
-            return new Promise((resolve) => {
-                const frames = [];
-                const startTime = performance.now();
-                const frame = () => {
-                    frames.push(performance.now());
-                    if (frames.length === 60) {
-                        const endTime = performance.now();
-                        const totalDuration = endTime - startTime;
-                        const avgFPS = (60 / (totalDuration / 1000));
-                        resolve(avgFPS < 20); // 如果平均FPS低于20，则认为卡顿
-                    } else {
-                        requestAnimationFrame(frame);
-                    }
-                };
-                requestAnimationFrame(frame);
-            });
-        }
-
-        // 检测图形加速
         function hasWebGL() {
             try {
                 const canvas = document.createElement('canvas');
@@ -68,16 +60,20 @@
             }
         }
 
-        async function loadScriptBasedOnDetection() {
-    // 简化检测逻辑，避免长时间阻塞
-    const hasAcceleration = hasWebGL();
-    const script = document.createElement('script');
-    script.src = hasAcceleration ? 'js/main.js' : 'js/lowmain.js';
-    script.async = true;
-    document.head.appendChild(script);
-}
-// 立即执行检测
-loadScriptBasedOnDetection();
+        function whenDepsReady(cb){
+          if (window.Parallax && window.jQuery) { cb(); return; }
+          setTimeout(function(){ whenDepsReady(cb); }, 30);
+        }
+
+        (function(){
+          const hasAcceleration = hasWebGL();
+          whenDepsReady(function(){
+            var script = document.createElement('script');
+            script.src = hasAcceleration ? 'js/main.js' : 'js/lowmain.js';
+            script.defer = true;
+            document.head.appendChild(script);
+          });
+        })();
     </script>
 </head>
 <body>
@@ -139,11 +135,11 @@ loadScriptBasedOnDetection();
     </div>
     <!-- 弹出图片的覆盖层 -->
     <div id="imageOverlay1" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1000;">
-        <img id="popupImage1" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);" src="" alt="Popup Image">
+        <img id="popupImage1" loading="lazy" decoding="async" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);" src="" alt="Popup Image">
         <a href="javascript:void(0)" onclick="closePopup()" style="position:absolute; top:10px; right:10px; color:white; font-size:24px;">&times;</a>
     </div>
     <div id="imageOverlay2" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1000;">
-        <img id="popupImage2" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);" src="" alt="Popup Image">
+        <img id="popupImage2" loading="lazy" decoding="async" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);" src="" alt="Popup Image">
         <a href="javascript:void(0)" onclick="closePopup()" style="position:absolute; top:10px; right:10px; color:white; font-size:24px;">&times;</a>
     </div>
     <!-- loading加载--> 
@@ -187,7 +183,7 @@ loadScriptBasedOnDetection();
     <div id="sence">
         <div id="background" data-depth="0.8"></div>
         <div id="bg" data-depth="0.6"></div>   
-		<script src="js/suiji-picture.js"></script> 
+		<script src="js/suiji-picture.js" defer></script> 
     </div>
     <div class="main">
         <div class="about">
@@ -432,7 +428,7 @@ loadScriptBasedOnDetection();
                     <div class="grid-container">
                         <div class="bg-orange-500 text-white p-4 rounded-lg shadow-lg hotcard" id="douyin">
                             <div class="header">
-                              <img src="https://www.douyin.com/favicon.ico" alt="抖音">
+                              <img loading="lazy" decoding="async" src="https://www.douyin.com/favicon.ico" alt="抖音">
                               <h2 class="text-lg font-bold">抖音</h2>
                             </div>
                             <p class="update-time">数据更新时间: -</p>
@@ -444,7 +440,7 @@ loadScriptBasedOnDetection();
                           </div>
                           <div class="bg-indigo-500 text-white p-4 rounded-lg shadow-lg hotcard" id="hellogithub">
                             <div class="header">
-                              <img src="https://hellogithub.com/favicon/android-icon-192x192.png" alt="HelloGitHub">
+                              <img loading="lazy" decoding="async" src="https://hellogithub.com/favicon/android-icon-192x192.png" alt="HelloGitHub">
                               <h2 class="text-lg font-bold">HelloGitHub</h2>
                             </div>
                             <p class="update-time">数据更新时间: -</p>
@@ -456,7 +452,7 @@ loadScriptBasedOnDetection();
                           </div>
                           <div class="bg-green-500 text-white p-4 rounded-lg shadow-lg hotcard" id="bilibili">
                             <div class="header">
-                              <img src="https://www.bilibili.com/favicon.ico" alt="哔哩哔哩">
+                              <img loading="lazy" decoding="async" src="https://www.bilibili.com/favicon.ico" alt="哔哩哔哩">
                               <h2 class="text-lg font-bold">哔哩哔哩</h2>
                             </div>
                             <p class="update-time">数据更新时间: -</p>
@@ -468,7 +464,7 @@ loadScriptBasedOnDetection();
                           </div>
                       <div class="bg-blue-500 text-white p-4 rounded-lg shadow-lg hotcard" id="zhihu">
                         <div class="header">
-                          <img src="https://static.zhihu.com/heifetz/favicon.ico" alt="知乎">
+                          <img loading="lazy" decoding="async" src="https://static.zhihu.com/heifetz/favicon.ico" alt="知乎">
                           <h2 class="text-lg font-bold">知乎</h2>
                         </div>
                         <p class="update-time">数据更新时间: -</p>
@@ -480,7 +476,7 @@ loadScriptBasedOnDetection();
                       </div>
                       <div class="bg-red-500 text-white p-4 rounded-lg shadow-lg hotcard" id="weibo">
                         <div class="header">
-                          <img src="https://sina.com.cn/favicon.ico" alt="微博">
+                          <img loading="lazy" decoding="async" src="https://sina.com.cn/favicon.ico" alt="微博">
                           <h2 class="text-lg font-bold">微博</h2>
                         </div>
                         <p class="update-time">数据更新时间: -</p>
@@ -492,7 +488,7 @@ loadScriptBasedOnDetection();
                       </div>
                       <div class="bg-purple-500 text-white p-4 rounded-lg shadow-lg hotcard" id="baidu">
                         <div class="header">
-                          <img src="https://www.baidu.com/favicon.ico" alt="百度贴吧">
+                          <img loading="lazy" decoding="async" src="https://www.baidu.com/favicon.ico" alt="百度贴吧">
                           <h2 class="text-lg font-bold">百度贴吧</h2>
                         </div>
                         <p class="update-time">数据更新时间: -</p>
@@ -504,7 +500,7 @@ loadScriptBasedOnDetection();
                       </div>
                       <div class="bg-yellow-500 text-white p-4 rounded-lg shadow-lg hotcard" id="toutiao">
                         <div class="header">
-                          <img src="https://www.toutiao.com/favicon.ico" alt="今日头条">
+                          <img loading="lazy" decoding="async" src="https://www.toutiao.com/favicon.ico" alt="今日头条">
                           <h2 class="text-lg font-bold">今日头条</h2>
                         </div>
                         <p class="update-time">数据更新时间: -</p>
@@ -516,7 +512,7 @@ loadScriptBasedOnDetection();
                       </div>
                       <div class="bg-teal-500 text-white p-4 rounded-lg shadow-lg hotcard" id="v2ex">
                         <div class="header">
-                          <img src="https://s2.loli.net/2024/12/12/kz5t8fuXBLl6cFi.jpg" alt="V2EX">
+                          <img loading="lazy" decoding="async" src="https://s2.loli.net/2024/12/12/kz5t8fuXBLl6cFi.jpg" alt="V2EX">
                           <h2 class="text-lg font-bold">V2EX</h2>
                         </div>
                         <p class="update-time">数据更新时间: -</p>
@@ -545,9 +541,8 @@ loadScriptBasedOnDetection();
                 <noscript>
                     <link rel="stylesheet" href="css/APlayer.min.css">
                 </noscript>
-                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-                <script src="js/APlayer.min.js"></script>
-                <script src="js/Meting.min.js"></script>
+                <script src="js/APlayer.min.js" defer></script>
+                <script src="js/Meting.min.js" defer></script>
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
                         if (typeof Meting !== 'undefined') {
@@ -577,7 +572,7 @@ loadScriptBasedOnDetection();
                                 <div class="avatar">
                                     <a href="#">
                                         <img alt="" loading="lazy" decoding="async"
-                                            src="https://fastly.jsdelivr.net/gh/rcy1314/tuchuang@main/uPic/33s.jpeg">
+                                            loading="lazy" decoding="async" src="https://fastly.jsdelivr.net/gh/rcy1314/tuchuang@main/uPic/33s.jpeg">
                                     </a>
                                 </div>
                                 <div class="info">
@@ -589,7 +584,7 @@ loadScriptBasedOnDetection();
                                 <div class="avatar">
                                     <a href="#">
                                         <img alt="" loading="lazy" decoding="async"
-                                            src="https://fastly.jsdelivr.net/gh/rcy1314/tuchuang@main/uPic/43e.jpeg">
+                                            loading="lazy" decoding="async" src="https://fastly.jsdelivr.net/gh/rcy1314/tuchuang@main/uPic/43e.jpeg">
                                     </a>
                                 </div>
                                 <div class="info">
@@ -601,7 +596,7 @@ loadScriptBasedOnDetection();
                                 <div class="avatar">
                                     <a href="#">
                                         <img alt="" loading="lazy" decoding="async"
-                                            src="https://fastly.jsdelivr.net/gh/rcy1314/tuchuang@main/uPic/335r.jpeg">
+                                            loading="lazy" decoding="async" src="https://fastly.jsdelivr.net/gh/rcy1314/tuchuang@main/uPic/335r.jpeg">
                                     </a>
                                 </div>
                                 <div class="info">
@@ -617,11 +612,11 @@ loadScriptBasedOnDetection();
                         <h2 class="chtitle"><span>B站</span>收藏夹</span></h2>
                         <div class="bilibiliindex" style="background-color: #1e1d1dce; height: 25vh;">
                             <div class="bilibilititle-left">
-                                <img src="./assets/r1.png" alt="B站收藏夹" class="zoominimage">
+                                <img loading="lazy" decoding="async" src="./assets/r1.png" alt="B站收藏夹" class="zoominimage">
                             </div>
-                            <iframe src="https://www.noisework.cn/e/bili/index.html?id=3271958393" style="width: 70%; height: 100%; border: none; "></iframe>
+                            <iframe src="https://www.noisework.cn/e/bili/index.html?id=3271958393" loading="lazy" style="width: 70%; height: 100%; border: none; "></iframe>
                             <div class="bilibilititle-right">
-                                <img src="./assets/r3.png" alt="等你来观看" class="zoominimage">
+                                <img loading="lazy" decoding="async" src="./assets/r3.png" alt="等你来观看" class="zoominimage">
                             </div>
                         </div>
 		        	<!-- B站收藏结束-->
@@ -632,7 +627,7 @@ loadScriptBasedOnDetection();
                     <div class="work">
                       <h2 class="chtitle"><span>游戏</span>时间</h2>
                       <div class="gameindex" style="background-color: #110f0fbc; border-radius: 20px; width: 100%; height: 35vh;">
-                        <iframe src="./e/fcgame/index.html" style="width: 100%; height: 100%; border: none; "></iframe>
+                        <iframe src="./e/fcgame/index.html" loading="lazy" style="width: 100%; height: 100%; border: none; "></iframe>
                       </div>
                     </div>
                   </div>
@@ -687,8 +682,8 @@ loadScriptBasedOnDetection();
                         <div class="expand-card-stack float-animate" id="expand-card-stack" ondblclick="hideCardPermanently()">
                             <div class="expand-card park-sec park-sec1">
                                 <div class="park-inside">
-                                    <a class="avatar-link" id="expand-avatar" title="查看说说">
-                                        <img src="https://s2.loli.net/2025/03/24/HnSXKvibAQlosIW.png" alt="">
+                                        <a class="avatar-link" id="expand-avatar" title="查看说说">
+                                            <img loading="lazy" decoding="async" src="https://s2.loli.net/2025/03/24/HnSXKvibAQlosIW.png" alt="">
                                     </a>
                                     <div class="content-sec">
                                         <a href="https://note.noisework.cn/" target="_blank" class="note-title-link">
@@ -717,9 +712,8 @@ loadScriptBasedOnDetection();
                          <div class="expand-bottom-divider"></div>
                      </div>
                      <!-- 确保所有脚本在内容加载后执行 -->
-                     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-                     <script src="./js/expand-card.js"></script>
-                     <script src="./js/jquery-3.2.1.js"></script>
+                     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+                     <script src="./js/expand-card.js" defer></script>
                      <script>
                          window.note = {
                              host: 'https://note.noisework.cn',
@@ -832,17 +826,17 @@ loadScriptBasedOnDetection();
         }
     </script>
    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <script src="js/crypto-js.js" defer></script>
     <script src="./js/emb.js" async></script>
-    <script src="js/nodecursor-jquery.js"></script>
-    <script src="js/terminal.js"></script>
-    <script src="js/loading.js"></script>
-    <script src="js/tab.js"></script>
-    <script src="js/AD.js"></script>
+    <script src="js/nodecursor-jquery.js" defer></script>
+    <script src="js/terminal.js" defer></script>
+    <script src="js/loading.js" defer></script>
+    <script src="js/tab.js" defer></script>
+    <script src="js/AD.js" defer></script>
     <!--  <script src="js/Text.js"></script> -->  
-    <script src="js/rss.js"></script>
-    <script src="js/sound.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script src="js/rss.js" defer></script>
+    <script src="js/sound.js" defer></script>
+    
     <script src="js/hotindex.js"></script>
     <script src="js/clock.js"></script>
      <script>
@@ -853,7 +847,7 @@ loadScriptBasedOnDetection();
           document.head.appendChild(script);
         }
       </script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js" defer></script>
       <script>
       function gzipCompress(data) {
           const compressed = pako.gzip(JSON.stringify(data));
