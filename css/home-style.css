@@ -93,6 +93,8 @@ body {
     font-family: 'MyLocalFont', Microsoft YaHei, sans-serif;
 }
 
+html, body { overflow-x: hidden; }
+
 
 @keyframes zoom {
     0% {
@@ -112,10 +114,9 @@ body {
 
 .noise-filter {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
     backdrop-filter: blur(var(--back_filter));
     -webkit-backdrop-filter: blur(var(--back_filter));
@@ -128,6 +129,7 @@ body {
     transition: transform 0.5s ease;
     max-width: 1150px;
     position: relative;
+    display: flex;
     flex-direction: row;
 }
 
@@ -430,6 +432,16 @@ body {
     padding-bottom: 50px;
     flex-direction: column;
 }
+
+@media screen and (max-width: 768px) {
+  .noise-left { display: none; }
+  .noise-right { width: 100%; padding: 16px; float: none; }
+  body { background-attachment: scroll; }
+  .logo { display: none; }
+  .mobile-logo { display: block; margin-top: 16px; }
+}
+
+img, video, iframe { max-width: 100%; height: auto; }
 
 .welcome {
 
@@ -832,9 +844,8 @@ footer {
         width: calc(100% - 30px);
     }
 
-    .noise-right {
-        width: 100%;
-    }
+    .noise-main { max-width: 100vw; padding: 0 12px; overflow-x: hidden; }
+    .noise-right { width: 100%; max-width: 100vw; }
 
 
     .description {
