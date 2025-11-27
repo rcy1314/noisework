@@ -9,6 +9,9 @@
 /home.html
   Cache-Control: no-cache, no-store, must-revalidate
 
+/service-worker.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
 /css/*
   Cache-Control: public, max-age=31536000, immutable
 
