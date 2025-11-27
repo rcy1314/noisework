@@ -37,6 +37,15 @@
 <summary><h2>✅ 更新状况【点击查看】</h2></summary>
 
 
+- 首页及home页优化懒加载图片链接分优先级
+- 强制压缩css样式文件，统一化
+- 修正页面模糊层并消除横向溢出
+- 加载完成后注册 Service Worker
+- Critical CSS：提取首屏关键样式内联，其余延后加载
+- 图片体积压缩：将首页可见图片统一为 webp/avif ，控制 ≤200KB；补齐宽高或 aspect-ratio 抑制 CLS
+- 远程接口降级：对 如说说笔记增加缓存层与重试，或加边缘代理以靠近 Netlify POP
+- 第三方脚本懒加载：对 layer.js 等非首屏交互组件，延至用户交互时动态加载
+
 - 优化pwa文件，避免沉余缓存及重复监听，优化背景图等图片路径，避免本地无法预览
 - 对pwa（service-worker.js）开启延迟注册，并开启压缩
 - 首页增加说说笔记卡片，优化css及js的加载逻辑，配置请访问https://docs.noisework.cn/guide/shuoshuo
