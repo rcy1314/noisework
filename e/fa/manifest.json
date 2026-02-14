@@ -1,0 +1,21 @@
+{
+  "name": "新春大發 Fortune Blast",
+  "short_name": "新春大發",
+  "start_url": "./index.html",
+  "display": "fullscreen",
+  "background_color": "#050101",
+  "theme_color": "#050101",
+  "orientation": "landscape",
+  "icons": [
+    {
+      "src": "./icon192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

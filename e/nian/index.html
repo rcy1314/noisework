@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>2026 新春快乐 | 马年大吉</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <!-- 像素装饰 -->
+    <div class="pixel-decor">
+        <!-- 像素灯笼 -->
+        <div class="pixel-lantern left"></div>
+        <div class="pixel-lantern right"></div>
+        <!-- 像素星星 -->
+        <div class="pixel-stars" id="pixelStars"></div>
+        <!-- 像素云 -->
+        <div class="pixel-cloud c1"></div>
+        <div class="pixel-cloud c2"></div>
+    </div>
+
+    <!-- 主界面 -->
+    <main class="container">
+        <header class="header">
+            <div class="pixel-box year-box">
+                <span class="year">2026</span>
+                <span class="zodiac">马年</span>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1 class="title">
+                <span class="pixel-char">新</span>
+                <span class="pixel-char">年</span>
+                <span class="pixel-char">快</span>
+                <span class="pixel-char">乐</span>
+            </h1>
+
+            <div class="pixel-horse-container">
+                <div class="pixel-horse"></div>
+                <div class="pixel-dust"></div>
+            </div>
+
+            <!-- 花园宝宝 -->
+            <div class="garden-babies">
+                <div class="pixel-character igglepiggle" title="Igglepiggle">
+                    <div class="character-label">依古比古</div>
+                </div>
+                <div class="pixel-character upsydaisy" title="Upsy Daisy">
+                    <div class="character-label">唔西迪西</div>
+                </div>
+            </div>
+
+            <p class="hint">
+                <span class="blink">[</span>
+                点击放烟花
+                <span class="blink">]</span>
+            </p>
+        </section>
+
+        <section class="menu">
+            <button class="pixel-btn" id="btnFortune">
+                <span class="pixel-icon">◆</span>
+                抽签
+            </button>
+            <button class="pixel-btn" id="btnHongbao">
+                <span class="pixel-icon">■</span>
+                红包
+            </button>
+        </section>
+
+        <footer class="footer">
+            <div class="pixel-divider"></div>
+            <p>祝 全 家 新 年 快 乐</p>
+            <div class="pixel-divider"></div>
+        </footer>
+    </main>
+
+    <!-- 抽签弹窗 -->
+    <div class="modal" id="modalFortune">
+        <div class="modal-box pixel-box">
+            <div class="modal-header">
+                <span class="modal-title">★ 新年签 ★</span>
+                <button class="pixel-close" id="closeFortune">×</button>
+            </div>
+
+            <div id="fortuneArea">
+                <div class="pixel-tube" id="fortuneTube">
+                    <div class="tube-top"></div>
+                    <div class="tube-body">
+                        <div class="tube-sticks">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="pixel-hint">&lt; 点击或摇一摇 &gt;</p>
+            </div>
+
+            <div class="fortune-result hidden" id="fortuneResult">
+                <div class="result-scroll pixel-box">
+                    <div class="scroll-top"></div>
+                    <p class="result-text" id="resultText">马到成功</p>
+                    <p class="result-detail" id="resultDetail">好运来临</p>
+                    <div class="scroll-bottom"></div>
+                </div>
+                <button class="pixel-btn small full" id="btnRetry">再抽一签</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 红包弹窗 -->
+    <div class="modal" id="modalHongbao">
+        <div class="modal-box pixel-box">
+            <div class="modal-header">
+                <span class="modal-title">★ 抢红包 ★</span>
+                <button class="pixel-close" id="closeHongbao">×</button>
+            </div>
+
+            <div class="game-hud">
+                <div class="hud-item">
+                    <span class="hud-label">得分</span>
+                    <span class="hud-value" id="score">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">时间</span>
+                    <span class="hud-value" id="timer">15</span>
+                </div>
+            </div>
+
+            <div class="game-screen" id="gameArea">
+                <div class="game-over hidden" id="gameOver">
+                    <p class="game-over-title">- GAME OVER -</p>
+                    <p class="game-over-score" id="finalScore">0</p>
+                    <p class="game-over-msg" id="finalMsg">新年快乐!</p>
+                    <button class="pixel-btn small full" id="btnAgain">再来一局</button>
+                </div>
+            </div>
+
+            <button class="pixel-btn full" id="btnStart">开始抢红包</button>
+        </div>
+    </div>
+
+    <!-- 烟花祝福 -->
+    <div class="blessings" id="blessings"></div>
+
+    <!-- 背景音乐 -->
+    <audio id="bgMusic"></audio>
+
+    <!-- 音乐控制按钮 -->
+    <button class="music-btn" id="musicBtn" title="播放/暂停音乐">
+        <span class="music-icon">♪</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

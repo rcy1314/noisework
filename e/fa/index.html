@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新春大發 Fortune Blast</title>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#050101">
+    <link rel="manifest" href="manifest.json">
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Yuji+Boku&family=Yuji+Mai&display=swap"
+        rel="stylesheet">
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #050101;
+            font-family: "Noto Serif TC", "KaiTi", serif;
+            user-select: none;
+            overscroll-behavior: none;
+            touch-action: none;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            cursor: none;
+            z-index: 1;
+            outline: none;
+        }
+
+        #font-loader {
+            font-family: "Yuji Boku";
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #vfx-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 25;
+        }
+
+        #ui-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 30px;
+            box-sizing: border-box;
+            z-index: 5;
+        }
+
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            z-index: 15;
+            pointer-events: none;
+        }
+
+        @keyframes shineLoop {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 200% 50%;
+            }
+        }
+
+        .title-container {
+            display: inline-block;
+            position: relative;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-family: "Yuji Boku", serif;
+            font-size: 5rem;
+            font-weight: 400;
+            letter-spacing: 15px;
+            line-height: 1;
+            background: linear-gradient(120deg, #8a6e2f 0%, #d4af37 25%, #fceeb5 45%, #ffca28 50%, #fceeb5 55%, #d4af37 75%, #8a6e2f 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-stroke: 1px #3e2723;
+            paint-order: stroke fill;
+            animation: shineLoop 6s linear infinite;
+            filter: drop-shadow(0 2px 0px #5c4305) drop-shadow(0 5px 10px rgba(0, 0, 0, 0.8));
+        }
+
+        @keyframes sparkleFade {
+            0% {
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+            }
+
+            50% {
+                opacity: var(--max-opacity);
+                transform: scale(1) rotate(180deg);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0) rotate(360deg);
+            }
+        }
+
+        .sparkle {
+            position: absolute;
+            background: radial-gradient(circle, #fff8e1 10%, transparent 70%);
+            mix-blend-mode: screen;
+            pointer-events: none;
+            width: var(--size);
+            height: var(--size);
+            top: var(--top);
+            left: var(--left);
+            --max-opacity: 1;
+            animation: sparkleFade var(--duration) ease-in-out infinite;
+            animation-delay: var(--delay);
+        }
+
+        .sparkle::before,
+        .sparkle::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background: #ffe082;
+            border-radius: 50%;
+            box-shadow: 0 0 5px #ffca28;
+        }
+
+        .sparkle::before {
+            width: 100%;
+            height: 10%;
+            transform: translate(-50%, -50%);
+        }
+
+        .sparkle::after {
+            width: 10%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+        }
+
+        #game-status {
+            text-align: center;
+            margin-top: 10px;
+            transition: all 1.5s ease-out;
+            opacity: 1;
+            line-height: 1.4;
+            position: absolute;
+            width: 100%;
+            top: 200px;
+            pointer-events: none;
+            left: 0;
+        }
+
+        .status-line-1 {
+            font-family: "Yuji Boku", serif;
+            display: block;
+            background: linear-gradient(180deg, #fff8e1 0%, #ffd700 40%, #ff8f00 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 2px 0px #8b0000) drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
+            font-size: 4rem;
+            letter-spacing: 5px;
+        }
+
+        .text-scatter {
+            opacity: 0 !important;
+            letter-spacing: 2rem;
+            transform: scale(1.5) translateY(-20px);
+            filter: blur(5px);
+        }
+
+        .score-board {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            background: linear-gradient(180deg, #500000 0%, #2a0000 100%);
+            border: 3px solid #b8860b;
+            border-radius: 8px;
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9), 0 0 0 2px #5c4305, 0 15px 40px rgba(0, 0, 0, 0.8);
+            padding: 15px 30px;
+            text-align: center;
+            min-width: 160px;
+            z-index: 20;
+            overflow: visible;
+            transform-style: preserve-3d;
+            transition: transform 0.1s;
+        }
+
+        .score-board.pop {
+            transform: scale(1.2);
+        }
+
+        .score-board::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            pointer-events: none;
+        }
+
+        .score-label {
+            font-size: 1.4rem;
+            color: #ffcc00;
+            font-family: "Yuji Boku", serif;
+            letter-spacing: 2px;
+            margin-bottom: 0px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+            position: relative;
+            z-index: 10;
+        }
+
+        .score-value {
+            font-family: "Yuji Mai", serif;
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(180deg, #fff 20%, #ffd700 50%, #ffaa00 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.9));
+            position: relative;
+            z-index: 10;
+            line-height: 1;
+        }
+
+        .ui-loot {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            pointer-events: none;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: 50%;
+            top: 50%;
+            margin-left: -25px;
+            margin-top: -25px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .ui-coin {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23ffd700' stroke='%23b8860b' stroke-width='4'/%3E%3Crect x='34' y='34' width='32' height='32' fill='%23500000' stroke='%23b8860b' stroke-width='2'/%3E%3C/svg%3E");
+            filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+        }
+
+        .ui-ingot {
+            width: 60px;
+            height: 40px;
+            margin-left: -30px;
+            margin-top: -20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'%3E%3Cpath d='M10,20 Q50,60 90,20 L80,10 Q50,40 20,10 Z' fill='%23ffd700' stroke='%23b8860b' stroke-width='2'/%3E%3Cellipse cx='50' cy='15' rx='35' ry='10' fill='%23ffecb3' stroke='%23b8860b' stroke-width='2'/%3E%3C/svg%3E");
+            filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+        }
+
+        .controls-container {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+            pointer-events: auto;
+        }
+
+        .icon-btn {
+            background: rgba(20, 20, 20, 0.7);
+            border: 1px solid #666;
+            color: #ccc;
+            width: 45px;
+            height: 45px;
+            border-radius: 8px;
+            cursor: pointer;
+            pointer-events: auto;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+            font-family: "Yuji Mai", serif;
+        }
+
+        .icon-btn:hover {
+            border-color: #ffd700;
+            color: #ffd700;
+            background: rgba(40, 40, 40, 0.9);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .icon-btn.muted {
+            color: #555;
+            border-color: #333;
+        }
+
+        #start-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            pointer-events: auto;
+            z-index: 10;
+            transition: opacity 0.5s;
+            cursor: default;
+        }
+
+        @keyframes metalShine {
+            0% {
+                left: -100%;
+                opacity: 0;
+            }
+
+            40% {
+                left: 200%;
+                opacity: 0.8;
+            }
+
+            100% {
+                left: 200%;
+                opacity: 0;
+            }
+        }
+
+        button.start-btn {
+            background-color: #8b0000;
+            background-image: linear-gradient(180deg, #d32f2f 0%, #800000 100%);
+            border: none;
+            box-shadow: 0 0 0 2px #5a0000, 0 0 0 5px #b8860b, 0 0 0 7px #ffd700, 0 10px 20px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 50, 0, 0.4);
+            border-radius: 60px;
+            color: #fff;
+            font-size: 2.8rem;
+            padding: 20px 80px;
+            font-family: "Yuji Boku", serif;
+            letter-spacing: 5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+            cursor: pointer;
+            pointer-events: auto;
+            transition: transform 0.1s;
+            position: relative;
+            overflow: hidden;
+            font-weight: normal;
+        }
+
+        button.start-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), rgba(255, 255, 255, 0.8), rgba(255, 215, 0, 0.2), transparent);
+            transform: skewX(-25deg);
+            mix-blend-mode: overlay;
+            animation: metalShine 4s infinite;
+        }
+
+        button.start-btn:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+            box-shadow: 0 0 0 2px #5a0000, 0 0 0 5px #d4af37, 0 0 0 7px #ffeb3b, 0 15px 30px rgba(0, 0, 0, 0.7), 0 0 60px rgba(255, 100, 0, 0.6);
+        }
+
+        button.start-btn:active {
+            transform: scale(0.98) translateY(2px);
+        }
+
+        #fa-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 20;
+        }
+
+        .final-fa {
+            position: absolute;
+            top: 38%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: "Yuji Boku", serif;
+            font-size: 25rem;
+            font-weight: 400;
+            line-height: 1;
+            color: transparent;
+            background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8)) drop-shadow(0 0 30px rgba(255, 69, 0, 0.6)) drop-shadow(4px 4px 0px #5c3a00);
+            display: none;
+            z-index: 30;
+            pointer-events: none;
+            animation: megaFaReveal 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards, faShine 3s linear infinite, faBreathe 4s ease-in-out infinite 1.2s;
+        }
+
+        .final-fa.show {
+            display: block;
+        }
+
+        #restart-btn {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            pointer-events: auto;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s;
+            cursor: pointer;
+        }
+
+        .show-restart {
+            opacity: 1 !important;
+            display: block !important;
+        }
+
+        @keyframes megaFaReveal {
+            0% {
+                transform: translate(-50%, -50%) scale(0) rotate(-1080deg);
+                opacity: 0;
+                filter: blur(50px);
+            }
+
+            60% {
+                transform: translate(-50%, -50%) scale(1.2) rotate(10deg);
+                opacity: 1;
+                filter: blur(0px);
+            }
+
+            80% {
+                transform: translate(-50%, -50%) scale(0.9) rotate(-5deg);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes faShine {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 200% 50%;
+            }
+        }
+
+        @keyframes faBreathe {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.05);
+                filter: drop-shadow(0 0 40px rgba(255, 215, 0, 0.8));
+            }
+        }
+
+        #loading {
+            display: none !important;
+        }
+
+        #fortune-paper {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            height: 60vh;
+            aspect-ratio: 0.8 / 1;
+            max-width: 90vw;
+            background-color: #f4e4bc;
+            background-image: linear-gradient(to bottom, #fdf5e6 0%, #f4e4bc 100%);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(139, 69, 19, 0.1);
+            border: 1px solid #d3c09a;
+            padding: 2vh 3vh;
+            z-index: 40;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: "Yuji Boku", serif;
+            color: #1a1a1a;
+            opacity: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        #fortune-paper.show {
+            pointer-events: auto;
+            animation: paperEnter 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+                paperBreathe 3s ease-in-out infinite 1.5s;
+        }
+
+
+        @keyframes paperEnter {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes paperBreathe {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.03);
+                filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.5));
+            }
+        }
+
+        .fortune-title {
+            font-size: 5vh;
+            margin-bottom: 1vh;
+            border-bottom: 2px solid #8b0000;
+            padding-bottom: 1vh;
+            width: 100%;
+            text-align: center;
+            color: #8b0000;
+            letter-spacing: 1vh;
+            text-indent: 1vh;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .fortune-banner {
+            font-size: 4.5vh;
+            margin-bottom: 1vh;
+            color: #5a0000;
+            font-weight: bold;
+            letter-spacing: 0.5vh;
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .fortune-content {
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            font-size: 5.0vh;
+            line-height: 1.8;
+            flex-grow: 1;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            font-family: "KaiTi", "Yuji Mai", serif;
+            font-weight: bold;
+        }
+
+        .fortune-line {
+            margin: 0 1vh;
+            height: 100%;
+            text-align: center;
+        }
+
+        @media screen and (max-height: 500px) and (orientation: landscape) {
+            h1 {
+                font-size: 3rem;
+                letter-spacing: 5px;
+                margin-top: -15px;
+            }
+
+            #game-status {
+                top: 80px;
+            }
+
+            .status-line-1 {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+
+            #fullscreen-btn {
+                display: none;
+            }
+
+            .score-board {
+                transform: scale(0.7);
+                top: 10px;
+                right: 10px;
+                transform-origin: top right;
+            }
+
+            .score-board.pop {
+                transform: scale(0.8);
+            }
+
+            button.start-btn {
+                font-size: 1.5rem;
+                padding: 10px 40px;
+                border-width: 0;
+                box-shadow: 0 0 0 2px #b8860b;
+            }
+
+            .controls-container {
+                transform: scale(0.8);
+                top: 10px;
+                left: 10px;
+                transform-origin: top left;
+            }
+
+            #restart-btn {
+                bottom: 5%;
+                transform: translateX(-50%) scale(0.8) !important;
+                transform-origin: bottom center;
+                width: max-content;
+                padding: 10px 30px;
+            }
+
+            .final-fa {
+                font-size: 12rem;
+            }
+
+        }
+
+        #orientation-lock {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #050101;
+            z-index: 9999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #ffd700;
+            font-family: "KaiTi", "Yuji Mai", serif;
+            text-align: center;
+            padding: 20px;
+            font-size: clamp(1.5rem, 5vmin, 3rem);
+            line-height: 1.8;
+            letter-spacing: 2px;
+        }
+
+        #orientation-lock::before {
+            content: '';
+            width: clamp(40px, 10vmin, 80px);
+            height: clamp(70px, 18vmin, 140px);
+            border: 3px solid #ffd700;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            animation: rotatePhone 2s infinite ease-in-out;
+        }
+
+        @keyframes rotatePhone {
+            0% {
+                transform: rotate(0deg);
+                opacity: 1;
+            }
+
+            50% {
+                transform: rotate(90deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(90deg);
+                opacity: 0;
+            }
+        }
+
+        @media screen and (orientation: portrait) {
+            #orientation-lock {
+                display: flex;
+            }
+        }
+    </style>
+    <script
+        type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/","cannon-es":"https://unpkg.com/cannon-es@0.20.0/dist/cannon-es.js"}}</script>
+</head>
+
+<body>
+    <div id="orientation-lock">新春大發<br>請將手機轉為橫向</div>
+    <div id="font-loader">發</div>
+    <div id="canvas-container"></div><canvas id="vfx-canvas"></canvas>
+    <div class="controls-container"><button id="fullscreen-btn" class="icon-btn"
+            onclick="toggleFullscreen()">⛶</button><button id="mute-btn" class="icon-btn"
+            onclick="toggleMute()">♫</button></div>
+    <div id="ui-layer">
+        <div class="header">
+            <div class="title-container">
+                <h1>新春大發</h1>
+                <div class="sparkle" style="--size:40px;--top:10%;--left:10%;--duration:3s;--delay:0s"></div>
+                <div class="sparkle" style="--size:25px;--top:70%;--left:85%;--duration:4s;--delay:1.5s"></div>
+                <div class="sparkle" style="--size:35px;--top:80%;--left:20%;--duration:5s;--delay:2.5s"></div>
+                <div class="sparkle" style="--size:30px;--top:15%;--left:75%;--duration:3.5s;--delay:0.5s"></div>
+            </div>
+        </div>
+        <div id="game-status"></div>
+        <div class="score-board" id="score-box">
+            <div class="score-label">發財指數</div>
+            <div class="score-value" id="score">0</div>
+        </div>
+    </div>
+    <div id="fortune-paper">
+        <div class="fortune-title">詩籤</div>
+        <div id="fortune-banner" class="fortune-banner"></div>
+        <div id="fortune-content" class="fortune-content"></div>
+    </div>
+    <div id="fa-overlay">
+        <div id="final-fa" class="final-fa">發</div><button id="restart-btn" class="start-btn"
+            onclick="window.resetGame()">再測一次！</button>
+    </div>
+    <div id="start-screen"><button class="start-btn" id="init-btn">開始遊戲</button>
+        <div id="loading"></div>
+    </div>
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import * as CANNON from 'cannon-es';
+        import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+        import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+        import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+        const CONFIG = { firecrackerCount: 100, blastRadius: 4.0, igniteRadius: 3.5, blastForce: 30, fuseTimeMin: 0.3, fuseTimeMax: 1.2, colors: { red: 0xe60000, gold: 0xffcc00, bg: 0x050101 } };
+        const skipNumbers = [4, 14, 19, 29, 39, 44, 49, 54, 59, 64, 69, 74, 79, 84, 89, 94, 104, 114];
+        let scene, camera, renderer, composer, world, controls, clock, deltaTime;
+        let firecrackers = [], particles = [], bgDroppers = [];
+        let raycaster, mouse, incenseStick, incenseTipLight, isGameActive = false, canIgnite = false, lastPoem = null;
+        let score = 0, explodedCount = 0, visualScore = 0, interactionPlane, lastExplosionTime = 0, gameEnded = false;
+        let hangingDecors, groundMesh, groundBody, floorDropping = false, textTimer = null, lastCoinSpawnTime = 0;
+        let vfxSystem, audioManager, ambientLight, orangeLight, redLight, warmLight, explosionLight;
+        let cameraShake = { x: 0, y: 0, intensity: 0 };
+        const scoreEl = document.getElementById('score'), scoreBox = document.getElementById('score-box');
+        const startScreen = document.getElementById('start-screen'), restartBtn = document.getElementById('restart-btn'), initBtn = document.getElementById('init-btn');
+        const statusEl = document.getElementById('game-status'), faOverlay = document.getElementById('fa-overlay'), finalFa = document.getElementById('final-fa');
+        const fortunePaper = document.getElementById('fortune-paper'), fortuneBanner = document.getElementById('fortune-banner'), fortuneContent = document.getElementById('fortune-content');
+        const fortuneData = [
+            {
+                min: 100, banner: "貴富賜天、收雙利名", poems: [
+                    ["六十甲子加一枝", "未來求問神先知", "添丁添油增福壽", "富貴榮華必佑汝"],
+                    ["籤頭百事良", "添油大吉昌", "萬般皆如意", "富貴福壽長"],
+                    ["來意欲求天上福", "誠心須點佛前燈", "名利兩全皆大吉", "平安酬謝油三斤"],
+                    ["巍巍獨步向雲間", "玉殿千官第一班", "富貴榮華天付汝", "福如東海壽如山"],
+                    ["五十功名心已灰", "那知富貴逼人來", "更行好事存方寸", "壽比岡陵位鼎台"],
+                    ["天開財庫", "祥光入門", "一動皆利", "富貴連年"],
+                    ["財星化祿", "所求皆逢", "正偏齊旺", "步步亨通"],
+                    ["四時不斷", "貴人扶持", "廣結善緣", "富上加富"],
+                    ["金玉滿堂", "名利相牽", "謙和厚德", "基業綿延"],
+                    ["萬事皆昌", "滿庫盈箱", "天人和合", "榮在君旁"],
+                    ["天開財庫降祥光", "正偏橫順盡來朝", "一動一靜皆逢利", "富貴名聲並日高"],
+                    ["正財厚實根基定", "偏財飛來勢若神", "四方機會同時聚", "一念抉擇值千金"],
+                    ["命帶雙財逢大運", "正取成基偏取鋒", "若能廣施仁與信", "金山銀海亦從容"],
+                    ["財星化祿照乾坤", "正偏無礙事皆順", "但守謙和修厚德", "百年家業在其門"],
+                    ["此籤一出萬財朝", "正偏橫順盡相招", "富中仍記修身本", "方保榮華不動搖"]
+                ]
+            },
+            {
+                min: 75, banner: "進廣源財、通亨勢運", poems: [
+                    ["江海悠悠", "煙波下鉤", "六鰲連獲", "歌笑中流"],
+                    ["看君來問心中事", "積善之家慶有餘", "運亨財子雙雙至", "指日喜氣溢門閭"],
+                    ["天門一掛榜", "預定奪標人", "馬嘶芳草地", "秋高聽鹿鳴"],
+                    ["財馬兩匆忙", "官祿有定方", "豬羊牛犬", "自去主張"],
+                    ["年來耕稼苦無收", "今歲田疇定有秋", "況遇太平無事日", "士農工賈百無憂"],
+                    ["嗟子從來未得時", "今年星運頗相宜", "營求動作都如意", "和合婚姻誕貴兒"],
+                    ["財運亨通", "順水行舟", "貴人相助", "良機在前"],
+                    ["財星入命", "動中生財", "果斷不疑", "金玉可聚"],
+                    ["四方有利", "往來生財", "合作得勢", "一舉破關"],
+                    ["財如長流", "正偏皆旺", "留餘行善", "福更長久"],
+                    ["運勢高升", "謀事多成", "膽大心細", "豐收可期"],
+                    ["正財得勢步步高", "經營謀略見功勞", "偏財時至同相助", "一舉成名不費刀"],
+                    ["財星高照入門庭", "正業偏門兩路通", "惟記收放須有度", "富貴方能久且榮"],
+                    ["正財如山根不動", "偏財似水引流長", "善借天時與人勢", "金玉盈箱歲月昌"],
+                    ["此籤主財動中生", "正偏並進各有成", "膽識兼備心須正", "富路方能走得平"],
+                    ["財運至此如春湧", "正取偏來兩相逢", "留德三分存後福", "榮華自可久無窮"]
+                ]
+            },
+            {
+                min: 50, banner: "定註中命、憂無食衣", poems: [
+                    ["花開今已結成果", "富貴榮華終到老", "君子小人相會合", "萬事清吉莫煩惱"],
+                    ["汝是人中最吉人", "誤為誤作損精神", "堅牢一念酬香願", "富貴榮華萃汝身"],
+                    ["勸君把定心莫虛", "天註衣祿自有餘", "和合重重常吉慶", "時來終遇得明珠"],
+                    ["君爾寬心且自由", "門庭清吉家無憂", "財寶自然終吉利", "凡事無傷不用求"],
+                    ["有心作福莫遲疑", "求名清吉正當時", "此事必能成會合", "財寶自然喜相隨"],
+                    ["風恬浪靜可行舟", "恰是中秋月一輪", "凡事不須多憂慮", "福祿自有慶家門"],
+                    ["雲盡月當中", "光輝到處通", "路途逢水順", "千里快如風"],
+                    ["日出雲開", "財路漸明", "所求可就", "穩進為宜"],
+                    ["勤中得財", "正道可行", "不偏不倚", "年中有成"],
+                    ["正偏各門", "取捨分明", "謹慎前後", "財自入門"],
+                    ["進中有守", "退亦有餘", "不賭不貪", "長久是真"],
+                    ["財星高掛", "耐心經營", "根深葉茂", "利在後年"],
+                    ["正財順行如水長", "勤中得利不虛忙", "偏財若遇須審度", "取捨分明福自昌"],
+                    ["財星入命半光明", "正業謀為事漸成", "偏利可試不可戀", "一念貪心萬事傾"],
+                    ["正財穩固根基厚", "偏財相助勢如風", "掌舵若能知進退", "兩路皆通不見凶"],
+                    ["命中財庫今初啟", "正取無虞偏取遲", "先固其本後圖外", "方知此籤妙在斯"],
+                    ["財運平衡進亦安", "正偏兩得在心寬", "忌貪忌急行中道", "歲末回看笑語歡"]
+                ]
+            },
+            {
+                min: 20, banner: "多成少積、天勝定人", poems: [
+                    ["功名富貴自能為", "偶著仙鞭莫問伊", "萬里鵬程君有分", "吳山頂上好鑽龜"],
+                    ["一舟行貨好招邀", "積少成多自富饒", "常把他人比自己", "管須日後勝今朝"],
+                    ["佛前發誓無異心", "且看前途得好音", "此物原來本是鐵", "也能變化得成金"],
+                    ["君問中間此言因", "看看祿馬拱前程", "若得貴人多得利", "和合自有兩分明"],
+                    ["春雨初臨", "財氣微生", "未稱大富", "積少成多"],
+                    ["財星半照", "正穩偏閒", "不宜貪快", "循序保全"],
+                    ["東風初暖", "勤中有得", "踏實為本", "小富可期"],
+                    ["收支相衡", "勤儉可安", "投機暫緩", "正道為先"],
+                    ["中平之籤", "勞心得利", "慢慢積累", "秋後方成"],
+                    ["正財漸入命中來", "衣食無虞亦可懷", "偏利偶逢如過客", "留得三分莫盡取"],
+                    ["財星微照未全明", "正業經營可小成", "偏財若問宜知止", "貪念一起便傷名"],
+                    ["正道行財雖不速", "積少成多亦足誇", "偏門不是長久計", "見好便收免嘆嗟"],
+                    ["命帶平財不帶橫", "正途可保歲安寧", "偏財一試無妨事", "切忌深迷誤此生"],
+                    ["問財得此中平籤", "正取微盈已是緣", "偏利若來須自慎", "守成方得久周全"]
+                ]
+            },
+            {
+                min: 0, banner: "收就好見、成晚器大", poems: [
+                    ["財中漸漸見分明", "花開花謝結子成", "寬心且看月中桂", "郎君即便見太平"],
+                    ["一人去", "一人入", "清風明月兩相猜", "獲得金鱗下釣臺"],
+                    ["湖海意悠悠", "煙波下釣鉤", "若逢龍與兔", "名利一齊周"],
+                    ["問財未時", "雲遮月影", "守成為上", "小利可安"],
+                    ["財星未到", "勞多利薄", "節用修德", "免生後憂"],
+                    ["流水緩行", "急則反失", "忍過清淡", "轉機在後"],
+                    ["財來復去", "難以久留", "勤守本業", "根基方生"],
+                    ["此歲問財", "浮雲無定", "不失為福", "平安是寶"],
+                    ["財星未入命中宮", "正取微盈尚可容", "偏門若動多成耗", "守分安身免是凶"],
+                    ["時乖運蹇問財難", "力守正途亦自安", "橫得之財如露電", "一貪便惹百般煩"],
+                    ["正業勤勞猶得食", "偏財妄想反生憂", "命中未許強求利", "且待來春運再流"],
+                    ["財路迷離未可行", "正途尚恐費心神", "偏門一試多虛耗", "不若收心養性靈"],
+                    ["此歲財源未顯彰", "正收尚少勿思旁", "但求平穩無災厄", "便是人間好運章"]
+                ]
+            }
+        ];
+
+        function createFaTexture() {
+            const canvas = document.createElement('canvas'); canvas.width = 128; canvas.height = 128;
+            const ctx = canvas.getContext('2d'); ctx.font = 'bold 100px "Yuji Boku", serif';
+            ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = '#ffffdd'; ctx.fillText('發', 64, 64);
+            return new THREE.CanvasTexture(canvas);
+        }
+
+        function spawnGoldExplosionParticles(pos) {
+            for (let i = 0; i < 50; i++) {
+                const p = new Particle(pos, 0xffd700, 0.08, 10, 0.5, 'spark'); p.vel.y += 5; particles.push(p);
+            }
+            particles.push(new Particle(pos, 0xffffee, 8.0, 0, 0.1, 'flash'));
+        }
+
+        function spawnExplosion(pos) {
+            const p = new THREE.Vector3(pos.x, pos.y, pos.z);
+            particles.push(new Particle(p, 0xffaa33, 7.0, 0, 0.12, 'flash'));
+            for (let i = 0; i < 40; i++) particles.push(new Particle(p, 0xffcc00, 0.15, 15, 0.6 + Math.random() * 0.4, 'spark'));
+            for (let i = 0; i < 15; i++) particles.push(new Particle(p, 0xe60000, 0.1, 8, 1.0 + Math.random(), 'debris'));
+            for (let i = 0; i < Math.floor(Math.random() * 3) + 2; i++) particles.push(new Particle(p, Math.random() > 0.5 ? 0xffd700 : 0xd90d24, 0.2, 10, 1.5, Math.random() > 0.5 ? 'coin' : 'envelope'));
+            if (explosionLight) { explosionLight.position.copy(p); explosionLight.intensity = 500; }
+            cameraShake.intensity = 0.5;
+        }
+
+        function spawnSpark(pos, count, color, type = 'spark') {
+            for (let i = 0; i < count; i++) particles.push(new Particle(pos, color, 0.05, 3, 0.3 + Math.random() * 0.2, type));
+        }
+
+        function spawnUICoins() {
+            for (let i = 0; i < 3; i++) {
+                const e = document.createElement('div'); e.className = Math.random() > 0.6 ? 'ui-loot ui-ingot' : 'ui-loot ui-coin';
+                scoreBox.appendChild(e); e.style.left = '50%'; e.style.top = '50%';
+                let vx = Math.cos(Math.random() * 6) * 150, vy = -300 - Math.random() * 150, x = 0, y = 0, l = 1;
+                const f = (t) => { if (!e.lt) e.lt = t; const dt = Math.min((t - e.lt) / 1000, 0.05); e.lt = t; l -= 0.5 * dt; if (l <= 0) { e.remove(); return; } vy += 800 * dt; x += vx * dt; y += vy * dt; e.style.transform = `translate(${x}px,${y}px) scale(${l})`; requestAnimationFrame(f); };
+                requestAnimationFrame(f);
+            }
+            scoreBox.classList.add('pop'); setTimeout(() => scoreBox.classList.remove('pop'), 100);
+        }
+
+        function spawnBackgroundFirecracker() { bgDroppers.push(new FallingProp()); }
+
+        function triggerEndGame() {
+            gameEnded = true; statusEl.innerText = ""; canIgnite = false; incenseStick.visible = false; floorDropping = true; world.removeBody(groundBody);
+            firecrackers.forEach(fc => { fc.body.wakeUp(); fc.body.velocity.y -= 2; });
+            faOverlay.style.pointerEvents = 'auto'; faOverlay.style.opacity = 1; finalFa.classList.add('show');
+            if (vfxSystem) vfxSystem.explode(window.innerWidth / 2, window.innerHeight / 2);
+            setTimeout(() => audioManager.playFinalExplosion(), 100);
+            setTimeout(() => {
+                const finalScore = visualScore;
+                let data = fortuneData[fortuneData.length - 1]; // Default low
+                for (let i = 0; i < fortuneData.length; i++) {
+                    if (finalScore >= fortuneData[i].min) {
+                        data = fortuneData[i];
+                        break;
+                    }
+                }
+                let candidates = data.poems.filter(p => p !== lastPoem);
+                if (candidates.length === 0) candidates = data.poems;
+                const randomPoem = candidates[Math.floor(Math.random() * candidates.length)];
+                lastPoem = randomPoem;
+                fortuneBanner.textContent = data.banner;
+                fortuneContent.innerHTML = '';
+                randomPoem.forEach(line => {
+                    const lineDiv = document.createElement('div');
+                    lineDiv.className = 'fortune-line';
+                    lineDiv.textContent = line;
+                    fortuneContent.appendChild(lineDiv);
+                });
+                fortunePaper.classList.add('show');
+            }, 2200); // 1.2s (Fa anim) + 1.0s wait
+            setTimeout(() => { restartBtn.style.display = 'block'; setTimeout(() => restartBtn.classList.add('show-restart'), 10); }, 3500);
+        }
+
+        function checkEndGame() { if (!gameEnded && explodedCount > 0 && (clock.getElapsedTime() - lastExplosionTime > 1.5)) triggerEndGame(); }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            composer.setSize(window.innerWidth, window.innerHeight);
+            if (vfxSystem) vfxSystem.resize();
+        }
+
+        function onMouseMove(e) {
+            if (!canIgnite) return; mouse.x = (e.clientX / window.innerWidth) * 2 - 1; mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+            raycaster.setFromCamera(mouse, camera); const h = raycaster.intersectObject(interactionPlane);
+            if (h.length > 0) {
+                incenseStick.position.set(h[0].point.x, 0.5, h[0].point.z);
+                if (Math.random() > 0.7 && incenseTipLight) {
+                    const p = new THREE.Vector3();
+                    incenseTipLight.getWorldPosition(p);
+                    p.x += (Math.random() - 0.5) * 0.05;
+                    p.z += (Math.random() - 0.5) * 0.05;
+                    particles.push(new Particle(p, 0xdddddd, 0.1, 1, 2.0, 'smoke'));
+                }
+            }
+        }
+
+        function onMouseDown(e) {
+            if (!canIgnite || e.button !== 0 || gameEnded) return;
+            const tip = new THREE.Vector3(); incenseTipLight.getWorldPosition(tip);
+            let t = null, d = 2.5;
+            firecrackers.forEach(fc => {
+                if (fc.state === 'idle') {
+                    let p = new THREE.Vector3(); if (fc.fuseTip) { p.set(0, 1.25, 0); p.applyMatrix4(fc.mesh.matrixWorld); } else { p.copy(fc.mesh.position); }
+                    const dist = p.distanceTo(tip); if (dist < d) { d = dist; t = fc; }
+                }
+            });
+            if (t && t.type !== 'goldbar') { t.ignite(); audioManager.playFuse(); lastExplosionTime = clock.getElapsedTime(); canIgnite = false; incenseStick.visible = false; }
+        }
+
+        class Shockwave {
+            constructor(x, y, z) {
+                this.life = 0; this.maxLife = 30;
+                this.ring = new THREE.Mesh(new THREE.RingGeometry(0.5, 1.5, 32), new THREE.MeshBasicMaterial({ color: 0xffffaa, transparent: true, opacity: 0.8, side: THREE.DoubleSide, depthWrite: false, blending: THREE.AdditiveBlending }));
+                this.ring.position.set(x, y + 0.1, z); this.ring.rotation.x = -Math.PI / 2; scene.add(this.ring);
+                this.sphere = new THREE.Mesh(new THREE.SphereGeometry(1, 16, 16), new THREE.MeshBasicMaterial({ color: 0xffdd44, transparent: true, opacity: 0.15, blending: THREE.AdditiveBlending, depthWrite: false }));
+                this.sphere.position.set(x, y, z); scene.add(this.sphere);
+            }
+            update() {
+                this.life++; const progress = this.life / this.maxLife; const scale = 1 + progress * 10.0;
+                this.ring.scale.set(scale, scale, 1); this.ring.material.opacity = 0.8 * (1 - progress);
+                this.sphere.scale.setScalar(scale * 0.8); this.sphere.material.opacity = 0.15 * (1 - progress);
+                if (this.life >= this.maxLife) { this.dispose(); return false; }
+                return true;
+            }
+            dispose() { scene.remove(this.ring); scene.remove(this.sphere); this.ring.geometry.dispose(); this.ring.material.dispose(); this.sphere.geometry.dispose(); this.sphere.material.dispose(); }
+        }
+
+        class Particle {
+            constructor(pos, color, size, speed, life, type = 'debris') {
+                this.type = type; this.pos = pos.clone(); this.life = life; this.maxLife = life; this.color = new THREE.Color(color);
+                const theta = 2 * Math.PI * Math.random(), phi = Math.acos(2 * Math.random() - 1);
+                this.vel = new THREE.Vector3(Math.sin(phi) * Math.cos(theta), Math.sin(phi) * Math.sin(theta), Math.cos(phi)).multiplyScalar(speed * Math.random());
+                let material;
+                if (type === 'flash') {
+                    this.vel.set(0, 0, 0);
+                    const cvs = document.createElement('canvas'); cvs.width = 64; cvs.height = 64; const ctx = cvs.getContext('2d');
+                    const g = ctx.createRadialGradient(32, 32, 0, 32, 32, 32); g.addColorStop(0, 'rgba(255,255,220,1)'); g.addColorStop(0.4, 'rgba(255,200,50,0.8)'); g.addColorStop(1, 'rgba(255,100,0,0)');
+                    ctx.fillStyle = g; ctx.fillRect(0, 0, 64, 64);
+                    material = new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(cvs), transparent: true, blending: THREE.AdditiveBlending, depthWrite: false });
+                    this.mesh = new THREE.Sprite(material); this.mesh.scale.set(size, size, 1);
+                } else if (type === 'smoke') {
+                    this.vel.set((Math.random() - 0.5) * 0.5, 1.5 + Math.random(), (Math.random() - 0.5) * 0.5);
+                    this.mesh = new THREE.Mesh(new THREE.CircleGeometry(size / 2, 12), new THREE.MeshBasicMaterial({ color: color, side: THREE.DoubleSide, transparent: true, depthWrite: false, opacity: 0.4 }));
+                } else if (type === 'coin') {
+                    this.mesh = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.12, 0.02, 16), new THREE.MeshStandardMaterial({ color: 0xffd700, roughness: 0.2, metalness: 1.0 }));
+                    this.mesh.rotation.x = Math.random() * Math.PI;
+                } else if (type === 'envelope') {
+                    this.mesh = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.3, 0.01), new THREE.MeshBasicMaterial({ color: 0xd90d24, side: THREE.DoubleSide }));
+                    this.mesh.rotation.set(Math.random(), Math.random(), Math.random());
+                } else {
+                    this.mesh = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({ color: color, transparent: true, blending: THREE.AdditiveBlending }));
+                }
+                this.mesh.position.copy(this.pos);
+                if (type !== 'flash' && type !== 'coin' && type !== 'envelope') this.mesh.lookAt(camera.position);
+                scene.add(this.mesh);
+            }
+            update(dt) {
+                this.life -= dt; const lr = this.life / this.maxLife;
+                if (this.type === 'flash') { this.mesh.material.opacity = lr; const s = this.mesh.scale.x + dt * 5; this.mesh.scale.set(s, s, 1); }
+                else if (this.type === 'smoke') { this.vel.x += (Math.random() - 0.5) * 0.1; this.vel.z += (Math.random() - 0.5) * 0.1; this.pos.add(this.vel.clone().multiplyScalar(dt)); this.mesh.material.opacity = lr * 0.3; const s = 1 + (1 - lr) * 2; this.mesh.scale.set(s, s, 1); this.mesh.lookAt(camera.position); }
+                else if (this.type === 'spark') { this.vel.y -= 9.8 * dt; this.vel.multiplyScalar(0.9); this.pos.add(this.vel.clone().multiplyScalar(dt)); if (lr < 0.7) this.mesh.material.color.setHex(0xff6600); if (lr < 0.3) this.mesh.material.color.setHex(0x330000); this.mesh.scale.setScalar(lr); }
+                else { this.vel.y -= 8 * dt; if (!floorDropping && this.pos.y < 0) { this.pos.y = 0; this.vel.y *= -0.5; this.vel.x *= 0.9; this.vel.z *= 0.9; } this.pos.add(this.vel.clone().multiplyScalar(dt)); this.mesh.rotation.x += dt * 5; this.mesh.rotation.y += dt * 3; }
+                this.mesh.position.copy(this.pos);
+                return this.life > 0;
+            }
+            dispose() { scene.remove(this.mesh); this.mesh.geometry.dispose(); this.mesh.material.dispose(); }
+        }
+
+        class VFXSystem {
+            constructor() {
+                this.canvas = document.getElementById('vfx-canvas'); this.ctx = this.canvas.getContext('2d');
+                this.particles = []; this.shockwaves = []; this.resize(); window.addEventListener('resize', () => this.resize()); this.loop();
+            }
+            resize() { this.canvas.width = window.innerWidth; this.canvas.height = window.innerHeight; }
+            createShockwave(x, y, z) { this.shockwaves.push(new Shockwave(x, y, z)); }
+            explodeGold(x, y) {
+            }
+            explode(x, y) {
+                // 2D Explosion
+                for (let i = 0; i < 200; i++) {
+                    const angle = Math.random() * Math.PI * 2, speed = Math.random() * 15 + 5;
+                    this.particles.push({ x, y, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed, alpha: 1, size: Math.random() * 4 + 2, friction: 0.95, gravity: 0.1, hue: Math.random() > 0.5 ? 45 : 10, decay: Math.random() * 0.01 + 0.005 });
+                }
+            }
+            loop() {
+                for (let i = this.shockwaves.length - 1; i >= 0; i--) { if (!this.shockwaves[i].update()) { this.shockwaves[i].dispose(); this.shockwaves.splice(i, 1); } }
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height); this.ctx.globalCompositeOperation = 'lighter';
+                for (let i = this.particles.length - 1; i >= 0; i--) {
+                    const p = this.particles[i]; p.x += p.vx; p.y += p.vy; p.vx *= p.friction; p.vy *= p.friction; p.vy += p.gravity; p.alpha -= p.decay;
+                    if (p.alpha <= 0) { this.particles.splice(i, 1); continue; }
+                    this.ctx.fillStyle = p.hue === 0 ? `rgba(255,255,255,${p.alpha})` : `hsla(${p.hue},100%,60%,${p.alpha})`;
+                    this.ctx.beginPath(); this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); this.ctx.fill();
+                }
+                requestAnimationFrame(() => this.loop());
+            }
+        }
+
+        class AudioManager {
+            constructor() {
+                this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+                this.masterGain = this.ctx.createGain(); this.masterGain.gain.value = 0.8; this.masterGain.connect(this.ctx.destination);
+                this.isPlayingBGM = false; this.bgmOscs = []; this.nextNoteTime = 0; this.noteIndex = 0; this.isMuted = false; this.bgmVolume = 0.08;
+            }
+            resume() { if (this.ctx.state === 'suspended') this.ctx.resume(); }
+            toggleMute() {
+                this.isMuted = !this.isMuted;
+                const btn = document.getElementById('mute-btn');
+                if (this.isMuted) {
+                    btn.classList.add('muted');
+                    btn.innerText = '♫';
+                } else {
+                    btn.classList.remove('muted');
+                    btn.innerText = '♫';
+                }
+                return this.isMuted;
+            }
+            playStartSound() {
+                const t = this.ctx.currentTime, osc = this.ctx.createOscillator(), g = this.ctx.createGain();
+                osc.frequency.setValueAtTime(80, t); osc.frequency.exponentialRampToValueAtTime(30, t + 0.3);
+                g.gain.setValueAtTime(0.8, t); g.gain.exponentialRampToValueAtTime(0.01, t + 0.3);
+                osc.connect(g); g.connect(this.masterGain); osc.start(t); osc.stop(t + 0.3);
+            }
+            startBGM() { if (this.isPlayingBGM) return; this.isPlayingBGM = true; this.nextNoteTime = this.ctx.currentTime + 0.1; this.scheduleNote(); }
+            stopBGM() { this.isPlayingBGM = false; this.bgmOscs.forEach(o => { try { o.stop(); } catch (e) { } }); this.bgmOscs = []; if (this.timerID) clearTimeout(this.timerID); }
+            scheduleNote() {
+                if (!this.isPlayingBGM) return;
+                const N = { G3: 196, A3: 220, B3: 246, C4: 261, D4: 293, E4: 329, F4: 349, G4: 392, A4: 440, B4: 493 };
+                const melody = [{ f: N.A3, d: 1 }, { f: N.B3, d: 1 }, { f: N.C4, d: 1 }, { f: N.D4, d: 1 }, { f: N.F4, d: 1 }, { f: N.E4, d: 1 }, { f: N.E4, d: 2 }, { f: N.E4, d: 1 }, { f: N.A4, d: 1 }, { f: N.A4, d: 1 }, { f: N.E4, d: 1 }, { f: N.E4, d: 1 }, { f: N.D4, d: 1 }, { f: N.D4, d: 2 }, { f: N.E4, d: 1 }, { f: N.F4, d: 1 }, { f: N.E4, d: 1 }, { f: N.D4, d: 1 }, { f: N.D4, d: 1 }, { f: N.C4, d: 1 }, { f: N.C4, d: 2 }, { f: N.C4, d: 1 }, { f: N.B3, d: 1 }, { f: N.A3, d: 1 }, { f: N.G3, d: 1 }, { f: N.A3, d: 2 }, { f: N.A3, d: 2 }, { f: N.D4, d: 1.5 }, { f: N.E4, d: 0.5 }, { f: N.C4, d: 1.5 }, { f: N.E4, d: 0.5 }, { f: N.B3, d: 1.5 }, { f: N.E4, d: 0.5 }, { f: N.A3, d: 1.5 }, { f: N.E4, d: 0.5 }, { f: N.D4, d: 1.5 }, { f: N.E4, d: 0.5 }, { f: N.C4, d: 1.5 }, { f: N.E4, d: 0.5 }, { f: N.B3, d: 1.5 }, { f: N.E4, d: 0.5 }, { f: N.A3, d: 2 }, { f: 0, d: 4 }];
+                const note = melody[this.noteIndex % melody.length];
+                if (note.f > 0 && !this.isMuted) {
+                    const osc = this.ctx.createOscillator(); osc.type = 'square'; osc.frequency.value = note.f;
+                    const g = this.ctx.createGain(); g.gain.setValueAtTime(this.bgmVolume, this.nextNoteTime); g.gain.exponentialRampToValueAtTime(0.01, this.nextNoteTime + note.d * 0.25 - 0.05);
+                    osc.connect(g); g.connect(this.masterGain); osc.start(this.nextNoteTime); osc.stop(this.nextNoteTime + note.d * 0.25);
+                }
+                this.nextNoteTime += note.d * 0.25; this.noteIndex++;
+                this.timerID = setTimeout(() => this.scheduleNote(), Math.max(0, (this.nextNoteTime - this.ctx.currentTime - 0.05) * 1000));
+            }
+            playImpact(v) { if (v < 1) return; const t = this.ctx.currentTime, o = this.ctx.createOscillator(), g = this.ctx.createGain(); o.type = 'triangle'; o.frequency.setValueAtTime(80, t); o.frequency.exponentialRampToValueAtTime(10, t + 0.1); g.gain.setValueAtTime(Math.min(1, v / 20) * 0.3, t); g.gain.exponentialRampToValueAtTime(0.01, t + 0.1); o.connect(g); g.connect(this.masterGain); o.start(t); o.stop(t + 0.1); }
+            playExplosion(pos) { this._playBoom(pos, 80, 1); }
+            playGoldExplosion(pos) { this._playBoom(pos, 40, 1.5, true); }
+            playFinalExplosion() {
+                const t = this.ctx.currentTime;
+                // Kick
+                const oscKick = this.ctx.createOscillator(); oscKick.type = 'sine';
+                oscKick.frequency.setValueAtTime(40, t); oscKick.frequency.exponentialRampToValueAtTime(20, t + 0.5);
+                const gainKick = this.ctx.createGain(); gainKick.gain.setValueAtTime(0, t);
+                gainKick.gain.linearRampToValueAtTime(2.5, t + 0.05); gainKick.gain.exponentialRampToValueAtTime(0.01, t + 1.0);
+                oscKick.connect(gainKick); gainKick.connect(this.masterGain); oscKick.start(t); oscKick.stop(t + 1.0);
+                // Noise
+                const b = this.ctx.createBuffer(1, this.ctx.sampleRate * 2.0, this.ctx.sampleRate);
+                const d = b.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, 4);
+                const n = this.ctx.createBufferSource(); n.buffer = b;
+                const f = this.ctx.createBiquadFilter(); f.type = 'lowpass'; f.frequency.setValueAtTime(800, t); f.frequency.linearRampToValueAtTime(100, t + 1.5);
+                const gn = this.ctx.createGain(); gn.gain.setValueAtTime(1.5, t); gn.gain.exponentialRampToValueAtTime(0.01, t + 1.5);
+                n.connect(f); f.connect(gn); gn.connect(this.masterGain); n.start(t);
+                // Chime
+                const oscC = this.ctx.createOscillator(); oscC.type = 'sine'; oscC.frequency.setValueAtTime(523.25, t);
+                const gc = this.ctx.createGain(); gc.gain.setValueAtTime(0, t); gc.gain.linearRampToValueAtTime(0.3, t + 0.1); gc.gain.exponentialRampToValueAtTime(0.01, t + 4.0);
+                oscC.connect(gc); gc.connect(this.masterGain); oscC.start(t); oscC.stop(t + 4.0);
+            }
+            _playBoom(pos, freq, vol, gold = false) {
+                const t = this.ctx.currentTime, p = this.ctx.createStereoPanner(), g = this.ctx.createGain();
+                if (camera) { const v = pos.clone().project(camera); p.pan.value = Math.max(-1, Math.min(1, v.x)); }
+                p.connect(this.masterGain); g.connect(p);
+                const o = this.ctx.createOscillator(); o.type = 'sine'; o.frequency.setValueAtTime(freq, t); o.frequency.exponentialRampToValueAtTime(10, t + (gold ? 0.8 : 0.4));
+                const og = this.ctx.createGain(); og.gain.setValueAtTime(vol, t); og.gain.exponentialRampToValueAtTime(0.01, t + (gold ? 0.8 : 0.4)); o.connect(og); og.connect(g); o.start(t); o.stop(t + (gold ? 0.8 : 0.4));
+                const b = this.ctx.createBuffer(1, this.ctx.sampleRate * (gold ? 0.5 : 0.25), this.ctx.sampleRate), d = b.getChannelData(0);
+                for (let i = 0; i < d.length; i++)d[i] = Math.random() * 2 - 1;
+                const n = this.ctx.createBufferSource(); n.buffer = b; const ng = this.ctx.createGain(); ng.gain.setValueAtTime(vol * (gold ? 0.8 : 1.8), t); ng.gain.exponentialRampToValueAtTime(0.01, t + (gold ? 0.4 : 0.25));
+                const f = this.ctx.createBiquadFilter(); f.type = gold ? 'lowpass' : 'highpass'; f.frequency.value = gold ? 200 : 600;
+                n.connect(f); f.connect(ng); ng.connect(g); n.start(t);
+            }
+            playFuse() {
+                const t = this.ctx.currentTime, b = this.ctx.createBuffer(1, this.ctx.sampleRate * 0.15, this.ctx.sampleRate), d = b.getChannelData(0);
+                for (let i = 0; i < d.length; i++)d[i] = Math.random() * 2 - 1;
+                const n = this.ctx.createBufferSource(); n.buffer = b; const f = this.ctx.createBiquadFilter(); f.type = 'bandpass'; f.frequency.value = 3000;
+                const g = this.ctx.createGain(); g.gain.setValueAtTime(0.3, t); g.gain.linearRampToValueAtTime(0, t + 0.15);
+                n.connect(f); f.connect(g); g.connect(this.masterGain); n.start(t);
+            }
+        }
+
+        class FallingProp {
+            constructor() {
+                this.mesh = new THREE.Group();
+                this.materials = [];
+                const r = Math.random();
+                let subType = 'firecracker';
+                if (r < 0.33) subType = 'coin'; else if (r < 0.66) subType = 'envelope';
+                const setupMaterial = (mat) => {
+                    mat.transparent = true;
+                    mat.opacity = 0;
+                    this.materials.push(mat);
+                    return mat;
+                };
+                if (subType === 'coin') {
+                    const m = setupMaterial(new THREE.MeshPhysicalMaterial({
+                        color: 0xffd700, metalness: 0.6, roughness: 0.3, emissive: 0x554400, emissiveIntensity: 0.6
+                    }));
+                    const body = new THREE.Mesh(new THREE.CylinderGeometry(0.6, 0.6, 0.08, 32), m);
+                    body.rotation.x = Math.PI / 2;
+                    const holeMat = setupMaterial(new THREE.MeshBasicMaterial({ color: 0x000000 }));
+                    const hole = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.35, 0.1), holeMat);
+                    this.mesh.add(body); this.mesh.add(hole);
+                } else if (subType === 'envelope') {
+                    const mat = setupMaterial(new THREE.MeshBasicMaterial({ color: 0xd90d24, side: THREE.DoubleSide }));
+                    const body = new THREE.Mesh(new THREE.BoxGeometry(0.8, 1.2, 0.05), mat);
+                    const goldMat = setupMaterial(new THREE.MeshBasicMaterial({ color: 0xffd700 }));
+                    const stripe = new THREE.Mesh(new THREE.BoxGeometry(0.82, 0.3, 0.06), goldMat);
+                    stripe.position.y = 0.2;
+                    const center = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.2, 0.07), goldMat);
+                    center.position.y = 0.2;
+                    this.mesh.add(body); this.mesh.add(stripe); this.mesh.add(center);
+                } else {
+                    const bm = setupMaterial(new THREE.MeshBasicMaterial({ color: 0xe60000 }));
+                    const cm = setupMaterial(new THREE.MeshBasicMaterial({ color: 0xffd700 }));
+                    const b = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 1.5, 8), bm);
+                    const c = new THREE.Mesh(new THREE.CylinderGeometry(0.31, 0.31, 0.2, 8), cm); c.position.y = 0.6;
+                    this.mesh.add(b, c);
+                }
+                this.mesh.scale.set(0.2, 0.2, 0.2);
+                this.mesh.position.set(
+                    (Math.random() - 0.5) * 30,
+                    8 + Math.random() * 8,
+                    5 + (Math.random() - 0.5) * 5
+                );
+                this.mesh.rotation.set(Math.random() * 6, Math.random() * 6, Math.random() * 6);
+                this.rot = { x: (Math.random() - 0.5) * 5, y: (Math.random() - 0.5) * 5, z: (Math.random() - 0.5) * 5 };
+                const target = camera.position.clone();
+                target.x += (Math.random() - 0.5) * 20;
+                target.y += (Math.random() - 0.5) * 10;
+                const direction = new THREE.Vector3().subVectors(target, this.mesh.position).normalize();
+                const speedMagnitude = 2 + Math.random() * 2;
+                this.velocity = direction.multiplyScalar(speedMagnitude);
+                scene.add(this.mesh);
+            }
+
+            update(dt) {
+                this.mesh.position.add(this.velocity.clone().multiplyScalar(dt));
+                this.mesh.rotation.x += this.rot.x * dt;
+                this.mesh.rotation.y += this.rot.y * dt;
+                this.mesh.rotation.z += this.rot.z * dt;
+                const dist = this.mesh.position.distanceTo(camera.position);
+                const fadeStart = 12;
+                const fadeEnd = 5;
+                let op = 1 - (dist - fadeEnd) / (fadeStart - fadeEnd);
+                if (op < 0) op = 0;
+                if (op > 1) op = 1;
+                this.materials.forEach(m => m.opacity = op);
+                if (Math.random() > 0.7) {
+                    const p = this.mesh.position.clone();
+                    p.x += (Math.random() - 0.5) * 0.2;
+                    p.y += (Math.random() - 0.5) * 0.2;
+                    p.z += (Math.random() - 0.5) * 0.2;
+                    const color = Math.random() > 0.5 ? 0xffd700 : 0xffffff;
+                    const pt = new Particle(p, color, 0.05, 0, 0.5, 'spark');
+                    pt.vel.set(0, 0, 0);
+                    particles.push(pt);
+                }
+                return this.mesh.position.z < 35 && this.mesh.position.y > -20;
+            }
+
+            dispose() {
+                scene.remove(this.mesh);
+                this.mesh.traverse((child) => {
+                    if (child.isMesh) {
+                        if (child.geometry) child.geometry.dispose();
+                        if (child.material) {
+                            if (Array.isArray(child.material)) {
+                                child.material.forEach(m => m.dispose());
+                            } else {
+                                child.material.dispose();
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        class Firecracker {
+            constructor(x, y, z) {
+                this.state = 'idle'; this.type = 'firecracker'; this.fuseTimer = 0; this.mesh = new THREE.Group();
+                const bm = new THREE.MeshStandardMaterial({ color: 0xe60000, roughness: 0.4 });
+                const cm = new THREE.MeshStandardMaterial({ color: 0xffd700, roughness: 0.2, metalness: 0.9 });
+                this.mesh.add(new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.35, 1.6, 12), bm));
+                const t = new THREE.Mesh(new THREE.CylinderGeometry(0.36, 0.36, 0.2, 12), cm); t.position.y = 0.7; this.mesh.add(t);
+                const b = new THREE.Mesh(new THREE.CylinderGeometry(0.36, 0.36, 0.2, 12), cm); b.position.y = -0.7; this.mesh.add(b);
+                const f = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.5, 6), new THREE.MeshStandardMaterial({ color: 0xaaaaaa })); f.position.y = 1.0; this.mesh.add(f);
+                this.fuseTip = new THREE.Vector3(0, 1.25, 0); this.mesh.children.forEach(c => { c.castShadow = true; c.receiveShadow = true });
+                this.body = new CANNON.Body({ mass: 0.8, material: new CANNON.Material({ friction: 0.4, restitution: 0.2 }) });
+                this.body.addShape(new CANNON.Box(new CANNON.Vec3(0.3, 0.8, 0.3)));
+                this.body.position.set(x, y, z); this.body.quaternion.setFromEuler(Math.random() * 6, Math.random() * 6, Math.random() * 6);
+                this.body.linearDamping = 0.3; this.body.angularDamping = 0.3; this.body.userData = { parent: this };
+                this.body.addEventListener('collide', e => { if (Math.abs(e.contact.getImpactVelocityAlongNormal()) > 3) audioManager.playImpact(Math.abs(e.contact.getImpactVelocityAlongNormal())) });
+                scene.add(this.mesh); world.addBody(this.body);
+            }
+            update(dt) {
+                this.mesh.position.copy(this.body.position); this.mesh.quaternion.copy(this.body.quaternion);
+                if (this.state === 'lit') {
+                    this.fuseTimer -= dt; const p = this.fuseTip.clone().applyMatrix4(this.mesh.matrixWorld);
+                    spawnSpark(p, 2, 0xffffdd, 'fuse');
+                    if (this.fuseTimer <= 0) this.explode();
+                }
+            }
+            ignite(delay = 0) { if (this.state !== 'idle') return; this.state = 'lit'; this.body.wakeUp(); this.fuseTimer = CONFIG.fuseTimeMin + Math.random() * 0.9 + delay; if (Math.random() > 0.6) audioManager.playFuse(); }
+            explode() {
+                if (this.state === 'exploded') return; this.state = 'exploded'; explodedCount++; visualScore++;
+                while (skipNumbers.includes(visualScore)) {
+                    visualScore++;
+                }
+                scoreEl.innerText = visualScore;
+                scoreEl.innerText = visualScore;
+                if (clock.getElapsedTime() - lastCoinSpawnTime > 0.1) { spawnUICoins(); lastCoinSpawnTime = clock.getElapsedTime(); }
+                lastExplosionTime = clock.getElapsedTime();
+                const p = new THREE.Vector3(this.body.position.x, this.body.position.y, this.body.position.z);
+                spawnExplosion(p);
+                this.mesh.visible = false; audioManager.playExplosion(p);
+                if (navigator.vibrate) navigator.vibrate(50);
+                const bp = new CANNON.Vec3(p.x, p.y, p.z);
+                firecrackers.forEach(fc => {
+                    if (fc === this) return; const d = fc.body.position.distanceTo(bp);
+                    if (d < CONFIG.blastRadius) {
+                        const dir = fc.body.position.vsub(bp); dir.normalize();
+                        const imp = dir.scale(CONFIG.blastForce * (1 - d / CONFIG.blastRadius)); imp.y += 0.5;
+                        if (fc.type === 'goldbar') imp.scale(0.1, imp);
+                        fc.body.applyImpulse(imp, fc.body.position); fc.body.wakeUp();
+                        if (fc.state === 'idle' && d < CONFIG.igniteRadius) fc.ignite(d * 0.05 + Math.random() * 0.2);
+                    }
+                });
+                setTimeout(() => world.removeBody(this.body), 50);
+            }
+            dispose() { }
+        }
+
+        class GoldBar {
+            constructor(x, y, z) {
+                this.type = 'goldbar'; this.state = 'idle'; this.fuseTimer = 0; this.mesh = new THREE.Group();
+                // Revert to Trapezoidal Prism (Brick) Shape per request
+                // Use cylinder with 4 radial segments
+                const topW = 0.8;
+                const botW = 1.0;
+                const height = 0.6;
+                const geo = new THREE.CylinderGeometry(topW, botW, height, 4, 1);
+                geo.rotateY(Math.PI / 4);
+                this.mat = new THREE.MeshPhysicalMaterial({
+                    color: 0xffd700,
+                    metalness: 1.3,
+                    roughness: 0.5,
+                    emissive: 0xaa8800,
+                    emissiveIntensity: 0.8,
+                    clearcoat: 1.0,
+                    clearcoatRoughness: 0.1,
+                    envMapIntensity: 2.0,
+                    flatShading: true
+                });
+                const brick = new THREE.Mesh(geo, this.mat);
+                // Scale: 1.725, 1.2, 0.92 (V5.0/V6.0 scale)
+                brick.scale.set(1.725, 1.2, 0.92);
+                brick.castShadow = true;
+                brick.receiveShadow = true;
+                this.mesh.add(brick);
+                const fm = new THREE.SpriteMaterial({ map: createFaTexture(), transparent: true, opacity: 0 });
+                this.fa = new THREE.Sprite(fm); this.fa.scale.set(1.5, 1.5, 1); scene.add(this.fa);
+                this.body = new CANNON.Body({ mass: 50, material: new CANNON.Material({ friction: 0.8, restitution: 0.05 }), linearDamping: 0.1, angularDamping: 0.1 });
+                this.body.addShape(new CANNON.Box(new CANNON.Vec3(0.6, 0.45, 0.35)));
+                this.body.position.set(x, y, z); this.body.quaternion.setFromEuler(Math.random() * 6, Math.random() * 6, Math.random() * 6);
+                this.body.userData = { parent: this };
+                this.body.addEventListener('collide', e => { if (Math.abs(e.contact.getImpactVelocityAlongNormal()) > 2) audioManager.playImpact(Math.abs(e.contact.getImpactVelocityAlongNormal())) });
+                scene.add(this.mesh); world.addBody(this.body);
+            }
+            update(dt) {
+                this.mesh.position.copy(this.body.position); this.mesh.quaternion.copy(this.body.quaternion);
+                if (this.fa) { this.fa.position.copy(this.body.position); this.fa.position.y += 3; }
+                this.mat.emissiveIntensity = 0.6 + Math.sin(clock.getElapsedTime() * 5) * 0.2;
+                if (this.state === 'lit') {
+                    this.fuseTimer -= dt;
+                    this.mesh.position.addScalar((Math.random() - 0.5) * 0.08); // Jitter
+                    let s = 1.0; if (this.fuseTimer < 0.5) s = 1.0 + (1.0 - this.fuseTimer / 0.5) * 1.5;
+                    this.mesh.scale.setScalar(s);
+                    if (this.fa) {
+                        this.fa.material.opacity = Math.min(0.85, (1.0 - this.fuseTimer) * 3);
+                        const fs = 1.5 * (1.0 + (1.0 - this.fuseTimer) * 3.0); this.fa.scale.set(fs, fs, 1);
+                    }
+                    spawnSpark(this.mesh.position, 10, 0xffd700, 'spark');
+                    if (this.fuseTimer <= 0) this.explode();
+                } else if (this.fa) this.fa.material.opacity = 0;
+            }
+            ignite(delay = 0) {
+                if (this.state !== 'idle') return; this.state = 'lit'; this.body.wakeUp();
+                firecrackers.forEach(o => { if (o !== this && o.state === 'idle' && o.body.position.distanceTo(this.body.position) < 5.0) o.ignite(Math.random() * 0.1) });
+                this.fuseTimer = 0.5 + Math.random() * 0.3 + delay; if (Math.random() > 0.6) audioManager.playFuse();
+            }
+            explode() {
+                if (this.state === 'exploded') return; this.state = 'exploded'; visualScore += 10;
+                while (skipNumbers.includes(visualScore)) {
+                    visualScore++;
+                }
+                scoreEl.innerText = visualScore;
+                const p = new THREE.Vector3(this.body.position.x, this.body.position.y, this.body.position.z);
+                spawnGoldExplosionParticles(p);
+                if (vfxSystem) vfxSystem.createShockwave(p.x, p.y, p.z);
+                audioManager.playGoldExplosion(p); this.mesh.visible = false;
+                if (navigator.vibrate) navigator.vibrate(200);
+                if (this.fa) { scene.remove(this.fa); this.fa = null; }
+                const bp = new CANNON.Vec3(p.x, p.y, p.z);
+                firecrackers.forEach(fc => {
+                    if (fc === this) return; const d = fc.body.position.distanceTo(bp);
+                    if (d < CONFIG.blastRadius * 1.5) {
+                        const dir = fc.body.position.vsub(bp); dir.normalize();
+                        const imp = dir.scale(50.0 * (1 - d / (CONFIG.blastRadius * 1.5))); imp.y += 0.8;
+                        if (fc.type === 'goldbar') imp.scale(0.1, imp);
+                        fc.body.applyImpulse(imp, fc.body.position); fc.body.wakeUp();
+                        if (fc.state === 'idle') fc.ignite(d * 0.01);
+                    }
+                });
+                setTimeout(() => world.removeBody(this.body), 50);
+            }
+            dispose() { if (this.fa) { scene.remove(this.fa); this.fa = null; } }
+        }
+
+        function createHangingDecor() {
+            if (hangingDecors) {
+                if (hangingDecors.parent) hangingDecors.parent.remove(hangingDecors);
+            }
+            hangingDecors = new THREE.Group();
+            const addDecor = (xOffset, zRot) => {
+                const g = new THREE.Group();
+                const b = new THREE.Mesh(new THREE.CylinderGeometry(0.6, 0.6, 2.5, 16), new THREE.MeshStandardMaterial({ color: 0xe60000 }));
+                const t = new THREE.Mesh(new THREE.CylinderGeometry(0.62, 0.62, 0.3, 16), new THREE.MeshStandardMaterial({ color: 0xffd700 })); t.position.y = 1.1;
+                const bot = new THREE.Mesh(new THREE.CylinderGeometry(0.62, 0.62, 0.3, 16), new THREE.MeshStandardMaterial({ color: 0xffd700 })); bot.position.y = -1.1;
+                const f = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 0.8, 8), new THREE.MeshBasicMaterial({ color: 0x888888 })); f.position.y = 1.4;
+                const tip = new THREE.Object3D(); tip.position.set(0, 1.8, 0); tip.name = 'fuseTip';
+                g.add(b, t, bot, f, tip); g.position.set(xOffset, 0, 0); g.rotation.z = zRot; hangingDecors.add(g);
+            };
+            addDecor(-10, 0.1);
+            addDecor(10, -0.1);
+            const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth <= 1450;
+            if (isMobile) {
+                hangingDecors.position.set(0, 5, -15);
+                hangingDecors.scale.set(0.45, 0.45, 0.45);
+            } else {
+                hangingDecors.position.set(0, 12, -35);
+                hangingDecors.scale.set(1, 1, 1);
+            }
+            hangingDecors.rotation.set(0.4, 0, 0);
+            camera.add(hangingDecors);
+        }
+
+        function createIncense() {
+            const g = new THREE.Group();
+            const c = new THREE.Group();
+            const alwaysOnTopMat = (params) => {
+                return Object.assign(params, {
+                    depthTest: false,
+                    depthWrite: false,
+                    transparent: true
+                });
+            };
+
+            const tipMat = new THREE.MeshBasicMaterial(alwaysOnTopMat({ color: 0xff3300 }));
+            const tip = new THREE.Mesh(new THREE.SphereGeometry(0.08), tipMat);
+            tip.position.y = 0.5;
+            tip.renderOrder = 9999;
+            c.add(tip);
+            const l = new THREE.PointLight(0xff3300, 2, 5);
+            l.position.y = 0.5;
+            c.add(l);
+            incenseTipLight = l;
+            const stickMat = new THREE.MeshBasicMaterial(alwaysOnTopMat({ color: 0x5c3a21 }));
+            const b = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 6), stickMat);
+            b.position.y = 0.5 - 3;
+            b.renderOrder = 9998;
+            c.add(b);
+            const handleMat = new THREE.MeshBasicMaterial(alwaysOnTopMat({ color: 0xaa0000 }));
+            const h = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 1.5), handleMat);
+            h.position.y = 0.5 - 6 - 0.75;
+            h.renderOrder = 9998;
+            c.add(h);
+            c.rotation.set(0, -0.35, 1.57);
+            g.add(c);
+            incenseStick = g;
+            incenseStick.visible = false;
+            g.renderOrder = 9999;
+            scene.add(incenseStick);
+        }
+
+        function spawnFirecrackers() {
+            firecrackers.forEach(fc => { scene.remove(fc.mesh); if (world) world.removeBody(fc.body); if (fc.dispose) fc.dispose(); });
+            firecrackers = []; bgDroppers.forEach(d => d.dispose()); bgDroppers = [];
+            score = 0; explodedCount = 0; visualScore = 0; scoreEl.innerText = "0"; gameEnded = false; floorDropping = false;
+            if (textTimer) clearTimeout(textTimer);
+            if (world && groundBody) { world.removeBody(groundBody); world.addBody(groundBody); }
+            if (groundMesh) groundMesh.position.y = 0;
+            const isMobileOS = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+            const isSmallScreen = window.innerWidth <= 1450;
+            if (isMobileOS || isSmallScreen) {
+                camera.position.set(0, 12, 15);
+            } else {
+                camera.position.set(0, 18, 22);
+            }
+            camera.lookAt(0, 0, 0);
+            cameraShake.intensity = 0;
+            if (controls) controls.target.set(0, 0, 0);
+            faOverlay.style.opacity = 0; faOverlay.style.pointerEvents = 'none'; finalFa.classList.remove('show');
+            fortunePaper.classList.remove('show');
+            restartBtn.style.display = 'none'; restartBtn.classList.remove('show-restart');
+            if (hangingDecors) hangingDecors.visible = true; canIgnite = false;
+            statusEl.innerHTML = '<span class="status-line-1">連鎖反應發發發</span>';
+            statusEl.classList.remove('text-scatter'); textTimer = setTimeout(() => statusEl.classList.add('text-scatter'), 3000);
+            incenseStick.visible = false;
+            for (let i = 0; i < CONFIG.firecrackerCount; i++) {
+                const a = Math.random() * Math.PI * 2, r = Math.sqrt(Math.random()) * 12;
+                firecrackers.push(new Firecracker(Math.cos(a) * r, 5 + Math.random() * 10, Math.sin(a) * r));
+            }
+            for (let i = 0; i < Math.floor(Math.random() * 3) + 1; i++) {
+                const a = Math.random() * Math.PI * 2, r = Math.sqrt(Math.random()) * 12;
+                firecrackers.push(new GoldBar(Math.cos(a) * r, 5 + Math.random() * 10, Math.sin(a) * r));
+            }
+            setTimeout(() => {
+                canIgnite = true;
+                if (window.matchMedia('(hover: hover)').matches) {
+                    incenseStick.visible = true;
+                } else {
+                    incenseStick.visible = false;
+                }
+            }, 3500);
+        }
+
+        function init() {
+            scene = new THREE.Scene(); scene.background = new THREE.Color(CONFIG.colors.bg); scene.fog = new THREE.FogExp2(CONFIG.colors.bg, 0.02);
+            camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const isMobileOS = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+            const isSmallScreen = window.innerWidth <= 1024;
+            if (isMobileOS || isSmallScreen) {
+                camera.position.set(0, 12, 15);
+            } else {
+                camera.position.set(0, 18, 22);
+            }
+            camera.lookAt(0, 0, 0);
+            renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setSize(window.innerWidth, window.innerHeight); renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.2;
+            document.getElementById('canvas-container').appendChild(renderer.domElement);
+            composer = new EffectComposer(renderer);
+            const renderPass = new RenderPass(scene, camera); composer.addPass(renderPass);
+            const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85);
+            bloomPass.threshold = 0.5; bloomPass.strength = 0.8; bloomPass.radius = 0.5; composer.addPass(bloomPass);
+            ambientLight = new THREE.AmbientLight(0xffcccc, 0.1); scene.add(ambientLight);
+            const dirLight = new THREE.DirectionalLight(0xaaccff, 0.3); dirLight.position.set(10, 30, -10); scene.add(dirLight);
+            orangeLight = new THREE.PointLight(0xff5500, 150, 100); orangeLight.position.set(-8, 6, -8); scene.add(orangeLight);
+            redLight = new THREE.PointLight(0xff0000, 120, 100); redLight.position.set(8, 6, 8); scene.add(redLight);
+            warmLight = new THREE.PointLight(0xffaa55, 80, 80); warmLight.position.set(0, 8, 0); scene.add(warmLight);
+            explosionLight = new THREE.PointLight(0xffaa33, 0, 50); scene.add(explosionLight);
+            world = new CANNON.World(); world.gravity.set(0, -9.82, 0); world.broadphase = new CANNON.NaiveBroadphase(); world.solver.iterations = 20; world.allowSleep = true;
+            world.addContactMaterial(new CANNON.ContactMaterial(new CANNON.Material(), new CANNON.Material(), { friction: 0.5, restitution: 0.2 }));
+            const cvs = document.createElement('canvas'); cvs.width = 512; cvs.height = 512; const cx = cvs.getContext('2d');
+            cx.fillStyle = '#4a0e0e'; cx.fillRect(0, 0, 512, 512); for (let i = 0; i < 50000; i++) { cx.fillStyle = `rgba(255,255,255,${Math.random() * 0.1})`; cx.fillRect(Math.random() * 512, Math.random() * 512, 2, 2); } cx.strokeStyle = '#2a0505'; cx.lineWidth = 4; for (let y = 0; y < 512; y += 64)for (let x = 0; x < 512; x += 64) { if (Math.random() > 0.5) cx.fillRect(x, y, 64, 64); cx.strokeRect(x, y, 64, 64); }
+            const tex = new THREE.CanvasTexture(cvs); tex.wrapS = tex.wrapT = THREE.RepeatWrapping; tex.repeat.set(10, 10);
+            groundMesh = new THREE.Mesh(new THREE.PlaneGeometry(200, 200), new THREE.MeshStandardMaterial({ map: tex, color: 0x888888, roughness: 0.8, metalness: 0.2 }));
+            groundMesh.rotation.x = -Math.PI / 2; groundMesh.receiveShadow = true; scene.add(groundMesh);
+            groundBody = new CANNON.Body({ mass: 0, shape: new CANNON.Plane() }); groundBody.quaternion.setFromEuler(-Math.PI / 2, 0, 0); world.addBody(groundBody);
+            interactionPlane = new THREE.Mesh(new THREE.PlaneGeometry(200, 200), new THREE.MeshBasicMaterial({ visible: false }));
+            interactionPlane.rotation.x = -Math.PI / 2; interactionPlane.position.y = 1.0; scene.add(interactionPlane);
+            controls = new OrbitControls(camera, renderer.domElement); controls.enableDamping = true; controls.enableRotate = false; controls.enableZoom = false; controls.enablePan = false;
+            raycaster = new THREE.Raycaster(); mouse = new THREE.Vector2();
+            window.addEventListener('resize', onWindowResize);
+            window.addEventListener('mousemove', onMouseMove);
+            window.addEventListener('mousedown', onMouseDown);
+            window.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+                if (!canIgnite) return;
+                if (incenseStick) incenseStick.visible = false;
+                const touch = e.touches[0];
+                const rect = renderer.domElement.getBoundingClientRect();
+                mouse.x = ((touch.clientX - rect.left) / rect.width) * 2 - 1;
+                mouse.y = -((touch.clientY - rect.top) / rect.height) * 2 + 1;
+                raycaster.setFromCamera(mouse, camera);
+                const h = raycaster.intersectObject(interactionPlane);
+                if (h.length > 0 && Math.random() > 0.7) {
+                    const p = h[0].point.clone();
+                    p.y += 0.5;
+                    particles.push(new Particle(p, 0xdddddd, 0.1, 1, 2.0, 'smoke'));
+                }
+            }, { passive: false });
+
+            window.addEventListener('touchstart', (e) => {
+                if (e.target.tagName === 'BUTTON' || e.target.closest('button')) return;
+                e.preventDefault();
+                if (incenseStick) incenseStick.visible = false;
+                const touch = e.touches[0];
+                const rect = renderer.domElement.getBoundingClientRect();
+                mouse.x = ((touch.clientX - rect.left) / rect.width) * 2 - 1;
+                mouse.y = -((touch.clientY - rect.top) / rect.height) * 2 + 1;
+                raycaster.setFromCamera(mouse, camera);
+                const h = raycaster.intersectObject(interactionPlane);
+                if (h.length > 0) {
+                    const touchPoint = h[0].point;
+                    if (!canIgnite || gameEnded) return;
+                    let t = null, d = 4.0;
+                    firecrackers.forEach(fc => {
+                        if (fc.state === 'idle') {
+                            let p = new THREE.Vector3();
+                            if (fc.fuseTip) { p.set(0, 1.25, 0); p.applyMatrix4(fc.mesh.matrixWorld); }
+                            else { p.copy(fc.mesh.position); }
+                            const dist = p.distanceTo(touchPoint);
+                            if (dist < d) { d = dist; t = fc; }
+                        }
+                    });
+                    if (t && t.type !== 'goldbar') {
+                        t.ignite();
+                        audioManager.playFuse();
+                        lastExplosionTime = clock.getElapsedTime();
+                        canIgnite = false;
+                        incenseStick.visible = false;
+                    }
+                }
+            }, { passive: false });
+            audioManager = new AudioManager(); clock = new THREE.Clock(); vfxSystem = new VFXSystem();
+            createIncense(); createHangingDecor(); animate();
+            scene.add(camera);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate); deltaTime = Math.min(clock.getDelta(), 0.1); const t = clock.getElapsedTime();
+            if (isGameActive && incenseStick.visible && !gameEnded && Math.random() > 0.5) { //香煙霧
+                if (incenseTipLight) {
+                    const p = new THREE.Vector3(); incenseTipLight.getWorldPosition(p);
+                    p.x += (Math.random() - 0.5) * 0.05; p.z += (Math.random() - 0.5) * 0.05;
+                    particles.push(new Particle(p, 0xdddddd, 0.06, 1, 2.0, 'smoke'));
+                }
+            }
+            if (floorDropping) groundMesh.position.y -= 8 * deltaTime;
+            if (cameraShake.intensity > 0) {
+                const shake = cameraShake.intensity;
+                camera.position.x += (Math.random() - 0.5) * shake;
+                camera.position.y += (Math.random() - 0.5) * shake;
+                camera.position.z += (Math.random() - 0.5) * shake;
+                cameraShake.intensity *= 0.9;
+                if (cameraShake.intensity < 0.01) cameraShake.intensity = 0;
+            }
+            if (orangeLight) { orangeLight.intensity = 150 + Math.sin(t * 8) * 20; redLight.intensity = 120 + Math.sin(t * 6.5) * 20; orangeLight.position.x = -8 + Math.sin(t * 0.8); redLight.position.x = 8 + Math.cos(t * 0.8); }
+            if (explosionLight && explosionLight.intensity > 0) { explosionLight.intensity *= 0.8; }
+            if (hangingDecors) {
+                hangingDecors.rotation.y = Math.sin(t * 0.3) * 0.05;
+                const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth <= 1450;
+                const sparkSize = isMobile ? 0.08 : 0.2;
+                hangingDecors.children.forEach(c => {
+                    c.rotation.y += 0.02;
+                    for (let k = 0; k < 5; k++) if (Math.random() > 0.1) {
+                        const tip = c.getObjectByName('fuseTip');
+                        if (tip) {
+                            const p = new THREE.Vector3(); tip.getWorldPosition(p);
+                            const pt = new Particle(p, Math.random() > 0.5 ? 0xffd700 : 0xff4400, sparkSize, 4, 0.8, 'spark');
+                            pt.vel.y += 6; pt.vel.x += (Math.random() - 0.5) * 6; pt.vel.z += (Math.random() - 0.5) * 6;
+                            particles.push(pt);
+                        }
+                    }
+                });
+            }
+            if (gameEnded) {
+                if (bgDroppers.length < 40 && Math.random() < 0.5) {
+                    spawnBackgroundFirecracker();
+                }
+                for (let i = bgDroppers.length - 1; i >= 0; i--) {
+                    if (!bgDroppers[i].update(deltaTime)) {
+                        bgDroppers[i].dispose();
+                        bgDroppers.splice(i, 1);
+                    }
+                }
+            }
+            if (isGameActive) { world.step(1 / 60, deltaTime, 3); firecrackers.forEach(fc => fc.update(deltaTime)); for (let i = particles.length - 1; i >= 0; i--)if (!particles[i].update(deltaTime)) { particles[i].dispose(); particles.splice(i, 1); } if (vfxSystem) vfxSystem.loop(); checkEndGame(); }
+            if (!isGameActive || gameEnded) for (let i = particles.length - 1; i >= 0; i--)if (!particles[i].update(deltaTime)) { particles[i].dispose(); particles.splice(i, 1); }
+            controls.update(); composer.render();
+        }
+
+        window.toggleFullscreen = () => { if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => { }); else if (document.exitFullscreen) document.exitFullscreen(); };
+        window.toggleMute = () => { audioManager.toggleMute(); };
+        window.resetGame = () => { if (audioManager) { audioManager.stopBGM(); audioManager.playStartSound(); audioManager.startBGM(); } spawnFirecrackers(); isGameActive = true; };
+
+        init();
+        initBtn.addEventListener('click', () => {
+            if (audioManager) audioManager.playStartSound();
+            const docEl = document.documentElement;
+            const requestFull = docEl.requestFullscreen || docEl.webkitRequestFullscreen || docEl.msRequestFullscreen;
+            const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth <= 1024;
+            if (requestFull && isMobile) {
+                requestFull.call(docEl, { navigationUI: "hide" }).catch(err => {
+                    console.log("全螢幕請求被阻擋:", err);
+                });
+            }
+            initBtn.style.display = 'none';
+            const loading = document.getElementById('loading');
+            if (loading) loading.style.display = 'none';
+            setTimeout(() => {
+                spawnFirecrackers();
+                startScreen.style.opacity = 0;
+                setTimeout(() => startScreen.style.display = 'none', 500);
+                audioManager.resume();
+                audioManager.startBGM();
+                isGameActive = true;
+            }, 200);
+        });
+    </script>
+</body>
+
+</html>
