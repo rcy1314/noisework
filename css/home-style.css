@@ -954,20 +954,23 @@ hr.dashed {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.079); /* 半透明背景 */
-    z-index: 998; /* 确保遮罩层在侧边栏之上 */
-    display: none; /* 默认不显示 */
+    z-index: 9999;
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
   }
   
-  /* 当侧边栏显示时显示遮罩层 */
-  .noise-left.show + .mask {
-    display: block;
+  .mask.show {
+    opacity: 1;
+    pointer-events: auto;
   }
   
 /* 在手机尺寸下显示的按钮样式 */
 @media screen and (max-width: 800px) {
     .mobile-nav-button {
       display: block;
-      position: absolute;
+      position: fixed;
       top: 18px;
       left: 10px;
       z-index: 999;
@@ -984,19 +987,25 @@ hr.dashed {
   
     /* 侧边栏的弹出样式 */
     .noise-left {
-      display: none;
+      display: flex;
       position: fixed;
-      top: 2;
-      width: 50%;
-      height: 100%;
+      top: 0;
+      left: 0;
+      width: min(66vw, 280px);
+      height: 100vh;
+      height: 100dvh;
       background-color: #0d0e11ed; /* 弹出层的背景颜色 */
-      z-index: 99900; /* 确保弹出层在按钮下面 */
-      transition: left 0.1s ease-in-out;
+      z-index: 10000;
+      transform: translateX(-110%);
+      transition: transform 0.18s ease;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
     }
   
     /* 显示侧边栏 */
     .noise-left.show {
-      left: 0;
+      transform: translateX(0);
     }
   }
 

@@ -156,38 +156,70 @@ function closePopup() {
     document.getElementById('imagePopup').style.display = 'none';
     document.getElementById('imagePopup').removeEventListener('click', closePopup);
 }
-// 添加一个遮罩层来监听点击事件
-var mask = document.createElement('div');
-mask.className = 'mask';
-document.body.appendChild(mask);
-
-mask.addEventListener('click', function() {
-  noiseLeft.style.display = 'none';
-  mask.remove(); // 移除遮罩层
-});
 
 // 手机左侧弹出
 document.addEventListener('DOMContentLoaded', function() {
     var mobileNavButton = document.querySelector('.mobile-nav-button');
     var noiseLeft = document.querySelector('.noise-left');
-    var mask = document.createElement('div');
-    mask.className = 'mask';
-    document.body.appendChild(mask);
 
-    mobileNavButton.addEventListener('click', function() {
-      if (noiseLeft.style.display === 'block') {
-        noiseLeft.style.display = 'none';
-        mask.style.display = 'none'; // 同时隐藏遮罩层
-      } else {
-        noiseLeft.style.display = 'block';
-        mask.style.display = 'block'; // 显示遮罩层
-      }
+    if (!mobileNavButton || !noiseLeft) {
+        return;
+    }
+
+    var mask = document.querySelector('.mask');
+    if (!mask) {
+        mask = document.createElement('div');
+        mask.className = 'mask';
+        document.body.appendChild(mask);
+    }
+
+    var prevHtmlOverflow = '';
+    var prevBodyOverflow = '';
+
+    function openSidebar() {
+        prevHtmlOverflow = document.documentElement.style.overflow || '';
+        prevBodyOverflow = document.body.style.overflow || '';
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+        noiseLeft.classList.add('show');
+        mask.classList.add('show');
+    }
+
+    function closeSidebar() {
+        noiseLeft.classList.remove('show');
+        mask.classList.remove('show');
+        document.documentElement.style.overflow = prevHtmlOverflow;
+        document.body.style.overflow = prevBodyOverflow;
+    }
+
+    function toggleSidebar() {
+        if (noiseLeft.classList.contains('show')) {
+            closeSidebar();
+        } else {
+            openSidebar();
+        }
+    }
+
+    mobileNavButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        toggleSidebar();
     });
 
-    // 遮罩层上的点击事件，用于关闭侧边栏
     mask.addEventListener('click', function() {
-      noiseLeft.style.display = 'none';
-      mask.style.display = 'none'; // 同时隐藏遮罩层
+        closeSidebar();
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeSidebar();
+        }
+    });
+
+    noiseLeft.addEventListener('click', function(event) {
+        var target = event.target;
+        if (target && target.closest && target.closest('a')) {
+            closeSidebar();
+        }
     });
 });
 
