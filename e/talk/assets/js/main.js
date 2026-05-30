@@ -371,7 +371,18 @@ function updateHTMl(data) {
 
         // 先解析 Markdown
         memoContREG = marked.parse(memoContREG)
-            .replace(BILIBILI_REG, "<div class='video-wrapper'><iframe src='https://www.bilibili.com/blackboard/html5mobileplayer.html?bvid=$1&as_wide=1&high_quality=1&danmaku=0' scrolling='no' border='0' frameborder='no' framespacing='0' allowfullscreen='true' style='position:absolute;height:100%;width:100%;'></iframe></div>")
+            .replace(BILIBILI_REG, function (match, videoId) {
+                var base = "https://player.bilibili.com/player.html?isOutside=true&autoplay=0&high_quality=1&danmaku=0";
+                var src = "";
+                if (/^av\d+$/i.test(videoId)) {
+                    src = base + "&aid=" + videoId.slice(2);
+                } else if (/^BV[\w]{10}$/i.test(videoId)) {
+                    src = base + "&bvid=" + videoId;
+                } else {
+                    return match;
+                }
+                return "<div class='video-wrapper'><iframe src='" + src + "' frameborder='0' allowfullscreen allow='fullscreen; picture-in-picture; encrypted-media' style='position:absolute;height:100%;width:100%;'></iframe></div>";
+            })
             .replace(YOUTUBE_REG, "<div class='video-wrapper'><iframe src='https://www.youtube.com/embed/\$2' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div>")
             .replace(NETEASE_MUSIC_REG, "<div class='music-wrapper'><meting-js auto='https://music.163.com/#/song?id=\$1'></meting-js></div>")
             .replace(QQMUSIC_REG, "<meting-js auto='https://y.qq.com/n/yqq/song$1.html'></meting-js>")
