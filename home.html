@@ -139,8 +139,64 @@
 	 <!--音乐-->
      <link rel="stylesheet" href="./css/home-APlayer.min.css">  
      <script src="./js/APlayer.min.js"></script>
-     <script>window.meting_api = 'https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&r=:r';</script>
-     <script src="./js/Meting.min.js"></script>
+     <script>
+		(function () {
+			var apis = [
+				'https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&r=:r',
+				'https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&r=:r'
+			];
+
+			function withTimeout(url, timeoutMs) {
+				return new Promise(function (resolve, reject) {
+					var controller = new AbortController();
+					var timer = setTimeout(function () {
+						controller.abort();
+						reject(new Error('timeout'));
+					}, timeoutMs);
+
+					fetch(url, { signal: controller.signal, cache: 'no-store' })
+						.then(function (res) {
+							clearTimeout(timer);
+							resolve(res);
+						})
+						.catch(function (err) {
+							clearTimeout(timer);
+							reject(err);
+						});
+				});
+			}
+
+			function buildTestUrl(tpl) {
+				return tpl
+					.replace(':server', 'netease')
+					.replace(':type', 'playlist')
+					.replace(':id', '128460001')
+					.replace(':r', String(Date.now()));
+			}
+
+			function loadMeting() {
+				var script = document.createElement('script');
+				script.src = './js/Meting.min.js';
+				script.defer = true;
+				document.head.appendChild(script);
+			}
+
+			(async function () {
+				for (var i = 0; i < apis.length; i++) {
+					var tpl = apis[i];
+					try {
+						var res = await withTimeout(buildTestUrl(tpl), 1200);
+						if (!res || !res.ok) continue;
+						await res.text();
+						window.meting_api = tpl;
+						return;
+					} catch (e) {
+					}
+				}
+				window.meting_api = apis[0];
+			})().finally(loadMeting);
+		})();
+     </script>
     <!-- 在手机尺寸下显示的导航按钮 -->
     <div class="mobile-nav-button">
 		<a title="点击可弹出侧边栏"><i class="fa-solid fa-list" style="color: #fcfcfc; font-size: 23px;"></i></a>
